@@ -1,0 +1,12 @@
+{
+  "study": "Q-SHIFT Stage 5 independent confirmation candidate v2",
+  "status": "PRE_EXECUTION_ONLY_NOT_AUTHORIZED_TO_SAMPLE",
+  "decoder_arms": ["fixed_nominal_pymatching", "frozen_detector_profile_estimator_pymatching", "privileged_true_probability_reference"],
+  "circuit": {"memory_basis": "z", "distance": 3, "rounds": 5, "detectors": 40, "observables": 1, "gate_probability": 0.003, "measurement_probability": 0.003, "pauli_regime": "balanced", "bias_ratio": 10.0, "burst_pair_data_qubits": [8, 10], "dem": {"decompose_errors": true, "approximate_disjoint_errors": true, "pymatching_enable_correlations": true}},
+  "evaluation": {"probabilities": [0.0, 0.004, 0.008, 0.012, 0.016], "roots_per_condition": 100, "calibration_shots_per_root": 2000, "paired_evaluation_shots_per_root": 2500, "calibration_total": 1000000, "evaluation_total": 1250000, "total_unique_shots": 2250000},
+  "statistical_plan": {"bootstrap": {"resamples": 20000, "confidence": 0.95, "seed": 4240001001}, "primary_signflip": {"assignments": 100000, "plus_one": true, "seed": 4240001002, "ties": "extreme"}, "secondary": "four nonzero conditions, Holm correction", "primary": "equal-weight mean of four nonzero condition root-paired LER differences, adaptive minus fixed", "shot_resampling": false},
+  "success_gate": {"primary_delta_max": -0.0002, "primary_ci_upper_max": 0.0, "primary_p_max": 0.05, "favorable_nonzero_conditions_min": 4, "condition_harm_max": 0.0002, "zero_condition_harm_upper_max": 0.0002},
+  "resources": {"max_unique_shots": 2500000, "wall_seconds_max": 1800, "rss_bytes_max": 2147483648, "cuda_required": false},
+  "sampling_guard": {"requires_both_flags": ["--run", "--authorize-stage5-sampling"], "separate_user_authorization_required": true},
+  "independent_test": {"accessed": false, "enumerated": false, "allocated_here": false}
+}
