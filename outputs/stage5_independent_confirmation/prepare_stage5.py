@@ -76,6 +76,21 @@ def main() -> None:
         historical.update(values)
         records.append({"path":rel,"sha256":sha(path),"unique_seed_values_extracted":len(set(values)),
                         "extracted_values":sorted(set(values)),"scope":"explicit development seed metadata only; no current sealed-test files or sample arrays"})
+    expanded=[]
+    for rel in ("outputs/phase4a_model_adequacy/config.json", "outputs/phase4b_replication/config.json"):
+        cfg=json.loads((REPO/rel).read_text(encoding="utf-8"))
+        root_cfg=cfg["seed_roots"]
+        roots=[int(root_cfg["start"])+i*int(root_cfg["step"]) for i in range(int(root_cfg["count"]))]
+        offsets=[int(v) for v in cfg["seed_offsets"].values()]
+        # Expand the frozen historical runner's actual root + stage offset + condition index formula.
+        derived=set(roots)
+        derived.update(root+off+ci for root in roots for off in offsets for ci in range(3))
+        derived.update(int(cfg["template_seed_start"])+i for i in range(9))
+        derived.update((int(cfg["noiseless_seed"]), int(cfg["bootstrap_seed"])))
+        historical.update(derived)
+        expanded.append({"config_path":rel,"config_sha256":sha(REPO/rel),
+            "formula":"root=start+root_index*step; sampling=root+stage_offset+condition_index for condition_index 0..2; plus nine template seeds, noiseless seed, bootstrap seed, and root IDs",
+            "expanded_seed_values":sorted(derived),"unique_count":len(derived)})
     collisions=sorted(historical.intersection(proposed))
     if collisions:
         raise RuntimeError(f"Stage 5 candidate seed collision: {collisions}")
@@ -85,6 +100,7 @@ def main() -> None:
     audit={"status":"PASS_RECOVERABLE_DEVELOPMENT_METADATA","historical_seed_values_union":len(historical),
         "stage4c_seed_count_included":554,"stage5_candidate_seed_count":len(proposed),
         "stage5_candidate_collisions":collisions,"historical_files_examined":records,
+        "derived_phase4a_phase4b_seed_expansions":expanded,
         "coverage_limit":"Only explicitly listed development seed metadata were read, including recorded Phase 4A/4B configs, checkpoint metadata and per-seed summaries. No current sealed-test files or sample arrays were enumerated/opened. Unrecorded RNG use cannot be ruled out.",
         "sampling_started":False}
     (HERE/"seed_inventory.json").write_text(json.dumps(inventory,indent=2)+"\n",encoding="utf-8")

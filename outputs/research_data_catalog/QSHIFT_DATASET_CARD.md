@@ -24,6 +24,8 @@ Each experiment has its own seed inventory and partition definitions. The strong
 
 Raw arrays and model weights are retained locally where available and generally excluded from Git. Lightweight summaries, protocols, source, seed metadata, and hashes are intended for version control. Some earlier experiments retain only reports/checkpoints or have incomplete calibration arrays. Phase 4C's run directory has 44 local raw evidence files; their hashes are indexed by its evidence manifest, while large arrays are ignored by Git. No single cross-project deduplicated row count has been established.
 
+The original starter run is reported in conversation history as 112,500 training plus 37,500 testing shots, but its source and dataset were not found at the inspected repository paths. Those 150,000 shots are listed separately as unverified and are not included in verified inventory counts.
+
 ## Intended uses
 
 Appropriate uses include reproducing the documented simulator experiments, teaching, and development comparisons. Inappropriate uses without additional evidence include estimating real-device performance, claiming universal decoder superiority, or treating synthetic burst probabilities as physical hardware rates.
@@ -39,3 +41,5 @@ This project uses simulated data and contains no human-subject or personal data.
 - RNG collision screens cover recoverable seed metadata only and cannot rule out undocumented RNG use.
 - Stim DEM decomposition can approximate disjoint categorical mechanisms; see the phase-specific limitations.
 - No hardware integration or real-time device demonstration is established.
+
+See [DATASET_INVENTORY.json](DATASET_INVENTORY.json) for the per-study shot allocations, partition notes, source paths for protocols/configurations/seeds/audits, schema notes, and retained-versus-missing evidence. The companion [SAFE_DEVELOPMENT_EXPORT_SPEC.md](SAFE_DEVELOPMENT_EXPORT_SPEC.md) defines what can be shared without exposing raw or sealed data.

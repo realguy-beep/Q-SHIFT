@@ -28,6 +28,28 @@
       "source": "outputs/cnn_stage3_residual_gate_v1/CNN_STAGE3_INDEPENDENT_AUDIT.md"
     },
     {
+      "study": "Phase 2A decoder specialization",
+      "path": "outputs/phase2a_decoder_specialization/",
+      "reported_shots_within_study": 600000,
+      "coverage": "60 independent regime-root evaluations (20 roots per each of three gate/measurement regimes), 10000 paired shots/root; additionally reused 307200 earlier development shots for prior-data integrity analysis, not as the Phase 2A untouched evaluation",
+      "roots": 60,
+      "audit": "PASS; raw-array audit passed, all nine predictions re-decoded, and prior data were marked as already evaluated and not reused as untouched Phase 2A test",
+      "raw_retention": "evaluation arrays referenced by audit hashes; prior 307200-shot data are reused historical evidence and not additional Phase 2A-generated rows",
+      "independent_test_accessed": false,
+      "source": "outputs/phase2a_decoder_specialization/PHASE2A_FINDINGS.md"
+    },
+    {
+      "study": "Phase 2B Pauli-bias decoder specialization",
+      "path": "outputs/phase2b_pauli_bias/",
+      "reported_shots_within_study": 1350000,
+      "coverage": "held-out evaluation 1200000 (six basis-by-regime cells x 20 roots x 10000), calibration 120000, development validation 30000",
+      "roots": 120,
+      "audit": "See Phase 2B analysis audit; all candidate decoders used paired detector/observable samples",
+      "raw_retention": "raw/held-out checkpoint retention is described by the Phase 2B manifest and audit; do not infer calibration retention beyond the saved audit records",
+      "independent_test_accessed": false,
+      "source": "outputs/phase2b_pauli_bias/PHASE2B_FINDINGS.md"
+    },
+    {
       "study": "Phase 3A correlated-noise deterministic preflight",
       "path": "outputs/phase3a_correlated_noise_preflight/",
       "reported_shots_within_study": 2592,
@@ -131,6 +153,151 @@
       "source": "outputs/phase3a_correlated_noise_preflight/PHASE3A_FINAL_REPORT.md"
     }
   ],
+  "reproducibility_sources": [
+    {
+      "study": "CNN Stage 2",
+      "protocol": "outputs/cnn_architecture_stage2_v1/CNN_STAGE2_FROZEN_PROTOCOL.md",
+      "configuration_and_noise": "outputs/cnn_architecture_stage2_v1/stage2_config.json",
+      "seed_metadata": ["outputs/cnn_architecture_stage2_v1/seed_inventory.json", "outputs/cnn_architecture_stage2_v1/seed_audit.json"],
+      "audit_and_results": ["outputs/cnn_architecture_stage2_v1/CNN_STAGE2_INDEPENDENT_AUDIT.md", "outputs/cnn_architecture_stage2_v1/CNN_STAGE2_RESULTS.md"],
+      "noise_summary": "Rotated Z-memory d=3, r=5; balanced gate and measurement p=0.003; nominal burst p=0 and synthetic X8X10 burst p=0.01 after each MR boundary; approximate-disjoint DEM conversion."
+    },
+    {
+      "study": "Phase 2A",
+      "protocol": "outputs/phase2a_decoder_specialization/PHASE2A_PROTOCOL.md",
+      "configuration_and_noise": "outputs/phase2a_decoder_specialization/config.json",
+      "seed_metadata": ["outputs/phase2a_decoder_specialization/SEED_MANIFEST.csv", "outputs/phase2a_decoder_specialization/SEED_SCREENING.json"],
+      "audit_and_results": ["outputs/phase2a_decoder_specialization/PHASE2A_AUDIT_RESULTS.json", "outputs/phase2a_decoder_specialization/PHASE2A_RESULTS.json"],
+      "noise_summary": "Rotated Z-memory d=3/r=5 with data-heavy (gate .006, measurement .001), nominal (.003,.003), and measurement-heavy (.001,.006) conditions; 9-point candidate matching grid."
+    },
+    {
+      "study": "Phase 2B",
+      "protocol": "outputs/phase2b_pauli_bias/PHASE2B_PROTOCOL.md",
+      "configuration_and_noise": ["outputs/phase2b_pauli_bias/config.json", "outputs/phase2b_pauli_bias/NOISE_MODEL_SPECIFICATION.md", "outputs/phase2b_pauli_bias/noise_model.py"],
+      "seed_metadata": ["outputs/phase2b_pauli_bias/SEED_MANIFEST.csv", "outputs/phase2b_pauli_bias/SEED_SCREENING.json"],
+      "audit_and_results": ["outputs/phase2b_pauli_bias/PHASE2B_ANALYSIS_AUDIT.json", "outputs/phase2b_pauli_bias/PHASE2B_FINDINGS.md"],
+      "noise_summary": "Rotated X/Z memories d=3/r=5; total one- and two-qubit gate-fault probability .003/instruction, measurement p=.003, X/Y/Z weights 10:1:1, 1:1:1, or 1:1:10. DEM uses approximate_disjoint_errors=True."
+    },
+    {
+      "study": "CNN Stage 3",
+      "protocol": "outputs/cnn_stage3_residual_gate_v1/CNN_STAGE3_PROTOCOL.md",
+      "configuration_and_noise": "outputs/cnn_stage3_residual_gate_v1/stage3_config.json",
+      "seed_metadata": ["outputs/cnn_stage3_residual_gate_v1/seed_inventory.json", "outputs/cnn_stage3_residual_gate_v1/seed_audit.json"],
+      "audit_and_results": ["outputs/cnn_stage3_residual_gate_v1/CNN_STAGE3_INDEPENDENT_AUDIT.md", "outputs/cnn_stage3_residual_gate_v1/CNN_STAGE3_RESULTS.md"],
+      "noise_summary": "Same distance-3/five-round synthetic spatial X8X10 burst family as Stage 2; burst-focused training and nominal control. Full probabilities and DEM options are in the stage3_config."
+    },
+    {
+      "study": "Phase 3A preflight",
+      "protocol": "outputs/phase3a_correlated_noise_preflight/PHASE3A_FINAL_REPORT.md",
+      "configuration_and_noise": ["outputs/phase3a_correlated_noise_preflight/config.json", "outputs/phase3a_correlated_noise_preflight/simulator.py", "outputs/phase2b_pauli_bias/noise_model.py"],
+      "seed_metadata": "Small deterministic preflight records and report; no production seed inventory.",
+      "audit_and_results": "outputs/phase3a_correlated_noise_preflight/PREFLIGHT_RESULTS.json",
+      "noise_summary": "Synthetic spatial common-cause X errors on qubits 8 and 10 at MR boundaries; p=0.01 in the stress fixture; base categorical Pauli gate noise and measurement faults as specified in the wrapped Phase 2B generator."
+    },
+    {
+      "study": "Stage 4 feasibility pilot",
+      "protocol": "outputs/stage4_noise_adaptive_feasibility_v1/STAGE4_PROPOSED_PROTOCOL.md",
+      "configuration_and_noise": "outputs/stage4_noise_adaptive_feasibility_v1/stage4_feasibility_config.json",
+      "seed_metadata": ["outputs/stage4_noise_adaptive_feasibility_v1/seed_inventory.json", "outputs/stage4_noise_adaptive_feasibility_v1/seed_audit.json"],
+      "audit_and_results": ["outputs/stage4_noise_adaptive_feasibility_v1/STAGE4_PILOT_INDEPENDENT_AUDIT.json", "outputs/stage4_noise_adaptive_feasibility_v1/STAGE4_FEASIBILITY_PILOT_RESULTS.json"],
+      "noise_summary": "Rotated Z-memory d=3, r=5; balanced gate and measurement p=0.003; p_burst=0.006 and 0.014 evaluation conditions with calibration and paired evaluation streams."
+    },
+    {
+      "study": "Stage 4 development",
+      "protocol": "outputs/stage4_noise_adaptive_development_v1/STAGE4_DEVELOPMENT_PROTOCOL.md",
+      "configuration_and_noise": "outputs/stage4_noise_adaptive_development_v1/stage4_development_config.json",
+      "seed_metadata": ["outputs/stage4_noise_adaptive_development_v1/seed_inventory.json", "outputs/stage4_noise_adaptive_development_v1/seed_audit.json"],
+      "audit_and_results": ["outputs/stage4_noise_adaptive_development_v1/STAGE4_INDEPENDENT_AUDIT.md", "outputs/stage4_noise_adaptive_development_v1/RESULTS.json"],
+      "noise_summary": "Same d=3/r=5 balanced p_gate=p_measure=0.003 and X8X10 burst family; profile p={0,0.01,0.02}, evaluation p={0,0.004,0.008,0.012,0.016}; DEM approximation fixed by protocol."
+    },
+    {
+      "study": "Stage 4C CNN estimator",
+      "protocol": "outputs/stage4c_cnn_noise_estimation_v1/CNN_STAGE4C_PROTOCOL.md",
+      "configuration_and_noise": "outputs/stage4c_cnn_noise_estimation_v1/config.json",
+      "seed_metadata": ["outputs/stage4c_cnn_noise_estimation_v1/seed_inventory.json", "outputs/stage4c_cnn_noise_estimation_v1/seed_audit.json"],
+      "audit_and_results": ["outputs/stage4c_cnn_noise_estimation_v1/STAGE4C_INDEPENDENT_AUDIT.md", "outputs/stage4c_cnn_noise_estimation_v1/EVIDENCE_MANIFEST.json"],
+      "noise_summary": "Same d=3/r=5 base and synthetic burst mechanism; training p={0,0.01,0.02}, validation p={0.005,0.015}, evaluation p={0,0.004,0.008,0.012,0.016}. Exact three-channel detector representation and DEM settings are frozen in protocol/config."
+    },
+    {
+      "study": "Phase 4A model adequacy",
+      "protocol_and_configuration": ["outputs/phase4a_model_adequacy/PHASE4A_METHOD.md", "outputs/phase4a_model_adequacy/config.json"],
+      "seed_metadata": "Root seeds in outputs/phase4a_model_adequacy/PER_SEED_RESULTS.csv; derived seed rules in config and freeze records.",
+      "audit_and_results": ["outputs/phase4a_integrity_reaudit/AUDIT_DECISION.md", "outputs/phase4a_model_adequacy/PHASE4A_RESULTS.md", "outputs/phase4a_model_adequacy/MANIFEST_FINAL.json"],
+      "noise_summary": "Rotated Z-memory d=3, r=5 with gate/measurement probability pairs (0.006,0.001), (0.003,0.003), and (0.001,0.006)."
+    },
+    {
+      "study": "Phase 4B independent replication",
+      "protocol_and_configuration": ["outputs/phase4b_replication/PHASE4B_PROTOCOL.md", "outputs/phase4b_replication/config.json"],
+      "seed_metadata": ["outputs/phase4b_replication/PER_SEED_RESULTS.csv", "outputs/phase4b_replication/config.json", "outputs/phase4b_evidence_verification/AUDIT_RESULTS.json"],
+      "audit_and_results": ["outputs/phase4b_evidence_verification/PHASE4B_EVIDENCE_AUDIT.md", "outputs/phase4b_evidence_verification/TEMPLATE_PROVENANCE.md", "outputs/phase4b_evidence_verification/AUDIT_RESULTS.json", "outputs/phase4b_replication/RESULTS.json"],
+      "noise_summary": "Measurement-heavy condition: gate p=0.001 and measurement p=0.006; fixed nominal DEM (0.003,0.003); nine calibration candidates. Actual run generated a fresh 450,000-shot template bank instead of reusing Phase 4A templates; the deviation is recorded."
+    },
+    {
+      "study": "Correlation-aware development pilot",
+      "protocol_and_configuration": ["outputs/correlation_pilot/PILOT_EXECUTION_PROTOCOL.md", "outputs/correlation_pilot/config.json"],
+      "seed_metadata": ["outputs/correlation_pilot/SEED_INVENTORY.json", "outputs/correlation_pilot/SEED_COLLISION_970_AUDIT.json"],
+      "noise_model_source": "outputs/phase2b_pauli_bias/noise_model.py",
+      "audit_and_results": ["outputs/correlation_pilot/INDEPENDENT_EVIDENCE_AUDIT.md", "outputs/correlation_pilot/RESULTS.json"],
+      "noise_summary": "X/Z memory bases crossed with X-biased, balanced, and Z-biased Pauli regimes; d=3, r=5; 0.003 gate and measurement rates; six paired strata."
+    },
+    {
+      "study": "750K autonomous and hybrid development",
+      "protocol_and_configuration": ["outputs/neural_decoder_diagnostic/structured_integration/STRUCTURED_TRAINING_REPORT.md", "outputs/neural_decoder_diagnostic/structured_integration/FINAL_MANIFEST.json", "outputs/neural_decoder_diagnostic/hybrid_residual_sprint_v1/EXPERIMENT_PROTOCOL.md", "outputs/neural_decoder_diagnostic/hybrid_residual_sprint_v1/FAILURE_ANALYSIS.md"],
+      "seed_metadata": "Historical run manifests and Phase 3A seed coverage report; detailed seed list coverage is not consolidated in the dataset catalog.",
+      "audit_and_results": "outputs/phase3a_correlated_noise_preflight/PHASE3A_FINAL_REPORT.md",
+      "noise_summary": "Simulation configurations and all conditions are phase-specific; consult the named run reports. The original hybrid controller status remains failed despite a later evidence audit pass."
+    }
+  ],
+  "storage_schemas": [
+    {
+      "study_family": "Stim/PyMatching decoder evaluation",
+      "schema": "Boolean or uint8 detector matrix (shots, detector_count); binary observable labels (shots, observable_count) or one-dimensional for a single observable; predictions paired to the same shot row. Some archives pack detector bits little-endian; use the archive-specific schema before unpacking.",
+      "best_documented_example": "outputs/correlation_pilot/INDEPENDENT_EVIDENCE_AUDIT.md"
+    },
+    {
+      "study_family": "Stage 4C estimator experiment",
+      "schema": "40 Stim detector IDs, one observable, detector-only training/validation/calibration batches, and paired predictions from five decoder arms; 44 local evidence files listed by the Stage 4C manifest.",
+      "best_documented_example": "outputs/stage4c_cnn_noise_estimation_v1/DATASET_PARTITIONS.md"
+    }
+  ],
+  "prospective_not_generated": [
+    {
+      "study": "Stage 5 independent confirmation candidate",
+      "planned_shots": 2250000,
+      "proposed_seeds": 1002,
+      "seed_screen": "PASS against 4171 distinct recorded historical development seed values; documented namespace 4240000001..4240001002",
+      "samples_generated": 0,
+      "status": "candidate protocol ready for independent review; no runner and no sampling authorization",
+      "evidence": "outputs/stage5_independent_confirmation/STAGE5_READINESS_REVIEW.md"
+    }
+  ],
+  "historical_chat_only_records_not_in_verified_counts": [
+    {
+      "study": "Original starter fixed-decoder experiment",
+      "reported_shots": 150000,
+      "reported_split": "112500 training and 37500 testing",
+      "repository_status": "original starter scripts/dataset were not present at the inspected workspace paths; these counts are retained only as conversation-reported history and are excluded from verified study totals",
+      "noise_configuration_seed_inventory_and_raw_retention": "not verified from current repository artifacts"
+    }
+  ],
+  "retention_and_deduplication": {
+    "stage2": "260000 unique study samples are independently accounted across five roots; raw archives/checkpoints remain local and ignored by Git.",
+    "stage3": "200000 unique samples in 30 saved partitions; original failed controller state is preserved and separate audit recovery passed.",
+    "phase4a": "Historical manifest/audit checks cover saved validation/test evidence; do not infer that every calibration or training sample remains as a raw archive from the aggregate report alone.",
+    "phase4b": "20 paired test bundles (600000 test shots) are present and re-decoded; calibration arrays were not saved; fresh templates are a protocol deviation.",
+    "stage4_development": "114 partition payloads were independently hashed; duplicate complete partition payloads were zero within that study.",
+    "stage4c": "44 local evidence files are hash-indexed, including training/validation/calibration data and 35 paired evaluation root bundles; none are committed.",
+    "cross_study": "No cross-study byte-level or semantic deduplication was performed; global unique sample count remains unknown."
+  },
+  "safe_reproduction": {
+    "repository_root": "Run commands from the Q-SHIFT research repository root.",
+    "stage4c_verification_only": [
+      "python outputs/stage4c_cnn_noise_estimation_v1/build_freeze.py --verify",
+      "python -m unittest discover -s outputs/stage4c_cnn_noise_estimation_v1/tests -v",
+      "python outputs/stage4c_cnn_noise_estimation_v1/build_manifest.py"
+    ],
+    "historical_runs": "Do not rerun completed historical runners to reproduce reports; use each phase's read-only audit and reproduce instructions. Stage 5 candidate commands generate metadata only, not samples."
+  },
   "caveats": [
     "Per-study shot counts come from the cited reports and are not a globally unique count.",
     "Stage 4B calibration arrays were absent; do not claim calibration fitting was independently reproduced.",

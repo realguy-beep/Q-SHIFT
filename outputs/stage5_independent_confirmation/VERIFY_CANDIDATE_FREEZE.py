@@ -39,6 +39,21 @@ def main() -> None:
     for record in audit["historical_files_examined"]:
         assert sha(ROOT / record["path"]) == record["sha256"], f"historical metadata changed: {record['path']}"
         historical_values.update(record["extracted_values"])
+    expansions = audit.get("derived_phase4a_phase4b_seed_expansions", [])
+    assert len(expansions) == 2, "Phase 4A/4B derivation records missing"
+    for record in expansions:
+        config_path = ROOT / record["config_path"]
+        assert sha(config_path) == record["config_sha256"], f"historical config changed: {record['config_path']}"
+        cfg = json.loads(config_path.read_text(encoding="utf-8"))
+        rc = cfg["seed_roots"]
+        roots = [int(rc["start"]) + i * int(rc["step"]) for i in range(int(rc["count"]))]
+        offsets = [int(v) for v in cfg["seed_offsets"].values()]
+        expanded = set(roots)
+        expanded.update(root + offset + condition for root in roots for offset in offsets for condition in range(3))
+        expanded.update(int(cfg["template_seed_start"]) + i for i in range(9))
+        expanded.update((int(cfg["noiseless_seed"]), int(cfg["bootstrap_seed"])))
+        assert sorted(expanded) == record["expanded_seed_values"]
+        historical_values.update(expanded)
     assert len(historical_values) == audit["historical_seed_values_union"]
     assert not historical_values.intersection(proposed), "historical seed collision"
     assert not (HERE / "run").exists(), "Stage 5 run directory exists; candidate cannot assert no sampling"

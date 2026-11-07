@@ -19,6 +19,8 @@ FILES = [
     "outputs/stage5_independent_confirmation/BUILD_CANDIDATE_FREEZE.py",
     "outputs/stage5_independent_confirmation/VERIFY_CANDIDATE_FREEZE.py",
     "outputs/stage5_independent_confirmation/README.md",
+    "outputs/stage5_independent_confirmation/INDEPENDENT_CANDIDATE_AUDIT.py",
+    "outputs/stage5_independent_confirmation/STAGE5_READINESS_REVIEW.md",
     "outputs/stage4c_cnn_noise_estimation_v1/FREEZE.json",
     "outputs/stage4c_cnn_noise_estimation_v1/STAGE4C_AUDIT_RESULTS.json",
 ]
