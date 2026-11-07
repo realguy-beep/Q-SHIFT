@@ -1,0 +1,49 @@
+{
+  "study": "Q-SHIFT Stage 4 full development evaluation",
+  "version": "1.0-prospective-freeze",
+  "status": "FROZEN_BEFORE_SAMPLING",
+  "circuit": {
+    "generator": "outputs/phase3a_correlated_noise_preflight/simulator.py::build_spatial_burst_circuit",
+    "memory_basis": "z",
+    "distance": 3,
+    "rounds": 5,
+    "detectors": 40,
+    "observables": 1,
+    "pauli_regime": "balanced",
+    "gate_probability": 0.003,
+    "measurement_probability": 0.003,
+    "bias_ratio": 10.0,
+    "burst_pair_data_qubits": [8, 10],
+    "dem": {"decompose_errors": true, "approximate_disjoint_errors": true, "pymatching_enable_correlations": true}
+  },
+  "profile_development": {"probabilities": [0.0, 0.01, 0.02], "replicates_per_probability": 3, "shots_per_replicate": 2000, "total_shots": 18000, "observable_labels_generated": false},
+  "evaluation": {"probabilities": [0.0, 0.004, 0.008, 0.012, 0.016], "roots_per_probability": 7, "calibration_shots_per_root": 2000, "paired_evaluation_shots_per_root": 2500, "calibration_shots_total": 70000, "evaluation_shots_total": 87500},
+  "total_unique_shots": 175500,
+  "hard_shot_ceiling": 180000,
+  "decoders": ["fixed_nominal_pymatching", "detector_estimated_pymatching", "privileged_true_p_reference"],
+  "estimator_source": "outputs/stage4_noise_adaptive_feasibility_v1/prototype.py::DetectorProfileEstimator",
+  "estimator_inference_inputs": ["calibration detector matrix only"],
+  "forbidden_estimator_inputs": ["observable labels", "true burst probability", "burst event flags", "evaluation detector samples"],
+  "statistical_plan": {
+    "primary": "equal-weight mean of four nonzero p stratum mean root-paired differences candidate minus fixed nominal",
+    "bootstrap": {"method": "stratified root-cluster percentile bootstrap", "resamples": 20000, "confidence": 0.95, "seed": 4200000080, "stream_order": ["primary_equal_nonzero_effect", "zero_burst_one_sided_upper", "per_nonzero_condition_descriptive_intervals_in_ascending_probability_order"]},
+    "primary_signflip": {"method": "two-sided Monte Carlo root-cluster sign flip, signs independently flipped within strata, plus-one p-value", "assignments": 100000, "seed": 4200000081},
+    "secondary_family": "four exact per-stratum two-sided sign-flip tests, 2^7 assignments each; Holm correction; descriptive percentile root-cluster intervals use the prespecified bootstrap stream",
+    "calibration_interval": {"method": "percentile bootstrap of calibration rows conditional on frozen profile", "replicates_per_root": 500, "seed": 4200000082}
+  },
+  "success_gate": {
+    "nonzero_probability_estimation_mae_max": 0.0025,
+    "nonzero_probability_estimation_absolute_bias_max": 0.0015,
+    "within_0.005_roots_min_per_nonzero_stratum": 5,
+    "primary_mean_ler_difference_max": -0.0002,
+    "primary_95_ci_upper_max": 0.0,
+    "favorable_nonzero_strata_min": 4,
+    "nonzero_stratum_harm_max": 0.0002,
+    "zero_stratum_one_sided_95_ci_upper_max": 0.0002,
+    "median_decoder_rebuild_seconds_max": 1.0,
+    "peak_rss_bytes_max": 2147483648
+  },
+  "resources": {"wall_seconds_max": 1800, "peak_rss_bytes_max": 2147483648, "cuda_required": false},
+  "independent_test": {"allocated": false, "accessed": false, "enumerated": false},
+  "claims_boundary": "development-only synthetic-noise evaluation; no hardware claim and no independent confirmation"
+}
