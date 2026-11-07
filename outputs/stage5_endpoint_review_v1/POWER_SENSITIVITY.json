@@ -1,0 +1,343 @@
+{
+  "status": "prospective design calculations only; no Stage 5 sampling",
+  "source": "outputs\\stage5_preexecution_v1\\POWER_RECOMPUTATION.json",
+  "source_scope": "four nonzero-stratum root-level SDs from prior development summaries; n=7 roots per source cell",
+  "sd_by_probability": {
+    "0.004": 0.0008141603913585719,
+    "0.008": 0.0009641181512261915,
+    "0.012": 0.0010690449676496975,
+    "0.016": 0.001969288002831287
+  },
+  "equal_stratum_se_constant_k": 0.0006429100507328637,
+  "se_formula": "SE(Delta)=sqrt(sum_j sigma_j^2 / (16*n)) = K/sqrt(n), with four equally weighted nonzero strata and n independent roots per stratum",
+  "shots_per_root_total_across_five_conditions": 22500,
+  "current_candidate_allocation": {
+    "roots_per_stratum": 100,
+    "total_shots": 2250000,
+    "hard_cap": 2500000,
+    "maximum_roots_per_stratum_under_cap": 111,
+    "max_allocation_shots": 2497500
+  },
+  "endpoint_A": {
+    "estimand": "equal-weight mean of four nonzero-stratum root-paired (adaptive - fixed) LER differences",
+    "test": "one-sided alpha=0.05 test of H0: Delta >= 0 against Delta < 0",
+    "true_effect": -0.0002,
+    "roots_per_nonzero_stratum": 100,
+    "estimated_se": 6.429100507328637e-05,
+    "power_one_sided": 0.9286760550690758,
+    "power_two_sided_alpha_0_05_sensitivity": 0.8751116781343911,
+    "probability_point_estimate_at_or_below_minus_0_0002_when_true_effect_is_exactly_minus_0_0002": 0.5,
+    "interpretation": "The practical threshold is not the null. Report the estimate and interval against -0.0002 separately; at the boundary the estimate falls on either side with probability about one half."
+  },
+  "endpoint_B": {
+    "estimand": "equal-weight mean of four nonzero-stratum root-paired (adaptive - fixed) LER differences",
+    "test": "one-sided alpha=0.05 test of H0: Delta >= -0.0002 against Delta < -0.0002",
+    "power_at_current_100_roots": [
+      {
+        "true_delta": -0.00030000000000000003,
+        "gap_beyond_margin": 0.0001,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.46437164689922006
+      },
+      {
+        "true_delta": -0.0004,
+        "gap_beyond_margin": 0.0002,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.9286760550690758
+      },
+      {
+        "true_delta": -0.0005,
+        "gap_beyond_margin": 0.0003,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.9987420768258457
+      }
+    ],
+    "heterogeneity_sensitivity_at_current_100_roots": [
+      {
+        "gap_beyond_margin": 0.0001,
+        "true_delta": -0.00030000000000000003,
+        "sd_inflation_factor": 1.0,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.46437164689922006
+      },
+      {
+        "gap_beyond_margin": 0.0001,
+        "true_delta": -0.00030000000000000003,
+        "sd_inflation_factor": 1.25,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.34438987314672775
+      },
+      {
+        "gap_beyond_margin": 0.0001,
+        "true_delta": -0.00030000000000000003,
+        "sd_inflation_factor": 1.5,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.2716262589917552
+      },
+      {
+        "gap_beyond_margin": 0.0001,
+        "true_delta": -0.00030000000000000003,
+        "sd_inflation_factor": 2.0,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.19293269262508428
+      },
+      {
+        "gap_beyond_margin": 0.0002,
+        "true_delta": -0.0004,
+        "sd_inflation_factor": 1.0,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.9286760550690758
+      },
+      {
+        "gap_beyond_margin": 0.0002,
+        "true_delta": -0.0004,
+        "sd_inflation_factor": 1.25,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.8006179186526131
+      },
+      {
+        "gap_beyond_margin": 0.0002,
+        "true_delta": -0.0004,
+        "sd_inflation_factor": 1.5,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.6660564945386609
+      },
+      {
+        "gap_beyond_margin": 0.0002,
+        "true_delta": -0.0004,
+        "sd_inflation_factor": 2.0,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.46437164689922006
+      },
+      {
+        "gap_beyond_margin": 0.0003,
+        "true_delta": -0.0005,
+        "sd_inflation_factor": 1.0,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.9987420768258457
+      },
+      {
+        "gap_beyond_margin": 0.0003,
+        "true_delta": -0.0005,
+        "sd_inflation_factor": 1.25,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.9816088603246416
+      },
+      {
+        "gap_beyond_margin": 0.0003,
+        "true_delta": -0.0005,
+        "sd_inflation_factor": 1.5,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.9286760550690758
+      },
+      {
+        "gap_beyond_margin": 0.0003,
+        "true_delta": -0.0005,
+        "sd_inflation_factor": 2.0,
+        "roots_per_stratum": 100,
+        "power_one_sided_alpha_0_05": 0.7543641827335072
+      }
+    ],
+    "roots_and_shots_for_planning_gaps": [
+      {
+        "gap_beyond_margin": 0.0001,
+        "true_delta": -0.00030000000000000003,
+        "sd_inflation_factor": 1.0,
+        "target_power": 0.8,
+        "roots_per_stratum": 256,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 5760000
+      },
+      {
+        "gap_beyond_margin": 0.0001,
+        "true_delta": -0.00030000000000000003,
+        "sd_inflation_factor": 1.0,
+        "target_power": 0.9,
+        "roots_per_stratum": 354,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 7965000
+      },
+      {
+        "gap_beyond_margin": 0.0001,
+        "true_delta": -0.00030000000000000003,
+        "sd_inflation_factor": 1.25,
+        "target_power": 0.8,
+        "roots_per_stratum": 400,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 9000000
+      },
+      {
+        "gap_beyond_margin": 0.0001,
+        "true_delta": -0.00030000000000000003,
+        "sd_inflation_factor": 1.25,
+        "target_power": 0.9,
+        "roots_per_stratum": 554,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 12465000
+      },
+      {
+        "gap_beyond_margin": 0.0001,
+        "true_delta": -0.00030000000000000003,
+        "sd_inflation_factor": 1.5,
+        "target_power": 0.8,
+        "roots_per_stratum": 575,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 12937500
+      },
+      {
+        "gap_beyond_margin": 0.0001,
+        "true_delta": -0.00030000000000000003,
+        "sd_inflation_factor": 1.5,
+        "target_power": 0.9,
+        "roots_per_stratum": 797,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 17932500
+      },
+      {
+        "gap_beyond_margin": 0.0001,
+        "true_delta": -0.00030000000000000003,
+        "sd_inflation_factor": 2.0,
+        "target_power": 0.8,
+        "roots_per_stratum": 1023,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 23017500
+      },
+      {
+        "gap_beyond_margin": 0.0001,
+        "true_delta": -0.00030000000000000003,
+        "sd_inflation_factor": 2.0,
+        "target_power": 0.9,
+        "roots_per_stratum": 1416,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 31860000
+      },
+      {
+        "gap_beyond_margin": 0.0002,
+        "true_delta": -0.0004,
+        "sd_inflation_factor": 1.0,
+        "target_power": 0.8,
+        "roots_per_stratum": 64,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 1440000
+      },
+      {
+        "gap_beyond_margin": 0.0002,
+        "true_delta": -0.0004,
+        "sd_inflation_factor": 1.0,
+        "target_power": 0.9,
+        "roots_per_stratum": 89,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 2002500
+      },
+      {
+        "gap_beyond_margin": 0.0002,
+        "true_delta": -0.0004,
+        "sd_inflation_factor": 1.25,
+        "target_power": 0.8,
+        "roots_per_stratum": 100,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 2250000
+      },
+      {
+        "gap_beyond_margin": 0.0002,
+        "true_delta": -0.0004,
+        "sd_inflation_factor": 1.25,
+        "target_power": 0.9,
+        "roots_per_stratum": 139,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 3127500
+      },
+      {
+        "gap_beyond_margin": 0.0002,
+        "true_delta": -0.0004,
+        "sd_inflation_factor": 1.5,
+        "target_power": 0.8,
+        "roots_per_stratum": 144,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 3240000
+      },
+      {
+        "gap_beyond_margin": 0.0002,
+        "true_delta": -0.0004,
+        "sd_inflation_factor": 1.5,
+        "target_power": 0.9,
+        "roots_per_stratum": 200,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 4500000
+      },
+      {
+        "gap_beyond_margin": 0.0002,
+        "true_delta": -0.0004,
+        "sd_inflation_factor": 2.0,
+        "target_power": 0.8,
+        "roots_per_stratum": 256,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 5760000
+      },
+      {
+        "gap_beyond_margin": 0.0002,
+        "true_delta": -0.0004,
+        "sd_inflation_factor": 2.0,
+        "target_power": 0.9,
+        "roots_per_stratum": 354,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 7965000
+      },
+      {
+        "gap_beyond_margin": 0.0003,
+        "true_delta": -0.0005,
+        "sd_inflation_factor": 1.0,
+        "target_power": 0.8,
+        "roots_per_stratum": 29,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 652500
+      },
+      {
+        "gap_beyond_margin": 0.0003,
+        "true_delta": -0.0005,
+        "sd_inflation_factor": 1.0,
+        "target_power": 0.9,
+        "roots_per_stratum": 40,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 900000
+      },
+      {
+        "gap_beyond_margin": 0.0003,
+        "true_delta": -0.0005,
+        "sd_inflation_factor": 1.25,
+        "target_power": 0.8,
+        "roots_per_stratum": 45,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 1012500
+      },
+      {
+        "gap_beyond_margin": 0.0003,
+        "true_delta": -0.0005,
+        "sd_inflation_factor": 1.25,
+        "target_power": 0.9,
+        "roots_per_stratum": 62,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 1395000
+      },
+      {
+        "gap_beyond_margin": 0.0003,
+        "true_delta": -0.0005,
+        "sd_inflation_factor": 1.5,
+        "target_power": 0.8,
+        "roots_per_stratum": 64,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 1440000
+      },
+      {
+        "gap_beyond_margin": 0.0003,
+        "true_delta": -0.0005,
+        "sd_inflation_factor": 1.5,
+        "target_power": 0.9,
+        "roots_per_stratum": 89,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 2002500
+      },
+      {
+        "gap_beyond_margin": 0.0003,
+        "true_delta": -0.0005,
+        "sd_inflation_factor": 2.0,
+        "target_power": 0.8,
+        "roots_per_stratum": 114,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 2565000
+      },
+      {
+        "gap_beyond_margin": 0.0003,
+        "true_delta": -0.0005,
+        "sd_inflation_factor": 2.0,
+        "target_power": 0.9,
+        "roots_per_stratum": 158,
+        "total_unique_shots_at_five_strata_and_4500_shots_per_root": 3555000
+      }
+    ],
+    "interpretation": "Power is defined at alternatives a prespecified distance beyond the margin; at the null boundary, type-I error is alpha, not a meaningful power target."
+  },
+  "assumptions_and_limits": [
+    "Independent roots within each probability stratum; paired decoder predictions are reduced to one root-level LER difference.",
+    "Normal-theory planning approximation for the stratified mean; variance inputs are sample SDs from only seven roots per cell.",
+    "No guarantee that future root heterogeneity, skewness, ties, or calibration-induced dependence match development data.",
+    "The 2.5-million-shot cap permits at most 111 roots per each of five strata, insufficient for 80% power at a 0.0001 gap beyond the practical margin even under the nominal SD inputs."
+  ]
+}

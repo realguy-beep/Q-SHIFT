@@ -1,0 +1,20 @@
+{
+  "study": "Q-SHIFT disposable full-pipeline throughput/resume benchmark",
+  "status": "non-Stage-5 engineering benchmark only",
+  "probabilities": [0.0, 0.004, 0.008, 0.012, 0.016],
+  "roots_per_probability": 10,
+  "calibration_shots_per_root": 2000,
+  "paired_evaluation_shots_per_root": 2500,
+  "total_roots": 50,
+  "total_calibration_shots": 100000,
+  "total_evaluation_shots": 125000,
+  "total_unique_shots": 225000,
+  "decoder_arms": ["fixed_nominal", "profile_adaptive", "privileged_true_probability_reference"],
+  "circuit": {"memory_basis": "z", "distance": 3, "rounds": 5, "gate_p": 0.003, "measurement_p": 0.003, "bias_ratio": 10.0, "burst_pair": [8, 10]},
+  "seed_allocation": {"base": 8620000001, "formula": "calibration=base+2*(probability_index*roots_per_probability+root); evaluation=calibration+1"},
+  "resources": {"rss_limit_bytes": 2147483648, "disk_min_free_bytes": 536870912},
+  "resume_validation": {"first_invocation_root_limit": 7, "expected_first_invocation_status": "paused_benchmark_limit", "second_invocation": "resume to all 50 roots; preserve all completed archive hashes"},
+  "independent_test_access": false,
+  "stage5_sampling": false,
+  "use": "latency, storage, memory and atomic checkpoint/resume validation; no efficacy or confirmatory inference"
+}

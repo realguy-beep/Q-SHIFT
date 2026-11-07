@@ -1,0 +1,52 @@
+{
+  "study": "Q-SHIFT Stage 5 endpoint B design validation v1",
+  "status": "prespecified design simulation; not Stage 5 sampling",
+  "primary": {
+    "estimand": "equal-weight mean of root-level paired adaptive-minus-fixed LER differences across p=0.004,0.008,0.012,0.016",
+    "null_boundary": -0.0002,
+    "one_sided_alpha": 0.05,
+    "roots_per_nonzero_stratum": 256,
+    "alternatives": [-0.0002, -0.0003, -0.0004, -0.0005],
+    "condition_specific_null_offsets": [-0.00015, -0.00005, 0.00005, 0.00015]
+  },
+  "sd_by_nonzero_probability": {
+    "0.004": 0.0008141603913585719,
+    "0.008": 0.0009641181512261915,
+    "0.012": 0.0010690449676496975,
+    "0.016": 0.001969288002831287
+  },
+  "scenarios": [
+    {"name": "normal_q1", "distribution": "normal", "sd_multiplier": 1.0},
+    {"name": "normal_q1_5", "distribution": "normal", "sd_multiplier": 1.5},
+    {"name": "normal_q2", "distribution": "normal", "sd_multiplier": 2.0},
+    {"name": "student_t5_q1_5", "distribution": "student_t5", "sd_multiplier": 1.5},
+    {"name": "right_skew_lognormal_q1_5", "distribution": "lognormal_sigma1", "sd_multiplier": 1.5},
+    {"name": "zero_inflated65_q1_5", "distribution": "zero_inflated_normal65", "sd_multiplier": 1.5},
+    {"name": "stratum_offset_null_q1_5", "distribution": "normal", "sd_multiplier": 1.5, "mean_offsets": [-0.00015, -0.00005, 0.00005, 0.00015]}
+  ],
+  "welch_monte_carlo_replicates_per_scenario_effect": 10000,
+  "welch_batch_size": 250,
+  "bootstrap_t_scenarios": ["normal_q1_5", "right_skew_lognormal_q1_5", "zero_inflated65_q1_5"],
+  "bootstrap_t_outer_replicates_per_null_scenario": 1000,
+  "bootstrap_t_inner_replicates": 399,
+  "bootstrap_t_batch_size": 4,
+  "rng": {
+    "welch_seed_base": 8600000001,
+    "bootstrap_seed_base": 8600100001,
+    "p0_seed_base": 8600200001,
+    "bit_generator": "PCG64"
+  },
+  "zero_burst_no_harm": {
+    "roots": 256,
+    "harm_margin": 0.0002,
+    "true_effects": [0.0, 0.0002],
+    "distribution_scenarios": ["normal", "zero_inflated65"],
+    "sd": 0.00015118578920369095,
+    "sd_multipliers": [1.0, 1.5, 2.0],
+    "source": "larger observed p=0 root SD from Stage 4 development (7 roots); Stage 4C p=0 observed SD was 0 across 7 roots"
+  },
+  "shots_per_root": {"calibration": 2000, "evaluation": 2500},
+  "five_stratum_total_shots_at_256_roots": 5760000,
+  "monte_carlo_interval": "two-sided 95% Wilson interval for simulated rejection/coverage proportions",
+  "scope": "synthetic root-effect design simulation only; no Stim samples and no Stage 5 evaluation samples"
+}
