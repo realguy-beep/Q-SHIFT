@@ -1,0 +1,73 @@
+{
+  "phase": "Q-SHIFT Stage 4 noise-adaptive hybrid decoder feasibility pilot",
+  "version": "1.0",
+  "status": "FROZEN_BEFORE_SAMPLING",
+  "scope": "Small detector-only identifiability and decoder-rebuild feasibility pilot; not the full Stage 4 experiment",
+  "circuit": {
+    "generator": "outputs/phase3a_correlated_noise_preflight/simulator.py::build_spatial_burst_circuit",
+    "base_generator": "outputs/phase2b_pauli_bias/noise_model.py::build_circuit",
+    "memory_basis": "z",
+    "distance": 3,
+    "rounds": 5,
+    "detectors": 40,
+    "observables": 1,
+    "pauli_regime": "balanced",
+    "gate_probability": 0.003,
+    "measurement_probability": 0.003,
+    "bias_ratio": 10.0,
+    "burst_pair_data_qubits": [8, 10],
+    "injection": "Independent Stim CORRELATED_ERROR XX at each of five MR boundaries",
+    "dem": {
+      "decompose_errors": true,
+      "approximate_disjoint_errors": true,
+      "pymatching_enable_correlations": true
+    }
+  },
+  "estimator": {
+    "name": "detector-profile-moment interpolation",
+    "inference_inputs": ["independent calibration batch detector bits only"],
+    "forbidden_inputs": ["observable labels", "burst event flags", "true generating probability", "evaluation detector samples"],
+    "features": "40 detector marginal rates plus co-occurrence rates for the five DEM-verified burst detector pairs",
+    "profile_probabilities": [0.002, 0.01, 0.018],
+    "estimation": "piecewise-linear interpolation of development profile means; probability selected by minimum diagonal-variance-standardized squared distance on a 0.00001 grid",
+    "calibration_shots_per_profile_batch": 2000,
+    "profile_replicates_per_probability": 2,
+    "bootstrap_replicates": 500,
+    "bootstrap_rng_seed": 4100000019,
+    "confidence_interval": "percentile 95% bootstrap interval over rows within the independent calibration batch; diagnostic only"
+  },
+  "pilot": {
+    "unseen_evaluation_probabilities": [0.006, 0.014],
+    "independent_roots_per_probability": 3,
+    "calibration_shots_per_root": 2000,
+    "paired_evaluation_shots_per_root": 4000,
+    "unique_profile_calibration_shots": 12000,
+    "unique_unseen_condition_calibration_shots": 12000,
+    "unique_paired_evaluation_shots": 24000,
+    "maximum_unique_shots": 48000,
+    "comparison_arms": ["fixed nominal PyMatching p_burst=0", "detector-estimated p_burst PyMatching", "privileged true-p PyMatching reference"],
+    "same_evaluation_detectors_and_observable_labels_across_arms": true,
+    "performance_inference": "descriptive feasibility only; no confirmatory significance claim"
+  },
+  "random_streams": {
+    "allocation_rule": "sequential unique stream IDs listed in seed_inventory.json; no derived or reused offsets",
+    "maximum_stim_seed": 4100000018,
+    "no_test_seed_or_partition_allocated": true
+  },
+  "decision_rules": {
+    "full_stage4_authorization": "not granted by this pilot",
+    "cnn_noise_estimator": "do not implement unless the scalar statistical estimator shows identifiability but leaves a demonstrated, decoder-relevant estimation limitation",
+    "pilot_interpretation": "report probability-estimation error, paired LER differences, decoder disagreements, and runtime; do not select a favorable model based on evaluation labels"
+  },
+  "resources": {
+    "wall_time_limit_seconds": 900,
+    "maximum_ram_gib": 2.0,
+    "maximum_cuda_time_seconds": 0,
+    "device_policy": "CPU Stim/PyMatching feasibility pilot; no neural training"
+  },
+  "test_isolation": {
+    "stage2_stage3_final_development_reuse": false,
+    "independent_test_accessed": false,
+    "independent_test_data_enumerated": false
+  }
+}
