@@ -1,0 +1,173 @@
+{
+  "study": "Q-SHIFT CNN architecture Stage 2 development comparison",
+  "protocol_version": "1.0-prospective-freeze",
+  "status": "FROZEN_NOT_EXECUTED",
+  "scientific_scope": "development-only comparison; no confirmatory claim; no independent-test access",
+  "circuit": {
+    "generator": "outputs/phase3a_correlated_noise_preflight/simulator.py wrapping outputs/phase2b_pauli_bias/noise_model.py",
+    "memory_basis": "z",
+    "distance": 3,
+    "rounds": 5,
+    "detectors": 40,
+    "observables": 1,
+    "pauli_regime": "balanced",
+    "gate_probability": 0.003,
+    "measurement_probability": 0.003,
+    "bias_ratio": 10.0,
+    "conditions": {
+      "nominal": {
+        "burst_probability_per_round": 0.0,
+        "burst_pair_data_qubits": [8, 10]
+      },
+      "synthetic_spatial_burst": {
+        "burst_probability_per_round": 0.01,
+        "burst_pair_data_qubits": [8, 10],
+        "injection": "CORRELATED_ERROR X on data qubits 8 and 10 after each MR boundary"
+      }
+    },
+    "dem_conversion": {
+      "decompose_errors": true,
+      "approximate_disjoint_errors": true,
+      "matching_correlations_enabled": true
+    }
+  },
+  "roots": {
+    "count": 5,
+    "ids": ["dev-root-00", "dev-root-01", "dev-root-02", "dev-root-03", "dev-root-04"],
+    "seed_inventory": "seed_inventory.json"
+  },
+  "shots_per_root_condition": {
+    "training": 10000,
+    "monitor": 2000,
+    "probability_calibration": 2000,
+    "threshold_selection": 2000,
+    "final_development_evaluation": 10000
+  },
+  "conditions_per_root": 2,
+  "total_unique_shot_ceiling": 260000,
+  "total_unique_shots_planned": 260000,
+  "total_unique_shots_by_split": {
+    "training": 100000,
+    "monitor": 20000,
+    "probability_calibration": 20000,
+    "threshold_selection": 20000,
+    "final_development_evaluation": 100000
+  },
+  "models": [
+    {
+      "name": "historical_residual_position_cnn",
+      "source": "outputs/neural_decoder_diagnostic/autonomous_development/experiment.py",
+      "parameters_reference": 13429,
+      "role": "historical architecture comparator"
+    },
+    {
+      "name": "residual_position_v2",
+      "source": "outputs/cnn_architecture_stage1_v1/cnn_architectures.py",
+      "parameters_reference": 13041,
+      "role": "primary architecture candidate"
+    },
+    {
+      "name": "factorized_spatiotemporal_residual",
+      "source": "outputs/cnn_architecture_stage1_v1/cnn_architectures.py",
+      "parameters_reference": 12653,
+      "role": "secondary architecture candidate"
+    }
+  ],
+  "decoder_baselines": {
+    "nominal_fixed_pymatching": {
+      "circuit": "nominal condition; no cross-location burst",
+      "enable_correlations": true,
+      "used_as_residual_reference_for_all_cnn_models": true
+    },
+    "burst_informed_pymatching": {
+      "circuit": "synthetic spatial burst condition with p=0.01 at the declared pair and round boundaries",
+      "enable_correlations": true,
+      "scored_on": "synthetic_spatial_burst only",
+      "information_status": "privileged model-informed reference; receives the generating burst specification"
+    }
+  },
+  "training": {
+    "target": "observable XOR nominal_fixed_pymatching_prediction",
+    "final_prediction": "nominal_fixed_pymatching_prediction XOR thresholded_residual_prediction",
+    "inference_inputs": ["40 detector bits in the real Stim geometry", "nominal fixed PyMatching prediction"],
+    "forbidden_inference_inputs": ["observable label", "condition label", "burst flag", "future samples"],
+    "condition_pooling": "10,000 training shots from each condition per root; equal-condition pooled data; condition is sampler/stratification metadata only and is not a model input",
+    "unique_training_shots_per_model_across_roots": 100000,
+    "same_training_arrays_shared_by_all_models": true,
+    "balanced_minibatches": true,
+    "balancing_scope": "separately within each condition, using the residual target; replacement is allowed for a rare class",
+    "natural_prevalence_logit_correction": "add logit of the pooled natural residual prevalence measured on that root's training data, as in the historical training implementation",
+    "batch_size": 256,
+    "optimizer": "AdamW",
+    "learning_rate": 0.003,
+    "weight_decay": 0.0001,
+    "scheduler": {"type": "StepLR", "step_size_epochs": 5, "gamma": 0.5},
+    "maximum_epochs": 10,
+    "early_stopping_patience": 3,
+    "checkpoint_selection": "minimum equal-condition monitor NLL; restore best weights before calibration/threshold selection",
+    "expected_optimizer_steps_per_epoch": 80,
+    "maximum_optimizer_steps_per_model_root": 800,
+    "maximum_optimizer_steps_across_15_model_root_jobs": 12000
+  },
+  "selection": {
+    "temperature_grid": [0.5, 0.7, 0.85, 1.0, 1.2, 1.5, 2.0, 3.0, 4.0],
+    "temperature_objective": "minimum equal-condition calibration NLL; ties prefer temperature nearest 1.0, then lower value",
+    "threshold_grid": "0.01 through 0.99 inclusive in increments of 0.01",
+    "threshold_objective": "minimum equal-condition threshold-selection logical error rate; ties prefer threshold nearest 0.5, then lower value",
+    "partition_order": ["training", "monitor", "probability_calibration", "threshold_selection", "final_development_evaluation"],
+    "final_development_rule": "load final-development labels only after model checkpoint, temperature, and threshold are persisted; score exactly once; no choices updated afterward"
+  },
+  "analysis": {
+    "primary_model": "residual_position_v2",
+    "primary_comparison": "equal-condition, per-root paired LER difference (primary CNN minus nominal_fixed_pymatching)",
+    "root_level_interval": "two-sided Student-t 95% interval across five independent root-level paired effects; descriptive feasibility interval only",
+    "shot_level_reporting": ["raw observable errors", "residual logical errors", "candidate-only failures", "PyMatching-only failures", "paired prediction disagreements", "positive precision and recall", "Brier score", "NLL"],
+    "secondary_models": ["historical_residual_position_cnn", "factorized_spatiotemporal_residual"],
+    "secondary_inference": "descriptive paired effects and root-level intervals; no superiority claim or post-hoc winner selection",
+    "development_gate": {
+      "primary_model_only": true,
+      "equal_condition_mean_ler_improvement_minimum": 0.0002,
+      "favorable_root_count_minimum": 4,
+      "maximum_allowed_harm_in_either_condition": 0.0002,
+      "interpretation": "development feasibility gate only; passing does not establish statistical superiority or authorize independent-test access"
+    },
+    "burst_reference": "compare and report only on burst-condition paired shots; it is privileged and not deployable without the burst specification"
+  },
+  "rare_residual_target_safeguards": {
+    "minimum_unique_training_residual_positives_per_root_condition": 20,
+    "action_if_below_minimum": "stop before fitting that root; do not top up, resample, or inspect final-development labels",
+    "report": ["natural residual prevalence", "unique positive count", "balanced-sampler positive draws", "positive-example reuse ratio", "per-condition monitor/calibration/threshold positive counts"],
+    "limitation": "balanced sampling can repeatedly reuse rare positive examples; monitor NLL and early stopping do not remove this sampling-variance risk"
+  },
+  "resources": {
+    "maximum_wall_seconds": 21600,
+    "maximum_measured_cuda_training_validation_seconds": 14400,
+    "minimum_free_disk_gib_before_sampling": 2.0,
+    "maximum_process_rss_gib": 3.0,
+    "maximum_cuda_allocated_gib": 4.0,
+    "hardware_reference": "RTX 4050 Laptop GPU 6 GB; no throughput claim until an execution dry run is completed",
+    "device_policy": "CUDA required; no silent CPU fallback",
+    "software_reference_from_stage1_preflight": {
+      "python": "3.12.10",
+      "torch": "2.14.1+cu126",
+      "stim": "1.16.0",
+      "pymatching": "2.4.0",
+      "cuda_available": true,
+      "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU"
+    },
+    "shot_ceiling_includes_all_five_partitions": true,
+    "automatic_scale_up": false
+  },
+  "independent_test": {
+    "seed_allocated": false,
+    "samples_generated": false,
+    "access_permitted": false
+  },
+  "prohibitions": [
+    "no training or sampling before a separate execution authorization and runner validation",
+    "no changes to historical artifacts",
+    "no model selection on final-development data",
+    "no independent-test access",
+    "no claim of superiority from this development study"
+  ]
+}
