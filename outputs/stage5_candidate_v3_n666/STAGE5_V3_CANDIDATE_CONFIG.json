@@ -1,0 +1,17 @@
+{
+  "study": "Q-SHIFT Stage 5 candidate v3, 666 roots/condition",
+  "status": "review candidate only; NOT authorized to sample",
+  "circuit": {"memory_basis":"z","regime":"balanced","distance":3,"rounds":5,"detectors":40,"observables":1,"gate_p":0.003,"measurement_p":0.003,"bias_ratio":10.0,"burst_pair":[8,10],"dem":{"decompose_errors":true,"approximate_disjoint_errors":true,"enable_correlations":true}},
+  "probabilities": [0.0,0.004,0.008,0.012,0.016],
+  "roots_per_condition": 666,
+  "calibration_shots_per_root": 2000,
+  "evaluation_shots_per_root": 2500,
+  "allocation": {"roots":3330,"calibration_shots":6660000,"evaluation_shots":8325000,"unique_shots":14985000},
+  "decoder_arms": ["fixed_nominal_pymatching","frozen_detector_profile_adaptive_pymatching","privileged_true_probability_reference"],
+  "primary_inference": {"endpoint":"equal-weight mean of p=.004,.008,.012,.016 root-paired adaptive-minus-fixed LER differences","null_boundary":-0.0002,"one_sided_alpha":0.05,"studentized_cutoff":1.8346,"central_lower_cutoff":2.1907,"central_upper_cutoff":1.9996,"p0_no_harm_boundary":0.0002,"p0_one_sided_cutoff":1.7267306836702327,"source_design_freeze":"outputs/stage5_design_validation_v2/DESIGN_VALIDATION_FREEZE.json","source_simulation_result":"outputs/stage5_design_validation_v2/DESIGN_SIMULATION_RESULTS.json","scope":"finite prespecified root-effect distribution envelope only; no distribution-free guarantee"},
+  "secondary": {"four_nonzero_conditions":"one Holm family; per-condition estimates are descriptive unless the candidate inferential method is separately validated for secondary claims"},
+  "resources": {"max_unique_shots":14985000,"wall_seconds_max":7200,"rss_bytes_max":2147483648,"free_disk_min_bytes":536870912},
+  "sampling_guard": {"requires_flags":["--run","--authorize-stage5-sampling"],"separate_explicit_user_authorization_required":true},
+  "data_boundary": {"stage5_shots_generated":0,"sealed_historical_test_accessed":false,"stage4c_modified":false,"website_worktree_modified":false},
+  "power_warning": "No candidate allocation in the 13-15M range met the predeclared 80% lower-Wilson power target at Delta=-0.0003 across all required 1.5x scenarios. This runner is prepared for review only and is not recommended for sampling."
+}

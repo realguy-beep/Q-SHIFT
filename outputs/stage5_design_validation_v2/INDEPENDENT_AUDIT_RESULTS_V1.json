@@ -1,0 +1,88 @@
+{
+  "audit": "independent recomputation of simulation aggregates and independent RNG family checks",
+  "stage5_evaluation_shots_generated": 0,
+  "sealed_historical_test_accessed": false,
+  "freeze_sha256": "024725f3358638ad30dc8abcb51fd68aaf3096ed7b5a4df0df3464844d79034b",
+  "source_hashes_checked": 9,
+  "primary_validation_cells_recomputed": 33,
+  "independent_generator_checks": [
+    {
+      "family": "normal",
+      "seed": 9000000169,
+      "draws_per_condition": 250000,
+      "max_abs_mean_error": 4.514296582705543e-06,
+      "max_relative_sd_error": 0.0016390297809395493,
+      "empirical_zero_mass": null
+    },
+    {
+      "family": "student_t5",
+      "seed": 9000000170,
+      "draws_per_condition": 250000,
+      "max_abs_mean_error": 2.5272621450289217e-06,
+      "max_relative_sd_error": 0.002797163559454807,
+      "empirical_zero_mass": null
+    },
+    {
+      "family": "student_t3",
+      "seed": 9000000171,
+      "draws_per_condition": 250000,
+      "max_abs_mean_error": 6.124265597855488e-06,
+      "max_relative_sd_error": 0.017644648193684165,
+      "empirical_zero_mass": null
+    },
+    {
+      "family": "lognormal_sigma1",
+      "seed": 9000000172,
+      "draws_per_condition": 250000,
+      "max_abs_mean_error": 4.700829984168876e-06,
+      "max_relative_sd_error": 0.014957805823056503,
+      "empirical_zero_mass": null
+    },
+    {
+      "family": "zero_inflated65_normal",
+      "seed": 9000000173,
+      "draws_per_condition": 250000,
+      "max_abs_mean_error": 4.06729651179358e-06,
+      "max_relative_sd_error": 0.002903954250750962,
+      "empirical_zero_mass": 0.650309
+    },
+    {
+      "family": "tied_asymmetric65",
+      "seed": 9000000174,
+      "draws_per_condition": 250000,
+      "max_abs_mean_error": 2.9397622917206115e-06,
+      "max_relative_sd_error": 0.003849727131512326,
+      "empirical_zero_mass": 0.650484
+    }
+  ],
+  "decision": {
+    "type1_pass": true,
+    "one_sided_coverage_pass": true,
+    "central_coverage_pass": true,
+    "p0_type1_pass": true,
+    "p0_upper_coverage_pass": true,
+    "inference_pass": true,
+    "power_gate_by_allocation": [
+      {
+        "n": 578,
+        "required_scenarios": 5,
+        "all_required_power_lower_bounds_at_least_0_80": false
+      },
+      {
+        "n": 640,
+        "required_scenarios": 5,
+        "all_required_power_lower_bounds_at_least_0_80": false
+      },
+      {
+        "n": 666,
+        "required_scenarios": 5,
+        "all_required_power_lower_bounds_at_least_0_80": false
+      }
+    ],
+    "smallest_allocation_meeting_power_gate": null
+  },
+  "limits": [
+    "Does not independently rerun every 100k-cell Monte Carlo stream.",
+    "Validation supports only the finite prespecified simulation envelope, not arbitrary root-effect distributions."
+  ]
+}

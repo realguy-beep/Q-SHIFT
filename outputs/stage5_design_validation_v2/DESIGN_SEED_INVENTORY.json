@@ -1,0 +1,954 @@
+{
+  "purpose": "synthetic statistical design validation only; never Stage 5 Stim sampling",
+  "stage5_evaluation_seeds_allocated": false,
+  "stage5_evaluation_shots_generated": 0,
+  "sealed_historical_test_accessed": false,
+  "historical_coverage": "Explicit, nonsealed seed/config/result metadata listed below; sealed test arrays/directories are excluded and not opened.",
+  "historical_sources_checked": [
+    {
+      "path": "outputs/stage4_noise_adaptive_development_v1/seed_inventory.json",
+      "sha256": "71f39c91aa473080cc2efb92cded670ab1ebb7baeb5a14d94d61e6d96708c04d",
+      "integer_values_ge_1m_scanned": 82
+    },
+    {
+      "path": "outputs/stage4_noise_adaptive_development_v1/seed_audit.json",
+      "sha256": "b2380d2632ba78520d69d97305db5df539510a4745465eaefd8a7040ae017518",
+      "integer_values_ge_1m_scanned": 0
+    },
+    {
+      "path": "outputs/stage4_noise_adaptive_development_v1/additional_development_seed_audit.json",
+      "sha256": "b2e9e5c6b3ccad52e9d4d0ce0361ff2f08399e2730fba06cae47cd2b9a81275c",
+      "integer_values_ge_1m_scanned": 2
+    },
+    {
+      "path": "outputs/stage4c_cnn_noise_estimation_v1/seed_inventory.json",
+      "sha256": "11646606e01e32ca17e27bdad19bb1c9403569bb6ab4ec5d6f4aef3a57a662af",
+      "integer_values_ge_1m_scanned": 557
+    },
+    {
+      "path": "outputs/stage4c_cnn_noise_estimation_v1/seed_audit.json",
+      "sha256": "f124cc62f70ab6d6fde436abc3c821f7a8fba32a556af9e12bdda5c7a600b510",
+      "integer_values_ge_1m_scanned": 2943
+    },
+    {
+      "path": "outputs/stage5_preexecution_v1/seed_inventory.json",
+      "sha256": "4f6b35738039cb8a0fa554176edb09d17bb119d85e37ed0153499fa7f59525fe",
+      "integer_values_ge_1m_scanned": 1006
+    },
+    {
+      "path": "outputs/stage5_preexecution_v1/STAGE5_V2_CONFIG.json",
+      "sha256": "691fc3003e8aeaaa2e21f00f8f8088f2728c942cf0bfab8840ceac8a0a681067",
+      "integer_values_ge_1m_scanned": 7
+    },
+    {
+      "path": "outputs/stage5_design_validation_v1/VALIDATION_SEED_INVENTORY.json",
+      "sha256": "c022579b9fd91b2f32018eea9e1127a4b07c21085e80b835fdc8e8465aed65de",
+      "integer_values_ge_1m_scanned": 112
+    },
+    {
+      "path": "outputs/stage5_design_validation_v1/DESIGN_SIMULATION_CONFIG.json",
+      "sha256": "9c9f0c8215f457af11b54e2e619b9eb854f8fe580b5f368dcde312068564d31e",
+      "integer_values_ge_1m_scanned": 4
+    },
+    {
+      "path": "outputs/stage5_design_validation_v1/DESIGN_SIMULATION_RESULTS.json",
+      "sha256": "22b127bd59ae76d300c2a9755b9b2aeca1a75d0518e85ddf3ebc476e39741682",
+      "integer_values_ge_1m_scanned": 41
+    },
+    {
+      "path": "outputs/stage5_design_validation_v1/benchmark_run/ROOT_ARCHIVE_MANIFEST.json",
+      "sha256": "5e7e5fa8d3bb0e6958f175b63cf4e576e628c5aa7cde084406b7f01d751408ce",
+      "integer_values_ge_1m_scanned": 0
+    },
+    {
+      "path": "outputs/stage5_endpoint_review_v1/POWER_SENSITIVITY.json",
+      "sha256": "0e1ee2ebd623950e067f86212180a7f9f33b83a2fe0cc369e344e6964072d2da",
+      "integer_values_ge_1m_scanned": 25
+    }
+  ],
+  "recoverable_integer_values_ge_1m_scanned": 4532,
+  "collision_count": 0,
+  "rng_stream_count": 175,
+  "rng_streams": [
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n578/normal_q1_5",
+      "seed": 9000000001
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n578/normal_q1_5",
+      "seed": 9000000002
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n578/normal_q2",
+      "seed": 9000000003
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n578/normal_q2",
+      "seed": 9000000004
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n578/student_t5_q1_5",
+      "seed": 9000000005
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n578/student_t5_q1_5",
+      "seed": 9000000006
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n578/student_t3_q2",
+      "seed": 9000000007
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n578/student_t3_q2",
+      "seed": 9000000008
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n578/right_skew_lognormal_q1_5",
+      "seed": 9000000009
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n578/right_skew_lognormal_q1_5",
+      "seed": 9000000010
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n578/right_skew_lognormal_q2",
+      "seed": 9000000011
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n578/right_skew_lognormal_q2",
+      "seed": 9000000012
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n578/zero_inflated65_q1_5",
+      "seed": 9000000013
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n578/zero_inflated65_q1_5",
+      "seed": 9000000014
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n578/zero_inflated65_q2",
+      "seed": 9000000015
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n578/zero_inflated65_q2",
+      "seed": 9000000016
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n578/tied_asymmetric65_q1_5",
+      "seed": 9000000017
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n578/tied_asymmetric65_q1_5",
+      "seed": 9000000018
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n578/tied_asymmetric65_q2",
+      "seed": 9000000019
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n578/tied_asymmetric65_q2",
+      "seed": 9000000020
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n578/balanced_offsets_normal_q1_5",
+      "seed": 9000000021
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n578/balanced_offsets_normal_q1_5",
+      "seed": 9000000022
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/normal_q1_5/delta-0.0003",
+      "seed": 9000000023
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/normal_q1_5/delta-0.0004",
+      "seed": 9000000024
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/normal_q2/delta-0.0003",
+      "seed": 9000000025
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/normal_q2/delta-0.0004",
+      "seed": 9000000026
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/student_t5_q1_5/delta-0.0003",
+      "seed": 9000000027
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/student_t5_q1_5/delta-0.0004",
+      "seed": 9000000028
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/student_t3_q2/delta-0.0003",
+      "seed": 9000000029
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/student_t3_q2/delta-0.0004",
+      "seed": 9000000030
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/right_skew_lognormal_q1_5/delta-0.0003",
+      "seed": 9000000031
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/right_skew_lognormal_q1_5/delta-0.0004",
+      "seed": 9000000032
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/right_skew_lognormal_q2/delta-0.0003",
+      "seed": 9000000033
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/right_skew_lognormal_q2/delta-0.0004",
+      "seed": 9000000034
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/zero_inflated65_q1_5/delta-0.0003",
+      "seed": 9000000035
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/zero_inflated65_q1_5/delta-0.0004",
+      "seed": 9000000036
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/tied_asymmetric65_q1_5/delta-0.0003",
+      "seed": 9000000037
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/tied_asymmetric65_q1_5/delta-0.0004",
+      "seed": 9000000038
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/tied_asymmetric65_q2/delta-0.0003",
+      "seed": 9000000039
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n578/tied_asymmetric65_q2/delta-0.0004",
+      "seed": 9000000040
+    },
+    {
+      "stream": "p0_null_calibration",
+      "cell": "n578/normal_q1_5",
+      "seed": 9000000041
+    },
+    {
+      "stream": "p0_null_validation",
+      "cell": "n578/normal_q1_5",
+      "seed": 9000000042
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n578/normal_q1_5/effect0.0",
+      "seed": 9000000043
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n578/normal_q1_5/effect0.0001",
+      "seed": 9000000044
+    },
+    {
+      "stream": "p0_null_calibration",
+      "cell": "n578/normal_q2",
+      "seed": 9000000045
+    },
+    {
+      "stream": "p0_null_validation",
+      "cell": "n578/normal_q2",
+      "seed": 9000000046
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n578/normal_q2/effect0.0",
+      "seed": 9000000047
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n578/normal_q2/effect0.0001",
+      "seed": 9000000048
+    },
+    {
+      "stream": "p0_null_calibration",
+      "cell": "n578/zero_inflated65_q2",
+      "seed": 9000000049
+    },
+    {
+      "stream": "p0_null_validation",
+      "cell": "n578/zero_inflated65_q2",
+      "seed": 9000000050
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n578/zero_inflated65_q2/effect0.0",
+      "seed": 9000000051
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n578/zero_inflated65_q2/effect0.0001",
+      "seed": 9000000052
+    },
+    {
+      "stream": "p0_null_calibration",
+      "cell": "n578/tied_asymmetric65_q2",
+      "seed": 9000000053
+    },
+    {
+      "stream": "p0_null_validation",
+      "cell": "n578/tied_asymmetric65_q2",
+      "seed": 9000000054
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n578/tied_asymmetric65_q2/effect0.0",
+      "seed": 9000000055
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n578/tied_asymmetric65_q2/effect0.0001",
+      "seed": 9000000056
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n640/normal_q1_5",
+      "seed": 9000000057
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n640/normal_q1_5",
+      "seed": 9000000058
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n640/normal_q2",
+      "seed": 9000000059
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n640/normal_q2",
+      "seed": 9000000060
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n640/student_t5_q1_5",
+      "seed": 9000000061
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n640/student_t5_q1_5",
+      "seed": 9000000062
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n640/student_t3_q2",
+      "seed": 9000000063
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n640/student_t3_q2",
+      "seed": 9000000064
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n640/right_skew_lognormal_q1_5",
+      "seed": 9000000065
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n640/right_skew_lognormal_q1_5",
+      "seed": 9000000066
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n640/right_skew_lognormal_q2",
+      "seed": 9000000067
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n640/right_skew_lognormal_q2",
+      "seed": 9000000068
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n640/zero_inflated65_q1_5",
+      "seed": 9000000069
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n640/zero_inflated65_q1_5",
+      "seed": 9000000070
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n640/zero_inflated65_q2",
+      "seed": 9000000071
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n640/zero_inflated65_q2",
+      "seed": 9000000072
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n640/tied_asymmetric65_q1_5",
+      "seed": 9000000073
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n640/tied_asymmetric65_q1_5",
+      "seed": 9000000074
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n640/tied_asymmetric65_q2",
+      "seed": 9000000075
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n640/tied_asymmetric65_q2",
+      "seed": 9000000076
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n640/balanced_offsets_normal_q1_5",
+      "seed": 9000000077
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n640/balanced_offsets_normal_q1_5",
+      "seed": 9000000078
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/normal_q1_5/delta-0.0003",
+      "seed": 9000000079
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/normal_q1_5/delta-0.0004",
+      "seed": 9000000080
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/normal_q2/delta-0.0003",
+      "seed": 9000000081
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/normal_q2/delta-0.0004",
+      "seed": 9000000082
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/student_t5_q1_5/delta-0.0003",
+      "seed": 9000000083
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/student_t5_q1_5/delta-0.0004",
+      "seed": 9000000084
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/student_t3_q2/delta-0.0003",
+      "seed": 9000000085
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/student_t3_q2/delta-0.0004",
+      "seed": 9000000086
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/right_skew_lognormal_q1_5/delta-0.0003",
+      "seed": 9000000087
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/right_skew_lognormal_q1_5/delta-0.0004",
+      "seed": 9000000088
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/right_skew_lognormal_q2/delta-0.0003",
+      "seed": 9000000089
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/right_skew_lognormal_q2/delta-0.0004",
+      "seed": 9000000090
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/zero_inflated65_q1_5/delta-0.0003",
+      "seed": 9000000091
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/zero_inflated65_q1_5/delta-0.0004",
+      "seed": 9000000092
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/tied_asymmetric65_q1_5/delta-0.0003",
+      "seed": 9000000093
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/tied_asymmetric65_q1_5/delta-0.0004",
+      "seed": 9000000094
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/tied_asymmetric65_q2/delta-0.0003",
+      "seed": 9000000095
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n640/tied_asymmetric65_q2/delta-0.0004",
+      "seed": 9000000096
+    },
+    {
+      "stream": "p0_null_calibration",
+      "cell": "n640/normal_q1_5",
+      "seed": 9000000097
+    },
+    {
+      "stream": "p0_null_validation",
+      "cell": "n640/normal_q1_5",
+      "seed": 9000000098
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n640/normal_q1_5/effect0.0",
+      "seed": 9000000099
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n640/normal_q1_5/effect0.0001",
+      "seed": 9000000100
+    },
+    {
+      "stream": "p0_null_calibration",
+      "cell": "n640/normal_q2",
+      "seed": 9000000101
+    },
+    {
+      "stream": "p0_null_validation",
+      "cell": "n640/normal_q2",
+      "seed": 9000000102
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n640/normal_q2/effect0.0",
+      "seed": 9000000103
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n640/normal_q2/effect0.0001",
+      "seed": 9000000104
+    },
+    {
+      "stream": "p0_null_calibration",
+      "cell": "n640/zero_inflated65_q2",
+      "seed": 9000000105
+    },
+    {
+      "stream": "p0_null_validation",
+      "cell": "n640/zero_inflated65_q2",
+      "seed": 9000000106
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n640/zero_inflated65_q2/effect0.0",
+      "seed": 9000000107
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n640/zero_inflated65_q2/effect0.0001",
+      "seed": 9000000108
+    },
+    {
+      "stream": "p0_null_calibration",
+      "cell": "n640/tied_asymmetric65_q2",
+      "seed": 9000000109
+    },
+    {
+      "stream": "p0_null_validation",
+      "cell": "n640/tied_asymmetric65_q2",
+      "seed": 9000000110
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n640/tied_asymmetric65_q2/effect0.0",
+      "seed": 9000000111
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n640/tied_asymmetric65_q2/effect0.0001",
+      "seed": 9000000112
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n666/normal_q1_5",
+      "seed": 9000000113
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n666/normal_q1_5",
+      "seed": 9000000114
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n666/normal_q2",
+      "seed": 9000000115
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n666/normal_q2",
+      "seed": 9000000116
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n666/student_t5_q1_5",
+      "seed": 9000000117
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n666/student_t5_q1_5",
+      "seed": 9000000118
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n666/student_t3_q2",
+      "seed": 9000000119
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n666/student_t3_q2",
+      "seed": 9000000120
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n666/right_skew_lognormal_q1_5",
+      "seed": 9000000121
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n666/right_skew_lognormal_q1_5",
+      "seed": 9000000122
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n666/right_skew_lognormal_q2",
+      "seed": 9000000123
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n666/right_skew_lognormal_q2",
+      "seed": 9000000124
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n666/zero_inflated65_q1_5",
+      "seed": 9000000125
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n666/zero_inflated65_q1_5",
+      "seed": 9000000126
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n666/zero_inflated65_q2",
+      "seed": 9000000127
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n666/zero_inflated65_q2",
+      "seed": 9000000128
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n666/tied_asymmetric65_q1_5",
+      "seed": 9000000129
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n666/tied_asymmetric65_q1_5",
+      "seed": 9000000130
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n666/tied_asymmetric65_q2",
+      "seed": 9000000131
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n666/tied_asymmetric65_q2",
+      "seed": 9000000132
+    },
+    {
+      "stream": "primary_null_calibration",
+      "cell": "n666/balanced_offsets_normal_q1_5",
+      "seed": 9000000133
+    },
+    {
+      "stream": "primary_null_validation",
+      "cell": "n666/balanced_offsets_normal_q1_5",
+      "seed": 9000000134
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/normal_q1_5/delta-0.0003",
+      "seed": 9000000135
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/normal_q1_5/delta-0.0004",
+      "seed": 9000000136
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/normal_q2/delta-0.0003",
+      "seed": 9000000137
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/normal_q2/delta-0.0004",
+      "seed": 9000000138
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/student_t5_q1_5/delta-0.0003",
+      "seed": 9000000139
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/student_t5_q1_5/delta-0.0004",
+      "seed": 9000000140
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/student_t3_q2/delta-0.0003",
+      "seed": 9000000141
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/student_t3_q2/delta-0.0004",
+      "seed": 9000000142
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/right_skew_lognormal_q1_5/delta-0.0003",
+      "seed": 9000000143
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/right_skew_lognormal_q1_5/delta-0.0004",
+      "seed": 9000000144
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/right_skew_lognormal_q2/delta-0.0003",
+      "seed": 9000000145
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/right_skew_lognormal_q2/delta-0.0004",
+      "seed": 9000000146
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/zero_inflated65_q1_5/delta-0.0003",
+      "seed": 9000000147
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/zero_inflated65_q1_5/delta-0.0004",
+      "seed": 9000000148
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/tied_asymmetric65_q1_5/delta-0.0003",
+      "seed": 9000000149
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/tied_asymmetric65_q1_5/delta-0.0004",
+      "seed": 9000000150
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/tied_asymmetric65_q2/delta-0.0003",
+      "seed": 9000000151
+    },
+    {
+      "stream": "primary_power",
+      "cell": "n666/tied_asymmetric65_q2/delta-0.0004",
+      "seed": 9000000152
+    },
+    {
+      "stream": "p0_null_calibration",
+      "cell": "n666/normal_q1_5",
+      "seed": 9000000153
+    },
+    {
+      "stream": "p0_null_validation",
+      "cell": "n666/normal_q1_5",
+      "seed": 9000000154
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n666/normal_q1_5/effect0.0",
+      "seed": 9000000155
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n666/normal_q1_5/effect0.0001",
+      "seed": 9000000156
+    },
+    {
+      "stream": "p0_null_calibration",
+      "cell": "n666/normal_q2",
+      "seed": 9000000157
+    },
+    {
+      "stream": "p0_null_validation",
+      "cell": "n666/normal_q2",
+      "seed": 9000000158
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n666/normal_q2/effect0.0",
+      "seed": 9000000159
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n666/normal_q2/effect0.0001",
+      "seed": 9000000160
+    },
+    {
+      "stream": "p0_null_calibration",
+      "cell": "n666/zero_inflated65_q2",
+      "seed": 9000000161
+    },
+    {
+      "stream": "p0_null_validation",
+      "cell": "n666/zero_inflated65_q2",
+      "seed": 9000000162
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n666/zero_inflated65_q2/effect0.0",
+      "seed": 9000000163
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n666/zero_inflated65_q2/effect0.0001",
+      "seed": 9000000164
+    },
+    {
+      "stream": "p0_null_calibration",
+      "cell": "n666/tied_asymmetric65_q2",
+      "seed": 9000000165
+    },
+    {
+      "stream": "p0_null_validation",
+      "cell": "n666/tied_asymmetric65_q2",
+      "seed": 9000000166
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n666/tied_asymmetric65_q2/effect0.0",
+      "seed": 9000000167
+    },
+    {
+      "stream": "p0_safety_power",
+      "cell": "n666/tied_asymmetric65_q2/effect0.0001",
+      "seed": 9000000168
+    },
+    {
+      "stream": "independent_generator_check",
+      "cell": "normal",
+      "seed": 9000000169
+    },
+    {
+      "stream": "independent_generator_check",
+      "cell": "student_t5",
+      "seed": 9000000170
+    },
+    {
+      "stream": "independent_generator_check",
+      "cell": "student_t3",
+      "seed": 9000000171
+    },
+    {
+      "stream": "independent_generator_check",
+      "cell": "lognormal_sigma1",
+      "seed": 9000000172
+    },
+    {
+      "stream": "independent_generator_check",
+      "cell": "zero_inflated65_normal",
+      "seed": 9000000173
+    },
+    {
+      "stream": "independent_generator_check",
+      "cell": "tied_asymmetric65",
+      "seed": 9000000174
+    },
+    {
+      "stream": "independent_statistic_fixture",
+      "cell": "fixed-small-matrix",
+      "seed": 9000000175
+    }
+  ],
+  "rng": {
+    "bit_generator": "PCG64",
+    "namespace_start": 9000000001,
+    "namespace_end": 9000000175
+  }
+}
