@@ -1,0 +1,555 @@
+{
+  "aggregate": {
+    "nominal": {
+      "factorized_spatiotemporal_residual": {
+        "brier": 0.005158189240893131,
+        "ece_10_equal_width": 0.002032878905147352,
+        "mean_probability": 0.006545773548573218,
+        "residual_positives": 255,
+        "score_auc": 0.927681922904854,
+        "shots": 50000
+      },
+      "historical_residual_position_cnn": {
+        "brier": 0.004934402760494409,
+        "ece_10_equal_width": 0.0010365723061040286,
+        "mean_probability": 0.006136572306104028,
+        "residual_positives": 255,
+        "score_auc": 0.944462484159409,
+        "shots": 50000
+      },
+      "residual_position_v2": {
+        "brier": 0.005037494439932075,
+        "ece_10_equal_width": 0.002206694174163565,
+        "mean_probability": 0.0072832644156148275,
+        "residual_positives": 255,
+        "score_auc": 0.9424746205648808,
+        "shots": 50000
+      }
+    },
+    "synthetic_spatial_burst": {
+      "factorized_spatiotemporal_residual": {
+        "brier": 0.007497422665229976,
+        "ece_10_equal_width": 0.002250308338802498,
+        "mean_probability": 0.007859233869809468,
+        "residual_positives": 386,
+        "score_auc": 0.9260293872843429,
+        "shots": 50000
+      },
+      "historical_residual_position_cnn": {
+        "brier": 0.007191045566957811,
+        "ece_10_equal_width": 0.001526093470722469,
+        "mean_probability": 0.007366908512443272,
+        "residual_positives": 386,
+        "score_auc": 0.9409641656385221,
+        "shots": 50000
+      },
+      "residual_position_v2": {
+        "brier": 0.007345847507103924,
+        "ece_10_equal_width": 0.001525950510524988,
+        "mean_probability": 0.008559578132308246,
+        "residual_positives": 386,
+        "score_auc": 0.931926832661097,
+        "shots": 50000
+      }
+    }
+  },
+  "independent_test_accessed": false,
+  "roots": {
+    "dev-root-00": {
+      "conditions": {
+        "nominal": {
+          "models": {
+            "factorized_spatiotemporal_residual": {
+              "brier": 0.005895715393144482,
+              "changed_decisions": 7,
+              "correction_precision": 0.2857142857142857,
+              "correction_recall": 0.03389830508474576,
+              "errors": 62,
+              "harmful_corrections": 5,
+              "mean_probability": 0.00689944008620223,
+              "nll": 0.02770544843370659,
+              "residual_prevalence": 0.0059,
+              "residual_score_auc": 0.9284925126040248,
+              "useful_corrections": 2
+            },
+            "historical_residual_position_cnn": {
+              "brier": 0.005687196824314785,
+              "changed_decisions": 0,
+              "correction_precision": null,
+              "correction_recall": 0.0,
+              "errors": 59,
+              "harmful_corrections": 0,
+              "mean_probability": 0.006237619361768896,
+              "nll": 0.025723980317662574,
+              "residual_prevalence": 0.0059,
+              "residual_score_auc": 0.9465030118376386,
+              "useful_corrections": 0
+            },
+            "residual_position_v2": {
+              "brier": 0.005640827477293534,
+              "changed_decisions": 1,
+              "correction_precision": 1.0,
+              "correction_recall": 0.01694915254237288,
+              "errors": 58,
+              "harmful_corrections": 0,
+              "mean_probability": 0.008588377864580252,
+              "nll": 0.026691052914453842,
+              "residual_prevalence": 0.0059,
+              "residual_score_auc": 0.9292563412267975,
+              "useful_corrections": 1
+            }
+          },
+          "pymatching_errors": 59,
+          "residual_positive_prevalence": 0.0059,
+          "shots": 10000,
+          "unique_pymatching_failure_syndromes": 59
+        },
+        "synthetic_spatial_burst": {
+          "models": {
+            "factorized_spatiotemporal_residual": {
+              "brier": 0.00839241949675572,
+              "changed_decisions": 16,
+              "correction_precision": 0.25,
+              "correction_recall": 0.04938271604938271,
+              "errors": 89,
+              "harmful_corrections": 12,
+              "mean_probability": 0.009147394005265232,
+              "nll": 0.03762387673254679,
+              "residual_prevalence": 0.0081,
+              "residual_score_auc": 0.917202177141015,
+              "useful_corrections": 4
+            },
+            "historical_residual_position_cnn": {
+              "brier": 0.0075431679796002385,
+              "changed_decisions": 3,
+              "correction_precision": 0.0,
+              "correction_recall": 0.0,
+              "errors": 84,
+              "harmful_corrections": 3,
+              "mean_probability": 0.007616229380295465,
+              "nll": 0.03287450186390289,
+              "residual_prevalence": 0.0081,
+              "residual_score_auc": 0.9445409047855531,
+              "useful_corrections": 0
+            },
+            "residual_position_v2": {
+              "brier": 0.008088239167778915,
+              "changed_decisions": 3,
+              "correction_precision": 0.0,
+              "correction_recall": 0.0,
+              "errors": 84,
+              "harmful_corrections": 3,
+              "mean_probability": 0.010275350018165774,
+              "nll": 0.035769973576177595,
+              "residual_prevalence": 0.0081,
+              "residual_score_auc": 0.9219642063678761,
+              "useful_corrections": 0
+            }
+          },
+          "pymatching_errors": 81,
+          "residual_positive_prevalence": 0.0081,
+          "shots": 10000,
+          "unique_pymatching_failure_syndromes": 80
+        }
+      },
+      "prediction_archive_sha256": "eaf5b1f0db1ad5e26f37573389a2c5bd7047f34fa1bbb19682fef4e019d412ec"
+    },
+    "dev-root-01": {
+      "conditions": {
+        "nominal": {
+          "models": {
+            "factorized_spatiotemporal_residual": {
+              "brier": 0.005850360482490136,
+              "changed_decisions": 2,
+              "correction_precision": 0.5,
+              "correction_recall": 0.018867924528301886,
+              "errors": 53,
+              "harmful_corrections": 1,
+              "mean_probability": 0.007289899663255485,
+              "nll": 0.02620341905523053,
+              "residual_prevalence": 0.0053,
+              "residual_score_auc": 0.9414472174221488,
+              "useful_corrections": 1
+            },
+            "historical_residual_position_cnn": {
+              "brier": 0.005353962945340794,
+              "changed_decisions": 0,
+              "correction_precision": null,
+              "correction_recall": 0.0,
+              "errors": 53,
+              "harmful_corrections": 0,
+              "mean_probability": 0.008169432599844732,
+              "nll": 0.02247136524606918,
+              "residual_prevalence": 0.0053,
+              "residual_score_auc": 0.9599575865293604,
+              "useful_corrections": 0
+            },
+            "residual_position_v2": {
+              "brier": 0.005157064741274574,
+              "changed_decisions": 0,
+              "correction_precision": null,
+              "correction_recall": 0.0,
+              "errors": 53,
+              "harmful_corrections": 0,
+              "mean_probability": 0.006337849657676452,
+              "nll": 0.023956359256022772,
+              "residual_prevalence": 0.0053,
+              "residual_score_auc": 0.9404788776743154,
+              "useful_corrections": 0
+            }
+          },
+          "pymatching_errors": 53,
+          "residual_positive_prevalence": 0.0053,
+          "shots": 10000,
+          "unique_pymatching_failure_syndromes": 53
+        },
+        "synthetic_spatial_burst": {
+          "models": {
+            "factorized_spatiotemporal_residual": {
+              "brier": 0.007222353236691791,
+              "changed_decisions": 2,
+              "correction_precision": 0.0,
+              "correction_recall": 0.0,
+              "errors": 70,
+              "harmful_corrections": 2,
+              "mean_probability": 0.008220938405750203,
+              "nll": 0.030980596088214588,
+              "residual_prevalence": 0.0068,
+              "residual_score_auc": 0.9406545391011821,
+              "useful_corrections": 0
+            },
+            "historical_residual_position_cnn": {
+              "brier": 0.00690257729034212,
+              "changed_decisions": 1,
+              "correction_precision": 0.0,
+              "correction_recall": 0.0,
+              "errors": 69,
+              "harmful_corrections": 1,
+              "mean_probability": 0.009738925435631882,
+              "nll": 0.028323559049475467,
+              "residual_prevalence": 0.0068,
+              "residual_score_auc": 0.9529587962853284,
+              "useful_corrections": 0
+            },
+            "residual_position_v2": {
+              "brier": 0.006582307563944947,
+              "changed_decisions": 0,
+              "correction_precision": null,
+              "correction_recall": 0.0,
+              "errors": 68,
+              "harmful_corrections": 0,
+              "mean_probability": 0.008129803044207984,
+              "nll": 0.029816635509469988,
+              "residual_prevalence": 0.0068,
+              "residual_score_auc": 0.9325583082608798,
+              "useful_corrections": 0
+            }
+          },
+          "pymatching_errors": 68,
+          "residual_positive_prevalence": 0.0068,
+          "shots": 10000,
+          "unique_pymatching_failure_syndromes": 67
+        }
+      },
+      "prediction_archive_sha256": "2a14c452eee3e8f12871cb242c06f87c82776043b9c4ee318d79576739d621c3"
+    },
+    "dev-root-02": {
+      "conditions": {
+        "nominal": {
+          "models": {
+            "factorized_spatiotemporal_residual": {
+              "brier": 0.004523668391072676,
+              "changed_decisions": 1,
+              "correction_precision": 1.0,
+              "correction_recall": 0.020833333333333332,
+              "errors": 47,
+              "harmful_corrections": 0,
+              "mean_probability": 0.0037957532958765613,
+              "nll": 0.02102111698852963,
+              "residual_prevalence": 0.0048,
+              "residual_score_auc": 0.9535279759512326,
+              "useful_corrections": 1
+            },
+            "historical_residual_position_cnn": {
+              "brier": 0.004398847304947418,
+              "changed_decisions": 1,
+              "correction_precision": 1.0,
+              "correction_recall": 0.020833333333333332,
+              "errors": 47,
+              "harmful_corrections": 0,
+              "mean_probability": 0.004209825274509603,
+              "nll": 0.019377702555392916,
+              "residual_prevalence": 0.0048,
+              "residual_score_auc": 0.9617005375803859,
+              "useful_corrections": 1
+            },
+            "residual_position_v2": {
+              "brier": 0.0047404983026427825,
+              "changed_decisions": 1,
+              "correction_precision": 0.0,
+              "correction_recall": 0.0,
+              "errors": 49,
+              "harmful_corrections": 1,
+              "mean_probability": 0.00683944672300075,
+              "nll": 0.01919716422966831,
+              "residual_prevalence": 0.0048,
+              "residual_score_auc": 0.9717634227625938,
+              "useful_corrections": 0
+            }
+          },
+          "pymatching_errors": 48,
+          "residual_positive_prevalence": 0.0048,
+          "shots": 10000,
+          "unique_pymatching_failure_syndromes": 48
+        },
+        "synthetic_spatial_burst": {
+          "models": {
+            "factorized_spatiotemporal_residual": {
+              "brier": 0.0072108454999470694,
+              "changed_decisions": 1,
+              "correction_precision": 1.0,
+              "correction_recall": 0.012658227848101266,
+              "errors": 78,
+              "harmful_corrections": 0,
+              "mean_probability": 0.00458476305943064,
+              "nll": 0.033869962879199265,
+              "residual_prevalence": 0.0079,
+              "residual_score_auc": 0.9338967718393026,
+              "useful_corrections": 1
+            },
+            "historical_residual_position_cnn": {
+              "brier": 0.006925387353893036,
+              "changed_decisions": 2,
+              "correction_precision": 1.0,
+              "correction_recall": 0.02531645569620253,
+              "errors": 77,
+              "harmful_corrections": 0,
+              "mean_probability": 0.005059431390779082,
+              "nll": 0.03042871500778644,
+              "residual_prevalence": 0.0079,
+              "residual_score_auc": 0.9448057374779747,
+              "useful_corrections": 2
+            },
+            "residual_position_v2": {
+              "brier": 0.007076456307119774,
+              "changed_decisions": 2,
+              "correction_precision": 0.5,
+              "correction_recall": 0.012658227848101266,
+              "errors": 79,
+              "harmful_corrections": 1,
+              "mean_probability": 0.007221478121748316,
+              "nll": 0.03112554005922815,
+              "residual_prevalence": 0.0079,
+              "residual_score_auc": 0.9470704642626113,
+              "useful_corrections": 1
+            }
+          },
+          "pymatching_errors": 79,
+          "residual_positive_prevalence": 0.0079,
+          "shots": 10000,
+          "unique_pymatching_failure_syndromes": 79
+        }
+      },
+      "prediction_archive_sha256": "92342c0c8f4465c9113119a1c4d5ceef20d20c113cd68ada4d13dadc4107ec92"
+    },
+    "dev-root-03": {
+      "conditions": {
+        "nominal": {
+          "models": {
+            "factorized_spatiotemporal_residual": {
+              "brier": 0.0038122712384219726,
+              "changed_decisions": 2,
+              "correction_precision": 0.5,
+              "correction_recall": 0.027777777777777776,
+              "errors": 36,
+              "harmful_corrections": 1,
+              "mean_probability": 0.01022065894472471,
+              "nll": 0.02088876188692535,
+              "residual_prevalence": 0.0036,
+              "residual_score_auc": 0.9307367634595656,
+              "useful_corrections": 1
+            },
+            "historical_residual_position_cnn": {
+              "brier": 0.003642785949652004,
+              "changed_decisions": 2,
+              "correction_precision": 0.5,
+              "correction_recall": 0.027777777777777776,
+              "errors": 36,
+              "harmful_corrections": 1,
+              "mean_probability": 0.006949308615535847,
+              "nll": 0.018815906940186873,
+              "residual_prevalence": 0.0036,
+              "residual_score_auc": 0.9356224073330657,
+              "useful_corrections": 1
+            },
+            "residual_position_v2": {
+              "brier": 0.003838435416186074,
+              "changed_decisions": 0,
+              "correction_precision": null,
+              "correction_recall": 0.0,
+              "errors": 36,
+              "harmful_corrections": 0,
+              "mean_probability": 0.008225463348802805,
+              "nll": 0.020235223176530582,
+              "residual_prevalence": 0.0036,
+              "residual_score_auc": 0.9250342901110665,
+              "useful_corrections": 0
+            }
+          },
+          "pymatching_errors": 36,
+          "residual_positive_prevalence": 0.0036,
+          "shots": 10000,
+          "unique_pymatching_failure_syndromes": 36
+        },
+        "synthetic_spatial_burst": {
+          "models": {
+            "factorized_spatiotemporal_residual": {
+              "brier": 0.008805671560331456,
+              "changed_decisions": 7,
+              "correction_precision": 0.14285714285714285,
+              "correction_recall": 0.010416666666666666,
+              "errors": 101,
+              "harmful_corrections": 6,
+              "mean_probability": 0.011834258994937409,
+              "nll": 0.03706009004311958,
+              "residual_prevalence": 0.0096,
+              "residual_score_auc": 0.9433998678984922,
+              "useful_corrections": 1
+            },
+            "historical_residual_position_cnn": {
+              "brier": 0.008812735436194041,
+              "changed_decisions": 1,
+              "correction_precision": 0.0,
+              "correction_recall": 0.0,
+              "errors": 97,
+              "harmful_corrections": 1,
+              "mean_probability": 0.00793666904650454,
+              "nll": 0.03734302703402556,
+              "residual_prevalence": 0.0096,
+              "residual_score_auc": 0.9393653027396338,
+              "useful_corrections": 0
+            },
+            "residual_position_v2": {
+              "brier": 0.008953601065077407,
+              "changed_decisions": 1,
+              "correction_precision": 0.0,
+              "correction_recall": 0.0,
+              "errors": 97,
+              "harmful_corrections": 1,
+              "mean_probability": 0.009513985614714693,
+              "nll": 0.0380668377390036,
+              "residual_prevalence": 0.0096,
+              "residual_score_auc": 0.9358092900175013,
+              "useful_corrections": 0
+            }
+          },
+          "pymatching_errors": 96,
+          "residual_positive_prevalence": 0.0096,
+          "shots": 10000,
+          "unique_pymatching_failure_syndromes": 91
+        }
+      },
+      "prediction_archive_sha256": "39d1da46ce836f51dbef8d148f735c1fdd7eb4d34cc86912b92c3a7dc79fc54d"
+    },
+    "dev-root-04": {
+      "conditions": {
+        "nominal": {
+          "models": {
+            "factorized_spatiotemporal_residual": {
+              "brier": 0.005708930699336392,
+              "changed_decisions": 0,
+              "correction_precision": null,
+              "correction_recall": 0.0,
+              "errors": 59,
+              "harmful_corrections": 0,
+              "mean_probability": 0.004523115752807098,
+              "nll": 0.027351222612066885,
+              "residual_prevalence": 0.0059,
+              "residual_score_auc": 0.9377027854170112,
+              "useful_corrections": 0
+            },
+            "historical_residual_position_cnn": {
+              "brier": 0.0055892207782170435,
+              "changed_decisions": 0,
+              "correction_precision": null,
+              "correction_recall": 0.0,
+              "errors": 59,
+              "harmful_corrections": 0,
+              "mean_probability": 0.005116675678861066,
+              "nll": 0.02560656670341265,
+              "residual_prevalence": 0.0059,
+              "residual_score_auc": 0.9422337554282129,
+              "useful_corrections": 0
+            },
+            "residual_position_v2": {
+              "brier": 0.0058106462622634055,
+              "changed_decisions": 0,
+              "correction_precision": null,
+              "correction_recall": 0.0,
+              "errors": 59,
+              "harmful_corrections": 0,
+              "mean_probability": 0.00642518448401388,
+              "nll": 0.02575429758818753,
+              "residual_prevalence": 0.0059,
+              "residual_score_auc": 0.9472216586333947,
+              "useful_corrections": 0
+            }
+          },
+          "pymatching_errors": 59,
+          "residual_positive_prevalence": 0.0059,
+          "shots": 10000,
+          "unique_pymatching_failure_syndromes": 59
+        },
+        "synthetic_spatial_burst": {
+          "models": {
+            "factorized_spatiotemporal_residual": {
+              "brier": 0.005855823532423847,
+              "changed_decisions": 4,
+              "correction_precision": 0.25,
+              "correction_recall": 0.016129032258064516,
+              "errors": 64,
+              "harmful_corrections": 3,
+              "mean_probability": 0.005508814883663854,
+              "nll": 0.02828725786096678,
+              "residual_prevalence": 0.0062,
+              "residual_score_auc": 0.9290236563467693,
+              "useful_corrections": 1
+            },
+            "historical_residual_position_cnn": {
+              "brier": 0.005771359774759615,
+              "changed_decisions": 2,
+              "correction_precision": 0.5,
+              "correction_recall": 0.016129032258064516,
+              "errors": 62,
+              "harmful_corrections": 1,
+              "mean_probability": 0.006483287309005391,
+              "nll": 0.02690007233994384,
+              "residual_prevalence": 0.0062,
+              "residual_score_auc": 0.9331232674842086,
+              "useful_corrections": 1
+            },
+            "residual_position_v2": {
+              "brier": 0.006028633431598577,
+              "changed_decisions": 9,
+              "correction_precision": 0.2222222222222222,
+              "correction_recall": 0.03225806451612903,
+              "errors": 67,
+              "harmful_corrections": 7,
+              "mean_probability": 0.00765727386270446,
+              "nll": 0.027711778563918512,
+              "residual_prevalence": 0.0062,
+              "residual_score_auc": 0.930601178922221,
+              "useful_corrections": 2
+            }
+          },
+          "pymatching_errors": 62,
+          "residual_positive_prevalence": 0.0062,
+          "shots": 10000,
+          "unique_pymatching_failure_syndromes": 60
+        }
+      },
+      "prediction_archive_sha256": "44924695685366f283e39eeefc8492c4dd0b4c7e08b1813a22c869f4b0c793f8"
+    }
+  },
+  "source": "Stage 2 final-development predictions only"
+}

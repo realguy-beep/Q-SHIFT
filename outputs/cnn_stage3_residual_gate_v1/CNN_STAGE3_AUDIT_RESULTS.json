@@ -1,0 +1,276 @@
+{
+  "audited_utc": "2026-11-07T07:22:35Z",
+  "controller_finalization_failure": "Stage3Error: Independent audit failed with exit 1: \nTraceback (most recent call last):\n  File \"C:\\Users\\LENOVO\\Documents\\Codex\\2026-11-03\\referenced-chatgpt-conversation-this-is-an\\outputs\\cnn_stage3_residual_gate_v1\\audit_stage3.py\", line 28, in <module>\n    from outputs.neural_decoder_diagnostic.autonomous_development.experiment import ResidualPositionCNN  # noqa: E402\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'outputs'\n",
+  "controller_finalization_recovered_for_audit_only": true,
+  "controller_status_at_audit": "failed",
+  "development_gate": {
+    "criteria": {
+      "interpretation": "development feasibility only; passing is not independent confirmation and does not authorize test access",
+      "maximum_nominal_control_harm": 0.0002,
+      "primary_favorable_roots_minimum": 4,
+      "primary_interval_upper_bound_below_zero": true,
+      "primary_mean_improvement_minimum": 0.0002
+    },
+    "favorable_roots": 0,
+    "nominal_control_mean_difference": 0.0,
+    "primary_ci_upper": 0.0,
+    "primary_mean_difference": 0.0,
+    "status": "FAIL"
+  },
+  "freeze_protocol_id_sha256": "25c68936839b2111c49f22bc7c7dc66acd578b0d92f38d1fabf591eb3544397b",
+  "independent_test_accessed": false,
+  "neural_predictions_independently_recomputed": true,
+  "nominal_and_burst_predictions_redecoded": true,
+  "partitions": [
+    {
+      "archive_sha256": "59e9d4abcf1fbc85b557a4cdf006cb5d248544c6125bf09afe401c456fbea36a",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-00",
+      "seed": 3100000001,
+      "shots": 17000,
+      "split": "training"
+    },
+    {
+      "archive_sha256": "0725f50b022760c059cddb7c78b0bb6861288f2a55e4268b399c3a11d4d2059f",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-00",
+      "seed": 3100000002,
+      "shots": 2000,
+      "split": "monitor"
+    },
+    {
+      "archive_sha256": "87aea7fb62724aaf7aa10ff3fd2b48f0d947faa11d1ac38eec9e7cc9f063da40",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-00",
+      "seed": 3100000003,
+      "shots": 2000,
+      "split": "probability_calibration"
+    },
+    {
+      "archive_sha256": "29c0b0c580aa2ae168d1aaddca37256244e97f1faac853baf6feea8765a90f9b",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-00",
+      "seed": 3100000004,
+      "shots": 4000,
+      "split": "threshold_selection"
+    },
+    {
+      "archive_sha256": "cd02f66be02004c2948d634b109980083081b1843066b43a46995c12a1d82b66",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-00",
+      "seed": 3100000005,
+      "shots": 10000,
+      "split": "final_development_evaluation"
+    },
+    {
+      "archive_sha256": "a1db8af2be144adc43ddb85cdf2686866d5deb73b1069d8a2ffad3bf063eb100",
+      "condition": "nominal",
+      "root": "stage3-root-00",
+      "seed": 3100000006,
+      "shots": 5000,
+      "split": "final_development_evaluation"
+    },
+    {
+      "archive_sha256": "d44d80c1bd97415a68e9e27dfb217645ff904084e402eb7d5a08d5d4b063a474",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-01",
+      "seed": 3100000010,
+      "shots": 17000,
+      "split": "training"
+    },
+    {
+      "archive_sha256": "0ff9bfc97a1acfb20f5b550a70c8551a30b1f595c888efc7770784baf3c44900",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-01",
+      "seed": 3100000011,
+      "shots": 2000,
+      "split": "monitor"
+    },
+    {
+      "archive_sha256": "a251d62c0e744cc45544a05667412da3679618ad60b45fe3cab0e6cb18654fa6",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-01",
+      "seed": 3100000012,
+      "shots": 2000,
+      "split": "probability_calibration"
+    },
+    {
+      "archive_sha256": "c5b2358004c00a8abb1865c7cf37be0afa21a18ae81583a67059a5db3ef665a5",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-01",
+      "seed": 3100000013,
+      "shots": 4000,
+      "split": "threshold_selection"
+    },
+    {
+      "archive_sha256": "64fadbceafcab95a5bb8899412ca7bfe9f852b6142db6ae508c7ecb24abeb3a8",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-01",
+      "seed": 3100000014,
+      "shots": 10000,
+      "split": "final_development_evaluation"
+    },
+    {
+      "archive_sha256": "6add1dd23cdafc5fe375dd9cc22d5c8578b25c4bfbf3afc8c76199b66550e118",
+      "condition": "nominal",
+      "root": "stage3-root-01",
+      "seed": 3100000015,
+      "shots": 5000,
+      "split": "final_development_evaluation"
+    },
+    {
+      "archive_sha256": "871ab8cc7916dae4310c9670d3f2dc525a63cf80a6a244f334411e1821bc77cf",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-02",
+      "seed": 3100000019,
+      "shots": 17000,
+      "split": "training"
+    },
+    {
+      "archive_sha256": "59a482e02afec62cf6dcc189dac6a38b10c669e29d11e125af52cf605e26d871",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-02",
+      "seed": 3100000020,
+      "shots": 2000,
+      "split": "monitor"
+    },
+    {
+      "archive_sha256": "598dc81cb5eb77bfe68c1dd7c7884cd0dc581287f7b53aa13e5aa86ebeed777f",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-02",
+      "seed": 3100000021,
+      "shots": 2000,
+      "split": "probability_calibration"
+    },
+    {
+      "archive_sha256": "0f3b6effc3b00f93e90b082ec59c2c3863c36c68a39830e96682c57a07189e3b",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-02",
+      "seed": 3100000022,
+      "shots": 4000,
+      "split": "threshold_selection"
+    },
+    {
+      "archive_sha256": "6efa44fff24ee1a5ba36556c3eea788a975f8229404f330bbe54e1a4be77ec37",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-02",
+      "seed": 3100000023,
+      "shots": 10000,
+      "split": "final_development_evaluation"
+    },
+    {
+      "archive_sha256": "c3c861941efa40421cf0bf0b2441f90c79b304676a2bea59bf5384436ee82e27",
+      "condition": "nominal",
+      "root": "stage3-root-02",
+      "seed": 3100000024,
+      "shots": 5000,
+      "split": "final_development_evaluation"
+    },
+    {
+      "archive_sha256": "c85bd961060f38693f777656da0cf50c53e65d294d1e7d45582f0483ab7b3a9c",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-03",
+      "seed": 3100000028,
+      "shots": 17000,
+      "split": "training"
+    },
+    {
+      "archive_sha256": "44d119cbdeea2930d22f21e70529a06725b11ce87de1f1e001ac87dc3a22331c",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-03",
+      "seed": 3100000029,
+      "shots": 2000,
+      "split": "monitor"
+    },
+    {
+      "archive_sha256": "a8e8ed6b5d4930620c3aedd0849d9326b08b134238a4c9bbe5ab7046896fb29e",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-03",
+      "seed": 3100000030,
+      "shots": 2000,
+      "split": "probability_calibration"
+    },
+    {
+      "archive_sha256": "aa564ebd4bfc9569d53080e2030d34a891f2564ca88cbb3fa10ed0b6980c1c4b",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-03",
+      "seed": 3100000031,
+      "shots": 4000,
+      "split": "threshold_selection"
+    },
+    {
+      "archive_sha256": "9d26485bf5e26b85eb93cbeacfa042c7827bd95e6095945845099dfd03f9209b",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-03",
+      "seed": 3100000032,
+      "shots": 10000,
+      "split": "final_development_evaluation"
+    },
+    {
+      "archive_sha256": "77ad803f8f8b02efe5eb77ed553b4ef3ba3e88269f6467526ba9c989aaf8a24d",
+      "condition": "nominal",
+      "root": "stage3-root-03",
+      "seed": 3100000033,
+      "shots": 5000,
+      "split": "final_development_evaluation"
+    },
+    {
+      "archive_sha256": "b1c9e8fb19905612828f8c536f1bf239215003787ee5d89f4650f1a9cb8ad340",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-04",
+      "seed": 3100000037,
+      "shots": 17000,
+      "split": "training"
+    },
+    {
+      "archive_sha256": "316d8548678c5cd301a6def70dacaf3091c2e7b19cf3472ff3fb53ad435eeae4",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-04",
+      "seed": 3100000038,
+      "shots": 2000,
+      "split": "monitor"
+    },
+    {
+      "archive_sha256": "df4d7f8ad2df5af768932dc77f7bad3f652575857883138e5497259178fe85a8",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-04",
+      "seed": 3100000039,
+      "shots": 2000,
+      "split": "probability_calibration"
+    },
+    {
+      "archive_sha256": "dd4a349af0867c7b95c1c55c3e6efc3ddd522bb769e0a286c9eb2e367f8a1c4c",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-04",
+      "seed": 3100000040,
+      "shots": 4000,
+      "split": "threshold_selection"
+    },
+    {
+      "archive_sha256": "93ff948ec8bcd15f59a862c5b1a36158d80c59ef68d4ca0c6b50a9bf33c59f3a",
+      "condition": "synthetic_spatial_burst",
+      "root": "stage3-root-04",
+      "seed": 3100000041,
+      "shots": 10000,
+      "split": "final_development_evaluation"
+    },
+    {
+      "archive_sha256": "dd2c536111b2e58fcb58209e759790cac478aacbca0909280b14b644e9a4a783",
+      "condition": "nominal",
+      "root": "stage3-root-04",
+      "seed": 3100000042,
+      "shots": 5000,
+      "split": "final_development_evaluation"
+    }
+  ],
+  "policy_frozen_before_final_generation": true,
+  "prediction_label_pairing_verified": true,
+  "result_file_sha256": "bd0a030af152def578792b3e573eea4ed2ac5dfbc531479bcf08f4ed934e8b03",
+  "sampled_test_accessed": false,
+  "status": "PASS",
+  "status_file_sha256_preserved": "2346b09f7bf36210df53f443eba169ae21874d42eb85ae11d3a2193836a5fbd2",
+  "verified_frozen_inputs": 43,
+  "verified_partition_count": 30,
+  "verified_roots": 5,
+  "verified_unique_shots": 200000
+}

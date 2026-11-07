@@ -1,0 +1,132 @@
+{
+  "protocol_version": "qshift-stage3-correlated-specialist-v1",
+  "status": "FROZEN_BEFORE_SAMPLING",
+  "objective": "Test whether a burst-focused detector-only residual CNN learns useful corrections under the declared synthetic spatial common-cause noise, on paired development samples.",
+  "condition_order": ["nominal", "synthetic_spatial_burst"],
+  "circuit": {
+    "generator": "outputs/phase3a_correlated_noise_preflight/simulator.py wrapping outputs/phase2b_pauli_bias/noise_model.py",
+    "memory_basis": "z",
+    "distance": 3,
+    "rounds": 5,
+    "detectors": 40,
+    "observables": 1,
+    "pauli_regime": "balanced",
+    "gate_probability": 0.003,
+    "measurement_probability": 0.003,
+    "bias_ratio": 10.0,
+    "burst_pair_data_qubits": [8, 10],
+    "burst_probability_per_round": 0.01,
+    "burst_injection": "Stim CORRELATED_ERROR X8 X10 immediately after each MR boundary; five independent Bernoulli sites",
+    "dem_conversion": {
+      "decompose_errors": true,
+      "approximate_disjoint_errors": true,
+      "matching_correlations_enabled": true
+    }
+  },
+  "roots": {
+    "count": 5,
+    "ids": ["stage3-root-00", "stage3-root-01", "stage3-root-02", "stage3-root-03", "stage3-root-04"],
+    "seed_inventory": "seed_inventory.json"
+  },
+  "shots_per_root": {
+    "training_synthetic_spatial_burst": 17000,
+    "monitor_synthetic_spatial_burst": 2000,
+    "probability_calibration_synthetic_spatial_burst": 2000,
+    "threshold_selection_synthetic_spatial_burst": 4000,
+    "final_development_synthetic_spatial_burst": 10000,
+    "final_development_nominal_control": 5000
+  },
+  "total_unique_shot_ceiling": 200000,
+  "total_unique_shots_planned": 200000,
+  "total_unique_shots_by_split": {
+    "training": 85000,
+    "monitor": 10000,
+    "probability_calibration": 10000,
+    "threshold_selection": 20000,
+    "final_development_synthetic_spatial_burst": 50000,
+    "final_development_nominal_control": 25000
+  },
+  "decoder_baselines": {
+    "nominal_fixed_pymatching": {
+      "construction": "Phase 2B balanced no-burst DEM",
+      "correlation_mode": true,
+      "residual_reference": true,
+      "noise_information": "nominal model only"
+    },
+    "burst_informed_pymatching": {
+      "construction": "same base circuit with declared p=0.01 X8X10 burst at each MR boundary",
+      "scored_on": "synthetic_spatial_burst only",
+      "noise_information": "privileged; receives exact synthetic burst probability and location"
+    },
+    "historical_residual_cnn": {
+      "weights": "Stage 2 saved historical_residual_position_cnn checkpoint for the matched root",
+      "selection": "Stage 2 frozen temperature and threshold; no Stage 3 refit",
+      "inference_inputs": ["40 detector bits", "nominal fixed PyMatching prediction"]
+    },
+    "stage3_correlation_focused_residual_cnn": {
+      "architecture": "same 13,429-parameter historical residual-position CNN; no architecture expansion",
+      "training_distribution": "synthetic_spatial_burst only",
+      "inference_inputs": ["40 detector bits in Stim detector geometry", "nominal fixed PyMatching prediction"],
+      "forbidden_inference_inputs": ["observable label", "burst flag", "burst event occurrence", "condition label", "true noise parameters"]
+    }
+  },
+  "training": {
+    "target": "observable XOR nominal_fixed_pymatching_prediction",
+    "final_prediction": "nominal_fixed_pymatching_prediction XOR (residual_probability >= frozen_global_threshold)",
+    "optimizer": "AdamW",
+    "learning_rate": 0.003,
+    "weight_decay": 0.0001,
+    "scheduler": {"type": "StepLR", "step_size_epochs": 5, "gamma": 0.5},
+    "batch_size": 256,
+    "maximum_epochs": 10,
+    "early_stopping_patience": 3,
+    "balanced_minibatches": true,
+    "balancing_scope": "only the synthetic-burst training partition; 50/50 residual positives and negatives, replacement for the minority class",
+    "natural_prevalence_logit_correction": "add the logit of each root's natural residual-positive prevalence from its training partition before temperature scaling",
+    "checkpoint_selection": "minimum monitor residual NLL; ties retain earliest epoch; restore best weights before calibration",
+    "minimum_unique_training_residual_positives_per_root": 20,
+    "failure_action_below_minimum": "stop without top-up or use of final-development labels",
+    "expected_batches_per_epoch": 67,
+    "maximum_steps_per_root": 670,
+    "maximum_total_steps": 3350
+  },
+  "selection": {
+    "temperature_grid": [0.5, 0.7, 0.85, 1.0, 1.2, 1.5, 2.0, 3.0, 4.0],
+    "temperature_objective": "minimum root-specific probability-calibration NLL; ties nearest 1, then lower",
+    "threshold_grid": "0.01 through 0.99 in 0.01 increments",
+    "threshold_objective": "one global threshold minimizing Stage 3 candidate LER on the burst threshold-selection partitions pooled across five roots; ties nearest 0.5, then lower",
+    "historical_cnn_selection": "use Stage 2 frozen weights, temperature and threshold without refitting",
+    "final_development_rule": "persist all five restored candidate checkpoints, temperatures, the single global threshold and model hashes before generating either final-development condition; final labels are used only for scoring and independent rescoring"
+  },
+  "analysis": {
+    "primary_estimand": "mean across five independent roots of (Stage 3 CNN burst-condition LER minus nominal fixed PyMatching burst-condition LER)",
+    "primary_uncertainty": "two-sided 95% Student-t interval over five root-level paired differences, descriptive feasibility interval only",
+    "secondary_estimands": ["candidate minus nominal fixed on nominal control", "candidate minus frozen historical CNN on both conditions", "burst-informed PyMatching minus nominal fixed on burst samples"],
+    "required_counts": ["raw observable errors", "useful corrections", "harmful corrections", "candidate-only failures", "fixed-only failures", "paired disagreements", "correction precision", "correction recall"],
+    "development_success_gate": {
+      "primary_mean_improvement_minimum": 0.0002,
+      "primary_favorable_roots_minimum": 4,
+      "primary_interval_upper_bound_below_zero": true,
+      "maximum_nominal_control_harm": 0.0002,
+      "interpretation": "development feasibility only; passing is not independent confirmation and does not authorize test access"
+    },
+    "inference_policy": "apply no correction unless the residual score crosses the frozen threshold; this is a fixed learned correction rule, not regime adaptation"
+  },
+  "dry_run": {
+    "shots": 256,
+    "stream": "stage3-root-00 / training / synthetic_spatial_burst",
+    "counted_within_allocation": true,
+    "reuse_in_full_training_partition": true
+  },
+  "resources": {
+    "maximum_wall_seconds": 14400,
+    "maximum_measured_cuda_training_seconds": 9000,
+    "minimum_free_disk_gib": 10,
+    "maximum_process_rss_gib": 3.5,
+    "maximum_cuda_allocated_gib": 4.5,
+    "device_policy": "CUDA required; no CPU fallback",
+    "hardware_reference": "RTX 4050 Laptop GPU 6 GB"
+  },
+  "independent_test": {"allocated": false, "accessed": false, "permitted": false},
+  "claims_boundary": "This is a development feasibility experiment on a synthetic burst model, not a confirmatory test, hardware result or novelty claim."
+}
