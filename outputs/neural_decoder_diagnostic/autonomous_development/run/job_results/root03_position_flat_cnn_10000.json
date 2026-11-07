@@ -1,0 +1,124 @@
+{
+  "status": "completed",
+  "job_id": "root03_position_flat_cnn_10000",
+  "model": "position_flat_cnn",
+  "temperature": 1.2,
+  "threshold": 0.24,
+  "prevalence": 0.055966666666666665,
+  "best_epoch": 10,
+  "best_monitor_nll": 0.03793018845538125,
+  "selection_data": "monitor for checkpoint; calibration for temperature; threshold_selection for decision threshold",
+  "selected_model_state_sha256": "dc89737af29c96f5f8f618e570c3a556440e99340c8b89192f2605adad28a632",
+  "final_development_evaluation_accessed": true,
+  "shots": 30000,
+  "per_regime": {
+    "x_biased": {
+      "tn": 9176,
+      "fp": 80,
+      "fn": 118,
+      "tp": 626,
+      "errors": 198,
+      "ler": 0.0198,
+      "positive_recall": 0.8413978494623656,
+      "pymatching_errors": 64,
+      "pymatching_ler": 0.0064,
+      "candidate_only": 151,
+      "pymatching_only": 17,
+      "paired_prediction_disagreements": 168
+    },
+    "balanced": {
+      "tn": 9328,
+      "fp": 62,
+      "fn": 71,
+      "tp": 539,
+      "errors": 133,
+      "ler": 0.0133,
+      "positive_recall": 0.8836065573770492,
+      "pymatching_errors": 57,
+      "pymatching_ler": 0.0057,
+      "candidate_only": 102,
+      "pymatching_only": 26,
+      "paired_prediction_disagreements": 128
+    },
+    "z_biased": {
+      "tn": 9694,
+      "fp": 23,
+      "fn": 30,
+      "tp": 253,
+      "errors": 53,
+      "ler": 0.0053,
+      "positive_recall": 0.8939929328621908,
+      "pymatching_errors": 15,
+      "pymatching_ler": 0.0015,
+      "candidate_only": 45,
+      "pymatching_only": 7,
+      "paired_prediction_disagreements": 52
+    }
+  },
+  "equal_regime_ler": 0.0128,
+  "equal_regime_pymatching_ler": 0.004533333333333333,
+  "paired_ler_difference": 0.008266666666666667,
+  "candidate_only": 298,
+  "pymatching_only": 50,
+  "parameter_count": 13413,
+  "steps": 1200,
+  "gpu_training_seconds": 10.515578199992888,
+  "history": [
+    {
+      "epoch": 1,
+      "monitor_nll": 0.11739266048604352,
+      "selected": true
+    },
+    {
+      "epoch": 2,
+      "monitor_nll": 0.08486555128253721,
+      "selected": true
+    },
+    {
+      "epoch": 3,
+      "monitor_nll": 0.05860541972514476,
+      "selected": true
+    },
+    {
+      "epoch": 4,
+      "monitor_nll": 0.04999888437724468,
+      "selected": true
+    },
+    {
+      "epoch": 5,
+      "monitor_nll": 0.04192342371059662,
+      "selected": true
+    },
+    {
+      "epoch": 6,
+      "monitor_nll": 0.043123069680596815,
+      "selected": false
+    },
+    {
+      "epoch": 7,
+      "monitor_nll": 0.0420605647722799,
+      "selected": false
+    },
+    {
+      "epoch": 8,
+      "monitor_nll": 0.040492973974152136,
+      "selected": true
+    },
+    {
+      "epoch": 9,
+      "monitor_nll": 0.03939710724360028,
+      "selected": true
+    },
+    {
+      "epoch": 10,
+      "monitor_nll": 0.03793018845538125,
+      "selected": true
+    }
+  ],
+  "root_id": 3,
+  "train_size_per_regime": 10000,
+  "predictions_sha256": "c5564dedbc9e50bd03d697dc311dcc0c110d55e5bf497632b06921a8820b34c0",
+  "elapsed_wall_seconds": 17.482437700004084,
+  "device": "cuda:0",
+  "cuda_device_name": "NVIDIA GeForce RTX 4050 Laptop GPU"
+}

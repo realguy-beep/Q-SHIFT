@@ -1,0 +1,317 @@
+{
+  "status": "PASS_INDEPENDENT_RECOMPUTATION",
+  "method": "Rebuilt DEM/matcher predictions and recomputed residuals directly from saved NPZ; no analyzer/report functions imported",
+  "coverage": {
+    "strata": 6,
+    "roots_per_stratum": 12,
+    "roots": 72,
+    "shots_per_root": 10000,
+    "paired_shots": 720000,
+    "checkpoint_count": 72,
+    "prediction_bits_independently_checked": 2880000,
+    "prediction_mismatches": 0
+  },
+  "dem_sha256": {
+    "x_x_biased": "089667dacdaf9701794eb4d950e66d0b645053e577a855f384c6b7f9a40f4650",
+    "x_balanced": "0d6a0b346714fa950b385c3dff7ebb45dabe3cb0a45f45519bf14706632339f1",
+    "x_z_biased": "b085316594dbcbd89b9a02f04aaf00cc0e1fccb84c2480767e9f2efb911510a9",
+    "z_x_biased": "dda728b685826085aa4badd8408637a41aad00e99d03b03d987c6c2e286ce2d3",
+    "z_balanced": "7b823e56b6a674fe13766315f213ac2abdc2ba9affbdfa3200d8ecd5721c0e8f",
+    "z_z_biased": "6fb222efc3e1721352b3ee0f9d379620a514b541eebe35377e5fc6d689e63c5a"
+  },
+  "aggregate_arm_errors": [
+    3532,
+    3349,
+    3372,
+    3720
+  ],
+  "aggregate_arm_ler": [
+    0.004905555555555555,
+    0.004651388888888889,
+    0.004683333333333334,
+    0.005166666666666667
+  ],
+  "raw_observable_errors": 39326,
+  "primary": {
+    "estimand": "equal-stratum mean correlated pooled-fixed minus uncorrelated pooled-fixed LER",
+    "delta_ler": -0.00025416666666666665,
+    "bootstrap_95_ci": [
+      -0.0003500000000000002,
+      -0.00016249999999999986
+    ],
+    "signflip_p_two_sided": 0.0008399916000839992,
+    "signflip_extremes": 83,
+    "standard_only_failures": 763,
+    "correlation_only_failures": 580,
+    "prediction_disagreements": 1343,
+    "exact_mcnemar_p_descriptive": 6.570520813675385e-07
+  },
+  "pairwise_prediction_disagreement_matrix": [
+    [
+      0,
+      1343,
+      724,
+      2468
+    ],
+    [
+      1343,
+      0,
+      1703,
+      1493
+    ],
+    [
+      724,
+      1703,
+      0,
+      1880
+    ],
+    [
+      2468,
+      1493,
+      1880,
+      0
+    ]
+  ],
+  "pairwise_wrong_a_correct_b_matrix": [
+    [
+      0,
+      763,
+      442,
+      1140
+    ],
+    [
+      580,
+      0,
+      840,
+      561
+    ],
+    [
+      282,
+      863,
+      0,
+      766
+    ],
+    [
+      1328,
+      932,
+      1114,
+      0
+    ]
+  ],
+  "per_stratum": [
+    {
+      "stratum_index": 0,
+      "stratum": "x_x_biased",
+      "shots": 120000,
+      "raw_observable_errors": 3330,
+      "arm_errors": [
+        100,
+        122,
+        100,
+        122
+      ],
+      "arm_ler": [
+        0.0008333333333333334,
+        0.0010166666666666666,
+        0.0008333333333333334,
+        0.0010166666666666666
+      ],
+      "primary_correlated_minus_uncorrelated": 0.00018333333333333334,
+      "primary_standard_only": 32,
+      "primary_correlation_only": 54,
+      "result_json_counts_match": true
+    },
+    {
+      "stratum_index": 1,
+      "stratum": "x_balanced",
+      "shots": 120000,
+      "raw_observable_errors": 7331,
+      "arm_errors": [
+        727,
+        629,
+        727,
+        713
+      ],
+      "arm_ler": [
+        0.006058333333333333,
+        0.005241666666666667,
+        0.006058333333333333,
+        0.005941666666666666
+      ],
+      "primary_correlated_minus_uncorrelated": -0.0008166666666666668,
+      "primary_standard_only": 242,
+      "primary_correlation_only": 144,
+      "result_json_counts_match": true
+    },
+    {
+      "stratum_index": 2,
+      "stratum": "x_z_biased",
+      "shots": 120000,
+      "raw_observable_errors": 8897,
+      "arm_errors": [
+        1070,
+        984,
+        999,
+        986
+      ],
+      "arm_ler": [
+        0.008916666666666666,
+        0.0082,
+        0.008325,
+        0.008216666666666667
+      ],
+      "primary_correlated_minus_uncorrelated": -0.0007166666666666667,
+      "primary_standard_only": 148,
+      "primary_correlation_only": 62,
+      "result_json_counts_match": true
+    },
+    {
+      "stratum_index": 3,
+      "stratum": "z_x_biased",
+      "shots": 120000,
+      "raw_observable_errors": 9118,
+      "arm_errors": [
+        938,
+        884,
+        865,
+        912
+      ],
+      "arm_ler": [
+        0.007816666666666666,
+        0.007366666666666666,
+        0.007208333333333333,
+        0.0076
+      ],
+      "primary_correlated_minus_uncorrelated": -0.00045000000000000004,
+      "primary_standard_only": 129,
+      "primary_correlation_only": 75,
+      "result_json_counts_match": true
+    },
+    {
+      "stratum_index": 4,
+      "stratum": "z_balanced",
+      "shots": 120000,
+      "raw_observable_errors": 7266,
+      "arm_errors": [
+        575,
+        550,
+        559,
+        807
+      ],
+      "arm_ler": [
+        0.004791666666666666,
+        0.004583333333333333,
+        0.004658333333333333,
+        0.006725
+      ],
+      "primary_correlated_minus_uncorrelated": -0.00020833333333333335,
+      "primary_standard_only": 172,
+      "primary_correlation_only": 147,
+      "result_json_counts_match": true
+    },
+    {
+      "stratum_index": 5,
+      "stratum": "z_z_biased",
+      "shots": 120000,
+      "raw_observable_errors": 3384,
+      "arm_errors": [
+        122,
+        180,
+        122,
+        180
+      ],
+      "arm_ler": [
+        0.0010166666666666666,
+        0.0015,
+        0.0010166666666666666,
+        0.0015
+      ],
+      "primary_correlated_minus_uncorrelated": 0.0004833333333333333,
+      "primary_standard_only": 40,
+      "primary_correlation_only": 98,
+      "result_json_counts_match": true
+    }
+  ],
+  "comparisons_to_results_json": {
+    "aggregate_counts_match": true,
+    "primary_delta_match": true,
+    "primary_ci_match": true,
+    "primary_p_match": true
+  },
+  "per_root_csv_rows_verified": 72,
+  "per_root_csv_all_fields_match_recomputed_arrays": true,
+  "checkpoint_sha256": {
+    "checkpoints/stratum_00_root_00.npz": "da18115e04c56e94ff7eadf5918e4bfeb252ffd240ac5e46ca58b5dca8b69fb6",
+    "checkpoints/stratum_00_root_01.npz": "e7663c95d50ffe89d21ec9938fde8106ac03315817e7d5262df152078599b67d",
+    "checkpoints/stratum_00_root_02.npz": "e613d7686d9a5fefcd56ac915b919597fb06365b4e934f9a72491a005962e00c",
+    "checkpoints/stratum_00_root_03.npz": "cf5c95583b0fae8b286ffd26f6a9c1f85cecec2cc14ce1e2aaf23245fe9aafc9",
+    "checkpoints/stratum_00_root_04.npz": "3181a58a85a7e9a76979b138e9d9f509bc04b854d109ff682e0a925a7795a4a1",
+    "checkpoints/stratum_00_root_05.npz": "72fe656621331d82404f1d499bee2413d3a47865f344f0fd80548ceb945191f3",
+    "checkpoints/stratum_00_root_06.npz": "9f98366eabf1807a854c498013db25587124bb57cfea47f2280146ee1e44dd3e",
+    "checkpoints/stratum_00_root_07.npz": "a84a1e5fda82dd62427df281d185312ca279cc58c842fe7ae0b770d20d2c940a",
+    "checkpoints/stratum_00_root_08.npz": "633df59ba04f28548cbef8a18b1d50aa0b8bd29f17996b6b7b12b5fd727df662",
+    "checkpoints/stratum_00_root_09.npz": "24f5f182c968ab88722889f47e8309619eff0d1944dbc20566f0745d3256614f",
+    "checkpoints/stratum_00_root_10.npz": "ccfbb64140b4c793d5aa14f026d066a3c8e04ba76e7eb1292957ed872b50abc7",
+    "checkpoints/stratum_00_root_11.npz": "5db0b2ccdf4ed2a1741de2eb11ce9c3c0e226d955d365cc93d32efb9dd219600",
+    "checkpoints/stratum_01_root_00.npz": "e550a3163622a252d3129c01e70aedccf2f6d905fed582d2b0841e6c2b67d846",
+    "checkpoints/stratum_01_root_01.npz": "901f99b159cdb8d8e863e712c57c8bbbb3a58ce6131332e3ba720d75ea5561a3",
+    "checkpoints/stratum_01_root_02.npz": "5b89c56b9c663655e614fe0019ee6097dd58e8d996ee55b19de596c74b1df592",
+    "checkpoints/stratum_01_root_03.npz": "d719db676454a71a387185dbadb8349ec8546a131cd3f2c191cc55b107347e78",
+    "checkpoints/stratum_01_root_04.npz": "4bb665253c0c6e8706cd7d5be73093862433a7532770bd882e92a4b398ff2564",
+    "checkpoints/stratum_01_root_05.npz": "dc7fcb4c9a52df57551d0626a08d32a958b9d9fdf5bcc8ba50718aa4ddd48a07",
+    "checkpoints/stratum_01_root_06.npz": "13f5b5c4dff1fc4b6ede467d53b4099fc4f045f6b45576ba499d5a36eaac87e6",
+    "checkpoints/stratum_01_root_07.npz": "04470051830cfe10e3ca0c7ec168906f8254813ff32393f3744a8b7f2c1acc1c",
+    "checkpoints/stratum_01_root_08.npz": "350366ee66cdb52c14848ac55fb7f10288fa7798e232fc3882287bd3da3a6985",
+    "checkpoints/stratum_01_root_09.npz": "491a8ed9f2e1a216736d4fdb8ee10e111657e7f8a701db77df03c57b0cefc6f8",
+    "checkpoints/stratum_01_root_10.npz": "fa876d693b7c0006b1c2d9030d8f49cdc26787d43d0b2a4922fdb924b4c2354b",
+    "checkpoints/stratum_01_root_11.npz": "8a27c9488ae9231ec58b97e62f829fed01cbdf39f742258a6e2d8e1b3811329f",
+    "checkpoints/stratum_02_root_00.npz": "5d57ae97ae2c1aeebaa332b332ae651365ef9497baa64203c12856441e0b6f49",
+    "checkpoints/stratum_02_root_01.npz": "bc438b5a5f62998949a11162afa8ae46fcf5beed73d01563492747cad8d0e52e",
+    "checkpoints/stratum_02_root_02.npz": "11068b3e3383e92b9f665aee891e043ed03bb52abc67aa8f581c707bdb936c78",
+    "checkpoints/stratum_02_root_03.npz": "d8919c668fab871c8e2764d478ef3427f38d262afd368f3e36682f1c18818db8",
+    "checkpoints/stratum_02_root_04.npz": "0b4f6d5ecba840aaf3b2958d10802ecfd560ed6128196d40b8fda3ae87a356f1",
+    "checkpoints/stratum_02_root_05.npz": "ae80093eff8830947fc802e6120e0fb74207cf1e58ada3f8c030d55f44821e05",
+    "checkpoints/stratum_02_root_06.npz": "e724808c59efbf106b093823a9efd9ca2aa9664e7d01142993739bd2da3b4e85",
+    "checkpoints/stratum_02_root_07.npz": "b28221682f013e08050b22ed2ad7cebe046e6b5a5bef7630be23f5267dd65f42",
+    "checkpoints/stratum_02_root_08.npz": "ccf99fbfc4d571cd62c4dc7c69ee3bbe33d30512620576f995a376a71a803850",
+    "checkpoints/stratum_02_root_09.npz": "bcfc45015b6ffd5c0544d3df0917f5fb105f52eb74560865d754d291274119b6",
+    "checkpoints/stratum_02_root_10.npz": "84202e09bac1f9dcde0eb77002a62c091dc8265c742a7cbd1b466f7ae6e9e3a0",
+    "checkpoints/stratum_02_root_11.npz": "3b25d5f03cbdba99f6e31b919568f809ace66ecc343860e947177d6872894d4c",
+    "checkpoints/stratum_03_root_00.npz": "9ccb506ff0df9f931067b4a1191e1365dfb71084cda362654b40549957d0d1e9",
+    "checkpoints/stratum_03_root_01.npz": "dd0ff67da61b4c844081f8414f56c5eabe4bf12e566799c1f72155a08dde4dea",
+    "checkpoints/stratum_03_root_02.npz": "1aa02e07f5f1b4b801de22395ee85a2f10f1f5b627af899c55314330741f6e9a",
+    "checkpoints/stratum_03_root_03.npz": "c2b95995f609eb938643ee617531ae5dd7a687edf7eeb3eae129613d9a044ef3",
+    "checkpoints/stratum_03_root_04.npz": "43b3d449a01e7cf50691ea47b91b0b6e6142ec3d940e7a6c53ba36e7933b4f43",
+    "checkpoints/stratum_03_root_05.npz": "499aac55acf264475dae242d7d3b6ca2f414f2b1b026eea2a41c934478e505f9",
+    "checkpoints/stratum_03_root_06.npz": "8cfb655bcee8e9cd4d231884b4a817ced49df3c69d9981b3c23c329d2ab10e0b",
+    "checkpoints/stratum_03_root_07.npz": "febeade359fb32e72c985999790656d89ed3e19d7650d13893cb4a0504d2e121",
+    "checkpoints/stratum_03_root_08.npz": "ccab4b464c190620264f70195368b1e0ec28d250c3b3e58b4c5081c7df2887b6",
+    "checkpoints/stratum_03_root_09.npz": "5979f5ff4134d868dbd41bd7689b21387a85ab623938767c820b5176f6e87a48",
+    "checkpoints/stratum_03_root_10.npz": "6dbdc2e0fa215b4684265517e81aac3d6dc225f5fdbf1f2c1809ea2a61da8bdd",
+    "checkpoints/stratum_03_root_11.npz": "e36634516144b10796689668a2ed5fbc3f4faff5eb5adcd5da1c6f5183fe7c1d",
+    "checkpoints/stratum_04_root_00.npz": "9f76949d67567751c53b3e838dcc9bf2f4a277412dc27aaa4d7c1d62c743eafc",
+    "checkpoints/stratum_04_root_01.npz": "cd3675da45da2f2df23e643a6c24eb1e2089c2219f234ce9fc904c3facec5587",
+    "checkpoints/stratum_04_root_02.npz": "b7024428bc8f8631985bfb2ff5f0d33aa0647b5773b0fcd917f85243dd60e698",
+    "checkpoints/stratum_04_root_03.npz": "928083550c617cb56e78fda4db6d9b88a7fadf1aa8744e400667927cff1c0ce4",
+    "checkpoints/stratum_04_root_04.npz": "7d7a0fa30c6ae13d1f48adcb8d961be06148b9b9cda0f43d04482136500c3d60",
+    "checkpoints/stratum_04_root_05.npz": "e0bf4f619b9f5dc6c66aefa84c7041df355ad709f0c20e85c67657e7b511ba3e",
+    "checkpoints/stratum_04_root_06.npz": "0b8206e04dcdc8fb16b499686d591715fe3ac4f5271cc35523204d2ca6c4d32c",
+    "checkpoints/stratum_04_root_07.npz": "0894e2d8bb84348167bed64519670168e0399c942e8565424945f7ac324b4b94",
+    "checkpoints/stratum_04_root_08.npz": "bce0d381907f7e662ca0c9fa02daa2f0f9e7585cf42ea8429bd8620e055063fb",
+    "checkpoints/stratum_04_root_09.npz": "313ad41cbfa2131c7bcb2df24dfde4c5dcd761869188dfed263702263a8add84",
+    "checkpoints/stratum_04_root_10.npz": "62482b9beec43d587d658e7428e037af32aec7de00497c717cbe1e6b53d93b97",
+    "checkpoints/stratum_04_root_11.npz": "61cdeba464e1f834b92fc336639dbe47bc8802f63b37f415abbb31120975419a",
+    "checkpoints/stratum_05_root_00.npz": "5737a315d985183016864d3d4e79eae28d4f04d63d46853bf2cbad2e04728702",
+    "checkpoints/stratum_05_root_01.npz": "88becac7fdcfc9e8473608d02812946569c8098bc84bbb599d2df24d6a85a8d2",
+    "checkpoints/stratum_05_root_02.npz": "1de71b4c4b31271a134915fad8795d8a853c38c178583a965dc7886118a57ecc",
+    "checkpoints/stratum_05_root_03.npz": "ccf0c190ef0eb71f5c430024ec74b158d8a5fc137b11d62d916ec3c29af1c785",
+    "checkpoints/stratum_05_root_04.npz": "212a8abe95e8d26d327b037369cf66b367b10799322f6a1fb3eec9b4143ef945",
+    "checkpoints/stratum_05_root_05.npz": "aec2e8bac2e0f43f48e721c86497c0f1527be3d991aa1100826f1f79f6de2344",
+    "checkpoints/stratum_05_root_06.npz": "eab8c6393954998cddb76a8b3905681f66947fefb50b3cd6b6a4ed5eef51b053",
+    "checkpoints/stratum_05_root_07.npz": "e83758dc6dbf5af7f425c486658885a9907d6f66bda1ba10c9c1f7d1d2832f52",
+    "checkpoints/stratum_05_root_08.npz": "6d5781681d2c43e4d14528112a2fc3f52601422768d62bf88ed27fd0962b4372",
+    "checkpoints/stratum_05_root_09.npz": "7926f691c206e9dc500fa1b6ac4a6643dc08bdfb2001ef0a6b643e8b9ea3a45f",
+    "checkpoints/stratum_05_root_10.npz": "b0746c49654aa0c863870585beffbff2eed6755303d0b024dde9d0c24c20b742",
+    "checkpoints/stratum_05_root_11.npz": "2aa56b19ea8b942695cc1645c20a02a1500565016d160465ad9c6e93d2059a40"
+  }
+}

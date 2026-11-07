@@ -1,0 +1,702 @@
+{
+  "aggregate_policy_results": {
+    "phase2b_balanced_fixed": {
+      "equal_cell_mean_ler": 0.005691666666666667,
+      "errors": 683,
+      "pooled_ler": 0.005691666666666667,
+      "shots": 120000
+    },
+    "phase2b_regime_matched": {
+      "equal_cell_mean_ler": 0.005233333333333333,
+      "errors": 628,
+      "pooled_ler": 0.005233333333333334,
+      "shots": 120000
+    },
+    "reference_global_fixed": {
+      "equal_cell_mean_ler": 0.021491666666666662,
+      "errors": 2579,
+      "pooled_ler": 0.021491666666666666,
+      "shots": 120000
+    },
+    "reference_regime_informed": {
+      "equal_cell_mean_ler": 0.021491666666666662,
+      "errors": 2579,
+      "pooled_ler": 0.021491666666666666,
+      "shots": 120000
+    }
+  },
+  "calibration_selection": {
+    "calibration_matrix": {
+      "x": {
+        "columns_reference_training_regime_order": [
+          "x_biased",
+          "balanced",
+          "z_biased"
+        ],
+        "errors": [
+          [
+            128,
+            112,
+            100
+          ],
+          [
+            420,
+            344,
+            268
+          ],
+          [
+            631,
+            556,
+            363
+          ]
+        ],
+        "global_equal_regime_ler": [
+          0.0393,
+          0.03373333333333333,
+          0.024366666666666665
+        ],
+        "global_fixed_choice_index": 2,
+        "per_regime_choice_index": [
+          2,
+          2,
+          2
+        ],
+        "rows_generating_regime_order": [
+          "x_biased",
+          "balanced",
+          "z_biased"
+        ],
+        "shots_per_cell": 10000,
+        "tie_break": "lowest candidate index"
+      },
+      "z": {
+        "columns_reference_training_regime_order": [
+          "x_biased",
+          "balanced",
+          "z_biased"
+        ],
+        "errors": [
+          [
+            283,
+            344,
+            549
+          ],
+          [
+            223,
+            253,
+            362
+          ],
+          [
+            84,
+            91,
+            117
+          ]
+        ],
+        "global_equal_regime_ler": [
+          0.019666666666666666,
+          0.022933333333333333,
+          0.03426666666666667
+        ],
+        "global_fixed_choice_index": 0,
+        "per_regime_choice_index": [
+          0,
+          0,
+          0
+        ],
+        "rows_generating_regime_order": [
+          "x_biased",
+          "balanced",
+          "z_biased"
+        ],
+        "shots_per_cell": 10000,
+        "tie_break": "lowest candidate index"
+      }
+    },
+    "fit_metrics": {
+      "x/balanced": {
+        "fit_seconds": 1.503426300000001,
+        "logical_ones": 3614,
+        "model_file_bytes": 1661563,
+        "model_sha256": "a33f577fe1697eee75f130dc10050cc2797a8bef840413a3eb06f04bb1c1f71b",
+        "shots": 60000,
+        "train_brier_score_in_sample": 0.02253602996705251,
+        "training_ler": 0.06023333333333333
+      },
+      "x/x_biased": {
+        "fit_seconds": 1.6257200999998531,
+        "logical_ones": 1610,
+        "model_file_bytes": 1090574,
+        "model_sha256": "7385dd20f3083f62ad7d1f14932a8a803fdf6f5f198fa70b88b2d4f7cadaf41c",
+        "shots": 60000,
+        "train_brier_score_in_sample": 0.009540567642754,
+        "training_ler": 0.026833333333333334
+      },
+      "x/z_biased": {
+        "fit_seconds": 1.5048084999998537,
+        "logical_ones": 4318,
+        "model_file_bytes": 1431190,
+        "model_sha256": "63591a5c1d230da8e7a3ef514e6a506e3073a595945f5d5d681a4fddc1db796b",
+        "shots": 60000,
+        "train_brier_score_in_sample": 0.02560879764101896,
+        "training_ler": 0.07196666666666666
+      },
+      "z/balanced": {
+        "fit_seconds": 1.6155685000001085,
+        "logical_ones": 3588,
+        "model_file_bytes": 1495715,
+        "model_sha256": "90c08fc9a282c06617864c2a864f7b64e7b5721f84635cff2da93377bc08f236",
+        "shots": 60000,
+        "train_brier_score_in_sample": 0.01889573273162839,
+        "training_ler": 0.0598
+      },
+      "z/x_biased": {
+        "fit_seconds": 1.6491358000000673,
+        "logical_ones": 4450,
+        "model_file_bytes": 1388821,
+        "model_sha256": "56ac7ace9ddf33b7a8b34659c9fd04d7a0f44d45a2245a2a127d52765358b6b2",
+        "shots": 60000,
+        "train_brier_score_in_sample": 0.02263626836101871,
+        "training_ler": 0.07416666666666667
+      },
+      "z/z_biased": {
+        "fit_seconds": 1.5772229000001516,
+        "logical_ones": 1628,
+        "model_file_bytes": 975672,
+        "model_sha256": "f9d0731797e385894750d8e04c1cd1185dc9136e7c95f3d2f892f5b3847dcb32",
+        "shots": 60000,
+        "train_brier_score_in_sample": 0.008851355874536235,
+        "training_ler": 0.027133333333333332
+      }
+    },
+    "fit_total_seconds": 12.787133799999992,
+    "global_fixed_reference_index_by_basis": {
+      "x": 2,
+      "z": 0
+    },
+    "model_files": {
+      "x/balanced": "models\\reference_x_balanced.joblib",
+      "x/x_biased": "models\\reference_x_x_biased.joblib",
+      "x/z_biased": "models\\reference_x_z_biased.joblib",
+      "z/balanced": "models\\reference_z_balanced.joblib",
+      "z/x_biased": "models\\reference_z_x_biased.joblib",
+      "z/z_biased": "models\\reference_z_z_biased.joblib"
+    },
+    "regime_informed_reference_index_by_cell": {
+      "x/balanced": 2,
+      "x/x_biased": 2,
+      "x/z_biased": 2,
+      "z/balanced": 0,
+      "z/x_biased": 0,
+      "z/z_biased": 0
+    },
+    "resource": {
+      "after_each_fit": {
+        "x/balanced": 215703552,
+        "x/x_biased": 208375808,
+        "x/z_biased": 217628672,
+        "z/balanced": 201023488,
+        "z/x_biased": 193847296,
+        "z/z_biased": 207077376
+      },
+      "working_set_before_training": 188076032
+    },
+    "selection_source": "independent calibration labels only; heldout not yet generated"
+  },
+  "independent_raw_evidence_redecode": "PASS: every stored detector, label, prediction, and posterior array independently checked",
+  "limitations": [
+    "The full-circuit conditional posterior is not exactly enumerated.",
+    "Random-forest vote probabilities are finite-sample posterior surrogates; proper scores quantify predictive calibration, not a bound on posterior total-variation error.",
+    "Four independent test roots per cell are a small feasibility pilot.",
+    "The regime-informed policy is an oracle-like diagnostic that receives the known simulated regime; it is not online adaptation."
+  ],
+  "paired_policy_comparisons": {
+    "reference_global_fixed_vs_phase2b_balanced": {
+      "disagreements": 2612,
+      "first_errors": 2579,
+      "first_minus_second_ler": 0.0158,
+      "first_only_errors": 2254,
+      "first_policy": "reference_global_fixed",
+      "mcnemar_exact_two_sided_p": 0.0,
+      "mcnemar_log10_p": -334.2727282259014,
+      "mcnemar_p_decimal": "5.336687518421E-335",
+      "second_errors": 683,
+      "second_only_errors": 358,
+      "second_policy": "phase2b_balanced_fixed"
+    },
+    "reference_regime_informed_vs_phase2b_regime_matched": {
+      "disagreements": 2577,
+      "first_errors": 2579,
+      "first_minus_second_ler": 0.016258333333333333,
+      "first_only_errors": 2264,
+      "first_policy": "reference_regime_informed",
+      "mcnemar_exact_two_sided_p": 0.0,
+      "mcnemar_log10_p": -363.11132325896966,
+      "mcnemar_p_decimal": "7.738855561415E-364",
+      "second_errors": 628,
+      "second_only_errors": 313,
+      "second_policy": "phase2b_regime_matched"
+    }
+  },
+  "per_cell": {
+    "x/balanced": {
+      "calibration_global_reference_index": 2,
+      "calibration_regime_reference_index": 2,
+      "paired_regime_informed_vs_fixed": {
+        "disagreements": 0,
+        "first_only_errors": 0,
+        "mcnemar_exact_two_sided_p": 1.0,
+        "mcnemar_log10_p": 0.0,
+        "mcnemar_p_decimal": "1",
+        "second_only_errors": 0
+      },
+      "phase2b_balanced_fixed_errors": 109,
+      "phase2b_regime_matched_errors": 109,
+      "reference_global_fixed_errors": 512,
+      "reference_regime_informed_errors": 512,
+      "reference_regime_informed_vs_phase2b_matched": {
+        "disagreements": 515,
+        "first_only_errors": 459,
+        "mcnemar_exact_two_sided_p": 9.730212975204589e-80,
+        "mcnemar_log10_p": -79.01187765377647,
+        "mcnemar_p_decimal": "9.730212975205E-80",
+        "second_only_errors": 56
+      },
+      "reference_regime_minus_fixed_ler": 0.0,
+      "reference_true_regime_candidate_errors": 662,
+      "reference_true_regime_candidate_vs_phase2b_matched": {
+        "disagreements": 671,
+        "first_only_errors": 612,
+        "mcnemar_exact_two_sided_p": 7.035349498050938e-117,
+        "mcnemar_log10_p": -116.15271432306155,
+        "mcnemar_p_decimal": "7.035349498051E-117",
+        "second_only_errors": 59
+      },
+      "root_ler_mean_sd_min_max": {
+        "phase2b_balanced_fixed": {
+          "max": 0.0056,
+          "mean": 0.00545,
+          "min": 0.0054,
+          "sd_sample": 9.999999999999983e-05
+        },
+        "phase2b_regime_matched": {
+          "max": 0.0056,
+          "mean": 0.00545,
+          "min": 0.0054,
+          "sd_sample": 9.999999999999983e-05
+        },
+        "reference_global_fixed": {
+          "max": 0.0266,
+          "mean": 0.025599999999999998,
+          "min": 0.0234,
+          "sd_sample": 0.0014877275736280924
+        },
+        "reference_regime_informed": {
+          "max": 0.0266,
+          "mean": 0.025599999999999998,
+          "min": 0.0234,
+          "sd_sample": 0.0014877275736280924
+        }
+      },
+      "shots": 20000
+    },
+    "x/x_biased": {
+      "calibration_global_reference_index": 2,
+      "calibration_regime_reference_index": 2,
+      "paired_regime_informed_vs_fixed": {
+        "disagreements": 0,
+        "first_only_errors": 0,
+        "mcnemar_exact_two_sided_p": 1.0,
+        "mcnemar_log10_p": 0.0,
+        "mcnemar_p_decimal": "1",
+        "second_only_errors": 0
+      },
+      "phase2b_balanced_fixed_errors": 37,
+      "phase2b_regime_matched_errors": 21,
+      "reference_global_fixed_errors": 183,
+      "reference_regime_informed_errors": 183,
+      "reference_regime_informed_vs_phase2b_matched": {
+        "disagreements": 188,
+        "first_only_errors": 175,
+        "mcnemar_exact_two_sided_p": 2.118100215945962e-37,
+        "mcnemar_log10_p": -36.67405349550206,
+        "mcnemar_p_decimal": "2.118100215946E-37",
+        "second_only_errors": 13
+      },
+      "reference_regime_minus_fixed_ler": 0.0,
+      "reference_true_regime_candidate_errors": 251,
+      "reference_true_regime_candidate_vs_phase2b_matched": {
+        "disagreements": 258,
+        "first_only_errors": 244,
+        "mcnemar_exact_two_sided_p": 2.123580700308734e-55,
+        "mcnemar_log10_p": -54.67293123030183,
+        "mcnemar_p_decimal": "2.123580700309E-55",
+        "second_only_errors": 14
+      },
+      "root_ler_mean_sd_min_max": {
+        "phase2b_balanced_fixed": {
+          "max": 0.0024,
+          "mean": 0.0018499999999999999,
+          "min": 0.0012,
+          "sd_sample": 0.0005
+        },
+        "phase2b_regime_matched": {
+          "max": 0.0014,
+          "mean": 0.00105,
+          "min": 0.0006,
+          "sd_sample": 0.00041231056256176604
+        },
+        "reference_global_fixed": {
+          "max": 0.0098,
+          "mean": 0.00915,
+          "min": 0.0078,
+          "sd_sample": 0.0009146948489341495
+        },
+        "reference_regime_informed": {
+          "max": 0.0098,
+          "mean": 0.00915,
+          "min": 0.0078,
+          "sd_sample": 0.0009146948489341495
+        }
+      },
+      "shots": 20000
+    },
+    "x/z_biased": {
+      "calibration_global_reference_index": 2,
+      "calibration_regime_reference_index": 2,
+      "paired_regime_informed_vs_fixed": {
+        "disagreements": 0,
+        "first_only_errors": 0,
+        "mcnemar_exact_two_sided_p": 1.0,
+        "mcnemar_log10_p": 0.0,
+        "mcnemar_p_decimal": "1",
+        "second_only_errors": 0
+      },
+      "phase2b_balanced_fixed_errors": 162,
+      "phase2b_regime_matched_errors": 157,
+      "reference_global_fixed_errors": 725,
+      "reference_regime_informed_errors": 725,
+      "reference_regime_informed_vs_phase2b_matched": {
+        "disagreements": 710,
+        "first_only_errors": 639,
+        "mcnemar_exact_two_sided_p": 3.6089125893130555e-115,
+        "mcnemar_log10_p": -114.4426236367653,
+        "mcnemar_p_decimal": "3.608912589313E-115",
+        "second_only_errors": 71
+      },
+      "reference_regime_minus_fixed_ler": 0.0,
+      "reference_true_regime_candidate_errors": 725,
+      "reference_true_regime_candidate_vs_phase2b_matched": {
+        "disagreements": 710,
+        "first_only_errors": 639,
+        "mcnemar_exact_two_sided_p": 3.6089125893130555e-115,
+        "mcnemar_log10_p": -114.4426236367653,
+        "mcnemar_p_decimal": "3.608912589313E-115",
+        "second_only_errors": 71
+      },
+      "root_ler_mean_sd_min_max": {
+        "phase2b_balanced_fixed": {
+          "max": 0.0098,
+          "mean": 0.0081,
+          "min": 0.0074,
+          "sd_sample": 0.0011372481406154652
+        },
+        "phase2b_regime_matched": {
+          "max": 0.01,
+          "mean": 0.00785,
+          "min": 0.0068,
+          "sd_sample": 0.0014548768561863466
+        },
+        "reference_global_fixed": {
+          "max": 0.039,
+          "mean": 0.03625,
+          "min": 0.033,
+          "sd_sample": 0.0026248809496813366
+        },
+        "reference_regime_informed": {
+          "max": 0.039,
+          "mean": 0.03625,
+          "min": 0.033,
+          "sd_sample": 0.0026248809496813366
+        }
+      },
+      "shots": 20000
+    },
+    "z/balanced": {
+      "calibration_global_reference_index": 0,
+      "calibration_regime_reference_index": 0,
+      "paired_regime_informed_vs_fixed": {
+        "disagreements": 0,
+        "first_only_errors": 0,
+        "mcnemar_exact_two_sided_p": 1.0,
+        "mcnemar_log10_p": 0.0,
+        "mcnemar_p_decimal": "1",
+        "second_only_errors": 0
+      },
+      "phase2b_balanced_fixed_errors": 143,
+      "phase2b_regime_matched_errors": 143,
+      "reference_global_fixed_errors": 456,
+      "reference_regime_informed_errors": 456,
+      "reference_regime_informed_vs_phase2b_matched": {
+        "disagreements": 479,
+        "first_only_errors": 396,
+        "mcnemar_exact_two_sided_p": 6.3279339182194935e-50,
+        "mcnemar_log10_p": -49.19873806476678,
+        "mcnemar_p_decimal": "6.327933918219E-50",
+        "second_only_errors": 83
+      },
+      "reference_regime_minus_fixed_ler": 0.0,
+      "reference_true_regime_candidate_errors": 509,
+      "reference_true_regime_candidate_vs_phase2b_matched": {
+        "disagreements": 530,
+        "first_only_errors": 448,
+        "mcnemar_exact_two_sided_p": 4.823656112795717e-62,
+        "mcnemar_log10_p": -61.31662366140662,
+        "mcnemar_p_decimal": "4.823656112796E-62",
+        "second_only_errors": 82
+      },
+      "root_ler_mean_sd_min_max": {
+        "phase2b_balanced_fixed": {
+          "max": 0.0088,
+          "mean": 0.00715,
+          "min": 0.005,
+          "sd_sample": 0.001611417595369576
+        },
+        "phase2b_regime_matched": {
+          "max": 0.0088,
+          "mean": 0.00715,
+          "min": 0.005,
+          "sd_sample": 0.001611417595369576
+        },
+        "reference_global_fixed": {
+          "max": 0.024,
+          "mean": 0.0228,
+          "min": 0.022,
+          "sd_sample": 0.0008640987597877154
+        },
+        "reference_regime_informed": {
+          "max": 0.024,
+          "mean": 0.0228,
+          "min": 0.022,
+          "sd_sample": 0.0008640987597877154
+        }
+      },
+      "shots": 20000
+    },
+    "z/x_biased": {
+      "calibration_global_reference_index": 0,
+      "calibration_regime_reference_index": 0,
+      "paired_regime_informed_vs_fixed": {
+        "disagreements": 0,
+        "first_only_errors": 0,
+        "mcnemar_exact_two_sided_p": 1.0,
+        "mcnemar_log10_p": 0.0,
+        "mcnemar_p_decimal": "1",
+        "second_only_errors": 0
+      },
+      "phase2b_balanced_fixed_errors": 180,
+      "phase2b_regime_matched_errors": 167,
+      "reference_global_fixed_errors": 540,
+      "reference_regime_informed_errors": 540,
+      "reference_regime_informed_vs_phase2b_matched": {
+        "disagreements": 515,
+        "first_only_errors": 444,
+        "mcnemar_exact_two_sided_p": 5.703366054108886e-67,
+        "mcnemar_log10_p": -66.24386875358098,
+        "mcnemar_p_decimal": "5.703366054109E-67",
+        "second_only_errors": 71
+      },
+      "reference_regime_minus_fixed_ler": 0.0,
+      "reference_true_regime_candidate_errors": 540,
+      "reference_true_regime_candidate_vs_phase2b_matched": {
+        "disagreements": 515,
+        "first_only_errors": 444,
+        "mcnemar_exact_two_sided_p": 5.703366054108886e-67,
+        "mcnemar_log10_p": -66.24386875358098,
+        "mcnemar_p_decimal": "5.703366054109E-67",
+        "second_only_errors": 71
+      },
+      "root_ler_mean_sd_min_max": {
+        "phase2b_balanced_fixed": {
+          "max": 0.01,
+          "mean": 0.009000000000000001,
+          "min": 0.0082,
+          "sd_sample": 0.000748331477354788
+        },
+        "phase2b_regime_matched": {
+          "max": 0.0098,
+          "mean": 0.00835,
+          "min": 0.0072,
+          "sd_sample": 0.0010878112581387146
+        },
+        "reference_global_fixed": {
+          "max": 0.0294,
+          "mean": 0.027,
+          "min": 0.025,
+          "sd_sample": 0.002141650453894534
+        },
+        "reference_regime_informed": {
+          "max": 0.0294,
+          "mean": 0.027,
+          "min": 0.025,
+          "sd_sample": 0.002141650453894534
+        }
+      },
+      "shots": 20000
+    },
+    "z/z_biased": {
+      "calibration_global_reference_index": 0,
+      "calibration_regime_reference_index": 0,
+      "paired_regime_informed_vs_fixed": {
+        "disagreements": 0,
+        "first_only_errors": 0,
+        "mcnemar_exact_two_sided_p": 1.0,
+        "mcnemar_log10_p": 0.0,
+        "mcnemar_p_decimal": "1",
+        "second_only_errors": 0
+      },
+      "phase2b_balanced_fixed_errors": 52,
+      "phase2b_regime_matched_errors": 31,
+      "reference_global_fixed_errors": 163,
+      "reference_regime_informed_errors": 163,
+      "reference_regime_informed_vs_phase2b_matched": {
+        "disagreements": 170,
+        "first_only_errors": 151,
+        "mcnemar_exact_two_sided_p": 1.0549434615879526e-26,
+        "mcnemar_log10_p": -25.97677081522727,
+        "mcnemar_p_decimal": "1.054943461588E-26",
+        "second_only_errors": 19
+      },
+      "reference_regime_minus_fixed_ler": 0.0,
+      "reference_true_regime_candidate_errors": 236,
+      "reference_true_regime_candidate_vs_phase2b_matched": {
+        "disagreements": 247,
+        "first_only_errors": 226,
+        "mcnemar_exact_two_sided_p": 1.402625316178025e-44,
+        "mcnemar_log10_p": -43.85305832672542,
+        "mcnemar_p_decimal": "1.402625316178E-44",
+        "second_only_errors": 21
+      },
+      "root_ler_mean_sd_min_max": {
+        "phase2b_balanced_fixed": {
+          "max": 0.0034,
+          "mean": 0.0026,
+          "min": 0.0022,
+          "sd_sample": 0.000541602560309064
+        },
+        "phase2b_regime_matched": {
+          "max": 0.0018,
+          "mean": 0.0015500000000000002,
+          "min": 0.0014,
+          "sd_sample": 0.0001914854215512676
+        },
+        "reference_global_fixed": {
+          "max": 0.009,
+          "mean": 0.00815,
+          "min": 0.0064,
+          "sd_sample": 0.001193035344544885
+        },
+        "reference_regime_informed": {
+          "max": 0.009,
+          "mean": 0.00815,
+          "min": 0.0064,
+          "sd_sample": 0.001193035344544885
+        }
+      },
+      "shots": 20000
+    }
+  },
+  "phase": "Phase 2C decoder fidelity feasibility pilot",
+  "posterior_probability_metrics_on_pilot": {
+    "ref_balanced": {
+      "brier_score": 0.020477564431334902,
+      "constant_prior_baseline_brier_score": 0.051017094375,
+      "constant_prior_baseline_log_loss_nats": 0.20991387067497425,
+      "ece_10_equal_width": 0.03427070661977777,
+      "log_loss_nats": 0.07556450603812831,
+      "mean_predicted_probability": 0.054963034642405866,
+      "observed_logical_rate": 0.053925,
+      "probability_threshold": 0.5,
+      "shots": 120000
+    },
+    "ref_x": {
+      "brier_score": 0.0214913911772642,
+      "constant_prior_baseline_brier_score": 0.051017094375,
+      "constant_prior_baseline_log_loss_nats": 0.20991387067497425,
+      "ece_10_equal_width": 0.026868247695389123,
+      "log_loss_nats": 0.0770432819514944,
+      "mean_predicted_probability": 0.05111267788141021,
+      "observed_logical_rate": 0.053925,
+      "probability_threshold": 0.5,
+      "shots": 120000
+    },
+    "ref_z": {
+      "brier_score": 0.021763126443285763,
+      "constant_prior_baseline_brier_score": 0.051017094375,
+      "constant_prior_baseline_log_loss_nats": 0.20991387067497425,
+      "ece_10_equal_width": 0.032426026083047586,
+      "log_loss_nats": 0.07821383927947685,
+      "mean_predicted_probability": 0.05302115423601685,
+      "observed_logical_rate": 0.053925,
+      "probability_threshold": 0.5,
+      "shots": 120000
+    }
+  },
+  "pretest_frozen_hash": "b849d07103cb723c6c6c2dcdd6a54cd094cc6cc38d2ffd2974c60a88cd199592",
+  "primary": {
+    "bootstrap_ci95_seed_cluster_stratified": [
+      0.0,
+      0.0
+    ],
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 89300001,
+    "difference": 0.0,
+    "estimand": "equal-cell mean LER(reference regime-informed calibration selections) minus LER(reference global fixed calibration selection)",
+    "interpretation": "exploratory feasibility only; four roots per basis-regime cell",
+    "paired_root_signflip_p_two_sided": 1.0,
+    "paired_shot_discordances": {
+      "disagreements": 0,
+      "first_only_errors": 0,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "mcnemar_log10_p": 0.0,
+      "mcnemar_p_decimal": "1",
+      "second_only_errors": 0
+    },
+    "signflip_replicates": 50000,
+    "signflip_seed": 89300002
+  },
+  "reference_model_file_sizes_bytes": {
+    "x/balanced": 1661563,
+    "x/x_biased": 1090574,
+    "x/z_biased": 1431190,
+    "z/balanced": 1495715,
+    "z/x_biased": 1388821,
+    "z/z_biased": 975672
+  },
+  "root_count": 24,
+  "runtime": {
+    "phase2b_matching_seconds_by_candidate": [
+      0.12046480000049087,
+      0.11247100000014143,
+      0.11202069999967534
+    ],
+    "phase2b_matching_seconds_per_shot_by_candidate": [
+      1.0038733333374238e-06,
+      9.372583333345119e-07,
+      9.335058333306279e-07
+    ],
+    "pilot_generation_and_decoding_wall_seconds": 4.4322692999994615,
+    "reference_seconds_by_candidate": [
+      1.3838144999999713,
+      1.351453099999162,
+      1.3520452000000205
+    ],
+    "reference_seconds_per_shot_by_candidate": [
+      1.153178749999976e-05,
+      1.1262109166659683e-05,
+      1.1267043333333504e-05
+    ],
+    "working_set_after_pilot": 215904256
+  },
+  "status": "COMPLETE_EXPLORATORY_PILOT",
+  "test_shots": 120000
+}

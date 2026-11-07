@@ -1,0 +1,453 @@
+{
+  "title": "Q-SHIFT paired research benchmark",
+  "seed": 20261201,
+  "environment": {
+    "python": "3.12.10",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "numpy": "2.5.3"
+  },
+  "protocol": "independent train/validation/test simulation batches; paired held-out shots across decoders; no threshold or policy selection on test data",
+  "training_noise_levels": [
+    0.001,
+    0.003,
+    0.006
+  ],
+  "shot_counts": {
+    "train_per_regime": 1000,
+    "validation_per_regime": 500,
+    "test_per_condition_per_seed": 1000
+  },
+  "runs": [
+    {
+      "replicate": 0,
+      "seed": 20261201,
+      "mixed_validation_rate": 0.0026666666666666666,
+      "mixed_threshold": 0.75,
+      "conditions": {
+        "0.001": {
+          "raw_errors": 1,
+          "raw_rate": 0.001,
+          "detector_count": 24,
+          "unseen_from_training": false,
+          "adaptive_policy": "windowed detector-frequency estimate + validation-selected lookup/matching",
+          "estimated_regime_shot_counts": {
+            "0.001": 1000
+          },
+          "validation_decoder_choice_by_regime": {
+            "0.001": "matching",
+            "0.003": "matching",
+            "0.006": "matching"
+          },
+          "runtime_seconds_per_test_shot": {
+            "fixed_pymatching": 9.549999958835542e-08,
+            "noise_specific_pymatching": 7.959999857121147e-08,
+            "mixed_lookup": 7.920000098238233e-08,
+            "adaptive_regime_estimation_overhead": 5.053999993833713e-07
+          },
+          "lookup_table_python_object_bytes_approx": 11960,
+          "decoders": {
+            "fixed_pymatching_0.003": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson_95": [
+                2.168404344971009e-19,
+                0.0038267584855551234
+              ]
+            },
+            "noise_specific_pymatching_oracle": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson_95": [
+                2.168404344971009e-19,
+                0.0038267584855551234
+              ]
+            },
+            "mixed_lookup": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson_95": [
+                2.168404344971009e-19,
+                0.0038267584855551234
+              ]
+            },
+            "nearest_regime_lookup_oracle": {
+              "errors": 1,
+              "rate": 0.001,
+              "wilson_95": [
+                0.00017654637062607809,
+                0.0056425585979579355
+              ]
+            },
+            "adaptive_validation_choice": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson_95": [
+                2.168404344971009e-19,
+                0.0038267584855551234
+              ]
+            }
+          },
+          "paired_vs_fixed": {
+            "noise_specific_pymatching_oracle": {
+              "decoder_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "error_difference": 0,
+              "risk_difference_ci_95_approx": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar_two_sided_p": 1.0
+            },
+            "mixed_lookup": {
+              "decoder_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "error_difference": 0,
+              "risk_difference_ci_95_approx": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar_two_sided_p": 1.0
+            },
+            "nearest_regime_lookup_oracle": {
+              "decoder_only_wrong": 1,
+              "fixed_only_wrong": 0,
+              "error_difference": 1,
+              "risk_difference_ci_95_approx": [
+                -0.0009590197548774233,
+                0.0029590197548774234
+              ],
+              "exact_mcnemar_two_sided_p": 1.0
+            },
+            "adaptive_validation_choice": {
+              "decoder_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "error_difference": 0,
+              "risk_difference_ci_95_approx": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar_two_sided_p": 1.0
+            }
+          }
+        },
+        "0.006": {
+          "raw_errors": 23,
+          "raw_rate": 0.023,
+          "detector_count": 24,
+          "unseen_from_training": false,
+          "adaptive_policy": "windowed detector-frequency estimate + validation-selected lookup/matching",
+          "estimated_regime_shot_counts": {
+            "0.003": 1000
+          },
+          "validation_decoder_choice_by_regime": {
+            "0.001": "matching",
+            "0.003": "matching",
+            "0.006": "matching"
+          },
+          "runtime_seconds_per_test_shot": {
+            "fixed_pymatching": 1.4150000060908497e-07,
+            "noise_specific_pymatching": 1.2620000052265822e-07,
+            "mixed_lookup": 8.460000026389025e-08,
+            "adaptive_regime_estimation_overhead": 4.892000015388475e-07
+          },
+          "lookup_table_python_object_bytes_approx": 11960,
+          "decoders": {
+            "fixed_pymatching_0.003": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson_95": [
+                2.168404344971009e-19,
+                0.0038267584855551234
+              ]
+            },
+            "noise_specific_pymatching_oracle": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson_95": [
+                2.168404344971009e-19,
+                0.0038267584855551234
+              ]
+            },
+            "mixed_lookup": {
+              "errors": 4,
+              "rate": 0.004,
+              "wilson_95": [
+                0.0015565881404084308,
+                0.010239556277262253
+              ]
+            },
+            "nearest_regime_lookup_oracle": {
+              "errors": 5,
+              "rate": 0.005,
+              "wilson_95": [
+                0.0021375355273244596,
+                0.011650955373375113
+              ]
+            },
+            "adaptive_validation_choice": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson_95": [
+                2.168404344971009e-19,
+                0.0038267584855551234
+              ]
+            }
+          },
+          "paired_vs_fixed": {
+            "noise_specific_pymatching_oracle": {
+              "decoder_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "error_difference": 0,
+              "risk_difference_ci_95_approx": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar_two_sided_p": 1.0
+            },
+            "mixed_lookup": {
+              "decoder_only_wrong": 4,
+              "fixed_only_wrong": 0,
+              "error_difference": 4,
+              "risk_difference_ci_95_approx": [
+                8.784785571930992e-05,
+                0.00791215214428069
+              ],
+              "exact_mcnemar_two_sided_p": 0.125
+            },
+            "nearest_regime_lookup_oracle": {
+              "decoder_only_wrong": 5,
+              "fixed_only_wrong": 0,
+              "error_difference": 5,
+              "risk_difference_ci_95_approx": [
+                0.0006282772274536896,
+                0.00937172277254631
+              ],
+              "exact_mcnemar_two_sided_p": 0.0625
+            },
+            "adaptive_validation_choice": {
+              "decoder_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "error_difference": 0,
+              "risk_difference_ci_95_approx": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar_two_sided_p": 1.0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "0.001": {
+      "fixed_pymatching_0.003": {
+        "errors": 0,
+        "shots": 1000,
+        "rate": 0.0,
+        "wilson_95": [
+          2.168404344971009e-19,
+          0.0038267584855551234
+        ],
+        "per_seed_errors": [
+          0
+        ]
+      },
+      "noise_specific_pymatching_oracle": {
+        "errors": 0,
+        "shots": 1000,
+        "rate": 0.0,
+        "wilson_95": [
+          2.168404344971009e-19,
+          0.0038267584855551234
+        ],
+        "per_seed_errors": [
+          0
+        ]
+      },
+      "mixed_lookup": {
+        "errors": 0,
+        "shots": 1000,
+        "rate": 0.0,
+        "wilson_95": [
+          2.168404344971009e-19,
+          0.0038267584855551234
+        ],
+        "per_seed_errors": [
+          0
+        ]
+      },
+      "nearest_regime_lookup_oracle": {
+        "errors": 1,
+        "shots": 1000,
+        "rate": 0.001,
+        "wilson_95": [
+          0.00017654637062607809,
+          0.0056425585979579355
+        ],
+        "per_seed_errors": [
+          1
+        ]
+      },
+      "adaptive_validation_choice": {
+        "errors": 0,
+        "shots": 1000,
+        "rate": 0.0,
+        "wilson_95": [
+          2.168404344971009e-19,
+          0.0038267584855551234
+        ],
+        "per_seed_errors": [
+          0
+        ]
+      },
+      "paired_vs_fixed": {
+        "noise_specific_pymatching_oracle": {
+          "decoder_only_wrong": 0,
+          "fixed_only_wrong": 0,
+          "error_difference": 0,
+          "risk_difference_ci_95_approx": [
+            0.0,
+            0.0
+          ],
+          "exact_mcnemar_two_sided_p": 1.0
+        },
+        "mixed_lookup": {
+          "decoder_only_wrong": 0,
+          "fixed_only_wrong": 0,
+          "error_difference": 0,
+          "risk_difference_ci_95_approx": [
+            0.0,
+            0.0
+          ],
+          "exact_mcnemar_two_sided_p": 1.0
+        },
+        "nearest_regime_lookup_oracle": {
+          "decoder_only_wrong": 1,
+          "fixed_only_wrong": 0,
+          "error_difference": 1,
+          "risk_difference_ci_95_approx": [
+            -0.0009590197548774233,
+            0.0029590197548774234
+          ],
+          "exact_mcnemar_two_sided_p": 1.0
+        },
+        "adaptive_validation_choice": {
+          "decoder_only_wrong": 0,
+          "fixed_only_wrong": 0,
+          "error_difference": 0,
+          "risk_difference_ci_95_approx": [
+            0.0,
+            0.0
+          ],
+          "exact_mcnemar_two_sided_p": 1.0
+        }
+      }
+    },
+    "0.006": {
+      "fixed_pymatching_0.003": {
+        "errors": 0,
+        "shots": 1000,
+        "rate": 0.0,
+        "wilson_95": [
+          2.168404344971009e-19,
+          0.0038267584855551234
+        ],
+        "per_seed_errors": [
+          0
+        ]
+      },
+      "noise_specific_pymatching_oracle": {
+        "errors": 0,
+        "shots": 1000,
+        "rate": 0.0,
+        "wilson_95": [
+          2.168404344971009e-19,
+          0.0038267584855551234
+        ],
+        "per_seed_errors": [
+          0
+        ]
+      },
+      "mixed_lookup": {
+        "errors": 4,
+        "shots": 1000,
+        "rate": 0.004,
+        "wilson_95": [
+          0.0015565881404084308,
+          0.010239556277262253
+        ],
+        "per_seed_errors": [
+          4
+        ]
+      },
+      "nearest_regime_lookup_oracle": {
+        "errors": 5,
+        "shots": 1000,
+        "rate": 0.005,
+        "wilson_95": [
+          0.0021375355273244596,
+          0.011650955373375113
+        ],
+        "per_seed_errors": [
+          5
+        ]
+      },
+      "adaptive_validation_choice": {
+        "errors": 0,
+        "shots": 1000,
+        "rate": 0.0,
+        "wilson_95": [
+          2.168404344971009e-19,
+          0.0038267584855551234
+        ],
+        "per_seed_errors": [
+          0
+        ]
+      },
+      "paired_vs_fixed": {
+        "noise_specific_pymatching_oracle": {
+          "decoder_only_wrong": 0,
+          "fixed_only_wrong": 0,
+          "error_difference": 0,
+          "risk_difference_ci_95_approx": [
+            0.0,
+            0.0
+          ],
+          "exact_mcnemar_two_sided_p": 1.0
+        },
+        "mixed_lookup": {
+          "decoder_only_wrong": 4,
+          "fixed_only_wrong": 0,
+          "error_difference": 4,
+          "risk_difference_ci_95_approx": [
+            8.784785571930992e-05,
+            0.00791215214428069
+          ],
+          "exact_mcnemar_two_sided_p": 0.125
+        },
+        "nearest_regime_lookup_oracle": {
+          "decoder_only_wrong": 5,
+          "fixed_only_wrong": 0,
+          "error_difference": 5,
+          "risk_difference_ci_95_approx": [
+            0.0006282772274536896,
+            0.00937172277254631
+          ],
+          "exact_mcnemar_two_sided_p": 0.0625
+        },
+        "adaptive_validation_choice": {
+          "decoder_only_wrong": 0,
+          "fixed_only_wrong": 0,
+          "error_difference": 0,
+          "risk_difference_ci_95_approx": [
+            0.0,
+            0.0
+          ],
+          "exact_mcnemar_two_sided_p": 1.0
+        }
+      }
+    }
+  }
+}

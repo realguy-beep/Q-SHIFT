@@ -1,0 +1,1911 @@
+{
+  "run_id": "18ca68def80946838b26aaea7f59ff3e",
+  "audit_scope": "read-only retrospective audit; test split is not used for model selection",
+  "configuration": {
+    "preset": "smoke",
+    "model_selection": "direct_plus_residual",
+    "training_shots": 8000,
+    "validation_shots": 1000,
+    "test_shots": 1000,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "noise_regime": "balanced",
+    "memory_basis": "z",
+    "gate_p": 0.003,
+    "measurement_p": 0.003,
+    "bias_ratio": 10.0,
+    "validation_frequency_steps": 8,
+    "checkpoint_frequency_steps": 8,
+    "seed": 1900000001,
+    "device": "auto",
+    "distance": 3,
+    "rounds": 5,
+    "mixed_precision": true
+  },
+  "software": {
+    "python": "3.12.10",
+    "torch": "2.14.1+cu126",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "numpy": "2.5.3"
+  },
+  "device": "cuda",
+  "cuda_training_verified": true,
+  "seed_screen_passed": true,
+  "split_results": {
+    "train": {
+      "shots": 8000,
+      "observable_positive_count": 491,
+      "observable_positive_rate": 0.061375,
+      "detector_bit_density": 0.02669375,
+      "direct_prediction_positive_count": 0,
+      "direct_prediction_positive_rate": 0.0,
+      "direct_prediction_histogram": {
+        "0": 8000,
+        "1": 0
+      },
+      "direct_confusion": {
+        "matrix_true_rows_predicted_columns": [
+          [
+            7509,
+            0
+          ],
+          [
+            491,
+            0
+          ]
+        ],
+        "tn": 7509,
+        "fp": 0,
+        "fn": 491,
+        "tp": 0
+      },
+      "direct_error_count": 491,
+      "direct_accuracy": 0.938625,
+      "direct_calibration": {
+        "brier_score": 0.10206073564259183,
+        "log_loss": 0.37719976520518805,
+        "ece_10_bins": 0.19854658641293643,
+        "probability_quantiles": {
+          "0": 0.04787116497755051,
+          "0.25": 0.23882652819156647,
+          "0.5": 0.28619757294654846,
+          "0.75": 0.28619757294654846,
+          "0.9": 0.28619757294654846,
+          "0.99": 0.28619757294654846,
+          "1": 0.29499712586402893
+        },
+        "probability_histogram_10_bins": [
+          14,
+          783,
+          7203,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "reliability_bins": [
+          {
+            "low": 0.0,
+            "high": 0.1,
+            "count": 14,
+            "mean_probability": 0.08971660477774483,
+            "observed_positive_rate": 0.14285714285714285
+          },
+          {
+            "low": 0.1,
+            "high": 0.2,
+            "count": 783,
+            "mean_probability": 0.17353799514767462,
+            "observed_positive_rate": 0.13026819923371646
+          },
+          {
+            "low": 0.2,
+            "high": 0.30000000000000004,
+            "count": 7203,
+            "mean_probability": 0.2694361340510552,
+            "observed_positive_rate": 0.053727613494377345
+          },
+          {
+            "low": 0.30000000000000004,
+            "high": 0.4,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.4,
+            "high": 0.5,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.5,
+            "high": 0.6000000000000001,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.6000000000000001,
+            "high": 0.7000000000000001,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.7000000000000001,
+            "high": 0.8,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.8,
+            "high": 0.9,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.9,
+            "high": 1.0,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          }
+        ]
+      },
+      "direct_logit_quantiles": {
+        "0": -2.990186929702759,
+        "0.01": -1.850948452949524,
+        "0.1": -1.3838695287704468,
+        "0.5": -0.9139238595962524,
+        "0.9": -0.9139238595962524,
+        "0.99": -0.9139238595962524,
+        "1": -0.8712362051010132
+      },
+      "pymatching_prediction_histogram": {
+        "0": 7523,
+        "1": 477
+      },
+      "pymatching_confusion": {
+        "matrix_true_rows_predicted_columns": [
+          [
+            7496,
+            13
+          ],
+          [
+            27,
+            464
+          ]
+        ],
+        "tn": 7496,
+        "fp": 13,
+        "fn": 27,
+        "tp": 464
+      },
+      "pymatching_error_count": 40,
+      "pymatching_failure_prevalence": 0.005,
+      "residual_target_positive_count": 40,
+      "residual_target_positive_rate": 0.005,
+      "residual_prediction_positive_count": 0,
+      "residual_prediction_positive_rate": 0.0,
+      "residual_correction_histogram": {
+        "0": 8000,
+        "1": 0
+      },
+      "residual_correction_confusion": {
+        "matrix_true_rows_predicted_columns": [
+          [
+            7960,
+            0
+          ],
+          [
+            40,
+            0
+          ]
+        ],
+        "tn": 7960,
+        "fp": 0,
+        "fn": 40,
+        "tp": 0
+      },
+      "residual_calibration": {
+        "brier_score": 0.0968841078977475,
+        "log_loss": 0.3688410742203692,
+        "ece_10_bins": 0.29577547129942106,
+        "probability_quantiles": {
+          "0": 0.04284391924738884,
+          "0.25": 0.2642669081687927,
+          "0.5": 0.3420628011226654,
+          "0.75": 0.3420628011226654,
+          "0.9": 0.3420628011226654,
+          "0.99": 0.3420628011226654,
+          "1": 0.3420628011226654
+        },
+        "probability_histogram_10_bins": [
+          18,
+          576,
+          2568,
+          4838,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "reliability_bins": [
+          {
+            "low": 0.0,
+            "high": 0.1,
+            "count": 18,
+            "mean_probability": 0.07956820705698596,
+            "observed_positive_rate": 0.1111111111111111
+          },
+          {
+            "low": 0.1,
+            "high": 0.2,
+            "count": 576,
+            "mean_probability": 0.167412931086599,
+            "observed_positive_rate": 0.041666666666666664
+          },
+          {
+            "low": 0.2,
+            "high": 0.30000000000000004,
+            "count": 2568,
+            "mean_probability": 0.2581349333452287,
+            "observed_positive_rate": 0.005451713395638629
+          },
+          {
+            "low": 0.30000000000000004,
+            "high": 0.4,
+            "count": 4838,
+            "mean_probability": 0.33987508081561923,
+            "observed_positive_rate": 0.0
+          },
+          {
+            "low": 0.4,
+            "high": 0.5,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.5,
+            "high": 0.6000000000000001,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.6000000000000001,
+            "high": 0.7000000000000001,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.7000000000000001,
+            "high": 0.8,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.8,
+            "high": 0.9,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.9,
+            "high": 1.0,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          }
+        ]
+      },
+      "residual_final_prediction_histogram": {
+        "0": 7523,
+        "1": 477
+      },
+      "residual_final_confusion": {
+        "matrix_true_rows_predicted_columns": [
+          [
+            7496,
+            13
+          ],
+          [
+            27,
+            464
+          ]
+        ],
+        "tn": 7496,
+        "fp": 13,
+        "fn": 27,
+        "tp": 464
+      },
+      "residual_final_error_count": 40,
+      "paired_arrays_sha256": "b3c93e1f637d7bbfacd8f13904752bfeb38fffcf6c546b164305bd97d7da2f83"
+    },
+    "validation": {
+      "shots": 1000,
+      "observable_positive_count": 61,
+      "observable_positive_rate": 0.061,
+      "detector_bit_density": 0.0246,
+      "direct_prediction_positive_count": 0,
+      "direct_prediction_positive_rate": 0.0,
+      "direct_prediction_histogram": {
+        "0": 1000,
+        "1": 0
+      },
+      "direct_confusion": {
+        "matrix_true_rows_predicted_columns": [
+          [
+            939,
+            0
+          ],
+          [
+            61,
+            0
+          ]
+        ],
+        "tn": 939,
+        "fp": 0,
+        "fn": 61,
+        "tp": 0
+      },
+      "direct_error_count": 61,
+      "direct_accuracy": 0.939,
+      "direct_calibration": {
+        "brier_score": 0.10213141423457285,
+        "log_loss": 0.3775159183076791,
+        "ece_10_bins": 0.20094125321507453,
+        "probability_quantiles": {
+          "0": 0.09824720025062561,
+          "0.25": 0.24076352640986443,
+          "0.5": 0.28619757294654846,
+          "0.75": 0.28619757294654846,
+          "0.9": 0.28619757294654846,
+          "0.99": 0.28619757294654846,
+          "1": 0.29499712586402893
+        },
+        "probability_histogram_10_bins": [
+          1,
+          78,
+          921,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "reliability_bins": [
+          {
+            "low": 0.0,
+            "high": 0.1,
+            "count": 1,
+            "mean_probability": 0.09824720025062561,
+            "observed_positive_rate": 0.0
+          },
+          {
+            "low": 0.1,
+            "high": 0.2,
+            "count": 78,
+            "mean_probability": 0.17473963361520034,
+            "observed_positive_rate": 0.16666666666666666
+          },
+          {
+            "low": 0.2,
+            "high": 0.30000000000000004,
+            "count": 921,
+            "mean_probability": 0.2695041417946127,
+            "observed_positive_rate": 0.05211726384364821
+          },
+          {
+            "low": 0.30000000000000004,
+            "high": 0.4,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.4,
+            "high": 0.5,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.5,
+            "high": 0.6000000000000001,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.6000000000000001,
+            "high": 0.7000000000000001,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.7000000000000001,
+            "high": 0.8,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.8,
+            "high": 0.9,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.9,
+            "high": 1.0,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          }
+        ]
+      },
+      "direct_logit_quantiles": {
+        "0": -2.216853618621826,
+        "0.01": -1.7416424751281738,
+        "0.1": -1.3207910060882568,
+        "0.5": -0.9139238595962524,
+        "0.9": -0.9139238595962524,
+        "0.99": -0.9139238595962524,
+        "1": -0.8712362051010132
+      },
+      "pymatching_prediction_histogram": {
+        "0": 939,
+        "1": 61
+      },
+      "pymatching_confusion": {
+        "matrix_true_rows_predicted_columns": [
+          [
+            937,
+            2
+          ],
+          [
+            2,
+            59
+          ]
+        ],
+        "tn": 937,
+        "fp": 2,
+        "fn": 2,
+        "tp": 59
+      },
+      "pymatching_error_count": 4,
+      "pymatching_failure_prevalence": 0.004,
+      "residual_target_positive_count": 4,
+      "residual_target_positive_rate": 0.004,
+      "residual_prediction_positive_count": 0,
+      "residual_prediction_positive_rate": 0.0,
+      "residual_correction_histogram": {
+        "0": 1000,
+        "1": 0
+      },
+      "residual_correction_confusion": {
+        "matrix_true_rows_predicted_columns": [
+          [
+            996,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "tn": 996,
+        "fp": 0,
+        "fn": 4,
+        "tp": 0
+      },
+      "residual_calibration": {
+        "brier_score": 0.0973924050270814,
+        "log_loss": 0.3705271627112624,
+        "ece_10_bins": 0.3005442911460996,
+        "probability_quantiles": {
+          "0": 0.07335695624351501,
+          "0.25": 0.26760968565940857,
+          "0.5": 0.3420628011226654,
+          "0.75": 0.3420628011226654,
+          "0.9": 0.3420628011226654,
+          "0.99": 0.3420628011226654,
+          "1": 0.3420628011226654
+        },
+        "probability_histogram_10_bins": [
+          2,
+          63,
+          323,
+          612,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "reliability_bins": [
+          {
+            "low": 0.0,
+            "high": 0.1,
+            "count": 2,
+            "mean_probability": 0.0757952481508255,
+            "observed_positive_rate": 0.5
+          },
+          {
+            "low": 0.1,
+            "high": 0.2,
+            "count": 63,
+            "mean_probability": 0.16850286970535913,
+            "observed_positive_rate": 0.015873015873015872
+          },
+          {
+            "low": 0.2,
+            "high": 0.30000000000000004,
+            "count": 323,
+            "mean_probability": 0.26009138901905376,
+            "observed_positive_rate": 0.006191950464396285
+          },
+          {
+            "low": 0.30000000000000004,
+            "high": 0.4,
+            "count": 612,
+            "mean_probability": 0.3399847748330216,
+            "observed_positive_rate": 0.0
+          },
+          {
+            "low": 0.4,
+            "high": 0.5,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.5,
+            "high": 0.6000000000000001,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.6000000000000001,
+            "high": 0.7000000000000001,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.7000000000000001,
+            "high": 0.8,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.8,
+            "high": 0.9,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.9,
+            "high": 1.0,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          }
+        ]
+      },
+      "residual_final_prediction_histogram": {
+        "0": 939,
+        "1": 61
+      },
+      "residual_final_confusion": {
+        "matrix_true_rows_predicted_columns": [
+          [
+            937,
+            2
+          ],
+          [
+            2,
+            59
+          ]
+        ],
+        "tn": 937,
+        "fp": 2,
+        "fn": 2,
+        "tp": 59
+      },
+      "residual_final_error_count": 4,
+      "paired_arrays_sha256": "d22575af1117206a5b9504e325d8951dbd1bfa1615278825cb3483b80f5f9310"
+    },
+    "test": {
+      "shots": 1000,
+      "observable_positive_count": 53,
+      "observable_positive_rate": 0.053,
+      "detector_bit_density": 0.02545,
+      "direct_prediction_positive_count": 0,
+      "direct_prediction_positive_rate": 0.0,
+      "direct_prediction_histogram": {
+        "0": 1000,
+        "1": 0
+      },
+      "direct_confusion": {
+        "matrix_true_rows_predicted_columns": [
+          [
+            947,
+            0
+          ],
+          [
+            53,
+            0
+          ]
+        ],
+        "tn": 947,
+        "fp": 0,
+        "fn": 53,
+        "tp": 0
+      },
+      "direct_error_count": 53,
+      "direct_accuracy": 0.947,
+      "direct_calibration": {
+        "brier_score": 0.09768281299273435,
+        "log_loss": 0.36694631905861075,
+        "ece_10_bins": 0.2072261857762933,
+        "probability_quantiles": {
+          "0": 0.06318309903144836,
+          "0.25": 0.2396436221897602,
+          "0.5": 0.28619757294654846,
+          "0.75": 0.28619757294654846,
+          "0.9": 0.28619757294654846,
+          "0.99": 0.28619757294654846,
+          "1": 0.29499712586402893
+        },
+        "probability_histogram_10_bins": [
+          3,
+          102,
+          895,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "reliability_bins": [
+          {
+            "low": 0.0,
+            "high": 0.1,
+            "count": 3,
+            "mean_probability": 0.08330687135457993,
+            "observed_positive_rate": 0.0
+          },
+          {
+            "low": 0.1,
+            "high": 0.2,
+            "count": 102,
+            "mean_probability": 0.1746356506265846,
+            "observed_positive_rate": 0.09803921568627451
+          },
+          {
+            "low": 0.2,
+            "high": 0.30000000000000004,
+            "count": 895,
+            "mean_probability": 0.2705736634618077,
+            "observed_positive_rate": 0.048044692737430165
+          },
+          {
+            "low": 0.30000000000000004,
+            "high": 0.4,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.4,
+            "high": 0.5,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.5,
+            "high": 0.6000000000000001,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.6000000000000001,
+            "high": 0.7000000000000001,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.7000000000000001,
+            "high": 0.8,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.8,
+            "high": 0.9,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.9,
+            "high": 1.0,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          }
+        ]
+      },
+      "direct_logit_quantiles": {
+        "0": -2.69645094871521,
+        "0.01": -1.79629385471344,
+        "0.1": -1.3887823820114136,
+        "0.5": -0.9139238595962524,
+        "0.9": -0.9139238595962524,
+        "0.99": -0.9139238595962524,
+        "1": -0.8712362051010132
+      },
+      "pymatching_prediction_histogram": {
+        "0": 948,
+        "1": 52
+      },
+      "pymatching_confusion": {
+        "matrix_true_rows_predicted_columns": [
+          [
+            946,
+            1
+          ],
+          [
+            2,
+            51
+          ]
+        ],
+        "tn": 946,
+        "fp": 1,
+        "fn": 2,
+        "tp": 51
+      },
+      "pymatching_error_count": 3,
+      "pymatching_failure_prevalence": 0.003,
+      "residual_target_positive_count": 3,
+      "residual_target_positive_rate": 0.003,
+      "residual_prediction_positive_count": 0,
+      "residual_prediction_positive_rate": 0.0,
+      "residual_correction_histogram": {
+        "0": 1000,
+        "1": 0
+      },
+      "residual_correction_confusion": {
+        "matrix_true_rows_predicted_columns": [
+          [
+            997,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "tn": 997,
+        "fp": 0,
+        "fn": 3,
+        "tp": 0
+      },
+      "residual_calibration": {
+        "brier_score": 0.09697664964702285,
+        "log_loss": 0.369177340666471,
+        "ece_10_bins": 0.30204820162057877,
+        "probability_quantiles": {
+          "0": 0.0832844227552414,
+          "0.25": 0.2666884586215019,
+          "0.5": 0.3420628011226654,
+          "0.75": 0.3420628011226654,
+          "0.9": 0.3420628011226654,
+          "0.99": 0.3420628011226654,
+          "1": 0.3420628011226654
+        },
+        "probability_histogram_10_bins": [
+          1,
+          64,
+          302,
+          633,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "reliability_bins": [
+          {
+            "low": 0.0,
+            "high": 0.1,
+            "count": 1,
+            "mean_probability": 0.0832844227552414,
+            "observed_positive_rate": 1.0
+          },
+          {
+            "low": 0.1,
+            "high": 0.2,
+            "count": 64,
+            "mean_probability": 0.16591345751658082,
+            "observed_positive_rate": 0.015625
+          },
+          {
+            "low": 0.2,
+            "high": 0.30000000000000004,
+            "count": 302,
+            "mean_probability": 0.25570068577464844,
+            "observed_positive_rate": 0.0033112582781456954
+          },
+          {
+            "low": 0.30000000000000004,
+            "high": 0.4,
+            "count": 633,
+            "mean_probability": 0.34011282410478516,
+            "observed_positive_rate": 0.0
+          },
+          {
+            "low": 0.4,
+            "high": 0.5,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.5,
+            "high": 0.6000000000000001,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.6000000000000001,
+            "high": 0.7000000000000001,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.7000000000000001,
+            "high": 0.8,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.8,
+            "high": 0.9,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          },
+          {
+            "low": 0.9,
+            "high": 1.0,
+            "count": 0,
+            "mean_probability": null,
+            "observed_positive_rate": null
+          }
+        ]
+      },
+      "residual_final_prediction_histogram": {
+        "0": 948,
+        "1": 52
+      },
+      "residual_final_confusion": {
+        "matrix_true_rows_predicted_columns": [
+          [
+            946,
+            1
+          ],
+          [
+            2,
+            51
+          ]
+        ],
+        "tn": 946,
+        "fp": 1,
+        "fn": 2,
+        "tp": 51
+      },
+      "residual_final_error_count": 3,
+      "paired_arrays_sha256": "4c85ea8746164483b586e4a62f8127cae90342695d2a0f4455f39cdb4ab10e91"
+    }
+  },
+  "per_regime": {
+    "balanced": {
+      "train": {
+        "shots": 8000,
+        "observable_positive_count": 491,
+        "observable_positive_rate": 0.061375,
+        "detector_bit_density": 0.02669375,
+        "direct_prediction_positive_count": 0,
+        "direct_prediction_positive_rate": 0.0,
+        "direct_prediction_histogram": {
+          "0": 8000,
+          "1": 0
+        },
+        "direct_confusion": {
+          "matrix_true_rows_predicted_columns": [
+            [
+              7509,
+              0
+            ],
+            [
+              491,
+              0
+            ]
+          ],
+          "tn": 7509,
+          "fp": 0,
+          "fn": 491,
+          "tp": 0
+        },
+        "direct_error_count": 491,
+        "direct_accuracy": 0.938625,
+        "direct_calibration": {
+          "brier_score": 0.10206073564259183,
+          "log_loss": 0.37719976520518805,
+          "ece_10_bins": 0.19854658641293643,
+          "probability_quantiles": {
+            "0": 0.04787116497755051,
+            "0.25": 0.23882652819156647,
+            "0.5": 0.28619757294654846,
+            "0.75": 0.28619757294654846,
+            "0.9": 0.28619757294654846,
+            "0.99": 0.28619757294654846,
+            "1": 0.29499712586402893
+          },
+          "probability_histogram_10_bins": [
+            14,
+            783,
+            7203,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "reliability_bins": [
+            {
+              "low": 0.0,
+              "high": 0.1,
+              "count": 14,
+              "mean_probability": 0.08971660477774483,
+              "observed_positive_rate": 0.14285714285714285
+            },
+            {
+              "low": 0.1,
+              "high": 0.2,
+              "count": 783,
+              "mean_probability": 0.17353799514767462,
+              "observed_positive_rate": 0.13026819923371646
+            },
+            {
+              "low": 0.2,
+              "high": 0.30000000000000004,
+              "count": 7203,
+              "mean_probability": 0.2694361340510552,
+              "observed_positive_rate": 0.053727613494377345
+            },
+            {
+              "low": 0.30000000000000004,
+              "high": 0.4,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.4,
+              "high": 0.5,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.5,
+              "high": 0.6000000000000001,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.6000000000000001,
+              "high": 0.7000000000000001,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.7000000000000001,
+              "high": 0.8,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.8,
+              "high": 0.9,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.9,
+              "high": 1.0,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            }
+          ]
+        },
+        "direct_logit_quantiles": {
+          "0": -2.990186929702759,
+          "0.01": -1.850948452949524,
+          "0.1": -1.3838695287704468,
+          "0.5": -0.9139238595962524,
+          "0.9": -0.9139238595962524,
+          "0.99": -0.9139238595962524,
+          "1": -0.8712362051010132
+        },
+        "pymatching_prediction_histogram": {
+          "0": 7523,
+          "1": 477
+        },
+        "pymatching_confusion": {
+          "matrix_true_rows_predicted_columns": [
+            [
+              7496,
+              13
+            ],
+            [
+              27,
+              464
+            ]
+          ],
+          "tn": 7496,
+          "fp": 13,
+          "fn": 27,
+          "tp": 464
+        },
+        "pymatching_error_count": 40,
+        "pymatching_failure_prevalence": 0.005,
+        "residual_target_positive_count": 40,
+        "residual_target_positive_rate": 0.005,
+        "residual_prediction_positive_count": 0,
+        "residual_prediction_positive_rate": 0.0,
+        "residual_correction_histogram": {
+          "0": 8000,
+          "1": 0
+        },
+        "residual_correction_confusion": {
+          "matrix_true_rows_predicted_columns": [
+            [
+              7960,
+              0
+            ],
+            [
+              40,
+              0
+            ]
+          ],
+          "tn": 7960,
+          "fp": 0,
+          "fn": 40,
+          "tp": 0
+        },
+        "residual_calibration": {
+          "brier_score": 0.0968841078977475,
+          "log_loss": 0.3688410742203692,
+          "ece_10_bins": 0.29577547129942106,
+          "probability_quantiles": {
+            "0": 0.04284391924738884,
+            "0.25": 0.2642669081687927,
+            "0.5": 0.3420628011226654,
+            "0.75": 0.3420628011226654,
+            "0.9": 0.3420628011226654,
+            "0.99": 0.3420628011226654,
+            "1": 0.3420628011226654
+          },
+          "probability_histogram_10_bins": [
+            18,
+            576,
+            2568,
+            4838,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "reliability_bins": [
+            {
+              "low": 0.0,
+              "high": 0.1,
+              "count": 18,
+              "mean_probability": 0.07956820705698596,
+              "observed_positive_rate": 0.1111111111111111
+            },
+            {
+              "low": 0.1,
+              "high": 0.2,
+              "count": 576,
+              "mean_probability": 0.167412931086599,
+              "observed_positive_rate": 0.041666666666666664
+            },
+            {
+              "low": 0.2,
+              "high": 0.30000000000000004,
+              "count": 2568,
+              "mean_probability": 0.2581349333452287,
+              "observed_positive_rate": 0.005451713395638629
+            },
+            {
+              "low": 0.30000000000000004,
+              "high": 0.4,
+              "count": 4838,
+              "mean_probability": 0.33987508081561923,
+              "observed_positive_rate": 0.0
+            },
+            {
+              "low": 0.4,
+              "high": 0.5,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.5,
+              "high": 0.6000000000000001,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.6000000000000001,
+              "high": 0.7000000000000001,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.7000000000000001,
+              "high": 0.8,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.8,
+              "high": 0.9,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.9,
+              "high": 1.0,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            }
+          ]
+        },
+        "residual_final_prediction_histogram": {
+          "0": 7523,
+          "1": 477
+        },
+        "residual_final_confusion": {
+          "matrix_true_rows_predicted_columns": [
+            [
+              7496,
+              13
+            ],
+            [
+              27,
+              464
+            ]
+          ],
+          "tn": 7496,
+          "fp": 13,
+          "fn": 27,
+          "tp": 464
+        },
+        "residual_final_error_count": 40,
+        "paired_arrays_sha256": "b3c93e1f637d7bbfacd8f13904752bfeb38fffcf6c546b164305bd97d7da2f83"
+      },
+      "validation": {
+        "shots": 1000,
+        "observable_positive_count": 61,
+        "observable_positive_rate": 0.061,
+        "detector_bit_density": 0.0246,
+        "direct_prediction_positive_count": 0,
+        "direct_prediction_positive_rate": 0.0,
+        "direct_prediction_histogram": {
+          "0": 1000,
+          "1": 0
+        },
+        "direct_confusion": {
+          "matrix_true_rows_predicted_columns": [
+            [
+              939,
+              0
+            ],
+            [
+              61,
+              0
+            ]
+          ],
+          "tn": 939,
+          "fp": 0,
+          "fn": 61,
+          "tp": 0
+        },
+        "direct_error_count": 61,
+        "direct_accuracy": 0.939,
+        "direct_calibration": {
+          "brier_score": 0.10213141423457285,
+          "log_loss": 0.3775159183076791,
+          "ece_10_bins": 0.20094125321507453,
+          "probability_quantiles": {
+            "0": 0.09824720025062561,
+            "0.25": 0.24076352640986443,
+            "0.5": 0.28619757294654846,
+            "0.75": 0.28619757294654846,
+            "0.9": 0.28619757294654846,
+            "0.99": 0.28619757294654846,
+            "1": 0.29499712586402893
+          },
+          "probability_histogram_10_bins": [
+            1,
+            78,
+            921,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "reliability_bins": [
+            {
+              "low": 0.0,
+              "high": 0.1,
+              "count": 1,
+              "mean_probability": 0.09824720025062561,
+              "observed_positive_rate": 0.0
+            },
+            {
+              "low": 0.1,
+              "high": 0.2,
+              "count": 78,
+              "mean_probability": 0.17473963361520034,
+              "observed_positive_rate": 0.16666666666666666
+            },
+            {
+              "low": 0.2,
+              "high": 0.30000000000000004,
+              "count": 921,
+              "mean_probability": 0.2695041417946127,
+              "observed_positive_rate": 0.05211726384364821
+            },
+            {
+              "low": 0.30000000000000004,
+              "high": 0.4,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.4,
+              "high": 0.5,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.5,
+              "high": 0.6000000000000001,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.6000000000000001,
+              "high": 0.7000000000000001,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.7000000000000001,
+              "high": 0.8,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.8,
+              "high": 0.9,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.9,
+              "high": 1.0,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            }
+          ]
+        },
+        "direct_logit_quantiles": {
+          "0": -2.216853618621826,
+          "0.01": -1.7416424751281738,
+          "0.1": -1.3207910060882568,
+          "0.5": -0.9139238595962524,
+          "0.9": -0.9139238595962524,
+          "0.99": -0.9139238595962524,
+          "1": -0.8712362051010132
+        },
+        "pymatching_prediction_histogram": {
+          "0": 939,
+          "1": 61
+        },
+        "pymatching_confusion": {
+          "matrix_true_rows_predicted_columns": [
+            [
+              937,
+              2
+            ],
+            [
+              2,
+              59
+            ]
+          ],
+          "tn": 937,
+          "fp": 2,
+          "fn": 2,
+          "tp": 59
+        },
+        "pymatching_error_count": 4,
+        "pymatching_failure_prevalence": 0.004,
+        "residual_target_positive_count": 4,
+        "residual_target_positive_rate": 0.004,
+        "residual_prediction_positive_count": 0,
+        "residual_prediction_positive_rate": 0.0,
+        "residual_correction_histogram": {
+          "0": 1000,
+          "1": 0
+        },
+        "residual_correction_confusion": {
+          "matrix_true_rows_predicted_columns": [
+            [
+              996,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "tn": 996,
+          "fp": 0,
+          "fn": 4,
+          "tp": 0
+        },
+        "residual_calibration": {
+          "brier_score": 0.0973924050270814,
+          "log_loss": 0.3705271627112624,
+          "ece_10_bins": 0.3005442911460996,
+          "probability_quantiles": {
+            "0": 0.07335695624351501,
+            "0.25": 0.26760968565940857,
+            "0.5": 0.3420628011226654,
+            "0.75": 0.3420628011226654,
+            "0.9": 0.3420628011226654,
+            "0.99": 0.3420628011226654,
+            "1": 0.3420628011226654
+          },
+          "probability_histogram_10_bins": [
+            2,
+            63,
+            323,
+            612,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "reliability_bins": [
+            {
+              "low": 0.0,
+              "high": 0.1,
+              "count": 2,
+              "mean_probability": 0.0757952481508255,
+              "observed_positive_rate": 0.5
+            },
+            {
+              "low": 0.1,
+              "high": 0.2,
+              "count": 63,
+              "mean_probability": 0.16850286970535913,
+              "observed_positive_rate": 0.015873015873015872
+            },
+            {
+              "low": 0.2,
+              "high": 0.30000000000000004,
+              "count": 323,
+              "mean_probability": 0.26009138901905376,
+              "observed_positive_rate": 0.006191950464396285
+            },
+            {
+              "low": 0.30000000000000004,
+              "high": 0.4,
+              "count": 612,
+              "mean_probability": 0.3399847748330216,
+              "observed_positive_rate": 0.0
+            },
+            {
+              "low": 0.4,
+              "high": 0.5,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.5,
+              "high": 0.6000000000000001,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.6000000000000001,
+              "high": 0.7000000000000001,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.7000000000000001,
+              "high": 0.8,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.8,
+              "high": 0.9,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.9,
+              "high": 1.0,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            }
+          ]
+        },
+        "residual_final_prediction_histogram": {
+          "0": 939,
+          "1": 61
+        },
+        "residual_final_confusion": {
+          "matrix_true_rows_predicted_columns": [
+            [
+              937,
+              2
+            ],
+            [
+              2,
+              59
+            ]
+          ],
+          "tn": 937,
+          "fp": 2,
+          "fn": 2,
+          "tp": 59
+        },
+        "residual_final_error_count": 4,
+        "paired_arrays_sha256": "d22575af1117206a5b9504e325d8951dbd1bfa1615278825cb3483b80f5f9310"
+      },
+      "test": {
+        "shots": 1000,
+        "observable_positive_count": 53,
+        "observable_positive_rate": 0.053,
+        "detector_bit_density": 0.02545,
+        "direct_prediction_positive_count": 0,
+        "direct_prediction_positive_rate": 0.0,
+        "direct_prediction_histogram": {
+          "0": 1000,
+          "1": 0
+        },
+        "direct_confusion": {
+          "matrix_true_rows_predicted_columns": [
+            [
+              947,
+              0
+            ],
+            [
+              53,
+              0
+            ]
+          ],
+          "tn": 947,
+          "fp": 0,
+          "fn": 53,
+          "tp": 0
+        },
+        "direct_error_count": 53,
+        "direct_accuracy": 0.947,
+        "direct_calibration": {
+          "brier_score": 0.09768281299273435,
+          "log_loss": 0.36694631905861075,
+          "ece_10_bins": 0.2072261857762933,
+          "probability_quantiles": {
+            "0": 0.06318309903144836,
+            "0.25": 0.2396436221897602,
+            "0.5": 0.28619757294654846,
+            "0.75": 0.28619757294654846,
+            "0.9": 0.28619757294654846,
+            "0.99": 0.28619757294654846,
+            "1": 0.29499712586402893
+          },
+          "probability_histogram_10_bins": [
+            3,
+            102,
+            895,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "reliability_bins": [
+            {
+              "low": 0.0,
+              "high": 0.1,
+              "count": 3,
+              "mean_probability": 0.08330687135457993,
+              "observed_positive_rate": 0.0
+            },
+            {
+              "low": 0.1,
+              "high": 0.2,
+              "count": 102,
+              "mean_probability": 0.1746356506265846,
+              "observed_positive_rate": 0.09803921568627451
+            },
+            {
+              "low": 0.2,
+              "high": 0.30000000000000004,
+              "count": 895,
+              "mean_probability": 0.2705736634618077,
+              "observed_positive_rate": 0.048044692737430165
+            },
+            {
+              "low": 0.30000000000000004,
+              "high": 0.4,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.4,
+              "high": 0.5,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.5,
+              "high": 0.6000000000000001,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.6000000000000001,
+              "high": 0.7000000000000001,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.7000000000000001,
+              "high": 0.8,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.8,
+              "high": 0.9,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.9,
+              "high": 1.0,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            }
+          ]
+        },
+        "direct_logit_quantiles": {
+          "0": -2.69645094871521,
+          "0.01": -1.79629385471344,
+          "0.1": -1.3887823820114136,
+          "0.5": -0.9139238595962524,
+          "0.9": -0.9139238595962524,
+          "0.99": -0.9139238595962524,
+          "1": -0.8712362051010132
+        },
+        "pymatching_prediction_histogram": {
+          "0": 948,
+          "1": 52
+        },
+        "pymatching_confusion": {
+          "matrix_true_rows_predicted_columns": [
+            [
+              946,
+              1
+            ],
+            [
+              2,
+              51
+            ]
+          ],
+          "tn": 946,
+          "fp": 1,
+          "fn": 2,
+          "tp": 51
+        },
+        "pymatching_error_count": 3,
+        "pymatching_failure_prevalence": 0.003,
+        "residual_target_positive_count": 3,
+        "residual_target_positive_rate": 0.003,
+        "residual_prediction_positive_count": 0,
+        "residual_prediction_positive_rate": 0.0,
+        "residual_correction_histogram": {
+          "0": 1000,
+          "1": 0
+        },
+        "residual_correction_confusion": {
+          "matrix_true_rows_predicted_columns": [
+            [
+              997,
+              0
+            ],
+            [
+              3,
+              0
+            ]
+          ],
+          "tn": 997,
+          "fp": 0,
+          "fn": 3,
+          "tp": 0
+        },
+        "residual_calibration": {
+          "brier_score": 0.09697664964702285,
+          "log_loss": 0.369177340666471,
+          "ece_10_bins": 0.30204820162057877,
+          "probability_quantiles": {
+            "0": 0.0832844227552414,
+            "0.25": 0.2666884586215019,
+            "0.5": 0.3420628011226654,
+            "0.75": 0.3420628011226654,
+            "0.9": 0.3420628011226654,
+            "0.99": 0.3420628011226654,
+            "1": 0.3420628011226654
+          },
+          "probability_histogram_10_bins": [
+            1,
+            64,
+            302,
+            633,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "reliability_bins": [
+            {
+              "low": 0.0,
+              "high": 0.1,
+              "count": 1,
+              "mean_probability": 0.0832844227552414,
+              "observed_positive_rate": 1.0
+            },
+            {
+              "low": 0.1,
+              "high": 0.2,
+              "count": 64,
+              "mean_probability": 0.16591345751658082,
+              "observed_positive_rate": 0.015625
+            },
+            {
+              "low": 0.2,
+              "high": 0.30000000000000004,
+              "count": 302,
+              "mean_probability": 0.25570068577464844,
+              "observed_positive_rate": 0.0033112582781456954
+            },
+            {
+              "low": 0.30000000000000004,
+              "high": 0.4,
+              "count": 633,
+              "mean_probability": 0.34011282410478516,
+              "observed_positive_rate": 0.0
+            },
+            {
+              "low": 0.4,
+              "high": 0.5,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.5,
+              "high": 0.6000000000000001,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.6000000000000001,
+              "high": 0.7000000000000001,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.7000000000000001,
+              "high": 0.8,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.8,
+              "high": 0.9,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            },
+            {
+              "low": 0.9,
+              "high": 1.0,
+              "count": 0,
+              "mean_probability": null,
+              "observed_positive_rate": null
+            }
+          ]
+        },
+        "residual_final_prediction_histogram": {
+          "0": 948,
+          "1": 52
+        },
+        "residual_final_confusion": {
+          "matrix_true_rows_predicted_columns": [
+            [
+              946,
+              1
+            ],
+            [
+              2,
+              51
+            ]
+          ],
+          "tn": 946,
+          "fp": 1,
+          "fn": 2,
+          "tp": 51
+        },
+        "residual_final_error_count": 3,
+        "paired_arrays_sha256": "4c85ea8746164483b586e4a62f8127cae90342695d2a0f4455f39cdb4ab10e91"
+      }
+    }
+  },
+  "learning_diagnostics": {
+    "completed_steps": 32,
+    "training_samples_processed": 8000,
+    "loss_history_count": 32,
+    "batch_loss_history": [
+      0.6920021772384644,
+      0.6851606965065002,
+      0.6780019402503967,
+      0.6690700054168701,
+      0.6658031344413757,
+      0.6582764387130737,
+      0.6454459428787231,
+      0.6408405303955078,
+      0.6345548033714294,
+      0.6249451041221619,
+      0.6135915517807007,
+      0.6062242388725281,
+      0.5984187126159668,
+      0.5931515693664551,
+      0.576667308807373,
+      0.5704872608184814,
+      0.5682100653648376,
+      0.5531941652297974,
+      0.5394911766052246,
+      0.5259054899215698,
+      0.5205609798431396,
+      0.51039719581604,
+      0.5095281600952148,
+      0.48775529861450195,
+      0.4840031862258911,
+      0.46092885732650757,
+      0.45382702350616455,
+      0.4437609910964966,
+      0.42217758297920227,
+      0.3919926881790161,
+      0.38666433095932007,
+      0.3800104260444641
+    ],
+    "first_batch_loss": 0.6920021772384644,
+    "last_batch_loss": 0.3800104260444641,
+    "minimum_batch_loss": 0.3800104260444641,
+    "best_validation_ler_recorded": 0.004
+  },
+  "limitations": [
+    "Only the saved balanced regime is represented; no other regime's samples were generated for this audit.",
+    "Test diagnostics describe the already completed smoke test and were not used to tune the new structured model.",
+    "This is a single-root 1,000-shot test, not evidence of generalization or statistical superiority."
+  ],
+  "outputs": {
+    "json": "outputs\\neural_decoder_diagnostic\\saved_smoke_audit\\18ca68def80946838b26aaea7f59ff3e_neural_diagnostics.json",
+    "markdown": "outputs\\neural_decoder_diagnostic\\saved_smoke_audit\\18ca68def80946838b26aaea7f59ff3e_neural_diagnostics.md"
+  }
+}

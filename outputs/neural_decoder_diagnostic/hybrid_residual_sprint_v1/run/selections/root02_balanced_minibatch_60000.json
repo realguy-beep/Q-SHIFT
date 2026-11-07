@@ -1,0 +1,75 @@
+{
+  "job_id": "root02_balanced_minibatch_60000",
+  "root": 2,
+  "strategy": "balanced_minibatch",
+  "train_size_per_regime": 60000,
+  "model": "ResidualPositionCNN",
+  "target": "observable_xor_frozen_pymatching_prediction",
+  "inference": "pymatching_xor_predicted_residual",
+  "prevalence": 0.00435,
+  "positive_examples": 783,
+  "training_examples": 180000,
+  "pos_weight": 228.88505747126436,
+  "logit_prior_correction": -5.433219945104091,
+  "best_epoch": 2,
+  "best_monitor_nll": 0.016566276579827524,
+  "monitor_history": [
+    {
+      "epoch": 1,
+      "monitor_nll": 0.016660671874426932,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 2,
+      "monitor_nll": 0.016566276579827524,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 3,
+      "monitor_nll": 0.018168203933061365,
+      "selected": false,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 4,
+      "monitor_nll": 0.019198542469906408,
+      "selected": false,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 5,
+      "monitor_nll": 0.020543732150823876,
+      "selected": false,
+      "learning_rate": 0.003
+    }
+  ],
+  "temperature": 1.2,
+  "threshold_min_ler": 0.85,
+  "threshold_selection_ler": 0.004844444444444445,
+  "confidence_gate": {
+    "threshold": 1.01,
+    "fallback": true,
+    "reason": "no threshold passed Bonferroni-Wilson precision gate",
+    "precision_lower_bound": null,
+    "corrections_on_threshold_selection": 0,
+    "beneficial_on_threshold_selection": 0,
+    "selected_ler": null,
+    "familywise_alpha": 0.05,
+    "per_threshold_alpha": 0.000505050505050505
+  },
+  "calibration_brier": 0.004097329411075266,
+  "calibration_ece_10bin": 0.0021123002929330655,
+  "weights_sha256": "c55335af13555fb0f8fc2e9aef044f71f7adcce825d1e1116ff81ad3d7782bee",
+  "selection_data": {
+    "checkpoint": "monitor only",
+    "temperature": "calibration only",
+    "threshold_min_ler": "threshold_selection only",
+    "confidence_gate": "threshold_selection only"
+  },
+  "final_development_evaluation_accessed": false,
+  "gpu_seconds_train_and_select": 26.32431449982687,
+  "parameter_count": 13429,
+  "created_utc": "2026-11-06T23:38:13.880775+00:00"
+}

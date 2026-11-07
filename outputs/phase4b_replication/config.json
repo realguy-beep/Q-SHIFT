@@ -1,0 +1,47 @@
+{
+  "experiment_id": "phase4b_independent_replication_v1",
+  "circuit": "surface_code:rotated_memory_z",
+  "distance": 3,
+  "rounds": 5,
+  "conditions": {
+    "measurement_heavy": [
+      0.001,
+      0.006
+    ]
+  },
+  "probability_grid": [
+    0.001,
+    0.003,
+    0.006
+  ],
+  "seed_roots": {
+    "start": 52000001,
+    "step": 10000,
+    "count": 20
+  },
+  "seed_offsets": {
+    "calibration": 100,
+    "validation": 200,
+    "test": 300
+  },
+  "template_seed_start": 53000001,
+  "noiseless_seed": 53999999,
+  "bootstrap_seed": 54000001,
+  "shots": {
+    "template_per_grid_point": 50000,
+    "calibration": 20000,
+    "validation": 10000,
+    "test": 30000
+  },
+  "batch_shots": 10000,
+  "compute_wall_cap_seconds": 900,
+  "primary_condition": "measurement_heavy",
+  "primary_candidate": "calibrated",
+  "calibration_min_exact_recoveries_per_condition": 16,
+  "validation_min_primary_disagreements": 100,
+  "validation_requires_lower_primary_error_count": true,
+  "primary_alpha": 0.05,
+  "primary_min_absolute_improvement": 0.0001,
+  "bootstrap_resamples": 20000,
+  "fallback": "If validation/calibration/compute checks fail, stop and preserve partial results. No reduced confirmatory study, no test-driven parameter changes, and no adaptive selector."
+}

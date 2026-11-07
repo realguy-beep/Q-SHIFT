@@ -1,0 +1,71 @@
+{
+  "study_id": "qshift_correlation_aware_development_pilot_v1",
+  "status": "development_feasibility_only",
+  "phase2b_source_dir": "../phase2b_pauli_bias",
+  "memory_bases": ["x", "z"],
+  "regimes": ["x_biased", "balanced", "z_biased"],
+  "stratum_order": [
+    "x_x_biased", "x_balanced", "x_z_biased",
+    "z_x_biased", "z_balanced", "z_z_biased"
+  ],
+  "distance": 3,
+  "rounds": 5,
+  "gate_fault_probability_1q": 0.003,
+  "gate_fault_probability_2q": 0.003,
+  "measurement_flip_probability": 0.003,
+  "bias_ratio": 10.0,
+  "dem_conversion": {
+    "decompose_errors": true,
+    "approximate_disjoint_errors": true
+  },
+  "roots_per_stratum": 12,
+  "shots_per_root": 10000,
+  "seed_allocation": {
+    "root_seed_base": 100000001,
+    "root_formula": "100000001 + 100 * stratum_index + root_index",
+    "diagnostic": 100000999,
+    "bootstrap_rng": 100010001,
+    "primary_signflip_rng": 100010002,
+    "root_index_min": 0,
+    "root_index_max": 11
+  },
+  "decoder_arms": [
+    "pooled_fixed_uncorrelated",
+    "pooled_fixed_correlated",
+    "regime_informed_uncorrelated",
+    "regime_informed_correlated"
+  ],
+  "pooled_fixed_model_index_by_basis": {
+    "x": 0,
+    "z": 2
+  },
+  "primary_comparison": {
+    "candidate": "pooled_fixed_correlated",
+    "baseline": "pooled_fixed_uncorrelated",
+    "estimand": "equal_stratum_mean(candidate_LER - baseline_LER)",
+    "minimum_practical_improvement_absolute_ler": 0.0002,
+    "gate_upper_95_ci_max": -0.0002,
+    "minimum_favorable_strata": 4,
+    "max_harm_stratum_can_drive_result": false,
+    "leave_one_stratum_out_rule": "equal-stratum aggregate remains favorable after deleting each one of the six strata"
+  },
+  "statistics": {
+    "primary_test": "two_sided_root_cluster_sign_flip",
+    "primary_signflip_assignments": 100000,
+    "primary_signflip_add_one_p": true,
+    "bootstrap": "root_stratified_percentile_bootstrap",
+    "bootstrap_resamples": 20000,
+    "confidence_level": 0.95,
+    "bootstrap_resampling_unit": "root_within_each_of_six_strata; same root draw shared across paired decoder arms",
+    "secondary_family": "12 exact root-level paired sign-flip tests: regime-informed minus corresponding pooled-fixed, correlation off and on, across six strata",
+    "secondary_holm": true,
+    "secondary_signflip": "exhaustive two-sided sign-flip over 2^12 root assignments per stratum",
+    "shot_level_mcnemar": "descriptive paired secondary; not the primary independent-root inference"
+  },
+  "evidence": {
+    "detector_storage": "packbits axis=1 bitorder=little; uint8",
+    "observable_storage": "uint8 binary (shots,)",
+    "prediction_storage": "uint8 binary (4, shots)",
+    "checkpoint_policy": "one atomic NPZ per stratum/root; never overwrite a valid existing checkpoint"
+  }
+}

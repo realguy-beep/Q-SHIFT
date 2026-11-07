@@ -1,0 +1,2189 @@
+{
+  "protocol": "independent calibration/validation/test seeds; fixed DEM weights from explicit composition-specific calibration circuits; test shots paired across fixed, all specialists, and validation-selected oracle; no adaptation if the specialist gate fails",
+  "software": {
+    "python": "3.12.10",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "numpy": "2.5.3"
+  },
+  "config": {
+    "distance": 3,
+    "rounds": 3,
+    "detectors": 8,
+    "observables": 1,
+    "conditions": [
+      "x_dominant",
+      "z_dominant",
+      "depolarizing",
+      "measurement_only",
+      "mixed_xz_heldout",
+      "data_plus_measurement_heldout"
+    ],
+    "specialists": [
+      "x_dominant",
+      "z_dominant",
+      "depolarizing",
+      "measurement_only"
+    ],
+    "seed_base": 20301215,
+    "seeds": 1,
+    "calibration_shots_per_specialist_seed": 1300,
+    "validation_shots_per_condition_seed": 700,
+    "test_shots_per_condition_seed": 1400,
+    "p_data": 0.01,
+    "p_measure": 0.01,
+    "probability_fit": "maximum detector-pattern likelihood over the configured grid; known composition family, no L0 labels",
+    "probability_grid": [
+      0.006,
+      0.008,
+      0.01,
+      0.012,
+      0.014
+    ],
+    "template_shots_per_grid_point": 1000,
+    "selector_validation": "minimum residual count among fixed and four specialists, tie favors fixed; selected separately per condition",
+    "test_tuning": "none",
+    "DEM": "Stim approximate_disjoint_errors=True for mixed Pauli channels"
+  },
+  "fixed_model_metadata": {
+    "dem_text_bytes": 788,
+    "dem_error_terms": 18,
+    "matching_num_detectors": 8,
+    "matching_num_edges": 18,
+    "matching_python_wrapper_bytes": 48
+  },
+  "specialist_model_metadata_by_seed": [
+    {
+      "x_dominant": {
+        "dem_text_bytes": 782,
+        "dem_error_terms": 18,
+        "matching_num_detectors": 8,
+        "matching_num_edges": 18,
+        "matching_python_wrapper_bytes": 48,
+        "estimated_p": 0.008,
+        "calibration_detector_log_likelihood_grid": {
+          "0.006": -1696.9061462718903,
+          "0.008": -1693.188432615852,
+          "0.01": -1709.363463506664,
+          "0.012": -1709.1752465909453,
+          "0.014": -1720.548122032058
+        }
+      },
+      "z_dominant": {
+        "dem_text_bytes": 794,
+        "dem_error_terms": 18,
+        "matching_num_detectors": 8,
+        "matching_num_edges": 18,
+        "matching_python_wrapper_bytes": 48,
+        "estimated_p": 0.01,
+        "calibration_detector_log_likelihood_grid": {
+          "0.006": -777.2655916658819,
+          "0.008": -773.1243397543126,
+          "0.01": -767.7946666330305,
+          "0.012": -773.196916012688,
+          "0.014": -782.902044662151
+        }
+      },
+      "depolarizing": {
+        "dem_text_bytes": 788,
+        "dem_error_terms": 18,
+        "matching_num_detectors": 8,
+        "matching_num_edges": 18,
+        "matching_python_wrapper_bytes": 48,
+        "estimated_p": 0.01,
+        "calibration_detector_log_likelihood_grid": {
+          "0.006": -1482.075810179414,
+          "0.008": -1482.2015765260664,
+          "0.01": -1472.3361633674347,
+          "0.012": -1473.8293567999822,
+          "0.014": -1480.4847758404662
+        }
+      },
+      "measurement_only": {
+        "dem_text_bytes": 350,
+        "dem_error_terms": 9,
+        "matching_num_detectors": 8,
+        "matching_num_edges": 9,
+        "matching_python_wrapper_bytes": 48,
+        "estimated_p": 0.01,
+        "calibration_detector_log_likelihood_grid": {
+          "0.006": -903.538058031269,
+          "0.008": -899.7397148935355,
+          "0.01": -897.3162808883019,
+          "0.012": -903.0577639743893,
+          "0.014": -928.3685433008504
+        }
+      }
+    }
+  ],
+  "calibration_probability_fits_by_seed": [
+    {
+      "seed": 20301215,
+      "estimated_p": {
+        "x_dominant": 0.008,
+        "z_dominant": 0.01,
+        "depolarizing": 0.01,
+        "measurement_only": 0.01
+      },
+      "log_likelihood_grid": {
+        "x_dominant": {
+          "0.006": -1696.9061462718903,
+          "0.008": -1693.188432615852,
+          "0.01": -1709.363463506664,
+          "0.012": -1709.1752465909453,
+          "0.014": -1720.548122032058
+        },
+        "z_dominant": {
+          "0.006": -777.2655916658819,
+          "0.008": -773.1243397543126,
+          "0.01": -767.7946666330305,
+          "0.012": -773.196916012688,
+          "0.014": -782.902044662151
+        },
+        "depolarizing": {
+          "0.006": -1482.075810179414,
+          "0.008": -1482.2015765260664,
+          "0.01": -1472.3361633674347,
+          "0.012": -1473.8293567999822,
+          "0.014": -1480.4847758404662
+        },
+        "measurement_only": {
+          "0.006": -903.538058031269,
+          "0.008": -899.7397148935355,
+          "0.01": -897.3162808883019,
+          "0.012": -903.0577639743893,
+          "0.014": -928.3685433008504
+        }
+      }
+    }
+  ],
+  "aggregate_runtime_seconds_per_test_shot": {
+    "fixed_nominal": 6.458333332591879e-08,
+    "oracle_noise_specific": 6.399999966517844e-08,
+    "x_dominant": 6.228571453989605e-08,
+    "z_dominant": 6.248809530093456e-08,
+    "depolarizing": 6.0690475774685e-08,
+    "measurement_only": 6.744047606757487e-08
+  },
+  "aggregate": {
+    "shots_per_condition": 1400,
+    "conditions": {
+      "x_dominant": {
+        "raw_errors": 46,
+        "raw_rate": 0.032857142857142856,
+        "decoders": {
+          "fixed_nominal": {
+            "errors": 4,
+            "rate": 0.002857142857142857,
+            "wilson95": [
+              0.0011116308361708961,
+              0.007323409136677331
+            ]
+          },
+          "oracle_noise_specific": {
+            "errors": 4,
+            "rate": 0.002857142857142857,
+            "wilson95": [
+              0.0011116308361708961,
+              0.007323409136677331
+            ]
+          },
+          "x_dominant": {
+            "errors": 4,
+            "rate": 0.002857142857142857,
+            "wilson95": [
+              0.0011116308361708961,
+              0.007323409136677331
+            ]
+          },
+          "z_dominant": {
+            "errors": 4,
+            "rate": 0.002857142857142857,
+            "wilson95": [
+              0.0011116308361708961,
+              0.007323409136677331
+            ]
+          },
+          "depolarizing": {
+            "errors": 4,
+            "rate": 0.002857142857142857,
+            "wilson95": [
+              0.0011116308361708961,
+              0.007323409136677331
+            ]
+          },
+          "measurement_only": {
+            "errors": 5,
+            "rate": 0.0035714285714285713,
+            "wilson95": [
+              0.0015264362148521495,
+              0.008333266056885665
+            ]
+          }
+        },
+        "paired_vs_fixed": {
+          "oracle_noise_specific": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "x_dominant": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "z_dominant": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "depolarizing": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "measurement_only": {
+            "candidate_only_wrong": 1,
+            "fixed_only_wrong": 0,
+            "difference_errors": 1,
+            "paired_rate_difference_ci95_approx": [
+              -0.0006852141963966694,
+              0.002113785624968098
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              1
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0007142857142857143,
+              0.0007142857142857143
+            ]
+          }
+        },
+        "prediction_disagreement_rate_vs_fixed": {
+          "oracle_noise_specific": 0.0,
+          "x_dominant": 0.0,
+          "z_dominant": 0.0,
+          "depolarizing": 0.0,
+          "measurement_only": 0.0007142857142857143
+        },
+        "oracle_model_choices": {
+          "fixed_nominal": 0,
+          "x_dominant": 0,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 1
+        },
+        "validation_oracle_selected_model": {
+          "test_errors": 5,
+          "rate": 0.0035714285714285713,
+          "model_choices": {
+            "fixed_nominal": 0,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 1
+          }
+        },
+        "validation_oracle_selector_paired_vs_fixed": {
+          "candidate_only_wrong": 1,
+          "fixed_only_wrong": 0,
+          "difference_errors": 1,
+          "mcnemar_exact_two_sided_p": 1.0,
+          "paired_rate_difference_ci95_approx": [
+            -0.0006852141963966694,
+            0.002113785624968098
+          ]
+        }
+      },
+      "z_dominant": {
+        "raw_errors": 7,
+        "raw_rate": 0.005,
+        "decoders": {
+          "fixed_nominal": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "oracle_noise_specific": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "x_dominant": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "z_dominant": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "depolarizing": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "measurement_only": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          }
+        },
+        "paired_vs_fixed": {
+          "oracle_noise_specific": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "x_dominant": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "z_dominant": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "depolarizing": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "measurement_only": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "prediction_disagreement_rate_vs_fixed": {
+          "oracle_noise_specific": 0.0,
+          "x_dominant": 0.0,
+          "z_dominant": 0.0,
+          "depolarizing": 0.0,
+          "measurement_only": 0.0
+        },
+        "oracle_model_choices": {
+          "fixed_nominal": 1,
+          "x_dominant": 0,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 0
+        },
+        "validation_oracle_selected_model": {
+          "test_errors": 0,
+          "rate": 0.0,
+          "model_choices": {
+            "fixed_nominal": 1,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 0
+          }
+        },
+        "validation_oracle_selector_paired_vs_fixed": {
+          "candidate_only_wrong": 0,
+          "fixed_only_wrong": 0,
+          "difference_errors": 0,
+          "mcnemar_exact_two_sided_p": 1.0,
+          "paired_rate_difference_ci95_approx": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "depolarizing": {
+        "raw_errors": 26,
+        "raw_rate": 0.018571428571428572,
+        "decoders": {
+          "fixed_nominal": {
+            "errors": 3,
+            "rate": 0.002142857142857143,
+            "wilson95": [
+              0.0007290265384308006,
+              0.006281351135527842
+            ]
+          },
+          "oracle_noise_specific": {
+            "errors": 3,
+            "rate": 0.002142857142857143,
+            "wilson95": [
+              0.0007290265384308006,
+              0.006281351135527842
+            ]
+          },
+          "x_dominant": {
+            "errors": 3,
+            "rate": 0.002142857142857143,
+            "wilson95": [
+              0.0007290265384308006,
+              0.006281351135527842
+            ]
+          },
+          "z_dominant": {
+            "errors": 3,
+            "rate": 0.002142857142857143,
+            "wilson95": [
+              0.0007290265384308006,
+              0.006281351135527842
+            ]
+          },
+          "depolarizing": {
+            "errors": 3,
+            "rate": 0.002142857142857143,
+            "wilson95": [
+              0.0007290265384308006,
+              0.006281351135527842
+            ]
+          },
+          "measurement_only": {
+            "errors": 4,
+            "rate": 0.002857142857142857,
+            "wilson95": [
+              0.0011116308361708961,
+              0.007323409136677331
+            ]
+          }
+        },
+        "paired_vs_fixed": {
+          "oracle_noise_specific": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "x_dominant": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "z_dominant": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "depolarizing": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "measurement_only": {
+            "candidate_only_wrong": 1,
+            "fixed_only_wrong": 0,
+            "difference_errors": 1,
+            "paired_rate_difference_ci95_approx": [
+              -0.0006852141963966694,
+              0.002113785624968098
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              1
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0007142857142857143,
+              0.0007142857142857143
+            ]
+          }
+        },
+        "prediction_disagreement_rate_vs_fixed": {
+          "oracle_noise_specific": 0.0,
+          "x_dominant": 0.0,
+          "z_dominant": 0.0,
+          "depolarizing": 0.0,
+          "measurement_only": 0.0007142857142857143
+        },
+        "oracle_model_choices": {
+          "fixed_nominal": 1,
+          "x_dominant": 0,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 0
+        },
+        "validation_oracle_selected_model": {
+          "test_errors": 3,
+          "rate": 0.002142857142857143,
+          "model_choices": {
+            "fixed_nominal": 1,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 0
+          }
+        },
+        "validation_oracle_selector_paired_vs_fixed": {
+          "candidate_only_wrong": 0,
+          "fixed_only_wrong": 0,
+          "difference_errors": 0,
+          "mcnemar_exact_two_sided_p": 1.0,
+          "paired_rate_difference_ci95_approx": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "measurement_only": {
+        "raw_errors": 11,
+        "raw_rate": 0.007857142857142858,
+        "decoders": {
+          "fixed_nominal": {
+            "errors": 1,
+            "rate": 0.0007142857142857143,
+            "wilson95": [
+              0.00012610009746667544,
+              0.0040349529787127945
+            ]
+          },
+          "oracle_noise_specific": {
+            "errors": 1,
+            "rate": 0.0007142857142857143,
+            "wilson95": [
+              0.00012610009746667544,
+              0.0040349529787127945
+            ]
+          },
+          "x_dominant": {
+            "errors": 1,
+            "rate": 0.0007142857142857143,
+            "wilson95": [
+              0.00012610009746667544,
+              0.0040349529787127945
+            ]
+          },
+          "z_dominant": {
+            "errors": 1,
+            "rate": 0.0007142857142857143,
+            "wilson95": [
+              0.00012610009746667544,
+              0.0040349529787127945
+            ]
+          },
+          "depolarizing": {
+            "errors": 1,
+            "rate": 0.0007142857142857143,
+            "wilson95": [
+              0.00012610009746667544,
+              0.0040349529787127945
+            ]
+          },
+          "measurement_only": {
+            "errors": 1,
+            "rate": 0.0007142857142857143,
+            "wilson95": [
+              0.00012610009746667544,
+              0.0040349529787127945
+            ]
+          }
+        },
+        "paired_vs_fixed": {
+          "oracle_noise_specific": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "x_dominant": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "z_dominant": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "depolarizing": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "measurement_only": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "prediction_disagreement_rate_vs_fixed": {
+          "oracle_noise_specific": 0.0,
+          "x_dominant": 0.0,
+          "z_dominant": 0.0,
+          "depolarizing": 0.0,
+          "measurement_only": 0.0
+        },
+        "oracle_model_choices": {
+          "fixed_nominal": 1,
+          "x_dominant": 0,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 0
+        },
+        "validation_oracle_selected_model": {
+          "test_errors": 1,
+          "rate": 0.0007142857142857143,
+          "model_choices": {
+            "fixed_nominal": 1,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 0
+          }
+        },
+        "validation_oracle_selector_paired_vs_fixed": {
+          "candidate_only_wrong": 0,
+          "fixed_only_wrong": 0,
+          "difference_errors": 0,
+          "mcnemar_exact_two_sided_p": 1.0,
+          "paired_rate_difference_ci95_approx": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "mixed_xz_heldout": {
+        "raw_errors": 22,
+        "raw_rate": 0.015714285714285715,
+        "decoders": {
+          "fixed_nominal": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "oracle_noise_specific": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "x_dominant": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "z_dominant": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "depolarizing": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "measurement_only": {
+            "errors": 1,
+            "rate": 0.0007142857142857143,
+            "wilson95": [
+              0.00012610009746667544,
+              0.0040349529787127945
+            ]
+          }
+        },
+        "paired_vs_fixed": {
+          "oracle_noise_specific": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "x_dominant": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "z_dominant": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "depolarizing": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "measurement_only": {
+            "candidate_only_wrong": 1,
+            "fixed_only_wrong": 0,
+            "difference_errors": 1,
+            "paired_rate_difference_ci95_approx": [
+              -0.0006852141963966694,
+              0.002113785624968098
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              1
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0007142857142857143,
+              0.0007142857142857143
+            ]
+          }
+        },
+        "prediction_disagreement_rate_vs_fixed": {
+          "oracle_noise_specific": 0.0,
+          "x_dominant": 0.0,
+          "z_dominant": 0.0,
+          "depolarizing": 0.0,
+          "measurement_only": 0.0007142857142857143
+        },
+        "oracle_model_choices": {
+          "fixed_nominal": 1,
+          "x_dominant": 0,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 0
+        },
+        "validation_oracle_selected_model": {
+          "test_errors": 0,
+          "rate": 0.0,
+          "model_choices": {
+            "fixed_nominal": 1,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 0
+          }
+        },
+        "validation_oracle_selector_paired_vs_fixed": {
+          "candidate_only_wrong": 0,
+          "fixed_only_wrong": 0,
+          "difference_errors": 0,
+          "mcnemar_exact_two_sided_p": 1.0,
+          "paired_rate_difference_ci95_approx": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "data_plus_measurement_heldout": {
+        "raw_errors": 41,
+        "raw_rate": 0.029285714285714286,
+        "decoders": {
+          "fixed_nominal": {
+            "errors": 3,
+            "rate": 0.002142857142857143,
+            "wilson95": [
+              0.0007290265384308006,
+              0.006281351135527842
+            ]
+          },
+          "oracle_noise_specific": {
+            "errors": 3,
+            "rate": 0.002142857142857143,
+            "wilson95": [
+              0.0007290265384308006,
+              0.006281351135527842
+            ]
+          },
+          "x_dominant": {
+            "errors": 3,
+            "rate": 0.002142857142857143,
+            "wilson95": [
+              0.0007290265384308006,
+              0.006281351135527842
+            ]
+          },
+          "z_dominant": {
+            "errors": 3,
+            "rate": 0.002142857142857143,
+            "wilson95": [
+              0.0007290265384308006,
+              0.006281351135527842
+            ]
+          },
+          "depolarizing": {
+            "errors": 3,
+            "rate": 0.002142857142857143,
+            "wilson95": [
+              0.0007290265384308006,
+              0.006281351135527842
+            ]
+          },
+          "measurement_only": {
+            "errors": 3,
+            "rate": 0.002142857142857143,
+            "wilson95": [
+              0.0007290265384308006,
+              0.006281351135527842
+            ]
+          }
+        },
+        "paired_vs_fixed": {
+          "oracle_noise_specific": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "x_dominant": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "z_dominant": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "depolarizing": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "measurement_only": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_24": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "prediction_disagreement_rate_vs_fixed": {
+          "oracle_noise_specific": 0.0,
+          "x_dominant": 0.0,
+          "z_dominant": 0.0,
+          "depolarizing": 0.0,
+          "measurement_only": 0.0
+        },
+        "oracle_model_choices": {
+          "fixed_nominal": 1,
+          "x_dominant": 0,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 0
+        },
+        "validation_oracle_selected_model": {
+          "test_errors": 3,
+          "rate": 0.002142857142857143,
+          "model_choices": {
+            "fixed_nominal": 1,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 0
+          }
+        },
+        "validation_oracle_selector_paired_vs_fixed": {
+          "candidate_only_wrong": 0,
+          "fixed_only_wrong": 0,
+          "difference_errors": 0,
+          "mcnemar_exact_two_sided_p": 1.0,
+          "paired_rate_difference_ci95_approx": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "usefulness_gate": {
+      "comparisons": 24,
+      "bonferroni_family_size": 24,
+      "credible_specialists": [],
+      "proceed_to_detector_selection": false,
+      "criterion": "lower paired test errors, Bonferroni-adjusted exact McNemar p<0.05, and seed-bootstrap 95% upper bound below zero"
+    },
+    "oracle_selector": {
+      "validation_selected_test_errors": {
+        "x_dominant": 5,
+        "z_dominant": 0,
+        "depolarizing": 3,
+        "measurement_only": 1,
+        "mixed_xz_heldout": 0,
+        "data_plus_measurement_heldout": 3
+      },
+      "total_errors": 12,
+      "total_shots": 8400,
+      "fixed_total_errors": 11,
+      "fixed_total_shots": 8400,
+      "model_choice_counts_by_condition": {
+        "x_dominant": {
+          "fixed_nominal": 0,
+          "x_dominant": 0,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 1
+        },
+        "z_dominant": {
+          "fixed_nominal": 1,
+          "x_dominant": 0,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 0
+        },
+        "depolarizing": {
+          "fixed_nominal": 1,
+          "x_dominant": 0,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 0
+        },
+        "measurement_only": {
+          "fixed_nominal": 1,
+          "x_dominant": 0,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 0
+        },
+        "mixed_xz_heldout": {
+          "fixed_nominal": 1,
+          "x_dominant": 0,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 0
+        },
+        "data_plus_measurement_heldout": {
+          "fixed_nominal": 1,
+          "x_dominant": 0,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 0
+        }
+      }
+    },
+    "oracle_selector_vs_fixed": {
+      "oracle_only_wrong": 1,
+      "fixed_only_wrong": 0,
+      "difference_errors": 1,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "paired_rate_difference_ci95_approx": [
+        -0.00011427182498344101,
+        0.00035236706307867913
+      ],
+      "test_shots": 8400
+    }
+  },
+  "replicates": [
+    {
+      "seed": 20301215,
+      "conditions": {
+        "x_dominant": {
+          "raw_errors": 46,
+          "validation_errors_by_model": {
+            "fixed_nominal": 1,
+            "oracle_noise_specific": 1,
+            "x_dominant": 1,
+            "z_dominant": 1,
+            "depolarizing": 1,
+            "measurement_only": 0
+          },
+          "validation_selected_oracle_model": "measurement_only",
+          "decoders": {
+            "fixed_nominal": {
+              "errors": 4,
+              "rate": 0.002857142857142857,
+              "wilson95": [
+                0.0011116308361708961,
+                0.007323409136677331
+              ]
+            },
+            "oracle_noise_specific": {
+              "errors": 4,
+              "rate": 0.002857142857142857,
+              "wilson95": [
+                0.0011116308361708961,
+                0.007323409136677331
+              ]
+            },
+            "x_dominant": {
+              "errors": 4,
+              "rate": 0.002857142857142857,
+              "wilson95": [
+                0.0011116308361708961,
+                0.007323409136677331
+              ]
+            },
+            "z_dominant": {
+              "errors": 4,
+              "rate": 0.002857142857142857,
+              "wilson95": [
+                0.0011116308361708961,
+                0.007323409136677331
+              ]
+            },
+            "depolarizing": {
+              "errors": 4,
+              "rate": 0.002857142857142857,
+              "wilson95": [
+                0.0011116308361708961,
+                0.007323409136677331
+              ]
+            },
+            "measurement_only": {
+              "errors": 5,
+              "rate": 0.0035714285714285713,
+              "wilson95": [
+                0.0015264362148521495,
+                0.008333266056885665
+              ]
+            }
+          },
+          "paired_vs_fixed": {
+            "oracle_noise_specific": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "x_dominant": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "z_dominant": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "depolarizing": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "measurement_only": {
+              "candidate_only_wrong": 1,
+              "fixed_only_wrong": 0,
+              "difference_errors": 1,
+              "paired_rate_difference_ci95_approx": [
+                -0.0006852141963966696,
+                0.002113785624968098
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            }
+          },
+          "prediction_disagreement_vs_fixed": {
+            "oracle_noise_specific": 0,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 1
+          },
+          "runtime_seconds_per_test_shot": {
+            "fixed_nominal": 9.349999995070642e-08,
+            "oracle_noise_specific": 8.699999982906904e-08,
+            "x_dominant": 8.935714374404467e-08,
+            "z_dominant": 8.43571420513659e-08,
+            "depolarizing": 8.39999990733174e-08,
+            "measurement_only": 9.63571437750943e-08
+          },
+          "oracle_validation_selected_test_errors": 5,
+          "oracle_validation_selected_paired_vs_fixed": {
+            "candidate_only_wrong": 1,
+            "fixed_only_wrong": 0,
+            "difference_errors": 1,
+            "paired_rate_difference_ci95_approx": [
+              -0.0006852141963966696,
+              0.002113785624968098
+            ],
+            "mcnemar_exact_two_sided_p": 1.0
+          }
+        },
+        "z_dominant": {
+          "raw_errors": 7,
+          "validation_errors_by_model": {
+            "fixed_nominal": 0,
+            "oracle_noise_specific": 0,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 0
+          },
+          "validation_selected_oracle_model": "fixed_nominal",
+          "decoders": {
+            "fixed_nominal": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "oracle_noise_specific": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "x_dominant": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "z_dominant": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "depolarizing": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "measurement_only": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            }
+          },
+          "paired_vs_fixed": {
+            "oracle_noise_specific": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "x_dominant": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "z_dominant": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "depolarizing": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "measurement_only": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            }
+          },
+          "prediction_disagreement_vs_fixed": {
+            "oracle_noise_specific": 0,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 0
+          },
+          "runtime_seconds_per_test_shot": {
+            "fixed_nominal": 3.45000002458359e-08,
+            "oracle_noise_specific": 3.4214286383108366e-08,
+            "x_dominant": 3.385714210578174e-08,
+            "z_dominant": 3.335714349564764e-08,
+            "depolarizing": 3.2928571402278197e-08,
+            "measurement_only": 3.55000000646604e-08
+          },
+          "oracle_validation_selected_test_errors": 0,
+          "oracle_validation_selected_paired_vs_fixed": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0
+          }
+        },
+        "depolarizing": {
+          "raw_errors": 26,
+          "validation_errors_by_model": {
+            "fixed_nominal": 2,
+            "oracle_noise_specific": 2,
+            "x_dominant": 2,
+            "z_dominant": 2,
+            "depolarizing": 2,
+            "measurement_only": 2
+          },
+          "validation_selected_oracle_model": "fixed_nominal",
+          "decoders": {
+            "fixed_nominal": {
+              "errors": 3,
+              "rate": 0.002142857142857143,
+              "wilson95": [
+                0.0007290265384308006,
+                0.006281351135527842
+              ]
+            },
+            "oracle_noise_specific": {
+              "errors": 3,
+              "rate": 0.002142857142857143,
+              "wilson95": [
+                0.0007290265384308006,
+                0.006281351135527842
+              ]
+            },
+            "x_dominant": {
+              "errors": 3,
+              "rate": 0.002142857142857143,
+              "wilson95": [
+                0.0007290265384308006,
+                0.006281351135527842
+              ]
+            },
+            "z_dominant": {
+              "errors": 3,
+              "rate": 0.002142857142857143,
+              "wilson95": [
+                0.0007290265384308006,
+                0.006281351135527842
+              ]
+            },
+            "depolarizing": {
+              "errors": 3,
+              "rate": 0.002142857142857143,
+              "wilson95": [
+                0.0007290265384308006,
+                0.006281351135527842
+              ]
+            },
+            "measurement_only": {
+              "errors": 4,
+              "rate": 0.002857142857142857,
+              "wilson95": [
+                0.0011116308361708961,
+                0.007323409136677331
+              ]
+            }
+          },
+          "paired_vs_fixed": {
+            "oracle_noise_specific": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "x_dominant": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "z_dominant": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "depolarizing": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "measurement_only": {
+              "candidate_only_wrong": 1,
+              "fixed_only_wrong": 0,
+              "difference_errors": 1,
+              "paired_rate_difference_ci95_approx": [
+                -0.0006852141963966696,
+                0.002113785624968098
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            }
+          },
+          "prediction_disagreement_vs_fixed": {
+            "oracle_noise_specific": 0,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 1
+          },
+          "runtime_seconds_per_test_shot": {
+            "fixed_nominal": 6.735714383207129e-08,
+            "oracle_noise_specific": 7.442857037988558e-08,
+            "x_dominant": 6.54285720104651e-08,
+            "z_dominant": 6.407142921359212e-08,
+            "depolarizing": 6.471428475508999e-08,
+            "measurement_only": 7.699999904226778e-08
+          },
+          "oracle_validation_selected_test_errors": 3,
+          "oracle_validation_selected_paired_vs_fixed": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0
+          }
+        },
+        "measurement_only": {
+          "raw_errors": 11,
+          "validation_errors_by_model": {
+            "fixed_nominal": 0,
+            "oracle_noise_specific": 0,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 0
+          },
+          "validation_selected_oracle_model": "fixed_nominal",
+          "decoders": {
+            "fixed_nominal": {
+              "errors": 1,
+              "rate": 0.0007142857142857143,
+              "wilson95": [
+                0.00012610009746667544,
+                0.0040349529787127945
+              ]
+            },
+            "oracle_noise_specific": {
+              "errors": 1,
+              "rate": 0.0007142857142857143,
+              "wilson95": [
+                0.00012610009746667544,
+                0.0040349529787127945
+              ]
+            },
+            "x_dominant": {
+              "errors": 1,
+              "rate": 0.0007142857142857143,
+              "wilson95": [
+                0.00012610009746667544,
+                0.0040349529787127945
+              ]
+            },
+            "z_dominant": {
+              "errors": 1,
+              "rate": 0.0007142857142857143,
+              "wilson95": [
+                0.00012610009746667544,
+                0.0040349529787127945
+              ]
+            },
+            "depolarizing": {
+              "errors": 1,
+              "rate": 0.0007142857142857143,
+              "wilson95": [
+                0.00012610009746667544,
+                0.0040349529787127945
+              ]
+            },
+            "measurement_only": {
+              "errors": 1,
+              "rate": 0.0007142857142857143,
+              "wilson95": [
+                0.00012610009746667544,
+                0.0040349529787127945
+              ]
+            }
+          },
+          "paired_vs_fixed": {
+            "oracle_noise_specific": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "x_dominant": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "z_dominant": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "depolarizing": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "measurement_only": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            }
+          },
+          "prediction_disagreement_vs_fixed": {
+            "oracle_noise_specific": 0,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 0
+          },
+          "runtime_seconds_per_test_shot": {
+            "fixed_nominal": 4.37857150765402e-08,
+            "oracle_noise_specific": 4.057142827410384e-08,
+            "x_dominant": 4.32857138678498e-08,
+            "z_dominant": 4.378571377726205e-08,
+            "depolarizing": 4.4071428939267724e-08,
+            "measurement_only": 3.992857143332783e-08
+          },
+          "oracle_validation_selected_test_errors": 1,
+          "oracle_validation_selected_paired_vs_fixed": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0
+          }
+        },
+        "mixed_xz_heldout": {
+          "raw_errors": 22,
+          "validation_errors_by_model": {
+            "fixed_nominal": 2,
+            "oracle_noise_specific": 2,
+            "x_dominant": 2,
+            "z_dominant": 2,
+            "depolarizing": 2,
+            "measurement_only": 2
+          },
+          "validation_selected_oracle_model": "fixed_nominal",
+          "decoders": {
+            "fixed_nominal": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "oracle_noise_specific": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "x_dominant": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "z_dominant": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "depolarizing": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "measurement_only": {
+              "errors": 1,
+              "rate": 0.0007142857142857143,
+              "wilson95": [
+                0.00012610009746667544,
+                0.0040349529787127945
+              ]
+            }
+          },
+          "paired_vs_fixed": {
+            "oracle_noise_specific": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "x_dominant": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "z_dominant": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "depolarizing": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "measurement_only": {
+              "candidate_only_wrong": 1,
+              "fixed_only_wrong": 0,
+              "difference_errors": 1,
+              "paired_rate_difference_ci95_approx": [
+                -0.0006852141963966696,
+                0.002113785624968098
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            }
+          },
+          "prediction_disagreement_vs_fixed": {
+            "oracle_noise_specific": 0,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 1
+          },
+          "runtime_seconds_per_test_shot": {
+            "fixed_nominal": 5.907142752091334e-08,
+            "oracle_noise_specific": 5.849999979545828e-08,
+            "x_dominant": 5.7285715229227205e-08,
+            "z_dominant": 5.7428570861312824e-08,
+            "depolarizing": 5.650000015780928e-08,
+            "measurement_only": 6.771428551084162e-08
+          },
+          "oracle_validation_selected_test_errors": 0,
+          "oracle_validation_selected_paired_vs_fixed": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0
+          }
+        },
+        "data_plus_measurement_heldout": {
+          "raw_errors": 41,
+          "validation_errors_by_model": {
+            "fixed_nominal": 0,
+            "oracle_noise_specific": 0,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 1
+          },
+          "validation_selected_oracle_model": "fixed_nominal",
+          "decoders": {
+            "fixed_nominal": {
+              "errors": 3,
+              "rate": 0.002142857142857143,
+              "wilson95": [
+                0.0007290265384308006,
+                0.006281351135527842
+              ]
+            },
+            "oracle_noise_specific": {
+              "errors": 3,
+              "rate": 0.002142857142857143,
+              "wilson95": [
+                0.0007290265384308006,
+                0.006281351135527842
+              ]
+            },
+            "x_dominant": {
+              "errors": 3,
+              "rate": 0.002142857142857143,
+              "wilson95": [
+                0.0007290265384308006,
+                0.006281351135527842
+              ]
+            },
+            "z_dominant": {
+              "errors": 3,
+              "rate": 0.002142857142857143,
+              "wilson95": [
+                0.0007290265384308006,
+                0.006281351135527842
+              ]
+            },
+            "depolarizing": {
+              "errors": 3,
+              "rate": 0.002142857142857143,
+              "wilson95": [
+                0.0007290265384308006,
+                0.006281351135527842
+              ]
+            },
+            "measurement_only": {
+              "errors": 3,
+              "rate": 0.002142857142857143,
+              "wilson95": [
+                0.0007290265384308006,
+                0.006281351135527842
+              ]
+            }
+          },
+          "paired_vs_fixed": {
+            "oracle_noise_specific": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "x_dominant": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "z_dominant": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "depolarizing": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "measurement_only": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            }
+          },
+          "prediction_disagreement_vs_fixed": {
+            "oracle_noise_specific": 0,
+            "x_dominant": 0,
+            "z_dominant": 0,
+            "depolarizing": 0,
+            "measurement_only": 0
+          },
+          "runtime_seconds_per_test_shot": {
+            "fixed_nominal": 8.928571332944556e-08,
+            "oracle_noise_specific": 8.928571332944556e-08,
+            "x_dominant": 8.45000002820078e-08,
+            "z_dominant": 9.192857240642687e-08,
+            "depolarizing": 8.192857032034746e-08,
+            "measurement_only": 8.81428565792573e-08
+          },
+          "oracle_validation_selected_test_errors": 3,
+          "oracle_validation_selected_paired_vs_fixed": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0
+          }
+        }
+      }
+    }
+  ],
+  "raw_files": [
+    {
+      "name": "smoke_calfit_seed_00_base20301215_cal1300_val700_test1400.npz",
+      "bytes": 15212,
+      "sha256": "79a9b6fb247fef0e44f45c10729f6fb1129cd5975e1602c9f17f6937ed3cb6a9"
+    }
+  ]
+}

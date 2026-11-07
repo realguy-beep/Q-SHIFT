@@ -1,0 +1,81 @@
+{
+  "experiment_id": "qshift_structured_neural_100k_diagnostic_v1",
+  "status": "prospective; no data generated",
+  "total_unique_shots": 100000,
+  "memory_basis": "z",
+  "distance": 3,
+  "rounds": 5,
+  "gate_p": 0.003,
+  "measurement_p": 0.003,
+  "bias_ratio": 10.0,
+  "batch_size": 256,
+  "regimes": [
+    "x_biased",
+    "balanced",
+    "z_biased"
+  ],
+  "shot_allocation": {
+    "train": {
+      "x_biased": 23334,
+      "balanced": 23333,
+      "z_biased": 23333
+    },
+    "validation": {
+      "x_biased": 5000,
+      "balanced": 5000,
+      "z_biased": 5000
+    },
+    "test": {
+      "x_biased": 5000,
+      "balanced": 5000,
+      "z_biased": 5000
+    }
+  },
+  "decoder_bank": [
+    "phase2b_frozen_pymatching_z_index_2",
+    "DirectMLP",
+    "StructuredConv3DDecoder",
+    "ResidualMLP"
+  ],
+  "structured_decoder_grid": {
+    "channels": [
+      8,
+      16
+    ],
+    "dropout": [
+      0.05
+    ]
+  },
+  "fit_schedule": [
+    "DirectMLP + unweighted BCE",
+    "ResidualMLP + unweighted BCE",
+    "StructuredConv3DDecoder for each channel count \u00d7 each loss variant (4 fits)"
+  ],
+  "optimizer": {
+    "name": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 2,
+    "early_stopping_patience": 1,
+    "loss": "BCEWithLogitsLoss"
+  },
+  "loss_variants": [
+    "unweighted BCEWithLogitsLoss",
+    "BCEWithLogitsLoss with positive weight from training split only"
+  ],
+  "output_thresholds": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "threshold_selection": "Validation only; choose by equal-regime paired LER, no test threshold sweep.",
+  "primary_selection": "Validation equal-regime LER with 95% stratified paired-shot bootstrap; adopt neural only if lower and the entire candidate-minus-fixed interval is below zero; otherwise retain fixed.",
+  "validation_uncertainty_note": "Single seed root per regime; shot-bootstrap intervals are not independent-root uncertainty estimates.",
+  "test_access": "Test stream is reserved in the inventory and must remain unopened until architecture, checkpoint, objective, and threshold are frozen.",
+  "seed_collision_audit_passed": true,
+  "limitations": [
+    "Single distance and basis.",
+    "Only 5,000 test shots per regime; descriptive diagnostic, not a powered superiority test.",
+    "No regime ID, gate probability, measurement probability, or labels are model inputs."
+  ]
+}

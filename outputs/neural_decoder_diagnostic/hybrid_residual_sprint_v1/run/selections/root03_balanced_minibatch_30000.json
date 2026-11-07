@@ -1,0 +1,75 @@
+{
+  "job_id": "root03_balanced_minibatch_30000",
+  "root": 3,
+  "strategy": "balanced_minibatch",
+  "train_size_per_regime": 30000,
+  "model": "ResidualPositionCNN",
+  "target": "observable_xor_frozen_pymatching_prediction",
+  "inference": "pymatching_xor_predicted_residual",
+  "prevalence": 0.0044444444444444444,
+  "positive_examples": 400,
+  "training_examples": 90000,
+  "pos_weight": 224.0,
+  "logit_prior_correction": -5.4116460518550396,
+  "best_epoch": 2,
+  "best_monitor_nll": 0.02133358512806743,
+  "monitor_history": [
+    {
+      "epoch": 1,
+      "monitor_nll": 0.022396048429729365,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 2,
+      "monitor_nll": 0.02133358512806743,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 3,
+      "monitor_nll": 0.02327351996262309,
+      "selected": false,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 4,
+      "monitor_nll": 0.025063837610221056,
+      "selected": false,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 5,
+      "monitor_nll": 0.027743051337466126,
+      "selected": false,
+      "learning_rate": 0.003
+    }
+  ],
+  "temperature": 1.0,
+  "threshold_min_ler": 0.84,
+  "threshold_selection_ler": 0.004533333333333334,
+  "confidence_gate": {
+    "threshold": 1.01,
+    "fallback": true,
+    "reason": "no threshold passed Bonferroni-Wilson precision gate",
+    "precision_lower_bound": null,
+    "corrections_on_threshold_selection": 0,
+    "beneficial_on_threshold_selection": 0,
+    "selected_ler": null,
+    "familywise_alpha": 0.05,
+    "per_threshold_alpha": 0.000505050505050505
+  },
+  "calibration_brier": 0.0038209788464808885,
+  "calibration_ece_10bin": 0.00214344648775028,
+  "weights_sha256": "0a48235326b9e051f5c12f87600c3f5bf7cd55bd8e9030b4fdaec75e5173d2a7",
+  "selection_data": {
+    "checkpoint": "monitor only",
+    "temperature": "calibration only",
+    "threshold_min_ler": "threshold_selection only",
+    "confidence_gate": "threshold_selection only"
+  },
+  "final_development_evaluation_accessed": false,
+  "gpu_seconds_train_and_select": 13.879784900054801,
+  "parameter_count": 13429,
+  "created_utc": "2026-11-06T23:41:32.880286+00:00"
+}

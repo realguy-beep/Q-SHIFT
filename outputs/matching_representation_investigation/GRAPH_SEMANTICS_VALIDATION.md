@@ -1,0 +1,11 @@
+# Graph-semantics validation
+
+Stim's DEM separator `^` is a marker for a suggested decomposition of one error mechanism's targets. It is not an event and does not introduce an independent probability draw. A DEM `error(p)` mechanism contributes a complete detector-flip set and observable-flip set; overlapping mechanisms combine by XOR. The independent exact enumerator in this work parsed each complete mechanism, XORed all detector and logical masks, and exhaustively summed outcome probabilities.
+
+The PyMatching comparison used the same frozen DEM content with `enable_correlations=False` and `enable_correlations=True`. The latter invokes PyMatching's two-pass correlated matching for supported decomposable correlations. It is still a matching-based approximation, not exact posterior inference. The imported graph's nodes, edges, boundary edges, and logical IDs were inspected for the toy; on the original toy the direct logical D0–D1 edge was absent. On the separator-free valid toy it was represented as a graph edge with logical observable ID 0.
+
+The exact comparison over all syndromes checked both the decoder's logical prediction and the posterior mass. Where syndrome probability is zero, it is not scored. Posterior ties use the deterministic smallest logical-mask integer. Maximum normalization discrepancy in independent probability routes was `4.44e-16`.
+
+An intentionally invalid separator-erasure diagnostic on the two-round fragments makes the boundary clear: standard PyMatching accepts the flattened DEM (16 nodes; 62 edges in Z and 64 in X), but the hyperedge mechanisms are no longer represented faithfully. Correlation-enabled PyMatching rejects it with `ValueError: Encountered an undecomposed error instruction with 3 or mode detectors. This is not supported when using enable_correlations=True.` This diagnostic is retained only as evidence of the failure mode; it is not scored as a decoder candidate.
+
+**Conclusion:** the two DEM forms encode the same complete Bernoulli event distribution in the tested rewrite, while creating different matching graphs and thus different decoder decisions. That difference reflects decoder representation/inference, not a changed physical channel. Stim's separator semantics are not violated by this behavior.

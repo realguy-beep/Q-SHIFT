@@ -1,0 +1,61 @@
+{
+  "status": "FROZEN BEFORE FULL EXPERIMENT; superseding freeze after dry-run schema validation correction",
+  "supersedes": [
+    "FREEZE.json",
+    "FREEZE_FINAL.json",
+    "FREEZE_FINAL_V2.json"
+  ],
+  "prior_dry_run_evidence": "Preserved under dry_run/, dry_run_v2/, and dry_run_v3/ with versioned verification records; this freeze governs future full-run sampling.",
+  "created_unix": 1793989884.3123538,
+  "config_sha256": "8bd11d303caa9e51c89ca153eca408b077a8001d49862e4db5f97e38cadde4d1",
+  "seed_inventory_sha256": "e1844ae3e1cf8fc724662ad65c55988ae6ed8baee65cde7810c98a8f555f773f",
+  "source_sha256": {
+    "prepare_freeze.py": "3652adabbb7142f8ee30e86bfce4e20b1503d6885c24a711fc2ca78490b7c5cb",
+    "controller.py": "7dfef63ea56f38b74348f740fd2acf80fac03ef74c12c1364b114bcf04b1589d",
+    "experiment.py": "76c8ecd93d5e58e6d9564bd74d71c072c11aae0f44af7ceedbca0d26eecaf82c",
+    "tests/test_controller.py": "74a00e923b31a0c9e345b219f17de95998d42c350c30fd4920838d114c75f0a1",
+    "config.json": "8bd11d303caa9e51c89ca153eca408b077a8001d49862e4db5f97e38cadde4d1",
+    "SEED_INVENTORY.json": "e1844ae3e1cf8fc724662ad65c55988ae6ed8baee65cde7810c98a8f555f773f",
+    "PROTOCOL.md": "68df47d4a9f8cef45d64e5eb66cc982b590c81e3d350378f9f2b1b7e4c37c715",
+    "ANALYSIS_PLAN.json": "c9e75a290c42ed51a53b33f93de1e912cd732963e2249c636782c8d028731619",
+    "dashboard/structured_decoder.py": "8a064fa48df78a2f9eba4ad13d835a88edf67bc2f44c711217428273d4b653a9",
+    "dashboard/structured_training.py": "9939be8dd1864db89dc832e89d653b16497b1ffe41a43fde3e71084327bcdfe9",
+    "dashboard/models.py": "06b62477cb7933ab4708a0bbb5a2f038d0ab4b58427c5cc603dca66842f4d5eb",
+    "dashboard/simulator.py": "bc95c2d67056c56192ccfaf02eff95b1cd97c49aacd8d6ec268576b75d3f3a08",
+    "dashboard/seed_protocol.py": "c2c516a5eabd3140cbd8d3eecb28c6469628e24f2568a83c74b98e4eeeb7482f",
+    "dashboard/structured_protocol.py": "2d5009fc27c43481a4a8c571d03e27b36b0362d3a79cecb2babcd1eaaf99eae3",
+    "outputs/phase2b_pauli_bias/noise_model.py": "256826516353c5d3effb6a0b85969934ac2b61edc2848148d935087e54dffcbd",
+    "outputs/phase2b_pauli_bias/decoder_bank.py": "ea88bbd9c60b027b7525d330db39df5c48fc3495a6644a9b991fa70ac2161080",
+    "outputs/phase2b_pauli_bias/PHASE2B_PROTOCOL.md": "a14c47118760c3999767faf4d395478bc0e0dcf522ad972dee24e2c4a915eb08",
+    "outputs/phase2b_pauli_bias/CALIBRATION_SELECTION.json": "e3fb71a3128412870922007cabcf49f3b00e2e2fbf73994c6807037253960648",
+    "outputs/neural_decoder_diagnostic/root_cause_analysis/position_preserving_cnn/POSITIONAL_CNN_REPORT.md": "94c2836ae3e356be2e8516a28aab685feff63d9fc5aa33c41c21d59cafb663fa",
+    "outputs/neural_decoder_diagnostic/root_cause_analysis/position_preserving_cnn/VERIFIED_RESULTS.json": "552322f74804a2f16caea5c75c33bb06faa811978172589c1dcb02cfb22aec0b"
+  },
+  "protocol_sha256": "68df47d4a9f8cef45d64e5eb66cc982b590c81e3d350378f9f2b1b7e4c37c715",
+  "analysis_plan_sha256": "c9e75a290c42ed51a53b33f93de1e912cd732963e2249c636782c8d028731619",
+  "software": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "win32"
+  },
+  "packages": {
+    "torch": "2.14.1+cu126",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "numpy": "2.5.3",
+    "psutil": "7.2.2"
+  },
+  "python_executable": "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "cuda_available_at_freeze": true,
+  "cuda_device_name_at_freeze": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "partitions": {
+    "train": "nested prefix of 30000 shots per regime/root",
+    "monitor": "4000 per regime/root",
+    "calibration": "3000 per regime/root",
+    "threshold_selection": "3000 per regime/root",
+    "final_development_evaluation": "10000 per regime/root",
+    "independent_test": "not allocated and prohibited"
+  },
+  "full_experiment_authorized": false,
+  "independent_test_access": "prohibited and not allocated",
+  "protocol_summary": "5 roots; 3 learning-curve models x 3 nested train budgets; separate PM-assisted residual pilot; 4 independent validation roles; 6h wall/4h GPU hard limits."
+}

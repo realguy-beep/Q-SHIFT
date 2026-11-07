@@ -1,0 +1,11 @@
+--- run_experiment_frozen.py
++++ run_experiment.py (report-only fix)
+@@ -431,6 +431,8 @@
+               "equal_regime_ler": float(np.mean([per_regime[r]["logical_error_rate"] for r in REGIMES])),
+               "pymatching_errors": total_pm_errors,
+               "equal_regime_pymatching_ler": float(np.mean([per_regime[r]["pymatching_ler"] for r in REGIMES])),
++              "paired_ler_difference": float(np.mean([per_regime[r]["logical_error_rate"] for r in REGIMES]) -
++                                              np.mean([per_regime[r]["pymatching_ler"] for r in REGIMES])),
+               "paired_candidate_only": sum(v["candidate_only"] for v in per_regime.values()),
+               "paired_pymatching_only": sum(v["pymatching_only"] for v in per_regime.values()),
+               "per_regime": per_regime, "probability_calibration": calibration_metrics, "history": history}

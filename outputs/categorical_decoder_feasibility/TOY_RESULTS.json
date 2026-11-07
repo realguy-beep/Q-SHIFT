@@ -1,0 +1,390 @@
+{
+  "status": "PASS_TOY_EXACT_REFERENCE_VALIDATED",
+  "software": {
+    "stim": "1.16.0",
+    "pymatching": "2.4.0"
+  },
+  "noise_semantics": "Independent locations; each location is one categorical draw including identity. No Monte Carlo evaluation is used.",
+  "toy_circuits": {
+    "structure": "three data qubits initialized to |000>; one round of Z-parity checks MZZ(0,1), MZZ(1,2); final Z measurements; logical observable is parity of all three final measurements",
+    "detector_masks": "D0=x0 XOR x1, D1=x1 XOR x2",
+    "logical_mask": "L0=x0 XOR x1 XOR x2; X and Y flip the computational measurement bit; Z does not"
+  },
+  "one_qubit": {
+    "categorical_probabilities_I_X_Y_Z": {
+      "I": 0.94,
+      "X": 0.02,
+      "Y": 0.01,
+      "Z": 0.03
+    },
+    "result": {
+      "kind": "one_qubit",
+      "model": {
+        "detectors": 2,
+        "observables": 1,
+        "location_count": 3,
+        "outcomes_per_location": [
+          4,
+          4,
+          4
+        ],
+        "full_fault_configurations": 64,
+        "per_location_probability_sums": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "exact_reference": {
+        "method": "Cartesian exhaustive enumeration; one categorical outcome selected per location",
+        "configuration_count_visited": 64,
+        "stim_deterministic_reference_configurations": 64,
+        "joint_probability_mass": 0.9999999999999994,
+        "tie_syndromes": [],
+        "tie_policy": "choose the smallest observable bit pattern; in binary ties choose 0",
+        "exact_MAP_logical_error_probability": 0.0026459999999999956,
+        "joint_distribution": {
+          "0": [
+            0.9126729999999998,
+            2.700000000000001e-05
+          ],
+          "2": [
+            0.0008730000000000001,
+            0.028227
+          ],
+          "3": [
+            0.0008730000000000001,
+            0.028227
+          ],
+          "1": [
+            0.0008730000000000001,
+            0.028227
+          ]
+        },
+        "conditional_distribution": {
+          "0": [
+            0.9999704174427523,
+            2.958255724772654e-05
+          ],
+          "2": [
+            0.030000000000000006,
+            0.9700000000000001
+          ],
+          "3": [
+            0.030000000000000006,
+            0.9700000000000001
+          ],
+          "1": [
+            0.030000000000000006,
+            0.9700000000000001
+          ]
+        },
+        "stim_joint_matches_custom_exact_enumeration": true
+      },
+      "approximate_dem_pymatching": {
+        "dem_text": "error(0.03000000000000003) D0 D1 L0\nerror(0.03000000000000003) D0 L0\nerror(0.03000000000000003) D1 L0",
+        "dem_error_count": 3,
+        "dem_separator_count": 0,
+        "detectors": 2,
+        "observables": 1,
+        "decoders": {
+          "correlation_disabled": {
+            "0": 0,
+            "1": 1,
+            "2": 1,
+            "3": 1
+          },
+          "correlation_enabled": {
+            "0": 0,
+            "1": 1,
+            "2": 1,
+            "3": 1
+          }
+        }
+      },
+      "logical_error_probability_under_exact_channel": {
+        "exact_categorical_MAP": 0.0026460000000000003,
+        "pymatching_approx_dem_correlation_disabled": 0.0026460000000000003,
+        "pymatching_approx_dem_correlation_enabled": 0.0026460000000000003
+      },
+      "decision_disagreements_vs_exact_by_syndrome": {
+        "correlation_disabled": 0,
+        "correlation_enabled": 0,
+        "correlation_on_vs_off": 0
+      },
+      "syndrome_decisions": [
+        {
+          "syndrome_bits_D0_D1": [
+            0,
+            0
+          ],
+          "syndrome_integer_little_bit_order": 0,
+          "P_syndrome_L0": 0.9126729999999998,
+          "P_syndrome_L1": 2.700000000000001e-05,
+          "P_syndrome": 0.9126999999999998,
+          "P_L1_given_syndrome": 2.958255724772654e-05,
+          "exact_MAP_decision": 0,
+          "PyMatching_uncorrelated_decision": 0,
+          "PyMatching_correlated_decision": 0,
+          "off_disagrees_with_exact": false,
+          "on_disagrees_with_exact": false
+        },
+        {
+          "syndrome_bits_D0_D1": [
+            1,
+            0
+          ],
+          "syndrome_integer_little_bit_order": 1,
+          "P_syndrome_L0": 0.0008730000000000001,
+          "P_syndrome_L1": 0.028227,
+          "P_syndrome": 0.029099999999999997,
+          "P_L1_given_syndrome": 0.9700000000000001,
+          "exact_MAP_decision": 1,
+          "PyMatching_uncorrelated_decision": 1,
+          "PyMatching_correlated_decision": 1,
+          "off_disagrees_with_exact": false,
+          "on_disagrees_with_exact": false
+        },
+        {
+          "syndrome_bits_D0_D1": [
+            0,
+            1
+          ],
+          "syndrome_integer_little_bit_order": 2,
+          "P_syndrome_L0": 0.0008730000000000001,
+          "P_syndrome_L1": 0.028227,
+          "P_syndrome": 0.029099999999999997,
+          "P_L1_given_syndrome": 0.9700000000000001,
+          "exact_MAP_decision": 1,
+          "PyMatching_uncorrelated_decision": 1,
+          "PyMatching_correlated_decision": 1,
+          "off_disagrees_with_exact": false,
+          "on_disagrees_with_exact": false
+        },
+        {
+          "syndrome_bits_D0_D1": [
+            1,
+            1
+          ],
+          "syndrome_integer_little_bit_order": 3,
+          "P_syndrome_L0": 0.0008730000000000001,
+          "P_syndrome_L1": 0.028227,
+          "P_syndrome": 0.029099999999999997,
+          "P_L1_given_syndrome": 0.9700000000000001,
+          "exact_MAP_decision": 1,
+          "PyMatching_uncorrelated_decision": 1,
+          "PyMatching_correlated_decision": 1,
+          "off_disagrees_with_exact": false,
+          "on_disagrees_with_exact": false
+        }
+      ]
+    }
+  },
+  "two_qubit": {
+    "pauli_pair_order": [
+      "IX",
+      "IY",
+      "IZ",
+      "XI",
+      "XX",
+      "XY",
+      "XZ",
+      "YI",
+      "YX",
+      "YY",
+      "YZ",
+      "ZI",
+      "ZX",
+      "ZY",
+      "ZZ"
+    ],
+    "identity_probability_per_location": 0.88,
+    "nonidentity_total_probability_per_location": 0.12,
+    "probabilities_by_pair": {
+      "IX": 0.001,
+      "IY": 0.002,
+      "IZ": 0.003,
+      "XI": 0.004,
+      "XX": 0.005,
+      "XY": 0.006,
+      "XZ": 0.007,
+      "YI": 0.008,
+      "YX": 0.009000000000000001,
+      "YY": 0.01,
+      "YZ": 0.011,
+      "ZI": 0.012,
+      "ZX": 0.013000000000000001,
+      "ZY": 0.014,
+      "ZZ": 0.014999999999999998
+    },
+    "result": {
+      "kind": "two_qubit",
+      "model": {
+        "detectors": 2,
+        "observables": 1,
+        "location_count": 2,
+        "outcomes_per_location": [
+          16,
+          16
+        ],
+        "full_fault_configurations": 256,
+        "per_location_probability_sums": [
+          1.0,
+          1.0
+        ]
+      },
+      "exact_reference": {
+        "method": "Cartesian exhaustive enumeration; one categorical outcome selected per location",
+        "configuration_count_visited": 256,
+        "stim_deterministic_reference_configurations": 256,
+        "joint_probability_mass": 0.9999999999999996,
+        "tie_syndromes": [
+          1,
+          2
+        ],
+        "tie_policy": "choose the smallest observable bit pattern; in binary ties choose 0",
+        "exact_MAP_logical_error_probability": 0.06000000000000002,
+        "joint_distribution": {
+          "0": [
+            0.8289999999999998,
+            0.0018000000000000004
+          ],
+          "2": [
+            0.028200000000000003,
+            0.028200000000000006
+          ],
+          "3": [
+            0.0018000000000000004,
+            0.0546
+          ],
+          "1": [
+            0.02820000000000001,
+            0.02819999999999999
+          ]
+        },
+        "conditional_distribution": {
+          "0": [
+            0.9978334135772748,
+            0.0021665864227250853
+          ],
+          "2": [
+            0.5,
+            0.5000000000000001
+          ],
+          "3": [
+            0.03191489361702128,
+            0.9680851063829786
+          ],
+          "1": [
+            0.5000000000000002,
+            0.49999999999999983
+          ]
+        },
+        "stim_joint_matches_custom_exact_enumeration": true
+      },
+      "approximate_dem_pymatching": {
+        "dem_text": "error(0.03) D0\nerror(0.03) D0 L0\nerror(0.03) D0 L0 ^ D1\nerror(0.03) D1\nerror(0.03) D1 L0\nerror(0.03) D1 L0 ^ D0",
+        "dem_error_count": 6,
+        "dem_separator_count": 2,
+        "detectors": 2,
+        "observables": 1,
+        "decoders": {
+          "correlation_disabled": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0
+          },
+          "correlation_enabled": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        }
+      },
+      "logical_error_probability_under_exact_channel": {
+        "exact_categorical_MAP": 0.06,
+        "pymatching_approx_dem_correlation_disabled": 0.1128,
+        "pymatching_approx_dem_correlation_enabled": 0.1128
+      },
+      "decision_disagreements_vs_exact_by_syndrome": {
+        "correlation_disabled": 1,
+        "correlation_enabled": 1,
+        "correlation_on_vs_off": 0
+      },
+      "syndrome_decisions": [
+        {
+          "syndrome_bits_D0_D1": [
+            0,
+            0
+          ],
+          "syndrome_integer_little_bit_order": 0,
+          "P_syndrome_L0": 0.8289999999999998,
+          "P_syndrome_L1": 0.0018000000000000004,
+          "P_syndrome": 0.8307999999999999,
+          "P_L1_given_syndrome": 0.0021665864227250853,
+          "exact_MAP_decision": 0,
+          "PyMatching_uncorrelated_decision": 0,
+          "PyMatching_correlated_decision": 0,
+          "off_disagrees_with_exact": false,
+          "on_disagrees_with_exact": false
+        },
+        {
+          "syndrome_bits_D0_D1": [
+            1,
+            0
+          ],
+          "syndrome_integer_little_bit_order": 1,
+          "P_syndrome_L0": 0.02820000000000001,
+          "P_syndrome_L1": 0.02819999999999999,
+          "P_syndrome": 0.0564,
+          "P_L1_given_syndrome": 0.49999999999999983,
+          "exact_MAP_decision": 0,
+          "PyMatching_uncorrelated_decision": 0,
+          "PyMatching_correlated_decision": 0,
+          "off_disagrees_with_exact": false,
+          "on_disagrees_with_exact": false
+        },
+        {
+          "syndrome_bits_D0_D1": [
+            0,
+            1
+          ],
+          "syndrome_integer_little_bit_order": 2,
+          "P_syndrome_L0": 0.028200000000000003,
+          "P_syndrome_L1": 0.028200000000000006,
+          "P_syndrome": 0.056400000000000006,
+          "P_L1_given_syndrome": 0.5000000000000001,
+          "exact_MAP_decision": 0,
+          "PyMatching_uncorrelated_decision": 0,
+          "PyMatching_correlated_decision": 0,
+          "off_disagrees_with_exact": false,
+          "on_disagrees_with_exact": false
+        },
+        {
+          "syndrome_bits_D0_D1": [
+            1,
+            1
+          ],
+          "syndrome_integer_little_bit_order": 3,
+          "P_syndrome_L0": 0.0018000000000000004,
+          "P_syndrome_L1": 0.0546,
+          "P_syndrome": 0.056400000000000006,
+          "P_L1_given_syndrome": 0.9680851063829786,
+          "exact_MAP_decision": 1,
+          "PyMatching_uncorrelated_decision": 0,
+          "PyMatching_correlated_decision": 0,
+          "off_disagrees_with_exact": true,
+          "on_disagrees_with_exact": true
+        }
+      ]
+    }
+  },
+  "execution_accounting": {
+    "stochastic_shots_generated": 0,
+    "deterministic_forced_fault_configurations_checked_by_stim": 320,
+    "phase2b_evaluation_shots_generated": 0,
+    "method": "exhaustive Cartesian enumeration; each Stim check uses one-hot probability-1 channel outcomes, so its detector/observable result is deterministic"
+  }
+}

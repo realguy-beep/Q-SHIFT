@@ -1,0 +1,18 @@
+{
+  "study": "qshift_prototype_development_2026_11",
+  "confirmatory": false,
+  "circuit": "surface_code:rotated_memory_z",
+  "distance": 3,
+  "rounds": 5,
+  "regimes": {
+    "data_heavy": {"gate_probability": 0.006, "measurement_probability": 0.001, "decoder_index": 6},
+    "nominal": {"gate_probability": 0.003, "measurement_probability": 0.003, "decoder_index": 4},
+    "measurement_heavy": {"gate_probability": 0.001, "measurement_probability": 0.006, "decoder_index": 2}
+  },
+  "decoder_grid": {"order": "itertools.product((0.001,0.003,0.006), repeat=2); (gate,measurement)", "pooled_fixed_index": 1, "nominal_fixed_index": 4},
+  "calibration_shots_per_regime": 20000,
+  "evaluation": {"replicates_per_schedule": 10, "blocks_per_replicate": 12, "shots_per_block": 512, "schedules": ["stationary", "data_to_measurement", "measurement_to_data", "nominal_measurement_nominal", "rapid_cycle"]},
+  "adaptive_policy": {"estimator": "three-class detector-only Bernoulli naive Bayes from separate calibration data", "window": "all samples from the immediately previous completed block", "confidence_threshold": 0.60, "hysteresis_blocks": 2, "minimum_dwell_blocks": 2, "switch_penalty_ler": 0.0005, "calibration_uncertainty_z": 1.96, "initial_decoder": 1},
+  "rng": {"calibration_seeds": [99100001, 99100002, 99100003], "evaluation_seed_start": 99200001, "evaluation_seed_rule": "evaluation_seed_start + ((schedule_index*replicates + replicate_index)*blocks + block_index)", "bootstrap_seed": 99300001, "diagnostic_seed": 99400001, "namespace_screened_against_repository_text": true},
+  "outputs": {"raw_calibration": "data/calibration_evidence.npz", "raw_evaluation_dir": "data", "results": "DEVELOPMENT_RESULTS.json", "manifest": "MANIFEST.json", "trial_demo": "QSHIFT_DEMO.html"}
+}

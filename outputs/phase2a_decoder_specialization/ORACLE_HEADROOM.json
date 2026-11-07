@@ -1,0 +1,546 @@
+{
+  "global_fixed_index": 1,
+  "per_regime_calibration_indices": [
+    1,
+    1,
+    1
+  ],
+  "A_best_global_fixed_errors": 4192,
+  "B_calibration_selected_per_regime_errors": 4192,
+  "C_stage1_pooled_fixed_index1_errors": 4192,
+  "D_nominal_index4_errors": 4203,
+  "A_and_B_primary_equal_regime_ler_difference_B_minus_A": 0.0,
+  "primary_seed_cluster_bootstrap_95ci": [
+    0.0,
+    0.0
+  ],
+  "primary_stratified_root_signflip_p": 1.0,
+  "retrospective_oracle_by_regime": [
+    {
+      "regime": "data_heavy",
+      "shots": 200000,
+      "evaluation_label_hindsight_best_decoder": 3,
+      "hindsight_best_decoder_errors": 2750,
+      "per_shot_oracle_errors": 2000
+    },
+    {
+      "regime": "nominal",
+      "shots": 200000,
+      "evaluation_label_hindsight_best_decoder": 1,
+      "hindsight_best_decoder_errors": 976,
+      "per_shot_oracle_errors": 681
+    },
+    {
+      "regime": "measurement_heavy",
+      "shots": 200000,
+      "evaluation_label_hindsight_best_decoder": 2,
+      "hindsight_best_decoder_errors": 353,
+      "per_shot_oracle_errors": 294
+    }
+  ],
+  "retrospective_oracle_per_regime_errors_total": 4079,
+  "retrospective_oracle_per_shot_errors_total": 2975,
+  "oracle_not_deployable": true,
+  "evaluation_root_seed_differences_by_regime": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "comparison_rates_and_descriptive_headroom": [
+    {
+      "method": "A_best_global_fixed",
+      "errors": 4192,
+      "shots": 600000,
+      "ler": 0.006986666666666667,
+      "headroom_vs_A_errors": 0,
+      "absolute_headroom_ler": 0.0,
+      "relative_error_reduction_vs_A": 0.0,
+      "test_label_selection_used": false
+    },
+    {
+      "method": "B_calibration_per_regime",
+      "errors": 4192,
+      "shots": 600000,
+      "ler": 0.006986666666666667,
+      "headroom_vs_A_errors": 0,
+      "absolute_headroom_ler": 0.0,
+      "relative_error_reduction_vs_A": 0.0,
+      "test_label_selection_used": false
+    },
+    {
+      "method": "C_stage1_pooled",
+      "errors": 4192,
+      "shots": 600000,
+      "ler": 0.006986666666666667,
+      "headroom_vs_A_errors": 0,
+      "absolute_headroom_ler": 0.0,
+      "relative_error_reduction_vs_A": 0.0,
+      "test_label_selection_used": false
+    },
+    {
+      "method": "D_nominal",
+      "errors": 4203,
+      "shots": 600000,
+      "ler": 0.007005,
+      "headroom_vs_A_errors": -11,
+      "absolute_headroom_ler": -1.8333333333333333e-05,
+      "relative_error_reduction_vs_A": -0.0026240458015267176,
+      "test_label_selection_used": false
+    },
+    {
+      "method": "retrospective_per_regime_oracle",
+      "errors": 4079,
+      "shots": 600000,
+      "ler": 0.006798333333333333,
+      "headroom_vs_A_errors": 113,
+      "absolute_headroom_ler": 0.00018833333333333332,
+      "relative_error_reduction_vs_A": 0.026956106870229007,
+      "test_label_selection_used": true
+    },
+    {
+      "method": "retrospective_per_shot_oracle",
+      "errors": 2975,
+      "shots": 600000,
+      "ler": 0.004958333333333334,
+      "headroom_vs_A_errors": 1217,
+      "absolute_headroom_ler": 0.0020283333333333334,
+      "relative_error_reduction_vs_A": 0.29031488549618323,
+      "test_label_selection_used": true
+    }
+  ],
+  "calibration_selection_uncertainty": [
+    {
+      "regime": "data_heavy",
+      "best_index_tie_lowest": 1,
+      "models": [
+        {
+          "decoder_index": 0,
+          "calibration_errors": 291,
+          "shots": 20000,
+          "ler": 0.01455,
+          "paired_delta_ler_vs_decoder1": 5e-05,
+          "approx_paired_95ci": [
+            -0.0003540738590705654,
+            0.00045407385907056543
+          ],
+          "candidate_only": 9,
+          "decoder1_only": 8
+        },
+        {
+          "decoder_index": 1,
+          "calibration_errors": 290,
+          "shots": 20000,
+          "ler": 0.0145,
+          "paired_delta_ler_vs_decoder1": 0.0,
+          "approx_paired_95ci": [
+            0.0,
+            0.0
+          ],
+          "candidate_only": 0,
+          "decoder1_only": 0
+        },
+        {
+          "decoder_index": 2,
+          "calibration_errors": 317,
+          "shots": 20000,
+          "ler": 0.01585,
+          "paired_delta_ler_vs_decoder1": 0.00135,
+          "approx_paired_95ci": [
+            0.0005361455583750817,
+            0.0021638544416249187
+          ],
+          "candidate_only": 48,
+          "decoder1_only": 21
+        },
+        {
+          "decoder_index": 3,
+          "calibration_errors": 291,
+          "shots": 20000,
+          "ler": 0.01455,
+          "paired_delta_ler_vs_decoder1": 5e-05,
+          "approx_paired_95ci": [
+            -0.0009052094749619335,
+            0.0010052094749619335
+          ],
+          "candidate_only": 48,
+          "decoder1_only": 47
+        },
+        {
+          "decoder_index": 4,
+          "calibration_errors": 291,
+          "shots": 20000,
+          "ler": 0.01455,
+          "paired_delta_ler_vs_decoder1": 5e-05,
+          "approx_paired_95ci": [
+            -0.0003540738590705654,
+            0.00045407385907056543
+          ],
+          "candidate_only": 9,
+          "decoder1_only": 8
+        },
+        {
+          "decoder_index": 5,
+          "calibration_errors": 295,
+          "shots": 20000,
+          "ler": 0.01475,
+          "paired_delta_ler_vs_decoder1": 0.00025,
+          "approx_paired_95ci": [
+            3.088725386282074e-05,
+            0.00046911274613717927
+          ],
+          "candidate_only": 5,
+          "decoder1_only": 0
+        },
+        {
+          "decoder_index": 6,
+          "calibration_errors": 292,
+          "shots": 20000,
+          "ler": 0.0146,
+          "paired_delta_ler_vs_decoder1": 0.0001,
+          "approx_paired_95ci": [
+            -0.001000073900849105,
+            0.001200073900849105
+          ],
+          "candidate_only": 64,
+          "decoder1_only": 62
+        },
+        {
+          "decoder_index": 7,
+          "calibration_errors": 291,
+          "shots": 20000,
+          "ler": 0.01455,
+          "paired_delta_ler_vs_decoder1": 5e-05,
+          "approx_paired_95ci": [
+            -0.0009052094749619335,
+            0.0010052094749619335
+          ],
+          "candidate_only": 48,
+          "decoder1_only": 47
+        },
+        {
+          "decoder_index": 8,
+          "calibration_errors": 291,
+          "shots": 20000,
+          "ler": 0.01455,
+          "paired_delta_ler_vs_decoder1": 5e-05,
+          "approx_paired_95ci": [
+            -0.0003540738590705654,
+            0.00045407385907056543
+          ],
+          "candidate_only": 9,
+          "decoder1_only": 8
+        }
+      ]
+    },
+    {
+      "regime": "nominal",
+      "best_index_tie_lowest": 1,
+      "models": [
+        {
+          "decoder_index": 0,
+          "calibration_errors": 75,
+          "shots": 20000,
+          "ler": 0.00375,
+          "paired_delta_ler_vs_decoder1": 0.0001,
+          "approx_paired_95ci": [
+            -0.0001771893231999473,
+            0.00037718932319994727
+          ],
+          "candidate_only": 5,
+          "decoder1_only": 3
+        },
+        {
+          "decoder_index": 1,
+          "calibration_errors": 73,
+          "shots": 20000,
+          "ler": 0.00365,
+          "paired_delta_ler_vs_decoder1": 0.0,
+          "approx_paired_95ci": [
+            0.0,
+            0.0
+          ],
+          "candidate_only": 0,
+          "decoder1_only": 0
+        },
+        {
+          "decoder_index": 2,
+          "calibration_errors": 84,
+          "shots": 20000,
+          "ler": 0.0042,
+          "paired_delta_ler_vs_decoder1": 0.00055,
+          "approx_paired_95ci": [
+            6.004704461048027e-05,
+            0.00103995295538952
+          ],
+          "candidate_only": 18,
+          "decoder1_only": 7
+        },
+        {
+          "decoder_index": 3,
+          "calibration_errors": 86,
+          "shots": 20000,
+          "ler": 0.0043,
+          "paired_delta_ler_vs_decoder1": 0.00065,
+          "approx_paired_95ci": [
+            7.027967951563129e-05,
+            0.0012297203204843688
+          ],
+          "candidate_only": 24,
+          "decoder1_only": 11
+        },
+        {
+          "decoder_index": 4,
+          "calibration_errors": 75,
+          "shots": 20000,
+          "ler": 0.00375,
+          "paired_delta_ler_vs_decoder1": 0.0001,
+          "approx_paired_95ci": [
+            -0.0001771893231999473,
+            0.00037718932319994727
+          ],
+          "candidate_only": 5,
+          "decoder1_only": 3
+        },
+        {
+          "decoder_index": 5,
+          "calibration_errors": 74,
+          "shots": 20000,
+          "ler": 0.0037,
+          "paired_delta_ler_vs_decoder1": 5e-05,
+          "approx_paired_95ci": [
+            -0.00011974380827594976,
+            0.00021974380827594975
+          ],
+          "candidate_only": 2,
+          "decoder1_only": 1
+        },
+        {
+          "decoder_index": 6,
+          "calibration_errors": 94,
+          "shots": 20000,
+          "ler": 0.0047,
+          "paired_delta_ler_vs_decoder1": 0.00105,
+          "approx_paired_95ci": [
+            0.00036413722058446026,
+            0.0017358627794155396
+          ],
+          "candidate_only": 35,
+          "decoder1_only": 14
+        },
+        {
+          "decoder_index": 7,
+          "calibration_errors": 86,
+          "shots": 20000,
+          "ler": 0.0043,
+          "paired_delta_ler_vs_decoder1": 0.00065,
+          "approx_paired_95ci": [
+            7.027967951563129e-05,
+            0.0012297203204843688
+          ],
+          "candidate_only": 24,
+          "decoder1_only": 11
+        },
+        {
+          "decoder_index": 8,
+          "calibration_errors": 75,
+          "shots": 20000,
+          "ler": 0.00375,
+          "paired_delta_ler_vs_decoder1": 0.0001,
+          "approx_paired_95ci": [
+            -0.0001771893231999473,
+            0.00037718932319994727
+          ],
+          "candidate_only": 5,
+          "decoder1_only": 3
+        }
+      ]
+    },
+    {
+      "regime": "measurement_heavy",
+      "best_index_tie_lowest": 1,
+      "models": [
+        {
+          "decoder_index": 0,
+          "calibration_errors": 38,
+          "shots": 20000,
+          "ler": 0.0019,
+          "paired_delta_ler_vs_decoder1": 5e-05,
+          "approx_paired_95ci": [
+            -4.799999999999998e-05,
+            0.000148
+          ],
+          "candidate_only": 1,
+          "decoder1_only": 0
+        },
+        {
+          "decoder_index": 1,
+          "calibration_errors": 37,
+          "shots": 20000,
+          "ler": 0.00185,
+          "paired_delta_ler_vs_decoder1": 0.0,
+          "approx_paired_95ci": [
+            0.0,
+            0.0
+          ],
+          "candidate_only": 0,
+          "decoder1_only": 0
+        },
+        {
+          "decoder_index": 2,
+          "calibration_errors": 37,
+          "shots": 20000,
+          "ler": 0.00185,
+          "paired_delta_ler_vs_decoder1": 0.0,
+          "approx_paired_95ci": [
+            -0.00024005599626767752,
+            0.00024005599626767752
+          ],
+          "candidate_only": 3,
+          "decoder1_only": 3
+        },
+        {
+          "decoder_index": 3,
+          "calibration_errors": 45,
+          "shots": 20000,
+          "ler": 0.00225,
+          "paired_delta_ler_vs_decoder1": 0.0004,
+          "approx_paired_95ci": [
+            -1.5752221515994737e-05,
+            0.0008157522215159948
+          ],
+          "candidate_only": 13,
+          "decoder1_only": 5
+        },
+        {
+          "decoder_index": 4,
+          "calibration_errors": 38,
+          "shots": 20000,
+          "ler": 0.0019,
+          "paired_delta_ler_vs_decoder1": 5e-05,
+          "approx_paired_95ci": [
+            -4.799999999999998e-05,
+            0.000148
+          ],
+          "candidate_only": 1,
+          "decoder1_only": 0
+        },
+        {
+          "decoder_index": 5,
+          "calibration_errors": 38,
+          "shots": 20000,
+          "ler": 0.0019,
+          "paired_delta_ler_vs_decoder1": 5e-05,
+          "approx_paired_95ci": [
+            -4.799999999999998e-05,
+            0.000148
+          ],
+          "candidate_only": 1,
+          "decoder1_only": 0
+        },
+        {
+          "decoder_index": 6,
+          "calibration_errors": 53,
+          "shots": 20000,
+          "ler": 0.00265,
+          "paired_delta_ler_vs_decoder1": 0.0008,
+          "approx_paired_95ci": [
+            0.00030040661685984697,
+            0.0012995933831401532
+          ],
+          "candidate_only": 21,
+          "decoder1_only": 5
+        },
+        {
+          "decoder_index": 7,
+          "calibration_errors": 45,
+          "shots": 20000,
+          "ler": 0.00225,
+          "paired_delta_ler_vs_decoder1": 0.0004,
+          "approx_paired_95ci": [
+            -1.5752221515994737e-05,
+            0.0008157522215159948
+          ],
+          "candidate_only": 13,
+          "decoder1_only": 5
+        },
+        {
+          "decoder_index": 8,
+          "calibration_errors": 38,
+          "shots": 20000,
+          "ler": 0.0019,
+          "paired_delta_ler_vs_decoder1": 5e-05,
+          "approx_paired_95ci": [
+            -4.799999999999998e-05,
+            0.000148
+          ],
+          "candidate_only": 1,
+          "decoder1_only": 0
+        }
+      ]
+    }
+  ],
+  "hindsight_oracle_inference_note": "Hindsight oracles select and score using the same evaluation labels; reported headroom is descriptive and optimistic, without a confirmatory confidence interval."
+}

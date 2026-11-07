@@ -1,0 +1,3205 @@
+{
+  "protocol": "same ideal Stim circuit skeleton; explicit Pauli-channel insertions after CX and X measurement flips before Z-basis M/MR; train/validation/test disjoint seeds; inference receives detector windows only; PyMatching DEM uses Stim approximate_disjoint_errors=True for mutually exclusive Pauli-channel components; schedule oracle receives true current composition with zero estimation delay",
+  "software": {
+    "python": "3.12.10",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "numpy": "2.5.3"
+  },
+  "config": {
+    "distance": 3,
+    "rounds": 3,
+    "p_data": 0.01,
+    "p_measure": 0.01,
+    "train_shots_per_regime_seed": 1500,
+    "validation_shots_per_regime_seed": 750,
+    "test_shots_per_condition_seed": 1400,
+    "seeds": 1,
+    "window": 500,
+    "schedule": [
+      "x_dominant",
+      "x_dominant",
+      "z_dominant",
+      "z_dominant",
+      "depolarizing",
+      "depolarizing",
+      "x_dominant",
+      "x_dominant",
+      "measurement_only",
+      "measurement_only",
+      "z_dominant",
+      "z_dominant"
+    ],
+    "stream_block_shots": 4000,
+    "trained_compositions": {
+      "x_dominant": [
+        0.8,
+        0.1,
+        0.1
+      ],
+      "z_dominant": [
+        0.1,
+        0.1,
+        0.8
+      ],
+      "depolarizing": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "measurement_only": "data p=0; measurement flip p=.01"
+    },
+    "held_out_compositions": {
+      "mixed_xz_heldout": [
+        0.5,
+        0,
+        0.5
+      ],
+      "data_plus_measurement_heldout": "depolarizing data p=.01 plus measurement p=.01"
+    },
+    "seed_base": 20271215,
+    "validation_shots_split": "first half selects correction threshold; independent second half selects lookup vs matching",
+    "switch_safeguard": "two confident detector windows, posterior>=0.90, log-likelihood margin>=ln(10), minimum dwell of two windows",
+    "validation_strategy_gate": "lookup selected only when held-out policy half has fewer paired residuals and exact McNemar p<0.0125 (Bonferroni over four trained regimes)"
+  },
+  "validation_strategy_choices_by_seed": [
+    {
+      "x_dominant": "fixed_matching",
+      "z_dominant": "fixed_matching",
+      "depolarizing": "fixed_matching",
+      "measurement_only": "fixed_matching"
+    }
+  ],
+  "replicates": [
+    {
+      "seed": 20271215,
+      "static": {
+        "x_dominant": {
+          "raw_errors": 30,
+          "raw_rate": 0.02142857142857143,
+          "preceding_detector_pilot_regime_estimate": "depolarizing",
+          "per_regime_lookup_selection": "oracle condition label",
+          "decoders": {
+            "fixed_matching": {
+              "errors": 8,
+              "rate": 0.005714285714285714,
+              "wilson95": [
+                0.0028983217417111757,
+                0.011235367426695396
+              ]
+            },
+            "oracle_matching": {
+              "errors": 8,
+              "rate": 0.005714285714285714,
+              "wilson95": [
+                0.0028983217417111757,
+                0.011235367426695396
+              ]
+            },
+            "pooled_lookup": {
+              "errors": 7,
+              "rate": 0.005,
+              "wilson95": [
+                0.0024240871522849964,
+                0.010284939717231989
+              ]
+            },
+            "per_regime_lookup": {
+              "errors": 8,
+              "rate": 0.005714285714285714,
+              "wilson95": [
+                0.0028983217417111757,
+                0.011235367426695396
+              ]
+            }
+          },
+          "paired_vs_fixed": {
+            "oracle_matching": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "pooled_lookup": {
+              "candidate_only_wrong": 1,
+              "fixed_only_wrong": 2,
+              "difference_errors": -1,
+              "paired_rate_difference_ci95_approx": [
+                -0.003138868152562458,
+                0.0017102967239910295
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "per_regime_lookup": {
+              "candidate_only_wrong": 3,
+              "fixed_only_wrong": 3,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                -0.003429285639896449,
+                0.003429285639896449
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            }
+          },
+          "runtime_seconds_per_shot": {
+            "fixed_matching": 1.009999998911683e-07,
+            "oracle_matching": 1.0535714214451479e-07,
+            "pooled_lookup": 7.371428572306676e-08,
+            "per_regime_lookup": 8.671428596634151e-08
+          },
+          "memory_bytes_approx": {
+            "fixed_matching_python_wrapper": 48,
+            "pooled_lookup_python_objects": 2392,
+            "all_specialized_lookup_python_objects": 4940
+          },
+          "validation_selected_strategy_by_regime": {
+            "x_dominant": "fixed_matching",
+            "z_dominant": "fixed_matching",
+            "depolarizing": "fixed_matching",
+            "measurement_only": "fixed_matching"
+          },
+          "validation_policy_evidence": {
+            "x_dominant": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.005333333333333333,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "z_dominant": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "depolarizing": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0026666666666666666,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "measurement_only": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 0,
+                "fixed_only_wrong": 0,
+                "difference_errors": 0,
+                "paired_rate_difference_ci95_approx": [
+                  0.0,
+                  0.0
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            }
+          }
+        },
+        "z_dominant": {
+          "raw_errors": 6,
+          "raw_rate": 0.004285714285714286,
+          "preceding_detector_pilot_regime_estimate": "z_dominant",
+          "per_regime_lookup_selection": "oracle condition label",
+          "decoders": {
+            "fixed_matching": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "oracle_matching": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "pooled_lookup": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "per_regime_lookup": {
+              "errors": 3,
+              "rate": 0.002142857142857143,
+              "wilson95": [
+                0.0007290265384308006,
+                0.006281351135527842
+              ]
+            }
+          },
+          "paired_vs_fixed": {
+            "oracle_matching": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "pooled_lookup": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "per_regime_lookup": {
+              "candidate_only_wrong": 3,
+              "fixed_only_wrong": 0,
+              "difference_errors": 3,
+              "paired_rate_difference_ci95_approx": [
+                -0.00027941451820814736,
+                0.004565128803922434
+              ],
+              "mcnemar_exact_two_sided_p": 0.25
+            }
+          },
+          "runtime_seconds_per_shot": {
+            "fixed_matching": 4.3000000005122274e-08,
+            "oracle_matching": 5.207142878914185e-08,
+            "pooled_lookup": 7.435714256384278e-08,
+            "per_regime_lookup": 7.249999985755753e-08
+          },
+          "memory_bytes_approx": {
+            "fixed_matching_python_wrapper": 48,
+            "pooled_lookup_python_objects": 2392,
+            "all_specialized_lookup_python_objects": 4940
+          },
+          "validation_selected_strategy_by_regime": {
+            "x_dominant": "fixed_matching",
+            "z_dominant": "fixed_matching",
+            "depolarizing": "fixed_matching",
+            "measurement_only": "fixed_matching"
+          },
+          "validation_policy_evidence": {
+            "x_dominant": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.005333333333333333,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "z_dominant": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "depolarizing": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0026666666666666666,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "measurement_only": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 0,
+                "fixed_only_wrong": 0,
+                "difference_errors": 0,
+                "paired_rate_difference_ci95_approx": [
+                  0.0,
+                  0.0
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            }
+          }
+        },
+        "depolarizing": {
+          "raw_errors": 24,
+          "raw_rate": 0.017142857142857144,
+          "preceding_detector_pilot_regime_estimate": "x_dominant",
+          "per_regime_lookup_selection": "oracle condition label",
+          "decoders": {
+            "fixed_matching": {
+              "errors": 2,
+              "rate": 0.0014285714285714286,
+              "wilson95": [
+                0.00039185327119869865,
+                0.005193862103870359
+              ]
+            },
+            "oracle_matching": {
+              "errors": 2,
+              "rate": 0.0014285714285714286,
+              "wilson95": [
+                0.00039185327119869865,
+                0.005193862103870359
+              ]
+            },
+            "pooled_lookup": {
+              "errors": 3,
+              "rate": 0.002142857142857143,
+              "wilson95": [
+                0.0007290265384308006,
+                0.006281351135527842
+              ]
+            },
+            "per_regime_lookup": {
+              "errors": 3,
+              "rate": 0.002142857142857143,
+              "wilson95": [
+                0.0007290265384308006,
+                0.006281351135527842
+              ]
+            }
+          },
+          "paired_vs_fixed": {
+            "oracle_matching": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "pooled_lookup": {
+              "candidate_only_wrong": 1,
+              "fixed_only_wrong": 0,
+              "difference_errors": 1,
+              "paired_rate_difference_ci95_approx": [
+                -0.0006852141963966696,
+                0.002113785624968098
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "per_regime_lookup": {
+              "candidate_only_wrong": 1,
+              "fixed_only_wrong": 0,
+              "difference_errors": 1,
+              "paired_rate_difference_ci95_approx": [
+                -0.0006852141963966696,
+                0.002113785624968098
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            }
+          },
+          "runtime_seconds_per_shot": {
+            "fixed_matching": 7.800000016037043e-08,
+            "oracle_matching": 8.64999999196568e-08,
+            "pooled_lookup": 7.45714286105275e-08,
+            "per_regime_lookup": 7.328571492897546e-08
+          },
+          "memory_bytes_approx": {
+            "fixed_matching_python_wrapper": 48,
+            "pooled_lookup_python_objects": 2392,
+            "all_specialized_lookup_python_objects": 4940
+          },
+          "validation_selected_strategy_by_regime": {
+            "x_dominant": "fixed_matching",
+            "z_dominant": "fixed_matching",
+            "depolarizing": "fixed_matching",
+            "measurement_only": "fixed_matching"
+          },
+          "validation_policy_evidence": {
+            "x_dominant": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.005333333333333333,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "z_dominant": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "depolarizing": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0026666666666666666,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "measurement_only": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 0,
+                "fixed_only_wrong": 0,
+                "difference_errors": 0,
+                "paired_rate_difference_ci95_approx": [
+                  0.0,
+                  0.0
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            }
+          }
+        },
+        "measurement_only": {
+          "raw_errors": 21,
+          "raw_rate": 0.015,
+          "preceding_detector_pilot_regime_estimate": "measurement_only",
+          "per_regime_lookup_selection": "oracle condition label",
+          "decoders": {
+            "fixed_matching": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "oracle_matching": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "pooled_lookup": {
+              "errors": 1,
+              "rate": 0.0007142857142857143,
+              "wilson95": [
+                0.00012610009746667544,
+                0.0040349529787127945
+              ]
+            },
+            "per_regime_lookup": {
+              "errors": 1,
+              "rate": 0.0007142857142857143,
+              "wilson95": [
+                0.00012610009746667544,
+                0.0040349529787127945
+              ]
+            }
+          },
+          "paired_vs_fixed": {
+            "oracle_matching": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "pooled_lookup": {
+              "candidate_only_wrong": 1,
+              "fixed_only_wrong": 0,
+              "difference_errors": 1,
+              "paired_rate_difference_ci95_approx": [
+                -0.0006852141963966696,
+                0.002113785624968098
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "per_regime_lookup": {
+              "candidate_only_wrong": 1,
+              "fixed_only_wrong": 0,
+              "difference_errors": 1,
+              "paired_rate_difference_ci95_approx": [
+                -0.0006852141963966696,
+                0.002113785624968098
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            }
+          },
+          "runtime_seconds_per_shot": {
+            "fixed_matching": 4.892857110202645e-08,
+            "oracle_matching": 5.078571510758983e-08,
+            "pooled_lookup": 7.871428611646739e-08,
+            "per_regime_lookup": 7.192857083282434e-08
+          },
+          "memory_bytes_approx": {
+            "fixed_matching_python_wrapper": 48,
+            "pooled_lookup_python_objects": 2392,
+            "all_specialized_lookup_python_objects": 4940
+          },
+          "validation_selected_strategy_by_regime": {
+            "x_dominant": "fixed_matching",
+            "z_dominant": "fixed_matching",
+            "depolarizing": "fixed_matching",
+            "measurement_only": "fixed_matching"
+          },
+          "validation_policy_evidence": {
+            "x_dominant": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.005333333333333333,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "z_dominant": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "depolarizing": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0026666666666666666,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "measurement_only": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 0,
+                "fixed_only_wrong": 0,
+                "difference_errors": 0,
+                "paired_rate_difference_ci95_approx": [
+                  0.0,
+                  0.0
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            }
+          }
+        },
+        "mixed_xz_heldout": {
+          "raw_errors": 18,
+          "raw_rate": 0.012857142857142857,
+          "preceding_detector_pilot_regime_estimate": "z_dominant",
+          "per_regime_lookup_selection": "detector-only preceding pilot",
+          "decoders": {
+            "fixed_matching": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "oracle_matching": {
+              "errors": 0,
+              "rate": 0.0,
+              "wilson95": [
+                0.0,
+                0.002736390777289885
+              ]
+            },
+            "pooled_lookup": {
+              "errors": 1,
+              "rate": 0.0007142857142857143,
+              "wilson95": [
+                0.00012610009746667544,
+                0.0040349529787127945
+              ]
+            },
+            "per_regime_lookup": {
+              "errors": 8,
+              "rate": 0.005714285714285714,
+              "wilson95": [
+                0.0028983217417111757,
+                0.011235367426695396
+              ]
+            }
+          },
+          "paired_vs_fixed": {
+            "oracle_matching": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "pooled_lookup": {
+              "candidate_only_wrong": 1,
+              "fixed_only_wrong": 0,
+              "difference_errors": 1,
+              "paired_rate_difference_ci95_approx": [
+                -0.0006852141963966696,
+                0.002113785624968098
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "per_regime_lookup": {
+              "candidate_only_wrong": 8,
+              "fixed_only_wrong": 0,
+              "difference_errors": 8,
+              "paired_rate_difference_ci95_approx": [
+                0.0017658176569247327,
+                0.009662753771646696
+              ],
+              "mcnemar_exact_two_sided_p": 0.0078125
+            }
+          },
+          "runtime_seconds_per_shot": {
+            "fixed_matching": 6.514285684845943e-08,
+            "oracle_matching": 7.542857149798822e-08,
+            "pooled_lookup": 7.335714274501827e-08,
+            "per_regime_lookup": 7.199999994814529e-08
+          },
+          "memory_bytes_approx": {
+            "fixed_matching_python_wrapper": 48,
+            "pooled_lookup_python_objects": 2392,
+            "all_specialized_lookup_python_objects": 4940
+          },
+          "validation_selected_strategy_by_regime": {
+            "x_dominant": "fixed_matching",
+            "z_dominant": "fixed_matching",
+            "depolarizing": "fixed_matching",
+            "measurement_only": "fixed_matching"
+          },
+          "validation_policy_evidence": {
+            "x_dominant": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.005333333333333333,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "z_dominant": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "depolarizing": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0026666666666666666,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "measurement_only": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 0,
+                "fixed_only_wrong": 0,
+                "difference_errors": 0,
+                "paired_rate_difference_ci95_approx": [
+                  0.0,
+                  0.0
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            }
+          }
+        },
+        "data_plus_measurement_heldout": {
+          "raw_errors": 51,
+          "raw_rate": 0.03642857142857143,
+          "preceding_detector_pilot_regime_estimate": "x_dominant",
+          "per_regime_lookup_selection": "detector-only preceding pilot",
+          "decoders": {
+            "fixed_matching": {
+              "errors": 10,
+              "rate": 0.007142857142857143,
+              "wilson95": [
+                0.0038844587222093933,
+                0.013098555043976348
+              ]
+            },
+            "oracle_matching": {
+              "errors": 10,
+              "rate": 0.007142857142857143,
+              "wilson95": [
+                0.0038844587222093933,
+                0.013098555043976348
+              ]
+            },
+            "pooled_lookup": {
+              "errors": 13,
+              "rate": 0.009285714285714286,
+              "wilson95": [
+                0.00543461225043389,
+                0.015822388412420608
+              ]
+            },
+            "per_regime_lookup": {
+              "errors": 19,
+              "rate": 0.013571428571428571,
+              "wilson95": [
+                0.008705354776745148,
+                0.021099619679446867
+              ]
+            }
+          },
+          "paired_vs_fixed": {
+            "oracle_matching": {
+              "candidate_only_wrong": 0,
+              "fixed_only_wrong": 0,
+              "difference_errors": 0,
+              "paired_rate_difference_ci95_approx": [
+                0.0,
+                0.0
+              ],
+              "mcnemar_exact_two_sided_p": 1.0
+            },
+            "pooled_lookup": {
+              "candidate_only_wrong": 6,
+              "fixed_only_wrong": 3,
+              "difference_errors": 3,
+              "paired_rate_difference_ci95_approx": [
+                -0.002055642589190008,
+                0.006341356874904294
+              ],
+              "mcnemar_exact_two_sided_p": 0.5078125
+            },
+            "per_regime_lookup": {
+              "candidate_only_wrong": 13,
+              "fixed_only_wrong": 4,
+              "difference_errors": 9,
+              "paired_rate_difference_ci95_approx": [
+                0.0006660546173161237,
+                0.012191088239826734
+              ],
+              "mcnemar_exact_two_sided_p": 0.049041748046875
+            }
+          },
+          "runtime_seconds_per_shot": {
+            "fixed_matching": 1.0999999955986693e-07,
+            "oracle_matching": 1.1242857129088537e-07,
+            "pooled_lookup": 7.371428572306676e-08,
+            "per_regime_lookup": 7.271428590424225e-08
+          },
+          "memory_bytes_approx": {
+            "fixed_matching_python_wrapper": 48,
+            "pooled_lookup_python_objects": 2392,
+            "all_specialized_lookup_python_objects": 4940
+          },
+          "validation_selected_strategy_by_regime": {
+            "x_dominant": "fixed_matching",
+            "z_dominant": "fixed_matching",
+            "depolarizing": "fixed_matching",
+            "measurement_only": "fixed_matching"
+          },
+          "validation_policy_evidence": {
+            "x_dominant": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.005333333333333333,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "z_dominant": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "depolarizing": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0026666666666666666,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 1,
+                "fixed_only_wrong": 0,
+                "difference_errors": 1,
+                "paired_rate_difference_ci95_approx": [
+                  -0.0025530264589802743,
+                  0.007886359792313608
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            },
+            "measurement_only": {
+              "threshold_validation_shots": 375,
+              "policy_selection_shots": 375,
+              "threshold_validation_residual_rate": 0.0,
+              "paired_policy_evidence": {
+                "candidate_only_wrong": 0,
+                "fixed_only_wrong": 0,
+                "difference_errors": 0,
+                "paired_rate_difference_ci95_approx": [
+                  0.0,
+                  0.0
+                ],
+                "mcnemar_exact_two_sided_p": 1.0
+              },
+              "gate": "lookup only if lower residual count and exact McNemar p<0.0125; otherwise fixed matching",
+              "selected": "fixed_matching"
+            }
+          }
+        }
+      },
+      "schedule": {
+        "schedule_labels_for_evaluation_only": [
+          "x_dominant",
+          "x_dominant",
+          "z_dominant",
+          "z_dominant",
+          "depolarizing",
+          "depolarizing",
+          "x_dominant",
+          "x_dominant",
+          "measurement_only",
+          "measurement_only",
+          "z_dominant",
+          "z_dominant"
+        ],
+        "block_shots": 4000,
+        "window_shots": 500,
+        "errors": {
+          "fixed_matching": 64,
+          "adaptive_schedule": 64,
+          "oracle_schedule": 64
+        },
+        "rates": {
+          "fixed_matching": 0.0013333333333333333,
+          "adaptive_schedule": 0.0013333333333333333,
+          "oracle_schedule": 0.0013333333333333333
+        },
+        "paired_vs_fixed": {
+          "adaptive_schedule": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0
+          },
+          "oracle_schedule": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0
+          }
+        },
+        "switches": [],
+        "events": [
+          {
+            "block": 0,
+            "window": 0,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9994226052737444,
+              "z_dominant": 9.949077619209608e-29,
+              "depolarizing": 0.0005773946132450005,
+              "measurement_only": 1.1301067443017177e-10
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 0,
+            "window": 1,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.00969880344124698,
+              "z_dominant": 5.516604438465071e-27,
+              "depolarizing": 0.990301196558753,
+              "measurement_only": 7.585637992569041e-27
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 0,
+            "window": 2,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9952816408097797,
+              "z_dominant": 7.122944378911929e-38,
+              "depolarizing": 0.0047183591902202685,
+              "measurement_only": 2.4028968236751336e-18
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 0,
+            "window": 3,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.005932287485221021,
+              "z_dominant": 4.4565851905838635e-26,
+              "depolarizing": 0.994067712514779,
+              "measurement_only": 6.732927388858506e-21
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 0,
+            "window": 4,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.0686785058291327,
+              "z_dominant": 3.657210386866976e-27,
+              "depolarizing": 0.9313214941708672,
+              "measurement_only": 6.030919278241118e-27
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 0,
+            "window": 5,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.6688201236146588,
+              "z_dominant": 8.931270986337045e-33,
+              "depolarizing": 0.33117987638534113,
+              "measurement_only": 2.257970574320706e-22
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 0,
+            "window": 6,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.20127407236258255,
+              "z_dominant": 5.16394585666636e-30,
+              "depolarizing": 0.7987259276374173,
+              "measurement_only": 2.2936925046475198e-27
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 0,
+            "window": 7,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.0043092273011503335,
+              "z_dominant": 1.4391136991552946e-23,
+              "depolarizing": 0.9956907726988495,
+              "measurement_only": 1.715619486718808e-22
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 1,
+            "window": 0,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.8028284895327127,
+              "z_dominant": 6.996266221752084e-25,
+              "depolarizing": 0.19717151046728723,
+              "measurement_only": 6.814162371775045e-21
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 1,
+            "window": 1,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.6205309093791906,
+              "z_dominant": 4.041828934851775e-19,
+              "depolarizing": 0.3794690906208085,
+              "measurement_only": 9.638333583202835e-16
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 1,
+            "window": 2,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9933572372763555,
+              "z_dominant": 8.761780853524129e-28,
+              "depolarizing": 0.0066427627236443874,
+              "measurement_only": 4.428245133558518e-20
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 1,
+            "window": 3,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.28741372637784185,
+              "z_dominant": 1.7009339423922126e-30,
+              "depolarizing": 0.7125862736221581,
+              "measurement_only": 3.4208122328013976e-20
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 1,
+            "window": 4,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9926711942946015,
+              "z_dominant": 6.646236599878813e-32,
+              "depolarizing": 0.007328805705398458,
+              "measurement_only": 1.3628089177080022e-22
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 1,
+            "window": 5,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9143095740601139,
+              "z_dominant": 2.9965533721177413e-21,
+              "depolarizing": 0.08569042593955438,
+              "measurement_only": 3.3166537429245225e-13
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 1,
+            "window": 6,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.01234276013164958,
+              "z_dominant": 9.25461679504702e-28,
+              "depolarizing": 0.9876572398683504,
+              "measurement_only": 3.7656964863647775e-32
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 1,
+            "window": 7,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.27778002146136166,
+              "z_dominant": 6.588527183120067e-35,
+              "depolarizing": 0.7222199785386383,
+              "measurement_only": 1.7446867811118374e-23
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 2,
+            "window": 0,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 8.069231953520536e-18,
+              "z_dominant": 0.9999736458801636,
+              "depolarizing": 6.46386798718414e-13,
+              "measurement_only": 2.635411919004501e-05
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 2,
+            "window": 1,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 3.55389665029652e-19,
+              "z_dominant": 0.9999999469702855,
+              "depolarizing": 9.849115168420367e-16,
+              "measurement_only": 5.302971351105758e-08
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 2,
+            "window": 2,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 1.7158520047175038e-18,
+              "z_dominant": 0.9991488340800141,
+              "depolarizing": 1.1934814453315644e-12,
+              "measurement_only": 0.0008511659187923738
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 2,
+            "window": 3,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 4.0093166760627956e-22,
+              "z_dominant": 0.9999978294631601,
+              "depolarizing": 9.802711525852514e-17,
+              "measurement_only": 2.170536839712093e-06
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 2,
+            "window": 4,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 8.761804523899863e-19,
+              "z_dominant": 0.9999899909806131,
+              "depolarizing": 9.638978747304658e-14,
+              "measurement_only": 1.0009019290507468e-05
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 2,
+            "window": 5,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 7.079101341980412e-24,
+              "z_dominant": 0.9999999999092455,
+              "depolarizing": 5.409774977667636e-18,
+              "measurement_only": 9.075452446353186e-11
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 2,
+            "window": 6,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 8.432684562073787e-25,
+              "z_dominant": 0.9999999986178589,
+              "depolarizing": 6.9814130845695355e-19,
+              "measurement_only": 1.3821410499407617e-09
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 2,
+            "window": 7,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 1.6087333837713045e-19,
+              "z_dominant": 0.9999999805215715,
+              "depolarizing": 2.6452574915359157e-14,
+              "measurement_only": 1.9478402005368458e-08
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 3,
+            "window": 0,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 1.642386087958647e-23,
+              "z_dominant": 0.9999995078820477,
+              "depolarizing": 7.178075232615278e-18,
+              "measurement_only": 4.921179521857951e-07
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 3,
+            "window": 1,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 3.021984147399237e-14,
+              "z_dominant": 0.9999953420060009,
+              "depolarizing": 1.2266987385073229e-09,
+              "measurement_only": 4.656767270117882e-06
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 3,
+            "window": 2,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 1.1897387390254565e-20,
+              "z_dominant": 0.9999999999901614,
+              "depolarizing": 5.763306891396494e-13,
+              "measurement_only": 9.262159352558689e-12
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 3,
+            "window": 3,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 1.8589538339331933e-14,
+              "z_dominant": 0.9999997984774722,
+              "depolarizing": 1.7418504512348078e-07,
+              "measurement_only": 2.7337464104402675e-08
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 3,
+            "window": 4,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 3.500148066017353e-24,
+              "z_dominant": 0.9999999351708753,
+              "depolarizing": 1.020881124629922e-20,
+              "measurement_only": 6.482912477531768e-08
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 3,
+            "window": 5,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 1.7093213121304044e-22,
+              "z_dominant": 0.9999999998593221,
+              "depolarizing": 2.8757414554534783e-16,
+              "measurement_only": 1.4067770173495332e-10
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 3,
+            "window": 6,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 2.498460002474206e-19,
+              "z_dominant": 0.9999984112699104,
+              "depolarizing": 7.018864632124543e-14,
+              "measurement_only": 1.5887300194093357e-06
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 3,
+            "window": 7,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 2.169739353696252e-23,
+              "z_dominant": 0.9999999999997355,
+              "depolarizing": 2.3681628894768604e-17,
+              "measurement_only": 2.6452386616129776e-13
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 4,
+            "window": 0,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 1.2030256053544104e-05,
+              "z_dominant": 0.0025183657218081955,
+              "depolarizing": 0.9974696007330168,
+              "measurement_only": 3.289121478655685e-09
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 4,
+            "window": 1,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.055340481045042994,
+              "z_dominant": 8.93599882536205e-21,
+              "depolarizing": 0.9446595189549569,
+              "measurement_only": 2.441530364069067e-22
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 4,
+            "window": 2,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.3102774400552832,
+              "z_dominant": 3.405855884866984e-14,
+              "depolarizing": 0.6890258393520714,
+              "measurement_only": 0.0006967205926113668
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 4,
+            "window": 3,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.049792586926885755,
+              "z_dominant": 1.7365187775019241e-15,
+              "depolarizing": 0.9502074130731092,
+              "measurement_only": 3.3486270208453732e-15
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 4,
+            "window": 4,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 9.245475812821348e-05,
+              "z_dominant": 5.017687930628593e-24,
+              "depolarizing": 0.9999075452418718,
+              "measurement_only": 1.0193619504887799e-16
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 4,
+            "window": 5,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.023342825284735455,
+              "z_dominant": 8.311017364649986e-15,
+              "depolarizing": 0.9766571747151951,
+              "measurement_only": 6.109187089466197e-14
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 4,
+            "window": 6,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.664324193513008,
+              "z_dominant": 2.4678776293497385e-20,
+              "depolarizing": 0.3356758064848249,
+              "measurement_only": 2.1670983990010904e-12
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 4,
+            "window": 7,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 2.132710034426319e-05,
+              "z_dominant": 2.246510864673512e-20,
+              "depolarizing": 0.9999786728996557,
+              "measurement_only": 1.8348953721633513e-19
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 5,
+            "window": 0,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.012785928784764084,
+              "z_dominant": 1.8432253995568438e-09,
+              "depolarizing": 0.9872140690253242,
+              "measurement_only": 3.466862887388587e-10
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 5,
+            "window": 1,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9999652125797039,
+              "z_dominant": 2.086668163045563e-27,
+              "depolarizing": 3.478742029594592e-05,
+              "measurement_only": 3.13682452882405e-17
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 5,
+            "window": 2,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.0015027000651886835,
+              "z_dominant": 3.055265762800868e-12,
+              "depolarizing": 0.9984972999316026,
+              "measurement_only": 1.5352138373525893e-13
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 5,
+            "window": 3,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.06406021618657627,
+              "z_dominant": 2.0444951065874288e-14,
+              "depolarizing": 0.9359397830828169,
+              "measurement_only": 7.305864455140501e-10
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 5,
+            "window": 4,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.012016665870036027,
+              "z_dominant": 5.041884624891776e-20,
+              "depolarizing": 0.9879833341299639,
+              "measurement_only": 6.091471156003529e-17
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 5,
+            "window": 5,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.2421517192098218,
+              "z_dominant": 1.0781214828132099e-13,
+              "depolarizing": 0.7578482807900704,
+              "measurement_only": 4.491935549664314e-21
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 5,
+            "window": 6,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.013095810887769352,
+              "z_dominant": 1.0949352801155885e-12,
+              "depolarizing": 0.9869041891111346,
+              "measurement_only": 1.0737916668888783e-15
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 5,
+            "window": 7,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 2.0870782630023602e-05,
+              "z_dominant": 7.286447321622774e-13,
+              "depolarizing": 0.99997912921571,
+              "measurement_only": 9.314623195192011e-13
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 6,
+            "window": 0,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9721012546936767,
+              "z_dominant": 5.347858975522379e-42,
+              "depolarizing": 0.02789874530632338,
+              "measurement_only": 5.653751696729838e-39
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 6,
+            "window": 1,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.40168847538712354,
+              "z_dominant": 2.5978885876548306e-26,
+              "depolarizing": 0.5983115246128765,
+              "measurement_only": 8.951890320763606e-30
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 6,
+            "window": 2,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.39634999231499796,
+              "z_dominant": 3.597095204535563e-27,
+              "depolarizing": 0.6036500076850021,
+              "measurement_only": 1.2331931854544497e-23
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 6,
+            "window": 3,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.000898589726585063,
+              "z_dominant": 3.2200433392628214e-32,
+              "depolarizing": 0.9991014102734149,
+              "measurement_only": 6.430790257800359e-35
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 6,
+            "window": 4,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.00023348744013937514,
+              "z_dominant": 3.3171482146897526e-26,
+              "depolarizing": 0.9997665125598607,
+              "measurement_only": 3.557797116502615e-24
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 6,
+            "window": 5,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9999697080417124,
+              "z_dominant": 9.162595146585594e-32,
+              "depolarizing": 3.0291958287530073e-05,
+              "measurement_only": 1.1133131455993483e-29
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 6,
+            "window": 6,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9999902260541089,
+              "z_dominant": 4.958359370269874e-25,
+              "depolarizing": 9.773945890551233e-06,
+              "measurement_only": 3.907506064161283e-16
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 6,
+            "window": 7,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9962119489979254,
+              "z_dominant": 1.1682070072915226e-41,
+              "depolarizing": 0.0037880510020745616,
+              "measurement_only": 9.092660467407661e-39
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 7,
+            "window": 0,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9995343425890061,
+              "z_dominant": 1.3648579931366138e-41,
+              "depolarizing": 0.00046565741099386174,
+              "measurement_only": 1.4295808675772827e-39
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 7,
+            "window": 1,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9889201569565433,
+              "z_dominant": 7.209785277183632e-36,
+              "depolarizing": 0.011079843043456787,
+              "measurement_only": 2.2125826237897043e-32
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 7,
+            "window": 2,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9414076677747243,
+              "z_dominant": 2.6885782126666004e-26,
+              "depolarizing": 0.05859233222527576,
+              "measurement_only": 4.980047226060425e-32
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 7,
+            "window": 3,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9992822160226376,
+              "z_dominant": 3.674097500300927e-34,
+              "depolarizing": 0.0007177839773623479,
+              "measurement_only": 1.0648369487439833e-26
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 7,
+            "window": 4,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.9248729197720635,
+              "z_dominant": 8.354598177742777e-37,
+              "depolarizing": 0.0751270802279365,
+              "measurement_only": 1.6149220403647795e-23
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 7,
+            "window": 5,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.056439845823794355,
+              "z_dominant": 2.0447888456832965e-25,
+              "depolarizing": 0.9435601541762056,
+              "measurement_only": 2.3117866245064555e-18
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 7,
+            "window": 6,
+            "estimated_regime": "depolarizing",
+            "posterior": {
+              "x_dominant": 0.2244124987896842,
+              "z_dominant": 7.4377825926792945e-25,
+              "depolarizing": 0.7755875012103158,
+              "measurement_only": 2.4866990949760954e-26
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 7,
+            "window": 7,
+            "estimated_regime": "x_dominant",
+            "posterior": {
+              "x_dominant": 0.8681480108008501,
+              "z_dominant": 1.507111287986937e-32,
+              "depolarizing": 0.13185198919914987,
+              "measurement_only": 1.7938358704320003e-17
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 8,
+            "window": 0,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 2.3462774566094095e-19,
+              "z_dominant": 5.07476099091865e-18,
+              "depolarizing": 5.23157624529096e-16,
+              "measurement_only": 0.9999999999999996
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 8,
+            "window": 1,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 1.6672745631750812e-19,
+              "z_dominant": 9.38911109338843e-14,
+              "depolarizing": 6.1758932784573685e-18,
+              "measurement_only": 0.9999999999999061
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 8,
+            "window": 2,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 1.3166925725770113e-19,
+              "z_dominant": 3.490427315739666e-13,
+              "depolarizing": 1.8566722075826437e-16,
+              "measurement_only": 0.9999999999996507
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 8,
+            "window": 3,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 4.5405214068735866e-21,
+              "z_dominant": 1.9828012769475453e-11,
+              "depolarizing": 6.23650921962699e-16,
+              "measurement_only": 0.9999999999801714
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 8,
+            "window": 4,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 3.7609242910805355e-18,
+              "z_dominant": 1.7996114428103235e-21,
+              "depolarizing": 4.9722295821284454e-17,
+              "measurement_only": 1.0
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 8,
+            "window": 5,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 1.1031738132308964e-19,
+              "z_dominant": 6.42988643498615e-13,
+              "depolarizing": 5.601070452504727e-17,
+              "measurement_only": 0.999999999999357
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 8,
+            "window": 6,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 1.673610063800221e-17,
+              "z_dominant": 2.287030841816583e-22,
+              "depolarizing": 6.0352097972808155e-18,
+              "measurement_only": 1.0
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 8,
+            "window": 7,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 1.0881078375679117e-21,
+              "z_dominant": 1.762281107636025e-07,
+              "depolarizing": 3.8660649329194414e-16,
+              "measurement_only": 0.9999998237718888
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 9,
+            "window": 0,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 4.4746049386860074e-21,
+              "z_dominant": 2.32031282801968e-09,
+              "depolarizing": 1.3555888156788855e-17,
+              "measurement_only": 0.9999999976796872
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 9,
+            "window": 1,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 4.9176484057393974e-21,
+              "z_dominant": 7.472424484591928e-10,
+              "depolarizing": 3.315133242067357e-16,
+              "measurement_only": 0.9999999992527573
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 9,
+            "window": 2,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 1.3047073711348203e-20,
+              "z_dominant": 1.708396683783614e-16,
+              "depolarizing": 1.2393520893071041e-17,
+              "measurement_only": 0.9999999999999998
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 9,
+            "window": 3,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 2.156051613149199e-20,
+              "z_dominant": 1.6749777006408989e-15,
+              "depolarizing": 1.8328180073273642e-16,
+              "measurement_only": 0.9999999999999982
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 9,
+            "window": 4,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 7.893115692854266e-17,
+              "z_dominant": 1.8028411061672018e-16,
+              "depolarizing": 4.5926981697476925e-15,
+              "measurement_only": 0.9999999999999951
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 9,
+            "window": 5,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 2.802558729799015e-17,
+              "z_dominant": 4.343857318363647e-19,
+              "depolarizing": 1.1547563943118555e-13,
+              "measurement_only": 0.9999999999998845
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 9,
+            "window": 6,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 4.316184064847569e-18,
+              "z_dominant": 2.918184639064345e-19,
+              "depolarizing": 4.0060371774236214e-19,
+              "measurement_only": 1.0
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 9,
+            "window": 7,
+            "estimated_regime": "measurement_only",
+            "posterior": {
+              "x_dominant": 2.0942015226969159e-19,
+              "z_dominant": 1.0673473727936967e-14,
+              "depolarizing": 1.9058908175040715e-15,
+              "measurement_only": 0.9999999999999873
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 10,
+            "window": 0,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 5.32068802722258e-21,
+              "z_dominant": 0.9999999999984959,
+              "depolarizing": 8.882444478530844e-15,
+              "measurement_only": 1.4952897242752026e-12
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 10,
+            "window": 1,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 8.286292725912354e-27,
+              "z_dominant": 0.9999999987847805,
+              "depolarizing": 1.2573849266676505e-19,
+              "measurement_only": 1.2152194901055868e-09
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 10,
+            "window": 2,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 8.190515144386415e-22,
+              "z_dominant": 0.9999999625174268,
+              "depolarizing": 4.991398781502099e-15,
+              "measurement_only": 3.748256817132637e-08
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 10,
+            "window": 3,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 2.3767194988030116e-22,
+              "z_dominant": 0.9999999994532125,
+              "depolarizing": 3.654047670832957e-16,
+              "measurement_only": 5.467870304306922e-10
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 10,
+            "window": 4,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 4.591940322332693e-19,
+              "z_dominant": 0.9999999999997944,
+              "depolarizing": 7.99397337043341e-15,
+              "measurement_only": 1.975972153431942e-13
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 10,
+            "window": 5,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 4.373485882698054e-19,
+              "z_dominant": 0.9999999939867932,
+              "depolarizing": 1.1381290283525851e-13,
+              "measurement_only": 6.013092992658663e-09
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 10,
+            "window": 6,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 1.2048959946472572e-18,
+              "z_dominant": 0.9999999963721691,
+              "depolarizing": 6.764424402537361e-13,
+              "measurement_only": 3.627154388426871e-09
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 10,
+            "window": 7,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 6.494945250751652e-23,
+              "z_dominant": 0.9999999999998261,
+              "depolarizing": 9.881043840337117e-19,
+              "measurement_only": 1.7380366972006644e-13
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 11,
+            "window": 0,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 2.1773385683923001e-32,
+              "z_dominant": 0.9999999999273961,
+              "depolarizing": 1.7842480759632432e-25,
+              "measurement_only": 7.260384841482629e-11
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 11,
+            "window": 1,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 1.4261196971953907e-22,
+              "z_dominant": 0.999999999999895,
+              "depolarizing": 4.4530309290527436e-17,
+              "measurement_only": 1.0507057251212234e-13
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 11,
+            "window": 2,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 1.9477163575029702e-25,
+              "z_dominant": 0.9999999999369209,
+              "depolarizing": 2.3524065013991324e-19,
+              "measurement_only": 6.307906858818002e-11
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 11,
+            "window": 3,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 1.0510120415403887e-17,
+              "z_dominant": 0.9999841710508997,
+              "depolarizing": 1.7571305660992944e-12,
+              "measurement_only": 1.5828947343189136e-05
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 11,
+            "window": 4,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 1.5516082158433165e-19,
+              "z_dominant": 0.9999999869428837,
+              "depolarizing": 5.514766722328704e-15,
+              "measurement_only": 1.305711087883969e-08
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 11,
+            "window": 5,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 7.141758399921298e-26,
+              "z_dominant": 0.9999999992512729,
+              "depolarizing": 9.108516061143006e-19,
+              "measurement_only": 7.487271489268035e-10
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 11,
+            "window": 6,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 7.641756179420428e-12,
+              "z_dominant": 0.9700402348757746,
+              "depolarizing": 1.5368164393239085e-07,
+              "measurement_only": 0.029959611434939793
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          },
+          {
+            "block": 11,
+            "window": 7,
+            "estimated_regime": "z_dominant",
+            "posterior": {
+              "x_dominant": 7.367029819830085e-26,
+              "z_dominant": 0.9999999996556153,
+              "depolarizing": 8.511373580163479e-20,
+              "measurement_only": 3.44384706745893e-10
+            },
+            "decoder_for_this_window": "fixed_matching",
+            "decoder_for_next_window": "fixed_matching",
+            "switch": false
+          }
+        ],
+        "regime_estimation_accuracy": 0.8333333333333334,
+        "transition_boundaries_for_evaluation_only": [
+          {
+            "block": 2,
+            "new_condition_for_evaluation_only": "z_dominant",
+            "target_strategy_by_validation": "fixed_matching",
+            "decoder_state_at_boundary": "fixed_matching",
+            "delay_shots_to_target_strategy": 0
+          },
+          {
+            "block": 4,
+            "new_condition_for_evaluation_only": "depolarizing",
+            "target_strategy_by_validation": "fixed_matching",
+            "decoder_state_at_boundary": "fixed_matching",
+            "delay_shots_to_target_strategy": 0
+          },
+          {
+            "block": 6,
+            "new_condition_for_evaluation_only": "x_dominant",
+            "target_strategy_by_validation": "fixed_matching",
+            "decoder_state_at_boundary": "fixed_matching",
+            "delay_shots_to_target_strategy": 0
+          },
+          {
+            "block": 8,
+            "new_condition_for_evaluation_only": "measurement_only",
+            "target_strategy_by_validation": "fixed_matching",
+            "decoder_state_at_boundary": "fixed_matching",
+            "delay_shots_to_target_strategy": 0
+          },
+          {
+            "block": 10,
+            "new_condition_for_evaluation_only": "z_dominant",
+            "target_strategy_by_validation": "fixed_matching",
+            "decoder_state_at_boundary": "fixed_matching",
+            "delay_shots_to_target_strategy": 0
+          }
+        ],
+        "adaptation_delay_definition": "shots after schedule boundary until selected strategy equals validation-selected strategy for the new condition; schedule labels are evaluation-only",
+        "switch_count": 0,
+        "mean_adaptation_estimator_seconds_per_window": 0.00017430624995995458,
+        "adaptation_estimator_seconds_total": 0.01673339999615564,
+        "runtime_seconds_per_shot": {
+          "fixed_decode": 7.494791664915586e-08,
+          "adaptive_decode": 6.812500335702983e-10,
+          "oracle_decode": 6.55895834521895e-08,
+          "adaptive_estimator_and_switching_overhead": 3.486124999199092e-07
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "schema": {
+      "qubits": 5,
+      "detectors": 8,
+      "observables": 1
+    },
+    "noise_conditions": [
+      "x_dominant",
+      "z_dominant",
+      "depolarizing",
+      "measurement_only",
+      "mixed_xz_heldout",
+      "data_plus_measurement_heldout"
+    ],
+    "trained_regimes": [
+      "x_dominant",
+      "z_dominant",
+      "depolarizing",
+      "measurement_only"
+    ],
+    "static": {
+      "x_dominant": {
+        "raw_errors": 30,
+        "raw_rate": 0.02142857142857143,
+        "shots": 1400,
+        "decoders": {
+          "fixed_matching": {
+            "errors": 8,
+            "rate": 0.005714285714285714,
+            "wilson95": [
+              0.0028983217417111757,
+              0.011235367426695396
+            ]
+          },
+          "oracle_matching": {
+            "errors": 8,
+            "rate": 0.005714285714285714,
+            "wilson95": [
+              0.0028983217417111757,
+              0.011235367426695396
+            ]
+          },
+          "pooled_lookup": {
+            "errors": 7,
+            "rate": 0.005,
+            "wilson95": [
+              0.0024240871522849964,
+              0.010284939717231989
+            ]
+          },
+          "per_regime_lookup": {
+            "errors": 8,
+            "rate": 0.005714285714285714,
+            "wilson95": [
+              0.0028983217417111757,
+              0.011235367426695396
+            ]
+          }
+        },
+        "paired_vs_fixed": {
+          "oracle_matching": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pooled_lookup": {
+            "candidate_only_wrong": 1,
+            "fixed_only_wrong": 2,
+            "difference_errors": -1,
+            "paired_rate_difference_ci95_approx": [
+              -0.003138868152562458,
+              0.0017102967239910295
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              -1
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              -0.0007142857142857143,
+              -0.0007142857142857143
+            ]
+          },
+          "per_regime_lookup": {
+            "candidate_only_wrong": 3,
+            "fixed_only_wrong": 3,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              -0.003429285639896449,
+              0.003429285639896449
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "regime_estimator_top_label_counts": {
+          "x_dominant": 0,
+          "z_dominant": 0,
+          "depolarizing": 1,
+          "measurement_only": 0
+        }
+      },
+      "z_dominant": {
+        "raw_errors": 6,
+        "raw_rate": 0.004285714285714286,
+        "shots": 1400,
+        "decoders": {
+          "fixed_matching": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "oracle_matching": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "pooled_lookup": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "per_regime_lookup": {
+            "errors": 3,
+            "rate": 0.002142857142857143,
+            "wilson95": [
+              0.0007290265384308006,
+              0.006281351135527842
+            ]
+          }
+        },
+        "paired_vs_fixed": {
+          "oracle_matching": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pooled_lookup": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "per_regime_lookup": {
+            "candidate_only_wrong": 3,
+            "fixed_only_wrong": 0,
+            "difference_errors": 3,
+            "paired_rate_difference_ci95_approx": [
+              -0.00027941451820814736,
+              0.004565128803922434
+            ],
+            "mcnemar_exact_two_sided_p": 0.25,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              3
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.002142857142857143,
+              0.002142857142857143
+            ]
+          }
+        },
+        "regime_estimator_top_label_counts": {
+          "x_dominant": 0,
+          "z_dominant": 1,
+          "depolarizing": 0,
+          "measurement_only": 0
+        }
+      },
+      "depolarizing": {
+        "raw_errors": 24,
+        "raw_rate": 0.017142857142857144,
+        "shots": 1400,
+        "decoders": {
+          "fixed_matching": {
+            "errors": 2,
+            "rate": 0.0014285714285714286,
+            "wilson95": [
+              0.00039185327119869865,
+              0.005193862103870359
+            ]
+          },
+          "oracle_matching": {
+            "errors": 2,
+            "rate": 0.0014285714285714286,
+            "wilson95": [
+              0.00039185327119869865,
+              0.005193862103870359
+            ]
+          },
+          "pooled_lookup": {
+            "errors": 3,
+            "rate": 0.002142857142857143,
+            "wilson95": [
+              0.0007290265384308006,
+              0.006281351135527842
+            ]
+          },
+          "per_regime_lookup": {
+            "errors": 3,
+            "rate": 0.002142857142857143,
+            "wilson95": [
+              0.0007290265384308006,
+              0.006281351135527842
+            ]
+          }
+        },
+        "paired_vs_fixed": {
+          "oracle_matching": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pooled_lookup": {
+            "candidate_only_wrong": 1,
+            "fixed_only_wrong": 0,
+            "difference_errors": 1,
+            "paired_rate_difference_ci95_approx": [
+              -0.0006852141963966696,
+              0.002113785624968098
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              1
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0007142857142857143,
+              0.0007142857142857143
+            ]
+          },
+          "per_regime_lookup": {
+            "candidate_only_wrong": 1,
+            "fixed_only_wrong": 0,
+            "difference_errors": 1,
+            "paired_rate_difference_ci95_approx": [
+              -0.0006852141963966696,
+              0.002113785624968098
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              1
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0007142857142857143,
+              0.0007142857142857143
+            ]
+          }
+        },
+        "regime_estimator_top_label_counts": {
+          "x_dominant": 1,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 0
+        }
+      },
+      "measurement_only": {
+        "raw_errors": 21,
+        "raw_rate": 0.015,
+        "shots": 1400,
+        "decoders": {
+          "fixed_matching": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "oracle_matching": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "pooled_lookup": {
+            "errors": 1,
+            "rate": 0.0007142857142857143,
+            "wilson95": [
+              0.00012610009746667544,
+              0.0040349529787127945
+            ]
+          },
+          "per_regime_lookup": {
+            "errors": 1,
+            "rate": 0.0007142857142857143,
+            "wilson95": [
+              0.00012610009746667544,
+              0.0040349529787127945
+            ]
+          }
+        },
+        "paired_vs_fixed": {
+          "oracle_matching": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pooled_lookup": {
+            "candidate_only_wrong": 1,
+            "fixed_only_wrong": 0,
+            "difference_errors": 1,
+            "paired_rate_difference_ci95_approx": [
+              -0.0006852141963966696,
+              0.002113785624968098
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              1
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0007142857142857143,
+              0.0007142857142857143
+            ]
+          },
+          "per_regime_lookup": {
+            "candidate_only_wrong": 1,
+            "fixed_only_wrong": 0,
+            "difference_errors": 1,
+            "paired_rate_difference_ci95_approx": [
+              -0.0006852141963966696,
+              0.002113785624968098
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              1
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0007142857142857143,
+              0.0007142857142857143
+            ]
+          }
+        },
+        "regime_estimator_top_label_counts": {
+          "x_dominant": 0,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 1
+        }
+      },
+      "mixed_xz_heldout": {
+        "raw_errors": 18,
+        "raw_rate": 0.012857142857142857,
+        "shots": 1400,
+        "decoders": {
+          "fixed_matching": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "oracle_matching": {
+            "errors": 0,
+            "rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.002736390777289885
+            ]
+          },
+          "pooled_lookup": {
+            "errors": 1,
+            "rate": 0.0007142857142857143,
+            "wilson95": [
+              0.00012610009746667544,
+              0.0040349529787127945
+            ]
+          },
+          "per_regime_lookup": {
+            "errors": 8,
+            "rate": 0.005714285714285714,
+            "wilson95": [
+              0.0028983217417111757,
+              0.011235367426695396
+            ]
+          }
+        },
+        "paired_vs_fixed": {
+          "oracle_matching": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pooled_lookup": {
+            "candidate_only_wrong": 1,
+            "fixed_only_wrong": 0,
+            "difference_errors": 1,
+            "paired_rate_difference_ci95_approx": [
+              -0.0006852141963966696,
+              0.002113785624968098
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              1
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0007142857142857143,
+              0.0007142857142857143
+            ]
+          },
+          "per_regime_lookup": {
+            "candidate_only_wrong": 8,
+            "fixed_only_wrong": 0,
+            "difference_errors": 8,
+            "paired_rate_difference_ci95_approx": [
+              0.0017658176569247327,
+              0.009662753771646696
+            ],
+            "mcnemar_exact_two_sided_p": 0.0078125,
+            "bonferroni_p_over_six_conditions": 0.046875,
+            "per_seed_error_differences": [
+              8
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.005714285714285714,
+              0.005714285714285714
+            ]
+          }
+        },
+        "regime_estimator_top_label_counts": {
+          "x_dominant": 0,
+          "z_dominant": 1,
+          "depolarizing": 0,
+          "measurement_only": 0
+        }
+      },
+      "data_plus_measurement_heldout": {
+        "raw_errors": 51,
+        "raw_rate": 0.03642857142857143,
+        "shots": 1400,
+        "decoders": {
+          "fixed_matching": {
+            "errors": 10,
+            "rate": 0.007142857142857143,
+            "wilson95": [
+              0.0038844587222093933,
+              0.013098555043976348
+            ]
+          },
+          "oracle_matching": {
+            "errors": 10,
+            "rate": 0.007142857142857143,
+            "wilson95": [
+              0.0038844587222093933,
+              0.013098555043976348
+            ]
+          },
+          "pooled_lookup": {
+            "errors": 13,
+            "rate": 0.009285714285714286,
+            "wilson95": [
+              0.00543461225043389,
+              0.015822388412420608
+            ]
+          },
+          "per_regime_lookup": {
+            "errors": 19,
+            "rate": 0.013571428571428571,
+            "wilson95": [
+              0.008705354776745148,
+              0.021099619679446867
+            ]
+          }
+        },
+        "paired_vs_fixed": {
+          "oracle_matching": {
+            "candidate_only_wrong": 0,
+            "fixed_only_wrong": 0,
+            "difference_errors": 0,
+            "paired_rate_difference_ci95_approx": [
+              0.0,
+              0.0
+            ],
+            "mcnemar_exact_two_sided_p": 1.0,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              0
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pooled_lookup": {
+            "candidate_only_wrong": 6,
+            "fixed_only_wrong": 3,
+            "difference_errors": 3,
+            "paired_rate_difference_ci95_approx": [
+              -0.002055642589190008,
+              0.006341356874904294
+            ],
+            "mcnemar_exact_two_sided_p": 0.5078125,
+            "bonferroni_p_over_six_conditions": 1.0,
+            "per_seed_error_differences": [
+              3
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.002142857142857143,
+              0.002142857142857143
+            ]
+          },
+          "per_regime_lookup": {
+            "candidate_only_wrong": 13,
+            "fixed_only_wrong": 4,
+            "difference_errors": 9,
+            "paired_rate_difference_ci95_approx": [
+              0.0006660546173161237,
+              0.012191088239826734
+            ],
+            "mcnemar_exact_two_sided_p": 0.049041748046875,
+            "bonferroni_p_over_six_conditions": 0.29425048828125,
+            "per_seed_error_differences": [
+              9
+            ],
+            "seed_bootstrap_rate_difference_ci95": [
+              0.0064285714285714285,
+              0.0064285714285714285
+            ]
+          }
+        },
+        "regime_estimator_top_label_counts": {
+          "x_dominant": 1,
+          "z_dominant": 0,
+          "depolarizing": 0,
+          "measurement_only": 0
+        }
+      }
+    },
+    "schedule": {
+      "fixed_matching": {
+        "errors": 64,
+        "shots": 48000,
+        "rate": 0.0013333333333333333,
+        "per_seed_errors": [
+          64
+        ],
+        "seed_bootstrap_rate_ci95": [
+          0.0013333333333333333,
+          0.0013333333333333333
+        ]
+      },
+      "adaptive_schedule": {
+        "errors": 64,
+        "shots": 48000,
+        "rate": 0.0013333333333333333,
+        "per_seed_errors": [
+          64
+        ],
+        "seed_bootstrap_rate_ci95": [
+          0.0013333333333333333,
+          0.0013333333333333333
+        ]
+      },
+      "oracle_schedule": {
+        "errors": 64,
+        "shots": 48000,
+        "rate": 0.0013333333333333333,
+        "per_seed_errors": [
+          64
+        ],
+        "seed_bootstrap_rate_ci95": [
+          0.0013333333333333333,
+          0.0013333333333333333
+        ]
+      },
+      "paired_vs_fixed": {
+        "adaptive_schedule": {
+          "candidate_only_wrong": 0,
+          "fixed_only_wrong": 0,
+          "difference_errors": 0,
+          "paired_rate_difference_ci95_approx": [
+            0.0,
+            0.0
+          ],
+          "mcnemar_exact_two_sided_p": 1.0,
+          "per_seed_error_differences": [
+            0
+          ],
+          "seed_bootstrap_rate_difference_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "oracle_schedule": {
+          "candidate_only_wrong": 0,
+          "fixed_only_wrong": 0,
+          "difference_errors": 0,
+          "paired_rate_difference_ci95_approx": [
+            0.0,
+            0.0
+          ],
+          "mcnemar_exact_two_sided_p": 1.0,
+          "per_seed_error_differences": [
+            0
+          ],
+          "seed_bootstrap_rate_difference_ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "per_seed_switches": [
+        0
+      ],
+      "per_seed_regime_estimation_accuracy": [
+        0.8333333333333334
+      ],
+      "switches_total": 0,
+      "mean_detection_accuracy": 0.8333333333333334,
+      "adaptation_delay_shots_observed": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_adaptation_delay_shots": 0.0,
+      "mean_runtime_seconds_per_shot": {
+        "fixed_decode": 7.494791664915586e-08,
+        "adaptive_decode": 6.812500335702983e-10,
+        "oracle_decode": 6.55895834521895e-08,
+        "adaptive_estimator_and_switching_overhead": 3.486124999199092e-07
+      },
+      "mean_switch_estimator_overhead_seconds_per_window": 0.00017430624995995458
+    }
+  }
+}

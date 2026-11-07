@@ -1,0 +1,81 @@
+{
+  "job_id": "root00_balanced_minibatch_30000",
+  "root": 0,
+  "strategy": "balanced_minibatch",
+  "train_size_per_regime": 30000,
+  "model": "ResidualPositionCNN",
+  "target": "observable_xor_frozen_pymatching_prediction",
+  "inference": "pymatching_xor_predicted_residual",
+  "prevalence": 0.0047,
+  "positive_examples": 423,
+  "training_examples": 90000,
+  "pos_weight": 211.7659574468085,
+  "logit_prior_correction": -5.3554816905360045,
+  "best_epoch": 3,
+  "best_monitor_nll": 0.02084478764844436,
+  "monitor_history": [
+    {
+      "epoch": 1,
+      "monitor_nll": 0.02245379407404118,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 2,
+      "monitor_nll": 0.02087616164140832,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 3,
+      "monitor_nll": 0.02084478764844436,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 4,
+      "monitor_nll": 0.021593377072872122,
+      "selected": false,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 5,
+      "monitor_nll": 0.023331550247653685,
+      "selected": false,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 6,
+      "monitor_nll": 0.02439871851537223,
+      "selected": false,
+      "learning_rate": 0.0015
+    }
+  ],
+  "temperature": 1.0,
+  "threshold_min_ler": 0.66,
+  "threshold_selection_ler": 0.0044666666666666665,
+  "confidence_gate": {
+    "threshold": 1.01,
+    "fallback": true,
+    "reason": "no threshold passed Bonferroni-Wilson precision gate",
+    "precision_lower_bound": null,
+    "corrections_on_threshold_selection": 0,
+    "beneficial_on_threshold_selection": 0,
+    "selected_ler": null,
+    "familywise_alpha": 0.05,
+    "per_threshold_alpha": 0.000505050505050505
+  },
+  "calibration_brier": 0.004111339045316974,
+  "calibration_ece_10bin": 0.00133676296015228,
+  "weights_sha256": "77aa6366f4df16e6a0bed8d092824d4b73bc0da77ea9057e2a95ca6b7ba8eccf",
+  "selection_data": {
+    "checkpoint": "monitor only",
+    "temperature": "calibration only",
+    "threshold_min_ler": "threshold_selection only",
+    "confidence_gate": "threshold_selection only"
+  },
+  "final_development_evaluation_accessed": false,
+  "gpu_seconds_train_and_select": 10.751359100060654,
+  "parameter_count": 13429,
+  "created_utc": "2026-11-06T23:30:00.248166+00:00"
+}

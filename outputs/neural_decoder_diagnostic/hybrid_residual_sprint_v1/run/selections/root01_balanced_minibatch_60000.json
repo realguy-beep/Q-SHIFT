@@ -1,0 +1,69 @@
+{
+  "job_id": "root01_balanced_minibatch_60000",
+  "root": 1,
+  "strategy": "balanced_minibatch",
+  "train_size_per_regime": 60000,
+  "model": "ResidualPositionCNN",
+  "target": "observable_xor_frozen_pymatching_prediction",
+  "inference": "pymatching_xor_predicted_residual",
+  "prevalence": 0.0043055555555555555,
+  "positive_examples": 775,
+  "training_examples": 180000,
+  "pos_weight": 231.25806451612902,
+  "logit_prior_correction": -5.443534249367726,
+  "best_epoch": 1,
+  "best_monitor_nll": 0.018745999095207,
+  "monitor_history": [
+    {
+      "epoch": 1,
+      "monitor_nll": 0.018745999095207,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 2,
+      "monitor_nll": 0.02113955037348358,
+      "selected": false,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 3,
+      "monitor_nll": 0.02400372757652466,
+      "selected": false,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 4,
+      "monitor_nll": 0.02545994976928216,
+      "selected": false,
+      "learning_rate": 0.003
+    }
+  ],
+  "temperature": 1.2,
+  "threshold_min_ler": 0.34,
+  "threshold_selection_ler": 0.004622222222222223,
+  "confidence_gate": {
+    "threshold": 1.01,
+    "fallback": true,
+    "reason": "no threshold passed Bonferroni-Wilson precision gate",
+    "precision_lower_bound": null,
+    "corrections_on_threshold_selection": 0,
+    "beneficial_on_threshold_selection": 0,
+    "selected_ler": null,
+    "familywise_alpha": 0.05,
+    "per_threshold_alpha": 0.000505050505050505
+  },
+  "calibration_brier": 0.004302912099475655,
+  "calibration_ece_10bin": 0.001659694361158841,
+  "weights_sha256": "2d30124b5a3a1c850c12cf76ea86e07b56e38a9d350be1cb38c6ef3f61cf9682",
+  "selection_data": {
+    "checkpoint": "monitor only",
+    "temperature": "calibration only",
+    "threshold_min_ler": "threshold_selection only",
+    "confidence_gate": "threshold_selection only"
+  },
+  "final_development_evaluation_accessed": false,
+  "gpu_seconds_train_and_select": 23.28756600052293,
+  "parameter_count": 13429,
+  "created_utc": "2026-11-06T23:34:11.713924+00:00"
+}

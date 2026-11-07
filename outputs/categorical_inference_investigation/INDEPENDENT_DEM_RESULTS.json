@@ -1,0 +1,144 @@
+{
+  "status": "PASS",
+  "stim_dem": "error(0.03) D0\nerror(0.03) D0 L0\nerror(0.03) D0 L0 ^ D1\nerror(0.03) D1\nerror(0.03) D1 L0\nerror(0.03) D1 L0 ^ D0",
+  "dem_interpretation": "Each error instruction is one independent Bernoulli mechanism with the listed probability and total detector/logical parity. A '^' target is retained as decomposition metadata only; it does not split the enclosing event into multiple independently sampled events.",
+  "mechanisms": [
+    {
+      "probability": 0.030000000000000002,
+      "detector_mask": 1,
+      "observable_mask": 0,
+      "dem_instruction": "error(0.03) D0"
+    },
+    {
+      "probability": 0.03,
+      "detector_mask": 1,
+      "observable_mask": 1,
+      "dem_instruction": "error(0.03) D0 L0"
+    },
+    {
+      "probability": 0.030000000000000002,
+      "detector_mask": 3,
+      "observable_mask": 1,
+      "dem_instruction": "error(0.03) D0 L0 ^ D1"
+    },
+    {
+      "probability": 0.030000000000000002,
+      "detector_mask": 2,
+      "observable_mask": 0,
+      "dem_instruction": "error(0.03) D1"
+    },
+    {
+      "probability": 0.030000000000000002,
+      "detector_mask": 2,
+      "observable_mask": 1,
+      "dem_instruction": "error(0.03) D1 L0"
+    },
+    {
+      "probability": 0.03,
+      "detector_mask": 3,
+      "observable_mask": 1,
+      "dem_instruction": "error(0.03) D1 L0 ^ D0"
+    }
+  ],
+  "mechanism_count": 6,
+  "enumerated_independent_mechanism_configurations": 64,
+  "posterior_total_mass": 0.9999999999999998,
+  "dem_tie_syndromes": [
+    1,
+    2
+  ],
+  "syndrome_table": [
+    {
+      "syndrome": 0,
+      "categorical_joint_P_L0_L1": [
+        0.8289999999999998,
+        0.0018000000000000004
+      ],
+      "categorical_P_L1_given_s": 0.0021665864227250853,
+      "categorical_MAP": 0,
+      "independent_DEM_joint_P_L0_L1": [
+        0.8338680999999998,
+        0.0016936200000000003
+      ],
+      "independent_DEM_P_L1_given_s": 0.0020269238758328957,
+      "independent_DEM_MAP": 0,
+      "PyMatching_standard": 0,
+      "PyMatching_correlation_enabled": 0,
+      "model_joint_L1_distance_contribution": 0.0049744799999999305
+    },
+    {
+      "syndrome": 1,
+      "categorical_joint_P_L0_L1": [
+        0.02820000000000001,
+        0.02819999999999999
+      ],
+      "categorical_P_L1_given_s": 0.49999999999999983,
+      "categorical_MAP": 0,
+      "independent_DEM_joint_P_L0_L1": [
+        0.02740638,
+        0.027406379999999998
+      ],
+      "independent_DEM_P_L1_given_s": 0.49999999999999994,
+      "independent_DEM_MAP": 0,
+      "PyMatching_standard": 0,
+      "PyMatching_correlation_enabled": 0,
+      "model_joint_L1_distance_contribution": 0.0015872400000000002
+    },
+    {
+      "syndrome": 2,
+      "categorical_joint_P_L0_L1": [
+        0.028200000000000003,
+        0.028200000000000006
+      ],
+      "categorical_P_L1_given_s": 0.5000000000000001,
+      "categorical_MAP": 0,
+      "independent_DEM_joint_P_L0_L1": [
+        0.027406379999999998,
+        0.027406379999999998
+      ],
+      "independent_DEM_P_L1_given_s": 0.5,
+      "independent_DEM_MAP": 0,
+      "PyMatching_standard": 0,
+      "PyMatching_correlation_enabled": 0,
+      "model_joint_L1_distance_contribution": 0.001587240000000014
+    },
+    {
+      "syndrome": 3,
+      "categorical_joint_P_L0_L1": [
+        0.0018000000000000004,
+        0.0546
+      ],
+      "categorical_P_L1_given_s": 0.9680851063829786,
+      "categorical_MAP": 1,
+      "independent_DEM_joint_P_L0_L1": [
+        0.0016936199999999998,
+        0.053119139999999995
+      ],
+      "independent_DEM_P_L1_given_s": 0.9691017201104268,
+      "independent_DEM_MAP": 1,
+      "PyMatching_standard": 0,
+      "PyMatching_correlation_enabled": 0,
+      "model_joint_L1_distance_contribution": 0.001587240000000008
+    }
+  ],
+  "logical_error_risk_under_original_categorical_channel": {
+    "categorical_exact_MAP": 0.06,
+    "independent_DEM_exact_MAP": 0.06,
+    "PyMatching_standard": 0.1128,
+    "PyMatching_correlation_enabled": 0.1128
+  },
+  "logical_error_risk_under_independent_DEM_distribution": {
+    "categorical_exact_MAP": 0.058199999999999995,
+    "independent_DEM_exact_MAP": 0.058199999999999995,
+    "PyMatching_standard": 0.10962551999999999,
+    "PyMatching_correlation_enabled": 0.10962551999999999
+  },
+  "joint_distribution_total_variation_distance": 0.004868099999999976,
+  "syndrome_11_attribution": {
+    "categorical_exact_MAP": 1,
+    "independent_DEM_exact_MAP": 1,
+    "PyMatching_standard": 0,
+    "PyMatching_correlation_enabled": 0,
+    "conclusion": "The independent DEM posterior and original categorical posterior both choose logical 1 at syndrome 11; both PyMatching variants choose logical 0. For this toy syndrome the observed decision gap is therefore an inference/optimization mismatch relative to posterior MAP, not a DEM-induced MAP change. DEM approximation changes posterior probabilities, but not this syndrome's exact decision."
+  }
+}

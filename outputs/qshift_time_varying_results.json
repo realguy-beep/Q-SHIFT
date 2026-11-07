@@ -1,0 +1,95 @@
+{
+  "protocol": "six stationary segments; adaptive regime inferred from unsupervised detector-pattern frequency windows; thresholds/policies selected on separate validation; no true noise passed to adaptive decoder",
+  "seed": 20261222,
+  "shots_per_regime_train": 200000,
+  "shots_per_regime_validation": 50000,
+  "shots_per_stream_segment": 100000,
+  "window_shots": 1000,
+  "validation_policy": {
+    "0.001": "lookup",
+    "0.003": "matching",
+    "0.006": "lookup"
+  },
+  "summary": {
+    "raw_errors": 3906,
+    "fixed_pymatching_errors": 120,
+    "adaptive_errors": 120,
+    "nearest_oracle_lookup_errors": 155,
+    "regime_estimation_accuracy_vs_nearest_training_regime": 0.775,
+    "total_test_shots": 600000
+  },
+  "segments": [
+    {
+      "noise_segment": 0.001,
+      "adaptive_errors": 3,
+      "fixed_errors": 1,
+      "estimated_regimes": {
+        "0.001": 98000,
+        "0.003": 2000
+      },
+      "true_nearest_training_regime": 0.001,
+      "fixed_runtime_seconds": 0.0020530000001599547,
+      "regime_estimation_seconds": 0.04406569999991916
+    },
+    {
+      "noise_segment": 0.006,
+      "adaptive_errors": 34,
+      "fixed_errors": 37,
+      "estimated_regimes": {
+        "0.006": 95000,
+        "0.003": 5000
+      },
+      "true_nearest_training_regime": 0.006,
+      "fixed_runtime_seconds": 0.0031761999998707324,
+      "regime_estimation_seconds": 0.044652499998846906
+    },
+    {
+      "noise_segment": 0.003,
+      "adaptive_errors": 6,
+      "fixed_errors": 6,
+      "estimated_regimes": {
+        "0.003": 95000,
+        "0.006": 1000,
+        "0.001": 4000
+      },
+      "true_nearest_training_regime": 0.003,
+      "fixed_runtime_seconds": 0.0029680999996344326,
+      "regime_estimation_seconds": 0.04397900000003574
+    },
+    {
+      "noise_segment": 0.008,
+      "adaptive_errors": 55,
+      "fixed_errors": 53,
+      "estimated_regimes": {
+        "0.006": 100000
+      },
+      "true_nearest_training_regime": 0.006,
+      "fixed_runtime_seconds": 0.003654899999673944,
+      "regime_estimation_seconds": 0.04725080000025628
+    },
+    {
+      "noise_segment": 0.0045,
+      "adaptive_errors": 15,
+      "fixed_errors": 19,
+      "estimated_regimes": {
+        "0.003": 43000,
+        "0.006": 57000
+      },
+      "true_nearest_training_regime": 0.003,
+      "fixed_runtime_seconds": 0.002923099998952239,
+      "regime_estimation_seconds": 0.0440005000000383
+    },
+    {
+      "noise_segment": 0.002,
+      "adaptive_errors": 7,
+      "fixed_errors": 4,
+      "estimated_regimes": {
+        "0.003": 66000,
+        "0.001": 34000
+      },
+      "true_nearest_training_regime": 0.001,
+      "fixed_runtime_seconds": 0.002434699999867007,
+      "regime_estimation_seconds": 0.04455210000014631
+    }
+  ]
+}

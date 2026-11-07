@@ -1,0 +1,33 @@
+{
+  "phase": "noise_composition",
+  "stim_task": "repetition_code:memory",
+  "distance": 3,
+  "rounds": 3,
+  "expected_qubits": 5,
+  "expected_detectors": 8,
+  "expected_observables": 1,
+  "p_data": 0.01,
+  "p_measure": 0.01,
+  "data_compositions": {
+    "x_dominant": [0.8, 0.1, 0.1],
+    "z_dominant": [0.1, 0.1, 0.8],
+    "depolarizing": [0.3333333333333333, 0.3333333333333333, 0.3333333333333333],
+    "mixed_xz_heldout": [0.5, 0.0, 0.5]
+  },
+  "trained_regimes": ["x_dominant", "z_dominant", "depolarizing", "measurement_only"],
+  "static_test_conditions": ["x_dominant", "z_dominant", "depolarizing", "measurement_only", "mixed_xz_heldout", "data_plus_measurement_heldout"],
+  "seeds": 10,
+  "training_shots_per_regime_seed": 30000,
+  "validation_shots_per_regime_seed": 10000,
+  "static_test_shots_per_condition_seed": 20000,
+  "time_varying_block_shots": 4000,
+  "adaptation_window_shots": 500,
+  "switch_confirmation_windows": 2,
+  "minimum_dwell_windows": 2,
+  "switch_posterior_threshold": 0.9,
+  "switch_log_likelihood_margin": 2.302585092994046,
+  "seed_base": 20271215,
+  "validation_design": "split each regime's validation batch in half: threshold selection first, strategy-selection gate second",
+  "strategy_selection_gate": "use lookup only if it has fewer residuals and paired exact McNemar p < 0.0125; otherwise fixed PyMatching",
+  "raw_data_format": "compressed NPZ; detector bytes, observable labels, condition identifiers retained for audit; labels are never passed to decoder at inference"
+}

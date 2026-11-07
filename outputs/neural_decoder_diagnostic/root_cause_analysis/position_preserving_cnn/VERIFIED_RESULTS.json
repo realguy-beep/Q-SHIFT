@@ -1,0 +1,4149 @@
+{
+  "status": "PASS_INDEPENDENT_RECOMPUTATION",
+  "model_fits": 30,
+  "independent_development_roots": 3,
+  "threshold_evaluation_shots_per_root": 3000,
+  "test_samples_generated_or_accessed": 0,
+  "frozen_source_hashes_verified": 8,
+  "post_run_reporting_patch_verified": true,
+  "paired_detector_observable_archives_verified": 9,
+  "stored_prediction_arrays_exactly_redecoded": 90,
+  "all_aggregate_counters_recomputed_from_saved_arrays": true,
+  "records": [
+    {
+      "replicate": 0,
+      "architecture": "pooled_cnn8",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 3929,
+      "best_epoch": 12,
+      "temperature": 1.0,
+      "threshold": 0.79,
+      "equal_regime_ler": 0.05433333333333334,
+      "equal_regime_pymatching_ler": 0.004,
+      "paired_ler_difference": 0.05033333333333334,
+      "candidate_only": 156,
+      "pymatching_only": 5,
+      "per_regime": {
+        "x_biased": {
+          "tn": 920,
+          "fp": 0,
+          "fn": 80,
+          "tp": 0,
+          "positive_recall": 0.0,
+          "logical_errors": 80,
+          "logical_error_rate": 0.08,
+          "predicted_positive_rate": 0.0,
+          "pymatching_confusion": {
+            "tn": 918,
+            "fp": 2,
+            "fn": 7,
+            "tp": 73,
+            "positive_recall": 0.9125,
+            "logical_errors": 9,
+            "logical_error_rate": 0.009,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 73,
+          "pymatching_only": 2,
+          "paired_prediction_disagreements": 75,
+          "pymatching_ler": 0.009,
+          "paired_ler_difference": 0.07100000000000001
+        },
+        "balanced": {
+          "tn": 936,
+          "fp": 0,
+          "fn": 62,
+          "tp": 2,
+          "positive_recall": 0.03125,
+          "logical_errors": 62,
+          "logical_error_rate": 0.062,
+          "predicted_positive_rate": 0.002,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 3,
+            "fn": 0,
+            "tp": 64,
+            "positive_recall": 1.0,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.067
+          },
+          "candidate_only": 62,
+          "pymatching_only": 3,
+          "paired_prediction_disagreements": 65,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.059
+        },
+        "z_biased": {
+          "tn": 978,
+          "fp": 0,
+          "fn": 21,
+          "tp": 1,
+          "positive_recall": 0.045454545454545456,
+          "logical_errors": 21,
+          "logical_error_rate": 0.021,
+          "predicted_positive_rate": 0.001,
+          "pymatching_confusion": {
+            "tn": 978,
+            "fp": 0,
+            "fn": 0,
+            "tp": 22,
+            "positive_recall": 1.0,
+            "logical_errors": 0,
+            "logical_error_rate": 0.0,
+            "predicted_positive_rate": 0.022
+          },
+          "candidate_only": 21,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 21,
+          "pymatching_ler": 0.0,
+          "paired_ler_difference": 0.021
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.14128881871017757,
+          "brier": 0.04457186622145597,
+          "ece_10bin": 0.02881246439129482
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.14128881871017757,
+          "brier": 0.04457186622145597,
+          "ece_10bin": 0.02881246439129482
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.14123802009053224,
+          "brier": 0.044749665447871144,
+          "ece_10bin": 0.022350782412394004
+        }
+      }
+    },
+    {
+      "replicate": 0,
+      "architecture": "pooled_cnn8",
+      "strategy": "weighted_bce",
+      "parameter_count": 3929,
+      "best_epoch": 11,
+      "temperature": 1.0,
+      "threshold": 0.81,
+      "equal_regime_ler": 0.055,
+      "equal_regime_pymatching_ler": 0.004,
+      "paired_ler_difference": 0.051000000000000004,
+      "candidate_only": 158,
+      "pymatching_only": 5,
+      "per_regime": {
+        "x_biased": {
+          "tn": 920,
+          "fp": 0,
+          "fn": 80,
+          "tp": 0,
+          "positive_recall": 0.0,
+          "logical_errors": 80,
+          "logical_error_rate": 0.08,
+          "predicted_positive_rate": 0.0,
+          "pymatching_confusion": {
+            "tn": 918,
+            "fp": 2,
+            "fn": 7,
+            "tp": 73,
+            "positive_recall": 0.9125,
+            "logical_errors": 9,
+            "logical_error_rate": 0.009,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 73,
+          "pymatching_only": 2,
+          "paired_prediction_disagreements": 75,
+          "pymatching_ler": 0.009,
+          "paired_ler_difference": 0.07100000000000001
+        },
+        "balanced": {
+          "tn": 936,
+          "fp": 0,
+          "fn": 64,
+          "tp": 0,
+          "positive_recall": 0.0,
+          "logical_errors": 64,
+          "logical_error_rate": 0.064,
+          "predicted_positive_rate": 0.0,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 3,
+            "fn": 0,
+            "tp": 64,
+            "positive_recall": 1.0,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.067
+          },
+          "candidate_only": 64,
+          "pymatching_only": 3,
+          "paired_prediction_disagreements": 67,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.061
+        },
+        "z_biased": {
+          "tn": 978,
+          "fp": 0,
+          "fn": 21,
+          "tp": 1,
+          "positive_recall": 0.045454545454545456,
+          "logical_errors": 21,
+          "logical_error_rate": 0.021,
+          "predicted_positive_rate": 0.001,
+          "pymatching_confusion": {
+            "tn": 978,
+            "fp": 0,
+            "fn": 0,
+            "tp": 22,
+            "positive_recall": 1.0,
+            "logical_errors": 0,
+            "logical_error_rate": 0.0,
+            "predicted_positive_rate": 0.022
+          },
+          "candidate_only": 21,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 21,
+          "pymatching_ler": 0.0,
+          "paired_ler_difference": 0.021
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.14336495381772527,
+          "brier": 0.0439179437075761,
+          "ece_10bin": 0.021433035643258377
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.14336495381772527,
+          "brier": 0.0439179437075761,
+          "ece_10bin": 0.021433035643258377
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.1425173942922911,
+          "brier": 0.043499417431978674,
+          "ece_10bin": 0.024168022813140008
+        }
+      }
+    },
+    {
+      "replicate": 0,
+      "architecture": "pooled_cnn16_capacity_control",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 14769,
+      "best_epoch": 12,
+      "temperature": 1.0,
+      "threshold": 0.29,
+      "equal_regime_ler": 0.04566666666666667,
+      "equal_regime_pymatching_ler": 0.004,
+      "paired_ler_difference": 0.04166666666666667,
+      "candidate_only": 130,
+      "pymatching_only": 5,
+      "per_regime": {
+        "x_biased": {
+          "tn": 887,
+          "fp": 33,
+          "fn": 29,
+          "tp": 51,
+          "positive_recall": 0.6375,
+          "logical_errors": 62,
+          "logical_error_rate": 0.062,
+          "predicted_positive_rate": 0.084,
+          "pymatching_confusion": {
+            "tn": 918,
+            "fp": 2,
+            "fn": 7,
+            "tp": 73,
+            "positive_recall": 0.9125,
+            "logical_errors": 9,
+            "logical_error_rate": 0.009,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 55,
+          "pymatching_only": 2,
+          "paired_prediction_disagreements": 57,
+          "pymatching_ler": 0.009,
+          "paired_ler_difference": 0.053
+        },
+        "balanced": {
+          "tn": 907,
+          "fp": 29,
+          "fn": 20,
+          "tp": 44,
+          "positive_recall": 0.6875,
+          "logical_errors": 49,
+          "logical_error_rate": 0.049,
+          "predicted_positive_rate": 0.073,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 3,
+            "fn": 0,
+            "tp": 64,
+            "positive_recall": 1.0,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.067
+          },
+          "candidate_only": 49,
+          "pymatching_only": 3,
+          "paired_prediction_disagreements": 52,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.046
+        },
+        "z_biased": {
+          "tn": 959,
+          "fp": 19,
+          "fn": 7,
+          "tp": 15,
+          "positive_recall": 0.6818181818181818,
+          "logical_errors": 26,
+          "logical_error_rate": 0.026,
+          "predicted_positive_rate": 0.034,
+          "pymatching_confusion": {
+            "tn": 978,
+            "fp": 0,
+            "fn": 0,
+            "tp": 22,
+            "positive_recall": 1.0,
+            "logical_errors": 0,
+            "logical_error_rate": 0.0,
+            "predicted_positive_rate": 0.022
+          },
+          "candidate_only": 26,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 26,
+          "pymatching_ler": 0.0,
+          "paired_ler_difference": 0.026
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.10584065053131349,
+          "brier": 0.03341948124622011,
+          "ece_10bin": 0.015194841967795946
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.10584065053131349,
+          "brier": 0.03341948124622011,
+          "ece_10bin": 0.015194841967795946
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.10775165776591522,
+          "brier": 0.033865696477560214,
+          "ece_10bin": 0.02150950268868015
+        }
+      }
+    },
+    {
+      "replicate": 0,
+      "architecture": "pooled_cnn16_capacity_control",
+      "strategy": "weighted_bce",
+      "parameter_count": 14769,
+      "best_epoch": 12,
+      "temperature": 1.0,
+      "threshold": 0.53,
+      "equal_regime_ler": 0.054,
+      "equal_regime_pymatching_ler": 0.004,
+      "paired_ler_difference": 0.05,
+      "candidate_only": 155,
+      "pymatching_only": 5,
+      "per_regime": {
+        "x_biased": {
+          "tn": 907,
+          "fp": 13,
+          "fn": 63,
+          "tp": 17,
+          "positive_recall": 0.2125,
+          "logical_errors": 76,
+          "logical_error_rate": 0.076,
+          "predicted_positive_rate": 0.03,
+          "pymatching_confusion": {
+            "tn": 918,
+            "fp": 2,
+            "fn": 7,
+            "tp": 73,
+            "positive_recall": 0.9125,
+            "logical_errors": 9,
+            "logical_error_rate": 0.009,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 69,
+          "pymatching_only": 2,
+          "paired_prediction_disagreements": 71,
+          "pymatching_ler": 0.009,
+          "paired_ler_difference": 0.067
+        },
+        "balanced": {
+          "tn": 929,
+          "fp": 7,
+          "fn": 53,
+          "tp": 11,
+          "positive_recall": 0.171875,
+          "logical_errors": 60,
+          "logical_error_rate": 0.06,
+          "predicted_positive_rate": 0.018,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 3,
+            "fn": 0,
+            "tp": 64,
+            "positive_recall": 1.0,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.067
+          },
+          "candidate_only": 60,
+          "pymatching_only": 3,
+          "paired_prediction_disagreements": 63,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.056999999999999995
+        },
+        "z_biased": {
+          "tn": 971,
+          "fp": 7,
+          "fn": 19,
+          "tp": 3,
+          "positive_recall": 0.13636363636363635,
+          "logical_errors": 26,
+          "logical_error_rate": 0.026,
+          "predicted_positive_rate": 0.01,
+          "pymatching_confusion": {
+            "tn": 978,
+            "fp": 0,
+            "fn": 0,
+            "tp": 22,
+            "positive_recall": 1.0,
+            "logical_errors": 0,
+            "logical_error_rate": 0.0,
+            "predicted_positive_rate": 0.022
+          },
+          "candidate_only": 26,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 26,
+          "pymatching_ler": 0.0,
+          "paired_ler_difference": 0.026
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.1276515059834278,
+          "brier": 0.039437528551964654,
+          "ece_10bin": 0.009553084177328338
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.1276515059834278,
+          "brier": 0.039437528551964654,
+          "ece_10bin": 0.009553084177328338
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.12766434794994566,
+          "brier": 0.039487117665132514,
+          "ece_10bin": 0.008204872779995542
+        }
+      }
+    },
+    {
+      "replicate": 0,
+      "architecture": "position_flat_cnn",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 13413,
+      "best_epoch": 12,
+      "temperature": 1.0,
+      "threshold": 0.34,
+      "equal_regime_ler": 0.011000000000000001,
+      "equal_regime_pymatching_ler": 0.004,
+      "paired_ler_difference": 0.007000000000000001,
+      "candidate_only": 23,
+      "pymatching_only": 2,
+      "per_regime": {
+        "x_biased": {
+          "tn": 917,
+          "fp": 3,
+          "fn": 18,
+          "tp": 62,
+          "positive_recall": 0.775,
+          "logical_errors": 21,
+          "logical_error_rate": 0.021,
+          "predicted_positive_rate": 0.065,
+          "pymatching_confusion": {
+            "tn": 918,
+            "fp": 2,
+            "fn": 7,
+            "tp": 73,
+            "positive_recall": 0.9125,
+            "logical_errors": 9,
+            "logical_error_rate": 0.009,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 13,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 14,
+          "pymatching_ler": 0.009,
+          "paired_ler_difference": 0.012000000000000002
+        },
+        "balanced": {
+          "tn": 931,
+          "fp": 5,
+          "fn": 5,
+          "tp": 59,
+          "positive_recall": 0.921875,
+          "logical_errors": 10,
+          "logical_error_rate": 0.01,
+          "predicted_positive_rate": 0.064,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 3,
+            "fn": 0,
+            "tp": 64,
+            "positive_recall": 1.0,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.067
+          },
+          "candidate_only": 8,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 9,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.007
+        },
+        "z_biased": {
+          "tn": 977,
+          "fp": 1,
+          "fn": 1,
+          "tp": 21,
+          "positive_recall": 0.9545454545454546,
+          "logical_errors": 2,
+          "logical_error_rate": 0.002,
+          "predicted_positive_rate": 0.022,
+          "pymatching_confusion": {
+            "tn": 978,
+            "fp": 0,
+            "fn": 0,
+            "tp": 22,
+            "positive_recall": 1.0,
+            "logical_errors": 0,
+            "logical_error_rate": 0.0,
+            "predicted_positive_rate": 0.022
+          },
+          "candidate_only": 2,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 2,
+          "pymatching_ler": 0.0,
+          "paired_ler_difference": 0.002
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.04122992015353081,
+          "brier": 0.011695240908125312,
+          "ece_10bin": 0.005307116885346236
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.04122992015353081,
+          "brier": 0.011695240908125312,
+          "ece_10bin": 0.005307116885346236
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.041980644212484514,
+          "brier": 0.0101495429822867,
+          "ece_10bin": 0.005068036668327635
+        }
+      }
+    },
+    {
+      "replicate": 0,
+      "architecture": "position_flat_cnn",
+      "strategy": "weighted_bce",
+      "parameter_count": 13413,
+      "best_epoch": 12,
+      "temperature": 0.85,
+      "threshold": 0.4,
+      "equal_regime_ler": 0.019333333333333334,
+      "equal_regime_pymatching_ler": 0.004,
+      "paired_ler_difference": 0.015333333333333334,
+      "candidate_only": 48,
+      "pymatching_only": 2,
+      "per_regime": {
+        "x_biased": {
+          "tn": 913,
+          "fp": 7,
+          "fn": 26,
+          "tp": 54,
+          "positive_recall": 0.675,
+          "logical_errors": 33,
+          "logical_error_rate": 0.033,
+          "predicted_positive_rate": 0.061,
+          "pymatching_confusion": {
+            "tn": 918,
+            "fp": 2,
+            "fn": 7,
+            "tp": 73,
+            "positive_recall": 0.9125,
+            "logical_errors": 9,
+            "logical_error_rate": 0.009,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 25,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 26,
+          "pymatching_ler": 0.009,
+          "paired_ler_difference": 0.024
+        },
+        "balanced": {
+          "tn": 925,
+          "fp": 11,
+          "fn": 8,
+          "tp": 56,
+          "positive_recall": 0.875,
+          "logical_errors": 19,
+          "logical_error_rate": 0.019,
+          "predicted_positive_rate": 0.067,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 3,
+            "fn": 0,
+            "tp": 64,
+            "positive_recall": 1.0,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.067
+          },
+          "candidate_only": 17,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 18,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.016
+        },
+        "z_biased": {
+          "tn": 973,
+          "fp": 5,
+          "fn": 1,
+          "tp": 21,
+          "positive_recall": 0.9545454545454546,
+          "logical_errors": 6,
+          "logical_error_rate": 0.006,
+          "predicted_positive_rate": 0.026,
+          "pymatching_confusion": {
+            "tn": 978,
+            "fp": 0,
+            "fn": 0,
+            "tp": 22,
+            "positive_recall": 1.0,
+            "logical_errors": 0,
+            "logical_error_rate": 0.0,
+            "predicted_positive_rate": 0.022
+          },
+          "candidate_only": 6,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 6,
+          "pymatching_ler": 0.0,
+          "paired_ler_difference": 0.006
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.058160567164331385,
+          "brier": 0.017297055363102585,
+          "ece_10bin": 0.009608835475409609
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.05739617079945303,
+          "brier": 0.017139120973454353,
+          "ece_10bin": 0.009124299403820604
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.06279254026614312,
+          "brier": 0.017634105787887835,
+          "ece_10bin": 0.012394324397216208
+        }
+      }
+    },
+    {
+      "replicate": 0,
+      "architecture": "coordinate_channel_cnn",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 13737,
+      "best_epoch": 12,
+      "temperature": 0.85,
+      "threshold": 0.38,
+      "equal_regime_ler": 0.01333333333333333,
+      "equal_regime_pymatching_ler": 0.004,
+      "paired_ler_difference": 0.00933333333333333,
+      "candidate_only": 31,
+      "pymatching_only": 3,
+      "per_regime": {
+        "x_biased": {
+          "tn": 918,
+          "fp": 2,
+          "fn": 21,
+          "tp": 59,
+          "positive_recall": 0.7375,
+          "logical_errors": 23,
+          "logical_error_rate": 0.023,
+          "predicted_positive_rate": 0.061,
+          "pymatching_confusion": {
+            "tn": 918,
+            "fp": 2,
+            "fn": 7,
+            "tp": 73,
+            "positive_recall": 0.9125,
+            "logical_errors": 9,
+            "logical_error_rate": 0.009,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 15,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 16,
+          "pymatching_ler": 0.009,
+          "paired_ler_difference": 0.014
+        },
+        "balanced": {
+          "tn": 931,
+          "fp": 5,
+          "fn": 8,
+          "tp": 56,
+          "positive_recall": 0.875,
+          "logical_errors": 13,
+          "logical_error_rate": 0.013,
+          "predicted_positive_rate": 0.061,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 3,
+            "fn": 0,
+            "tp": 64,
+            "positive_recall": 1.0,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.067
+          },
+          "candidate_only": 12,
+          "pymatching_only": 2,
+          "paired_prediction_disagreements": 14,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.009999999999999998
+        },
+        "z_biased": {
+          "tn": 975,
+          "fp": 3,
+          "fn": 1,
+          "tp": 21,
+          "positive_recall": 0.9545454545454546,
+          "logical_errors": 4,
+          "logical_error_rate": 0.004,
+          "predicted_positive_rate": 0.024,
+          "pymatching_confusion": {
+            "tn": 978,
+            "fp": 0,
+            "fn": 0,
+            "tp": 22,
+            "positive_recall": 1.0,
+            "logical_errors": 0,
+            "logical_error_rate": 0.0,
+            "predicted_positive_rate": 0.022
+          },
+          "candidate_only": 4,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 4,
+          "pymatching_ler": 0.0,
+          "paired_ler_difference": 0.004
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.04364598634022517,
+          "brier": 0.012547045562990059,
+          "ece_10bin": 0.006120543569234445
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.04298385388480299,
+          "brier": 0.01251375974363759,
+          "ece_10bin": 0.006248606653788638
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.0473717111320915,
+          "brier": 0.012016822905021788,
+          "ece_10bin": 0.006061406334529759
+        }
+      }
+    },
+    {
+      "replicate": 0,
+      "architecture": "coordinate_channel_cnn",
+      "strategy": "weighted_bce",
+      "parameter_count": 13737,
+      "best_epoch": 12,
+      "temperature": 0.85,
+      "threshold": 0.38,
+      "equal_regime_ler": 0.026,
+      "equal_regime_pymatching_ler": 0.004,
+      "paired_ler_difference": 0.022,
+      "candidate_only": 69,
+      "pymatching_only": 3,
+      "per_regime": {
+        "x_biased": {
+          "tn": 909,
+          "fp": 11,
+          "fn": 30,
+          "tp": 50,
+          "positive_recall": 0.625,
+          "logical_errors": 41,
+          "logical_error_rate": 0.041,
+          "predicted_positive_rate": 0.061,
+          "pymatching_confusion": {
+            "tn": 918,
+            "fp": 2,
+            "fn": 7,
+            "tp": 73,
+            "positive_recall": 0.9125,
+            "logical_errors": 9,
+            "logical_error_rate": 0.009,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 33,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 34,
+          "pymatching_ler": 0.009,
+          "paired_ler_difference": 0.032
+        },
+        "balanced": {
+          "tn": 925,
+          "fp": 11,
+          "fn": 12,
+          "tp": 52,
+          "positive_recall": 0.8125,
+          "logical_errors": 23,
+          "logical_error_rate": 0.023,
+          "predicted_positive_rate": 0.063,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 3,
+            "fn": 0,
+            "tp": 64,
+            "positive_recall": 1.0,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.067
+          },
+          "candidate_only": 22,
+          "pymatching_only": 2,
+          "paired_prediction_disagreements": 24,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.02
+        },
+        "z_biased": {
+          "tn": 970,
+          "fp": 8,
+          "fn": 6,
+          "tp": 16,
+          "positive_recall": 0.7272727272727273,
+          "logical_errors": 14,
+          "logical_error_rate": 0.014,
+          "predicted_positive_rate": 0.024,
+          "pymatching_confusion": {
+            "tn": 978,
+            "fp": 0,
+            "fn": 0,
+            "tp": 22,
+            "positive_recall": 1.0,
+            "logical_errors": 0,
+            "logical_error_rate": 0.0,
+            "predicted_positive_rate": 0.022
+          },
+          "candidate_only": 14,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 14,
+          "pymatching_ler": 0.0,
+          "paired_ler_difference": 0.014
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.07580563508806434,
+          "brier": 0.023288176774553724,
+          "ece_10bin": 0.012504605968709835
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.07455498635324415,
+          "brier": 0.02314800220246857,
+          "ece_10bin": 0.01007045440367827
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.08073723145755805,
+          "brier": 0.02442014618607825,
+          "ece_10bin": 0.014356105341820101
+        }
+      }
+    },
+    {
+      "replicate": 0,
+      "architecture": "balanced_mlp",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 13569,
+      "best_epoch": 12,
+      "temperature": 1.5,
+      "threshold": 0.52,
+      "equal_regime_ler": 0.01,
+      "equal_regime_pymatching_ler": 0.004,
+      "paired_ler_difference": 0.006,
+      "candidate_only": 20,
+      "pymatching_only": 2,
+      "per_regime": {
+        "x_biased": {
+          "tn": 916,
+          "fp": 4,
+          "fn": 17,
+          "tp": 63,
+          "positive_recall": 0.7875,
+          "logical_errors": 21,
+          "logical_error_rate": 0.021,
+          "predicted_positive_rate": 0.067,
+          "pymatching_confusion": {
+            "tn": 918,
+            "fp": 2,
+            "fn": 7,
+            "tp": 73,
+            "positive_recall": 0.9125,
+            "logical_errors": 9,
+            "logical_error_rate": 0.009,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 13,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 14,
+          "pymatching_ler": 0.009,
+          "paired_ler_difference": 0.012000000000000002
+        },
+        "balanced": {
+          "tn": 933,
+          "fp": 3,
+          "fn": 5,
+          "tp": 59,
+          "positive_recall": 0.921875,
+          "logical_errors": 8,
+          "logical_error_rate": 0.008,
+          "predicted_positive_rate": 0.062,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 3,
+            "fn": 0,
+            "tp": 64,
+            "positive_recall": 1.0,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.067
+          },
+          "candidate_only": 6,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 7,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.005
+        },
+        "z_biased": {
+          "tn": 978,
+          "fp": 0,
+          "fn": 1,
+          "tp": 21,
+          "positive_recall": 0.9545454545454546,
+          "logical_errors": 1,
+          "logical_error_rate": 0.001,
+          "predicted_positive_rate": 0.021,
+          "pymatching_confusion": {
+            "tn": 978,
+            "fp": 0,
+            "fn": 0,
+            "tp": 22,
+            "positive_recall": 1.0,
+            "logical_errors": 0,
+            "logical_error_rate": 0.0,
+            "predicted_positive_rate": 0.022
+          },
+          "candidate_only": 1,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 1,
+          "pymatching_ler": 0.0,
+          "paired_ler_difference": 0.001
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.04652456174996755,
+          "brier": 0.010686591826328877,
+          "ece_10bin": 0.009152249719239287
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.04510530711594913,
+          "brier": 0.010687116392355374,
+          "ece_10bin": 0.00962721050950495
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.04807011736027543,
+          "brier": 0.009565820886729998,
+          "ece_10bin": 0.007422241471037577
+        }
+      }
+    },
+    {
+      "replicate": 0,
+      "architecture": "balanced_mlp",
+      "strategy": "weighted_bce",
+      "parameter_count": 13569,
+      "best_epoch": 12,
+      "temperature": 1.0,
+      "threshold": 0.43,
+      "equal_regime_ler": 0.01333333333333333,
+      "equal_regime_pymatching_ler": 0.004,
+      "paired_ler_difference": 0.00933333333333333,
+      "candidate_only": 31,
+      "pymatching_only": 3,
+      "per_regime": {
+        "x_biased": {
+          "tn": 915,
+          "fp": 5,
+          "fn": 22,
+          "tp": 58,
+          "positive_recall": 0.725,
+          "logical_errors": 27,
+          "logical_error_rate": 0.027,
+          "predicted_positive_rate": 0.063,
+          "pymatching_confusion": {
+            "tn": 918,
+            "fp": 2,
+            "fn": 7,
+            "tp": 73,
+            "positive_recall": 0.9125,
+            "logical_errors": 9,
+            "logical_error_rate": 0.009,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 19,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 20,
+          "pymatching_ler": 0.009,
+          "paired_ler_difference": 0.018000000000000002
+        },
+        "balanced": {
+          "tn": 934,
+          "fp": 2,
+          "fn": 7,
+          "tp": 57,
+          "positive_recall": 0.890625,
+          "logical_errors": 9,
+          "logical_error_rate": 0.009,
+          "predicted_positive_rate": 0.059,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 3,
+            "fn": 0,
+            "tp": 64,
+            "positive_recall": 1.0,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.067
+          },
+          "candidate_only": 8,
+          "pymatching_only": 2,
+          "paired_prediction_disagreements": 10,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.005999999999999999
+        },
+        "z_biased": {
+          "tn": 976,
+          "fp": 2,
+          "fn": 2,
+          "tp": 20,
+          "positive_recall": 0.9090909090909091,
+          "logical_errors": 4,
+          "logical_error_rate": 0.004,
+          "predicted_positive_rate": 0.022,
+          "pymatching_confusion": {
+            "tn": 978,
+            "fp": 0,
+            "fn": 0,
+            "tp": 22,
+            "positive_recall": 1.0,
+            "logical_errors": 0,
+            "logical_error_rate": 0.0,
+            "predicted_positive_rate": 0.022
+          },
+          "candidate_only": 4,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 4,
+          "pymatching_ler": 0.0,
+          "paired_ler_difference": 0.004
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.05951904851212922,
+          "brier": 0.014882098573870491,
+          "ece_10bin": 0.010567539117022533
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.05951904851212922,
+          "brier": 0.014882098573870491,
+          "ece_10bin": 0.010567539117022533
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.06029856920355921,
+          "brier": 0.01439504943104911,
+          "ece_10bin": 0.013088988853089874
+        }
+      }
+    },
+    {
+      "replicate": 1,
+      "architecture": "pooled_cnn8",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 3929,
+      "best_epoch": 12,
+      "temperature": 1.2,
+      "threshold": 0.6,
+      "equal_regime_ler": 0.04699999999999999,
+      "equal_regime_pymatching_ler": 0.004666666666666667,
+      "paired_ler_difference": 0.04233333333333333,
+      "candidate_only": 133,
+      "pymatching_only": 6,
+      "per_regime": {
+        "x_biased": {
+          "tn": 918,
+          "fp": 5,
+          "fn": 55,
+          "tp": 22,
+          "positive_recall": 0.2857142857142857,
+          "logical_errors": 60,
+          "logical_error_rate": 0.06,
+          "predicted_positive_rate": 0.027,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 1,
+            "fn": 6,
+            "tp": 71,
+            "positive_recall": 0.922077922077922,
+            "logical_errors": 7,
+            "logical_error_rate": 0.007,
+            "predicted_positive_rate": 0.072
+          },
+          "candidate_only": 54,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 55,
+          "pymatching_ler": 0.007,
+          "paired_ler_difference": 0.053
+        },
+        "balanced": {
+          "tn": 929,
+          "fp": 8,
+          "fn": 48,
+          "tp": 15,
+          "positive_recall": 0.23809523809523808,
+          "logical_errors": 56,
+          "logical_error_rate": 0.056,
+          "predicted_positive_rate": 0.023,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 4,
+            "fn": 1,
+            "tp": 62,
+            "positive_recall": 0.9841269841269841,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.066
+          },
+          "candidate_only": 55,
+          "pymatching_only": 4,
+          "paired_prediction_disagreements": 59,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.051000000000000004
+        },
+        "z_biased": {
+          "tn": 971,
+          "fp": 2,
+          "fn": 23,
+          "tp": 4,
+          "positive_recall": 0.14814814814814814,
+          "logical_errors": 25,
+          "logical_error_rate": 0.025,
+          "predicted_positive_rate": 0.006,
+          "pymatching_confusion": {
+            "tn": 972,
+            "fp": 1,
+            "fn": 1,
+            "tp": 26,
+            "positive_recall": 0.9629629629629629,
+            "logical_errors": 2,
+            "logical_error_rate": 0.002,
+            "predicted_positive_rate": 0.027
+          },
+          "candidate_only": 24,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 25,
+          "pymatching_ler": 0.002,
+          "paired_ler_difference": 0.023
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.10100634916156002,
+          "brier": 0.031192381086106735,
+          "ece_10bin": 0.0108372369642652
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.10070852658662174,
+          "brier": 0.030831956999412758,
+          "ece_10bin": 0.01307452658357611
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.10602429578061526,
+          "brier": 0.03276413271979507,
+          "ece_10bin": 0.012488229863291758
+        }
+      }
+    },
+    {
+      "replicate": 1,
+      "architecture": "pooled_cnn8",
+      "strategy": "weighted_bce",
+      "parameter_count": 3929,
+      "best_epoch": 12,
+      "temperature": 0.85,
+      "threshold": 0.68,
+      "equal_regime_ler": 0.053,
+      "equal_regime_pymatching_ler": 0.004666666666666667,
+      "paired_ler_difference": 0.04833333333333333,
+      "candidate_only": 151,
+      "pymatching_only": 6,
+      "per_regime": {
+        "x_biased": {
+          "tn": 922,
+          "fp": 1,
+          "fn": 76,
+          "tp": 1,
+          "positive_recall": 0.012987012987012988,
+          "logical_errors": 77,
+          "logical_error_rate": 0.077,
+          "predicted_positive_rate": 0.002,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 1,
+            "fn": 6,
+            "tp": 71,
+            "positive_recall": 0.922077922077922,
+            "logical_errors": 7,
+            "logical_error_rate": 0.007,
+            "predicted_positive_rate": 0.072
+          },
+          "candidate_only": 71,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 72,
+          "pymatching_ler": 0.007,
+          "paired_ler_difference": 0.06999999999999999
+        },
+        "balanced": {
+          "tn": 936,
+          "fp": 1,
+          "fn": 55,
+          "tp": 8,
+          "positive_recall": 0.12698412698412698,
+          "logical_errors": 56,
+          "logical_error_rate": 0.056,
+          "predicted_positive_rate": 0.009,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 4,
+            "fn": 1,
+            "tp": 62,
+            "positive_recall": 0.9841269841269841,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.066
+          },
+          "candidate_only": 55,
+          "pymatching_only": 4,
+          "paired_prediction_disagreements": 59,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.051000000000000004
+        },
+        "z_biased": {
+          "tn": 971,
+          "fp": 2,
+          "fn": 24,
+          "tp": 3,
+          "positive_recall": 0.1111111111111111,
+          "logical_errors": 26,
+          "logical_error_rate": 0.026,
+          "predicted_positive_rate": 0.005,
+          "pymatching_confusion": {
+            "tn": 972,
+            "fp": 1,
+            "fn": 1,
+            "tp": 26,
+            "positive_recall": 0.9629629629629629,
+            "logical_errors": 2,
+            "logical_error_rate": 0.002,
+            "predicted_positive_rate": 0.027
+          },
+          "candidate_only": 25,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 26,
+          "pymatching_ler": 0.002,
+          "paired_ler_difference": 0.024
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.13034290442828828,
+          "brier": 0.038527953234288585,
+          "ece_10bin": 0.02071022406601962
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.12931547627155435,
+          "brier": 0.038424660742402875,
+          "ece_10bin": 0.020444291623526116
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.14212576384919554,
+          "brier": 0.042983187729625894,
+          "ece_10bin": 0.023754344977172798
+        }
+      }
+    },
+    {
+      "replicate": 1,
+      "architecture": "pooled_cnn16_capacity_control",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 14769,
+      "best_epoch": 12,
+      "temperature": 1.2,
+      "threshold": 0.43,
+      "equal_regime_ler": 0.03866666666666666,
+      "equal_regime_pymatching_ler": 0.004666666666666667,
+      "paired_ler_difference": 0.033999999999999996,
+      "candidate_only": 107,
+      "pymatching_only": 5,
+      "per_regime": {
+        "x_biased": {
+          "tn": 903,
+          "fp": 20,
+          "fn": 20,
+          "tp": 57,
+          "positive_recall": 0.7402597402597403,
+          "logical_errors": 40,
+          "logical_error_rate": 0.04,
+          "predicted_positive_rate": 0.077,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 1,
+            "fn": 6,
+            "tp": 71,
+            "positive_recall": 0.922077922077922,
+            "logical_errors": 7,
+            "logical_error_rate": 0.007,
+            "predicted_positive_rate": 0.072
+          },
+          "candidate_only": 35,
+          "pymatching_only": 2,
+          "paired_prediction_disagreements": 37,
+          "pymatching_ler": 0.007,
+          "paired_ler_difference": 0.033
+        },
+        "balanced": {
+          "tn": 909,
+          "fp": 28,
+          "fn": 19,
+          "tp": 44,
+          "positive_recall": 0.6984126984126984,
+          "logical_errors": 47,
+          "logical_error_rate": 0.047,
+          "predicted_positive_rate": 0.072,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 4,
+            "fn": 1,
+            "tp": 62,
+            "positive_recall": 0.9841269841269841,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.066
+          },
+          "candidate_only": 45,
+          "pymatching_only": 3,
+          "paired_prediction_disagreements": 48,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.042
+        },
+        "z_biased": {
+          "tn": 955,
+          "fp": 18,
+          "fn": 11,
+          "tp": 16,
+          "positive_recall": 0.5925925925925926,
+          "logical_errors": 29,
+          "logical_error_rate": 0.029,
+          "predicted_positive_rate": 0.034,
+          "pymatching_confusion": {
+            "tn": 972,
+            "fp": 1,
+            "fn": 1,
+            "tp": 26,
+            "positive_recall": 0.9629629629629629,
+            "logical_errors": 2,
+            "logical_error_rate": 0.002,
+            "predicted_positive_rate": 0.027
+          },
+          "candidate_only": 27,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 27,
+          "pymatching_ler": 0.002,
+          "paired_ler_difference": 0.027000000000000003
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.09995886344588639,
+          "brier": 0.029546011583172126,
+          "ece_10bin": 0.015933085940575055
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.09934373980533232,
+          "brier": 0.02934267575150415,
+          "ece_10bin": 0.01727407194727242
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.10378580887492588,
+          "brier": 0.03059618032819777,
+          "ece_10bin": 0.016974765110339587
+        }
+      }
+    },
+    {
+      "replicate": 1,
+      "architecture": "pooled_cnn16_capacity_control",
+      "strategy": "weighted_bce",
+      "parameter_count": 14769,
+      "best_epoch": 12,
+      "temperature": 1.2,
+      "threshold": 0.48,
+      "equal_regime_ler": 0.050666666666666665,
+      "equal_regime_pymatching_ler": 0.004666666666666667,
+      "paired_ler_difference": 0.046,
+      "candidate_only": 144,
+      "pymatching_only": 6,
+      "per_regime": {
+        "x_biased": {
+          "tn": 913,
+          "fp": 10,
+          "fn": 56,
+          "tp": 21,
+          "positive_recall": 0.2727272727272727,
+          "logical_errors": 66,
+          "logical_error_rate": 0.066,
+          "predicted_positive_rate": 0.031,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 1,
+            "fn": 6,
+            "tp": 71,
+            "positive_recall": 0.922077922077922,
+            "logical_errors": 7,
+            "logical_error_rate": 0.007,
+            "predicted_positive_rate": 0.072
+          },
+          "candidate_only": 60,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 61,
+          "pymatching_ler": 0.007,
+          "paired_ler_difference": 0.059000000000000004
+        },
+        "balanced": {
+          "tn": 929,
+          "fp": 8,
+          "fn": 49,
+          "tp": 14,
+          "positive_recall": 0.2222222222222222,
+          "logical_errors": 57,
+          "logical_error_rate": 0.057,
+          "predicted_positive_rate": 0.022,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 4,
+            "fn": 1,
+            "tp": 62,
+            "positive_recall": 0.9841269841269841,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.066
+          },
+          "candidate_only": 56,
+          "pymatching_only": 4,
+          "paired_prediction_disagreements": 60,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.052000000000000005
+        },
+        "z_biased": {
+          "tn": 967,
+          "fp": 6,
+          "fn": 23,
+          "tp": 4,
+          "positive_recall": 0.14814814814814814,
+          "logical_errors": 29,
+          "logical_error_rate": 0.029,
+          "predicted_positive_rate": 0.01,
+          "pymatching_confusion": {
+            "tn": 972,
+            "fp": 1,
+            "fn": 1,
+            "tp": 26,
+            "positive_recall": 0.9629629629629629,
+            "logical_errors": 2,
+            "logical_error_rate": 0.002,
+            "predicted_positive_rate": 0.027
+          },
+          "candidate_only": 28,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 29,
+          "pymatching_ler": 0.002,
+          "paired_ler_difference": 0.027000000000000003
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.11401012286932076,
+          "brier": 0.03604863896576794,
+          "ece_10bin": 0.021487383325151793
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.11266749100560855,
+          "brier": 0.03521285840043509,
+          "ece_10bin": 0.015515360402737197
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.1169046761070152,
+          "brier": 0.036536472972035376,
+          "ece_10bin": 0.01970604788992923
+        }
+      }
+    },
+    {
+      "replicate": 1,
+      "architecture": "position_flat_cnn",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 13413,
+      "best_epoch": 12,
+      "temperature": 1.0,
+      "threshold": 0.5,
+      "equal_regime_ler": 0.013666666666666666,
+      "equal_regime_pymatching_ler": 0.004666666666666667,
+      "paired_ler_difference": 0.008999999999999998,
+      "candidate_only": 32,
+      "pymatching_only": 5,
+      "per_regime": {
+        "x_biased": {
+          "tn": 922,
+          "fp": 1,
+          "fn": 23,
+          "tp": 54,
+          "positive_recall": 0.7012987012987013,
+          "logical_errors": 24,
+          "logical_error_rate": 0.024,
+          "predicted_positive_rate": 0.055,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 1,
+            "fn": 6,
+            "tp": 71,
+            "positive_recall": 0.922077922077922,
+            "logical_errors": 7,
+            "logical_error_rate": 0.007,
+            "predicted_positive_rate": 0.072
+          },
+          "candidate_only": 18,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 19,
+          "pymatching_ler": 0.007,
+          "paired_ler_difference": 0.017
+        },
+        "balanced": {
+          "tn": 934,
+          "fp": 3,
+          "fn": 10,
+          "tp": 53,
+          "positive_recall": 0.8412698412698413,
+          "logical_errors": 13,
+          "logical_error_rate": 0.013,
+          "predicted_positive_rate": 0.056,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 4,
+            "fn": 1,
+            "tp": 62,
+            "positive_recall": 0.9841269841269841,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.066
+          },
+          "candidate_only": 11,
+          "pymatching_only": 3,
+          "paired_prediction_disagreements": 14,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.008
+        },
+        "z_biased": {
+          "tn": 973,
+          "fp": 0,
+          "fn": 4,
+          "tp": 23,
+          "positive_recall": 0.8518518518518519,
+          "logical_errors": 4,
+          "logical_error_rate": 0.004,
+          "predicted_positive_rate": 0.023,
+          "pymatching_confusion": {
+            "tn": 972,
+            "fp": 1,
+            "fn": 1,
+            "tp": 26,
+            "positive_recall": 0.9629629629629629,
+            "logical_errors": 2,
+            "logical_error_rate": 0.002,
+            "predicted_positive_rate": 0.027
+          },
+          "candidate_only": 3,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 4,
+          "pymatching_ler": 0.002,
+          "paired_ler_difference": 0.002
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.04423417786546326,
+          "brier": 0.01067748046872746,
+          "ece_10bin": 0.004072428459315129
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.04423417786546326,
+          "brier": 0.01067748046872746,
+          "ece_10bin": 0.004072428459315129
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.05440201034413517,
+          "brier": 0.01213445754605939,
+          "ece_10bin": 0.007471946277381819
+        }
+      }
+    },
+    {
+      "replicate": 1,
+      "architecture": "position_flat_cnn",
+      "strategy": "weighted_bce",
+      "parameter_count": 13413,
+      "best_epoch": 10,
+      "temperature": 1.0,
+      "threshold": 0.49,
+      "equal_regime_ler": 0.022333333333333334,
+      "equal_regime_pymatching_ler": 0.004666666666666667,
+      "paired_ler_difference": 0.017666666666666667,
+      "candidate_only": 59,
+      "pymatching_only": 6,
+      "per_regime": {
+        "x_biased": {
+          "tn": 919,
+          "fp": 4,
+          "fn": 24,
+          "tp": 53,
+          "positive_recall": 0.6883116883116883,
+          "logical_errors": 28,
+          "logical_error_rate": 0.028,
+          "predicted_positive_rate": 0.057,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 1,
+            "fn": 6,
+            "tp": 71,
+            "positive_recall": 0.922077922077922,
+            "logical_errors": 7,
+            "logical_error_rate": 0.007,
+            "predicted_positive_rate": 0.072
+          },
+          "candidate_only": 22,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 23,
+          "pymatching_ler": 0.007,
+          "paired_ler_difference": 0.021
+        },
+        "balanced": {
+          "tn": 927,
+          "fp": 10,
+          "fn": 18,
+          "tp": 45,
+          "positive_recall": 0.7142857142857143,
+          "logical_errors": 28,
+          "logical_error_rate": 0.028,
+          "predicted_positive_rate": 0.055,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 4,
+            "fn": 1,
+            "tp": 62,
+            "positive_recall": 0.9841269841269841,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.066
+          },
+          "candidate_only": 27,
+          "pymatching_only": 4,
+          "paired_prediction_disagreements": 31,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.023
+        },
+        "z_biased": {
+          "tn": 969,
+          "fp": 4,
+          "fn": 7,
+          "tp": 20,
+          "positive_recall": 0.7407407407407407,
+          "logical_errors": 11,
+          "logical_error_rate": 0.011,
+          "predicted_positive_rate": 0.024,
+          "pymatching_confusion": {
+            "tn": 972,
+            "fp": 1,
+            "fn": 1,
+            "tp": 26,
+            "positive_recall": 0.9629629629629629,
+            "logical_errors": 2,
+            "logical_error_rate": 0.002,
+            "predicted_positive_rate": 0.027
+          },
+          "candidate_only": 10,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 11,
+          "pymatching_ler": 0.002,
+          "paired_ler_difference": 0.009
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.06098533877058561,
+          "brier": 0.016899563173719205,
+          "ece_10bin": 0.009039758292516178
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.06098533877058561,
+          "brier": 0.016899563173719205,
+          "ece_10bin": 0.009039758292516178
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.0723000461928029,
+          "brier": 0.018609819615003017,
+          "ece_10bin": 0.010131262666436847
+        }
+      }
+    },
+    {
+      "replicate": 1,
+      "architecture": "coordinate_channel_cnn",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 13737,
+      "best_epoch": 12,
+      "temperature": 0.85,
+      "threshold": 0.4,
+      "equal_regime_ler": 0.022333333333333334,
+      "equal_regime_pymatching_ler": 0.004666666666666667,
+      "paired_ler_difference": 0.017666666666666667,
+      "candidate_only": 58,
+      "pymatching_only": 5,
+      "per_regime": {
+        "x_biased": {
+          "tn": 917,
+          "fp": 6,
+          "fn": 29,
+          "tp": 48,
+          "positive_recall": 0.6233766233766234,
+          "logical_errors": 35,
+          "logical_error_rate": 0.035,
+          "predicted_positive_rate": 0.054,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 1,
+            "fn": 6,
+            "tp": 71,
+            "positive_recall": 0.922077922077922,
+            "logical_errors": 7,
+            "logical_error_rate": 0.007,
+            "predicted_positive_rate": 0.072
+          },
+          "candidate_only": 29,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 30,
+          "pymatching_ler": 0.007,
+          "paired_ler_difference": 0.028000000000000004
+        },
+        "balanced": {
+          "tn": 930,
+          "fp": 7,
+          "fn": 13,
+          "tp": 50,
+          "positive_recall": 0.7936507936507936,
+          "logical_errors": 20,
+          "logical_error_rate": 0.02,
+          "predicted_positive_rate": 0.057,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 4,
+            "fn": 1,
+            "tp": 62,
+            "positive_recall": 0.9841269841269841,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.066
+          },
+          "candidate_only": 19,
+          "pymatching_only": 4,
+          "paired_prediction_disagreements": 23,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.015
+        },
+        "z_biased": {
+          "tn": 965,
+          "fp": 8,
+          "fn": 4,
+          "tp": 23,
+          "positive_recall": 0.8518518518518519,
+          "logical_errors": 12,
+          "logical_error_rate": 0.012,
+          "predicted_positive_rate": 0.031,
+          "pymatching_confusion": {
+            "tn": 972,
+            "fp": 1,
+            "fn": 1,
+            "tp": 26,
+            "positive_recall": 0.9629629629629629,
+            "logical_errors": 2,
+            "logical_error_rate": 0.002,
+            "predicted_positive_rate": 0.027
+          },
+          "candidate_only": 10,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 10,
+          "pymatching_ler": 0.002,
+          "paired_ler_difference": 0.01
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.06106688525125568,
+          "brier": 0.01767309506834464,
+          "ece_10bin": 0.009915927334924364
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.06053708790157454,
+          "brier": 0.017471878247994083,
+          "ece_10bin": 0.00786844413200315
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.07387872568965514,
+          "brier": 0.019506473495720024,
+          "ece_10bin": 0.011196662669442189
+        }
+      }
+    },
+    {
+      "replicate": 1,
+      "architecture": "coordinate_channel_cnn",
+      "strategy": "weighted_bce",
+      "parameter_count": 13737,
+      "best_epoch": 12,
+      "temperature": 1.0,
+      "threshold": 0.48,
+      "equal_regime_ler": 0.02766666666666667,
+      "equal_regime_pymatching_ler": 0.004666666666666667,
+      "paired_ler_difference": 0.023000000000000003,
+      "candidate_only": 75,
+      "pymatching_only": 6,
+      "per_regime": {
+        "x_biased": {
+          "tn": 921,
+          "fp": 2,
+          "fn": 29,
+          "tp": 48,
+          "positive_recall": 0.6233766233766234,
+          "logical_errors": 31,
+          "logical_error_rate": 0.031,
+          "predicted_positive_rate": 0.05,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 1,
+            "fn": 6,
+            "tp": 71,
+            "positive_recall": 0.922077922077922,
+            "logical_errors": 7,
+            "logical_error_rate": 0.007,
+            "predicted_positive_rate": 0.072
+          },
+          "candidate_only": 25,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 26,
+          "pymatching_ler": 0.007,
+          "paired_ler_difference": 0.024
+        },
+        "balanced": {
+          "tn": 934,
+          "fp": 3,
+          "fn": 36,
+          "tp": 27,
+          "positive_recall": 0.42857142857142855,
+          "logical_errors": 39,
+          "logical_error_rate": 0.039,
+          "predicted_positive_rate": 0.03,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 4,
+            "fn": 1,
+            "tp": 62,
+            "positive_recall": 0.9841269841269841,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.066
+          },
+          "candidate_only": 38,
+          "pymatching_only": 4,
+          "paired_prediction_disagreements": 42,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.034
+        },
+        "z_biased": {
+          "tn": 973,
+          "fp": 0,
+          "fn": 13,
+          "tp": 14,
+          "positive_recall": 0.5185185185185185,
+          "logical_errors": 13,
+          "logical_error_rate": 0.013,
+          "predicted_positive_rate": 0.014,
+          "pymatching_confusion": {
+            "tn": 972,
+            "fp": 1,
+            "fn": 1,
+            "tp": 26,
+            "positive_recall": 0.9629629629629629,
+            "logical_errors": 2,
+            "logical_error_rate": 0.002,
+            "predicted_positive_rate": 0.027
+          },
+          "candidate_only": 12,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 13,
+          "pymatching_ler": 0.002,
+          "paired_ler_difference": 0.011
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.06823070424408186,
+          "brier": 0.020141954206793624,
+          "ece_10bin": 0.007836846616631803
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.06823070424408186,
+          "brier": 0.020141954206793624,
+          "ece_10bin": 0.007836846616631803
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.07868276329267934,
+          "brier": 0.02236922643408568,
+          "ece_10bin": 0.00930063318754597
+        }
+      }
+    },
+    {
+      "replicate": 1,
+      "architecture": "balanced_mlp",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 13569,
+      "best_epoch": 11,
+      "temperature": 1.5,
+      "threshold": 0.69,
+      "equal_regime_ler": 0.015,
+      "equal_regime_pymatching_ler": 0.004666666666666667,
+      "paired_ler_difference": 0.010333333333333333,
+      "candidate_only": 37,
+      "pymatching_only": 6,
+      "per_regime": {
+        "x_biased": {
+          "tn": 922,
+          "fp": 1,
+          "fn": 23,
+          "tp": 54,
+          "positive_recall": 0.7012987012987013,
+          "logical_errors": 24,
+          "logical_error_rate": 0.024,
+          "predicted_positive_rate": 0.055,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 1,
+            "fn": 6,
+            "tp": 71,
+            "positive_recall": 0.922077922077922,
+            "logical_errors": 7,
+            "logical_error_rate": 0.007,
+            "predicted_positive_rate": 0.072
+          },
+          "candidate_only": 18,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 19,
+          "pymatching_ler": 0.007,
+          "paired_ler_difference": 0.017
+        },
+        "balanced": {
+          "tn": 934,
+          "fp": 3,
+          "fn": 13,
+          "tp": 50,
+          "positive_recall": 0.7936507936507936,
+          "logical_errors": 16,
+          "logical_error_rate": 0.016,
+          "predicted_positive_rate": 0.053,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 4,
+            "fn": 1,
+            "tp": 62,
+            "positive_recall": 0.9841269841269841,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.066
+          },
+          "candidate_only": 15,
+          "pymatching_only": 4,
+          "paired_prediction_disagreements": 19,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.011
+        },
+        "z_biased": {
+          "tn": 973,
+          "fp": 0,
+          "fn": 5,
+          "tp": 22,
+          "positive_recall": 0.8148148148148148,
+          "logical_errors": 5,
+          "logical_error_rate": 0.005,
+          "predicted_positive_rate": 0.022,
+          "pymatching_confusion": {
+            "tn": 972,
+            "fp": 1,
+            "fn": 1,
+            "tp": 26,
+            "positive_recall": 0.9629629629629629,
+            "logical_errors": 2,
+            "logical_error_rate": 0.002,
+            "predicted_positive_rate": 0.027
+          },
+          "candidate_only": 4,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 5,
+          "pymatching_ler": 0.002,
+          "paired_ler_difference": 0.003
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.053865943306236605,
+          "brier": 0.010503215481699526,
+          "ece_10bin": 0.005467842027755699
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.050449949600743255,
+          "brier": 0.010775305866018057,
+          "ece_10bin": 0.0062081375975904345
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.06372452190824701,
+          "brier": 0.012661641777143243,
+          "ece_10bin": 0.0037498741939700083
+        }
+      }
+    },
+    {
+      "replicate": 1,
+      "architecture": "balanced_mlp",
+      "strategy": "weighted_bce",
+      "parameter_count": 13569,
+      "best_epoch": 12,
+      "temperature": 1.2,
+      "threshold": 0.64,
+      "equal_regime_ler": 0.017333333333333333,
+      "equal_regime_pymatching_ler": 0.004666666666666667,
+      "paired_ler_difference": 0.012666666666666666,
+      "candidate_only": 44,
+      "pymatching_only": 6,
+      "per_regime": {
+        "x_biased": {
+          "tn": 919,
+          "fp": 4,
+          "fn": 25,
+          "tp": 52,
+          "positive_recall": 0.6753246753246753,
+          "logical_errors": 29,
+          "logical_error_rate": 0.029,
+          "predicted_positive_rate": 0.056,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 1,
+            "fn": 6,
+            "tp": 71,
+            "positive_recall": 0.922077922077922,
+            "logical_errors": 7,
+            "logical_error_rate": 0.007,
+            "predicted_positive_rate": 0.072
+          },
+          "candidate_only": 23,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 24,
+          "pymatching_ler": 0.007,
+          "paired_ler_difference": 0.022000000000000002
+        },
+        "balanced": {
+          "tn": 935,
+          "fp": 2,
+          "fn": 16,
+          "tp": 47,
+          "positive_recall": 0.746031746031746,
+          "logical_errors": 18,
+          "logical_error_rate": 0.018,
+          "predicted_positive_rate": 0.049,
+          "pymatching_confusion": {
+            "tn": 933,
+            "fp": 4,
+            "fn": 1,
+            "tp": 62,
+            "positive_recall": 0.9841269841269841,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.066
+          },
+          "candidate_only": 17,
+          "pymatching_only": 4,
+          "paired_prediction_disagreements": 21,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.012999999999999998
+        },
+        "z_biased": {
+          "tn": 973,
+          "fp": 0,
+          "fn": 5,
+          "tp": 22,
+          "positive_recall": 0.8148148148148148,
+          "logical_errors": 5,
+          "logical_error_rate": 0.005,
+          "predicted_positive_rate": 0.022,
+          "pymatching_confusion": {
+            "tn": 972,
+            "fp": 1,
+            "fn": 1,
+            "tp": 26,
+            "positive_recall": 0.9629629629629629,
+            "logical_errors": 2,
+            "logical_error_rate": 0.002,
+            "predicted_positive_rate": 0.027
+          },
+          "candidate_only": 4,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 5,
+          "pymatching_ler": 0.002,
+          "paired_ler_difference": 0.003
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.05165781911830722,
+          "brier": 0.012296594326735718,
+          "ece_10bin": 0.005503537099811009
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.05316382699692161,
+          "brier": 0.012566186424707719,
+          "ece_10bin": 0.010864841416723506
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.059483788559371066,
+          "brier": 0.014809710740392784,
+          "ece_10bin": 0.007988444335267724
+        }
+      }
+    },
+    {
+      "replicate": 2,
+      "architecture": "pooled_cnn8",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 3929,
+      "best_epoch": 8,
+      "temperature": 1.0,
+      "threshold": 0.89,
+      "equal_regime_ler": 0.056,
+      "equal_regime_pymatching_ler": 0.0036666666666666666,
+      "paired_ler_difference": 0.052333333333333336,
+      "candidate_only": 158,
+      "pymatching_only": 1,
+      "per_regime": {
+        "x_biased": {
+          "tn": 921,
+          "fp": 1,
+          "fn": 76,
+          "tp": 2,
+          "positive_recall": 0.02564102564102564,
+          "logical_errors": 77,
+          "logical_error_rate": 0.077,
+          "predicted_positive_rate": 0.003,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 0,
+            "fn": 3,
+            "tp": 75,
+            "positive_recall": 0.9615384615384616,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 74,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 74,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.074
+        },
+        "balanced": {
+          "tn": 937,
+          "fp": 2,
+          "fn": 60,
+          "tp": 1,
+          "positive_recall": 0.01639344262295082,
+          "logical_errors": 62,
+          "logical_error_rate": 0.062,
+          "predicted_positive_rate": 0.003,
+          "pymatching_confusion": {
+            "tn": 938,
+            "fp": 1,
+            "fn": 4,
+            "tp": 57,
+            "positive_recall": 0.9344262295081968,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.058
+          },
+          "candidate_only": 58,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 59,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.057
+        },
+        "z_biased": {
+          "tn": 971,
+          "fp": 0,
+          "fn": 29,
+          "tp": 0,
+          "positive_recall": 0.0,
+          "logical_errors": 29,
+          "logical_error_rate": 0.029,
+          "predicted_positive_rate": 0.0,
+          "pymatching_confusion": {
+            "tn": 971,
+            "fp": 0,
+            "fn": 3,
+            "tp": 26,
+            "positive_recall": 0.896551724137931,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.026
+          },
+          "candidate_only": 26,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 26,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.026000000000000002
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.14838259931040113,
+          "brier": 0.0451028984232727,
+          "ece_10bin": 0.01887293930340208
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.14838259931040113,
+          "brier": 0.0451028984232727,
+          "ece_10bin": 0.01887293930340208
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.16400830036020825,
+          "brier": 0.049321151245792,
+          "ece_10bin": 0.025931506896708617
+        }
+      }
+    },
+    {
+      "replicate": 2,
+      "architecture": "pooled_cnn8",
+      "strategy": "weighted_bce",
+      "parameter_count": 3929,
+      "best_epoch": 12,
+      "temperature": 1.0,
+      "threshold": 0.62,
+      "equal_regime_ler": 0.055,
+      "equal_regime_pymatching_ler": 0.0036666666666666666,
+      "paired_ler_difference": 0.051333333333333335,
+      "candidate_only": 155,
+      "pymatching_only": 1,
+      "per_regime": {
+        "x_biased": {
+          "tn": 920,
+          "fp": 2,
+          "fn": 72,
+          "tp": 6,
+          "positive_recall": 0.07692307692307693,
+          "logical_errors": 74,
+          "logical_error_rate": 0.074,
+          "predicted_positive_rate": 0.008,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 0,
+            "fn": 3,
+            "tp": 75,
+            "positive_recall": 0.9615384615384616,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 71,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 71,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.071
+        },
+        "balanced": {
+          "tn": 938,
+          "fp": 1,
+          "fn": 61,
+          "tp": 0,
+          "positive_recall": 0.0,
+          "logical_errors": 62,
+          "logical_error_rate": 0.062,
+          "predicted_positive_rate": 0.001,
+          "pymatching_confusion": {
+            "tn": 938,
+            "fp": 1,
+            "fn": 4,
+            "tp": 57,
+            "positive_recall": 0.9344262295081968,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.058
+          },
+          "candidate_only": 58,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 59,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.057
+        },
+        "z_biased": {
+          "tn": 971,
+          "fp": 0,
+          "fn": 29,
+          "tp": 0,
+          "positive_recall": 0.0,
+          "logical_errors": 29,
+          "logical_error_rate": 0.029,
+          "predicted_positive_rate": 0.0,
+          "pymatching_confusion": {
+            "tn": 971,
+            "fp": 0,
+            "fn": 3,
+            "tp": 26,
+            "positive_recall": 0.896551724137931,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.026
+          },
+          "candidate_only": 26,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 26,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.026000000000000002
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.13568863683892582,
+          "brier": 0.04095180656403366,
+          "ece_10bin": 0.014804154213443334
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.13568863683892582,
+          "brier": 0.04095180656403366,
+          "ece_10bin": 0.014804154213443334
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.14660847088344148,
+          "brier": 0.043958214790912206,
+          "ece_10bin": 0.02311156534262938
+        }
+      }
+    },
+    {
+      "replicate": 2,
+      "architecture": "pooled_cnn16_capacity_control",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 14769,
+      "best_epoch": 12,
+      "temperature": 1.0,
+      "threshold": 0.42,
+      "equal_regime_ler": 0.03233333333333333,
+      "equal_regime_pymatching_ler": 0.0036666666666666666,
+      "paired_ler_difference": 0.028666666666666667,
+      "candidate_only": 88,
+      "pymatching_only": 2,
+      "per_regime": {
+        "x_biased": {
+          "tn": 899,
+          "fp": 23,
+          "fn": 21,
+          "tp": 57,
+          "positive_recall": 0.7307692307692307,
+          "logical_errors": 44,
+          "logical_error_rate": 0.044,
+          "predicted_positive_rate": 0.08,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 0,
+            "fn": 3,
+            "tp": 75,
+            "positive_recall": 0.9615384615384616,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 41,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 41,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.040999999999999995
+        },
+        "balanced": {
+          "tn": 920,
+          "fp": 19,
+          "fn": 22,
+          "tp": 39,
+          "positive_recall": 0.639344262295082,
+          "logical_errors": 41,
+          "logical_error_rate": 0.041,
+          "predicted_positive_rate": 0.058,
+          "pymatching_confusion": {
+            "tn": 938,
+            "fp": 1,
+            "fn": 4,
+            "tp": 57,
+            "positive_recall": 0.9344262295081968,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.058
+          },
+          "candidate_only": 37,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 38,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.036000000000000004
+        },
+        "z_biased": {
+          "tn": 965,
+          "fp": 6,
+          "fn": 6,
+          "tp": 23,
+          "positive_recall": 0.7931034482758621,
+          "logical_errors": 12,
+          "logical_error_rate": 0.012,
+          "predicted_positive_rate": 0.029,
+          "pymatching_confusion": {
+            "tn": 971,
+            "fp": 0,
+            "fn": 3,
+            "tp": 26,
+            "positive_recall": 0.896551724137931,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.026
+          },
+          "candidate_only": 10,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 11,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.009000000000000001
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.0892172297272491,
+          "brier": 0.026661257533440116,
+          "ece_10bin": 0.01146300009605055
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.0892172297272491,
+          "brier": 0.026661257533440116,
+          "ece_10bin": 0.01146300009605055
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.09664221789379687,
+          "brier": 0.02764963013970612,
+          "ece_10bin": 0.012818812162861135
+        }
+      }
+    },
+    {
+      "replicate": 2,
+      "architecture": "pooled_cnn16_capacity_control",
+      "strategy": "weighted_bce",
+      "parameter_count": 14769,
+      "best_epoch": 12,
+      "temperature": 1.0,
+      "threshold": 0.59,
+      "equal_regime_ler": 0.050333333333333334,
+      "equal_regime_pymatching_ler": 0.0036666666666666666,
+      "paired_ler_difference": 0.04666666666666667,
+      "candidate_only": 141,
+      "pymatching_only": 1,
+      "per_regime": {
+        "x_biased": {
+          "tn": 914,
+          "fp": 8,
+          "fn": 57,
+          "tp": 21,
+          "positive_recall": 0.2692307692307692,
+          "logical_errors": 65,
+          "logical_error_rate": 0.065,
+          "predicted_positive_rate": 0.029,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 0,
+            "fn": 3,
+            "tp": 75,
+            "positive_recall": 0.9615384615384616,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 62,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 62,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.062
+        },
+        "balanced": {
+          "tn": 937,
+          "fp": 2,
+          "fn": 54,
+          "tp": 7,
+          "positive_recall": 0.11475409836065574,
+          "logical_errors": 56,
+          "logical_error_rate": 0.056,
+          "predicted_positive_rate": 0.009,
+          "pymatching_confusion": {
+            "tn": 938,
+            "fp": 1,
+            "fn": 4,
+            "tp": 57,
+            "positive_recall": 0.9344262295081968,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.058
+          },
+          "candidate_only": 52,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 53,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.051000000000000004
+        },
+        "z_biased": {
+          "tn": 969,
+          "fp": 2,
+          "fn": 28,
+          "tp": 1,
+          "positive_recall": 0.034482758620689655,
+          "logical_errors": 30,
+          "logical_error_rate": 0.03,
+          "predicted_positive_rate": 0.003,
+          "pymatching_confusion": {
+            "tn": 971,
+            "fp": 0,
+            "fn": 3,
+            "tp": 26,
+            "positive_recall": 0.896551724137931,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.026
+          },
+          "candidate_only": 27,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 27,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.027
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.11692513797684598,
+          "brier": 0.036385959427489956,
+          "ece_10bin": 0.013353825396087326
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.11692513797684598,
+          "brier": 0.036385959427489956,
+          "ece_10bin": 0.013353825396087326
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.12368800282039522,
+          "brier": 0.03880996082147333,
+          "ece_10bin": 0.016368439478221877
+        }
+      }
+    },
+    {
+      "replicate": 2,
+      "architecture": "position_flat_cnn",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 13413,
+      "best_epoch": 12,
+      "temperature": 0.85,
+      "threshold": 0.46,
+      "equal_regime_ler": 0.013333333333333336,
+      "equal_regime_pymatching_ler": 0.0036666666666666666,
+      "paired_ler_difference": 0.009666666666666669,
+      "candidate_only": 32,
+      "pymatching_only": 3,
+      "per_regime": {
+        "x_biased": {
+          "tn": 920,
+          "fp": 2,
+          "fn": 18,
+          "tp": 60,
+          "positive_recall": 0.7692307692307693,
+          "logical_errors": 20,
+          "logical_error_rate": 0.02,
+          "predicted_positive_rate": 0.062,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 0,
+            "fn": 3,
+            "tp": 75,
+            "positive_recall": 0.9615384615384616,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 18,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 19,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.017
+        },
+        "balanced": {
+          "tn": 933,
+          "fp": 6,
+          "fn": 11,
+          "tp": 50,
+          "positive_recall": 0.819672131147541,
+          "logical_errors": 17,
+          "logical_error_rate": 0.017,
+          "predicted_positive_rate": 0.056,
+          "pymatching_confusion": {
+            "tn": 938,
+            "fp": 1,
+            "fn": 4,
+            "tp": 57,
+            "positive_recall": 0.9344262295081968,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.058
+          },
+          "candidate_only": 13,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 14,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.012
+        },
+        "z_biased": {
+          "tn": 971,
+          "fp": 0,
+          "fn": 3,
+          "tp": 26,
+          "positive_recall": 0.896551724137931,
+          "logical_errors": 3,
+          "logical_error_rate": 0.003,
+          "predicted_positive_rate": 0.026,
+          "pymatching_confusion": {
+            "tn": 971,
+            "fp": 0,
+            "fn": 3,
+            "tp": 26,
+            "positive_recall": 0.896551724137931,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.026
+          },
+          "candidate_only": 1,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 2,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.0
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.04746556490684078,
+          "brier": 0.012523474896949997,
+          "ece_10bin": 0.0074259988495248815
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.047095360497184054,
+          "brier": 0.012259575157820331,
+          "ece_10bin": 0.007069978080310006
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.05727776994019,
+          "brier": 0.013819489110614192,
+          "ece_10bin": 0.012159386710188288
+        }
+      }
+    },
+    {
+      "replicate": 2,
+      "architecture": "position_flat_cnn",
+      "strategy": "weighted_bce",
+      "parameter_count": 13413,
+      "best_epoch": 12,
+      "temperature": 1.0,
+      "threshold": 0.36,
+      "equal_regime_ler": 0.016666666666666666,
+      "equal_regime_pymatching_ler": 0.0036666666666666666,
+      "paired_ler_difference": 0.013,
+      "candidate_only": 43,
+      "pymatching_only": 4,
+      "per_regime": {
+        "x_biased": {
+          "tn": 915,
+          "fp": 7,
+          "fn": 20,
+          "tp": 58,
+          "positive_recall": 0.7435897435897436,
+          "logical_errors": 27,
+          "logical_error_rate": 0.027,
+          "predicted_positive_rate": 0.065,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 0,
+            "fn": 3,
+            "tp": 75,
+            "positive_recall": 0.9615384615384616,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 25,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 26,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.024
+        },
+        "balanced": {
+          "tn": 934,
+          "fp": 5,
+          "fn": 14,
+          "tp": 47,
+          "positive_recall": 0.7704918032786885,
+          "logical_errors": 19,
+          "logical_error_rate": 0.019,
+          "predicted_positive_rate": 0.052,
+          "pymatching_confusion": {
+            "tn": 938,
+            "fp": 1,
+            "fn": 4,
+            "tp": 57,
+            "positive_recall": 0.9344262295081968,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.058
+          },
+          "candidate_only": 15,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 16,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.013999999999999999
+        },
+        "z_biased": {
+          "tn": 969,
+          "fp": 2,
+          "fn": 2,
+          "tp": 27,
+          "positive_recall": 0.9310344827586207,
+          "logical_errors": 4,
+          "logical_error_rate": 0.004,
+          "predicted_positive_rate": 0.029,
+          "pymatching_confusion": {
+            "tn": 971,
+            "fp": 0,
+            "fn": 3,
+            "tp": 26,
+            "positive_recall": 0.896551724137931,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.026
+          },
+          "candidate_only": 3,
+          "pymatching_only": 2,
+          "paired_prediction_disagreements": 5,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.001
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.05357227002555317,
+          "brier": 0.014493642825939701,
+          "ece_10bin": 0.013554059415937141
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.05357227002555317,
+          "brier": 0.014493642825939701,
+          "ece_10bin": 0.013554059415937141
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.0703579566117383,
+          "brier": 0.01760416842396345,
+          "ece_10bin": 0.01702838820401476
+        }
+      }
+    },
+    {
+      "replicate": 2,
+      "architecture": "coordinate_channel_cnn",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 13737,
+      "best_epoch": 12,
+      "temperature": 1.0,
+      "threshold": 0.36,
+      "equal_regime_ler": 0.015,
+      "equal_regime_pymatching_ler": 0.0036666666666666666,
+      "paired_ler_difference": 0.011333333333333332,
+      "candidate_only": 36,
+      "pymatching_only": 2,
+      "per_regime": {
+        "x_biased": {
+          "tn": 917,
+          "fp": 5,
+          "fn": 16,
+          "tp": 62,
+          "positive_recall": 0.7948717948717948,
+          "logical_errors": 21,
+          "logical_error_rate": 0.021,
+          "predicted_positive_rate": 0.067,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 0,
+            "fn": 3,
+            "tp": 75,
+            "positive_recall": 0.9615384615384616,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 19,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 20,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.018000000000000002
+        },
+        "balanced": {
+          "tn": 932,
+          "fp": 7,
+          "fn": 11,
+          "tp": 50,
+          "positive_recall": 0.819672131147541,
+          "logical_errors": 18,
+          "logical_error_rate": 0.018,
+          "predicted_positive_rate": 0.057,
+          "pymatching_confusion": {
+            "tn": 938,
+            "fp": 1,
+            "fn": 4,
+            "tp": 57,
+            "positive_recall": 0.9344262295081968,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.058
+          },
+          "candidate_only": 13,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 13,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.012999999999999998
+        },
+        "z_biased": {
+          "tn": 968,
+          "fp": 3,
+          "fn": 3,
+          "tp": 26,
+          "positive_recall": 0.896551724137931,
+          "logical_errors": 6,
+          "logical_error_rate": 0.006,
+          "predicted_positive_rate": 0.029,
+          "pymatching_confusion": {
+            "tn": 971,
+            "fp": 0,
+            "fn": 3,
+            "tp": 26,
+            "positive_recall": 0.896551724137931,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.026
+          },
+          "candidate_only": 4,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 5,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.003
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.05284997112045524,
+          "brier": 0.014437433452329557,
+          "ece_10bin": 0.005519192618207574
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.05284997112045524,
+          "brier": 0.014437433452329557,
+          "ece_10bin": 0.005519192618207574
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.06134206762746165,
+          "brier": 0.015174167645616075,
+          "ece_10bin": 0.010592805189713825
+        }
+      }
+    },
+    {
+      "replicate": 2,
+      "architecture": "coordinate_channel_cnn",
+      "strategy": "weighted_bce",
+      "parameter_count": 13737,
+      "best_epoch": 12,
+      "temperature": 0.85,
+      "threshold": 0.43,
+      "equal_regime_ler": 0.015666666666666666,
+      "equal_regime_pymatching_ler": 0.0036666666666666666,
+      "paired_ler_difference": 0.011999999999999999,
+      "candidate_only": 39,
+      "pymatching_only": 3,
+      "per_regime": {
+        "x_biased": {
+          "tn": 920,
+          "fp": 2,
+          "fn": 18,
+          "tp": 60,
+          "positive_recall": 0.7692307692307693,
+          "logical_errors": 20,
+          "logical_error_rate": 0.02,
+          "predicted_positive_rate": 0.062,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 0,
+            "fn": 3,
+            "tp": 75,
+            "positive_recall": 0.9615384615384616,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 18,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 19,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.017
+        },
+        "balanced": {
+          "tn": 932,
+          "fp": 7,
+          "fn": 14,
+          "tp": 47,
+          "positive_recall": 0.7704918032786885,
+          "logical_errors": 21,
+          "logical_error_rate": 0.021,
+          "predicted_positive_rate": 0.054,
+          "pymatching_confusion": {
+            "tn": 938,
+            "fp": 1,
+            "fn": 4,
+            "tp": 57,
+            "positive_recall": 0.9344262295081968,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.058
+          },
+          "candidate_only": 17,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 18,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.016
+        },
+        "z_biased": {
+          "tn": 968,
+          "fp": 3,
+          "fn": 3,
+          "tp": 26,
+          "positive_recall": 0.896551724137931,
+          "logical_errors": 6,
+          "logical_error_rate": 0.006,
+          "predicted_positive_rate": 0.029,
+          "pymatching_confusion": {
+            "tn": 971,
+            "fp": 0,
+            "fn": 3,
+            "tp": 26,
+            "positive_recall": 0.896551724137931,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.026
+          },
+          "candidate_only": 4,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 5,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.003
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.055480139634758396,
+          "brier": 0.015151568512193016,
+          "ece_10bin": 0.008866198734539144
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.0548953444761746,
+          "brier": 0.014815918946903116,
+          "ece_10bin": 0.009203298395523127
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.061574266434889786,
+          "brier": 0.015244997524283642,
+          "ece_10bin": 0.012125446056027533
+        }
+      }
+    },
+    {
+      "replicate": 2,
+      "architecture": "balanced_mlp",
+      "strategy": "balanced_minibatches",
+      "parameter_count": 13569,
+      "best_epoch": 10,
+      "temperature": 1.5,
+      "threshold": 0.4,
+      "equal_regime_ler": 0.013,
+      "equal_regime_pymatching_ler": 0.0036666666666666666,
+      "paired_ler_difference": 0.009333333333333332,
+      "candidate_only": 32,
+      "pymatching_only": 4,
+      "per_regime": {
+        "x_biased": {
+          "tn": 918,
+          "fp": 4,
+          "fn": 19,
+          "tp": 59,
+          "positive_recall": 0.7564102564102564,
+          "logical_errors": 23,
+          "logical_error_rate": 0.023,
+          "predicted_positive_rate": 0.063,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 0,
+            "fn": 3,
+            "tp": 75,
+            "positive_recall": 0.9615384615384616,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 20,
+          "pymatching_only": 0,
+          "paired_prediction_disagreements": 20,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.02
+        },
+        "balanced": {
+          "tn": 935,
+          "fp": 4,
+          "fn": 10,
+          "tp": 51,
+          "positive_recall": 0.8360655737704918,
+          "logical_errors": 14,
+          "logical_error_rate": 0.014,
+          "predicted_positive_rate": 0.055,
+          "pymatching_confusion": {
+            "tn": 938,
+            "fp": 1,
+            "fn": 4,
+            "tp": 57,
+            "positive_recall": 0.9344262295081968,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.058
+          },
+          "candidate_only": 11,
+          "pymatching_only": 2,
+          "paired_prediction_disagreements": 13,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.009000000000000001
+        },
+        "z_biased": {
+          "tn": 971,
+          "fp": 0,
+          "fn": 2,
+          "tp": 27,
+          "positive_recall": 0.9310344827586207,
+          "logical_errors": 2,
+          "logical_error_rate": 0.002,
+          "predicted_positive_rate": 0.027,
+          "pymatching_confusion": {
+            "tn": 971,
+            "fp": 0,
+            "fn": 3,
+            "tp": 26,
+            "positive_recall": 0.896551724137931,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.026
+          },
+          "candidate_only": 1,
+          "pymatching_only": 2,
+          "paired_prediction_disagreements": 3,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": -0.001
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.05738438055291043,
+          "brier": 0.011208114250158616,
+          "ece_10bin": 0.005181746605492942
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.05704765120295165,
+          "brier": 0.011885076503892774,
+          "ece_10bin": 0.011016913962606718
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.06958447243891498,
+          "brier": 0.012590174768198986,
+          "ece_10bin": 0.012745582212017157
+        }
+      }
+    },
+    {
+      "replicate": 2,
+      "architecture": "balanced_mlp",
+      "strategy": "weighted_bce",
+      "parameter_count": 13569,
+      "best_epoch": 12,
+      "temperature": 1.0,
+      "threshold": 0.37,
+      "equal_regime_ler": 0.017333333333333333,
+      "equal_regime_pymatching_ler": 0.0036666666666666666,
+      "paired_ler_difference": 0.013666666666666666,
+      "candidate_only": 45,
+      "pymatching_only": 4,
+      "per_regime": {
+        "x_biased": {
+          "tn": 913,
+          "fp": 9,
+          "fn": 18,
+          "tp": 60,
+          "positive_recall": 0.7692307692307693,
+          "logical_errors": 27,
+          "logical_error_rate": 0.027,
+          "predicted_positive_rate": 0.069,
+          "pymatching_confusion": {
+            "tn": 922,
+            "fp": 0,
+            "fn": 3,
+            "tp": 75,
+            "positive_recall": 0.9615384615384616,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.075
+          },
+          "candidate_only": 25,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 26,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.024
+        },
+        "balanced": {
+          "tn": 934,
+          "fp": 5,
+          "fn": 15,
+          "tp": 46,
+          "positive_recall": 0.7540983606557377,
+          "logical_errors": 20,
+          "logical_error_rate": 0.02,
+          "predicted_positive_rate": 0.051,
+          "pymatching_confusion": {
+            "tn": 938,
+            "fp": 1,
+            "fn": 4,
+            "tp": 57,
+            "positive_recall": 0.9344262295081968,
+            "logical_errors": 5,
+            "logical_error_rate": 0.005,
+            "predicted_positive_rate": 0.058
+          },
+          "candidate_only": 16,
+          "pymatching_only": 1,
+          "paired_prediction_disagreements": 17,
+          "pymatching_ler": 0.005,
+          "paired_ler_difference": 0.015
+        },
+        "z_biased": {
+          "tn": 968,
+          "fp": 3,
+          "fn": 2,
+          "tp": 27,
+          "positive_recall": 0.9310344827586207,
+          "logical_errors": 5,
+          "logical_error_rate": 0.005,
+          "predicted_positive_rate": 0.03,
+          "pymatching_confusion": {
+            "tn": 971,
+            "fp": 0,
+            "fn": 3,
+            "tp": 26,
+            "positive_recall": 0.896551724137931,
+            "logical_errors": 3,
+            "logical_error_rate": 0.003,
+            "predicted_positive_rate": 0.026
+          },
+          "candidate_only": 4,
+          "pymatching_only": 2,
+          "paired_prediction_disagreements": 6,
+          "pymatching_ler": 0.003,
+          "paired_ler_difference": 0.002
+        }
+      },
+      "probability_calibration": {
+        "uncalibrated_on_calibration_partition": {
+          "nll": 0.06463178450813115,
+          "brier": 0.015549015161738632,
+          "ece_10bin": 0.010449317525926748
+        },
+        "temperature_calibrated_on_calibration_partition": {
+          "nll": 0.06463178450813115,
+          "brier": 0.015549015161738632,
+          "ece_10bin": 0.010449317525926748
+        },
+        "temperature_calibrated_on_threshold_partition": {
+          "nll": 0.07661164449117898,
+          "brier": 0.01700851694927779,
+          "ece_10bin": 0.011773034977711922
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "balanced_mlp__balanced_minibatches": {
+      "n_roots": 3,
+      "parameter_count": 13569,
+      "mean_ler": 0.012666666666666666,
+      "mean_pymatching_ler": 0.004111111111111111,
+      "mean_paired_ler_difference": 0.008555555555555554,
+      "root_t_95ci_paired_difference": [
+        0.0029191636054026783,
+        0.01419194750570843
+      ],
+      "root_differences": [
+        0.006,
+        0.010333333333333333,
+        0.009333333333333332
+      ],
+      "mean_positive_recall": 0.8330216752499037,
+      "candidate_only": 89,
+      "pymatching_only": 12,
+      "temperature_mean": 1.5,
+      "threshold_mean": 0.5366666666666666,
+      "by_regime": {
+        "x_biased": {
+          "mean_ler": 0.02266666666666667,
+          "mean_pymatching_ler": 0.006333333333333333,
+          "mean_positive_recall": 0.7484029859029859,
+          "tn": 2756,
+          "fp": 9,
+          "fn": 59,
+          "tp": 176,
+          "candidate_only": 51,
+          "pymatching_only": 2,
+          "mean_paired_ler_difference": 0.016333333333333335,
+          "root_t_95ci": [
+            0.006293810296873694,
+            0.026372856369792974
+          ]
+        },
+        "balanced": {
+          "mean_ler": 0.012666666666666666,
+          "mean_pymatching_ler": 0.004333333333333334,
+          "mean_positive_recall": 0.8505304558070952,
+          "tn": 2802,
+          "fp": 10,
+          "fn": 28,
+          "tp": 160,
+          "candidate_only": 32,
+          "pymatching_only": 7,
+          "mean_paired_ler_difference": 0.008333333333333333,
+          "root_t_95ci": [
+            0.000744167265854404,
+            0.01592249940081226
+          ]
+        },
+        "z_biased": {
+          "mean_ler": 0.0026666666666666666,
+          "mean_pymatching_ler": 0.0016666666666666668,
+          "mean_positive_recall": 0.90013158403963,
+          "tn": 2922,
+          "fp": 0,
+          "fn": 8,
+          "tp": 70,
+          "candidate_only": 6,
+          "pymatching_only": 3,
+          "mean_paired_ler_difference": 0.001,
+          "root_t_95ci": [
+            -0.0039682754236875055,
+            0.0059682754236875055
+          ]
+        }
+      }
+    },
+    "balanced_mlp__weighted_bce": {
+      "n_roots": 3,
+      "parameter_count": 13569,
+      "mean_ler": 0.015999999999999997,
+      "mean_pymatching_ler": 0.004111111111111111,
+      "mean_paired_ler_difference": 0.011888888888888888,
+      "root_t_95ci_paired_difference": [
+        0.00625249693873601,
+        0.017525280839041767
+      ],
+      "root_differences": [
+        0.00933333333333333,
+        0.012666666666666666,
+        0.013666666666666666
+      ],
+      "mean_positive_recall": 0.8016945286563636,
+      "candidate_only": 120,
+      "pymatching_only": 13,
+      "temperature_mean": 1.0666666666666667,
+      "threshold_mean": 0.48,
+      "by_regime": {
+        "x_biased": {
+          "mean_ler": 0.02766666666666667,
+          "mean_pymatching_ler": 0.006333333333333333,
+          "mean_positive_recall": 0.7231851481851481,
+          "tn": 2747,
+          "fp": 18,
+          "fn": 65,
+          "tp": 170,
+          "candidate_only": 67,
+          "pymatching_only": 3,
+          "mean_paired_ler_difference": 0.021333333333333333,
+          "root_t_95ci": [
+            0.013744167265854403,
+            0.028922499400812263
+          ]
+        },
+        "balanced": {
+          "mean_ler": 0.015666666666666666,
+          "mean_pymatching_ler": 0.004333333333333334,
+          "mean_positive_recall": 0.7969183688958279,
+          "tn": 2803,
+          "fp": 9,
+          "fn": 38,
+          "tp": 150,
+          "candidate_only": 41,
+          "pymatching_only": 7,
+          "mean_paired_ler_difference": 0.011333333333333332,
+          "root_t_95ci": [
+            -0.0004062434830612721,
+            0.023072910149727937
+          ]
+        },
+        "z_biased": {
+          "mean_ler": 0.004666666666666667,
+          "mean_pymatching_ler": 0.0016666666666666668,
+          "mean_positive_recall": 0.8849800688881149,
+          "tn": 2917,
+          "fp": 5,
+          "fn": 9,
+          "tp": 69,
+          "candidate_only": 12,
+          "pymatching_only": 3,
+          "mean_paired_ler_difference": 0.0030000000000000005,
+          "root_t_95ci": [
+            0.0005158622881562477,
+            0.005484137711843753
+          ]
+        }
+      }
+    },
+    "coordinate_channel_cnn__balanced_minibatches": {
+      "n_roots": 3,
+      "parameter_count": 13737,
+      "mean_ler": 0.016888888888888887,
+      "mean_pymatching_ler": 0.004111111111111111,
+      "mean_paired_ler_difference": 0.012777777777777777,
+      "root_t_95ci_paired_difference": [
+        0.0019708005603816543,
+        0.0235847549951739
+      ],
+      "root_differences": [
+        0.00933333333333333,
+        0.017666666666666667,
+        0.011333333333333332
+      ],
+      "mean_positive_recall": 0.8163355970646657,
+      "candidate_only": 125,
+      "pymatching_only": 10,
+      "temperature_mean": 0.9,
+      "threshold_mean": 0.38000000000000006,
+      "by_regime": {
+        "x_biased": {
+          "mean_ler": 0.026333333333333334,
+          "mean_pymatching_ler": 0.006333333333333333,
+          "mean_positive_recall": 0.718582806082806,
+          "tn": 2752,
+          "fp": 13,
+          "fn": 66,
+          "tp": 169,
+          "candidate_only": 63,
+          "pymatching_only": 3,
+          "mean_paired_ler_difference": 0.02,
+          "root_t_95ci": [
+            0.0020866282092671176,
+            0.03791337179073288
+          ]
+        },
+        "balanced": {
+          "mean_ler": 0.017,
+          "mean_pymatching_ler": 0.004333333333333334,
+          "mean_positive_recall": 0.8294409749327781,
+          "tn": 2793,
+          "fp": 19,
+          "fn": 32,
+          "tp": 156,
+          "candidate_only": 44,
+          "pymatching_only": 6,
+          "mean_paired_ler_difference": 0.012666666666666665,
+          "root_t_95ci": [
+            0.006415057187055781,
+            0.01891827614627755
+          ]
+        },
+        "z_biased": {
+          "mean_ler": 0.007333333333333333,
+          "mean_pymatching_ler": 0.0016666666666666668,
+          "mean_positive_recall": 0.9009830101784125,
+          "tn": 2908,
+          "fp": 14,
+          "fn": 8,
+          "tp": 70,
+          "candidate_only": 18,
+          "pymatching_only": 1,
+          "mean_paired_ler_difference": 0.005666666666666667,
+          "root_t_95ci": [
+            -0.003738126922604456,
+            0.01507146025593779
+          ]
+        }
+      }
+    },
+    "coordinate_channel_cnn__weighted_bce": {
+      "n_roots": 3,
+      "parameter_count": 13737,
+      "mean_ler": 0.02311111111111111,
+      "mean_pymatching_ler": 0.004111111111111111,
+      "mean_paired_ler_difference": 0.019,
+      "root_t_95ci_paired_difference": [
+        0.00388958020629606,
+        0.03411041979370394
+      ],
+      "root_differences": [
+        0.022,
+        0.023000000000000003,
+        0.011999999999999999
+      ],
+      "mean_positive_recall": 0.6857237327096318,
+      "candidate_only": 183,
+      "pymatching_only": 12,
+      "temperature_mean": 0.9,
+      "threshold_mean": 0.43,
+      "by_regime": {
+        "x_biased": {
+          "mean_ler": 0.030666666666666672,
+          "mean_pymatching_ler": 0.006333333333333333,
+          "mean_positive_recall": 0.6725357975357976,
+          "tn": 2750,
+          "fp": 15,
+          "fn": 77,
+          "tp": 158,
+          "candidate_only": 76,
+          "pymatching_only": 3,
+          "mean_paired_ler_difference": 0.024333333333333335,
+          "root_t_95ci": [
+            0.005688504837051144,
+            0.04297816182961553
+          ]
+        },
+        "balanced": {
+          "mean_ler": 0.02766666666666667,
+          "mean_pymatching_ler": 0.004333333333333334,
+          "mean_positive_recall": 0.6705210772833724,
+          "tn": 2791,
+          "fp": 21,
+          "fn": 62,
+          "tp": 126,
+          "candidate_only": 77,
+          "pymatching_only": 7,
+          "mean_paired_ler_difference": 0.023333333333333334,
+          "root_t_95ci": [
+            -0.00014582029945588507,
+            0.04681248696612256
+          ]
+        },
+        "z_biased": {
+          "mean_ler": 0.011000000000000001,
+          "mean_pymatching_ler": 0.0016666666666666668,
+          "mean_positive_recall": 0.7141143233097256,
+          "tn": 2911,
+          "fp": 11,
+          "fn": 22,
+          "tp": 56,
+          "candidate_only": 30,
+          "pymatching_only": 2,
+          "mean_paired_ler_difference": 0.009333333333333334,
+          "root_t_95ci": [
+            -0.004792071635801988,
+            0.023458738302468654
+          ]
+        }
+      }
+    },
+    "pooled_cnn16_capacity_control__balanced_minibatches": {
+      "n_roots": 3,
+      "parameter_count": 14769,
+      "mean_ler": 0.03888888888888889,
+      "mean_pymatching_ler": 0.004111111111111111,
+      "mean_paired_ler_difference": 0.034777777777777776,
+      "root_t_95ci_paired_difference": [
+        0.018544417045848832,
+        0.05101113850970672
+      ],
+      "root_differences": [
+        0.04166666666666667,
+        0.033999999999999996,
+        0.028666666666666667
+      ],
+      "mean_positive_recall": 0.6890333504914876,
+      "candidate_only": 325,
+      "pymatching_only": 12,
+      "temperature_mean": 1.0666666666666667,
+      "threshold_mean": 0.37999999999999995,
+      "by_regime": {
+        "x_biased": {
+          "mean_ler": 0.04866666666666667,
+          "mean_pymatching_ler": 0.006333333333333333,
+          "mean_positive_recall": 0.7028429903429904,
+          "tn": 2689,
+          "fp": 76,
+          "fn": 70,
+          "tp": 165,
+          "candidate_only": 131,
+          "pymatching_only": 4,
+          "mean_paired_ler_difference": 0.042333333333333334,
+          "root_t_95ci": [
+            0.0173268954148898,
+            0.06733977125177687
+          ]
+        },
+        "balanced": {
+          "mean_ler": 0.04566666666666667,
+          "mean_pymatching_ler": 0.004333333333333334,
+          "mean_positive_recall": 0.6750856535692602,
+          "tn": 2736,
+          "fp": 76,
+          "fn": 61,
+          "tp": 127,
+          "candidate_only": 131,
+          "pymatching_only": 7,
+          "mean_paired_ler_difference": 0.04133333333333333,
+          "root_t_95ci": [
+            0.028830114374111572,
+            0.053836552292555094
+          ]
+        },
+        "z_biased": {
+          "mean_ler": 0.022333333333333334,
+          "mean_pymatching_ler": 0.0016666666666666668,
+          "mean_positive_recall": 0.6891714075622121,
+          "tn": 2879,
+          "fp": 43,
+          "fn": 24,
+          "tp": 54,
+          "candidate_only": 63,
+          "pymatching_only": 1,
+          "mean_paired_ler_difference": 0.02066666666666667,
+          "root_t_95ci": [
+            -0.004462855365007054,
+            0.045796188698340394
+          ]
+        }
+      }
+    },
+    "pooled_cnn16_capacity_control__weighted_bce": {
+      "n_roots": 3,
+      "parameter_count": 14769,
+      "mean_ler": 0.051666666666666666,
+      "mean_pymatching_ler": 0.004111111111111111,
+      "mean_paired_ler_difference": 0.04755555555555555,
+      "root_t_95ci_paired_difference": [
+        0.04223196521439259,
+        0.052879145896718514
+      ],
+      "root_differences": [
+        0.05,
+        0.046,
+        0.04666666666666667
+      ],
+      "mean_positive_recall": 0.17581154507482158,
+      "candidate_only": 440,
+      "pymatching_only": 12,
+      "temperature_mean": 1.0666666666666667,
+      "threshold_mean": 0.5333333333333333,
+      "by_regime": {
+        "x_biased": {
+          "mean_ler": 0.069,
+          "mean_pymatching_ler": 0.006333333333333333,
+          "mean_positive_recall": 0.251486013986014,
+          "tn": 2734,
+          "fp": 31,
+          "fn": 176,
+          "tp": 59,
+          "candidate_only": 191,
+          "pymatching_only": 3,
+          "mean_paired_ler_difference": 0.06266666666666666,
+          "root_t_95ci": [
+            0.05262714363020702,
+            0.07270618970312631
+          ]
+        },
+        "balanced": {
+          "mean_ler": 0.057666666666666665,
+          "mean_pymatching_ler": 0.004333333333333334,
+          "mean_positive_recall": 0.16961710686095932,
+          "tn": 2795,
+          "fp": 17,
+          "fn": 156,
+          "tp": 32,
+          "candidate_only": 168,
+          "pymatching_only": 8,
+          "mean_paired_ler_difference": 0.05333333333333334,
+          "root_t_95ci": [
+            0.045347947821588915,
+            0.06131871884507776
+          ]
+        },
+        "z_biased": {
+          "mean_ler": 0.028333333333333332,
+          "mean_pymatching_ler": 0.0016666666666666668,
+          "mean_positive_recall": 0.10633151437749139,
+          "tn": 2907,
+          "fp": 15,
+          "fn": 70,
+          "tp": 8,
+          "candidate_only": 81,
+          "pymatching_only": 1,
+          "mean_paired_ler_difference": 0.02666666666666667,
+          "root_t_95ci": [
+            0.02523244909002957,
+            0.028100884243303766
+          ]
+        }
+      }
+    },
+    "pooled_cnn8__balanced_minibatches": {
+      "n_roots": 3,
+      "parameter_count": 3929,
+      "mean_ler": 0.05244444444444444,
+      "mean_pymatching_ler": 0.004111111111111111,
+      "mean_paired_ler_difference": 0.04833333333333334,
+      "root_t_95ci_paired_difference": [
+        0.03518851211738212,
+        0.061478154549284555
+      ],
+      "root_differences": [
+        0.05033333333333334,
+        0.04233333333333333,
+        0.052333333333333336
+      ],
+      "mean_positive_recall": 0.08785518729735486,
+      "candidate_only": 447,
+      "pymatching_only": 12,
+      "temperature_mean": 1.0666666666666667,
+      "threshold_mean": 0.7600000000000001,
+      "by_regime": {
+        "x_biased": {
+          "mean_ler": 0.07233333333333335,
+          "mean_pymatching_ler": 0.006333333333333333,
+          "mean_positive_recall": 0.10378510378510379,
+          "tn": 2759,
+          "fp": 6,
+          "fn": 211,
+          "tp": 24,
+          "candidate_only": 201,
+          "pymatching_only": 3,
+          "mean_paired_ler_difference": 0.066,
+          "root_t_95ci": [
+            0.03778561923218664,
+            0.09421438076781337
+          ]
+        },
+        "balanced": {
+          "mean_ler": 0.06,
+          "mean_pymatching_ler": 0.004333333333333334,
+          "mean_positive_recall": 0.09524622690606298,
+          "tn": 2802,
+          "fp": 10,
+          "fn": 170,
+          "tp": 18,
+          "candidate_only": 175,
+          "pymatching_only": 8,
+          "mean_paired_ler_difference": 0.05566666666666667,
+          "root_t_95ci": [
+            0.0453243766411932,
+            0.06600895669214013
+          ]
+        },
+        "z_biased": {
+          "mean_ler": 0.024999999999999998,
+          "mean_pymatching_ler": 0.0016666666666666668,
+          "mean_positive_recall": 0.06453423120089787,
+          "tn": 2920,
+          "fp": 2,
+          "fn": 73,
+          "tp": 5,
+          "candidate_only": 71,
+          "pymatching_only": 1,
+          "mean_paired_ler_difference": 0.023333333333333334,
+          "root_t_95ci": [
+            0.01708172385372245,
+            0.02958494281294422
+          ]
+        }
+      }
+    },
+    "pooled_cnn8__weighted_bce": {
+      "n_roots": 3,
+      "parameter_count": 3929,
+      "mean_ler": 0.05433333333333334,
+      "mean_pymatching_ler": 0.004111111111111111,
+      "mean_paired_ler_difference": 0.050222222222222224,
+      "root_t_95ci_paired_difference": [
+        0.04613756877342637,
+        0.05430687567101808
+      ],
+      "root_differences": [
+        0.051000000000000004,
+        0.04833333333333333,
+        0.051333333333333335
+      ],
+      "mean_positive_recall": 0.0414955414955415,
+      "candidate_only": 464,
+      "pymatching_only": 12,
+      "temperature_mean": 0.9500000000000001,
+      "threshold_mean": 0.7033333333333335,
+      "by_regime": {
+        "x_biased": {
+          "mean_ler": 0.077,
+          "mean_pymatching_ler": 0.006333333333333333,
+          "mean_positive_recall": 0.029970029970029972,
+          "tn": 2762,
+          "fp": 3,
+          "fn": 228,
+          "tp": 7,
+          "candidate_only": 215,
+          "pymatching_only": 3,
+          "mean_paired_ler_difference": 0.07066666666666667,
+          "root_t_95ci": [
+            0.06923244909002957,
+            0.07210088424330377
+          ]
+        },
+        "balanced": {
+          "mean_ler": 0.06066666666666667,
+          "mean_pymatching_ler": 0.004333333333333334,
+          "mean_positive_recall": 0.042328042328042326,
+          "tn": 2810,
+          "fp": 2,
+          "fn": 180,
+          "tp": 8,
+          "candidate_only": 177,
+          "pymatching_only": 8,
+          "mean_paired_ler_difference": 0.05633333333333334,
+          "root_t_95ci": [
+            0.04383011437411158,
+            0.0688365522925551
+          ]
+        },
+        "z_biased": {
+          "mean_ler": 0.025333333333333333,
+          "mean_pymatching_ler": 0.0016666666666666668,
+          "mean_positive_recall": 0.052188552188552194,
+          "tn": 2920,
+          "fp": 2,
+          "fn": 74,
+          "tp": 4,
+          "candidate_only": 72,
+          "pymatching_only": 1,
+          "mean_paired_ler_difference": 0.02366666666666667,
+          "root_t_95ci": [
+            0.017415057187055785,
+            0.029918276146277553
+          ]
+        }
+      }
+    },
+    "position_flat_cnn__balanced_minibatches": {
+      "n_roots": 3,
+      "parameter_count": 13413,
+      "mean_ler": 0.012666666666666668,
+      "mean_pymatching_ler": 0.004111111111111111,
+      "mean_paired_ler_difference": 0.008555555555555558,
+      "root_t_95ci_paired_difference": [
+        0.0051081255470644,
+        0.012002985564046716
+      ],
+      "root_differences": [
+        0.007000000000000001,
+        0.008999999999999998,
+        0.009666666666666669
+      ],
+      "mean_positive_recall": 0.8368106081646767,
+      "candidate_only": 87,
+      "pymatching_only": 10,
+      "temperature_mean": 0.9500000000000001,
+      "threshold_mean": 0.43333333333333335,
+      "by_regime": {
+        "x_biased": {
+          "mean_ler": 0.021666666666666667,
+          "mean_pymatching_ler": 0.006333333333333333,
+          "mean_positive_recall": 0.7485098235098234,
+          "tn": 2759,
+          "fp": 6,
+          "fn": 59,
+          "tp": 176,
+          "candidate_only": 49,
+          "pymatching_only": 3,
+          "mean_paired_ler_difference": 0.015333333333333336,
+          "root_t_95ci": [
+            0.00816224545014788,
+            0.022504421216518793
+          ]
+        },
+        "balanced": {
+          "mean_ler": 0.013333333333333334,
+          "mean_pymatching_ler": 0.004333333333333334,
+          "mean_positive_recall": 0.8609389908057942,
+          "tn": 2798,
+          "fp": 14,
+          "fn": 26,
+          "tp": 162,
+          "candidate_only": 32,
+          "pymatching_only": 5,
+          "mean_paired_ler_difference": 0.009,
+          "root_t_95ci": [
+            0.002427589392024398,
+            0.0155724106079756
+          ]
+        },
+        "z_biased": {
+          "mean_ler": 0.0030000000000000005,
+          "mean_pymatching_ler": 0.0016666666666666668,
+          "mean_positive_recall": 0.9009830101784125,
+          "tn": 2921,
+          "fp": 1,
+          "fn": 8,
+          "tp": 70,
+          "candidate_only": 6,
+          "pymatching_only": 2,
+          "mean_paired_ler_difference": 0.0013333333333333333,
+          "root_t_95ci": [
+            -0.0015351018199408503,
+            0.004201768486607517
+          ]
+        }
+      }
+    },
+    "position_flat_cnn__weighted_bce": {
+      "n_roots": 3,
+      "parameter_count": 13413,
+      "mean_ler": 0.019444444444444445,
+      "mean_pymatching_ler": 0.004111111111111111,
+      "mean_paired_ler_difference": 0.015333333333333332,
+      "root_t_95ci_paired_difference": [
+        0.009537012005697908,
+        0.021129654660968757
+      ],
+      "root_differences": [
+        0.015333333333333334,
+        0.017666666666666667,
+        0.013
+      ],
+      "mean_positive_recall": 0.7881110697234056,
+      "candidate_only": 150,
+      "pymatching_only": 12,
+      "temperature_mean": 0.9500000000000001,
+      "threshold_mean": 0.4166666666666667,
+      "by_regime": {
+        "x_biased": {
+          "mean_ler": 0.029333333333333333,
+          "mean_pymatching_ler": 0.006333333333333333,
+          "mean_positive_recall": 0.7023004773004774,
+          "tn": 2747,
+          "fp": 18,
+          "fn": 70,
+          "tp": 165,
+          "candidate_only": 72,
+          "pymatching_only": 3,
+          "mean_paired_ler_difference": 0.023000000000000003,
+          "root_t_95ci": [
+            0.01869734727008873,
+            0.027302652729911277
+          ]
+        },
+        "balanced": {
+          "mean_ler": 0.022000000000000002,
+          "mean_pymatching_ler": 0.004333333333333334,
+          "mean_positive_recall": 0.786592505854801,
+          "tn": 2786,
+          "fp": 26,
+          "fn": 40,
+          "tp": 148,
+          "candidate_only": 59,
+          "pymatching_only": 6,
+          "mean_paired_ler_difference": 0.017666666666666667,
+          "root_t_95ci": [
+            0.005927089850272063,
+            0.02940624348306127
+          ]
+        },
+        "z_biased": {
+          "mean_ler": 0.007,
+          "mean_pymatching_ler": 0.0016666666666666668,
+          "mean_positive_recall": 0.8754402260149386,
+          "tn": 2911,
+          "fp": 11,
+          "fn": 10,
+          "tp": 68,
+          "candidate_only": 19,
+          "pymatching_only": 3,
+          "mean_paired_ler_difference": 0.005333333333333333,
+          "root_t_95ci": [
+            -0.0047061897031263076,
+            0.015372856369792975
+          ]
+        }
+      }
+    },
+    "contrast__position_flat_cnn_minus_pooled_cnn8__balanced_minibatches": {
+      "paired_root_differences": [
+        -0.043333333333333335,
+        -0.033333333333333326,
+        -0.042666666666666665
+      ],
+      "mean_difference": -0.03977777777777777,
+      "root_t_95ci": [
+        -0.05366658689488013,
+        -0.025888968660675415
+      ],
+      "n_roots": 3
+    },
+    "contrast__coordinate_channel_cnn_minus_pooled_cnn8__balanced_minibatches": {
+      "paired_root_differences": [
+        -0.04100000000000001,
+        -0.02466666666666666,
+        -0.041
+      ],
+      "mean_difference": -0.035555555555555556,
+      "root_t_95ci": [
+        -0.058981109307294735,
+        -0.012130001803816376
+      ],
+      "n_roots": 3
+    },
+    "contrast__balanced_mlp_minus_pooled_cnn8__balanced_minibatches": {
+      "paired_root_differences": [
+        -0.044333333333333336,
+        -0.031999999999999994,
+        -0.043000000000000003
+      ],
+      "mean_difference": -0.03977777777777778,
+      "root_t_95ci": [
+        -0.056592071732214005,
+        -0.02296348382334155
+      ],
+      "n_roots": 3
+    },
+    "contrast__position_flat_cnn_minus_pooled_cnn16__balanced_minibatches": {
+      "paired_root_differences": [
+        -0.034666666666666665,
+        -0.024999999999999994,
+        -0.018999999999999996
+      ],
+      "mean_difference": -0.02622222222222222,
+      "root_t_95ci": [
+        -0.04585814552730082,
+        -0.006586298917143619
+      ],
+      "n_roots": 3
+    },
+    "contrast__coordinate_channel_cnn_minus_pooled_cnn16__balanced_minibatches": {
+      "paired_root_differences": [
+        -0.03233333333333334,
+        -0.016333333333333328,
+        -0.017333333333333333
+      ],
+      "mean_difference": -0.022000000000000002,
+      "root_t_95ci": [
+        -0.044265044212160924,
+        0.0002650442121609198
+      ],
+      "n_roots": 3
+    },
+    "contrast__balanced_mlp_minus_pooled_cnn16__balanced_minibatches": {
+      "paired_root_differences": [
+        -0.035666666666666666,
+        -0.023666666666666662,
+        -0.019333333333333334
+      ],
+      "mean_difference": -0.02622222222222222,
+      "root_t_95ci": [
+        -0.04724110910056601,
+        -0.005203335343878429
+      ],
+      "n_roots": 3
+    },
+    "contrast__position_flat_cnn_minus_pooled_cnn8__weighted_bce": {
+      "paired_root_differences": [
+        -0.035666666666666666,
+        -0.030666666666666665,
+        -0.03833333333333333
+      ],
+      "mean_difference": -0.034888888888888886,
+      "root_t_95ci": [
+        -0.04455730737020171,
+        -0.025220470407576065
+      ],
+      "n_roots": 3
+    },
+    "contrast__coordinate_channel_cnn_minus_pooled_cnn8__weighted_bce": {
+      "paired_root_differences": [
+        -0.029,
+        -0.02533333333333333,
+        -0.03933333333333333
+      ],
+      "mean_difference": -0.03122222222222222,
+      "root_t_95ci": [
+        -0.04925639540446087,
+        -0.013188049039983572
+      ],
+      "n_roots": 3
+    },
+    "contrast__balanced_mlp_minus_pooled_cnn8__weighted_bce": {
+      "paired_root_differences": [
+        -0.04166666666666667,
+        -0.035666666666666666,
+        -0.03766666666666667
+      ],
+      "mean_difference": -0.03833333333333334,
+      "root_t_95ci": [
+        -0.04592249940081227,
+        -0.0307441672658544
+      ],
+      "n_roots": 3
+    },
+    "contrast__position_flat_cnn_minus_pooled_cnn16__weighted_bce": {
+      "paired_root_differences": [
+        -0.034666666666666665,
+        -0.028333333333333332,
+        -0.033666666666666664
+      ],
+      "mean_difference": -0.03222222222222222,
+      "root_t_95ci": [
+        -0.040680188604299755,
+        -0.023764255840144688
+      ],
+      "n_roots": 3
+    },
+    "contrast__coordinate_channel_cnn_minus_pooled_cnn16__weighted_bce": {
+      "paired_root_differences": [
+        -0.028,
+        -0.022999999999999996,
+        -0.034666666666666665
+      ],
+      "mean_difference": -0.028555555555555556,
+      "root_t_95ci": [
+        -0.04309556378132759,
+        -0.014015547329783527
+      ],
+      "n_roots": 3
+    },
+    "contrast__balanced_mlp_minus_pooled_cnn16__weighted_bce": {
+      "paired_root_differences": [
+        -0.04066666666666667,
+        -0.03333333333333333,
+        -0.033
+      ],
+      "mean_difference": -0.03566666666666667,
+      "root_t_95ci": [
+        -0.0464312634179896,
+        -0.02490206991534374
+      ],
+      "n_roots": 3
+    },
+    "contrast__pooled_cnn16_minus_pooled_cnn8__balanced_minibatches": {
+      "paired_root_differences": [
+        -0.00866666666666667,
+        -0.008333333333333331,
+        -0.02366666666666667
+      ],
+      "mean_difference": -0.013555555555555557,
+      "root_t_95ci": [
+        -0.035311795269271695,
+        0.008200684158160578
+      ],
+      "n_roots": 3
+    },
+    "contrast__pooled_cnn16_minus_pooled_cnn8__weighted_bce": {
+      "paired_root_differences": [
+        -0.0010000000000000009,
+        -0.002333333333333333,
+        -0.004666666666666666
+      ],
+      "mean_difference": -0.0026666666666666666,
+      "root_t_95ci": [
+        -0.007277031141455252,
+        0.0019436978081219182
+      ],
+      "n_roots": 3
+    }
+  },
+  "runner_issue": "The execution completed and persisted results; its final CSV export raised KeyError for a missing derived paired_ler_difference field. This independent audit reconstructed CSV/report outputs from saved checkpoints and arrays without simulation."
+}

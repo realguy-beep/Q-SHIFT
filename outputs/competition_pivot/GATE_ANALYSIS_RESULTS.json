@@ -1,0 +1,116 @@
+{
+  "status": "development_only_retrospective_cross_root_analysis_not_confirmatory",
+  "source": "outputs/conditional_go_resolution/DEVELOPMENT_RAW_EVIDENCE.npz",
+  "versions": {
+    "numpy": "2.5.3",
+    "scikit_learn": "1.9.1"
+  },
+  "model": {
+    "type": "StandardScaler + LogisticRegression",
+    "C": 0.1,
+    "threshold": 0.5,
+    "threshold_rule": "fixed 0.5 equal-cost classification cutoff"
+  },
+  "data": {
+    "roots": 24,
+    "shots": 98304,
+    "disagreements": 225,
+    "selected_vs_pooled_disagreement_rate": 0.002288818359375
+  },
+  "paired_errors": {
+    "pooled_fixed_no_update": 681,
+    "always_adaptive_equals_existing_calibration_selected": 672,
+    "calibration_confidence_gate_loo_0_5": 686,
+    "shot_confidence_gate_loo_root_0_5": 684,
+    "simple_detector_loglik_delta_gt_0": 672
+  },
+  "ler": {
+    "pooled_fixed_no_update": 0.006927490234375,
+    "always_adaptive_equals_existing_calibration_selected": 0.0068359375,
+    "calibration_confidence_gate_loo_0_5": 0.006978352864583333,
+    "shot_confidence_gate_loo_root_0_5": 0.0069580078125,
+    "simple_detector_loglik_delta_gt_0": 0.0068359375
+  },
+  "paired_discordance": {
+    "candidate_only_wrong": 108,
+    "pooled_only_wrong": 117
+  },
+  "calibration_confidence_gate": {
+    "features": [
+      "calibration score top-runner-up margin",
+      "selected-minus-pooled calibration score"
+    ],
+    "out_of_root_auc": 0.5703703703703704,
+    "out_of_root_brier": 0.2370573184960542,
+    "constant_prevalence_brier": 0.234375,
+    "candidate_better_roots": 15,
+    "candidate_worse_roots": 6,
+    "ties": 3,
+    "candidate_selected_roots": 21,
+    "fallback_roots": 3,
+    "fallback_fraction": 0.125,
+    "harmful_selected_roots": 6,
+    "helpful_selected_roots": 12,
+    "candidate_errors_when_selected": 514,
+    "pooled_errors_on_fallback_roots": 172,
+    "limitations": "24 roots only; classifier performance is cross-validated within one exploratory dataset; not an independent policy test."
+  },
+  "shot_confidence_gate": {
+    "features": [
+      "per-shot detector-marginal log-likelihood difference",
+      "detector weight",
+      "calibration top-runner-up margin",
+      "calibration selected-minus-pooled score",
+      "selected decoder index"
+    ],
+    "target": "candidate prediction correct conditional on candidate and pooled predictions disagree",
+    "cross_validation": "leave-one-calibration/evaluation-root-out; all features for held-out root excluded from fit",
+    "out_of_root_auc": 0.4641104779993669,
+    "out_of_root_brier": 0.25024523604506144,
+    "constant_prevalence_brier": 0.2496,
+    "candidate_choices_on_disagreements": 131,
+    "fallback_choices_on_disagreements": 94,
+    "fallback_fraction_on_disagreements": 0.4177777777777778,
+    "candidate_harms_when_applied": 67,
+    "candidate_helps_when_applied": 64,
+    "candidate_harm_rate_when_applied": 0.5114503816793893,
+    "missed_candidate_wins_on_fallback": 53,
+    "avoided_candidate_harms_on_fallback": 41,
+    "limitations": "Requires both decoder predictions before gating; increases decode work. Only 225 disagreement shots across 24 roots."
+  },
+  "simple_detector_likelihood_threshold": {
+    "rule": "use calibrated candidate when its factorized detector-marginal log likelihood exceeds pooled model's",
+    "candidate_choices_on_disagreements": 225,
+    "fallback_choices_on_disagreements": 0,
+    "result": "identical to always-adaptive selection on this evidence; confidence score did not create selectivity"
+  },
+  "runtime": {
+    "analysis_wall_seconds": 0.4010955000012473,
+    "decode_latency": "not measurable from saved predictions; the gate analysis does not rerun the decoders"
+  },
+  "memory": {
+    "decode_model_memory": "not measured; saved predictions omit native decoder object sizes",
+    "analysis_process_before_loading_npz": {
+      "working_set_bytes": 150155264,
+      "peak_working_set_bytes": 150155264
+    },
+    "analysis_process_after_analysis": {
+      "working_set_bytes": 158445568,
+      "peak_working_set_bytes": 204648448
+    },
+    "interpretation": "Process-level Windows counters include Python, NumPy, scikit-learn and mapped arrays; they do not isolate a decoder or online gate."
+  },
+  "causality": {
+    "features_use_only_detector_data": true,
+    "calibration_gate_features_precede_evaluation_block": true,
+    "shot_gate_uses_current_detector_only": true,
+    "true_logical_labels_in_gate_features": false,
+    "held_out_fold_labels_in_training": false,
+    "hidden_regime_id_in_features": false,
+    "regime_id_used_for_stratified_reporting_only": true
+  },
+  "files": {
+    "per_root": "GATE_PER_ROOT.csv",
+    "per_shot_summary": "GATE_DISAGREEMENT_SUMMARY.csv"
+  }
+}

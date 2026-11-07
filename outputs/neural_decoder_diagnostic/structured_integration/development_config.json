@@ -1,0 +1,222 @@
+{
+  "mode": "development",
+  "experiment_id": "qshift_structured_development_v1",
+  "training_shots_by_regime": {
+    "x_biased": 2000,
+    "balanced": 2000,
+    "z_biased": 2000
+  },
+  "validation_shots_by_regime": {
+    "x_biased": 1000,
+    "balanced": 1000,
+    "z_biased": 1000
+  },
+  "batch_size": 128,
+  "candidates": [
+    "direct_mlp",
+    "residual_mlp",
+    "structured_ch8_unweighted",
+    "structured_ch8_weighted"
+  ],
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "max_epochs": 2,
+  "early_stopping_patience": 1,
+  "checkpoint_frequency_steps": 8,
+  "max_wall_seconds_per_invocation": 0,
+  "device": "auto",
+  "seed_inventory": {
+    "allocation": "one deterministic Stim seed per streamed batch; separate train/validation roots per regime",
+    "train_per_regime": 2000,
+    "validation_per_regime": 1000,
+    "batch_size": 128,
+    "model_seed": 1160000001,
+    "model_seeds": [
+      1160000001,
+      1160000002,
+      1160000003,
+      1160000004,
+      1160000005,
+      1160000006
+    ],
+    "diagnostic_seeds": [
+      1170000001,
+      1170000002,
+      1170000003
+    ],
+    "streams": [
+      {
+        "split": "train",
+        "regime": "x_biased",
+        "root": 1100000001,
+        "shots": 2000,
+        "batch_size": 128,
+        "batch_count": 16,
+        "seed_range_inclusive": [
+          1100000001,
+          1100000016
+        ],
+        "seeds": [
+          1100000001,
+          1100000002,
+          1100000003,
+          1100000004,
+          1100000005,
+          1100000006,
+          1100000007,
+          1100000008,
+          1100000009,
+          1100000010,
+          1100000011,
+          1100000012,
+          1100000013,
+          1100000014,
+          1100000015,
+          1100000016
+        ]
+      },
+      {
+        "split": "train",
+        "regime": "balanced",
+        "root": 1100100001,
+        "shots": 2000,
+        "batch_size": 128,
+        "batch_count": 16,
+        "seed_range_inclusive": [
+          1100100001,
+          1100100016
+        ],
+        "seeds": [
+          1100100001,
+          1100100002,
+          1100100003,
+          1100100004,
+          1100100005,
+          1100100006,
+          1100100007,
+          1100100008,
+          1100100009,
+          1100100010,
+          1100100011,
+          1100100012,
+          1100100013,
+          1100100014,
+          1100100015,
+          1100100016
+        ]
+      },
+      {
+        "split": "train",
+        "regime": "z_biased",
+        "root": 1100200001,
+        "shots": 2000,
+        "batch_size": 128,
+        "batch_count": 16,
+        "seed_range_inclusive": [
+          1100200001,
+          1100200016
+        ],
+        "seeds": [
+          1100200001,
+          1100200002,
+          1100200003,
+          1100200004,
+          1100200005,
+          1100200006,
+          1100200007,
+          1100200008,
+          1100200009,
+          1100200010,
+          1100200011,
+          1100200012,
+          1100200013,
+          1100200014,
+          1100200015,
+          1100200016
+        ]
+      },
+      {
+        "split": "validation",
+        "regime": "x_biased",
+        "root": 1130000001,
+        "shots": 1000,
+        "batch_size": 128,
+        "batch_count": 8,
+        "seed_range_inclusive": [
+          1130000001,
+          1130000008
+        ],
+        "seeds": [
+          1130000001,
+          1130000002,
+          1130000003,
+          1130000004,
+          1130000005,
+          1130000006,
+          1130000007,
+          1130000008
+        ]
+      },
+      {
+        "split": "validation",
+        "regime": "balanced",
+        "root": 1130100001,
+        "shots": 1000,
+        "batch_size": 128,
+        "batch_count": 8,
+        "seed_range_inclusive": [
+          1130100001,
+          1130100008
+        ],
+        "seeds": [
+          1130100001,
+          1130100002,
+          1130100003,
+          1130100004,
+          1130100005,
+          1130100006,
+          1130100007,
+          1130100008
+        ]
+      },
+      {
+        "split": "validation",
+        "regime": "z_biased",
+        "root": 1130200001,
+        "shots": 1000,
+        "batch_size": 128,
+        "batch_count": 8,
+        "seed_range_inclusive": [
+          1130200001,
+          1130200008
+        ],
+        "seeds": [
+          1130200001,
+          1130200002,
+          1130200003,
+          1130200004,
+          1130200005,
+          1130200006,
+          1130200007,
+          1130200008
+        ]
+      }
+    ],
+    "unique_derived_seed_count": 81,
+    "derived_seed_count": 81,
+    "historical_seed_values_checked": 2076,
+    "prepared_100k_seed_values_checked": 397,
+    "collisions": [],
+    "passed": true,
+    "coverage_limit": "screening covers recoverable historical scan values, frozen 100K allocation, and saved dashboard run inventories; unavailable seed records remain unknown."
+  },
+  "noise_parameters": {
+    "distance": 3,
+    "rounds": 5,
+    "basis": "z",
+    "gate_p": 0.003,
+    "measurement_p": 0.003,
+    "bias_ratio": 10.0
+  },
+  "test_access": "disabled; development validation only"
+}

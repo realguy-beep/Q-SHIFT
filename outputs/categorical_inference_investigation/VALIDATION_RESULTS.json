@@ -1,0 +1,152 @@
+{
+  "status": "PASS",
+  "commands": [
+    {
+      "label": "py_compile",
+      "command": [
+        "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "py_compile",
+        "baseline_reproduction.py",
+        "categorical_dem_analysis.py",
+        "controlled_variants.py",
+        "controlled_cycle_variants.py",
+        "factor_graph.py",
+        "structured_inference.py",
+        "phase2b_fragments.py",
+        "run_fragment.py",
+        "toy_ve_analysis.py",
+        "circuit_heuristics.py",
+        "summarize_investigation.py",
+        "separator_ablation.py",
+        "test_exact_inference.py",
+        "test_dem_attribution.py",
+        "build_manifest.py",
+        "verify_manifest.py",
+        "run_validation.py"
+      ],
+      "return_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "baseline_reproduction",
+      "command": [
+        "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "baseline_reproduction.py"
+      ],
+      "return_code": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"hashes\": 20,\n  \"software\": {\n    \"python\": \"3.12.10\",\n    \"stim\": \"1.16.0\",\n    \"pymatching\": \"2.4.0\",\n    \"numpy\": \"2.5.3\"\n  },\n  \"one_qubit_risks\": {\n    \"exact\": 0.002646,\n    \"off\": 0.002646,\n    \"on\": 0.002646\n  },\n  \"two_qubit_risks\": {\n    \"exact\": 0.06,\n    \"off\": 0.1128,\n    \"on\": 0.1128\n  },\n  \"syndrome_11_decisions\": [\n    1,\n    0,\n    0\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "independent_dem_enumeration",
+      "command": [
+        "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "categorical_dem_analysis.py"
+      ],
+      "return_code": 0,
+      "stdout": "{\n  \"events\": 6,\n  \"configurations\": 64,\n  \"mass\": 0.9999999999999998,\n  \"syndrome_11\": {\n    \"categorical_exact_MAP\": 1,\n    \"independent_DEM_exact_MAP\": 1,\n    \"PyMatching_standard\": 0,\n    \"PyMatching_correlation_enabled\": 0,\n    \"conclusion\": \"The independent DEM posterior and original categorical posterior both choose logical 1 at syndrome 11; both PyMatching variants choose logical 0. For this toy syndrome the observed decision gap is therefore an inference/optimization mismatch relative to posterior MAP, not a DEM-induced MAP change. DEM approximation changes posterior probabilities, but not this syndrome's exact decision.\"\n  },\n  \"risk_original\": {\n    \"categorical_exact_MAP\": 0.06,\n    \"independent_DEM_exact_MAP\": 0.06,\n    \"PyMatching_standard\": 0.1128,\n    \"PyMatching_correlation_enabled\": 0.1128\n  },\n  \"risk_dem\": {\n    \"categorical_exact_MAP\": 0.058199999999999995,\n    \"independent_DEM_exact_MAP\": 0.058199999999999995,\n    \"PyMatching_standard\": 0.10962551999999999,\n    \"PyMatching_correlation_enabled\": 0.10962551999999999\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "separator_ablation",
+      "command": [
+        "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "separator_ablation.py"
+      ],
+      "return_code": 0,
+      "stdout": "{\n  \"DEM_MAP\": 1,\n  \"with_sep_standard\": 0,\n  \"with_sep_correlated\": 0,\n  \"without_sep_standard\": 1,\n  \"without_sep_correlated\": 1\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "fixed_marginal_variants",
+      "command": [
+        "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "controlled_cycle_variants.py"
+      ],
+      "return_code": 0,
+      "stdout": "[\n  {\n    \"alpha\": -1.0,\n    \"exact\": 0.06000000000000004,\n    \"standard\": 0.11280000000000001,\n    \"correlation\": 0.11280000000000001,\n    \"std_disagreements\": 1,\n    \"corr_disagreements\": 1\n  },\n  {\n    \"alpha\": -0.5,\n    \"exact\": 0.060000000000000026,\n    \"standard\": 0.11280000000000001,\n    \"correlation\": 0.11280000000000001,\n    \"std_disagreements\": 1,\n    \"corr_disagreements\": 1\n  },\n  {\n    \"alpha\": 0.0,\n    \"exact\": 0.06000000000000002,\n    \"standard\": 0.1128,\n    \"correlation\": 0.1128,\n    \"std_disagreements\": 1,\n    \"corr_disagreements\": 1\n  },\n  {\n    \"alpha\": 0.5,\n    \"exact\": 0.06000000000000003,\n    \"standard\": 0.11280000000000001,\n    \"correlation\": 0.11280000000000001,\n    \"std_disagreements\": 1,\n    \"corr_disagreements\": 1\n  },\n  {\n    \"alpha\": 1.0,\n    \"exact\": 0.06000000000000004,\n    \"standard\": 0.11280000000000001,\n    \"correlation\": 0.11280000000000001,\n    \"std_disagreements\": 1,\n    \"corr_disagreements\": 1\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "label": "product_marginal_sensitivity",
+      "command": [
+        "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "controlled_variants.py"
+      ],
+      "return_code": 0,
+      "stdout": "[\n  {\n    \"alpha\": 0.0,\n    \"exact\": 0.06000000000000002,\n    \"std\": 0.1128,\n    \"corr\": 0.1128,\n    \"disagree_std\": 1,\n    \"disagree_corr\": 1\n  },\n  {\n    \"alpha\": 0.25,\n    \"exact\": 0.04855824000000004,\n    \"std\": 0.13568352,\n    \"corr\": 0.13568352,\n    \"disagree_std\": 3,\n    \"disagree_corr\": 3\n  },\n  {\n    \"alpha\": 0.5,\n    \"exact\": 0.03746496000000003,\n    \"std\": 0.15787008000000002,\n    \"corr\": 0.15787008000000002,\n    \"disagree_std\": 3,\n    \"disagree_corr\": 3\n  },\n  {\n    \"alpha\": 0.75,\n    \"exact\": 0.02672015999999995,\n    \"std\": 0.17935968000000002,\n    \"corr\": 0.17935968000000002,\n    \"disagree_std\": 3,\n    \"disagree_corr\": 3\n  },\n  {\n    \"alpha\": 1.0,\n    \"exact\": 0.01632383999999998,\n    \"std\": 0.20015232000000005,\n    \"corr\": 0.20015232000000005,\n    \"disagree_std\": 3,\n    \"disagree_corr\": 3\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "label": "toy_variable_elimination",
+      "command": [
+        "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "toy_ve_analysis.py"
+      ],
+      "return_code": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"methods\": \"Dense tensor variable elimination over categorical location variables with XOR parity factors. Output bits are retained; faults are eliminated.\",\n  \"heuristic_definitions\": {\n    \"min_fill\": \"eliminate fault variable minimizing missing edges among its current neighbors, tie-breaking by degree then ID\",\n    \"min_degree\": \"eliminate fault variable minimizing current degree, tie-breaking by fill then ID\"\n  },\n  \"results\": [\n    {\n      \"model\": \"one_qubit\",\n      \"fault_variables\": 3,\n      \"outcome_domains\": [\n        4,\n        4,\n        4\n      ],\n      \"output_bits\": 3,\n      \"factor_nodes\": 6,\n      \"factor_incidences\": 13,\n      \"orders\": [\n        {\n          \"heuristic\": \"min_fill\",\n          \"induced_width\": 4,\n          \"max_combined_factor_states\": 256,\n          \"max_intermediate_dense_cells\": 256,\n          \"total_mass\": 1.0,\n          \"MAP_risk\": 0.0026459999999999956,\n          \"decisions_match_exhaustive\": true,\n          \"tie_syndromes\": []\n        },\n        {\n          \"heuristic\": \"min_degree\",\n          \"induced_width\": 4,\n          \"max_combined_factor_states\": 256,\n          \"max_intermediate_dense_cells\": 256,\n          \"total_mass\": 1.0,\n          \"MAP_risk\": 0.0026459999999999956,\n          \"decisions_match_exhaustive\": true,\n          \"tie_syndromes\": []\n        }\n      ]\n    },\n    {\n      \"model\": \"two_qubit\",\n      \"fault_variables\": 2,\n      \"outcome_domains\": [\n        16,\n        16\n      ],\n      \"output_bits\": 3,\n      \"factor_nodes\": 5,\n      \"factor_incidences\": 11,\n      \"orders\": [\n        {\n          \"heuristic\": \"min_fill\",\n          \"induced_width\": 4,\n          \"max_combined_factor_states\": 2048,\n          \"max_intermediate_dense_cells\": 2048,\n          \"total_mass\": 1.0000000000000004,\n          \"MAP_risk\": 0.060000000000000026,\n          \"decisions_match_exhaustive\": true,\n          \"tie_syndromes\": [\n            1,\n            2\n          ]\n        },\n        {\n          \"heuristic\": \"min_degree\",\n          \"induced_width\": 4,\n          \"max_combined_factor_states\": 2048,\n          \"max_intermediate_dense_cells\": 2048,\n          \"total_mass\": 1.0000000000000004,\n          \"MAP_risk\": 0.060000000000000026,\n          \"decisions_match_exhaustive\": true,\n          \"tie_syndromes\": [\n            1,\n            2\n          ]\n        }\n      ]\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "circuit_symbolic_heuristics",
+      "command": [
+        "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "circuit_heuristics.py"
+      ],
+      "return_code": 0,
+      "stdout": "[\n  {\n    \"rounds\": 1,\n    \"edges\": 380,\n    \"minfill_width\": 20,\n    \"minfill_log2_states\": 57.0,\n    \"mindegree_width\": 21,\n    \"mindegree_log2_states\": 61.0\n  },\n  {\n    \"rounds\": 2,\n    \"edges\": 1429,\n    \"minfill_width\": 41,\n    \"minfill_log2_states\": 129.0,\n    \"mindegree_width\": 41,\n    \"mindegree_log2_states\": 128.0\n  },\n  {\n    \"rounds\": 3,\n    \"edges\": 2476,\n    \"minfill_width\": 69,\n    \"minfill_log2_states\": 213.0,\n    \"mindegree_width\": 70,\n    \"mindegree_log2_states\": 221.0\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "label": "new_unit_tests",
+      "command": [
+        "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "return_code": 0,
+      "stdout": "",
+      "stderr": "test_exact_independent_dem_and_original_categorical_map (test_dem_attribution.TestDemAttribution.test_exact_independent_dem_and_original_categorical_map) ... ok\ntest_separator_removal_keeps_independent_event_law_but_changes_pm (test_dem_attribution.TestDemAttribution.test_separator_removal_keeps_independent_event_law_but_changes_pm) ... ok\ntest_one_qubit_categorical_model (test_exact_inference.TestStructuredInference.test_one_qubit_categorical_model) ... ok\ntest_phase2b_one_round_fragment_masks_and_normalization (test_exact_inference.TestStructuredInference.test_phase2b_one_round_fragment_masks_and_normalization) ... ok\ntest_two_qubit_categorical_model_and_ties (test_exact_inference.TestStructuredInference.test_two_qubit_categorical_model_and_ties) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 1.063s\n\nOK\n"
+    },
+    {
+      "label": "historical_toy_unit_tests",
+      "command": [
+        "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "C:\\Users\\LENOVO\\Documents\\Codex\\2026-11-03\\referenced-chatgpt-conversation-this-is-an\\outputs\\categorical_decoder_feasibility\\test_categorical_reference.py",
+        "-v"
+      ],
+      "return_code": 0,
+      "stdout": "",
+      "stderr": "test_each_configuration_selects_one_outcome_per_location (__main__.TestCategoricalReference.test_each_configuration_selects_one_outcome_per_location) ... ok\ntest_invalid_probability_sum_is_rejected (__main__.TestCategoricalReference.test_invalid_probability_sum_is_rejected) ... ok\ntest_one_qubit_approximate_matching_matches_exact_toy (__main__.TestCategoricalReference.test_one_qubit_approximate_matching_matches_exact_toy) ... ok\ntest_one_qubit_locations_include_identity_and_normalize (__main__.TestCategoricalReference.test_one_qubit_locations_include_identity_and_normalize) ... ok\ntest_stim_exhaustive_reference_matches_analytic_masks (__main__.TestCategoricalReference.test_stim_exhaustive_reference_matches_analytic_masks) ... ok\ntest_tie_uses_smallest_observable_bit_pattern (__main__.TestCategoricalReference.test_tie_uses_smallest_observable_bit_pattern) ... ok\ntest_two_qubit_approximate_matching_misses_one_exact_map_case (__main__.TestCategoricalReference.test_two_qubit_approximate_matching_misses_one_exact_map_case) ... ok\ntest_two_qubit_locations_are_16_way_categorical (__main__.TestCategoricalReference.test_two_qubit_locations_are_16_way_categorical) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.154s\n\nOK\n"
+    },
+    {
+      "label": "aggregate_numerical_audit",
+      "command": [
+        "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "summarize_investigation.py"
+      ],
+      "return_code": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"decision\": \"PARTIAL\",\n  \"syndrome11\": 1,\n  \"r3_seconds\": 89.08998530000099,\n  \"r3_peak\": 764133376,\n  \"total_fragment_wall_seconds\": 125.02860589999545\n}\n",
+      "stderr": ""
+    }
+  ],
+  "new_test_count": 5,
+  "historical_test_count": 8,
+  "failed_commands": [],
+  "scientific_data_generated_by_validation": false
+}

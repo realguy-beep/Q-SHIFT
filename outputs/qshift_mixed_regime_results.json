@@ -1,0 +1,73 @@
+{
+  "protocol": "one pattern table and one validation-selected threshold trained on all 3 regimes; detector bits only; per-regime independent tests with same samples as matched PyMatching",
+  "seed": 20261107,
+  "shots": {
+    "training_total": 6000000,
+    "validation_total": 900000,
+    "test_per_regime": 2000000
+  },
+  "threshold": 0.4375,
+  "validation_residual_rate": 0.00010777777777777778,
+  "levels": {
+    "0.001": {
+      "pattern_errors": 15,
+      "pattern_rate": 7.5e-06,
+      "pattern_wilson_95": [
+        4.545300048906447e-06,
+        1.2375396861360417e-05
+      ],
+      "matching_errors": 21,
+      "matching_rate": 1.05e-05,
+      "matching_wilson_95": [
+        6.867994012813733e-06,
+        1.60526913730988e-05
+      ],
+      "paired_pattern_minus_matching": {
+        "pattern_only_wrong": 4,
+        "matching_only_wrong": 10,
+        "net_error_difference": -6,
+        "discordant_counts": 14
+      }
+    },
+    "0.003": {
+      "pattern_errors": 161,
+      "pattern_rate": 8.05e-05,
+      "pattern_wilson_95": [
+        6.898912273855025e-05,
+        9.393129374576132e-05
+      ],
+      "matching_errors": 178,
+      "matching_rate": 8.9e-05,
+      "matching_wilson_95": [
+        7.685098356347104e-05,
+        0.00010306940026850328
+      ],
+      "paired_pattern_minus_matching": {
+        "pattern_only_wrong": 53,
+        "matching_only_wrong": 70,
+        "net_error_difference": -17,
+        "discordant_counts": 123
+      }
+    },
+    "0.006": {
+      "pattern_errors": 598,
+      "pattern_rate": 0.000299,
+      "pattern_wilson_95": [
+        0.00027597966200196717,
+        0.00032393991512520427
+      ],
+      "matching_errors": 710,
+      "matching_rate": 0.000355,
+      "matching_wilson_95": [
+        0.0003298342803519006,
+        0.00038208508165399005
+      ],
+      "paired_pattern_minus_matching": {
+        "pattern_only_wrong": 182,
+        "matching_only_wrong": 294,
+        "net_error_difference": -112,
+        "discordant_counts": 476
+      }
+    }
+  }
+}

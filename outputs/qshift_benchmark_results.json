@@ -1,0 +1,112 @@
+{
+  "protocol": "fresh independent Stim shots per noise setting; matching uses detector error model; observable residual = sampled observable XOR predicted correction",
+  "seed": 20261103,
+  "requested_shots_per_level": 100000,
+  "levels": {
+    "0.001": {
+      "noise_probability": 0.001,
+      "circuit": "Stim repetition_code:memory, distance=3, rounds=3, after_clifford_depolarization",
+      "num_detectors": 8,
+      "num_observables": 1,
+      "matching": {
+        "shots": 100000,
+        "detectors": 8,
+        "observables": 1,
+        "before_errors": 133,
+        "before_rate": 0.00133,
+        "after_errors": 1,
+        "after_rate": 1e-05,
+        "after_wilson_95": [
+          1.7652477303783126e-06,
+          5.664709659040966e-05
+        ]
+      },
+      "ml": {
+        "train_shots": 60000,
+        "validation_shots": 20000,
+        "test_shots": 20000,
+        "validation_selected_threshold": 0.8282842452968736,
+        "validation_residual_rate": 0.0,
+        "test_before_rate": 0.0017,
+        "test_after_errors": 0,
+        "test_after_rate": 0.0,
+        "test_after_wilson_95": [
+          0.0,
+          0.00019203605610462553
+        ],
+        "feature_count": 8,
+        "features": "detector bits only; no noise setting or labels"
+      }
+    },
+    "0.003": {
+      "noise_probability": 0.003,
+      "circuit": "Stim repetition_code:memory, distance=3, rounds=3, after_clifford_depolarization",
+      "num_detectors": 8,
+      "num_observables": 1,
+      "matching": {
+        "shots": 100000,
+        "detectors": 8,
+        "observables": 1,
+        "before_errors": 489,
+        "before_rate": 0.00489,
+        "after_errors": 6,
+        "after_rate": 6e-05,
+        "after_wilson_95": [
+          2.74988190664287e-05,
+          0.00013090968394310096
+        ]
+      },
+      "ml": {
+        "train_shots": 60000,
+        "validation_shots": 20000,
+        "test_shots": 20000,
+        "validation_selected_threshold": 0.37846028649939034,
+        "validation_residual_rate": 0.0,
+        "test_before_rate": 0.00525,
+        "test_after_errors": 2,
+        "test_after_rate": 0.0001,
+        "test_after_wilson_95": [
+          2.7424035272726838e-05,
+          0.0003645736136206778
+        ],
+        "feature_count": 8,
+        "features": "detector bits only; no noise setting or labels"
+      }
+    },
+    "0.006": {
+      "noise_probability": 0.006,
+      "circuit": "Stim repetition_code:memory, distance=3, rounds=3, after_clifford_depolarization",
+      "num_detectors": 8,
+      "num_observables": 1,
+      "matching": {
+        "shots": 100000,
+        "detectors": 8,
+        "observables": 1,
+        "before_errors": 963,
+        "before_rate": 0.00963,
+        "after_errors": 45,
+        "after_rate": 0.00045,
+        "after_wilson_95": [
+          0.0003363497051054983,
+          0.0006020288356762166
+        ]
+      },
+      "ml": {
+        "train_shots": 60000,
+        "validation_shots": 20000,
+        "test_shots": 20000,
+        "validation_selected_threshold": 0.7892075158984851,
+        "validation_residual_rate": 0.0006,
+        "test_before_rate": 0.0096,
+        "test_after_errors": 4,
+        "test_after_rate": 0.0002,
+        "test_after_wilson_95": [
+          7.777875605022842e-05,
+          0.0005141804856319553
+        ],
+        "feature_count": 8,
+        "features": "detector bits only; no noise setting or labels"
+      }
+    }
+  }
+}

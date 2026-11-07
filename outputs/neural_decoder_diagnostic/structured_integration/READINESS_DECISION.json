@@ -1,0 +1,284 @@
+{
+  "decision": "NO_GO_UNATTENDED_SCALE_UP",
+  "full_100k_executed": false,
+  "unique_training_shots": 6000,
+  "unique_validation_shots": 3000,
+  "test_samples_generated_or_accessed": 0,
+  "cuda_training_verified": true,
+  "cuda_device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "comparators": {
+    "identity": {
+      "equal_regime_ler": 0.052,
+      "per_regime": {
+        "x_biased": {
+          "n": 1000,
+          "errors": 74,
+          "ler": 0.074
+        },
+        "balanced": {
+          "n": 1000,
+          "errors": 54,
+          "ler": 0.054
+        },
+        "z_biased": {
+          "n": 1000,
+          "errors": 28,
+          "ler": 0.028
+        }
+      }
+    },
+    "pymatching": {
+      "equal_regime_ler": 0.0036666666666666666,
+      "per_regime": {
+        "x_biased": {
+          "n": 1000,
+          "errors": 5,
+          "ler": 0.005
+        },
+        "balanced": {
+          "n": 1000,
+          "errors": 2,
+          "ler": 0.002
+        },
+        "z_biased": {
+          "n": 1000,
+          "errors": 4,
+          "ler": 0.004
+        }
+      }
+    }
+  },
+  "candidates": {
+    "direct_mlp": {
+      "selected_threshold": 0.5,
+      "equal_regime_ler": 0.052,
+      "per_regime_counts": {
+        "x_biased": {
+          "tn": 926,
+          "fp": 0,
+          "fn": 74,
+          "tp": 0,
+          "target_prediction_error_rate": 0.074,
+          "predicted_positive_count": 0,
+          "predicted_positive_rate": 0.0,
+          "positive_precision": 0.0,
+          "positive_recall": 0.0,
+          "logical_errors": 74,
+          "logical_ler": 0.074
+        },
+        "balanced": {
+          "tn": 946,
+          "fp": 0,
+          "fn": 54,
+          "tp": 0,
+          "target_prediction_error_rate": 0.054,
+          "predicted_positive_count": 0,
+          "predicted_positive_rate": 0.0,
+          "positive_precision": 0.0,
+          "positive_recall": 0.0,
+          "logical_errors": 54,
+          "logical_ler": 0.054
+        },
+        "z_biased": {
+          "tn": 972,
+          "fp": 0,
+          "fn": 28,
+          "tp": 0,
+          "target_prediction_error_rate": 0.028,
+          "predicted_positive_count": 0,
+          "predicted_positive_rate": 0.0,
+          "positive_precision": 0.0,
+          "positive_recall": 0.0,
+          "logical_errors": 28,
+          "logical_ler": 0.028
+        }
+      },
+      "best_epoch": 2
+    },
+    "residual_mlp": {
+      "selected_threshold": 0.5,
+      "equal_regime_ler": 0.0036666666666666666,
+      "per_regime_counts": {
+        "x_biased": {
+          "tn": 995,
+          "fp": 0,
+          "fn": 5,
+          "tp": 0,
+          "target_prediction_error_rate": 0.005,
+          "predicted_positive_count": 0,
+          "predicted_positive_rate": 0.0,
+          "positive_precision": 0.0,
+          "positive_recall": 0.0,
+          "logical_errors": 5,
+          "logical_ler": 0.005
+        },
+        "balanced": {
+          "tn": 998,
+          "fp": 0,
+          "fn": 2,
+          "tp": 0,
+          "target_prediction_error_rate": 0.002,
+          "predicted_positive_count": 0,
+          "predicted_positive_rate": 0.0,
+          "positive_precision": 0.0,
+          "positive_recall": 0.0,
+          "logical_errors": 2,
+          "logical_ler": 0.002
+        },
+        "z_biased": {
+          "tn": 996,
+          "fp": 0,
+          "fn": 4,
+          "tp": 0,
+          "target_prediction_error_rate": 0.004,
+          "predicted_positive_count": 0,
+          "predicted_positive_rate": 0.0,
+          "positive_precision": 0.0,
+          "positive_recall": 0.0,
+          "logical_errors": 4,
+          "logical_ler": 0.004
+        }
+      },
+      "best_epoch": 2
+    },
+    "structured_ch8_unweighted": {
+      "selected_threshold": 0.5,
+      "equal_regime_ler": 0.052,
+      "per_regime_counts": {
+        "x_biased": {
+          "tn": 926,
+          "fp": 0,
+          "fn": 74,
+          "tp": 0,
+          "target_prediction_error_rate": 0.074,
+          "predicted_positive_count": 0,
+          "predicted_positive_rate": 0.0,
+          "positive_precision": 0.0,
+          "positive_recall": 0.0,
+          "logical_errors": 74,
+          "logical_ler": 0.074
+        },
+        "balanced": {
+          "tn": 946,
+          "fp": 0,
+          "fn": 54,
+          "tp": 0,
+          "target_prediction_error_rate": 0.054,
+          "predicted_positive_count": 0,
+          "predicted_positive_rate": 0.0,
+          "positive_precision": 0.0,
+          "positive_recall": 0.0,
+          "logical_errors": 54,
+          "logical_ler": 0.054
+        },
+        "z_biased": {
+          "tn": 972,
+          "fp": 0,
+          "fn": 28,
+          "tp": 0,
+          "target_prediction_error_rate": 0.028,
+          "predicted_positive_count": 0,
+          "predicted_positive_rate": 0.0,
+          "positive_precision": 0.0,
+          "positive_recall": 0.0,
+          "logical_errors": 28,
+          "logical_ler": 0.028
+        }
+      },
+      "best_epoch": 2
+    },
+    "structured_ch8_weighted": {
+      "selected_threshold": 0.75,
+      "equal_regime_ler": 0.052,
+      "per_regime_counts": {
+        "x_biased": {
+          "tn": 926,
+          "fp": 0,
+          "fn": 74,
+          "tp": 0,
+          "target_prediction_error_rate": 0.074,
+          "predicted_positive_count": 0,
+          "predicted_positive_rate": 0.0,
+          "positive_precision": 0.0,
+          "positive_recall": 0.0,
+          "logical_errors": 74,
+          "logical_ler": 0.074
+        },
+        "balanced": {
+          "tn": 946,
+          "fp": 0,
+          "fn": 54,
+          "tp": 0,
+          "target_prediction_error_rate": 0.054,
+          "predicted_positive_count": 0,
+          "predicted_positive_rate": 0.0,
+          "positive_precision": 0.0,
+          "positive_recall": 0.0,
+          "logical_errors": 54,
+          "logical_ler": 0.054
+        },
+        "z_biased": {
+          "tn": 972,
+          "fp": 0,
+          "fn": 28,
+          "tp": 0,
+          "target_prediction_error_rate": 0.028,
+          "predicted_positive_count": 0,
+          "predicted_positive_rate": 0.0,
+          "positive_precision": 0.0,
+          "positive_recall": 0.0,
+          "logical_errors": 28,
+          "logical_ler": 0.028
+        }
+      },
+      "best_epoch": 1
+    }
+  },
+  "selected_candidate": "residual_mlp",
+  "training_prevalence": {
+    "direct_positive": 349,
+    "residual_positive": 35,
+    "total": 6000,
+    "direct_prevalence": 0.058166666666666665,
+    "residual_prevalence": 0.005833333333333334,
+    "scan_seconds": 0.022841099998913705
+  },
+  "throughput": {
+    "unique_training_shots": 6000,
+    "unique_validation_shots": 3000,
+    "training_shot_presentations_including_prevalence_scan": 54000,
+    "validation_shot_presentations_including_final_evidence": 27000,
+    "total_shot_presentations": 81000,
+    "end_to_end_shot_presentations_per_second": 9095.491442366774
+  },
+  "resource_usage": {
+    "host_peak_rss_bytes": 1295151104,
+    "gpu_peak_allocated_bytes": 20564480,
+    "gpu_peak_reserved_bytes": 25165824,
+    "sample_interval_seconds": 0.5
+  },
+  "official_100k_seed_screen": {
+    "passed": true,
+    "unique_derived_seed_count": 397,
+    "collisions": [],
+    "training_shots_by_regime": {
+      "x_biased": 23334,
+      "balanced": 23333,
+      "z_biased": 23333
+    },
+    "validation_shots_by_regime": {
+      "x_biased": 5000,
+      "balanced": 5000,
+      "z_biased": 5000
+    },
+    "test_policy": "reserved and never sampled by this worker"
+  },
+  "tests": {
+    "unittest": "36 passed",
+    "compileall": "passed",
+    "javascript_syntax": "passed",
+    "independent_validation_audit": "PASS; 24 batches; 0 test samples",
+    "resume_equivalence": "PASS; CPU tiny fixture; best weights bitwise equal"
+  },
+  "runtime_projection": "Planning-only linear estimates: approximately 2\u20136 min for the prepared 100K protocol; 1M/10M/100M approximately 20 min/3.4 h/34 h, with large uncertainty and not sustained benchmarks."
+}

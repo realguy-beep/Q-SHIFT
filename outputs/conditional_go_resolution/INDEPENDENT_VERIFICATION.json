@@ -1,0 +1,156 @@
+{
+  "status": "PASS",
+  "raw_npz_arrays": {
+    "stationary_reference_detectors": {
+      "shape": [
+        8192,
+        40
+      ],
+      "dtype": "uint8"
+    },
+    "stationary_threshold_calibration_blocks": {
+      "shape": [
+        100,
+        12,
+        128,
+        40
+      ],
+      "dtype": "uint8"
+    },
+    "stationary_validation_blocks": {
+      "shape": [
+        100,
+        12,
+        128,
+        40
+      ],
+      "dtype": "uint8"
+    },
+    "template_detectors": {
+      "shape": [
+        9,
+        2048,
+        40
+      ],
+      "dtype": "uint8"
+    },
+    "template_profiles": {
+      "shape": [
+        9,
+        40
+      ],
+      "dtype": "float64"
+    },
+    "calibration_detectors": {
+      "shape": [
+        3,
+        8,
+        1024,
+        40
+      ],
+      "dtype": "uint8"
+    },
+    "evaluation_detectors": {
+      "shape": [
+        3,
+        8,
+        4096,
+        40
+      ],
+      "dtype": "uint8"
+    },
+    "evaluation_observables": {
+      "shape": [
+        3,
+        8,
+        4096
+      ],
+      "dtype": "uint8"
+    },
+    "evaluation_predictions": {
+      "shape": [
+        3,
+        8,
+        3,
+        4096
+      ],
+      "dtype": "uint8"
+    }
+  },
+  "binary_array_validation": "PASS",
+  "template_profile_recomputation": "PASS",
+  "calibration_choice_recomputations": 24,
+  "prediction_redecodings": 72,
+  "prediction_redecoding_match": "PASS",
+  "per_regime_error_counts": {
+    "data_heavy": {
+      "shots": 32768,
+      "errors": {
+        "selected": 460,
+        "pooled": 456,
+        "nominal": 451
+      },
+      "paired": {
+        "selected_only_wrong": 103,
+        "pooled_only_wrong": 99,
+        "prediction_disagreements": 202
+      },
+      "selected_minus_pooled_ler": 0.0001220703125
+    },
+    "nominal": {
+      "shots": 32768,
+      "errors": {
+        "selected": 155,
+        "pooled": 162,
+        "nominal": 155
+      },
+      "paired": {
+        "selected_only_wrong": 1,
+        "pooled_only_wrong": 8,
+        "prediction_disagreements": 9
+      },
+      "selected_minus_pooled_ler": -0.000213623046875
+    },
+    "measurement_heavy": {
+      "shots": 32768,
+      "errors": {
+        "selected": 57,
+        "pooled": 63,
+        "nominal": 63
+      },
+      "paired": {
+        "selected_only_wrong": 4,
+        "pooled_only_wrong": 10,
+        "prediction_disagreements": 14
+      },
+      "selected_minus_pooled_ler": -0.00018310546875
+    }
+  },
+  "aggregate_shots": 98304,
+  "aggregate_error_counts": {
+    "selected": 672,
+    "pooled": 681,
+    "nominal": 669
+  },
+  "aggregate_ler": {
+    "selected": 0.0068359375,
+    "pooled": 0.006927490234375,
+    "nominal": 0.006805419921875
+  },
+  "aggregate_paired": {
+    "selected_only_wrong": 108,
+    "pooled_only_wrong": 117,
+    "prediction_disagreements": 225
+  },
+  "aggregate_selected_minus_pooled_ler": -9.1552734375e-05,
+  "trigger_schedule_recomputations": 200,
+  "trigger_threshold_recomputed": 4.805029126886342,
+  "trigger_false_updates_recomputed": 2,
+  "trigger_recomputation_match": "PASS",
+  "paired_samples": "PASS: every comparator re-decoded the same saved detector arrays and observable labels",
+  "versions": {
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "numpy": "2.5.3"
+  }
+}

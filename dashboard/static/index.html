@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Q-SHIFT · Neural decoder lab</title>
+  <link rel="stylesheet" href="/static/styles.css?v=autonomous-readonly-1" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div><strong>Q-SHIFT</strong><small>RESEARCH LAB</small></div>
+      </div>
+      <div class="workspace-label">WORKSPACE</div>
+      <button class="nav-item selected" id="nav-dashboard"><span class="nav-glyph">▦</span> Training console <span class="nav-dot"></span></button>
+      <button class="nav-item" id="nav-autonomous"><span class="nav-glyph">◉</span> Autonomous research run</button>
+      <button class="nav-item" id="nav-runs"><span class="nav-glyph">◷</span> Run history</button>
+      <div class="sidebar-divider"></div>
+      <div class="workspace-label">RESEARCH</div>
+      <div class="research-link"><span class="tiny-orb cyan"></span><span>Fixed baseline</span><span class="mini-tag">PHASE 2B</span></div>
+      <div class="research-link"><span class="tiny-orb purple"></span><span>Adaptive decoder</span><span class="mini-tag muted">UNPROVEN</span></div>
+      <div class="sidebar-bottom">
+        <div class="integrity-note"><span class="shield">◇</span><div><b>Research integrity</b><p>Neural runs are exploratory. No adaptive gain is assumed.</p></div></div>
+        <div class="sidebar-foot"><span class="status-led"></span> Local session <span class="mono">127.0.0.1</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="crumbs"><span>Q-SHIFT</span><i>/</i><b>Training console</b></div>
+        <div class="top-actions">
+          <span class="connection-pill" id="connection-state"><span class="status-led"></span><span>Connecting</span></span>
+          <button class="icon-button" id="refresh-btn" aria-label="Refresh telemetry" title="Refresh telemetry">↻</button>
+          <div class="avatar" title="Local research environment">QS</div>
+        </div>
+      </header>
+
+      <section class="page-heading">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-line"></span> EXPERIMENTAL WORKBENCH</div>
+          <h1>Neural decoder <span>training</span></h1>
+          <p class="subtitle">A live, paired comparison against Q-SHIFT’s frozen calibration-selected PyMatching baseline.</p>
+        </div>
+        <div class="heading-meta">
+          <span class="run-status idle" id="run-status"><span class="status-led"></span> IDLE</span>
+          <span class="mono" id="run-id">NO ACTIVE RUN</span>
+        </div>
+      </section>
+
+      <section class="panel autonomous-research-panel" id="autonomous-view" aria-labelledby="autonomous-title" aria-live="polite">
+        <div class="panel-head autonomous-heading">
+          <div><span class="section-kicker">SEPARATE PERSISTED EXPERIMENT</span><h2 id="autonomous-title">Autonomous research run</h2>
+            <p class="autonomous-subtitle">Read-only view · frozen 750,000-shot development study · independent test remains sealed</p></div>
+          <span class="run-status unknown" id="autonomous-status"><span class="status-led"></span> UNKNOWN</span>
+        </div>
+        <div class="autonomous-grid">
+          <div><span>Completed jobs</span><b id="autonomous-jobs">— / 50</b><small id="autonomous-verified">Verified result files: —</small></div>
+          <div><span>Current root / job</span><b id="autonomous-root">—</b><small id="autonomous-job">No persisted job record</small></div>
+          <div><span>Active runtime</span><b id="autonomous-runtime">—</b><small>Controller-recorded wall time</small></div>
+          <div><span>GPU training time</span><b id="autonomous-gpu-time">—</b><small>Controller-recorded CUDA time</small></div>
+        </div>
+        <div class="autonomous-shot-counts" id="autonomous-shot-counts">Verified generated-shot records are not available yet.</div>
+        <div class="autonomous-test-seal" id="autonomous-test-status">Independent-test status: checking persisted record…</div>
+        <div class="autonomous-results-grid">
+          <article class="autonomous-chart-card">
+            <div class="panel-head"><div><span class="section-kicker">COMPLETED JOB ONLY</span><h3>Monitoring loss history</h3></div>
+              <select id="autonomous-job-select" aria-label="Select verified completed job" disabled><option>No verified completed jobs</option></select></div>
+            <div class="autonomous-chart-wrap"><canvas id="autonomous-learning-chart" aria-label="Monitoring negative log loss by epoch"></canvas><div class="chart-empty" id="autonomous-learning-empty">No verified learning history is available.</div></div>
+            <small class="autonomous-note">This chart uses saved monitoring history from the selected completed job. It does not estimate live loss.</small>
+          </article>
+          <article class="autonomous-chart-card autonomous-model-key">
+            <span class="section-kicker">MODEL LABELS</span>
+            <p><b>PyMatching</b> — frozen comparison decoder</p>
+            <p><b>Position-preserving CNN</b> — flattened spatial head</p>
+            <p><b>Balanced MLP</b> — detector-vector control</p>
+            <p><b>Pooled CNN</b> — capacity control</p>
+            <p><b>Hybrid residual CNN + PyMatching</b> — predicts a correction to matching</p>
+            <small class="autonomous-note">GPU time is attributed from controller records. The hardware panel above is machine telemetry and is not run-specific.</small>
+          </article>
+        </div>
+        <div class="autonomous-table-wrap">
+          <div class="panel-head"><div><span class="section-kicker">HASH-VERIFIED PER-ROOT EVALUATIONS</span><h3>Paired development comparisons by regime</h3></div><span class="tag tag-outline" id="autonomous-results-state">WAITING FOR RECORDS</span></div>
+          <div class="compare-table-wrap"><table class="compare-table autonomous-table"><thead><tr><th>Model</th><th>Root</th><th>Train/regime</th><th>Regime</th><th>Eval shots</th><th>Model LER</th><th>PyMatching LER</th><th>Δ LER</th></tr></thead><tbody id="autonomous-results-body"><tr><td colspan="8">No verified result files available.</td></tr></tbody></table></div>
+        </div>
+        <div class="autonomous-warning" id="autonomous-warnings" hidden></div>
+      </section>
+
+      <section class="overview-grid" aria-label="Experiment overview">
+        <article class="panel experiment-panel">
+          <div class="panel-head"><div><span class="section-kicker" id="console-run-label">SELECTED LOCAL CONSOLE RUN</span><h2 id="experiment-name">No training run selected</h2></div><span class="icon-square purple-icon">⌘</span></div>
+          <div class="overview-lines">
+            <div><span>Architecture</span><b id="architecture-label">Direct MLP + residual MLP</b></div>
+            <div><span>Code / rounds</span><b id="code-label">Rotated surface · d=3 · 5 rounds</b></div>
+            <div><span>Noise</span><b id="noise-label">Categorical Pauli · balanced</b></div>
+            <div><span>Training device</span><b id="device-label">Detecting…</b></div>
+            <div><span>Seed root</span><b class="mono" id="seed-label">—</b></div>
+          </div>
+          <div class="panel-foot"><span class="tag tag-cyan">STIM CIRCUIT SAMPLES</span><span class="tag tag-blue">PAIRED DECODING</span><span class="tag tag-amber">EXPLORATORY</span></div>
+        </article>
+
+        <article class="panel progress-panel" id="progress-panel">
+          <div class="panel-head"><div><span class="section-kicker">LIVE PROGRESS</span><h2>Training stream</h2></div><span class="big-number" id="progress-percent">0<span>%</span></span></div>
+          <div class="progress-track"><div class="progress-fill" id="progress-fill"></div><div class="progress-glow" id="progress-glow"></div></div>
+          <div class="progress-caption"><span><b id="processed-shots">0</b> <small>/</small> <span id="target-shots">8,000</span> train samples</span><span id="step-caption">step 0 / 32</span></div>
+          <div class="metric-strip">
+            <div><span>Generated</span><b id="generated-shots">0</b><small>train samples</small></div>
+            <div><span>Processed</span><b id="trained-shots">0</b><small>unique train rows</small></div>
+            <div><span>Throughput</span><b id="throughput">—</b><small>samples / sec</small></div>
+            <div><span>Time left</span><b id="eta">—</b><small id="elapsed">elapsed —</small></div>
+          </div>
+          <div class="split-counters"><span>Validation <b id="val-count">0</b></span><span>Held-out test <b id="test-count">0</b></span><span>Model sample-passes <b id="sample-passes">0</b></span></div>
+        </article>
+
+        <article class="panel gpu-panel">
+          <div class="panel-head"><div><span class="section-kicker">HARDWARE TELEMETRY</span><h2>GPU monitor</h2></div><span class="gpu-chip" id="cuda-chip">CUDA CHECK</span></div>
+          <div class="gpu-name-row"><span class="gpu-icon">▤</span><div><b id="gpu-name">Checking NVIDIA telemetry…</b><small id="gpu-source">NVML · local machine</small></div></div>
+          <div class="gpu-meter"><div class="meter-title"><span>GPU utilization</span><b id="gpu-util">—</b></div><div class="meter-track"><i id="gpu-util-bar"></i></div></div>
+          <div class="gpu-meter"><div class="meter-title"><span>VRAM used</span><b id="gpu-memory">—</b></div><div class="meter-track violet"><i id="gpu-memory-bar"></i></div><small id="gpu-memory-detail" class="meter-note">Live usage is read from NVML when available.</small></div>
+          <div class="gpu-mini-grid"><div><span>Temperature</span><b id="gpu-temp">—</b></div><div><span>Power</span><b id="gpu-power">—</b></div><div><span>CPU</span><b id="cpu-util">—</b></div><div><span>System RAM</span><b id="ram-used">—</b></div></div>
+        </article>
+      </section>
+
+      <section class="control-row">
+        <article class="panel chart-panel wide-chart">
+          <div class="panel-head chart-head"><div><span class="section-kicker">OPTIMIZATION</span><h2>Learning curve</h2></div><div class="chart-legend"><span><i class="legend-dot purple"></i>Training loss</span><span><i class="legend-dot cyan"></i>Validation LER</span><span><i class="legend-dot gray"></i>Fixed matching LER</span></div></div>
+          <div class="chart-wrap"><canvas id="learning-chart" aria-label="Training loss and validation logical error rate chart"></canvas><div class="chart-empty" id="learning-empty">Live metrics will appear when training begins.</div></div>
+          <div class="chart-foot"><span>Validation samples are a separate stream; test labels remain unopened until training completes.</span><span class="mono" id="last-update">WAITING FOR TELEMETRY</span></div>
+        </article>
+        <article class="panel chart-panel throughput-panel">
+          <div class="panel-head"><div><span class="section-kicker">SYSTEM LOAD</span><h2>Throughput & memory</h2></div><span class="live-indicator"><i></i> LIVE</span></div>
+          <div class="chart-legend compact"><span><i class="legend-dot blue"></i>Samples/s</span><span><i class="legend-dot violet"></i>VRAM %</span></div>
+          <div class="chart-wrap small-chart"><canvas id="throughput-chart" aria-label="Throughput and GPU memory chart"></canvas><div class="chart-empty" id="throughput-empty">Waiting for live telemetry.</div></div>
+          <div class="chart-foot"><span>Updates are rate-limited to protect training throughput.</span></div>
+        </article>
+      </section>
+
+      <section class="lower-grid">
+        <article class="panel comparison-panel">
+          <div class="panel-head"><div><span class="section-kicker">RUN EVIDENCE</span><h2>Decoder performance</h2></div><span class="tag tag-outline" id="test-state">AWAITING RUN</span></div>
+          <div class="compare-table-wrap">
+            <table class="compare-table"><thead><tr><th>Decoder</th><th>Errors</th><th>LER</th><th>95% shot interval</th></tr></thead><tbody id="comparison-body"><tr><td class="decoder-name"><span class="decoder-dot gray"></span>No decode / identity</td><td>—</td><td>—</td><td>—</td></tr><tr><td class="decoder-name"><span class="decoder-dot cyan"></span>Frozen PyMatching</td><td>—</td><td>—</td><td>—</td></tr><tr><td class="decoder-name"><span class="decoder-dot purple"></span>Direct neural MLP</td><td>—</td><td>—</td><td>—</td></tr><tr><td class="decoder-name"><span class="decoder-dot blue"></span>PyMatching + neural residual</td><td>—</td><td>—</td><td>—</td></tr><tr><td class="decoder-name"><span class="decoder-dot muted"></span>Structured 3D CNN</td><td>—</td><td>—</td><td>—</td></tr></tbody></table>
+          </div>
+          <div class="paired-summary" id="paired-summary"><span class="paired-mark">↔</span><span>Paired fixes, introduced failures and confidence intervals will be calculated from the same held-out detector shots.</span></div>
+          <div class="chart-foot"><span>Structured CNN rows show development-validation selection only; this dashboard has not opened the reserved final test split.</span></div>
+        </article>
+
+        <article class="panel config-panel">
+          <div class="panel-head"><div><span class="section-kicker">RUN CONFIGURATION</span><h2>Experiment controls</h2></div><button class="text-button" id="reset-config">Reset</button></div>
+          <label class="field"><span>Training-shot budget <em>required</em></span><select id="preset-select"><option value="smoke">Smoke test · 10K total (8K train)</option><option value="pipeline">Pipeline validation · 100K train</option><option value="initial">Initial training · 1M train</option><option value="architecture">Architecture comparison · 10M train</option><option value="scaling">Scaling experiment · 100M train</option><option value="extended">Extended experiment · 1B train</option></select></label>
+          <label class="field"><span>Neural model</span><select id="model-select"><option value="direct_plus_residual">Direct MLP + PyMatching residual</option><option value="direct_mlp">Direct MLP only</option><option value="structured_3dcnn">Structured 3D CNN · frozen multi-regime protocol</option></select></label>
+          <div class="field-grid"><label class="field"><span>Batch size</span><select id="batch-size"><option>128</option><option selected>256</option><option>512</option><option>1024</option></select></label><label class="field"><span>Learning rate</span><input id="learning-rate" type="number" min="0.00001" max="0.01" step="0.0001" value="0.001" /></label></div>
+          <div class="field-grid"><label class="field"><span>Pauli composition</span><select id="noise-regime"><option value="balanced" selected>Balanced · 1:1:1</option><option value="x_biased">X-biased · 10:1:1</option><option value="z_biased">Z-biased · 1:1:10</option></select></label><label class="field"><span>Memory basis</span><select id="memory-basis"><option value="z" selected>Z memory</option><option value="x">X memory</option></select></label></div>
+          <div class="field-grid"><label class="field"><span>Gate fault p</span><input id="gate-p" type="number" min="0" max="0.1" step="0.001" value="0.003" /></label><label class="field"><span>Measurement p</span><input id="measurement-p" type="number" min="0" max="0.1" step="0.001" value="0.003" /></label></div>
+          <div class="field-grid"><label class="field"><span>Validation every</span><select id="validation-freq"><option>4</option><option selected>8</option><option>16</option><option>32</option></select></label><label class="field"><span>Checkpoint every</span><select id="checkpoint-freq"><option>4</option><option selected>8</option><option>16</option><option>32</option></select></label></div>
+          <div class="field-grid"><label class="field"><span>Random seed</span><input id="random-seed" type="number" min="1" max="2147483647" value="1800000001" /></label><label class="field"><span>Device</span><select id="device-select"><option value="auto" selected>Auto · CUDA if available</option><option value="cuda">CUDA</option><option value="cpu">CPU</option></select></label></div>
+          <div class="eval-budget" id="eval-budget"><span>Validation / test split</span><b>1,000 / 1,000 independent shots</b><small>Smoke preset total: 10,000 generated samples.</small></div>
+          <div class="action-row"><button class="button-primary" id="start-btn"><span>▶</span> Start training</button><button class="button-secondary" id="pause-btn" disabled>Ⅱ Pause</button><button class="button-secondary danger" id="stop-btn" disabled>■ Stop</button><button class="icon-button checkpoint-btn" id="checkpoint-btn" disabled title="Request safe checkpoint" aria-label="Request safe checkpoint">⌑</button></div>
+          <div class="resume-row"><span id="resume-hint">Run state is saved locally and can resume from an atomic checkpoint.</span><button class="text-button" id="resume-btn" hidden>Resume last run ↗</button></div>
+          <div class="safe-note"><span>!</span><p>Runs above 10K train shots require confirmation. 100M and 1B presets require two confirmations. Large presets are never started automatically.</p></div>
+        </article>
+      </section>
+
+      <footer class="footer-note"><span>Q-SHIFT is a simulation research prototype · no hardware integration</span><span class="footer-links"><a href="/api/runs" target="_blank" rel="noreferrer">Run API</a><span>·</span><a href="/api/health" target="_blank" rel="noreferrer">Telemetry API</a></span></footer>
+    </main>
+  </div>
+
+  <dialog id="large-confirm" class="confirm-dialog"><div class="dialog-icon">!</div><span class="section-kicker">RESOURCE CONFIRMATION</span><h2 id="confirm-title">Confirm long training run</h2><p id="confirm-copy">This training budget can run for a long time and consume GPU resources. No test results will be used for training.</p><div class="dialog-details" id="confirm-details"></div><div class="dialog-actions"><button class="button-secondary" id="confirm-cancel">Cancel</button><button class="button-primary" id="confirm-continue">I understand · continue</button></div></dialog>
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+  <script src="/static/app.js?v=autonomous-readonly-1" defer></script>
+</body>
+</html>

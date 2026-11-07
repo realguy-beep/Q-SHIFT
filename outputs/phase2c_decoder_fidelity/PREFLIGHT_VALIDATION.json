@@ -1,0 +1,596 @@
+{
+  "basis_records": {
+    "x/balanced": {
+      "circuit_sha256": "4d90b08a0ff4f53834bdfb00d7f34861ede55ad96c5f926c73fcb614cc158380",
+      "conversion": {
+        "approximate_disjoint_errors": true,
+        "decompose_errors": true,
+        "explanation": "Stim DEM construction approximates mutually-exclusive PAULI_CHANNEL_1/2 outcomes as independent error mechanisms; PyMatching correlated matching retains available DEM decomposition correlations but does not undo that channel-to-DEM approximation.",
+        "pymatching_correlations_enabled": true
+      },
+      "dem_sha256": "0d6a0b346714fa950b385c3dff7ebb45dabe3cb0a45f45519bf14706632339f1",
+      "logical_fault_ids": [
+        0
+      ],
+      "matching_edges": 142,
+      "matching_nodes": 40,
+      "noise": {
+        "1q_pauli_probabilities_X_Y_Z": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "1q_pauli_probability_sum": 0.003,
+        "2q_pauli_marginals": {
+          "first_qubit": {
+            "I": 0.0006000000000000001,
+            "X": 0.0008,
+            "Y": 0.0008,
+            "Z": 0.0007999999999999996
+          },
+          "second_qubit": {
+            "I": 0.0006000000000000001,
+            "X": 0.0008,
+            "Y": 0.0008,
+            "Z": 0.0007999999999999996
+          }
+        },
+        "2q_pauli_pair_order": [
+          "IX",
+          "IY",
+          "IZ",
+          "XI",
+          "XX",
+          "XY",
+          "XZ",
+          "YI",
+          "YX",
+          "YY",
+          "YZ",
+          "ZI",
+          "ZX",
+          "ZY",
+          "ZZ"
+        ],
+        "2q_pauli_pair_probabilities": [
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.00019999999999999958
+        ],
+        "2q_pauli_probability_sum": 0.0029999999999999996,
+        "detectors": 40,
+        "distance": 3,
+        "flattened_instruction_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 5,
+          "Z_ERROR": 1
+        },
+        "flattened_noise_target_counts": {
+          "measurement_flip_targets": 49,
+          "one_qubit_channel_targets": 40,
+          "two_qubit_channel_pairs": 120
+        },
+        "measurement_flip_probability": 0.003,
+        "memory_basis": "x",
+        "noise_semantics": "Each PAULI_CHANNEL_2 draw is a categorical Pauli-pair fault, so two-qubit Pauli components are correlated within that gate. Independent gate locations have no cross-location correlation.",
+        "observables": 1,
+        "regime": "balanced",
+        "rounds": 5,
+        "total_fault_probability_per_1q_instruction": 0.003,
+        "total_fault_probability_per_2q_instruction": 0.003
+      }
+    },
+    "x/x_biased": {
+      "circuit_sha256": "0d0d46bcb40c18799cca6801c1c993ca49b97931d127734ca25f446832bf6671",
+      "conversion": {
+        "approximate_disjoint_errors": true,
+        "decompose_errors": true,
+        "explanation": "Stim DEM construction approximates mutually-exclusive PAULI_CHANNEL_1/2 outcomes as independent error mechanisms; PyMatching correlated matching retains available DEM decomposition correlations but does not undo that channel-to-DEM approximation.",
+        "pymatching_correlations_enabled": true
+      },
+      "dem_sha256": "089667dacdaf9701794eb4d950e66d0b645053e577a855f384c6b7f9a40f4650",
+      "logical_fault_ids": [
+        0
+      ],
+      "matching_edges": 142,
+      "matching_nodes": 40,
+      "noise": {
+        "1q_pauli_probabilities_X_Y_Z": [
+          0.0025,
+          0.00025,
+          0.00025
+        ],
+        "1q_pauli_probability_sum": 0.003,
+        "2q_pauli_marginals": {
+          "first_qubit": {
+            "I": 0.00021428571428571427,
+            "X": 0.0023214285714285715,
+            "Y": 0.00023214285714285714,
+            "Z": 0.00023214285714285757
+          },
+          "second_qubit": {
+            "I": 0.00021428571428571427,
+            "X": 0.0023214285714285715,
+            "Y": 0.00023214285714285714,
+            "Z": 0.00023214285714285757
+          }
+        },
+        "2q_pauli_pair_order": [
+          "IX",
+          "IY",
+          "IZ",
+          "XI",
+          "XX",
+          "XY",
+          "XZ",
+          "YI",
+          "YX",
+          "YY",
+          "YZ",
+          "ZI",
+          "ZX",
+          "ZY",
+          "ZZ"
+        ],
+        "2q_pauli_pair_probabilities": [
+          0.00017857142857142857,
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          0.00017857142857142857,
+          0.0017857142857142857,
+          0.00017857142857142857,
+          0.00017857142857142857,
+          1.785714285714286e-05,
+          0.00017857142857142857,
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          0.00017857142857142857,
+          1.785714285714286e-05,
+          1.7857142857143292e-05
+        ],
+        "2q_pauli_probability_sum": 0.0030000000000000005,
+        "detectors": 40,
+        "distance": 3,
+        "flattened_instruction_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 5,
+          "Z_ERROR": 1
+        },
+        "flattened_noise_target_counts": {
+          "measurement_flip_targets": 49,
+          "one_qubit_channel_targets": 40,
+          "two_qubit_channel_pairs": 120
+        },
+        "measurement_flip_probability": 0.003,
+        "memory_basis": "x",
+        "noise_semantics": "Each PAULI_CHANNEL_2 draw is a categorical Pauli-pair fault, so two-qubit Pauli components are correlated within that gate. Independent gate locations have no cross-location correlation.",
+        "observables": 1,
+        "regime": "x_biased",
+        "rounds": 5,
+        "total_fault_probability_per_1q_instruction": 0.003,
+        "total_fault_probability_per_2q_instruction": 0.003
+      }
+    },
+    "x/z_biased": {
+      "circuit_sha256": "5eca824c9ee07caf840b147002168b67281b7b7729f55af1f9cbbd320b856f82",
+      "conversion": {
+        "approximate_disjoint_errors": true,
+        "decompose_errors": true,
+        "explanation": "Stim DEM construction approximates mutually-exclusive PAULI_CHANNEL_1/2 outcomes as independent error mechanisms; PyMatching correlated matching retains available DEM decomposition correlations but does not undo that channel-to-DEM approximation.",
+        "pymatching_correlations_enabled": true
+      },
+      "dem_sha256": "b085316594dbcbd89b9a02f04aaf00cc0e1fccb84c2480767e9f2efb911510a9",
+      "logical_fault_ids": [
+        0
+      ],
+      "matching_edges": 142,
+      "matching_nodes": 40,
+      "noise": {
+        "1q_pauli_probabilities_X_Y_Z": [
+          0.00025,
+          0.00025,
+          0.0025
+        ],
+        "1q_pauli_probability_sum": 0.003,
+        "2q_pauli_marginals": {
+          "first_qubit": {
+            "I": 0.00021428571428571427,
+            "X": 0.00023214285714285714,
+            "Y": 0.00023214285714285714,
+            "Z": 0.0023214285714285715
+          },
+          "second_qubit": {
+            "I": 0.00021428571428571427,
+            "X": 0.00023214285714285714,
+            "Y": 0.00023214285714285714,
+            "Z": 0.0023214285714285715
+          }
+        },
+        "2q_pauli_pair_order": [
+          "IX",
+          "IY",
+          "IZ",
+          "XI",
+          "XX",
+          "XY",
+          "XZ",
+          "YI",
+          "YX",
+          "YY",
+          "YZ",
+          "ZI",
+          "ZX",
+          "ZY",
+          "ZZ"
+        ],
+        "2q_pauli_pair_probabilities": [
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          0.00017857142857142857,
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          0.00017857142857142857,
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          0.00017857142857142857,
+          0.00017857142857142857,
+          0.00017857142857142857,
+          0.00017857142857142857,
+          0.0017857142857142857
+        ],
+        "2q_pauli_probability_sum": 0.003,
+        "detectors": 40,
+        "distance": 3,
+        "flattened_instruction_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 5,
+          "Z_ERROR": 1
+        },
+        "flattened_noise_target_counts": {
+          "measurement_flip_targets": 49,
+          "one_qubit_channel_targets": 40,
+          "two_qubit_channel_pairs": 120
+        },
+        "measurement_flip_probability": 0.003,
+        "memory_basis": "x",
+        "noise_semantics": "Each PAULI_CHANNEL_2 draw is a categorical Pauli-pair fault, so two-qubit Pauli components are correlated within that gate. Independent gate locations have no cross-location correlation.",
+        "observables": 1,
+        "regime": "z_biased",
+        "rounds": 5,
+        "total_fault_probability_per_1q_instruction": 0.003,
+        "total_fault_probability_per_2q_instruction": 0.003
+      }
+    },
+    "z/balanced": {
+      "circuit_sha256": "c6644b3c788989a50809c0f48bfc5bfe28130b15a2524789604f3fae09899470",
+      "conversion": {
+        "approximate_disjoint_errors": true,
+        "decompose_errors": true,
+        "explanation": "Stim DEM construction approximates mutually-exclusive PAULI_CHANNEL_1/2 outcomes as independent error mechanisms; PyMatching correlated matching retains available DEM decomposition correlations but does not undo that channel-to-DEM approximation.",
+        "pymatching_correlations_enabled": true
+      },
+      "dem_sha256": "7b823e56b6a674fe13766315f213ac2abdc2ba9affbdfa3200d8ecd5721c0e8f",
+      "logical_fault_ids": [
+        0
+      ],
+      "matching_edges": 142,
+      "matching_nodes": 40,
+      "noise": {
+        "1q_pauli_probabilities_X_Y_Z": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "1q_pauli_probability_sum": 0.003,
+        "2q_pauli_marginals": {
+          "first_qubit": {
+            "I": 0.0006000000000000001,
+            "X": 0.0008,
+            "Y": 0.0008,
+            "Z": 0.0007999999999999996
+          },
+          "second_qubit": {
+            "I": 0.0006000000000000001,
+            "X": 0.0008,
+            "Y": 0.0008,
+            "Z": 0.0007999999999999996
+          }
+        },
+        "2q_pauli_pair_order": [
+          "IX",
+          "IY",
+          "IZ",
+          "XI",
+          "XX",
+          "XY",
+          "XZ",
+          "YI",
+          "YX",
+          "YY",
+          "YZ",
+          "ZI",
+          "ZX",
+          "ZY",
+          "ZZ"
+        ],
+        "2q_pauli_pair_probabilities": [
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.00019999999999999958
+        ],
+        "2q_pauli_probability_sum": 0.0029999999999999996,
+        "detectors": 40,
+        "distance": 3,
+        "flattened_instruction_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 6,
+          "Z_ERROR": 0
+        },
+        "flattened_noise_target_counts": {
+          "measurement_flip_targets": 49,
+          "one_qubit_channel_targets": 40,
+          "two_qubit_channel_pairs": 120
+        },
+        "measurement_flip_probability": 0.003,
+        "memory_basis": "z",
+        "noise_semantics": "Each PAULI_CHANNEL_2 draw is a categorical Pauli-pair fault, so two-qubit Pauli components are correlated within that gate. Independent gate locations have no cross-location correlation.",
+        "observables": 1,
+        "regime": "balanced",
+        "rounds": 5,
+        "total_fault_probability_per_1q_instruction": 0.003,
+        "total_fault_probability_per_2q_instruction": 0.003
+      }
+    },
+    "z/x_biased": {
+      "circuit_sha256": "3327bfcbcbc538e8720e01d47738afaec8b4326abab62606aa2dbc346fea8513",
+      "conversion": {
+        "approximate_disjoint_errors": true,
+        "decompose_errors": true,
+        "explanation": "Stim DEM construction approximates mutually-exclusive PAULI_CHANNEL_1/2 outcomes as independent error mechanisms; PyMatching correlated matching retains available DEM decomposition correlations but does not undo that channel-to-DEM approximation.",
+        "pymatching_correlations_enabled": true
+      },
+      "dem_sha256": "dda728b685826085aa4badd8408637a41aad00e99d03b03d987c6c2e286ce2d3",
+      "logical_fault_ids": [
+        0
+      ],
+      "matching_edges": 142,
+      "matching_nodes": 40,
+      "noise": {
+        "1q_pauli_probabilities_X_Y_Z": [
+          0.0025,
+          0.00025,
+          0.00025
+        ],
+        "1q_pauli_probability_sum": 0.003,
+        "2q_pauli_marginals": {
+          "first_qubit": {
+            "I": 0.00021428571428571427,
+            "X": 0.0023214285714285715,
+            "Y": 0.00023214285714285714,
+            "Z": 0.00023214285714285757
+          },
+          "second_qubit": {
+            "I": 0.00021428571428571427,
+            "X": 0.0023214285714285715,
+            "Y": 0.00023214285714285714,
+            "Z": 0.00023214285714285757
+          }
+        },
+        "2q_pauli_pair_order": [
+          "IX",
+          "IY",
+          "IZ",
+          "XI",
+          "XX",
+          "XY",
+          "XZ",
+          "YI",
+          "YX",
+          "YY",
+          "YZ",
+          "ZI",
+          "ZX",
+          "ZY",
+          "ZZ"
+        ],
+        "2q_pauli_pair_probabilities": [
+          0.00017857142857142857,
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          0.00017857142857142857,
+          0.0017857142857142857,
+          0.00017857142857142857,
+          0.00017857142857142857,
+          1.785714285714286e-05,
+          0.00017857142857142857,
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          0.00017857142857142857,
+          1.785714285714286e-05,
+          1.7857142857143292e-05
+        ],
+        "2q_pauli_probability_sum": 0.0030000000000000005,
+        "detectors": 40,
+        "distance": 3,
+        "flattened_instruction_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 6,
+          "Z_ERROR": 0
+        },
+        "flattened_noise_target_counts": {
+          "measurement_flip_targets": 49,
+          "one_qubit_channel_targets": 40,
+          "two_qubit_channel_pairs": 120
+        },
+        "measurement_flip_probability": 0.003,
+        "memory_basis": "z",
+        "noise_semantics": "Each PAULI_CHANNEL_2 draw is a categorical Pauli-pair fault, so two-qubit Pauli components are correlated within that gate. Independent gate locations have no cross-location correlation.",
+        "observables": 1,
+        "regime": "x_biased",
+        "rounds": 5,
+        "total_fault_probability_per_1q_instruction": 0.003,
+        "total_fault_probability_per_2q_instruction": 0.003
+      }
+    },
+    "z/z_biased": {
+      "circuit_sha256": "d2168f5ecae7f2575465f557f616c6d20d3d40b42c220d2c7cdbbbb7dd5ae440",
+      "conversion": {
+        "approximate_disjoint_errors": true,
+        "decompose_errors": true,
+        "explanation": "Stim DEM construction approximates mutually-exclusive PAULI_CHANNEL_1/2 outcomes as independent error mechanisms; PyMatching correlated matching retains available DEM decomposition correlations but does not undo that channel-to-DEM approximation.",
+        "pymatching_correlations_enabled": true
+      },
+      "dem_sha256": "6fb222efc3e1721352b3ee0f9d379620a514b541eebe35377e5fc6d689e63c5a",
+      "logical_fault_ids": [
+        0
+      ],
+      "matching_edges": 142,
+      "matching_nodes": 40,
+      "noise": {
+        "1q_pauli_probabilities_X_Y_Z": [
+          0.00025,
+          0.00025,
+          0.0025
+        ],
+        "1q_pauli_probability_sum": 0.003,
+        "2q_pauli_marginals": {
+          "first_qubit": {
+            "I": 0.00021428571428571427,
+            "X": 0.00023214285714285714,
+            "Y": 0.00023214285714285714,
+            "Z": 0.0023214285714285715
+          },
+          "second_qubit": {
+            "I": 0.00021428571428571427,
+            "X": 0.00023214285714285714,
+            "Y": 0.00023214285714285714,
+            "Z": 0.0023214285714285715
+          }
+        },
+        "2q_pauli_pair_order": [
+          "IX",
+          "IY",
+          "IZ",
+          "XI",
+          "XX",
+          "XY",
+          "XZ",
+          "YI",
+          "YX",
+          "YY",
+          "YZ",
+          "ZI",
+          "ZX",
+          "ZY",
+          "ZZ"
+        ],
+        "2q_pauli_pair_probabilities": [
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          0.00017857142857142857,
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          0.00017857142857142857,
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          1.785714285714286e-05,
+          0.00017857142857142857,
+          0.00017857142857142857,
+          0.00017857142857142857,
+          0.00017857142857142857,
+          0.0017857142857142857
+        ],
+        "2q_pauli_probability_sum": 0.003,
+        "detectors": 40,
+        "distance": 3,
+        "flattened_instruction_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 6,
+          "Z_ERROR": 0
+        },
+        "flattened_noise_target_counts": {
+          "measurement_flip_targets": 49,
+          "one_qubit_channel_targets": 40,
+          "two_qubit_channel_pairs": 120
+        },
+        "measurement_flip_probability": 0.003,
+        "memory_basis": "z",
+        "noise_semantics": "Each PAULI_CHANNEL_2 draw is a categorical Pauli-pair fault, so two-qubit Pauli components are correlated within that gate. Independent gate locations have no cross-location correlation.",
+        "observables": 1,
+        "regime": "z_biased",
+        "rounds": 5,
+        "total_fault_probability_per_1q_instruction": 0.003,
+        "total_fault_probability_per_2q_instruction": 0.003
+      }
+    }
+  },
+  "failed": [],
+  "passed": [
+    "z/x_biased: 40 detectors, 1 observable",
+    "z/x_biased: noiseless samples all zero",
+    "z/x_biased: noisy detectors nonzero",
+    "z/x_biased: DEM and matching construction",
+    "z/balanced: 40 detectors, 1 observable",
+    "z/balanced: noiseless samples all zero",
+    "z/balanced: noisy detectors nonzero",
+    "z/balanced: DEM and matching construction",
+    "z/z_biased: 40 detectors, 1 observable",
+    "z/z_biased: noiseless samples all zero",
+    "z/z_biased: noisy detectors nonzero",
+    "z/z_biased: DEM and matching construction",
+    "x/x_biased: 40 detectors, 1 observable",
+    "x/x_biased: noiseless samples all zero",
+    "x/x_biased: noisy detectors nonzero",
+    "x/x_biased: DEM and matching construction",
+    "x/balanced: 40 detectors, 1 observable",
+    "x/balanced: noiseless samples all zero",
+    "x/balanced: noisy detectors nonzero",
+    "x/balanced: DEM and matching construction",
+    "x/z_biased: 40 detectors, 1 observable",
+    "x/z_biased: noiseless samples all zero",
+    "x/z_biased: noisy detectors nonzero",
+    "x/z_biased: DEM and matching construction"
+  ],
+  "seed_audit_pass": true,
+  "software": {
+    "numpy": "2.5.3",
+    "pymatching": "2.4.0",
+    "sklearn": "1.9.1",
+    "stim": "1.16.0"
+  }
+}

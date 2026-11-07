@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "created_date": "2026-11-04",
+  "scope": "Documentation-only consolidation; no experiments or raw decoder replay performed in this handoff.",
+  "primary_conclusion": "No reproducible adaptive-decoding or composition-specialist advantage has been established.",
+  "sources": {
+    "early_outputs": "../",
+    "phase1": "../noise_composition_phase",
+    "phase2": "../phase2_specialist_decoder",
+    "phase3a": "../phase3_geometry_investigation",
+    "phase3b": "../phase3b_independent_replication"
+  },
+  "results": [
+    {
+      "id": "starter_dataset",
+      "evidence_level": 2,
+      "status": "audit_only",
+      "source": "C:/Users/LENOVO/Downloads/Q-SHIFT_v0.1_starter",
+      "dataset": {"rows": 150000, "columns": 11, "null_cells": 0, "detector_count": 8, "unique_detector_vectors": 61, "duplicate_full_rows": 149883, "rows_per_probability": {"0.001": 50000, "0.003": 50000, "0.006": 50000}, "logical_flips": {"0.001": 70, "0.003": 240, "0.006": 490}},
+      "caveat": "Random row splitting can place duplicated rows/patterns across partitions. Conversation classifier metrics are not attributable to the current saved pickle."
+    },
+    {
+      "id": "early_ten_seed_lookup_generalization",
+      "evidence_level": 2,
+      "status": "negative",
+      "source": "../qshift_research_results.json",
+      "seeds": 10,
+      "shots_per_condition": 1000000,
+      "conditions_p": [0.001, 0.002, 0.003, 0.0045, 0.006, 0.008],
+      "fixed_errors": [6, 39, 97, 208, 374, 663],
+      "mixed_lookup_errors": [7, 47, 101, 231, 413, 741],
+      "paired_error_difference_lookup_minus_fixed": [1, 8, 4, 23, 39, 78],
+      "seed_level_wilcoxon_p": [1.0, 0.125, 0.852, 0.117, 0.334, 0.078],
+      "interpretation": "Mixed lookup did not show a credible benefit; the outside-range p=0.008 result was worse."
+    },
+    {
+      "id": "phase1_noise_composition_guarded",
+      "evidence_level": 2,
+      "status": "negative_for_adaptation; per_regime_aggregate_discrepancy",
+      "source": "../noise_composition_phase/results/composition_results_v4_guarded.json",
+      "seeds": 10,
+      "shots_per_condition": 200000,
+      "fixed_errors": {"x_dominant": 524, "z_dominant": 33, "depolarizing": 306, "measurement_only": 54, "mixed_xz_heldout": 166, "data_plus_measurement_heldout": 550},
+      "pooled_lookup_errors": {"x_dominant": 558, "z_dominant": 32, "depolarizing": 329, "measurement_only": 61, "mixed_xz_heldout": 183, "data_plus_measurement_heldout": 605},
+      "per_regime_lookup_json_errors": {"x_dominant": 565, "z_dominant": 44, "depolarizing": 374, "measurement_only": 89, "mixed_xz_heldout": 185, "data_plus_measurement_heldout": 634},
+      "per_regime_lookup_report_errors": {"x_dominant": 562, "z_dominant": 46, "depolarizing": 323, "measurement_only": 100, "mixed_xz_heldout": 209, "data_plus_measurement_heldout": 612},
+      "adaptive_stream": {"shots": 480000, "fixed_errors": 622, "guarded_adaptive_errors": 622, "oracle_matching_errors": 622, "detector_regime_accuracy": 0.944, "guarded_switches": 0},
+      "interpretation": "Guarded validation rejected every lookup specialist. Report-vs-JSON per-regime static totals remain unresolved; dynamic result is consistent and showed no benefit."
+    },
+    {
+      "id": "phase2_specialist_decoder",
+      "evidence_level": 2,
+      "status": "usefulness_gate_failed",
+      "source": "../phase2_specialist_decoder/results/specialist_results_v1.json",
+      "seeds": 10,
+      "shots_per_condition": 300000,
+      "conditions": ["x_dominant", "z_dominant", "depolarizing", "measurement_only", "mixed_xz_heldout", "data_plus_measurement_heldout"],
+      "fixed_errors_total": 2402,
+      "condition_specific_oracle_errors_total": 2401,
+      "validation_selected_strategy_errors_total": 2402,
+      "validation_choices": 60,
+      "validation_choices_fixed": 60,
+      "interpretation": "X/Z/depolarizing specialists matched fixed corrections exactly. Measurement specialist did not pass validation. No selector built."
+    },
+    {
+      "id": "phase3a_surface_pilot_v1_invalid",
+      "evidence_level": 4,
+      "status": "invalid_excluded",
+      "source": "../phase3_geometry_investigation/phase3a_surface_pilot_v1.json",
+      "reason": "Composition fractions were used without multiplying by intended total noise probability; near-50% residuals."
+    },
+    {
+      "id": "phase3a_surface_pilot_corrected",
+      "evidence_level": 4,
+      "status": "exploratory_inconclusive",
+      "source": "../phase3_geometry_investigation/phase3a_surface_pilot_v4.json",
+      "seeds": 3,
+      "shots_per_condition": 36000,
+      "primary_condition": "X-dominant",
+      "fixed_errors": 2528,
+      "x_specialist_errors": 2520,
+      "specialist_only_wrong": 2,
+      "fixed_only_wrong": 10,
+      "mcnemar_p_unadjusted": 0.0386,
+      "mcnemar_p_bonferroni_12": 0.463,
+      "seed_roots": [31503001, 31503002, 31503003],
+      "caveat": "v2, v3, v4 raw hashes are identical; they are implementation checkpoints, not independent replications."
+    },
+    {
+      "id": "phase3b_surface_independent_replication",
+      "evidence_level": 2,
+      "status": "negative_no_confirmation",
+      "source": "../phase3b_independent_replication/RESULTS.json",
+      "seeds": 20,
+      "total_shots": 2400000,
+      "primary_shots": 600000,
+      "condition": "X-dominant",
+      "fixed_errors": 43673,
+      "x_specialist_errors": 43675,
+      "specialist_only_wrong": 82,
+      "fixed_only_wrong": 80,
+      "seed_wins_specialist": 6,
+      "seed_wins_fixed": 11,
+      "seed_ties": 3,
+      "seed_mean_rate_difference_specialist_minus_fixed": 0.00000333,
+      "seed_bootstrap_ci95": [-0.00004, 0.00004333],
+      "exact_seed_sign_p": 0.3323,
+      "pooled_mcnemar_p": 0.9374,
+      "interpretation": "Independent replication did not support the Phase 3A specialist advantage."
+    }
+  ],
+  "unverified_conversation_results": [
+    {"id": "starter_classifier", "evidence_level": 5, "reported_balanced_accuracy": 0.9862, "positive_precision": 0.41, "positive_recall": 0.98, "false_positives": 280, "false_negatives": 4, "true_positives": 196, "note": "Conversation-only; exact local artifact/split not matched."},
+    {"id": "xor_correction", "evidence_level": 5, "reported_before_rate_percent": 0.5333, "reported_after_rate_percent": 0.7573, "note": "Conversation-only; indicates worse residual after XOR correction, not independently reproduced."}
+  ],
+  "open_discrepancies": [
+    "Phase 1 report per-regime counts differ from v4 guarded JSON aggregate; raw shot replay required.",
+    "Phase 2 report prose incorrectly equates condition-specific oracle total 2401 with validation-selected fixed strategy total 2402; structured results disambiguate."
+  ]
+}

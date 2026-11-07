@@ -1,0 +1,87 @@
+{
+  "status": "verified_from_saved_test_arrays",
+  "overall_shots": 1200000,
+  "calibration_selected_global_fixed_errors": 5532,
+  "calibration_selected_regime_informed_errors": 5532,
+  "balanced_fixed_errors": 6644,
+  "retrospective_hindsight_per_regime_errors": 5532,
+  "retrospective_per_shot_oracle_errors": 4251,
+  "hindsight_oracle_is_unattainable": true,
+  "by_basis_regime": [
+    {
+      "basis": "z",
+      "regime": "x_biased",
+      "shots": 200000,
+      "hindsight_decoder_index": 2,
+      "hindsight_errors": 1461,
+      "per_shot_oracle_errors": 1170
+    },
+    {
+      "basis": "z",
+      "regime": "balanced",
+      "shots": 200000,
+      "hindsight_decoder_index": 2,
+      "hindsight_errors": 934,
+      "per_shot_oracle_errors": 638
+    },
+    {
+      "basis": "z",
+      "regime": "z_biased",
+      "shots": 200000,
+      "hindsight_decoder_index": 2,
+      "hindsight_errors": 282,
+      "per_shot_oracle_errors": 175
+    },
+    {
+      "basis": "x",
+      "regime": "x_biased",
+      "shots": 200000,
+      "hindsight_decoder_index": 0,
+      "hindsight_errors": 265,
+      "per_shot_oracle_errors": 231
+    },
+    {
+      "basis": "x",
+      "regime": "balanced",
+      "shots": 200000,
+      "hindsight_decoder_index": 0,
+      "hindsight_errors": 1012,
+      "per_shot_oracle_errors": 792
+    },
+    {
+      "basis": "x",
+      "regime": "z_biased",
+      "shots": 200000,
+      "hindsight_decoder_index": 0,
+      "hindsight_errors": 1578,
+      "per_shot_oracle_errors": 1245
+    }
+  ],
+  "primary_B_minus_A": {
+    "effect_B_minus_A_equal_six_cell_mean": 0.0,
+    "bootstrap95_ci": [
+      0.0,
+      0.0
+    ],
+    "two_sided_root_cluster_signflip_p": 1.0,
+    "bootstrap_draws": 100000,
+    "signflip_draws": 100000,
+    "shots": 1200000,
+    "roots": 120,
+    "method": {
+      "alternative": "two-sided",
+      "assignments": 100000,
+      "seed": 88300002,
+      "statistic": "mean over six cells of each cell's mean paired root error-rate difference",
+      "p_value": "(1 + number of absolute randomized statistics at least as large as observed) / (assignments + 1)"
+    }
+  },
+  "test_labels_used_for_selection": false,
+  "calibration_selected_global_fixed_ler": 0.00461,
+  "calibration_selected_regime_informed_ler": 0.00461,
+  "balanced_fixed_ler": 0.005536666666666666,
+  "retrospective_hindsight_per_regime_ler": 0.00461,
+  "retrospective_per_shot_oracle_ler": 0.0035425,
+  "B_minus_A_error_count": 0,
+  "B_minus_A_absolute_ler_difference": 0.0
+}

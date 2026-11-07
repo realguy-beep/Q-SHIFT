@@ -1,0 +1,4580 @@
+{
+  "generated_local_timestamp": "not recorded to avoid implying experimental freeze timing",
+  "limitations": [
+    "Hindsight per-shot, per-root, and per-regime oracles select using labels in the same evaluation arrays and are biased upper bounds, not deployable policies.",
+    "Oracle headroom is conditional on each archived bank and cannot upper-bound unseen decoder families.",
+    "Calibration arrays are missing for Phase 4C Stage 2; its selected calibrated predictions are verifiable but the fit is not independently reproduced.",
+    "Phase 5E schedule summaries do not retain shot-level evaluation arrays in their own output; counts are summary-only and not pooled with raw archives.",
+    "Phase 3B raw files preserve detectors/labels but not decoder predictions; no shot-level oracle was reconstructed for it.",
+    "Exact categorical and independent-DEM posterior results concern separate probability models and are not combined with shot-based physical-channel LER."
+  ],
+  "recomputation_scope": {
+    "archived_raw_prediction_bundles_read": 802,
+    "new_decoder_training_or_model_selection": false,
+    "new_simulation_shots": 0,
+    "paired_roots": 392,
+    "test_labels_used_only_for_retrospective_oracle_diagnostics": true
+  },
+  "studies": {
+    "correlation_pilot": {
+      "decoder_names": [
+        "pooled_uncorrelated",
+        "pooled_correlated",
+        "regime_uncorrelated",
+        "regime_correlated"
+      ],
+      "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+        "confidence": 0.95,
+        "high": 0.0018013888888888888,
+        "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+        "low": 0.0016138888888888887,
+        "replicates": 10000,
+        "seed": 1674047357,
+        "unit": "root cluster resampled within each stratum; equal stratum weighting"
+      },
+      "equal_stratum_fixed_ler": 0.004905555555555555,
+      "equal_stratum_hindsight_per_shot_oracle_ler": 0.0032,
+      "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.0017055555555555552,
+      "global_fixed_index": 0,
+      "global_fixed_name": "pooled_uncorrelated",
+      "oracle_kind": "shotwise",
+      "per_stratum": {
+        "x/balanced": {
+          "calibration_selected_errors": 727,
+          "calibration_selected_index": 0,
+          "calibration_selected_ler": 0.006058333333333333,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "pooled_uncorrelated",
+          "errors_by_decoder": [
+            727,
+            629,
+            727,
+            713
+          ],
+          "hindsight_best_regime_errors": 629,
+          "hindsight_best_regime_index": 1,
+          "hindsight_best_regime_ler": 0.005241666666666667,
+          "hindsight_best_regime_name": "pooled_correlated",
+          "hindsight_per_root_oracle_errors": 627,
+          "hindsight_per_root_oracle_ler": 0.005225,
+          "hindsight_per_shot_oracle_errors": 413,
+          "hindsight_per_shot_oracle_ler": 0.0034416666666666667,
+          "ler_by_decoder": [
+            0.006058333333333333,
+            0.005241666666666667,
+            0.006058333333333333,
+            0.005941666666666666
+          ],
+          "pooled_fixed_errors": 727,
+          "pooled_fixed_ler": 0.006058333333333333,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.43191196698762035,
+          "roots": 12,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 12,
+          "shots": 120000
+        },
+        "x/x_biased": {
+          "calibration_selected_errors": 100,
+          "calibration_selected_index": 0,
+          "calibration_selected_ler": 0.0008333333333333334,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "pooled_uncorrelated",
+          "errors_by_decoder": [
+            100,
+            122,
+            100,
+            122
+          ],
+          "hindsight_best_regime_errors": 100,
+          "hindsight_best_regime_index": 0,
+          "hindsight_best_regime_ler": 0.0008333333333333334,
+          "hindsight_best_regime_name": "pooled_uncorrelated",
+          "hindsight_per_root_oracle_errors": 96,
+          "hindsight_per_root_oracle_ler": 0.0008,
+          "hindsight_per_shot_oracle_errors": 68,
+          "hindsight_per_shot_oracle_ler": 0.0005666666666666667,
+          "ler_by_decoder": [
+            0.0008333333333333334,
+            0.0010166666666666666,
+            0.0008333333333333334,
+            0.0010166666666666666
+          ],
+          "pooled_fixed_errors": 100,
+          "pooled_fixed_ler": 0.0008333333333333334,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.32,
+          "roots": 12,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 12,
+          "shots": 120000
+        },
+        "x/z_biased": {
+          "calibration_selected_errors": 1070,
+          "calibration_selected_index": 0,
+          "calibration_selected_ler": 0.008916666666666666,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "pooled_uncorrelated",
+          "errors_by_decoder": [
+            1070,
+            984,
+            999,
+            986
+          ],
+          "hindsight_best_regime_errors": 984,
+          "hindsight_best_regime_index": 1,
+          "hindsight_best_regime_ler": 0.0082,
+          "hindsight_best_regime_name": "pooled_correlated",
+          "hindsight_per_root_oracle_errors": 958,
+          "hindsight_per_root_oracle_ler": 0.007983333333333334,
+          "hindsight_per_shot_oracle_errors": 724,
+          "hindsight_per_shot_oracle_ler": 0.006033333333333333,
+          "ler_by_decoder": [
+            0.008916666666666666,
+            0.0082,
+            0.008325,
+            0.008216666666666667
+          ],
+          "pooled_fixed_errors": 1070,
+          "pooled_fixed_ler": 0.008916666666666666,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.3233644859813084,
+          "roots": 12,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 12,
+          "shots": 120000
+        },
+        "z/balanced": {
+          "calibration_selected_errors": 575,
+          "calibration_selected_index": 0,
+          "calibration_selected_ler": 0.004791666666666666,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "pooled_uncorrelated",
+          "errors_by_decoder": [
+            575,
+            550,
+            559,
+            807
+          ],
+          "hindsight_best_regime_errors": 550,
+          "hindsight_best_regime_index": 1,
+          "hindsight_best_regime_ler": 0.004583333333333333,
+          "hindsight_best_regime_name": "pooled_correlated",
+          "hindsight_per_root_oracle_errors": 534,
+          "hindsight_per_root_oracle_ler": 0.00445,
+          "hindsight_per_shot_oracle_errors": 354,
+          "hindsight_per_shot_oracle_ler": 0.00295,
+          "ler_by_decoder": [
+            0.004791666666666666,
+            0.004583333333333333,
+            0.004658333333333333,
+            0.006725
+          ],
+          "pooled_fixed_errors": 575,
+          "pooled_fixed_ler": 0.004791666666666666,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.3843478260869565,
+          "roots": 12,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 12,
+          "shots": 120000
+        },
+        "z/x_biased": {
+          "calibration_selected_errors": 938,
+          "calibration_selected_index": 0,
+          "calibration_selected_ler": 0.007816666666666666,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "pooled_uncorrelated",
+          "errors_by_decoder": [
+            938,
+            884,
+            865,
+            912
+          ],
+          "hindsight_best_regime_errors": 865,
+          "hindsight_best_regime_index": 2,
+          "hindsight_best_regime_ler": 0.007208333333333333,
+          "hindsight_best_regime_name": "regime_uncorrelated",
+          "hindsight_per_root_oracle_errors": 842,
+          "hindsight_per_root_oracle_ler": 0.007016666666666667,
+          "hindsight_per_shot_oracle_errors": 663,
+          "hindsight_per_shot_oracle_ler": 0.005525,
+          "ler_by_decoder": [
+            0.007816666666666666,
+            0.007366666666666666,
+            0.007208333333333333,
+            0.0076
+          ],
+          "pooled_fixed_errors": 938,
+          "pooled_fixed_ler": 0.007816666666666666,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.2931769722814499,
+          "roots": 12,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 12,
+          "shots": 120000
+        },
+        "z/z_biased": {
+          "calibration_selected_errors": 122,
+          "calibration_selected_index": 0,
+          "calibration_selected_ler": 0.0010166666666666666,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "pooled_uncorrelated",
+          "errors_by_decoder": [
+            122,
+            180,
+            122,
+            180
+          ],
+          "hindsight_best_regime_errors": 122,
+          "hindsight_best_regime_index": 0,
+          "hindsight_best_regime_ler": 0.0010166666666666666,
+          "hindsight_best_regime_name": "pooled_uncorrelated",
+          "hindsight_per_root_oracle_errors": 121,
+          "hindsight_per_root_oracle_ler": 0.0010083333333333333,
+          "hindsight_per_shot_oracle_errors": 82,
+          "hindsight_per_shot_oracle_ler": 0.0006833333333333333,
+          "ler_by_decoder": [
+            0.0010166666666666666,
+            0.0015,
+            0.0010166666666666666,
+            0.0015
+          ],
+          "pooled_fixed_errors": 122,
+          "pooled_fixed_ler": 0.0010166666666666666,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.32786885245901637,
+          "roots": 12,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 12,
+          "shots": 120000
+        }
+      },
+      "relative_equal_stratum_oracle_reduction": 0.34767836919592293,
+      "root_count": 72,
+      "study": "correlation_pilot",
+      "total_shots": 720000
+    },
+    "headroom_feasibility": {
+      "banks": {
+        "native_d3_x": {
+          "bank": "native_d3_x",
+          "calibration_selection": {
+            "per_regime_indices": {
+              "data_heavy": 6,
+              "measurement_heavy": 2,
+              "nominal": 2
+            },
+            "pooled_fixed_index": 2,
+            "reconciles_saved_bank_selection": true,
+            "roots_by_regime": {
+              "data_heavy": 5,
+              "measurement_heavy": 5,
+              "nominal": 5
+            },
+            "shots_by_regime": {
+              "data_heavy": 25000,
+              "measurement_heavy": 25000,
+              "nominal": 25000
+            }
+          },
+          "decoder_names": [
+            "decoder_0",
+            "decoder_1",
+            "decoder_2",
+            "decoder_3",
+            "decoder_4",
+            "decoder_5",
+            "decoder_6",
+            "decoder_7",
+            "decoder_8"
+          ],
+          "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+            "confidence": 0.95,
+            "high": 0.0008933333333333333,
+            "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+            "low": 0.00068,
+            "replicates": 10000,
+            "seed": 3222731881,
+            "unit": "root cluster resampled within each stratum; equal stratum weighting"
+          },
+          "distance": 3,
+          "equal_stratum_fixed_ler": 0.004346666666666666,
+          "equal_stratum_hindsight_per_shot_oracle_ler": 0.0035600000000000002,
+          "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.000786666666666666,
+          "family": "native",
+          "global_fixed_index": 2,
+          "global_fixed_name": "decoder_2",
+          "memory": "x",
+          "oracle_kind": "shotwise",
+          "per_stratum": {
+            "data_heavy": {
+              "calibration_selected_errors": 215,
+              "calibration_selected_index": 6,
+              "calibration_selected_ler": 0.0086,
+              "calibration_selected_minus_pooled_errors": 2,
+              "calibration_selected_minus_pooled_ler": 8e-05,
+              "calibration_selected_name": "decoder_6",
+              "errors_by_decoder": [
+                209,
+                214,
+                213,
+                210,
+                209,
+                213,
+                215,
+                211,
+                211
+              ],
+              "hindsight_best_regime_errors": 209,
+              "hindsight_best_regime_index": 0,
+              "hindsight_best_regime_ler": 0.00836,
+              "hindsight_best_regime_name": "decoder_0",
+              "hindsight_per_root_oracle_errors": 204,
+              "hindsight_per_root_oracle_ler": 0.00816,
+              "hindsight_per_shot_oracle_errors": 173,
+              "hindsight_per_shot_oracle_ler": 0.00692,
+              "ler_by_decoder": [
+                0.00836,
+                0.00856,
+                0.00852,
+                0.0084,
+                0.00836,
+                0.00852,
+                0.0086,
+                0.00844,
+                0.00844
+              ],
+              "pooled_fixed_errors": 213,
+              "pooled_fixed_ler": 0.00852,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.19534883720930232,
+              "roots": 5,
+              "roots_specialist_better": 2,
+              "roots_specialist_worse": 3,
+              "roots_tied": 0,
+              "shots": 25000
+            },
+            "measurement_heavy": {
+              "calibration_selected_errors": 32,
+              "calibration_selected_index": 2,
+              "calibration_selected_ler": 0.00128,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_2",
+              "errors_by_decoder": [
+                38,
+                37,
+                32,
+                42,
+                38,
+                36,
+                44,
+                42,
+                38
+              ],
+              "hindsight_best_regime_errors": 32,
+              "hindsight_best_regime_index": 2,
+              "hindsight_best_regime_ler": 0.00128,
+              "hindsight_best_regime_name": "decoder_2",
+              "hindsight_per_root_oracle_errors": 30,
+              "hindsight_per_root_oracle_ler": 0.0012,
+              "hindsight_per_shot_oracle_errors": 27,
+              "hindsight_per_shot_oracle_ler": 0.00108,
+              "ler_by_decoder": [
+                0.00152,
+                0.00148,
+                0.00128,
+                0.00168,
+                0.00152,
+                0.00144,
+                0.00176,
+                0.00168,
+                0.00152
+              ],
+              "pooled_fixed_errors": 32,
+              "pooled_fixed_ler": 0.00128,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.15625,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            },
+            "nominal": {
+              "calibration_selected_errors": 79,
+              "calibration_selected_index": 2,
+              "calibration_selected_ler": 0.00316,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_2",
+              "errors_by_decoder": [
+                91,
+                83,
+                79,
+                89,
+                91,
+                91,
+                90,
+                89,
+                91
+              ],
+              "hindsight_best_regime_errors": 79,
+              "hindsight_best_regime_index": 2,
+              "hindsight_best_regime_ler": 0.00316,
+              "hindsight_best_regime_name": "decoder_2",
+              "hindsight_per_root_oracle_errors": 76,
+              "hindsight_per_root_oracle_ler": 0.00304,
+              "hindsight_per_shot_oracle_errors": 67,
+              "hindsight_per_shot_oracle_ler": 0.00268,
+              "ler_by_decoder": [
+                0.00364,
+                0.00332,
+                0.00316,
+                0.00356,
+                0.00364,
+                0.00364,
+                0.0036,
+                0.00356,
+                0.00364
+              ],
+              "pooled_fixed_errors": 79,
+              "pooled_fixed_ler": 0.00316,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.1518987341772152,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            }
+          },
+          "relative_equal_stratum_oracle_reduction": 0.1809815950920244,
+          "root_count": 15,
+          "study": "headroom_native_d3_x",
+          "total_shots": 75000
+        },
+        "native_d3_z": {
+          "bank": "native_d3_z",
+          "calibration_selection": {
+            "per_regime_indices": {
+              "data_heavy": 3,
+              "measurement_heavy": 2,
+              "nominal": 2
+            },
+            "pooled_fixed_index": 1,
+            "reconciles_saved_bank_selection": true,
+            "roots_by_regime": {
+              "data_heavy": 5,
+              "measurement_heavy": 5,
+              "nominal": 5
+            },
+            "shots_by_regime": {
+              "data_heavy": 25000,
+              "measurement_heavy": 25000,
+              "nominal": 25000
+            }
+          },
+          "decoder_names": [
+            "decoder_0",
+            "decoder_1",
+            "decoder_2",
+            "decoder_3",
+            "decoder_4",
+            "decoder_5",
+            "decoder_6",
+            "decoder_7",
+            "decoder_8"
+          ],
+          "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+            "confidence": 0.95,
+            "high": 0.00104,
+            "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+            "low": 0.00072,
+            "replicates": 10000,
+            "seed": 3222731881,
+            "unit": "root cluster resampled within each stratum; equal stratum weighting"
+          },
+          "distance": 3,
+          "equal_stratum_fixed_ler": 0.003826666666666666,
+          "equal_stratum_hindsight_per_shot_oracle_ler": 0.0029599999999999995,
+          "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.0008666666666666666,
+          "family": "native",
+          "global_fixed_index": 1,
+          "global_fixed_name": "decoder_1",
+          "memory": "z",
+          "oracle_kind": "shotwise",
+          "per_stratum": {
+            "data_heavy": {
+              "calibration_selected_errors": 189,
+              "calibration_selected_index": 3,
+              "calibration_selected_ler": 0.00756,
+              "calibration_selected_minus_pooled_errors": -14,
+              "calibration_selected_minus_pooled_ler": -0.00056,
+              "calibration_selected_name": "decoder_3",
+              "errors_by_decoder": [
+                199,
+                203,
+                215,
+                189,
+                199,
+                202,
+                192,
+                189,
+                199
+              ],
+              "hindsight_best_regime_errors": 189,
+              "hindsight_best_regime_index": 3,
+              "hindsight_best_regime_ler": 0.00756,
+              "hindsight_best_regime_name": "decoder_3",
+              "hindsight_per_root_oracle_errors": 185,
+              "hindsight_per_root_oracle_ler": 0.0074,
+              "hindsight_per_shot_oracle_errors": 151,
+              "hindsight_per_shot_oracle_ler": 0.00604,
+              "ler_by_decoder": [
+                0.00796,
+                0.00812,
+                0.0086,
+                0.00756,
+                0.00796,
+                0.00808,
+                0.00768,
+                0.00756,
+                0.00796
+              ],
+              "pooled_fixed_errors": 203,
+              "pooled_fixed_ler": 0.00812,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.20105820105820105,
+              "roots": 5,
+              "roots_specialist_better": 4,
+              "roots_specialist_worse": 0,
+              "roots_tied": 1,
+              "shots": 25000
+            },
+            "measurement_heavy": {
+              "calibration_selected_errors": 33,
+              "calibration_selected_index": 2,
+              "calibration_selected_ler": 0.00132,
+              "calibration_selected_minus_pooled_errors": -5,
+              "calibration_selected_minus_pooled_ler": -0.0002,
+              "calibration_selected_name": "decoder_2",
+              "errors_by_decoder": [
+                41,
+                38,
+                33,
+                55,
+                41,
+                39,
+                56,
+                55,
+                41
+              ],
+              "hindsight_best_regime_errors": 33,
+              "hindsight_best_regime_index": 2,
+              "hindsight_best_regime_ler": 0.00132,
+              "hindsight_best_regime_name": "decoder_2",
+              "hindsight_per_root_oracle_errors": 32,
+              "hindsight_per_root_oracle_ler": 0.00128,
+              "hindsight_per_shot_oracle_errors": 30,
+              "hindsight_per_shot_oracle_ler": 0.0012,
+              "ler_by_decoder": [
+                0.00164,
+                0.00152,
+                0.00132,
+                0.0022,
+                0.00164,
+                0.00156,
+                0.00224,
+                0.0022,
+                0.00164
+              ],
+              "pooled_fixed_errors": 38,
+              "pooled_fixed_ler": 0.00152,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.09090909090909091,
+              "roots": 5,
+              "roots_specialist_better": 4,
+              "roots_specialist_worse": 1,
+              "roots_tied": 0,
+              "shots": 25000
+            },
+            "nominal": {
+              "calibration_selected_errors": 65,
+              "calibration_selected_index": 2,
+              "calibration_selected_ler": 0.0026,
+              "calibration_selected_minus_pooled_errors": -2,
+              "calibration_selected_minus_pooled_ler": -8e-05,
+              "calibration_selected_name": "decoder_2",
+              "errors_by_decoder": [
+                68,
+                67,
+                65,
+                73,
+                68,
+                69,
+                76,
+                73,
+                68
+              ],
+              "hindsight_best_regime_errors": 65,
+              "hindsight_best_regime_index": 2,
+              "hindsight_best_regime_ler": 0.0026,
+              "hindsight_best_regime_name": "decoder_2",
+              "hindsight_per_root_oracle_errors": 58,
+              "hindsight_per_root_oracle_ler": 0.00232,
+              "hindsight_per_shot_oracle_errors": 41,
+              "hindsight_per_shot_oracle_ler": 0.00164,
+              "ler_by_decoder": [
+                0.00272,
+                0.00268,
+                0.0026,
+                0.00292,
+                0.00272,
+                0.00276,
+                0.00304,
+                0.00292,
+                0.00272
+              ],
+              "pooled_fixed_errors": 67,
+              "pooled_fixed_ler": 0.00268,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.36923076923076925,
+              "roots": 5,
+              "roots_specialist_better": 2,
+              "roots_specialist_worse": 2,
+              "roots_tied": 1,
+              "shots": 25000
+            }
+          },
+          "relative_equal_stratum_oracle_reduction": 0.22648083623693382,
+          "root_count": 15,
+          "study": "headroom_native_d3_z",
+          "total_shots": 75000
+        },
+        "native_d5_x": {
+          "bank": "native_d5_x",
+          "calibration_selection": {
+            "per_regime_indices": {
+              "data_heavy": 0,
+              "measurement_heavy": 2,
+              "nominal": 0
+            },
+            "pooled_fixed_index": 0,
+            "reconciles_saved_bank_selection": true,
+            "roots_by_regime": {
+              "data_heavy": 5,
+              "measurement_heavy": 5,
+              "nominal": 5
+            },
+            "shots_by_regime": {
+              "data_heavy": 25000,
+              "measurement_heavy": 25000,
+              "nominal": 25000
+            }
+          },
+          "decoder_names": [
+            "decoder_0",
+            "decoder_1",
+            "decoder_2",
+            "decoder_3",
+            "decoder_4",
+            "decoder_5",
+            "decoder_6",
+            "decoder_7",
+            "decoder_8"
+          ],
+          "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+            "confidence": 0.95,
+            "high": 0.0007466666666666667,
+            "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+            "low": 0.0005600000000000001,
+            "replicates": 10000,
+            "seed": 3222731881,
+            "unit": "root cluster resampled within each stratum; equal stratum weighting"
+          },
+          "distance": 5,
+          "equal_stratum_fixed_ler": 0.003146666666666667,
+          "equal_stratum_hindsight_per_shot_oracle_ler": 0.002493333333333333,
+          "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.0006533333333333339,
+          "family": "native",
+          "global_fixed_index": 0,
+          "global_fixed_name": "decoder_0",
+          "memory": "x",
+          "oracle_kind": "shotwise",
+          "per_stratum": {
+            "data_heavy": {
+              "calibration_selected_errors": 193,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.00772,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                193,
+                191,
+                203,
+                201,
+                193,
+                193,
+                196,
+                202,
+                200
+              ],
+              "hindsight_best_regime_errors": 191,
+              "hindsight_best_regime_index": 1,
+              "hindsight_best_regime_ler": 0.00764,
+              "hindsight_best_regime_name": "decoder_1",
+              "hindsight_per_root_oracle_errors": 183,
+              "hindsight_per_root_oracle_ler": 0.00732,
+              "hindsight_per_shot_oracle_errors": 153,
+              "hindsight_per_shot_oracle_ler": 0.00612,
+              "ler_by_decoder": [
+                0.00772,
+                0.00764,
+                0.00812,
+                0.00804,
+                0.00772,
+                0.00772,
+                0.00784,
+                0.00808,
+                0.008
+              ],
+              "pooled_fixed_errors": 193,
+              "pooled_fixed_ler": 0.00772,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.20725388601036268,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            },
+            "measurement_heavy": {
+              "calibration_selected_errors": 7,
+              "calibration_selected_index": 2,
+              "calibration_selected_ler": 0.00028,
+              "calibration_selected_minus_pooled_errors": -1,
+              "calibration_selected_minus_pooled_ler": -4e-05,
+              "calibration_selected_name": "decoder_2",
+              "errors_by_decoder": [
+                8,
+                7,
+                7,
+                8,
+                8,
+                8,
+                8,
+                9,
+                8
+              ],
+              "hindsight_best_regime_errors": 7,
+              "hindsight_best_regime_index": 1,
+              "hindsight_best_regime_ler": 0.00028,
+              "hindsight_best_regime_name": "decoder_1",
+              "hindsight_per_root_oracle_errors": 6,
+              "hindsight_per_root_oracle_ler": 0.00024,
+              "hindsight_per_shot_oracle_errors": 6,
+              "hindsight_per_shot_oracle_ler": 0.00024,
+              "ler_by_decoder": [
+                0.00032,
+                0.00028,
+                0.00028,
+                0.00032,
+                0.00032,
+                0.00032,
+                0.00032,
+                0.00036,
+                0.00032
+              ],
+              "pooled_fixed_errors": 8,
+              "pooled_fixed_ler": 0.00032,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.14285714285714285,
+              "roots": 5,
+              "roots_specialist_better": 1,
+              "roots_specialist_worse": 0,
+              "roots_tied": 4,
+              "shots": 25000
+            },
+            "nominal": {
+              "calibration_selected_errors": 36,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.00144,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                36,
+                36,
+                35,
+                33,
+                38,
+                38,
+                36,
+                38,
+                40
+              ],
+              "hindsight_best_regime_errors": 33,
+              "hindsight_best_regime_index": 3,
+              "hindsight_best_regime_ler": 0.00132,
+              "hindsight_best_regime_name": "decoder_3",
+              "hindsight_per_root_oracle_errors": 31,
+              "hindsight_per_root_oracle_ler": 0.00124,
+              "hindsight_per_shot_oracle_errors": 28,
+              "hindsight_per_shot_oracle_ler": 0.00112,
+              "ler_by_decoder": [
+                0.00144,
+                0.00144,
+                0.0014,
+                0.00132,
+                0.00152,
+                0.00152,
+                0.00144,
+                0.00152,
+                0.0016
+              ],
+              "pooled_fixed_errors": 36,
+              "pooled_fixed_ler": 0.00144,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.2222222222222222,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            }
+          },
+          "relative_equal_stratum_oracle_reduction": 0.20762711864406797,
+          "root_count": 15,
+          "study": "headroom_native_d5_x",
+          "total_shots": 75000
+        },
+        "native_d5_z": {
+          "bank": "native_d5_z",
+          "calibration_selection": {
+            "per_regime_indices": {
+              "data_heavy": 5,
+              "measurement_heavy": 0,
+              "nominal": 5
+            },
+            "pooled_fixed_index": 5,
+            "reconciles_saved_bank_selection": true,
+            "roots_by_regime": {
+              "data_heavy": 5,
+              "measurement_heavy": 5,
+              "nominal": 5
+            },
+            "shots_by_regime": {
+              "data_heavy": 25000,
+              "measurement_heavy": 25000,
+              "nominal": 25000
+            }
+          },
+          "decoder_names": [
+            "decoder_0",
+            "decoder_1",
+            "decoder_2",
+            "decoder_3",
+            "decoder_4",
+            "decoder_5",
+            "decoder_6",
+            "decoder_7",
+            "decoder_8"
+          ],
+          "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+            "confidence": 0.95,
+            "high": 0.0010133333333333333,
+            "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+            "low": 0.0006266666666666666,
+            "replicates": 10000,
+            "seed": 3222731881,
+            "unit": "root cluster resampled within each stratum; equal stratum weighting"
+          },
+          "distance": 5,
+          "equal_stratum_fixed_ler": 0.00288,
+          "equal_stratum_hindsight_per_shot_oracle_ler": 0.0020666666666666667,
+          "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.0008133333333333334,
+          "family": "native",
+          "global_fixed_index": 5,
+          "global_fixed_name": "decoder_5",
+          "memory": "z",
+          "oracle_kind": "shotwise",
+          "per_stratum": {
+            "data_heavy": {
+              "calibration_selected_errors": 175,
+              "calibration_selected_index": 5,
+              "calibration_selected_ler": 0.007,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_5",
+              "errors_by_decoder": [
+                175,
+                173,
+                184,
+                171,
+                174,
+                175,
+                176,
+                169,
+                176
+              ],
+              "hindsight_best_regime_errors": 169,
+              "hindsight_best_regime_index": 7,
+              "hindsight_best_regime_ler": 0.00676,
+              "hindsight_best_regime_name": "decoder_7",
+              "hindsight_per_root_oracle_errors": 162,
+              "hindsight_per_root_oracle_ler": 0.00648,
+              "hindsight_per_shot_oracle_errors": 128,
+              "hindsight_per_shot_oracle_ler": 0.00512,
+              "ler_by_decoder": [
+                0.007,
+                0.00692,
+                0.00736,
+                0.00684,
+                0.00696,
+                0.007,
+                0.00704,
+                0.00676,
+                0.00704
+              ],
+              "pooled_fixed_errors": 175,
+              "pooled_fixed_ler": 0.007,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.26857142857142857,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            },
+            "measurement_heavy": {
+              "calibration_selected_errors": 6,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.00024,
+              "calibration_selected_minus_pooled_errors": 1,
+              "calibration_selected_minus_pooled_ler": 4e-05,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                6,
+                4,
+                4,
+                8,
+                6,
+                5,
+                8,
+                6,
+                6
+              ],
+              "hindsight_best_regime_errors": 4,
+              "hindsight_best_regime_index": 1,
+              "hindsight_best_regime_ler": 0.00016,
+              "hindsight_best_regime_name": "decoder_1",
+              "hindsight_per_root_oracle_errors": 3,
+              "hindsight_per_root_oracle_ler": 0.00012,
+              "hindsight_per_shot_oracle_errors": 3,
+              "hindsight_per_shot_oracle_ler": 0.00012,
+              "ler_by_decoder": [
+                0.00024,
+                0.00016,
+                0.00016,
+                0.00032,
+                0.00024,
+                0.0002,
+                0.00032,
+                0.00024,
+                0.00024
+              ],
+              "pooled_fixed_errors": 5,
+              "pooled_fixed_ler": 0.0002,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.5,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 1,
+              "roots_tied": 4,
+              "shots": 25000
+            },
+            "nominal": {
+              "calibration_selected_errors": 35,
+              "calibration_selected_index": 5,
+              "calibration_selected_ler": 0.0014,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_5",
+              "errors_by_decoder": [
+                39,
+                35,
+                32,
+                35,
+                39,
+                35,
+                37,
+                37,
+                42
+              ],
+              "hindsight_best_regime_errors": 32,
+              "hindsight_best_regime_index": 2,
+              "hindsight_best_regime_ler": 0.00128,
+              "hindsight_best_regime_name": "decoder_2",
+              "hindsight_per_root_oracle_errors": 30,
+              "hindsight_per_root_oracle_ler": 0.0012,
+              "hindsight_per_shot_oracle_errors": 24,
+              "hindsight_per_shot_oracle_ler": 0.00096,
+              "ler_by_decoder": [
+                0.00156,
+                0.0014,
+                0.00128,
+                0.0014,
+                0.00156,
+                0.0014,
+                0.00148,
+                0.00148,
+                0.00168
+              ],
+              "pooled_fixed_errors": 35,
+              "pooled_fixed_ler": 0.0014,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.3142857142857143,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            }
+          },
+          "relative_equal_stratum_oracle_reduction": 0.28240740740740744,
+          "root_count": 15,
+          "study": "headroom_native_d5_z",
+          "total_shots": 75000
+        },
+        "native_d7_x": {
+          "bank": "native_d7_x",
+          "calibration_selection": {
+            "per_regime_indices": {
+              "data_heavy": 2,
+              "measurement_heavy": 3,
+              "nominal": 5
+            },
+            "pooled_fixed_index": 2,
+            "reconciles_saved_bank_selection": true,
+            "roots_by_regime": {
+              "data_heavy": 5,
+              "measurement_heavy": 5,
+              "nominal": 5
+            },
+            "shots_by_regime": {
+              "data_heavy": 25000,
+              "measurement_heavy": 25000,
+              "nominal": 25000
+            }
+          },
+          "decoder_names": [
+            "decoder_0",
+            "decoder_1",
+            "decoder_2",
+            "decoder_3",
+            "decoder_4",
+            "decoder_5",
+            "decoder_6",
+            "decoder_7",
+            "decoder_8"
+          ],
+          "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+            "confidence": 0.95,
+            "high": 0.0007466666666666667,
+            "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+            "low": 0.00039999999999999996,
+            "replicates": 10000,
+            "seed": 3222731881,
+            "unit": "root cluster resampled within each stratum; equal stratum weighting"
+          },
+          "distance": 7,
+          "equal_stratum_fixed_ler": 0.0022,
+          "equal_stratum_hindsight_per_shot_oracle_ler": 0.00164,
+          "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.0005600000000000002,
+          "family": "native",
+          "global_fixed_index": 2,
+          "global_fixed_name": "decoder_2",
+          "memory": "x",
+          "oracle_kind": "shotwise",
+          "per_stratum": {
+            "data_heavy": {
+              "calibration_selected_errors": 150,
+              "calibration_selected_index": 2,
+              "calibration_selected_ler": 0.006,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_2",
+              "errors_by_decoder": [
+                150,
+                148,
+                150,
+                155,
+                147,
+                144,
+                158,
+                157,
+                153
+              ],
+              "hindsight_best_regime_errors": 144,
+              "hindsight_best_regime_index": 5,
+              "hindsight_best_regime_ler": 0.00576,
+              "hindsight_best_regime_name": "decoder_5",
+              "hindsight_per_root_oracle_errors": 134,
+              "hindsight_per_root_oracle_ler": 0.00536,
+              "hindsight_per_shot_oracle_errors": 113,
+              "hindsight_per_shot_oracle_ler": 0.00452,
+              "ler_by_decoder": [
+                0.006,
+                0.00592,
+                0.006,
+                0.0062,
+                0.00588,
+                0.00576,
+                0.00632,
+                0.00628,
+                0.00612
+              ],
+              "pooled_fixed_errors": 150,
+              "pooled_fixed_ler": 0.006,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.24666666666666667,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            },
+            "measurement_heavy": {
+              "calibration_selected_errors": 1,
+              "calibration_selected_index": 3,
+              "calibration_selected_ler": 4e-05,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_3",
+              "errors_by_decoder": [
+                2,
+                1,
+                1,
+                1,
+                2,
+                1,
+                1,
+                2,
+                2
+              ],
+              "hindsight_best_regime_errors": 1,
+              "hindsight_best_regime_index": 1,
+              "hindsight_best_regime_ler": 4e-05,
+              "hindsight_best_regime_name": "decoder_1",
+              "hindsight_per_root_oracle_errors": 1,
+              "hindsight_per_root_oracle_ler": 4e-05,
+              "hindsight_per_shot_oracle_errors": 1,
+              "hindsight_per_shot_oracle_ler": 4e-05,
+              "ler_by_decoder": [
+                8e-05,
+                4e-05,
+                4e-05,
+                4e-05,
+                8e-05,
+                4e-05,
+                4e-05,
+                8e-05,
+                8e-05
+              ],
+              "pooled_fixed_errors": 1,
+              "pooled_fixed_ler": 4e-05,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.0,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            },
+            "nominal": {
+              "calibration_selected_errors": 14,
+              "calibration_selected_index": 5,
+              "calibration_selected_ler": 0.00056,
+              "calibration_selected_minus_pooled_errors": 2,
+              "calibration_selected_minus_pooled_ler": 8e-05,
+              "calibration_selected_name": "decoder_5",
+              "errors_by_decoder": [
+                13,
+                14,
+                12,
+                14,
+                14,
+                14,
+                15,
+                13,
+                14
+              ],
+              "hindsight_best_regime_errors": 12,
+              "hindsight_best_regime_index": 2,
+              "hindsight_best_regime_ler": 0.00048,
+              "hindsight_best_regime_name": "decoder_2",
+              "hindsight_per_root_oracle_errors": 10,
+              "hindsight_per_root_oracle_ler": 0.0004,
+              "hindsight_per_shot_oracle_errors": 9,
+              "hindsight_per_shot_oracle_ler": 0.00036,
+              "ler_by_decoder": [
+                0.00052,
+                0.00056,
+                0.00048,
+                0.00056,
+                0.00056,
+                0.00056,
+                0.0006,
+                0.00052,
+                0.00056
+              ],
+              "pooled_fixed_errors": 12,
+              "pooled_fixed_ler": 0.00048,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.35714285714285715,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 1,
+              "roots_tied": 4,
+              "shots": 25000
+            }
+          },
+          "relative_equal_stratum_oracle_reduction": 0.25454545454545463,
+          "root_count": 15,
+          "study": "headroom_native_d7_x",
+          "total_shots": 75000
+        },
+        "native_d7_z": {
+          "bank": "native_d7_z",
+          "calibration_selection": {
+            "per_regime_indices": {
+              "data_heavy": 0,
+              "measurement_heavy": 0,
+              "nominal": 3
+            },
+            "pooled_fixed_index": 0,
+            "reconciles_saved_bank_selection": true,
+            "roots_by_regime": {
+              "data_heavy": 5,
+              "measurement_heavy": 5,
+              "nominal": 5
+            },
+            "shots_by_regime": {
+              "data_heavy": 25000,
+              "measurement_heavy": 25000,
+              "nominal": 25000
+            }
+          },
+          "decoder_names": [
+            "decoder_0",
+            "decoder_1",
+            "decoder_2",
+            "decoder_3",
+            "decoder_4",
+            "decoder_5",
+            "decoder_6",
+            "decoder_7",
+            "decoder_8"
+          ],
+          "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+            "confidence": 0.95,
+            "high": 0.0005866666666666667,
+            "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+            "low": 0.00036,
+            "replicates": 10000,
+            "seed": 3222731881,
+            "unit": "root cluster resampled within each stratum; equal stratum weighting"
+          },
+          "distance": 7,
+          "equal_stratum_fixed_ler": 0.0015733333333333335,
+          "equal_stratum_hindsight_per_shot_oracle_ler": 0.0011066666666666666,
+          "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.0004666666666666669,
+          "family": "native",
+          "global_fixed_index": 0,
+          "global_fixed_name": "decoder_0",
+          "memory": "z",
+          "oracle_kind": "shotwise",
+          "per_stratum": {
+            "data_heavy": {
+              "calibration_selected_errors": 107,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.00428,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                107,
+                107,
+                124,
+                110,
+                111,
+                110,
+                118,
+                120,
+                115
+              ],
+              "hindsight_best_regime_errors": 107,
+              "hindsight_best_regime_index": 0,
+              "hindsight_best_regime_ler": 0.00428,
+              "hindsight_best_regime_name": "decoder_0",
+              "hindsight_per_root_oracle_errors": 103,
+              "hindsight_per_root_oracle_ler": 0.00412,
+              "hindsight_per_shot_oracle_errors": 78,
+              "hindsight_per_shot_oracle_ler": 0.00312,
+              "ler_by_decoder": [
+                0.00428,
+                0.00428,
+                0.00496,
+                0.0044,
+                0.00444,
+                0.0044,
+                0.00472,
+                0.0048,
+                0.0046
+              ],
+              "pooled_fixed_errors": 107,
+              "pooled_fixed_ler": 0.00428,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.27102803738317754,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            },
+            "measurement_heavy": {
+              "calibration_selected_errors": 0,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.0,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "hindsight_best_regime_errors": 0,
+              "hindsight_best_regime_index": 0,
+              "hindsight_best_regime_ler": 0.0,
+              "hindsight_best_regime_name": "decoder_0",
+              "hindsight_per_root_oracle_errors": 0,
+              "hindsight_per_root_oracle_ler": 0.0,
+              "hindsight_per_shot_oracle_errors": 0,
+              "hindsight_per_shot_oracle_ler": 0.0,
+              "ler_by_decoder": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pooled_fixed_errors": 0,
+              "pooled_fixed_ler": 0.0,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": null,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            },
+            "nominal": {
+              "calibration_selected_errors": 11,
+              "calibration_selected_index": 3,
+              "calibration_selected_ler": 0.00044,
+              "calibration_selected_minus_pooled_errors": 1,
+              "calibration_selected_minus_pooled_ler": 4e-05,
+              "calibration_selected_name": "decoder_3",
+              "errors_by_decoder": [
+                10,
+                7,
+                8,
+                11,
+                10,
+                8,
+                10,
+                9,
+                9
+              ],
+              "hindsight_best_regime_errors": 7,
+              "hindsight_best_regime_index": 1,
+              "hindsight_best_regime_ler": 0.00028,
+              "hindsight_best_regime_name": "decoder_1",
+              "hindsight_per_root_oracle_errors": 6,
+              "hindsight_per_root_oracle_ler": 0.00024,
+              "hindsight_per_shot_oracle_errors": 5,
+              "hindsight_per_shot_oracle_ler": 0.0002,
+              "ler_by_decoder": [
+                0.0004,
+                0.00028,
+                0.00032,
+                0.00044,
+                0.0004,
+                0.00032,
+                0.0004,
+                0.00036,
+                0.00036
+              ],
+              "pooled_fixed_errors": 10,
+              "pooled_fixed_ler": 0.0004,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.5454545454545454,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 1,
+              "roots_tied": 4,
+              "shots": 25000
+            }
+          },
+          "relative_equal_stratum_oracle_reduction": 0.2966101694915255,
+          "root_count": 15,
+          "study": "headroom_native_d7_z",
+          "total_shots": 75000
+        },
+        "pauli_biased_d3_x": {
+          "bank": "pauli_biased_d3_x",
+          "calibration_selection": {
+            "per_regime_indices": {
+              "balanced": 0,
+              "x_biased": 0,
+              "z_biased": 0
+            },
+            "pooled_fixed_index": 0,
+            "reconciles_saved_bank_selection": true,
+            "roots_by_regime": {
+              "balanced": 5,
+              "x_biased": 5,
+              "z_biased": 5
+            },
+            "shots_by_regime": {
+              "balanced": 25000,
+              "x_biased": 25000,
+              "z_biased": 25000
+            }
+          },
+          "decoder_names": [
+            "decoder_0",
+            "decoder_1",
+            "decoder_2"
+          ],
+          "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+            "confidence": 0.95,
+            "high": 0.0006933333333333335,
+            "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+            "low": 0.00031999999999999997,
+            "replicates": 10000,
+            "seed": 1281705499,
+            "unit": "root cluster resampled within each stratum; equal stratum weighting"
+          },
+          "distance": 3,
+          "equal_stratum_fixed_ler": 0.0029866666666666665,
+          "equal_stratum_hindsight_per_shot_oracle_ler": 0.00248,
+          "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.0005066666666666666,
+          "family": "pauli_biased",
+          "global_fixed_index": 0,
+          "global_fixed_name": "decoder_0",
+          "memory": "x",
+          "oracle_kind": "shotwise",
+          "per_stratum": {
+            "balanced": {
+              "calibration_selected_errors": 94,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.00376,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                94,
+                108,
+                105
+              ],
+              "hindsight_best_regime_errors": 94,
+              "hindsight_best_regime_index": 0,
+              "hindsight_best_regime_ler": 0.00376,
+              "hindsight_best_regime_name": "decoder_0",
+              "hindsight_per_root_oracle_errors": 90,
+              "hindsight_per_root_oracle_ler": 0.0036,
+              "hindsight_per_shot_oracle_errors": 74,
+              "hindsight_per_shot_oracle_ler": 0.00296,
+              "ler_by_decoder": [
+                0.00376,
+                0.00432,
+                0.0042
+              ],
+              "pooled_fixed_errors": 94,
+              "pooled_fixed_ler": 0.00376,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.2127659574468085,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            },
+            "x_biased": {
+              "calibration_selected_errors": 27,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.00108,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                27,
+                35,
+                42
+              ],
+              "hindsight_best_regime_errors": 27,
+              "hindsight_best_regime_index": 0,
+              "hindsight_best_regime_ler": 0.00108,
+              "hindsight_best_regime_name": "decoder_0",
+              "hindsight_per_root_oracle_errors": 26,
+              "hindsight_per_root_oracle_ler": 0.00104,
+              "hindsight_per_shot_oracle_errors": 25,
+              "hindsight_per_shot_oracle_ler": 0.001,
+              "ler_by_decoder": [
+                0.00108,
+                0.0014,
+                0.00168
+              ],
+              "pooled_fixed_errors": 27,
+              "pooled_fixed_ler": 0.00108,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.07407407407407407,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            },
+            "z_biased": {
+              "calibration_selected_errors": 103,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.00412,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                103,
+                111,
+                112
+              ],
+              "hindsight_best_regime_errors": 103,
+              "hindsight_best_regime_index": 0,
+              "hindsight_best_regime_ler": 0.00412,
+              "hindsight_best_regime_name": "decoder_0",
+              "hindsight_per_root_oracle_errors": 98,
+              "hindsight_per_root_oracle_ler": 0.00392,
+              "hindsight_per_shot_oracle_errors": 87,
+              "hindsight_per_shot_oracle_ler": 0.00348,
+              "ler_by_decoder": [
+                0.00412,
+                0.00444,
+                0.00448
+              ],
+              "pooled_fixed_errors": 103,
+              "pooled_fixed_ler": 0.00412,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.1553398058252427,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            }
+          },
+          "relative_equal_stratum_oracle_reduction": 0.16964285714285712,
+          "root_count": 15,
+          "study": "headroom_pauli_biased_d3_x",
+          "total_shots": 75000
+        },
+        "pauli_biased_d3_z": {
+          "bank": "pauli_biased_d3_z",
+          "calibration_selection": {
+            "per_regime_indices": {
+              "balanced": 2,
+              "x_biased": 0,
+              "z_biased": 2
+            },
+            "pooled_fixed_index": 2,
+            "reconciles_saved_bank_selection": true,
+            "roots_by_regime": {
+              "balanced": 5,
+              "x_biased": 5,
+              "z_biased": 5
+            },
+            "shots_by_regime": {
+              "balanced": 25000,
+              "x_biased": 25000,
+              "z_biased": 25000
+            }
+          },
+          "decoder_names": [
+            "decoder_0",
+            "decoder_1",
+            "decoder_2"
+          ],
+          "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+            "confidence": 0.95,
+            "high": 0.0005333333333333333,
+            "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+            "low": 0.00025333333333333333,
+            "replicates": 10000,
+            "seed": 1281705499,
+            "unit": "root cluster resampled within each stratum; equal stratum weighting"
+          },
+          "distance": 3,
+          "equal_stratum_fixed_ler": 0.002333333333333333,
+          "equal_stratum_hindsight_per_shot_oracle_ler": 0.0019466666666666669,
+          "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.00038666666666666624,
+          "family": "pauli_biased",
+          "global_fixed_index": 2,
+          "global_fixed_name": "decoder_2",
+          "memory": "z",
+          "oracle_kind": "shotwise",
+          "per_stratum": {
+            "balanced": {
+              "calibration_selected_errors": 62,
+              "calibration_selected_index": 2,
+              "calibration_selected_ler": 0.00248,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_2",
+              "errors_by_decoder": [
+                73,
+                97,
+                62
+              ],
+              "hindsight_best_regime_errors": 62,
+              "hindsight_best_regime_index": 2,
+              "hindsight_best_regime_ler": 0.00248,
+              "hindsight_best_regime_name": "decoder_2",
+              "hindsight_per_root_oracle_errors": 58,
+              "hindsight_per_root_oracle_ler": 0.00232,
+              "hindsight_per_shot_oracle_errors": 49,
+              "hindsight_per_shot_oracle_ler": 0.00196,
+              "ler_by_decoder": [
+                0.00292,
+                0.00388,
+                0.00248
+              ],
+              "pooled_fixed_errors": 62,
+              "pooled_fixed_ler": 0.00248,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.20967741935483872,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            },
+            "x_biased": {
+              "calibration_selected_errors": 82,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.00328,
+              "calibration_selected_minus_pooled_errors": 6,
+              "calibration_selected_minus_pooled_ler": 0.00024,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                82,
+                95,
+                76
+              ],
+              "hindsight_best_regime_errors": 76,
+              "hindsight_best_regime_index": 2,
+              "hindsight_best_regime_ler": 0.00304,
+              "hindsight_best_regime_name": "decoder_2",
+              "hindsight_per_root_oracle_errors": 75,
+              "hindsight_per_root_oracle_ler": 0.003,
+              "hindsight_per_shot_oracle_errors": 70,
+              "hindsight_per_shot_oracle_ler": 0.0028,
+              "ler_by_decoder": [
+                0.00328,
+                0.0038,
+                0.00304
+              ],
+              "pooled_fixed_errors": 76,
+              "pooled_fixed_ler": 0.00304,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.14634146341463414,
+              "roots": 5,
+              "roots_specialist_better": 1,
+              "roots_specialist_worse": 3,
+              "roots_tied": 1,
+              "shots": 25000
+            },
+            "z_biased": {
+              "calibration_selected_errors": 31,
+              "calibration_selected_index": 2,
+              "calibration_selected_ler": 0.00124,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_2",
+              "errors_by_decoder": [
+                32,
+                48,
+                31
+              ],
+              "hindsight_best_regime_errors": 31,
+              "hindsight_best_regime_index": 2,
+              "hindsight_best_regime_ler": 0.00124,
+              "hindsight_best_regime_name": "decoder_2",
+              "hindsight_per_root_oracle_errors": 30,
+              "hindsight_per_root_oracle_ler": 0.0012,
+              "hindsight_per_shot_oracle_errors": 27,
+              "hindsight_per_shot_oracle_ler": 0.00108,
+              "ler_by_decoder": [
+                0.00128,
+                0.00192,
+                0.00124
+              ],
+              "pooled_fixed_errors": 31,
+              "pooled_fixed_ler": 0.00124,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.12903225806451613,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            }
+          },
+          "relative_equal_stratum_oracle_reduction": 0.16571428571428554,
+          "root_count": 15,
+          "study": "headroom_pauli_biased_d3_z",
+          "total_shots": 75000
+        },
+        "pauli_biased_d5_x": {
+          "bank": "pauli_biased_d5_x",
+          "calibration_selection": {
+            "per_regime_indices": {
+              "balanced": 1,
+              "x_biased": 0,
+              "z_biased": 1
+            },
+            "pooled_fixed_index": 1,
+            "reconciles_saved_bank_selection": true,
+            "roots_by_regime": {
+              "balanced": 5,
+              "x_biased": 5,
+              "z_biased": 5
+            },
+            "shots_by_regime": {
+              "balanced": 25000,
+              "x_biased": 25000,
+              "z_biased": 25000
+            }
+          },
+          "decoder_names": [
+            "decoder_0",
+            "decoder_1",
+            "decoder_2"
+          ],
+          "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+            "confidence": 0.95,
+            "high": 0.0006133333333333334,
+            "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+            "low": 0.0003066666666666667,
+            "replicates": 10000,
+            "seed": 1281705499,
+            "unit": "root cluster resampled within each stratum; equal stratum weighting"
+          },
+          "distance": 5,
+          "equal_stratum_fixed_ler": 0.00128,
+          "equal_stratum_hindsight_per_shot_oracle_ler": 0.0008266666666666666,
+          "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.0004533333333333335,
+          "family": "pauli_biased",
+          "global_fixed_index": 1,
+          "global_fixed_name": "decoder_1",
+          "memory": "x",
+          "oracle_kind": "shotwise",
+          "per_stratum": {
+            "balanced": {
+              "calibration_selected_errors": 39,
+              "calibration_selected_index": 1,
+              "calibration_selected_ler": 0.00156,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_1",
+              "errors_by_decoder": [
+                30,
+                39,
+                33
+              ],
+              "hindsight_best_regime_errors": 30,
+              "hindsight_best_regime_index": 0,
+              "hindsight_best_regime_ler": 0.0012,
+              "hindsight_best_regime_name": "decoder_0",
+              "hindsight_per_root_oracle_errors": 29,
+              "hindsight_per_root_oracle_ler": 0.00116,
+              "hindsight_per_shot_oracle_errors": 20,
+              "hindsight_per_shot_oracle_ler": 0.0008,
+              "ler_by_decoder": [
+                0.0012,
+                0.00156,
+                0.00132
+              ],
+              "pooled_fixed_errors": 39,
+              "pooled_fixed_ler": 0.00156,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.48717948717948717,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            },
+            "x_biased": {
+              "calibration_selected_errors": 3,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.00012,
+              "calibration_selected_minus_pooled_errors": -3,
+              "calibration_selected_minus_pooled_ler": -0.00012,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                3,
+                6,
+                6
+              ],
+              "hindsight_best_regime_errors": 3,
+              "hindsight_best_regime_index": 0,
+              "hindsight_best_regime_ler": 0.00012,
+              "hindsight_best_regime_name": "decoder_0",
+              "hindsight_per_root_oracle_errors": 3,
+              "hindsight_per_root_oracle_ler": 0.00012,
+              "hindsight_per_shot_oracle_errors": 3,
+              "hindsight_per_shot_oracle_ler": 0.00012,
+              "ler_by_decoder": [
+                0.00012,
+                0.00024,
+                0.00024
+              ],
+              "pooled_fixed_errors": 6,
+              "pooled_fixed_ler": 0.00024,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.0,
+              "roots": 5,
+              "roots_specialist_better": 3,
+              "roots_specialist_worse": 0,
+              "roots_tied": 2,
+              "shots": 25000
+            },
+            "z_biased": {
+              "calibration_selected_errors": 54,
+              "calibration_selected_index": 1,
+              "calibration_selected_ler": 0.00216,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_1",
+              "errors_by_decoder": [
+                58,
+                54,
+                55
+              ],
+              "hindsight_best_regime_errors": 54,
+              "hindsight_best_regime_index": 1,
+              "hindsight_best_regime_ler": 0.00216,
+              "hindsight_best_regime_name": "decoder_1",
+              "hindsight_per_root_oracle_errors": 49,
+              "hindsight_per_root_oracle_ler": 0.00196,
+              "hindsight_per_shot_oracle_errors": 39,
+              "hindsight_per_shot_oracle_ler": 0.00156,
+              "ler_by_decoder": [
+                0.00232,
+                0.00216,
+                0.0022
+              ],
+              "pooled_fixed_errors": 54,
+              "pooled_fixed_ler": 0.00216,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.2777777777777778,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            }
+          },
+          "relative_equal_stratum_oracle_reduction": 0.35416666666666674,
+          "root_count": 15,
+          "study": "headroom_pauli_biased_d5_x",
+          "total_shots": 75000
+        },
+        "pauli_biased_d5_z": {
+          "bank": "pauli_biased_d5_z",
+          "calibration_selection": {
+            "per_regime_indices": {
+              "balanced": 2,
+              "x_biased": 0,
+              "z_biased": 2
+            },
+            "pooled_fixed_index": 2,
+            "reconciles_saved_bank_selection": true,
+            "roots_by_regime": {
+              "balanced": 5,
+              "x_biased": 5,
+              "z_biased": 5
+            },
+            "shots_by_regime": {
+              "balanced": 25000,
+              "x_biased": 25000,
+              "z_biased": 25000
+            }
+          },
+          "decoder_names": [
+            "decoder_0",
+            "decoder_1",
+            "decoder_2"
+          ],
+          "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+            "confidence": 0.95,
+            "high": 0.00023999999999999998,
+            "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+            "low": 6.666666666666667e-05,
+            "replicates": 10000,
+            "seed": 1281705499,
+            "unit": "root cluster resampled within each stratum; equal stratum weighting"
+          },
+          "distance": 5,
+          "equal_stratum_fixed_ler": 0.0008800000000000001,
+          "equal_stratum_hindsight_per_shot_oracle_ler": 0.0007333333333333333,
+          "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.0001466666666666668,
+          "family": "pauli_biased",
+          "global_fixed_index": 2,
+          "global_fixed_name": "decoder_2",
+          "memory": "z",
+          "oracle_kind": "shotwise",
+          "per_stratum": {
+            "balanced": {
+              "calibration_selected_errors": 18,
+              "calibration_selected_index": 2,
+              "calibration_selected_ler": 0.00072,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_2",
+              "errors_by_decoder": [
+                28,
+                24,
+                18
+              ],
+              "hindsight_best_regime_errors": 18,
+              "hindsight_best_regime_index": 2,
+              "hindsight_best_regime_ler": 0.00072,
+              "hindsight_best_regime_name": "decoder_2",
+              "hindsight_per_root_oracle_errors": 16,
+              "hindsight_per_root_oracle_ler": 0.00064,
+              "hindsight_per_shot_oracle_errors": 14,
+              "hindsight_per_shot_oracle_ler": 0.00056,
+              "ler_by_decoder": [
+                0.00112,
+                0.00096,
+                0.00072
+              ],
+              "pooled_fixed_errors": 18,
+              "pooled_fixed_ler": 0.00072,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.2222222222222222,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            },
+            "x_biased": {
+              "calibration_selected_errors": 46,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.00184,
+              "calibration_selected_minus_pooled_errors": -14,
+              "calibration_selected_minus_pooled_ler": -0.00056,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                46,
+                49,
+                60
+              ],
+              "hindsight_best_regime_errors": 46,
+              "hindsight_best_regime_index": 0,
+              "hindsight_best_regime_ler": 0.00184,
+              "hindsight_best_regime_name": "decoder_0",
+              "hindsight_per_root_oracle_errors": 42,
+              "hindsight_per_root_oracle_ler": 0.00168,
+              "hindsight_per_shot_oracle_errors": 40,
+              "hindsight_per_shot_oracle_ler": 0.0016,
+              "ler_by_decoder": [
+                0.00184,
+                0.00196,
+                0.0024
+              ],
+              "pooled_fixed_errors": 60,
+              "pooled_fixed_ler": 0.0024,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.13043478260869565,
+              "roots": 5,
+              "roots_specialist_better": 4,
+              "roots_specialist_worse": 1,
+              "roots_tied": 0,
+              "shots": 25000
+            },
+            "z_biased": {
+              "calibration_selected_errors": 2,
+              "calibration_selected_index": 2,
+              "calibration_selected_ler": 8e-05,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_2",
+              "errors_by_decoder": [
+                4,
+                2,
+                2
+              ],
+              "hindsight_best_regime_errors": 2,
+              "hindsight_best_regime_index": 1,
+              "hindsight_best_regime_ler": 8e-05,
+              "hindsight_best_regime_name": "decoder_1",
+              "hindsight_per_root_oracle_errors": 1,
+              "hindsight_per_root_oracle_ler": 4e-05,
+              "hindsight_per_shot_oracle_errors": 1,
+              "hindsight_per_shot_oracle_ler": 4e-05,
+              "ler_by_decoder": [
+                0.00016,
+                8e-05,
+                8e-05
+              ],
+              "pooled_fixed_errors": 2,
+              "pooled_fixed_ler": 8e-05,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.5,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            }
+          },
+          "relative_equal_stratum_oracle_reduction": 0.1666666666666668,
+          "root_count": 15,
+          "study": "headroom_pauli_biased_d5_z",
+          "total_shots": 75000
+        },
+        "pauli_biased_d7_x": {
+          "bank": "pauli_biased_d7_x",
+          "calibration_selection": {
+            "per_regime_indices": {
+              "balanced": 0,
+              "x_biased": 0,
+              "z_biased": 2
+            },
+            "pooled_fixed_index": 2,
+            "reconciles_saved_bank_selection": true,
+            "roots_by_regime": {
+              "balanced": 5,
+              "x_biased": 5,
+              "z_biased": 5
+            },
+            "shots_by_regime": {
+              "balanced": 25000,
+              "x_biased": 25000,
+              "z_biased": 25000
+            }
+          },
+          "decoder_names": [
+            "decoder_0",
+            "decoder_1",
+            "decoder_2"
+          ],
+          "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+            "confidence": 0.95,
+            "high": 0.0002933333333333333,
+            "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+            "low": 8e-05,
+            "replicates": 10000,
+            "seed": 1281705499,
+            "unit": "root cluster resampled within each stratum; equal stratum weighting"
+          },
+          "distance": 7,
+          "equal_stratum_fixed_ler": 0.00045333333333333337,
+          "equal_stratum_hindsight_per_shot_oracle_ler": 0.0002666666666666667,
+          "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.0001866666666666667,
+          "family": "pauli_biased",
+          "global_fixed_index": 2,
+          "global_fixed_name": "decoder_2",
+          "memory": "x",
+          "oracle_kind": "shotwise",
+          "per_stratum": {
+            "balanced": {
+              "calibration_selected_errors": 5,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.0002,
+              "calibration_selected_minus_pooled_errors": -1,
+              "calibration_selected_minus_pooled_ler": -4e-05,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                5,
+                4,
+                6
+              ],
+              "hindsight_best_regime_errors": 4,
+              "hindsight_best_regime_index": 1,
+              "hindsight_best_regime_ler": 0.00016,
+              "hindsight_best_regime_name": "decoder_1",
+              "hindsight_per_root_oracle_errors": 4,
+              "hindsight_per_root_oracle_ler": 0.00016,
+              "hindsight_per_shot_oracle_errors": 3,
+              "hindsight_per_shot_oracle_ler": 0.00012,
+              "ler_by_decoder": [
+                0.0002,
+                0.00016,
+                0.00024
+              ],
+              "pooled_fixed_errors": 6,
+              "pooled_fixed_ler": 0.00024,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.4,
+              "roots": 5,
+              "roots_specialist_better": 2,
+              "roots_specialist_worse": 1,
+              "roots_tied": 2,
+              "shots": 25000
+            },
+            "x_biased": {
+              "calibration_selected_errors": 2,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 8e-05,
+              "calibration_selected_minus_pooled_errors": 1,
+              "calibration_selected_minus_pooled_ler": 4e-05,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                2,
+                1,
+                1
+              ],
+              "hindsight_best_regime_errors": 1,
+              "hindsight_best_regime_index": 1,
+              "hindsight_best_regime_ler": 4e-05,
+              "hindsight_best_regime_name": "decoder_1",
+              "hindsight_per_root_oracle_errors": 1,
+              "hindsight_per_root_oracle_ler": 4e-05,
+              "hindsight_per_shot_oracle_errors": 1,
+              "hindsight_per_shot_oracle_ler": 4e-05,
+              "ler_by_decoder": [
+                8e-05,
+                4e-05,
+                4e-05
+              ],
+              "pooled_fixed_errors": 1,
+              "pooled_fixed_ler": 4e-05,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.5,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 1,
+              "roots_tied": 4,
+              "shots": 25000
+            },
+            "z_biased": {
+              "calibration_selected_errors": 27,
+              "calibration_selected_index": 2,
+              "calibration_selected_ler": 0.00108,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_2",
+              "errors_by_decoder": [
+                20,
+                25,
+                27
+              ],
+              "hindsight_best_regime_errors": 20,
+              "hindsight_best_regime_index": 0,
+              "hindsight_best_regime_ler": 0.0008,
+              "hindsight_best_regime_name": "decoder_0",
+              "hindsight_per_root_oracle_errors": 18,
+              "hindsight_per_root_oracle_ler": 0.00072,
+              "hindsight_per_shot_oracle_errors": 16,
+              "hindsight_per_shot_oracle_ler": 0.00064,
+              "ler_by_decoder": [
+                0.0008,
+                0.001,
+                0.00108
+              ],
+              "pooled_fixed_errors": 27,
+              "pooled_fixed_ler": 0.00108,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.4074074074074074,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            }
+          },
+          "relative_equal_stratum_oracle_reduction": 0.411764705882353,
+          "root_count": 15,
+          "study": "headroom_pauli_biased_d7_x",
+          "total_shots": 75000
+        },
+        "pauli_biased_d7_z": {
+          "bank": "pauli_biased_d7_z",
+          "calibration_selection": {
+            "per_regime_indices": {
+              "balanced": 0,
+              "x_biased": 0,
+              "z_biased": 0
+            },
+            "pooled_fixed_index": 0,
+            "reconciles_saved_bank_selection": true,
+            "roots_by_regime": {
+              "balanced": 5,
+              "x_biased": 5,
+              "z_biased": 5
+            },
+            "shots_by_regime": {
+              "balanced": 25000,
+              "x_biased": 25000,
+              "z_biased": 25000
+            }
+          },
+          "decoder_names": [
+            "decoder_0",
+            "decoder_1",
+            "decoder_2"
+          ],
+          "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+            "confidence": 0.95,
+            "high": 0.00015999999999999999,
+            "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+            "low": 8e-05,
+            "replicates": 10000,
+            "seed": 1281705499,
+            "unit": "root cluster resampled within each stratum; equal stratum weighting"
+          },
+          "distance": 7,
+          "equal_stratum_fixed_ler": 0.0002933333333333333,
+          "equal_stratum_hindsight_per_shot_oracle_ler": 0.00017333333333333336,
+          "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.00011999999999999996,
+          "family": "pauli_biased",
+          "global_fixed_index": 0,
+          "global_fixed_name": "decoder_0",
+          "memory": "z",
+          "oracle_kind": "shotwise",
+          "per_stratum": {
+            "balanced": {
+              "calibration_selected_errors": 4,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.00016,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                4,
+                4,
+                2
+              ],
+              "hindsight_best_regime_errors": 2,
+              "hindsight_best_regime_index": 2,
+              "hindsight_best_regime_ler": 8e-05,
+              "hindsight_best_regime_name": "decoder_2",
+              "hindsight_per_root_oracle_errors": 2,
+              "hindsight_per_root_oracle_ler": 8e-05,
+              "hindsight_per_shot_oracle_errors": 1,
+              "hindsight_per_shot_oracle_ler": 4e-05,
+              "ler_by_decoder": [
+                0.00016,
+                0.00016,
+                8e-05
+              ],
+              "pooled_fixed_errors": 4,
+              "pooled_fixed_ler": 0.00016,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.75,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            },
+            "x_biased": {
+              "calibration_selected_errors": 18,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.00072,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                18,
+                18,
+                18
+              ],
+              "hindsight_best_regime_errors": 18,
+              "hindsight_best_regime_index": 0,
+              "hindsight_best_regime_ler": 0.00072,
+              "hindsight_best_regime_name": "decoder_0",
+              "hindsight_per_root_oracle_errors": 14,
+              "hindsight_per_root_oracle_ler": 0.00056,
+              "hindsight_per_shot_oracle_errors": 12,
+              "hindsight_per_shot_oracle_ler": 0.00048,
+              "ler_by_decoder": [
+                0.00072,
+                0.00072,
+                0.00072
+              ],
+              "pooled_fixed_errors": 18,
+              "pooled_fixed_ler": 0.00072,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.3333333333333333,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            },
+            "z_biased": {
+              "calibration_selected_errors": 0,
+              "calibration_selected_index": 0,
+              "calibration_selected_ler": 0.0,
+              "calibration_selected_minus_pooled_errors": 0,
+              "calibration_selected_minus_pooled_ler": 0.0,
+              "calibration_selected_name": "decoder_0",
+              "errors_by_decoder": [
+                0,
+                0,
+                0
+              ],
+              "hindsight_best_regime_errors": 0,
+              "hindsight_best_regime_index": 0,
+              "hindsight_best_regime_ler": 0.0,
+              "hindsight_best_regime_name": "decoder_0",
+              "hindsight_per_root_oracle_errors": 0,
+              "hindsight_per_root_oracle_ler": 0.0,
+              "hindsight_per_shot_oracle_errors": 0,
+              "hindsight_per_shot_oracle_ler": 0.0,
+              "ler_by_decoder": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pooled_fixed_errors": 0,
+              "pooled_fixed_ler": 0.0,
+              "relative_hindsight_per_shot_reduction_vs_calibration_selected": null,
+              "roots": 5,
+              "roots_specialist_better": 0,
+              "roots_specialist_worse": 0,
+              "roots_tied": 5,
+              "shots": 25000
+            }
+          },
+          "relative_equal_stratum_oracle_reduction": 0.40909090909090895,
+          "root_count": 15,
+          "study": "headroom_pauli_biased_d7_z",
+          "total_shots": 75000
+        }
+      },
+      "calibration_cells": 216,
+      "calibration_selection": {
+        "native_d3_x": {
+          "per_regime_indices": {
+            "data_heavy": 6,
+            "measurement_heavy": 2,
+            "nominal": 2
+          },
+          "pooled_fixed_index": 2,
+          "reconciles_saved_bank_selection": true,
+          "roots_by_regime": {
+            "data_heavy": 5,
+            "measurement_heavy": 5,
+            "nominal": 5
+          },
+          "shots_by_regime": {
+            "data_heavy": 25000,
+            "measurement_heavy": 25000,
+            "nominal": 25000
+          }
+        },
+        "native_d3_z": {
+          "per_regime_indices": {
+            "data_heavy": 3,
+            "measurement_heavy": 2,
+            "nominal": 2
+          },
+          "pooled_fixed_index": 1,
+          "reconciles_saved_bank_selection": true,
+          "roots_by_regime": {
+            "data_heavy": 5,
+            "measurement_heavy": 5,
+            "nominal": 5
+          },
+          "shots_by_regime": {
+            "data_heavy": 25000,
+            "measurement_heavy": 25000,
+            "nominal": 25000
+          }
+        },
+        "native_d5_x": {
+          "per_regime_indices": {
+            "data_heavy": 0,
+            "measurement_heavy": 2,
+            "nominal": 0
+          },
+          "pooled_fixed_index": 0,
+          "reconciles_saved_bank_selection": true,
+          "roots_by_regime": {
+            "data_heavy": 5,
+            "measurement_heavy": 5,
+            "nominal": 5
+          },
+          "shots_by_regime": {
+            "data_heavy": 25000,
+            "measurement_heavy": 25000,
+            "nominal": 25000
+          }
+        },
+        "native_d5_z": {
+          "per_regime_indices": {
+            "data_heavy": 5,
+            "measurement_heavy": 0,
+            "nominal": 5
+          },
+          "pooled_fixed_index": 5,
+          "reconciles_saved_bank_selection": true,
+          "roots_by_regime": {
+            "data_heavy": 5,
+            "measurement_heavy": 5,
+            "nominal": 5
+          },
+          "shots_by_regime": {
+            "data_heavy": 25000,
+            "measurement_heavy": 25000,
+            "nominal": 25000
+          }
+        },
+        "native_d7_x": {
+          "per_regime_indices": {
+            "data_heavy": 2,
+            "measurement_heavy": 3,
+            "nominal": 5
+          },
+          "pooled_fixed_index": 2,
+          "reconciles_saved_bank_selection": true,
+          "roots_by_regime": {
+            "data_heavy": 5,
+            "measurement_heavy": 5,
+            "nominal": 5
+          },
+          "shots_by_regime": {
+            "data_heavy": 25000,
+            "measurement_heavy": 25000,
+            "nominal": 25000
+          }
+        },
+        "native_d7_z": {
+          "per_regime_indices": {
+            "data_heavy": 0,
+            "measurement_heavy": 0,
+            "nominal": 3
+          },
+          "pooled_fixed_index": 0,
+          "reconciles_saved_bank_selection": true,
+          "roots_by_regime": {
+            "data_heavy": 5,
+            "measurement_heavy": 5,
+            "nominal": 5
+          },
+          "shots_by_regime": {
+            "data_heavy": 25000,
+            "measurement_heavy": 25000,
+            "nominal": 25000
+          }
+        },
+        "pauli_biased_d3_x": {
+          "per_regime_indices": {
+            "balanced": 0,
+            "x_biased": 0,
+            "z_biased": 0
+          },
+          "pooled_fixed_index": 0,
+          "reconciles_saved_bank_selection": true,
+          "roots_by_regime": {
+            "balanced": 5,
+            "x_biased": 5,
+            "z_biased": 5
+          },
+          "shots_by_regime": {
+            "balanced": 25000,
+            "x_biased": 25000,
+            "z_biased": 25000
+          }
+        },
+        "pauli_biased_d3_z": {
+          "per_regime_indices": {
+            "balanced": 2,
+            "x_biased": 0,
+            "z_biased": 2
+          },
+          "pooled_fixed_index": 2,
+          "reconciles_saved_bank_selection": true,
+          "roots_by_regime": {
+            "balanced": 5,
+            "x_biased": 5,
+            "z_biased": 5
+          },
+          "shots_by_regime": {
+            "balanced": 25000,
+            "x_biased": 25000,
+            "z_biased": 25000
+          }
+        },
+        "pauli_biased_d5_x": {
+          "per_regime_indices": {
+            "balanced": 1,
+            "x_biased": 0,
+            "z_biased": 1
+          },
+          "pooled_fixed_index": 1,
+          "reconciles_saved_bank_selection": true,
+          "roots_by_regime": {
+            "balanced": 5,
+            "x_biased": 5,
+            "z_biased": 5
+          },
+          "shots_by_regime": {
+            "balanced": 25000,
+            "x_biased": 25000,
+            "z_biased": 25000
+          }
+        },
+        "pauli_biased_d5_z": {
+          "per_regime_indices": {
+            "balanced": 2,
+            "x_biased": 0,
+            "z_biased": 2
+          },
+          "pooled_fixed_index": 2,
+          "reconciles_saved_bank_selection": true,
+          "roots_by_regime": {
+            "balanced": 5,
+            "x_biased": 5,
+            "z_biased": 5
+          },
+          "shots_by_regime": {
+            "balanced": 25000,
+            "x_biased": 25000,
+            "z_biased": 25000
+          }
+        },
+        "pauli_biased_d7_x": {
+          "per_regime_indices": {
+            "balanced": 0,
+            "x_biased": 0,
+            "z_biased": 2
+          },
+          "pooled_fixed_index": 2,
+          "reconciles_saved_bank_selection": true,
+          "roots_by_regime": {
+            "balanced": 5,
+            "x_biased": 5,
+            "z_biased": 5
+          },
+          "shots_by_regime": {
+            "balanced": 25000,
+            "x_biased": 25000,
+            "z_biased": 25000
+          }
+        },
+        "pauli_biased_d7_z": {
+          "per_regime_indices": {
+            "balanced": 0,
+            "x_biased": 0,
+            "z_biased": 0
+          },
+          "pooled_fixed_index": 0,
+          "reconciles_saved_bank_selection": true,
+          "roots_by_regime": {
+            "balanced": 5,
+            "x_biased": 5,
+            "z_biased": 5
+          },
+          "shots_by_regime": {
+            "balanced": 25000,
+            "x_biased": 25000,
+            "z_biased": 25000
+          }
+        }
+      },
+      "evaluation_roots": 180,
+      "evaluation_shots": 900000,
+      "gate_criteria": {
+        "interpretation": "A qualifying basis/family must show two regime-specific winners different from each other and the pooled fixed choice; each winner must meet calibration stability and independent development utility thresholds. The same regime pair must qualify at two or more distances. This is a feasibility gate, not confirmatory significance testing.",
+        "minimum_absolute_ler_reduction": 0.0001,
+        "minimum_calibration_bootstrap_selection_probability": 0.8,
+        "minimum_distinct_regime_candidates": 2,
+        "minimum_evaluation_roots_favoring_specialist": 4,
+        "minimum_relative_ler_reduction": 0.05,
+        "minimum_replicated_distance_strata": 2
+      },
+      "predeclared_gate_passed": false
+    },
+    "phase2a": {
+      "decoder_names": [
+        "decoder_0",
+        "decoder_1",
+        "decoder_2",
+        "decoder_3",
+        "decoder_4",
+        "decoder_5",
+        "decoder_6",
+        "decoder_7",
+        "decoder_8"
+      ],
+      "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+        "confidence": 0.95,
+        "high": 0.0021566666666666665,
+        "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+        "low": 0.0018966666666666665,
+        "replicates": 10000,
+        "seed": 3222731881,
+        "unit": "root cluster resampled within each stratum; equal stratum weighting"
+      },
+      "equal_stratum_fixed_ler": 0.006986666666666666,
+      "equal_stratum_hindsight_per_shot_oracle_ler": 0.004958333333333334,
+      "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.0020283333333333325,
+      "global_fixed_index": 1,
+      "global_fixed_name": "decoder_1",
+      "oracle_kind": "shotwise",
+      "per_stratum": {
+        "data_heavy": {
+          "calibration_selected_errors": 2825,
+          "calibration_selected_index": 1,
+          "calibration_selected_ler": 0.014125,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "decoder_1",
+          "errors_by_decoder": [
+            2814,
+            2825,
+            3132,
+            2750,
+            2814,
+            2851,
+            2805,
+            2750,
+            2814
+          ],
+          "hindsight_best_regime_errors": 2750,
+          "hindsight_best_regime_index": 3,
+          "hindsight_best_regime_ler": 0.01375,
+          "hindsight_best_regime_name": "decoder_3",
+          "hindsight_per_root_oracle_errors": 2716,
+          "hindsight_per_root_oracle_ler": 0.01358,
+          "hindsight_per_shot_oracle_errors": 2000,
+          "hindsight_per_shot_oracle_ler": 0.01,
+          "ler_by_decoder": [
+            0.01407,
+            0.014125,
+            0.01566,
+            0.01375,
+            0.01407,
+            0.014255,
+            0.014025,
+            0.01375,
+            0.01407
+          ],
+          "pooled_fixed_errors": 2825,
+          "pooled_fixed_ler": 0.014125,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.2920353982300885,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 200000
+        },
+        "measurement_heavy": {
+          "calibration_selected_errors": 391,
+          "calibration_selected_index": 1,
+          "calibration_selected_ler": 0.001955,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "decoder_1",
+          "errors_by_decoder": [
+            402,
+            391,
+            353,
+            505,
+            402,
+            397,
+            545,
+            505,
+            402
+          ],
+          "hindsight_best_regime_errors": 353,
+          "hindsight_best_regime_index": 2,
+          "hindsight_best_regime_ler": 0.001765,
+          "hindsight_best_regime_name": "decoder_2",
+          "hindsight_per_root_oracle_errors": 343,
+          "hindsight_per_root_oracle_ler": 0.001715,
+          "hindsight_per_shot_oracle_errors": 294,
+          "hindsight_per_shot_oracle_ler": 0.00147,
+          "ler_by_decoder": [
+            0.00201,
+            0.001955,
+            0.001765,
+            0.002525,
+            0.00201,
+            0.001985,
+            0.002725,
+            0.002525,
+            0.00201
+          ],
+          "pooled_fixed_errors": 391,
+          "pooled_fixed_ler": 0.001955,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.24808184143222506,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 200000
+        },
+        "nominal": {
+          "calibration_selected_errors": 976,
+          "calibration_selected_index": 1,
+          "calibration_selected_ler": 0.00488,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "decoder_1",
+          "errors_by_decoder": [
+            987,
+            976,
+            1040,
+            1026,
+            987,
+            993,
+            1077,
+            1026,
+            987
+          ],
+          "hindsight_best_regime_errors": 976,
+          "hindsight_best_regime_index": 1,
+          "hindsight_best_regime_ler": 0.00488,
+          "hindsight_best_regime_name": "decoder_1",
+          "hindsight_per_root_oracle_errors": 948,
+          "hindsight_per_root_oracle_ler": 0.00474,
+          "hindsight_per_shot_oracle_errors": 681,
+          "hindsight_per_shot_oracle_ler": 0.003405,
+          "ler_by_decoder": [
+            0.004935,
+            0.00488,
+            0.0052,
+            0.00513,
+            0.004935,
+            0.004965,
+            0.005385,
+            0.00513,
+            0.004935
+          ],
+          "pooled_fixed_errors": 976,
+          "pooled_fixed_ler": 0.00488,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.30225409836065575,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 200000
+        }
+      },
+      "phase2a_calibration_rates": [
+        [
+          0.01455,
+          0.0145,
+          0.01585,
+          0.01455,
+          0.01455,
+          0.01475,
+          0.0146,
+          0.01455,
+          0.01455
+        ],
+        [
+          0.00375,
+          0.00365,
+          0.0042,
+          0.0043,
+          0.00375,
+          0.0037,
+          0.0047,
+          0.0043,
+          0.00375
+        ],
+        [
+          0.0019,
+          0.00185,
+          0.00185,
+          0.00225,
+          0.0019,
+          0.0019,
+          0.00265,
+          0.00225,
+          0.0019
+        ]
+      ],
+      "relative_equal_stratum_oracle_reduction": 0.2903148854961831,
+      "reported_summary_reconciliation": {
+        "recomputed_hindsight_per_regime_errors": 4079,
+        "recomputed_per_shot_oracle_errors": 2975,
+        "recomputed_selected_fixed_errors": 4192,
+        "saved_aggregate_errors": 4192,
+        "saved_hindsight_per_regime_errors": 4079,
+        "saved_per_shot_oracle_errors": 2975
+      },
+      "root_count": 60,
+      "selection_audit": {
+        "calibration_is_not_current_runtime_noise_telemetry": true,
+        "calibration_source": "prototype_development/data/calibration_evidence.npz",
+        "matches_saved_phase2a_selection": true,
+        "recomputed_per_regime_indices": [
+          1,
+          1,
+          1
+        ],
+        "recomputed_pooled_index": 1,
+        "shots_per_regime": 20000
+      },
+      "study": "phase2a_fresh_evaluation",
+      "total_shots": 600000
+    },
+    "phase2b": {
+      "decoder_names": [
+        "bank_0",
+        "bank_1",
+        "bank_2"
+      ],
+      "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+        "confidence": 0.95,
+        "high": 0.0011241666666666665,
+        "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+        "low": 0.0010116666666666666,
+        "replicates": 10000,
+        "seed": 1674047357,
+        "unit": "root cluster resampled within each stratum; equal stratum weighting"
+      },
+      "equal_stratum_fixed_ler": 0.00461,
+      "equal_stratum_hindsight_per_shot_oracle_ler": 0.0035425,
+      "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.0010675000000000003,
+      "global_fixed_index": {
+        "x/balanced": 0,
+        "x/x_biased": 0,
+        "x/z_biased": 0,
+        "z/balanced": 2,
+        "z/x_biased": 2,
+        "z/z_biased": 2
+      },
+      "global_fixed_name": {
+        "x/balanced": "bank_0",
+        "x/x_biased": "bank_0",
+        "x/z_biased": "bank_0",
+        "z/balanced": "bank_2",
+        "z/x_biased": "bank_2",
+        "z/z_biased": "bank_2"
+      },
+      "oracle_kind": "shotwise",
+      "per_stratum": {
+        "x/balanced": {
+          "calibration_selected_errors": 1012,
+          "calibration_selected_index": 0,
+          "calibration_selected_ler": 0.00506,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "bank_0",
+          "errors_by_decoder": [
+            1012,
+            1119,
+            1190
+          ],
+          "hindsight_best_regime_errors": 1012,
+          "hindsight_best_regime_index": 0,
+          "hindsight_best_regime_ler": 0.00506,
+          "hindsight_best_regime_name": "bank_0",
+          "hindsight_per_root_oracle_errors": 1012,
+          "hindsight_per_root_oracle_ler": 0.00506,
+          "hindsight_per_shot_oracle_errors": 792,
+          "hindsight_per_shot_oracle_ler": 0.00396,
+          "ler_by_decoder": [
+            0.00506,
+            0.005595,
+            0.00595
+          ],
+          "pooled_fixed_errors": 1012,
+          "pooled_fixed_ler": 0.00506,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.21739130434782608,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 200000
+        },
+        "x/x_biased": {
+          "calibration_selected_errors": 265,
+          "calibration_selected_index": 0,
+          "calibration_selected_ler": 0.001325,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "bank_0",
+          "errors_by_decoder": [
+            265,
+            372,
+            401
+          ],
+          "hindsight_best_regime_errors": 265,
+          "hindsight_best_regime_index": 0,
+          "hindsight_best_regime_ler": 0.001325,
+          "hindsight_best_regime_name": "bank_0",
+          "hindsight_per_root_oracle_errors": 265,
+          "hindsight_per_root_oracle_ler": 0.001325,
+          "hindsight_per_shot_oracle_errors": 231,
+          "hindsight_per_shot_oracle_ler": 0.001155,
+          "ler_by_decoder": [
+            0.001325,
+            0.00186,
+            0.002005
+          ],
+          "pooled_fixed_errors": 265,
+          "pooled_fixed_ler": 0.001325,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.12830188679245283,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 200000
+        },
+        "x/z_biased": {
+          "calibration_selected_errors": 1578,
+          "calibration_selected_index": 0,
+          "calibration_selected_ler": 0.00789,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "bank_0",
+          "errors_by_decoder": [
+            1578,
+            1629,
+            1594
+          ],
+          "hindsight_best_regime_errors": 1578,
+          "hindsight_best_regime_index": 0,
+          "hindsight_best_regime_ler": 0.00789,
+          "hindsight_best_regime_name": "bank_0",
+          "hindsight_per_root_oracle_errors": 1548,
+          "hindsight_per_root_oracle_ler": 0.00774,
+          "hindsight_per_shot_oracle_errors": 1245,
+          "hindsight_per_shot_oracle_ler": 0.006225,
+          "ler_by_decoder": [
+            0.00789,
+            0.008145,
+            0.00797
+          ],
+          "pooled_fixed_errors": 1578,
+          "pooled_fixed_ler": 0.00789,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.21102661596958175,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 200000
+        },
+        "z/balanced": {
+          "calibration_selected_errors": 934,
+          "calibration_selected_index": 2,
+          "calibration_selected_ler": 0.00467,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "bank_2",
+          "errors_by_decoder": [
+            1255,
+            1405,
+            934
+          ],
+          "hindsight_best_regime_errors": 934,
+          "hindsight_best_regime_index": 2,
+          "hindsight_best_regime_ler": 0.00467,
+          "hindsight_best_regime_name": "bank_2",
+          "hindsight_per_root_oracle_errors": 934,
+          "hindsight_per_root_oracle_ler": 0.00467,
+          "hindsight_per_shot_oracle_errors": 638,
+          "hindsight_per_shot_oracle_ler": 0.00319,
+          "ler_by_decoder": [
+            0.006275,
+            0.007025,
+            0.00467
+          ],
+          "pooled_fixed_errors": 934,
+          "pooled_fixed_ler": 0.00467,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.3169164882226981,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 200000
+        },
+        "z/x_biased": {
+          "calibration_selected_errors": 1461,
+          "calibration_selected_index": 2,
+          "calibration_selected_ler": 0.007305,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "bank_2",
+          "errors_by_decoder": [
+            1560,
+            1634,
+            1461
+          ],
+          "hindsight_best_regime_errors": 1461,
+          "hindsight_best_regime_index": 2,
+          "hindsight_best_regime_ler": 0.007305,
+          "hindsight_best_regime_name": "bank_2",
+          "hindsight_per_root_oracle_errors": 1444,
+          "hindsight_per_root_oracle_ler": 0.00722,
+          "hindsight_per_shot_oracle_errors": 1170,
+          "hindsight_per_shot_oracle_ler": 0.00585,
+          "ler_by_decoder": [
+            0.0078,
+            0.00817,
+            0.007305
+          ],
+          "pooled_fixed_errors": 1461,
+          "pooled_fixed_ler": 0.007305,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.19917864476386038,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 200000
+        },
+        "z/z_biased": {
+          "calibration_selected_errors": 282,
+          "calibration_selected_index": 2,
+          "calibration_selected_ler": 0.00141,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "bank_2",
+          "errors_by_decoder": [
+            386,
+            485,
+            282
+          ],
+          "hindsight_best_regime_errors": 282,
+          "hindsight_best_regime_index": 2,
+          "hindsight_best_regime_ler": 0.00141,
+          "hindsight_best_regime_name": "bank_2",
+          "hindsight_per_root_oracle_errors": 271,
+          "hindsight_per_root_oracle_ler": 0.001355,
+          "hindsight_per_shot_oracle_errors": 175,
+          "hindsight_per_shot_oracle_ler": 0.000875,
+          "ler_by_decoder": [
+            0.00193,
+            0.002425,
+            0.00141
+          ],
+          "pooled_fixed_errors": 282,
+          "pooled_fixed_ler": 0.00141,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.37943262411347517,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 200000
+        }
+      },
+      "relative_equal_stratum_oracle_reduction": 0.2315618221258135,
+      "reported_summary_reconciliation": {
+        "recomputed_fixed_errors": 5532,
+        "recomputed_per_shot_oracle_errors": 4251,
+        "recomputed_regime_informed_errors": 5532,
+        "saved_fixed_errors": 5532,
+        "saved_per_shot_oracle_errors": 4251,
+        "saved_regime_informed_errors": 5532
+      },
+      "root_count": 120,
+      "selection_audit": {
+        "calibration_selection": {
+          "x": 0,
+          "z": 2
+        },
+        "calibration_shots_per_basis_regime": 20000,
+        "heldout_roots_per_basis_regime": 20,
+        "heldout_shots": 1200000,
+        "per_regime_indices_equal_global_by_basis": true
+      },
+      "study": "phase2b_pauli_bias_heldout",
+      "total_shots": 1200000
+    },
+    "phase3b_summary_only": {
+      "conditions": [
+        "x_biased",
+        "z_biased",
+        "depolarizing",
+        "mixed_xz_heldout"
+      ],
+      "fixed_and_specialist_counts_available_in_summary": true,
+      "primary_statistical_analysis": {
+        "alpha_two_sided": 0.05,
+        "endpoint": "x_specialist residual logical-observable error rate minus fixed nominal rate",
+        "mean_fixed_residual_rate": 0.07278833333333333,
+        "mean_seed_level_difference": 3.333333333333334e-06,
+        "mean_x_specialist_residual_rate": 0.07279166666666667,
+        "median_seed_level_difference": 3.3333333333333335e-05,
+        "paired_shot_analysis": {
+          "difference_errors": 2,
+          "discordant_shots": 162,
+          "exact_two_sided_mcnemar_p": 0.9374089336007709,
+          "fixed_only_wrong": 80,
+          "paired_rate_difference": 3.3333333333333333e-06,
+          "paired_rate_difference_ci95_approx": [
+            -3.824454454492375e-05,
+            4.491121121159041e-05
+          ],
+          "x_specialist_only_wrong": 82
+        },
+        "prediction_disagreements": 162,
+        "seed_bootstrap_mean_ci95": [
+          -4.000000000000001e-05,
+          4.3333333333333334e-05
+        ],
+        "seed_count": 20,
+        "seed_level_differences": [
+          -0.00013333333333333334,
+          0.0,
+          6.666666666666667e-05,
+          -0.00013333333333333334,
+          -3.3333333333333335e-05,
+          0.0001,
+          6.666666666666667e-05,
+          -0.00023333333333333333,
+          -0.00013333333333333334,
+          0.0,
+          3.3333333333333335e-05,
+          0.0,
+          -3.3333333333333335e-05,
+          3.3333333333333335e-05,
+          6.666666666666667e-05,
+          6.666666666666667e-05,
+          3.3333333333333335e-05,
+          3.3333333333333335e-05,
+          0.00016666666666666666,
+          0.0001
+        ],
+        "seed_sign_test": {
+          "exact_two_sided_sign_test_p": 0.332305908203125,
+          "fixed_wins": 11,
+          "non_tied_seeds": 17,
+          "ties": 3,
+          "x_specialist_wins": 6
+        },
+        "supports_reproducible_improvement_by_preregistered_rule": false
+      },
+      "raw_roots": 20,
+      "shot_level_oracle_recomputation_possible_without_redecoding": false,
+      "shots_per_root_condition": 30000,
+      "status": "raw detectors and labels saved, decoder predictions not saved in the raw NPZ bundles"
+    },
+    "phase4a": {
+      "decoder_names": [
+        "fixed",
+        "calibrated",
+        "model_informed"
+      ],
+      "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+        "confidence": 0.95,
+        "high": 0.0010633333333333334,
+        "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+        "low": 0.0009555555555555555,
+        "replicates": 10000,
+        "seed": 3222731881,
+        "unit": "root cluster resampled within each stratum; equal stratum weighting"
+      },
+      "equal_stratum_fixed_ler": 0.007003888888888889,
+      "equal_stratum_hindsight_per_shot_oracle_ler": 0.005996111111111112,
+      "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.0010077777777777776,
+      "global_fixed_index": 0,
+      "global_fixed_name": "fixed",
+      "oracle_kind": "shotwise",
+      "per_stratum": {
+        "data_heavy": {
+          "calibration_selected_errors": 8577,
+          "calibration_selected_index": 0,
+          "calibration_selected_ler": 0.014295,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "fixed",
+          "errors_by_decoder": [
+            8577,
+            8599,
+            8599
+          ],
+          "hindsight_best_regime_errors": 8577,
+          "hindsight_best_regime_index": 0,
+          "hindsight_best_regime_ler": 0.014295,
+          "hindsight_best_regime_name": "fixed",
+          "hindsight_per_root_oracle_errors": 8467,
+          "hindsight_per_root_oracle_ler": 0.014111666666666666,
+          "hindsight_per_shot_oracle_errors": 7021,
+          "hindsight_per_shot_oracle_ler": 0.011701666666666668,
+          "ler_by_decoder": [
+            0.014295,
+            0.014331666666666666,
+            0.014331666666666666
+          ],
+          "pooled_fixed_errors": 8577,
+          "pooled_fixed_ler": 0.014295,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.18141541331467878,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 600000
+        },
+        "measurement_heavy": {
+          "calibration_selected_errors": 1118,
+          "calibration_selected_index": 0,
+          "calibration_selected_ler": 0.0018633333333333334,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "fixed",
+          "errors_by_decoder": [
+            1118,
+            940,
+            940
+          ],
+          "hindsight_best_regime_errors": 940,
+          "hindsight_best_regime_index": 1,
+          "hindsight_best_regime_ler": 0.0015666666666666667,
+          "hindsight_best_regime_name": "calibrated",
+          "hindsight_per_root_oracle_errors": 939,
+          "hindsight_per_root_oracle_ler": 0.001565,
+          "hindsight_per_shot_oracle_errors": 860,
+          "hindsight_per_shot_oracle_ler": 0.0014333333333333333,
+          "ler_by_decoder": [
+            0.0018633333333333334,
+            0.0015666666666666667,
+            0.0015666666666666667
+          ],
+          "pooled_fixed_errors": 1118,
+          "pooled_fixed_ler": 0.0018633333333333334,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.23076923076923078,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 600000
+        },
+        "nominal": {
+          "calibration_selected_errors": 2912,
+          "calibration_selected_index": 0,
+          "calibration_selected_ler": 0.004853333333333334,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "fixed",
+          "errors_by_decoder": [
+            2912,
+            2912,
+            2912
+          ],
+          "hindsight_best_regime_errors": 2912,
+          "hindsight_best_regime_index": 0,
+          "hindsight_best_regime_ler": 0.004853333333333334,
+          "hindsight_best_regime_name": "fixed",
+          "hindsight_per_root_oracle_errors": 2912,
+          "hindsight_per_root_oracle_ler": 0.004853333333333334,
+          "hindsight_per_shot_oracle_errors": 2912,
+          "hindsight_per_shot_oracle_ler": 0.004853333333333334,
+          "ler_by_decoder": [
+            0.004853333333333334,
+            0.004853333333333334,
+            0.004853333333333334
+          ],
+          "pooled_fixed_errors": 2912,
+          "pooled_fixed_ler": 0.004853333333333334,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.0,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 600000
+        }
+      },
+      "relative_equal_stratum_oracle_reduction": 0.1438883160149123,
+      "root_count": 60,
+      "study": "outputs_phase4a_model_adequacy",
+      "total_shots": 1800000
+    },
+    "phase4b": {
+      "decoder_names": [
+        "fixed",
+        "calibrated",
+        "model_informed"
+      ],
+      "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+        "confidence": 0.95,
+        "high": 0.0004916666666666666,
+        "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+        "low": 0.00036666666666666667,
+        "replicates": 10000,
+        "seed": 2256815325,
+        "unit": "root cluster resampled within each stratum; equal stratum weighting"
+      },
+      "equal_stratum_fixed_ler": 0.0019416666666666666,
+      "equal_stratum_hindsight_per_shot_oracle_ler": 0.001515,
+      "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.00042666666666666656,
+      "global_fixed_index": 0,
+      "global_fixed_name": "fixed",
+      "oracle_kind": "shotwise",
+      "per_stratum": {
+        "measurement_heavy": {
+          "calibration_selected_errors": 1165,
+          "calibration_selected_index": 0,
+          "calibration_selected_ler": 0.0019416666666666666,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "fixed",
+          "errors_by_decoder": [
+            1165,
+            1008,
+            1008
+          ],
+          "hindsight_best_regime_errors": 1008,
+          "hindsight_best_regime_index": 1,
+          "hindsight_best_regime_ler": 0.00168,
+          "hindsight_best_regime_name": "calibrated",
+          "hindsight_per_root_oracle_errors": 1008,
+          "hindsight_per_root_oracle_ler": 0.00168,
+          "hindsight_per_shot_oracle_errors": 909,
+          "hindsight_per_shot_oracle_ler": 0.001515,
+          "ler_by_decoder": [
+            0.0019416666666666666,
+            0.00168,
+            0.00168
+          ],
+          "pooled_fixed_errors": 1165,
+          "pooled_fixed_ler": 0.0019416666666666666,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.21974248927038625,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 600000
+        }
+      },
+      "relative_equal_stratum_oracle_reduction": 0.21974248927038623,
+      "root_count": 20,
+      "study": "outputs_phase4b_replication",
+      "total_shots": 600000
+    },
+    "phase4c_stage2": {
+      "baseline_definitions": {
+        "condition_specific": {
+          "data_heavy": [
+            0.006,
+            0.003
+          ],
+          "measurement_heavy": [
+            0.001,
+            0.006
+          ],
+          "nominal": [
+            0.001,
+            0.003
+          ]
+        },
+        "minimax_fixed": [
+          0.006,
+          0.003
+        ],
+        "nominal_fixed": [
+          0.003,
+          0.003
+        ],
+        "pooled_fixed": [
+          0.001,
+          0.003
+        ]
+      },
+      "calibration_provenance": "Incomplete: no calibration detector arrays saved; checkpoint choices are read but not independently refit.",
+      "decoder_names": [
+        "calibrated",
+        "pooled_fixed",
+        "nominal_fixed",
+        "minimax_fixed",
+        "condition_specific"
+      ],
+      "descriptive_root_cluster_bootstrap_ci_for_oracle_gap": {
+        "confidence": 0.95,
+        "high": 0.001473888888888889,
+        "interpretation": "descriptive only; hindsight oracle uses the same outcome labels",
+        "low": 0.0013716666666666667,
+        "replicates": 10000,
+        "seed": 3222731881,
+        "unit": "root cluster resampled within each stratum; equal stratum weighting"
+      },
+      "equal_stratum_fixed_ler": 0.006892777777777778,
+      "equal_stratum_hindsight_per_shot_oracle_ler": 0.005470555555555556,
+      "equal_stratum_oracle_gap_fixed_minus_shotwise": 0.0014222222222222223,
+      "global_fixed_index": 1,
+      "global_fixed_name": "pooled_fixed",
+      "oracle_kind": "shotwise",
+      "per_regime_hindsight": {
+        "data_heavy": "minimax_fixed",
+        "measurement_heavy": "calibrated",
+        "nominal": "pooled_fixed"
+      },
+      "per_regime_reported_reconciliation": {
+        "data_heavy": {
+          "recomputed": {
+            "calibrated": 8459,
+            "condition_specific": 8276,
+            "minimax_fixed": 8276,
+            "nominal_fixed": 8338,
+            "pooled_fixed": 8382
+          },
+          "saved": {
+            "calibrated": 8459,
+            "condition_specific": 8276,
+            "minimax_fixed": 8276,
+            "nominal_fixed": 8338,
+            "pooled_fixed": 8382
+          }
+        },
+        "measurement_heavy": {
+          "recomputed": {
+            "calibrated": 980,
+            "condition_specific": 980,
+            "minimax_fixed": 1443,
+            "nominal_fixed": 1132,
+            "pooled_fixed": 1076
+          },
+          "saved": {
+            "calibrated": 980,
+            "condition_specific": 980,
+            "minimax_fixed": 1443,
+            "nominal_fixed": 1132,
+            "pooled_fixed": 1076
+          }
+        },
+        "nominal": {
+          "recomputed": {
+            "calibrated": 2996,
+            "condition_specific": 2949,
+            "minimax_fixed": 3210,
+            "nominal_fixed": 2996,
+            "pooled_fixed": 2949
+          },
+          "saved": {
+            "calibrated": 2996,
+            "condition_specific": 2949,
+            "minimax_fixed": 3210,
+            "nominal_fixed": 2996,
+            "pooled_fixed": 2949
+          }
+        }
+      },
+      "per_stratum": {
+        "data_heavy": {
+          "calibration_selected_errors": 8382,
+          "calibration_selected_index": 1,
+          "calibration_selected_ler": 0.01397,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "pooled_fixed",
+          "errors_by_decoder": [
+            8459,
+            8382,
+            8338,
+            8276,
+            8276
+          ],
+          "hindsight_best_regime_errors": 8276,
+          "hindsight_best_regime_index": 3,
+          "hindsight_best_regime_ler": 0.013793333333333333,
+          "hindsight_best_regime_name": "minimax_fixed",
+          "hindsight_per_root_oracle_errors": 8219,
+          "hindsight_per_root_oracle_ler": 0.013698333333333333,
+          "hindsight_per_shot_oracle_errors": 6591,
+          "hindsight_per_shot_oracle_ler": 0.010985,
+          "ler_by_decoder": [
+            0.014098333333333333,
+            0.01397,
+            0.013896666666666667,
+            0.013793333333333333,
+            0.013793333333333333
+          ],
+          "pooled_fixed_errors": 8382,
+          "pooled_fixed_ler": 0.01397,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.2136721546170365,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 600000
+        },
+        "measurement_heavy": {
+          "calibration_selected_errors": 1076,
+          "calibration_selected_index": 1,
+          "calibration_selected_ler": 0.0017933333333333334,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "pooled_fixed",
+          "errors_by_decoder": [
+            980,
+            1076,
+            1132,
+            1443,
+            980
+          ],
+          "hindsight_best_regime_errors": 980,
+          "hindsight_best_regime_index": 0,
+          "hindsight_best_regime_ler": 0.0016333333333333334,
+          "hindsight_best_regime_name": "calibrated",
+          "hindsight_per_root_oracle_errors": 976,
+          "hindsight_per_root_oracle_ler": 0.0016266666666666667,
+          "hindsight_per_shot_oracle_errors": 803,
+          "hindsight_per_shot_oracle_ler": 0.0013383333333333333,
+          "ler_by_decoder": [
+            0.0016333333333333334,
+            0.0017933333333333334,
+            0.0018866666666666667,
+            0.002405,
+            0.0016333333333333334
+          ],
+          "pooled_fixed_errors": 1076,
+          "pooled_fixed_ler": 0.0017933333333333334,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.2537174721189591,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 600000
+        },
+        "nominal": {
+          "calibration_selected_errors": 2949,
+          "calibration_selected_index": 1,
+          "calibration_selected_ler": 0.004915,
+          "calibration_selected_minus_pooled_errors": 0,
+          "calibration_selected_minus_pooled_ler": 0.0,
+          "calibration_selected_name": "pooled_fixed",
+          "errors_by_decoder": [
+            2996,
+            2949,
+            2996,
+            3210,
+            2949
+          ],
+          "hindsight_best_regime_errors": 2949,
+          "hindsight_best_regime_index": 1,
+          "hindsight_best_regime_ler": 0.004915,
+          "hindsight_best_regime_name": "pooled_fixed",
+          "hindsight_per_root_oracle_errors": 2942,
+          "hindsight_per_root_oracle_ler": 0.004903333333333333,
+          "hindsight_per_shot_oracle_errors": 2453,
+          "hindsight_per_shot_oracle_ler": 0.004088333333333334,
+          "ler_by_decoder": [
+            0.004993333333333333,
+            0.004915,
+            0.004993333333333333,
+            0.00535,
+            0.004915
+          ],
+          "pooled_fixed_errors": 2949,
+          "pooled_fixed_ler": 0.004915,
+          "relative_hindsight_per_shot_reduction_vs_calibration_selected": 0.1681926076636148,
+          "roots": 20,
+          "roots_specialist_better": 0,
+          "roots_specialist_worse": 0,
+          "roots_tied": 20,
+          "shots": 600000
+        }
+      },
+      "relative_equal_stratum_oracle_reduction": 0.20633513339243975,
+      "root_count": 60,
+      "saved_result_audit_count": 60,
+      "saved_result_redecoding_status": "Historical independent re-decoding passed for all raw arrays; this calculation independently recomputes error aggregates from the stored prediction/observable pairs.",
+      "study": "phase4c_stage2_recovered",
+      "total_shots": 1800000
+    },
+    "prototype_development": {
+      "choice_audit": [
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_00_stationary_rep00.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_00_stationary_rep01.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_00_stationary_rep02.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_00_stationary_rep03.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_00_stationary_rep04.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_00_stationary_rep05.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_00_stationary_rep06.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_00_stationary_rep07.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_00_stationary_rep08.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_00_stationary_rep09.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_01_data_to_measurement_rep00.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_01_data_to_measurement_rep01.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_01_data_to_measurement_rep02.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_01_data_to_measurement_rep03.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_01_data_to_measurement_rep04.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_01_data_to_measurement_rep05.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_01_data_to_measurement_rep06.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_01_data_to_measurement_rep07.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_01_data_to_measurement_rep08.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_01_data_to_measurement_rep09.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_02_measurement_to_data_rep00.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_02_measurement_to_data_rep01.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_02_measurement_to_data_rep02.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_02_measurement_to_data_rep03.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_02_measurement_to_data_rep04.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_02_measurement_to_data_rep05.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_02_measurement_to_data_rep06.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_02_measurement_to_data_rep07.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_02_measurement_to_data_rep08.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_02_measurement_to_data_rep09.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_03_nominal_measurement_nominal_rep00.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_03_nominal_measurement_nominal_rep01.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_03_nominal_measurement_nominal_rep02.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_03_nominal_measurement_nominal_rep03.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_03_nominal_measurement_nominal_rep04.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_03_nominal_measurement_nominal_rep05.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_03_nominal_measurement_nominal_rep06.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_03_nominal_measurement_nominal_rep07.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_03_nominal_measurement_nominal_rep08.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_03_nominal_measurement_nominal_rep09.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_04_rapid_cycle_rep00.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_04_rapid_cycle_rep01.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_04_rapid_cycle_rep02.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_04_rapid_cycle_rep03.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_04_rapid_cycle_rep04.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_04_rapid_cycle_rep05.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_04_rapid_cycle_rep06.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_04_rapid_cycle_rep07.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_04_rapid_cycle_rep08.npz",
+          "stored_adaptive_matches_chosen_model": true
+        },
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "file": "eval_04_rapid_cycle_rep09.npz",
+          "stored_adaptive_matches_chosen_model": true
+        }
+      ],
+      "schedules": {
+        "00_stationary": {
+          "adaptive_errors": 300,
+          "adaptive_ler": 0.0048828125,
+          "adaptive_minus_pooled_errors": 0,
+          "adaptive_minus_pooled_ler": 0.0,
+          "choice_sequences_match_saved_adaptive_predictions": true,
+          "hindsight_state_matched_errors": 279,
+          "hindsight_state_matched_ler": 0.004541015625,
+          "nominal_errors": 301,
+          "per_block_hindsight_oracle_errors": 234,
+          "per_block_hindsight_oracle_ler": 0.00380859375,
+          "per_shot_bank_oracle_errors": 200,
+          "per_shot_bank_oracle_ler": 0.0032552083333333335,
+          "pooled_fixed_errors": 300,
+          "pooled_fixed_ler": 0.0048828125,
+          "roots": 10,
+          "shots": 61440
+        },
+        "01_data_to_measurement": {
+          "adaptive_errors": 489,
+          "adaptive_ler": 0.007958984375,
+          "adaptive_minus_pooled_errors": 0,
+          "adaptive_minus_pooled_ler": 0.0,
+          "choice_sequences_match_saved_adaptive_predictions": true,
+          "hindsight_state_matched_errors": 451,
+          "hindsight_state_matched_ler": 0.007340494791666667,
+          "nominal_errors": 485,
+          "per_block_hindsight_oracle_errors": 418,
+          "per_block_hindsight_oracle_ler": 0.006803385416666667,
+          "per_shot_bank_oracle_errors": 339,
+          "per_shot_bank_oracle_ler": 0.005517578125,
+          "pooled_fixed_errors": 489,
+          "pooled_fixed_ler": 0.007958984375,
+          "roots": 10,
+          "shots": 61440
+        },
+        "02_measurement_to_data": {
+          "adaptive_errors": 517,
+          "adaptive_ler": 0.008414713541666667,
+          "adaptive_minus_pooled_errors": 0,
+          "adaptive_minus_pooled_ler": 0.0,
+          "choice_sequences_match_saved_adaptive_predictions": true,
+          "hindsight_state_matched_errors": 472,
+          "hindsight_state_matched_ler": 0.007682291666666666,
+          "nominal_errors": 515,
+          "per_block_hindsight_oracle_errors": 431,
+          "per_block_hindsight_oracle_ler": 0.0070149739583333336,
+          "per_shot_bank_oracle_errors": 361,
+          "per_shot_bank_oracle_ler": 0.005875651041666667,
+          "pooled_fixed_errors": 517,
+          "pooled_fixed_ler": 0.008414713541666667,
+          "roots": 10,
+          "shots": 61440
+        },
+        "03_nominal_measurement_nominal": {
+          "adaptive_errors": 244,
+          "adaptive_ler": 0.0039713541666666664,
+          "adaptive_minus_pooled_errors": 0,
+          "adaptive_minus_pooled_ler": 0.0,
+          "choice_sequences_match_saved_adaptive_predictions": true,
+          "hindsight_state_matched_errors": 222,
+          "hindsight_state_matched_ler": 0.00361328125,
+          "nominal_errors": 241,
+          "per_block_hindsight_oracle_errors": 203,
+          "per_block_hindsight_oracle_ler": 0.0033040364583333333,
+          "per_shot_bank_oracle_errors": 179,
+          "per_shot_bank_oracle_ler": 0.0029134114583333334,
+          "pooled_fixed_errors": 244,
+          "pooled_fixed_ler": 0.0039713541666666664,
+          "roots": 10,
+          "shots": 61440
+        },
+        "04_rapid_cycle": {
+          "adaptive_errors": 439,
+          "adaptive_ler": 0.0071451822916666664,
+          "adaptive_minus_pooled_errors": 0,
+          "adaptive_minus_pooled_ler": 0.0,
+          "choice_sequences_match_saved_adaptive_predictions": true,
+          "hindsight_state_matched_errors": 409,
+          "hindsight_state_matched_ler": 0.0066569010416666664,
+          "nominal_errors": 434,
+          "per_block_hindsight_oracle_errors": 384,
+          "per_block_hindsight_oracle_ler": 0.00625,
+          "per_shot_bank_oracle_errors": 331,
+          "per_shot_bank_oracle_ler": 0.005387369791666667,
+          "pooled_fixed_errors": 439,
+          "pooled_fixed_ler": 0.0071451822916666664,
+          "roots": 10,
+          "shots": 61440
+        }
+      },
+      "total_roots": 50,
+      "total_shots": 307200
+    }
+  }
+}

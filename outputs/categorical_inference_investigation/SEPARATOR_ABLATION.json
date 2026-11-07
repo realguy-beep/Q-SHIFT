@@ -1,0 +1,221 @@
+{
+  "status": "PASS",
+  "original_dem": "error(0.03) D0\nerror(0.03) D0 L0\nerror(0.03) D0 L0 ^ D1\nerror(0.03) D1\nerror(0.03) D1 L0\nerror(0.03) D1 L0 ^ D0",
+  "separator_removed_dem": "error(0.03) D0\nerror(0.03) D0 L0\nerror(0.03) D0 D1 L0\nerror(0.03) D1\nerror(0.03) D1 L0\nerror(0.03) D0 D1 L0",
+  "events_unchanged_after_separator_removal": true,
+  "event_count": 6,
+  "exact_independent_dem_posterior_unchanged": true,
+  "total_probability_mass_with_separators": 0.9999999999999998,
+  "total_probability_mass_without_separators": 0.9999999999999998,
+  "independent_DEM_joint_posterior": {
+    "0": [
+      0.8338680999999998,
+      0.0016936200000000003
+    ],
+    "3": [
+      0.0016936199999999998,
+      0.053119139999999995
+    ],
+    "2": [
+      0.027406379999999998,
+      0.027406379999999998
+    ],
+    "1": [
+      0.02740638,
+      0.027406379999999998
+    ]
+  },
+  "independent_DEM_MAP": {
+    "0": 0,
+    "3": 1,
+    "2": 0,
+    "1": 0
+  },
+  "categorical_exact_MAP": {
+    "0": 0,
+    "2": 0,
+    "3": 1,
+    "1": 0
+  },
+  "PyMatching_results": {
+    "with_separators": {
+      "standard": {
+        "predictions": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0
+        },
+        "matched_weights": {
+          "0": 0.0,
+          "1": 2.094571944150107,
+          "2": 2.094571944150107,
+          "3": 4.189143888300214
+        },
+        "graph": {
+          "nodes": 2,
+          "edges": 2,
+          "fault_ids": 1,
+          "edge_list": [
+            {
+              "u": 0,
+              "v": null,
+              "fault_ids": [],
+              "weight": 2.094571944150107,
+              "error_probability": 0.10962551999999999
+            },
+            {
+              "u": 1,
+              "v": null,
+              "fault_ids": [],
+              "weight": 2.094571944150107,
+              "error_probability": 0.10962551999999999
+            }
+          ]
+        },
+        "risk_under_original_categorical": 0.1128,
+        "risk_under_independent_DEM": 0.10962551999999999
+      },
+      "correlation_enabled": {
+        "predictions": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0
+        },
+        "matched_weights": {
+          "0": 0.0,
+          "1": 2.094571944150107,
+          "2": 2.094571944150107,
+          "3": 0.0
+        },
+        "graph": {
+          "nodes": 2,
+          "edges": 2,
+          "fault_ids": 1,
+          "edge_list": [
+            {
+              "u": 0,
+              "v": null,
+              "fault_ids": [],
+              "weight": 2.094571944150107,
+              "error_probability": 0.10962551999999999
+            },
+            {
+              "u": 1,
+              "v": null,
+              "fault_ids": [],
+              "weight": 2.094571944150107,
+              "error_probability": 0.10962551999999999
+            }
+          ]
+        },
+        "risk_under_original_categorical": 0.1128,
+        "risk_under_independent_DEM": 0.10962551999999999
+      }
+    },
+    "separators_removed": {
+      "standard": {
+        "predictions": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 1
+        },
+        "matched_weights": {
+          "0": 0.0,
+          "1": 2.783907583072062,
+          "2": 2.783907583072062,
+          "3": 2.783907583072062
+        },
+        "graph": {
+          "nodes": 2,
+          "edges": 3,
+          "fault_ids": 1,
+          "edge_list": [
+            {
+              "u": 0,
+              "v": null,
+              "fault_ids": [],
+              "weight": 2.783907583072062,
+              "error_probability": 0.058199999999999995
+            },
+            {
+              "u": 0,
+              "v": 1,
+              "fault_ids": [
+                0
+              ],
+              "weight": 2.783907583072062,
+              "error_probability": 0.058199999999999995
+            },
+            {
+              "u": 1,
+              "v": null,
+              "fault_ids": [],
+              "weight": 2.783907583072062,
+              "error_probability": 0.058199999999999995
+            }
+          ]
+        },
+        "risk_under_original_categorical": 0.06,
+        "risk_under_independent_DEM": 0.058199999999999995
+      },
+      "correlation_enabled": {
+        "predictions": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 1
+        },
+        "matched_weights": {
+          "0": 0.0,
+          "1": 2.783907583072062,
+          "2": 2.783907583072062,
+          "3": 2.783907583072062
+        },
+        "graph": {
+          "nodes": 2,
+          "edges": 3,
+          "fault_ids": 1,
+          "edge_list": [
+            {
+              "u": 0,
+              "v": null,
+              "fault_ids": [],
+              "weight": 2.783907583072062,
+              "error_probability": 0.058199999999999995
+            },
+            {
+              "u": 0,
+              "v": 1,
+              "fault_ids": [
+                0
+              ],
+              "weight": 2.783907583072062,
+              "error_probability": 0.058199999999999995
+            },
+            {
+              "u": 1,
+              "v": null,
+              "fault_ids": [],
+              "weight": 2.783907583072062,
+              "error_probability": 0.058199999999999995
+            }
+          ]
+        },
+        "risk_under_original_categorical": 0.06,
+        "risk_under_independent_DEM": 0.058199999999999995
+      }
+    }
+  },
+  "syndrome_11_result": {
+    "DEM_MAP": 1,
+    "with_sep_standard": 0,
+    "with_sep_correlated": 0,
+    "without_sep_standard": 1,
+    "without_sep_correlated": 1
+  },
+  "interpretation": "Removing only the two ^ decomposition separators leaves the six Bernoulli event probabilities and full detector/logical parity masks unchanged. The exact DEM posterior is bit-for-bit identical. PyMatching's predictions change: the separator-decomposed graph predicts L0=0 for syndrome 11, while the graphlike event representation without separators predicts L0=1. This isolates decoder graph construction/decomposition as a cause of the observed decision gap on this toy; it does not mean the categorical channel itself changed.",
+  "phase2b_shots_generated": 0
+}

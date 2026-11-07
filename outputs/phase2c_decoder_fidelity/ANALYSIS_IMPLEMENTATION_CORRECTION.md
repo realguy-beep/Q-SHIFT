@@ -1,0 +1,7 @@
+# Analysis Implementation Corrections
+
+The first analysis invocation stopped before producing aggregate outcomes because it required floating posterior probabilities to be bitwise identical across repeated inference calls. The saved probability arrays and recomputed arrays differed by at most `2.22e-16` (one floating-point ulp); all six binary prediction arrays matched exactly. The checker now permits a strict `1e-14` tolerance for posterior probabilities while retaining exact binary prediction checks. This only affects numerical serialization verification.
+
+The initial paired-test calculation also returned `0.0` for extremely small exact McNemar probabilities because IEEE double precision underflows. The analyzer now computes the exact binomial-tail ratio and stores both a float and a decimal string/log10 value. The reported exact values are `5.336687518421E-335` and `7.738855561415E-364` for the stated paired comparisons.
+
+The calibration/selection procedure, pilot samples, predictions, logical labels, endpoint, root bootstrap, and sign-flip procedure were not changed. The pre-pilot freeze hashes the protocol and production runner/configuration but did not include the analysis script itself. The analysis procedure was specified in the frozen protocol before pilot sampling; the final manifest records the completed analysis source. This is a provenance limitation and is disclosed rather than represented as a fully source-hashed pretest analysis implementation.

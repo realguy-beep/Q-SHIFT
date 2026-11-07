@@ -1,0 +1,23 @@
+{
+  "status": "REJECTED_BEFORE_PILOT_SAMPLING",
+  "initial_proposed_namespace": {
+    "root_seed_base": 93000001,
+    "root_formula": "93000001 + 100 * stratum_index + root_index",
+    "diagnostic": 93000000,
+    "bootstrap_rng": 93010001,
+    "primary_signflip_rng": 93010002
+  },
+  "collision": {
+    "seed": 93000001,
+    "evidence_files": [
+      "outputs/headroom_feasibility/HISTORICAL_SEED_SCAN.json",
+      "outputs/phase2c_decoder_fidelity/SEED_COLLISION_AUDIT.json",
+      "outputs/phase4c_strong_baselines/adaptive/ADAPTIVE_PROTOCOL.md",
+      "outputs/phase4c_strong_baselines/adaptive/DEVELOPMENT_RESULTS_v2.json",
+      "outputs/phase4c_strong_baselines/adaptive/FROZEN_ADAPTIVE_TEST_PLAN.json"
+    ],
+    "classification": "Confirmed reuse: the saved adaptive development results identify block sampling as 93000001 onward, and the protocol labels 93000001-93000004 evaluation streams. Historical seed inventories also record the namespace."
+  },
+  "action": "Rejected the entire proposed 93000000/93000001/93010001/93010002 allocation before any full-pilot test shot. The prospective allocation was moved to a new 97000000 namespace and will be screened against recoverable historical records before freezing.",
+  "full_pilot_shots_generated_under_rejected_namespace": 0
+}

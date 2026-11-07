@@ -1,0 +1,99 @@
+{
+  "job_id": "root01_natural_inverse_prevalence_weighted_10000",
+  "root": 1,
+  "strategy": "natural_inverse_prevalence_weighted",
+  "train_size_per_regime": 10000,
+  "model": "ResidualPositionCNN",
+  "target": "observable_xor_frozen_pymatching_prediction",
+  "inference": "pymatching_xor_predicted_residual",
+  "prevalence": 0.004233333333333334,
+  "positive_examples": 127,
+  "training_examples": 30000,
+  "pos_weight": 235.2204724409449,
+  "logit_prior_correction": -5.460523254927569,
+  "best_epoch": 6,
+  "best_monitor_nll": 0.020753718388169123,
+  "monitor_history": [
+    {
+      "epoch": 1,
+      "monitor_nll": 0.0226018472544436,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 2,
+      "monitor_nll": 0.021561504924684283,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 3,
+      "monitor_nll": 0.021391896315957327,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 4,
+      "monitor_nll": 0.020987626007817506,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 5,
+      "monitor_nll": 0.021343291447809803,
+      "selected": false,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 6,
+      "monitor_nll": 0.020753718388169123,
+      "selected": true,
+      "learning_rate": 0.0015
+    },
+    {
+      "epoch": 7,
+      "monitor_nll": 0.020791144115928067,
+      "selected": false,
+      "learning_rate": 0.0015
+    },
+    {
+      "epoch": 8,
+      "monitor_nll": 0.021310863880158095,
+      "selected": false,
+      "learning_rate": 0.0015
+    },
+    {
+      "epoch": 9,
+      "monitor_nll": 0.021258692788963418,
+      "selected": false,
+      "learning_rate": 0.0015
+    }
+  ],
+  "temperature": 1.0,
+  "threshold_min_ler": 0.51,
+  "threshold_selection_ler": 0.004733333333333333,
+  "confidence_gate": {
+    "threshold": 1.01,
+    "fallback": true,
+    "reason": "no threshold passed Bonferroni-Wilson precision gate",
+    "precision_lower_bound": null,
+    "corrections_on_threshold_selection": 0,
+    "beneficial_on_threshold_selection": 0,
+    "selected_ler": null,
+    "familywise_alpha": 0.05,
+    "per_threshold_alpha": 0.000505050505050505
+  },
+  "calibration_brier": 0.004528016019956249,
+  "calibration_ece_10bin": 0.0021722141848178693,
+  "weights_sha256": "ed711a611ece566a2db721d47b165908c02d17b3aea78e5ba13ee16488220a40",
+  "selection_data": {
+    "checkpoint": "monitor only",
+    "temperature": "calibration only",
+    "threshold_min_ler": "threshold_selection only",
+    "confidence_gate": "threshold_selection only"
+  },
+  "final_development_evaluation_accessed": false,
+  "gpu_seconds_train_and_select": 9.240283799910685,
+  "parameter_count": 13429,
+  "created_utc": "2026-11-06T23:34:25.204516+00:00"
+}

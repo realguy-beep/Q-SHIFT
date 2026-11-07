@@ -1,0 +1,115 @@
+{
+  "status": "FROZEN_BEFORE_FULL_SAMPLING",
+  "freeze_created_utc": "2026-11-06T05:20:59.052620+00:00",
+  "freeze_protocol": "PILOT_EXECUTION_PROTOCOL.md",
+  "protocol_decisions": {
+    "full_sampling_preceded_by_freeze": true,
+    "status": "development_feasibility_only",
+    "strata": [
+      "x_x_biased",
+      "x_balanced",
+      "x_z_biased",
+      "z_x_biased",
+      "z_balanced",
+      "z_z_biased"
+    ],
+    "roots_per_stratum": 12,
+    "shots_per_root": 10000,
+    "total_paired_shots": 720000,
+    "arm_order": [
+      "pooled_fixed_uncorrelated",
+      "pooled_fixed_correlated",
+      "regime_informed_uncorrelated",
+      "regime_informed_correlated"
+    ],
+    "pooled_fixed_model_index_by_basis": {
+      "x": 0,
+      "z": 2
+    },
+    "DEM_conversion": {
+      "decompose_errors": true,
+      "approximate_disjoint_errors": true
+    },
+    "primary_comparison": {
+      "candidate": "pooled_fixed_correlated",
+      "baseline": "pooled_fixed_uncorrelated",
+      "estimand": "equal_stratum_mean(candidate_LER - baseline_LER)",
+      "minimum_practical_improvement_absolute_ler": 0.0002,
+      "gate_upper_95_ci_max": -0.0002,
+      "minimum_favorable_strata": 4,
+      "max_harm_stratum_can_drive_result": false,
+      "leave_one_stratum_out_rule": "equal-stratum aggregate remains favorable after deleting each one of the six strata"
+    },
+    "primary_statistics": {
+      "primary_test": "two_sided_root_cluster_sign_flip",
+      "primary_signflip_assignments": 100000,
+      "primary_signflip_add_one_p": true,
+      "bootstrap": "root_stratified_percentile_bootstrap",
+      "bootstrap_resamples": 20000,
+      "confidence_level": 0.95,
+      "bootstrap_resampling_unit": "root_within_each_of_six_strata; same root draw shared across paired decoder arms",
+      "secondary_family": "12 exact root-level paired sign-flip tests: regime-informed minus corresponding pooled-fixed, correlation off and on, across six strata",
+      "secondary_holm": true,
+      "secondary_signflip": "exhaustive two-sided sign-flip over 2^12 root assignments per stratum",
+      "shot_level_mcnemar": "descriptive paired secondary; not the primary independent-root inference"
+    },
+    "seed_allocation": {
+      "root_seed_base": 100000001,
+      "root_formula": "100000001 + 100 * stratum_index + root_index",
+      "diagnostic": 100000999,
+      "bootstrap_rng": 100010001,
+      "primary_signflip_rng": 100010002,
+      "root_index_min": 0,
+      "root_index_max": 11
+    },
+    "primary_margin_absolute_ler": 0.0002,
+    "secondary_family": "12 exact root-level paired sign-flip tests: regime-informed minus corresponding pooled-fixed, correlation off and on, across six strata",
+    "test_label_handling": "Observable labels are generated and stored with each test detector bundle and are used only for post-decode scoring. No labels select or tune decoders. The pooled fixed index comes from Phase 2B calibration-only selection. The regime-informed index uses generating regime only as a labeled diagnostic comparator.",
+    "preflight_runtime_estimate_seconds_with_2x_margin": 191.84,
+    "preflight_storage_estimate_bytes_with_50pct_margin": 1748627,
+    "preflight_free_storage_bytes": 280736010240,
+    "no_full_pilot_samples_exist_at_freeze": true
+  },
+  "sha256": {
+    "outputs/research_direction_selection/PILOT_PROTOCOL.md": "96a08320b8f01a42f6be7b6526c8092e12e9202d0a0b2bf9738c24b8579c797a",
+    "outputs/correlation_pilot/PILOT_EXECUTION_PROTOCOL.md": "198c4e4a6e20f42b478be35a173a01bb1a7eda92c168a2e7eb9a8aeb6f00efc2",
+    "outputs/correlation_pilot/config.json": "4108ef78c36cdc85b7d48e6218ea6994b29a40f3f5a0d4a84fc75d2be6ad0b5b",
+    "outputs/correlation_pilot/SEED_INVENTORY.json": "0d083480f8e5be1b58647883fd1cecf84d469d4a3da4913e74fa7236a468ac6e",
+    "outputs/correlation_pilot/SMOKE_PREFLIGHT.json": "1d3e2873dcf3ebd153dd10e3b2a492fddb9f35cf2e3c067a4cf47f2c9856c22e",
+    "outputs/correlation_pilot/SMOKE_TEST.json": "b22adaf458a30df4a7f658d24aff6c10b0d70e27fd5023d5ff05984bb9ec65bb",
+    "outputs/correlation_pilot/STATISTICAL_SELF_CHECK.json": "e9faf44c38d0eb07ea386440fc00ce4b3640607513cce1a687cda3e46430b421",
+    "outputs/correlation_pilot/preflight_correlation_pilot.py": "fdf4eeab0e76ae4f375db18e8ae3bf06374a94e16089ab93d1eb977ce796b0b7",
+    "outputs/correlation_pilot/run_correlation_pilot.py": "0d5cc1c37be13f82b85ff082a2979d7c4218cff755678d6478e26622d91ce88b",
+    "outputs/correlation_pilot/analyze_correlation_pilot.py": "24b05246b6bf52c01accf9b4f18233dd9835463ef2ce264acf5b9c7b86635c6a",
+    "outputs/correlation_pilot/freeze_pilot.py": "b1cb8026bff367d0c9848c4da3d1d187432fc8cd6974c065921583b34c6ba779",
+    "outputs/correlation_pilot/smoke_test_correlation_pilot.py": "e69453e4b7eff22cd1f091243aa28aac0b22d4c8386544e8e0f02cb8a9d38a90",
+    "outputs/correlation_pilot/REPRODUCE.md": "2e15aa3c7fc70e4d52fa8d2e9cd7c3a7c8e5665a06a73dfd059c72443eb5c624",
+    "outputs/correlation_pilot/SEED_COLLISION_PRECHECK.json": "3020815e777d69a536392c00a39435ede0dc7dcffdfc788b6e8ac92366ceb995",
+    "outputs/correlation_pilot/SEED_COLLISION_970_AUDIT.json": "f0d6e752a30f8fa7c40ca76d3401312fc5fe76bfcec1aa5301ab081a7ba2a2b9",
+    "outputs/correlation_pilot/SEED_TEXT_MATCH_REVIEW.json": "ebcaca81e9145492b35494eeaf5f81e91bf5247d7773fef83cc9fe299a1abde8",
+    "outputs/phase2b_pauli_bias/noise_model.py": "256826516353c5d3effb6a0b85969934ac2b61edc2848148d935087e54dffcbd",
+    "outputs/phase2b_pauli_bias/decoder_bank.py": "ea88bbd9c60b027b7525d330db39df5c48fc3495a6644a9b991fa70ac2161080",
+    "outputs/phase2b_pauli_bias/PHASE2B_PROTOCOL.md": "a14c47118760c3999767faf4d395478bc0e0dcf522ad972dee24e2c4a915eb08",
+    "outputs/phase2b_pauli_bias/NOISE_MODEL_SPECIFICATION.md": "1613a751c933ddb3d3f31c7c75feece14b669d09f4996c81ff9efe344d730aac",
+    "outputs/phase2b_pauli_bias/CALIBRATION_SELECTION.json": "e3fb71a3128412870922007cabcf49f3b00e2e2fbf73994c6807037253960648",
+    "outputs/phase2b_pauli_bias/DECODER_BANK_AUDIT.json": "473fdb610d68b4aec383281cd2a2d9d31e8e2df537913fc1d3ff5531df86f265",
+    "outputs/phase2b_pauli_bias/config.json": "36b483dcaec9d767b93c4d255b7040ca433d096f078d118c8961adbc9561b414",
+    "outputs/phase2b_pauli_bias/dems/circuit_x_x_biased.stim": "9e5af4b7a968757f142db3a41df7d54c0d78761dbbddc47d60c7ce7bc2f48547",
+    "outputs/phase2b_pauli_bias/dems/dem_x_x_biased.dem": "056514aeaf674b2f7e0b7bb78e4eb107b3a893be0fa556bd74decce4c9076294",
+    "outputs/phase2b_pauli_bias/dems/circuit_x_balanced.stim": "07f53153f1aa664458cec6b9b69383a57223225fd0e8c6e2e5a3d5ecfde9d46e",
+    "outputs/phase2b_pauli_bias/dems/dem_x_balanced.dem": "cfd43dfd0d4fdff0b976e7931520f76f6ca898c5a1d15965faa9d32dcddc5086",
+    "outputs/phase2b_pauli_bias/dems/circuit_x_z_biased.stim": "c9ab45cfa504e0ae02055f48a3f91d6221c160c68ea331013956517017eb9ec0",
+    "outputs/phase2b_pauli_bias/dems/dem_x_z_biased.dem": "02c2bc13428d4419fcf5040273751f00399b80a6defd369ce138d692662a2f57",
+    "outputs/phase2b_pauli_bias/dems/circuit_z_x_biased.stim": "b24bea0d6c664978a0368236e1f5e0dc177bf84ff3cdbc2473a34dc5a207529f",
+    "outputs/phase2b_pauli_bias/dems/dem_z_x_biased.dem": "fda54de1a31f9666acad51b8f49c9dedefde2cc07f65bcaacedc1c1f83ab3dd5",
+    "outputs/phase2b_pauli_bias/dems/circuit_z_balanced.stim": "add827d9df2fa3f5f0bcf36062c3b1a23430fc4cf95b45cf5456ac55c253b624",
+    "outputs/phase2b_pauli_bias/dems/dem_z_balanced.dem": "5f0f5ca04884cdc6fb4bce3c4d1e0318c087c6a6f95ccfc0a1b8473ca2f168fc",
+    "outputs/phase2b_pauli_bias/dems/circuit_z_z_biased.stim": "40c5beac8385fa3c5a5998bf93f533a5ec0c2decb53b9dc906d52fc20ecdf7f6",
+    "outputs/phase2b_pauli_bias/dems/dem_z_z_biased.dem": "680b4bd4283fceb53a47e261e146f61ada5c465dc98e0f46a4a641c6106f2a4a"
+  },
+  "sha256_file_count": 35,
+  "historical_namespace_collisions_rejected": [
+    "93000000-series",
+    "97000000-series"
+  ]
+}

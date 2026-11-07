@@ -1,0 +1,3 @@
+# Adaptive development protocol
+
+This is development-only. Templates reused from Phase4C Stage2 template artifacts. Utility matrix trained on separate 4,000-shot/regime seeds 91000001-3. Schedule seeds 92000001-4, evaluation seeds 93000001-4 (ML) and 94000001-4 (utility), disjoint from known Stage2 streams. Current block decoder is selected from previous block detector statistics only; the first block uses pooled fallback. Noise state posterior uses sliding empirical detector marginals. ML selects grid maximum; utility policy minimizes development error table under estimated state, with fallback, confidence .65, hysteresis 2, dwell 2 and penalty .00005. Oracle uses hidden generating regime for evaluation only.

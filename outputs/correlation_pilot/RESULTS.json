@@ -1,0 +1,1241 @@
+{
+  "status": "INDEPENDENTLY_RECOMPUTED",
+  "study_id": "qshift_correlation_aware_development_pilot_v1",
+  "evidence_coverage": {
+    "strata": 6,
+    "roots_per_stratum": 12,
+    "roots": 72,
+    "shots_per_root": 10000,
+    "paired_test_shots": 720000,
+    "checkpoint_count": 72,
+    "predictions_independently_redecoded": true,
+    "prediction_bits_verified": 2880000
+  },
+  "arm_order": [
+    "pooled_fixed_uncorrelated",
+    "pooled_fixed_correlated",
+    "regime_informed_uncorrelated",
+    "regime_informed_correlated"
+  ],
+  "aggregate": {
+    "shots": 720000,
+    "raw_observable_errors": 39326,
+    "arm_errors": [
+      3532,
+      3349,
+      3372,
+      3720
+    ],
+    "arm_ler_pooled_shots": [
+      0.004905555555555555,
+      0.004651388888888889,
+      0.004683333333333334,
+      0.005166666666666667
+    ],
+    "arm_ler_equal_stratum_mean": [
+      0.004905555555555555,
+      0.004651388888888889,
+      0.004683333333333334,
+      0.005166666666666667
+    ],
+    "arm_ler_equal_stratum_root_bootstrap_95_ci": [
+      [
+        0.004773611111111111,
+        0.0050416666666666665
+      ],
+      [
+        0.004505555555555555,
+        0.0048
+      ],
+      [
+        0.004555555555555556,
+        0.004811111111111111
+      ],
+      [
+        0.005015277777777778,
+        0.005319444444444445
+      ]
+    ]
+  },
+  "primary": {
+    "candidate": "pooled_fixed_correlated",
+    "baseline": "pooled_fixed_uncorrelated",
+    "estimand": "equal-stratum mean correlated LER minus uncorrelated LER",
+    "delta_ler": -0.0002541666666666667,
+    "delta_percentage_points": -0.02541666666666667,
+    "relative_error_reduction": 0.051812004530011335,
+    "root_stratified_bootstrap_95_ci": [
+      -0.0003500000000000002,
+      -0.00016249999999999986
+    ],
+    "two_sided_root_cluster_signflip_p": 0.0008399916000839992,
+    "signflip_assignments": 100000,
+    "signflip_extreme_assignments": 83,
+    "signflip_add_one": true,
+    "exact_shot_mcnemar_standard_only": 763,
+    "exact_shot_mcnemar_correlation_only": 580,
+    "exact_shot_mcnemar_p_descriptive": 6.570520813675385e-07,
+    "prediction_disagreements": 1343,
+    "strata_favoring_correlated": 4,
+    "practical_margin_absolute_ler": 0.0002,
+    "gate_point_estimate_pass": true,
+    "gate_ci_pass": false,
+    "gate_favorable_strata_pass": true,
+    "leave_one_stratum_out_delta_ler": {
+      "x_x_biased": -0.00034166666666666666,
+      "x_balanced": -0.0001416666666666666,
+      "x_z_biased": -0.00016166666666666665,
+      "z_x_biased": -0.00021500000000000008,
+      "z_balanced": -0.0002633333333333334,
+      "z_z_biased": -0.00040166666666666665
+    },
+    "gate_no_single_stratum_drives": true,
+    "feasibility_gate_pass": false
+  },
+  "per_stratum": [
+    {
+      "stratum_index": 0,
+      "stratum": "x_x_biased",
+      "basis": "x",
+      "regime": "x_biased",
+      "shots": 120000,
+      "roots": 12,
+      "raw_observable_errors": 3330,
+      "primary_delta_correlated_minus_uncorrelated": 0.00018333333333333334,
+      "primary_delta_root_cluster_95_ci": [
+        3.333333333333378e-05,
+        0.0003166666666666667
+      ],
+      "primary_root_delta_sd": 0.00025878504008094625,
+      "primary_root_wins_correlated": 1,
+      "primary_root_losses_correlated": 9,
+      "primary_root_ties": 2,
+      "primary_standard_only_failures": 32,
+      "primary_correlation_only_failures": 54,
+      "primary_disagreements": 86,
+      "primary_exact_shot_mcnemar_p_descriptive": 0.022982591907157044,
+      "regime_standard_only_failures": 32,
+      "regime_correlation_only_failures": 54,
+      "regime_disagreements": 86,
+      "pooled_fixed_uncorrelated_errors": 100,
+      "pooled_fixed_uncorrelated_ler": 0.0008333333333333334,
+      "pooled_fixed_uncorrelated_root_ler_sd": 0.0003869069264008718,
+      "pooled_fixed_uncorrelated_root_ler_ci_95": [
+        0.0006333333333333334,
+        0.00105
+      ],
+      "pooled_fixed_correlated_errors": 122,
+      "pooled_fixed_correlated_ler": 0.0010166666666666666,
+      "pooled_fixed_correlated_root_ler_sd": 0.00022495790852081774,
+      "pooled_fixed_correlated_root_ler_ci_95": [
+        0.0008916666666666666,
+        0.0011333333333333334
+      ],
+      "regime_informed_uncorrelated_errors": 100,
+      "regime_informed_uncorrelated_ler": 0.0008333333333333334,
+      "regime_informed_uncorrelated_root_ler_sd": 0.0003869069264008718,
+      "regime_informed_uncorrelated_root_ler_ci_95": [
+        0.0006333333333333334,
+        0.00105
+      ],
+      "regime_informed_correlated_errors": 122,
+      "regime_informed_correlated_ler": 0.0010166666666666666,
+      "regime_informed_correlated_root_ler_sd": 0.00022495790852081774,
+      "regime_informed_correlated_root_ler_ci_95": [
+        0.0008916666666666666,
+        0.0011333333333333334
+      ],
+      "pred_disagreements_arm0_arm0": 0,
+      "pred_disagreements_arm0_arm1": 86,
+      "pred_disagreements_arm0_arm2": 0,
+      "pred_disagreements_arm0_arm3": 86,
+      "pred_disagreements_arm1_arm0": 86,
+      "pred_disagreements_arm1_arm1": 0,
+      "pred_disagreements_arm1_arm2": 86,
+      "pred_disagreements_arm1_arm3": 0,
+      "pred_disagreements_arm2_arm0": 0,
+      "pred_disagreements_arm2_arm1": 86,
+      "pred_disagreements_arm2_arm2": 0,
+      "pred_disagreements_arm2_arm3": 86,
+      "pred_disagreements_arm3_arm0": 86,
+      "pred_disagreements_arm3_arm1": 0,
+      "pred_disagreements_arm3_arm2": 86,
+      "pred_disagreements_arm3_arm3": 0
+    },
+    {
+      "stratum_index": 1,
+      "stratum": "x_balanced",
+      "basis": "x",
+      "regime": "balanced",
+      "shots": 120000,
+      "roots": 12,
+      "raw_observable_errors": 7331,
+      "primary_delta_correlated_minus_uncorrelated": -0.0008166666666666669,
+      "primary_delta_root_cluster_95_ci": [
+        -0.0012249999999999995,
+        -0.0004499999999999999
+      ],
+      "primary_root_delta_sd": 0.000714567044164549,
+      "primary_root_wins_correlated": 11,
+      "primary_root_losses_correlated": 1,
+      "primary_root_ties": 0,
+      "primary_standard_only_failures": 242,
+      "primary_correlation_only_failures": 144,
+      "primary_disagreements": 386,
+      "primary_exact_shot_mcnemar_p_descriptive": 6.952955105576731e-07,
+      "regime_standard_only_failures": 275,
+      "regime_correlation_only_failures": 261,
+      "regime_disagreements": 536,
+      "pooled_fixed_uncorrelated_errors": 727,
+      "pooled_fixed_uncorrelated_ler": 0.006058333333333333,
+      "pooled_fixed_uncorrelated_root_ler_sd": 0.0006501165396692466,
+      "pooled_fixed_uncorrelated_root_ler_ci_95": [
+        0.0057083333333333335,
+        0.006416666666666667
+      ],
+      "pooled_fixed_correlated_errors": 629,
+      "pooled_fixed_correlated_ler": 0.005241666666666667,
+      "pooled_fixed_correlated_root_ler_sd": 0.000901975945389125,
+      "pooled_fixed_correlated_root_ler_ci_95": [
+        0.0047666666666666664,
+        0.005741666666666666
+      ],
+      "regime_informed_uncorrelated_errors": 727,
+      "regime_informed_uncorrelated_ler": 0.006058333333333333,
+      "regime_informed_uncorrelated_root_ler_sd": 0.0006694072457077684,
+      "regime_informed_uncorrelated_root_ler_ci_95": [
+        0.005716666666666666,
+        0.006433333333333333
+      ],
+      "regime_informed_correlated_errors": 713,
+      "regime_informed_correlated_ler": 0.005941666666666666,
+      "regime_informed_correlated_root_ler_sd": 0.0009129954030884309,
+      "regime_informed_correlated_root_ler_ci_95": [
+        0.005458333333333332,
+        0.006450000000000001
+      ],
+      "pred_disagreements_arm0_arm0": 0,
+      "pred_disagreements_arm0_arm1": 386,
+      "pred_disagreements_arm0_arm2": 44,
+      "pred_disagreements_arm0_arm3": 576,
+      "pred_disagreements_arm1_arm0": 386,
+      "pred_disagreements_arm1_arm1": 0,
+      "pred_disagreements_arm1_arm2": 396,
+      "pred_disagreements_arm1_arm3": 268,
+      "pred_disagreements_arm2_arm0": 44,
+      "pred_disagreements_arm2_arm1": 396,
+      "pred_disagreements_arm2_arm2": 0,
+      "pred_disagreements_arm2_arm3": 536,
+      "pred_disagreements_arm3_arm0": 576,
+      "pred_disagreements_arm3_arm1": 268,
+      "pred_disagreements_arm3_arm2": 536,
+      "pred_disagreements_arm3_arm3": 0
+    },
+    {
+      "stratum_index": 2,
+      "stratum": "x_z_biased",
+      "basis": "x",
+      "regime": "z_biased",
+      "shots": 120000,
+      "roots": 12,
+      "raw_observable_errors": 8897,
+      "primary_delta_correlated_minus_uncorrelated": -0.0007166666666666668,
+      "primary_delta_root_cluster_95_ci": [
+        -0.0008916666666666691,
+        -0.0005333333333333336
+      ],
+      "primary_root_delta_sd": 0.0003352972448801847,
+      "primary_root_wins_correlated": 12,
+      "primary_root_losses_correlated": 0,
+      "primary_root_ties": 0,
+      "primary_standard_only_failures": 148,
+      "primary_correlation_only_failures": 62,
+      "primary_disagreements": 210,
+      "primary_exact_shot_mcnemar_p_descriptive": 2.708807095122208e-09,
+      "regime_standard_only_failures": 132,
+      "regime_correlation_only_failures": 119,
+      "regime_disagreements": 251,
+      "pooled_fixed_uncorrelated_errors": 1070,
+      "pooled_fixed_uncorrelated_ler": 0.008916666666666666,
+      "pooled_fixed_uncorrelated_root_ler_sd": 0.0008321203292939323,
+      "pooled_fixed_uncorrelated_root_ler_ci_95": [
+        0.008483333333333336,
+        0.009383333333333334
+      ],
+      "pooled_fixed_correlated_errors": 984,
+      "pooled_fixed_correlated_ler": 0.0082,
+      "pooled_fixed_correlated_root_ler_sd": 0.0008517361947543059,
+      "pooled_fixed_correlated_root_ler_ci_95": [
+        0.0077416666666666675,
+        0.008658333333333334
+      ],
+      "regime_informed_uncorrelated_errors": 999,
+      "regime_informed_uncorrelated_ler": 0.008325,
+      "regime_informed_uncorrelated_root_ler_sd": 0.0007735690602067089,
+      "regime_informed_uncorrelated_root_ler_ci_95": [
+        0.007891666666666667,
+        0.008733333333333333
+      ],
+      "regime_informed_correlated_errors": 986,
+      "regime_informed_correlated_ler": 0.008216666666666667,
+      "regime_informed_correlated_root_ler_sd": 0.0007790825995808771,
+      "regime_informed_correlated_root_ler_ci_95": [
+        0.007799999999999999,
+        0.008633333333333335
+      ],
+      "pred_disagreements_arm0_arm0": 0,
+      "pred_disagreements_arm0_arm1": 210,
+      "pred_disagreements_arm0_arm2": 391,
+      "pred_disagreements_arm0_arm3": 570,
+      "pred_disagreements_arm1_arm0": 210,
+      "pred_disagreements_arm1_arm1": 0,
+      "pred_disagreements_arm1_arm2": 441,
+      "pred_disagreements_arm1_arm3": 428,
+      "pred_disagreements_arm2_arm0": 391,
+      "pred_disagreements_arm2_arm1": 441,
+      "pred_disagreements_arm2_arm2": 0,
+      "pred_disagreements_arm2_arm3": 251,
+      "pred_disagreements_arm3_arm0": 570,
+      "pred_disagreements_arm3_arm1": 428,
+      "pred_disagreements_arm3_arm2": 251,
+      "pred_disagreements_arm3_arm3": 0
+    },
+    {
+      "stratum_index": 3,
+      "stratum": "z_x_biased",
+      "basis": "z",
+      "regime": "x_biased",
+      "shots": 120000,
+      "roots": 12,
+      "raw_observable_errors": 9118,
+      "primary_delta_correlated_minus_uncorrelated": -0.0004499999999999996,
+      "primary_delta_root_cluster_95_ci": [
+        -0.0006500000000000013,
+        -0.0002499999999999985
+      ],
+      "primary_root_delta_sd": 0.00037779263191236646,
+      "primary_root_wins_correlated": 9,
+      "primary_root_losses_correlated": 1,
+      "primary_root_ties": 2,
+      "primary_standard_only_failures": 129,
+      "primary_correlation_only_failures": 75,
+      "primary_disagreements": 204,
+      "primary_exact_shot_mcnemar_p_descriptive": 0.00019103508760432987,
+      "regime_standard_only_failures": 118,
+      "regime_correlation_only_failures": 165,
+      "regime_disagreements": 283,
+      "pooled_fixed_uncorrelated_errors": 938,
+      "pooled_fixed_uncorrelated_ler": 0.007816666666666666,
+      "pooled_fixed_uncorrelated_root_ler_sd": 0.0007221600594848426,
+      "pooled_fixed_uncorrelated_root_ler_ci_95": [
+        0.007425,
+        0.008199999999999999
+      ],
+      "pooled_fixed_correlated_errors": 884,
+      "pooled_fixed_correlated_ler": 0.007366666666666666,
+      "pooled_fixed_correlated_root_ler_sd": 0.0008552865902813814,
+      "pooled_fixed_correlated_root_ler_ci_95": [
+        0.006916666666666666,
+        0.007841666666666665
+      ],
+      "regime_informed_uncorrelated_errors": 865,
+      "regime_informed_uncorrelated_ler": 0.007208333333333333,
+      "regime_informed_uncorrelated_root_ler_sd": 0.0006487166818676188,
+      "regime_informed_uncorrelated_root_ler_ci_95": [
+        0.006866666666666667,
+        0.007566666666666666
+      ],
+      "regime_informed_correlated_errors": 912,
+      "regime_informed_correlated_ler": 0.0076,
+      "regime_informed_correlated_root_ler_sd": 0.0008738628975053029,
+      "regime_informed_correlated_root_ler_ci_95": [
+        0.007141666666666667,
+        0.008091666666666667
+      ],
+      "pred_disagreements_arm0_arm0": 0,
+      "pred_disagreements_arm0_arm1": 204,
+      "pred_disagreements_arm0_arm2": 221,
+      "pred_disagreements_arm0_arm3": 464,
+      "pred_disagreements_arm1_arm0": 204,
+      "pred_disagreements_arm1_arm1": 0,
+      "pred_disagreements_arm1_arm2": 323,
+      "pred_disagreements_arm1_arm3": 388,
+      "pred_disagreements_arm2_arm0": 221,
+      "pred_disagreements_arm2_arm1": 323,
+      "pred_disagreements_arm2_arm2": 0,
+      "pred_disagreements_arm2_arm3": 283,
+      "pred_disagreements_arm3_arm0": 464,
+      "pred_disagreements_arm3_arm1": 388,
+      "pred_disagreements_arm3_arm2": 283,
+      "pred_disagreements_arm3_arm3": 0
+    },
+    {
+      "stratum_index": 4,
+      "stratum": "z_balanced",
+      "basis": "z",
+      "regime": "balanced",
+      "shots": 120000,
+      "roots": 12,
+      "raw_observable_errors": 7266,
+      "primary_delta_correlated_minus_uncorrelated": -0.00020833333333333324,
+      "primary_delta_root_cluster_95_ci": [
+        -0.00042499999999999916,
+        0.0
+      ],
+      "primary_root_delta_sd": 0.000391868097783688,
+      "primary_root_wins_correlated": 8,
+      "primary_root_losses_correlated": 3,
+      "primary_root_ties": 1,
+      "primary_standard_only_failures": 172,
+      "primary_correlation_only_failures": 147,
+      "primary_disagreements": 319,
+      "primary_exact_shot_mcnemar_p_descriptive": 0.1789406004254161,
+      "regime_standard_only_failures": 169,
+      "regime_correlation_only_failures": 417,
+      "regime_disagreements": 586,
+      "pooled_fixed_uncorrelated_errors": 575,
+      "pooled_fixed_uncorrelated_ler": 0.004791666666666666,
+      "pooled_fixed_uncorrelated_root_ler_sd": 0.0005759708536396821,
+      "pooled_fixed_uncorrelated_root_ler_ci_95": [
+        0.004475000000000001,
+        0.0050999999999999995
+      ],
+      "pooled_fixed_correlated_errors": 550,
+      "pooled_fixed_correlated_ler": 0.004583333333333333,
+      "pooled_fixed_correlated_root_ler_sd": 0.000532290647422377,
+      "pooled_fixed_correlated_root_ler_ci_95": [
+        0.004291666666666667,
+        0.004866666666666668
+      ],
+      "regime_informed_uncorrelated_errors": 559,
+      "regime_informed_uncorrelated_ler": 0.004658333333333333,
+      "regime_informed_uncorrelated_root_ler_sd": 0.0005517877281796842,
+      "regime_informed_uncorrelated_root_ler_ci_95": [
+        0.004341666666666666,
+        0.004933333333333334
+      ],
+      "regime_informed_correlated_errors": 807,
+      "regime_informed_correlated_ler": 0.006725,
+      "regime_informed_correlated_root_ler_sd": 0.0007723929758166557,
+      "regime_informed_correlated_root_ler_ci_95": [
+        0.0063166666666666675,
+        0.00715
+      ],
+      "pred_disagreements_arm0_arm0": 0,
+      "pred_disagreements_arm0_arm1": 319,
+      "pred_disagreements_arm0_arm2": 68,
+      "pred_disagreements_arm0_arm3": 634,
+      "pred_disagreements_arm1_arm0": 319,
+      "pred_disagreements_arm1_arm1": 0,
+      "pred_disagreements_arm1_arm2": 319,
+      "pred_disagreements_arm1_arm3": 409,
+      "pred_disagreements_arm2_arm0": 68,
+      "pred_disagreements_arm2_arm1": 319,
+      "pred_disagreements_arm2_arm2": 0,
+      "pred_disagreements_arm2_arm3": 586,
+      "pred_disagreements_arm3_arm0": 634,
+      "pred_disagreements_arm3_arm1": 409,
+      "pred_disagreements_arm3_arm2": 586,
+      "pred_disagreements_arm3_arm3": 0
+    },
+    {
+      "stratum_index": 5,
+      "stratum": "z_z_biased",
+      "basis": "z",
+      "regime": "z_biased",
+      "shots": 120000,
+      "roots": 12,
+      "raw_observable_errors": 3384,
+      "primary_delta_correlated_minus_uncorrelated": 0.0004833333333333333,
+      "primary_delta_root_cluster_95_ci": [
+        0.0003166666666666665,
+        0.0006416666666666668
+      ],
+      "primary_root_delta_sd": 0.00030698929011029725,
+      "primary_root_wins_correlated": 1,
+      "primary_root_losses_correlated": 11,
+      "primary_root_ties": 0,
+      "primary_standard_only_failures": 40,
+      "primary_correlation_only_failures": 98,
+      "primary_disagreements": 138,
+      "primary_exact_shot_mcnemar_p_descriptive": 8.536575781113919e-07,
+      "regime_standard_only_failures": 40,
+      "regime_correlation_only_failures": 98,
+      "regime_disagreements": 138,
+      "pooled_fixed_uncorrelated_errors": 122,
+      "pooled_fixed_uncorrelated_ler": 0.0010166666666666666,
+      "pooled_fixed_uncorrelated_root_ler_sd": 0.00025878504008094625,
+      "pooled_fixed_uncorrelated_root_ler_ci_95": [
+        0.000875,
+        0.0011583333333333333
+      ],
+      "pooled_fixed_correlated_errors": 180,
+      "pooled_fixed_correlated_ler": 0.0015,
+      "pooled_fixed_correlated_root_ler_sd": 0.00025226248955475655,
+      "pooled_fixed_correlated_root_ler_ci_95": [
+        0.0013749999999999997,
+        0.001641666666666667
+      ],
+      "regime_informed_uncorrelated_errors": 122,
+      "regime_informed_uncorrelated_ler": 0.0010166666666666666,
+      "regime_informed_uncorrelated_root_ler_sd": 0.00025878504008094625,
+      "regime_informed_uncorrelated_root_ler_ci_95": [
+        0.000875,
+        0.0011583333333333333
+      ],
+      "regime_informed_correlated_errors": 180,
+      "regime_informed_correlated_ler": 0.0015,
+      "regime_informed_correlated_root_ler_sd": 0.00025226248955475655,
+      "regime_informed_correlated_root_ler_ci_95": [
+        0.0013749999999999997,
+        0.001641666666666667
+      ],
+      "pred_disagreements_arm0_arm0": 0,
+      "pred_disagreements_arm0_arm1": 138,
+      "pred_disagreements_arm0_arm2": 0,
+      "pred_disagreements_arm0_arm3": 138,
+      "pred_disagreements_arm1_arm0": 138,
+      "pred_disagreements_arm1_arm1": 0,
+      "pred_disagreements_arm1_arm2": 138,
+      "pred_disagreements_arm1_arm3": 0,
+      "pred_disagreements_arm2_arm0": 0,
+      "pred_disagreements_arm2_arm1": 138,
+      "pred_disagreements_arm2_arm2": 0,
+      "pred_disagreements_arm2_arm3": 138,
+      "pred_disagreements_arm3_arm0": 138,
+      "pred_disagreements_arm3_arm1": 0,
+      "pred_disagreements_arm3_arm2": 138,
+      "pred_disagreements_arm3_arm3": 0
+    }
+  ],
+  "secondary_comparisons": [
+    {
+      "stratum_index": 0,
+      "stratum": "x_x_biased",
+      "comparison": "regime_informed_uncorrelated_minus_pooled_uncorrelated",
+      "delta_ler": 0.0,
+      "exact_root_cluster_signflip_p": 1.0,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "stratum_index": 0,
+      "stratum": "x_x_biased",
+      "comparison": "regime_informed_correlated_minus_pooled_correlated",
+      "delta_ler": 0.0,
+      "exact_root_cluster_signflip_p": 1.0,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "stratum_index": 1,
+      "stratum": "x_balanced",
+      "comparison": "regime_informed_uncorrelated_minus_pooled_uncorrelated",
+      "delta_ler": -1.4456028966473392e-19,
+      "exact_root_cluster_signflip_p": 1.0,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "stratum_index": 1,
+      "stratum": "x_balanced",
+      "comparison": "regime_informed_correlated_minus_pooled_correlated",
+      "delta_ler": 0.0007000000000000004,
+      "exact_root_cluster_signflip_p": 0.00048828125,
+      "holm_adjusted_p": 0.005859375
+    },
+    {
+      "stratum_index": 2,
+      "stratum": "x_z_biased",
+      "comparison": "regime_informed_uncorrelated_minus_pooled_uncorrelated",
+      "delta_ler": -0.0005916666666666669,
+      "exact_root_cluster_signflip_p": 0.00390625,
+      "holm_adjusted_p": 0.03515625
+    },
+    {
+      "stratum_index": 2,
+      "stratum": "x_z_biased",
+      "comparison": "regime_informed_correlated_minus_pooled_correlated",
+      "delta_ler": 1.6666666666666783e-05,
+      "exact_root_cluster_signflip_p": 0.9423828125,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "stratum_index": 3,
+      "stratum": "z_x_biased",
+      "comparison": "regime_informed_uncorrelated_minus_pooled_uncorrelated",
+      "delta_ler": -0.0006083333333333331,
+      "exact_root_cluster_signflip_p": 0.0029296875,
+      "holm_adjusted_p": 0.029296875
+    },
+    {
+      "stratum_index": 3,
+      "stratum": "z_x_biased",
+      "comparison": "regime_informed_correlated_minus_pooled_correlated",
+      "delta_ler": 0.0002333333333333331,
+      "exact_root_cluster_signflip_p": 0.27734375,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "stratum_index": 4,
+      "stratum": "z_balanced",
+      "comparison": "regime_informed_uncorrelated_minus_pooled_uncorrelated",
+      "delta_ler": -0.00013333333333333329,
+      "exact_root_cluster_signflip_p": 0.0625,
+      "holm_adjusted_p": 0.5
+    },
+    {
+      "stratum_index": 4,
+      "stratum": "z_balanced",
+      "comparison": "regime_informed_correlated_minus_pooled_correlated",
+      "delta_ler": 0.0021416666666666667,
+      "exact_root_cluster_signflip_p": 0.00048828125,
+      "holm_adjusted_p": 0.005859375
+    },
+    {
+      "stratum_index": 5,
+      "stratum": "z_z_biased",
+      "comparison": "regime_informed_uncorrelated_minus_pooled_uncorrelated",
+      "delta_ler": 0.0,
+      "exact_root_cluster_signflip_p": 1.0,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "stratum_index": 5,
+      "stratum": "z_z_biased",
+      "comparison": "regime_informed_correlated_minus_pooled_correlated",
+      "delta_ler": 0.0,
+      "exact_root_cluster_signflip_p": 1.0,
+      "holm_adjusted_p": 1.0
+    }
+  ],
+  "timings": {
+    "status": "SAMPLED_ALL_ROOTS",
+    "completed_roots": 72,
+    "expected_roots": 72,
+    "completed_test_shots": 720000,
+    "target_test_shots": 720000,
+    "sampling_wall_seconds": 0.1142827000003308,
+    "decoder_construction_seconds": 0.03869750000012573,
+    "inference_wall_seconds_by_arm": {
+      "pooled_fixed_uncorrelated": 0.22752090000358294,
+      "pooled_fixed_correlated": 0.6424155999848153,
+      "regime_informed_uncorrelated": 0.21209520001502824,
+      "regime_informed_correlated": 0.6042506999910984
+    },
+    "sampling_and_decode_loop_wall_seconds": 3.0454977999979747,
+    "process_rss_bytes_start": null,
+    "process_rss_bytes_after_model_build": null,
+    "observed_peak_process_rss_bytes": null,
+    "stim_version": "1.16.0",
+    "pymatching_version": "2.4.0",
+    "freeze_sha256": "00baab584e907bf757d2c7e47201e1f054e2bef49598804eadc11e1204d21140",
+    "root_records": [
+      {
+        "stratum_index": 0,
+        "stratum": "x_x_biased",
+        "root_index": 0,
+        "seed": 100000001,
+        "checkpoint": "checkpoints/stratum_00_root_00.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 0,
+        "stratum": "x_x_biased",
+        "root_index": 1,
+        "seed": 100000002,
+        "checkpoint": "checkpoints/stratum_00_root_01.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 0,
+        "stratum": "x_x_biased",
+        "root_index": 2,
+        "seed": 100000003,
+        "checkpoint": "checkpoints/stratum_00_root_02.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 0,
+        "stratum": "x_x_biased",
+        "root_index": 3,
+        "seed": 100000004,
+        "checkpoint": "checkpoints/stratum_00_root_03.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 0,
+        "stratum": "x_x_biased",
+        "root_index": 4,
+        "seed": 100000005,
+        "checkpoint": "checkpoints/stratum_00_root_04.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 0,
+        "stratum": "x_x_biased",
+        "root_index": 5,
+        "seed": 100000006,
+        "checkpoint": "checkpoints/stratum_00_root_05.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 0,
+        "stratum": "x_x_biased",
+        "root_index": 6,
+        "seed": 100000007,
+        "checkpoint": "checkpoints/stratum_00_root_06.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 0,
+        "stratum": "x_x_biased",
+        "root_index": 7,
+        "seed": 100000008,
+        "checkpoint": "checkpoints/stratum_00_root_07.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 0,
+        "stratum": "x_x_biased",
+        "root_index": 8,
+        "seed": 100000009,
+        "checkpoint": "checkpoints/stratum_00_root_08.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 0,
+        "stratum": "x_x_biased",
+        "root_index": 9,
+        "seed": 100000010,
+        "checkpoint": "checkpoints/stratum_00_root_09.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 0,
+        "stratum": "x_x_biased",
+        "root_index": 10,
+        "seed": 100000011,
+        "checkpoint": "checkpoints/stratum_00_root_10.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 0,
+        "stratum": "x_x_biased",
+        "root_index": 11,
+        "seed": 100000012,
+        "checkpoint": "checkpoints/stratum_00_root_11.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 1,
+        "stratum": "x_balanced",
+        "root_index": 0,
+        "seed": 100000101,
+        "checkpoint": "checkpoints/stratum_01_root_00.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 1,
+        "stratum": "x_balanced",
+        "root_index": 1,
+        "seed": 100000102,
+        "checkpoint": "checkpoints/stratum_01_root_01.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 1,
+        "stratum": "x_balanced",
+        "root_index": 2,
+        "seed": 100000103,
+        "checkpoint": "checkpoints/stratum_01_root_02.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 1,
+        "stratum": "x_balanced",
+        "root_index": 3,
+        "seed": 100000104,
+        "checkpoint": "checkpoints/stratum_01_root_03.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 1,
+        "stratum": "x_balanced",
+        "root_index": 4,
+        "seed": 100000105,
+        "checkpoint": "checkpoints/stratum_01_root_04.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 1,
+        "stratum": "x_balanced",
+        "root_index": 5,
+        "seed": 100000106,
+        "checkpoint": "checkpoints/stratum_01_root_05.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 1,
+        "stratum": "x_balanced",
+        "root_index": 6,
+        "seed": 100000107,
+        "checkpoint": "checkpoints/stratum_01_root_06.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 1,
+        "stratum": "x_balanced",
+        "root_index": 7,
+        "seed": 100000108,
+        "checkpoint": "checkpoints/stratum_01_root_07.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 1,
+        "stratum": "x_balanced",
+        "root_index": 8,
+        "seed": 100000109,
+        "checkpoint": "checkpoints/stratum_01_root_08.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 1,
+        "stratum": "x_balanced",
+        "root_index": 9,
+        "seed": 100000110,
+        "checkpoint": "checkpoints/stratum_01_root_09.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 1,
+        "stratum": "x_balanced",
+        "root_index": 10,
+        "seed": 100000111,
+        "checkpoint": "checkpoints/stratum_01_root_10.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 1,
+        "stratum": "x_balanced",
+        "root_index": 11,
+        "seed": 100000112,
+        "checkpoint": "checkpoints/stratum_01_root_11.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 2,
+        "stratum": "x_z_biased",
+        "root_index": 0,
+        "seed": 100000201,
+        "checkpoint": "checkpoints/stratum_02_root_00.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 2,
+        "stratum": "x_z_biased",
+        "root_index": 1,
+        "seed": 100000202,
+        "checkpoint": "checkpoints/stratum_02_root_01.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 2,
+        "stratum": "x_z_biased",
+        "root_index": 2,
+        "seed": 100000203,
+        "checkpoint": "checkpoints/stratum_02_root_02.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 2,
+        "stratum": "x_z_biased",
+        "root_index": 3,
+        "seed": 100000204,
+        "checkpoint": "checkpoints/stratum_02_root_03.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 2,
+        "stratum": "x_z_biased",
+        "root_index": 4,
+        "seed": 100000205,
+        "checkpoint": "checkpoints/stratum_02_root_04.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 2,
+        "stratum": "x_z_biased",
+        "root_index": 5,
+        "seed": 100000206,
+        "checkpoint": "checkpoints/stratum_02_root_05.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 2,
+        "stratum": "x_z_biased",
+        "root_index": 6,
+        "seed": 100000207,
+        "checkpoint": "checkpoints/stratum_02_root_06.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 2,
+        "stratum": "x_z_biased",
+        "root_index": 7,
+        "seed": 100000208,
+        "checkpoint": "checkpoints/stratum_02_root_07.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 2,
+        "stratum": "x_z_biased",
+        "root_index": 8,
+        "seed": 100000209,
+        "checkpoint": "checkpoints/stratum_02_root_08.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 2,
+        "stratum": "x_z_biased",
+        "root_index": 9,
+        "seed": 100000210,
+        "checkpoint": "checkpoints/stratum_02_root_09.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 2,
+        "stratum": "x_z_biased",
+        "root_index": 10,
+        "seed": 100000211,
+        "checkpoint": "checkpoints/stratum_02_root_10.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 2,
+        "stratum": "x_z_biased",
+        "root_index": 11,
+        "seed": 100000212,
+        "checkpoint": "checkpoints/stratum_02_root_11.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 3,
+        "stratum": "z_x_biased",
+        "root_index": 0,
+        "seed": 100000301,
+        "checkpoint": "checkpoints/stratum_03_root_00.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 3,
+        "stratum": "z_x_biased",
+        "root_index": 1,
+        "seed": 100000302,
+        "checkpoint": "checkpoints/stratum_03_root_01.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 3,
+        "stratum": "z_x_biased",
+        "root_index": 2,
+        "seed": 100000303,
+        "checkpoint": "checkpoints/stratum_03_root_02.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 3,
+        "stratum": "z_x_biased",
+        "root_index": 3,
+        "seed": 100000304,
+        "checkpoint": "checkpoints/stratum_03_root_03.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 3,
+        "stratum": "z_x_biased",
+        "root_index": 4,
+        "seed": 100000305,
+        "checkpoint": "checkpoints/stratum_03_root_04.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 3,
+        "stratum": "z_x_biased",
+        "root_index": 5,
+        "seed": 100000306,
+        "checkpoint": "checkpoints/stratum_03_root_05.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 3,
+        "stratum": "z_x_biased",
+        "root_index": 6,
+        "seed": 100000307,
+        "checkpoint": "checkpoints/stratum_03_root_06.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 3,
+        "stratum": "z_x_biased",
+        "root_index": 7,
+        "seed": 100000308,
+        "checkpoint": "checkpoints/stratum_03_root_07.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 3,
+        "stratum": "z_x_biased",
+        "root_index": 8,
+        "seed": 100000309,
+        "checkpoint": "checkpoints/stratum_03_root_08.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 3,
+        "stratum": "z_x_biased",
+        "root_index": 9,
+        "seed": 100000310,
+        "checkpoint": "checkpoints/stratum_03_root_09.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 3,
+        "stratum": "z_x_biased",
+        "root_index": 10,
+        "seed": 100000311,
+        "checkpoint": "checkpoints/stratum_03_root_10.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 3,
+        "stratum": "z_x_biased",
+        "root_index": 11,
+        "seed": 100000312,
+        "checkpoint": "checkpoints/stratum_03_root_11.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 4,
+        "stratum": "z_balanced",
+        "root_index": 0,
+        "seed": 100000401,
+        "checkpoint": "checkpoints/stratum_04_root_00.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 4,
+        "stratum": "z_balanced",
+        "root_index": 1,
+        "seed": 100000402,
+        "checkpoint": "checkpoints/stratum_04_root_01.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 4,
+        "stratum": "z_balanced",
+        "root_index": 2,
+        "seed": 100000403,
+        "checkpoint": "checkpoints/stratum_04_root_02.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 4,
+        "stratum": "z_balanced",
+        "root_index": 3,
+        "seed": 100000404,
+        "checkpoint": "checkpoints/stratum_04_root_03.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 4,
+        "stratum": "z_balanced",
+        "root_index": 4,
+        "seed": 100000405,
+        "checkpoint": "checkpoints/stratum_04_root_04.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 4,
+        "stratum": "z_balanced",
+        "root_index": 5,
+        "seed": 100000406,
+        "checkpoint": "checkpoints/stratum_04_root_05.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 4,
+        "stratum": "z_balanced",
+        "root_index": 6,
+        "seed": 100000407,
+        "checkpoint": "checkpoints/stratum_04_root_06.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 4,
+        "stratum": "z_balanced",
+        "root_index": 7,
+        "seed": 100000408,
+        "checkpoint": "checkpoints/stratum_04_root_07.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 4,
+        "stratum": "z_balanced",
+        "root_index": 8,
+        "seed": 100000409,
+        "checkpoint": "checkpoints/stratum_04_root_08.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 4,
+        "stratum": "z_balanced",
+        "root_index": 9,
+        "seed": 100000410,
+        "checkpoint": "checkpoints/stratum_04_root_09.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 4,
+        "stratum": "z_balanced",
+        "root_index": 10,
+        "seed": 100000411,
+        "checkpoint": "checkpoints/stratum_04_root_10.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 4,
+        "stratum": "z_balanced",
+        "root_index": 11,
+        "seed": 100000412,
+        "checkpoint": "checkpoints/stratum_04_root_11.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 5,
+        "stratum": "z_z_biased",
+        "root_index": 0,
+        "seed": 100000501,
+        "checkpoint": "checkpoints/stratum_05_root_00.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 5,
+        "stratum": "z_z_biased",
+        "root_index": 1,
+        "seed": 100000502,
+        "checkpoint": "checkpoints/stratum_05_root_01.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 5,
+        "stratum": "z_z_biased",
+        "root_index": 2,
+        "seed": 100000503,
+        "checkpoint": "checkpoints/stratum_05_root_02.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 5,
+        "stratum": "z_z_biased",
+        "root_index": 3,
+        "seed": 100000504,
+        "checkpoint": "checkpoints/stratum_05_root_03.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 5,
+        "stratum": "z_z_biased",
+        "root_index": 4,
+        "seed": 100000505,
+        "checkpoint": "checkpoints/stratum_05_root_04.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 5,
+        "stratum": "z_z_biased",
+        "root_index": 5,
+        "seed": 100000506,
+        "checkpoint": "checkpoints/stratum_05_root_05.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 5,
+        "stratum": "z_z_biased",
+        "root_index": 6,
+        "seed": 100000507,
+        "checkpoint": "checkpoints/stratum_05_root_06.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 5,
+        "stratum": "z_z_biased",
+        "root_index": 7,
+        "seed": 100000508,
+        "checkpoint": "checkpoints/stratum_05_root_07.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 5,
+        "stratum": "z_z_biased",
+        "root_index": 8,
+        "seed": 100000509,
+        "checkpoint": "checkpoints/stratum_05_root_08.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 5,
+        "stratum": "z_z_biased",
+        "root_index": 9,
+        "seed": 100000510,
+        "checkpoint": "checkpoints/stratum_05_root_09.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 5,
+        "stratum": "z_z_biased",
+        "root_index": 10,
+        "seed": 100000511,
+        "checkpoint": "checkpoints/stratum_05_root_10.npz",
+        "status": "generated"
+      },
+      {
+        "stratum_index": 5,
+        "stratum": "z_z_biased",
+        "root_index": 11,
+        "seed": 100000512,
+        "checkpoint": "checkpoints/stratum_05_root_11.npz",
+        "status": "generated"
+      }
+    ],
+    "notes": "Per-root sampler/decode seconds are stored in NPZ evidence. Process RSS includes Python and native allocations and is sampled between roots; it is not an isolated native matcher allocation measurement."
+  },
+  "freeze_sha256": "00baab584e907bf757d2c7e47201e1f054e2bef49598804eadc11e1204d21140",
+  "analysis_seconds": 3.1943,
+  "seed_information": {
+    "root_seed_base": 100000001,
+    "root_formula": "100000001 + 100 * stratum_index + root_index",
+    "diagnostic": 100000999,
+    "bootstrap_rng": 100010001,
+    "primary_signflip_rng": 100010002,
+    "root_index_min": 0,
+    "root_index_max": 11
+  },
+  "statistical_method": {
+    "primary_test": "two_sided_root_cluster_sign_flip",
+    "primary_signflip_assignments": 100000,
+    "primary_signflip_add_one_p": true,
+    "bootstrap": "root_stratified_percentile_bootstrap",
+    "bootstrap_resamples": 20000,
+    "confidence_level": 0.95,
+    "bootstrap_resampling_unit": "root_within_each_of_six_strata; same root draw shared across paired decoder arms",
+    "secondary_family": "12 exact root-level paired sign-flip tests: regime-informed minus corresponding pooled-fixed, correlation off and on, across six strata",
+    "secondary_holm": true,
+    "secondary_signflip": "exhaustive two-sided sign-flip over 2^12 root assignments per stratum",
+    "shot_level_mcnemar": "descriptive paired secondary; not the primary independent-root inference"
+  },
+  "limitations": [
+    "All outcomes are development-only simulation evidence, not a confirmatory test.",
+    "Stim approximate_disjoint_errors=True converts the categorical channel into approximate independent DEM mechanisms; both correlation arms use the same approximation.",
+    "PyMatching correlated matching uses available DEM decomposition metadata and cannot recover information lost during DEM approximation.",
+    "Root-cluster uncertainty is based on 12 independent roots per stratum and may be imprecise.",
+    "The simulation is circuit-level stochastic Pauli noise with fixed per-circuit settings; it is not hardware data or within-circuit time-varying noise."
+  ]
+}

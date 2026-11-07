@@ -1,0 +1,105 @@
+{
+  "job_id": "root04_natural_inverse_prevalence_weighted_30000",
+  "root": 4,
+  "strategy": "natural_inverse_prevalence_weighted",
+  "train_size_per_regime": 30000,
+  "model": "ResidualPositionCNN",
+  "target": "observable_xor_frozen_pymatching_prediction",
+  "inference": "pymatching_xor_predicted_residual",
+  "prevalence": 0.004433333333333333,
+  "positive_examples": 399,
+  "training_examples": 90000,
+  "pos_weight": 224.5639097744361,
+  "logit_prior_correction": -5.414160342725164,
+  "best_epoch": 10,
+  "best_monitor_nll": 0.01701562695670759,
+  "monitor_history": [
+    {
+      "epoch": 1,
+      "monitor_nll": 0.020860118538108475,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 2,
+      "monitor_nll": 0.020536452378487027,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 3,
+      "monitor_nll": 0.019676621436916324,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 4,
+      "monitor_nll": 0.019740552237218736,
+      "selected": false,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 5,
+      "monitor_nll": 0.018199296851531974,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 6,
+      "monitor_nll": 0.018140645693150024,
+      "selected": true,
+      "learning_rate": 0.0015
+    },
+    {
+      "epoch": 7,
+      "monitor_nll": 0.017705201928646646,
+      "selected": true,
+      "learning_rate": 0.0015
+    },
+    {
+      "epoch": 8,
+      "monitor_nll": 0.017636894633170218,
+      "selected": true,
+      "learning_rate": 0.0015
+    },
+    {
+      "epoch": 9,
+      "monitor_nll": 0.019781469157832163,
+      "selected": false,
+      "learning_rate": 0.0015
+    },
+    {
+      "epoch": 10,
+      "monitor_nll": 0.01701562695670759,
+      "selected": true,
+      "learning_rate": 0.0015
+    }
+  ],
+  "temperature": 1.0,
+  "threshold_min_ler": 0.48,
+  "threshold_selection_ler": 0.004333333333333334,
+  "confidence_gate": {
+    "threshold": 1.01,
+    "fallback": true,
+    "reason": "no threshold passed Bonferroni-Wilson precision gate",
+    "precision_lower_bound": null,
+    "corrections_on_threshold_selection": 0,
+    "beneficial_on_threshold_selection": 0,
+    "selected_ler": null,
+    "familywise_alpha": 0.05,
+    "per_threshold_alpha": 0.000505050505050505
+  },
+  "calibration_brier": 0.00386174095394405,
+  "calibration_ece_10bin": 0.0012508353615227378,
+  "weights_sha256": "00d0c7109f2abdb64e7139632dd9688e8e3b71e845d90bc92e65c3742d643235",
+  "selection_data": {
+    "checkpoint": "monitor only",
+    "temperature": "calibration only",
+    "threshold_min_ler": "threshold_selection only",
+    "confidence_gate": "threshold_selection only"
+  },
+  "final_development_evaluation_accessed": false,
+  "gpu_seconds_train_and_select": 28.41751550002664,
+  "parameter_count": 13429,
+  "created_utc": "2026-11-06T23:47:33.527462+00:00"
+}

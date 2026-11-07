@@ -1,0 +1,34 @@
+{
+  "frozen_before_heldout": true,
+  "primary_endpoint": "Equal-weight mean of six cell-level LER differences, B_regime_calibrated minus A_basis_global_calibrated.",
+  "primary_unit": "Independent seed root (20 roots in each memory-basis by generating-regime cell).",
+  "primary_signflip": {
+    "alternative": "two-sided",
+    "assignments": 100000,
+    "seed": 88300002,
+    "statistic": "mean over six cells of each cell's mean paired root error-rate difference",
+    "p_value": "(1 + number of absolute randomized statistics at least as large as observed) / (assignments + 1)"
+  },
+  "primary_bootstrap": {
+    "draws": 100000,
+    "seed": 88300001,
+    "confidence_level": 0.95,
+    "method": "percentile bootstrap; sample 20 roots with replacement independently within each of six cells, compute six cell means, then equal-weight average"
+  },
+  "secondary_families": {
+    "per_memory_basis": {"tests": 2, "method": "paired root-cluster sign-flip, two-sided", "adjustment": "Holm"},
+    "per_memory_and_regime_cell": {"tests": 6, "method": "paired root-cluster sign-flip, two-sided", "adjustment": "Holm"},
+    "alternative_bank_candidates_vs_global": {"tests": 12, "method": "paired root-cluster sign-flip, two-sided", "adjustment": "Holm", "definition": "For each of six cells, compare each of the two decoder assumptions other than that basis's selected global index against the selected global index."}
+  },
+  "descriptive_paired_analysis": {
+    "exact_mcnemar": "Two-sided exact binomial test on shot-level candidate-only and baseline-only failures; descriptive because root is the inferential unit.",
+    "disagreements": "Per-pair prediction disagreement counts/rates on identical detector samples.",
+    "ler_intervals": "Wilson 95% intervals for shot-level rates, descriptive only.",
+    "oracles": "Per-regime and per-shot evaluation-label oracles reported as unattainable descriptive lower bounds only."
+  },
+  "selection": {
+    "global_fixed": "Within each basis, select the candidate minimizing the equal-weight mean of three regime calibration LERs; exact ties to lowest index.",
+    "regime_informed": "Within each basis and generating regime, select the candidate minimizing calibration LER; exact ties to lowest index.",
+    "heldout_labels_used_for_selection": false
+  }
+}

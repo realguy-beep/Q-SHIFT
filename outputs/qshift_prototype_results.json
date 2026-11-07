@@ -1,0 +1,121 @@
+{
+  "title": "Q-SHIFT pattern decoder prototype",
+  "status": "simulation-only; no hardware integration",
+  "seed": 20261106,
+  "protocol": "independent train/validation/test batches, exact 8-bit pattern statistics, threshold fixed on validation, shared test shots across lookup and PyMatching",
+  "shots_per_noise": {
+    "train": 2000000,
+    "validation": 200000,
+    "test": 1000000
+  },
+  "levels": {
+    "0.001": {
+      "detectors": 8,
+      "observable": "L0 parity flip",
+      "training_unique_patterns": 66,
+      "validation_residual_rate": 0.0,
+      "threshold": 0.9925650557620818,
+      "raw_test": {
+        "errors": 1595,
+        "rate": 0.001595
+      },
+      "pattern_decoder": {
+        "errors": 13,
+        "rate": 1.3e-05,
+        "wilson_95": [
+          7.5976191153199e-06,
+          2.224372507107938e-05
+        ]
+      },
+      "pymatching": {
+        "errors": 11,
+        "rate": 1.1e-05,
+        "wilson_95": [
+          6.142447654735242e-06,
+          1.9698911897440297e-05
+        ]
+      },
+      "paired_pattern_minus_matching": {
+        "pattern_only_wrong": 4,
+        "matching_only_wrong": 2,
+        "net_error_difference": 2,
+        "risk_difference_ci_95_approx": [
+          -2.8009982955214638e-06,
+          6.800998295521463e-06
+        ]
+      }
+    },
+    "0.003": {
+      "detectors": 8,
+      "observable": "L0 parity flip",
+      "training_unique_patterns": 123,
+      "validation_residual_rate": 3.5e-05,
+      "threshold": 0.36363636363636365,
+      "raw_test": {
+        "errors": 4799,
+        "rate": 0.004799
+      },
+      "pattern_decoder": {
+        "errors": 87,
+        "rate": 8.7e-05,
+        "wilson_95": [
+          7.053929843869269e-05,
+          0.00010730147721398513
+        ]
+      },
+      "pymatching": {
+        "errors": 96,
+        "rate": 9.6e-05,
+        "wilson_95": [
+          7.862188222561987e-05,
+          0.00011721882428106482
+        ]
+      },
+      "paired_pattern_minus_matching": {
+        "pattern_only_wrong": 12,
+        "matching_only_wrong": 21,
+        "net_error_difference": -9,
+        "risk_difference_ci_95_approx": [
+          -2.0259328968921728e-05,
+          2.2593289689217258e-06
+        ]
+      }
+    },
+    "0.006": {
+      "detectors": 8,
+      "observable": "L0 parity flip",
+      "training_unique_patterns": 142,
+      "validation_residual_rate": 0.00025,
+      "threshold": 0.48936170212765956,
+      "raw_test": {
+        "errors": 9607,
+        "rate": 0.009607
+      },
+      "pattern_decoder": {
+        "errors": 292,
+        "rate": 0.000292,
+        "wilson_95": [
+          0.0002603777012306221,
+          0.0003274614994299896
+        ]
+      },
+      "pymatching": {
+        "errors": 373,
+        "rate": 0.000373,
+        "wilson_95": [
+          0.00033702459494695217,
+          0.0004128139833997212
+        ]
+      },
+      "paired_pattern_minus_matching": {
+        "pattern_only_wrong": 64,
+        "matching_only_wrong": 145,
+        "net_error_difference": -81,
+        "risk_difference_ci_95_approx": [
+          -0.00010933494653713679,
+          -5.266505346286322e-05
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "phase": "Q-SHIFT Phase 3A deterministic preflight only",
+  "status": "diagnostic_only_no_production_sampling",
+  "mechanism": "per-round common-cause simultaneous X burst on neighboring data qubits",
+  "circuit": {
+    "generator": "frozen Phase 2B noise_model.build_circuit",
+    "memory_basis": "z",
+    "distance": 3,
+    "rounds": 5,
+    "regime": "balanced",
+    "gate_p": 0.003,
+    "measurement_p": 0.003,
+    "bias_ratio": 10.0,
+    "burst_data_qubits": [8, 10],
+    "burst_probability_per_round": 0.01,
+    "injection_location": "immediately after each MR ancilla-measurement/reset instruction"
+  },
+  "diagnostics": {
+    "seed_namespace": "formal=2503001001-2503001004; unit-tests=2503002001-2503002004",
+    "isolated_burst_probability": 0.1,
+    "isolated_burst_shots": 2048,
+    "zero_noise_shots": 32,
+    "burst_only_surface_shots": 256,
+    "paired_decoder_shots": 256,
+    "max_total_diagnostic_shots": 4096
+  },
+  "decoder_arms": [
+    "Phase 2B frozen correlation-blind PyMatching model from the no-burst circuit",
+    "Burst-informed PyMatching from the burst circuit DEM with enable_correlations=True",
+    "Burst-informed PyMatching from the identical burst circuit DEM with enable_correlations=False"
+  ],
+  "dem": {
+    "decompose_errors": true,
+    "approximate_disjoint_errors": true,
+    "reason": "frozen Phase 2B categorical PAULI_CHANNEL_2 channels require Stim's disjoint-error approximation"
+  },
+  "seed_screening": {
+    "historical_seed_manifest_files_only": true,
+    "independent_test_samples_accessed": false
+  }
+}

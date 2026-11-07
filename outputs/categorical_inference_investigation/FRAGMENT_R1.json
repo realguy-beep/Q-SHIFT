@@ -1,0 +1,3342 @@
+{
+  "report": {
+    "rounds": 1,
+    "memory_basis": "z",
+    "regime": "x_biased",
+    "generation_parameters": {
+      "distance": 3,
+      "gate_probability": 0.003,
+      "measurement_probability": 0.003,
+      "bias_ratio": 10
+    },
+    "extraction": {
+      "fault_locations": 49,
+      "forced_nonidentity_checks": 401,
+      "detectors": 8,
+      "observables": 1,
+      "rounds": 1,
+      "memory_basis": "z",
+      "regime": "x_biased"
+    },
+    "circuit_sha256": "94d5ca417eba3cfb925a44751618693c4790865345b61989e9f29089049e9381",
+    "circuit_detectors": 8,
+    "circuit_observables": 1,
+    "fault_graph": {
+      "fault_variables": 49,
+      "output_variables": 9,
+      "factor_nodes": 58,
+      "factor_incidences": 138,
+      "parity_factor_scope_sizes": [
+        4,
+        9,
+        12,
+        8,
+        10,
+        16,
+        13,
+        6,
+        11
+      ],
+      "outcomes_per_location": [
+        4,
+        4,
+        4,
+        4,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        4,
+        4,
+        4,
+        4,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "full_configuration_count": "680564733841876926926749214863536422912",
+      "configuration_log2": 129.0
+    },
+    "structured_elimination": {
+      "representation": "ordered XOR parity frontier; after eliminating a location, retain the accumulated detector/logical parity state",
+      "frontier_width_bits": 9,
+      "max_intermediate_factor_states": 512,
+      "dense_float64_output_bytes": 4096,
+      "conservative_peak_estimate_bytes": 67125248
+    },
+    "stochastic_shots_generated": 0,
+    "complete_fault_configurations_enumerated": 0,
+    "inference": {
+      "status": "COMPLETED",
+      "algorithm": "categorical XOR convolution via grouped Walsh-Hadamard factors",
+      "categorical_locations": 49,
+      "output_bits": 9,
+      "joint_state_count": 512,
+      "unique_local_supports": 26,
+      "local_support_sizes": [
+        1,
+        2,
+        3
+      ],
+      "dense_output_bytes": 4096,
+      "conservative_estimated_peak_bytes": 67125248,
+      "raw_mass_before_clipping": 1.000000000000005,
+      "minimum_raw_probability": 3.4005271471945764e-11,
+      "negative_mass_clipped": -0.0,
+      "mass_after_clipping_before_renormalization": 1.000000000000005,
+      "normalization_factor": 1.000000000000005,
+      "runtime_seconds": 0.001554099999339087,
+      "decisions": {
+        "0": 0,
+        "1": 0,
+        "2": 1,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 1,
+        "9": 1,
+        "10": 0,
+        "11": 1,
+        "12": 0,
+        "13": 0,
+        "14": 1,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 1,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 1,
+        "26": 1,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0,
+        "31": 1,
+        "32": 1,
+        "33": 0,
+        "34": 0,
+        "35": 1,
+        "36": 0,
+        "37": 0,
+        "38": 1,
+        "39": 0,
+        "40": 0,
+        "41": 0,
+        "42": 1,
+        "43": 0,
+        "44": 1,
+        "45": 0,
+        "46": 0,
+        "47": 1,
+        "48": 0,
+        "49": 1,
+        "50": 1,
+        "51": 0,
+        "52": 0,
+        "53": 0,
+        "54": 0,
+        "55": 0,
+        "56": 1,
+        "57": 0,
+        "58": 0,
+        "59": 1,
+        "60": 0,
+        "61": 1,
+        "62": 1,
+        "63": 0,
+        "64": 0,
+        "65": 0,
+        "66": 1,
+        "67": 0,
+        "68": 0,
+        "69": 0,
+        "70": 1,
+        "71": 0,
+        "72": 0,
+        "73": 0,
+        "74": 1,
+        "75": 0,
+        "76": 0,
+        "77": 0,
+        "78": 0,
+        "79": 0,
+        "80": 0,
+        "81": 0,
+        "82": 0,
+        "83": 0,
+        "84": 0,
+        "85": 0,
+        "86": 0,
+        "87": 0,
+        "88": 0,
+        "89": 0,
+        "90": 0,
+        "91": 1,
+        "92": 0,
+        "93": 0,
+        "94": 0,
+        "95": 0,
+        "96": 0,
+        "97": 0,
+        "98": 0,
+        "99": 0,
+        "100": 0,
+        "101": 0,
+        "102": 0,
+        "103": 0,
+        "104": 1,
+        "105": 0,
+        "106": 0,
+        "107": 0,
+        "108": 0,
+        "109": 0,
+        "110": 1,
+        "111": 0,
+        "112": 0,
+        "113": 0,
+        "114": 0,
+        "115": 0,
+        "116": 0,
+        "117": 0,
+        "118": 0,
+        "119": 0,
+        "120": 0,
+        "121": 0,
+        "122": 1,
+        "123": 0,
+        "124": 0,
+        "125": 0,
+        "126": 0,
+        "127": 0,
+        "128": 1,
+        "129": 1,
+        "130": 0,
+        "131": 1,
+        "132": 0,
+        "133": 1,
+        "134": 1,
+        "135": 0,
+        "136": 0,
+        "137": 0,
+        "138": 1,
+        "139": 0,
+        "140": 0,
+        "141": 0,
+        "142": 0,
+        "143": 0,
+        "144": 1,
+        "145": 1,
+        "146": 1,
+        "147": 0,
+        "148": 1,
+        "149": 0,
+        "150": 0,
+        "151": 1,
+        "152": 0,
+        "153": 0,
+        "154": 0,
+        "155": 1,
+        "156": 0,
+        "157": 0,
+        "158": 1,
+        "159": 0,
+        "160": 0,
+        "161": 0,
+        "162": 1,
+        "163": 0,
+        "164": 1,
+        "165": 1,
+        "166": 0,
+        "167": 1,
+        "168": 1,
+        "169": 0,
+        "170": 0,
+        "171": 1,
+        "172": 0,
+        "173": 0,
+        "174": 1,
+        "175": 0,
+        "176": 1,
+        "177": 0,
+        "178": 0,
+        "179": 1,
+        "180": 0,
+        "181": 1,
+        "182": 1,
+        "183": 0,
+        "184": 0,
+        "185": 1,
+        "186": 1,
+        "187": 0,
+        "188": 1,
+        "189": 0,
+        "190": 0,
+        "191": 1,
+        "192": 0,
+        "193": 0,
+        "194": 1,
+        "195": 0,
+        "196": 0,
+        "197": 0,
+        "198": 0,
+        "199": 0,
+        "200": 0,
+        "201": 0,
+        "202": 0,
+        "203": 0,
+        "204": 0,
+        "205": 0,
+        "206": 1,
+        "207": 0,
+        "208": 0,
+        "209": 0,
+        "210": 0,
+        "211": 1,
+        "212": 0,
+        "213": 0,
+        "214": 1,
+        "215": 0,
+        "216": 0,
+        "217": 0,
+        "218": 0,
+        "219": 0,
+        "220": 0,
+        "221": 0,
+        "222": 0,
+        "223": 1,
+        "224": 1,
+        "225": 0,
+        "226": 0,
+        "227": 1,
+        "228": 0,
+        "229": 0,
+        "230": 1,
+        "231": 0,
+        "232": 0,
+        "233": 0,
+        "234": 1,
+        "235": 0,
+        "236": 1,
+        "237": 0,
+        "238": 0,
+        "239": 1,
+        "240": 0,
+        "241": 1,
+        "242": 1,
+        "243": 0,
+        "244": 1,
+        "245": 0,
+        "246": 0,
+        "247": 1,
+        "248": 0,
+        "249": 0,
+        "250": 0,
+        "251": 0,
+        "252": 0,
+        "253": 1,
+        "254": 1,
+        "255": 0
+      },
+      "tie_count": 0,
+      "tie_syndromes": [],
+      "logical_error_probability": 0.0011828070759580635,
+      "posterior_total_mass": 0.9999999999999999,
+      "syndrome_count_scored": 256,
+      "direct_nonnegative_DP_crosscheck_max_abs_difference": 2.1094237467877974e-15
+    },
+    "inference_runtime_seconds_including_MAP_summary": 0.001801900001737522,
+    "total_runtime_seconds": 1.017292600001383,
+    "memory": {
+      "peak_working_set_bytes": 36061184,
+      "measurement_method": "Windows GetProcessMemoryInfo sampled at 20ms"
+    }
+  },
+  "categorical_locations_and_verified_masks": [
+    {
+      "name": "loc_0_PAULI_CHANNEL_1_0",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.0025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Y",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Z",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_1_PAULI_CHANNEL_1_1",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.0025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Y",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Z",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_2_PAULI_CHANNEL_1_2",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.0025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Y",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Z",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_3_PAULI_CHANNEL_1_3",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.0025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Y",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Z",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_4_PAULI_CHANNEL_2_0",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_5_PAULI_CHANNEL_2_1",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_6_PAULI_CHANNEL_2_2",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_7_PAULI_CHANNEL_2_3",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 17,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 17,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 16,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 1,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 1,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 16,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 16,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 1,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 1,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 16,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 17,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 17,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_8_PAULI_CHANNEL_2_4",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 6,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 6,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 6,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 6,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_9_PAULI_CHANNEL_2_5",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_10_PAULI_CHANNEL_2_0",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_11_PAULI_CHANNEL_2_1",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 16,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 16,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 20,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 20,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 20,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 20,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 16,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 16,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_12_PAULI_CHANNEL_2_2",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 40,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 40,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 40,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 40,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_13_PAULI_CHANNEL_2_3",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 17,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 17,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 18,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 3,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 3,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 18,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 18,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 3,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 3,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 18,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 17,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 17,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_14_PAULI_CHANNEL_2_4",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_15_PAULI_CHANNEL_2_5",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 72,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 72,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 72,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 12,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 72,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_16_PAULI_CHANNEL_2_0",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 20,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 20,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 20,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 20,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_17_PAULI_CHANNEL_2_1",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 8,
+          "observable_mask": 1
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 8,
+          "observable_mask": 1
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 40,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 40,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 40,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 40,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 8,
+          "observable_mask": 1
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 8,
+          "observable_mask": 1
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_18_PAULI_CHANNEL_2_2",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_19_PAULI_CHANNEL_2_3",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 18,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 18,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 18,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 18,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_20_PAULI_CHANNEL_2_4",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 4,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_21_PAULI_CHANNEL_2_5",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 136,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 136,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 192,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 72,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 72,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 192,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 192,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 72,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 72,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 192,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 136,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 136,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_22_PAULI_CHANNEL_2_0",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 48,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_23_PAULI_CHANNEL_2_1",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_24_PAULI_CHANNEL_2_2",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 64,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_25_PAULI_CHANNEL_2_3",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 2,
+          "observable_mask": 1
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 32,
+          "observable_mask": 1
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 34,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_26_PAULI_CHANNEL_2_4",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 96,
+          "observable_mask": 0
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 96,
+          "observable_mask": 0
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 96,
+          "observable_mask": 0
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 36,
+          "observable_mask": 0
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 96,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 68,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_27_PAULI_CHANNEL_2_5",
+      "outcomes": [
+        {
+          "label": "II",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "IX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 136,
+          "observable_mask": 0
+        },
+        {
+          "label": "IY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 136,
+          "observable_mask": 0
+        },
+        {
+          "label": "IZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "XI",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 128,
+          "observable_mask": 1
+        },
+        {
+          "label": "XX",
+          "probability": 0.0017857142857142857,
+          "detector_mask": 8,
+          "observable_mask": 1
+        },
+        {
+          "label": "XY",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 8,
+          "observable_mask": 1
+        },
+        {
+          "label": "XZ",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 128,
+          "observable_mask": 1
+        },
+        {
+          "label": "YI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 128,
+          "observable_mask": 1
+        },
+        {
+          "label": "YX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 8,
+          "observable_mask": 1
+        },
+        {
+          "label": "YY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 8,
+          "observable_mask": 1
+        },
+        {
+          "label": "YZ",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 128,
+          "observable_mask": 1
+        },
+        {
+          "label": "ZI",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZX",
+          "probability": 0.00017857142857142857,
+          "detector_mask": 136,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZY",
+          "probability": 1.785714285714286e-05,
+          "detector_mask": 136,
+          "observable_mask": 0
+        },
+        {
+          "label": "ZZ",
+          "probability": 1.7857142857143292e-05,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_28_PAULI_CHANNEL_1_0",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.0025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Y",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Z",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_29_PAULI_CHANNEL_1_1",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.0025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Y",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Z",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_30_PAULI_CHANNEL_1_2",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.0025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Y",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Z",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_31_PAULI_CHANNEL_1_3",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.0025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Y",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "Z",
+          "probability": 0.00025,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_32_X_ERROR_0",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_33_X_ERROR_1",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 34,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_34_X_ERROR_2",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_35_X_ERROR_3",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 136,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_36_X_ERROR_4",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 17,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_37_X_ERROR_5",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_38_X_ERROR_6",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 68,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_39_X_ERROR_7",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 0,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_40_X_ERROR_0",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 32,
+          "observable_mask": 1
+        }
+      ]
+    },
+    {
+      "name": "loc_41_X_ERROR_1",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 32,
+          "observable_mask": 1
+        }
+      ]
+    },
+    {
+      "name": "loc_42_X_ERROR_2",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 128,
+          "observable_mask": 1
+        }
+      ]
+    },
+    {
+      "name": "loc_43_X_ERROR_3",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 48,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_44_X_ERROR_4",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 96,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_45_X_ERROR_5",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 192,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_46_X_ERROR_6",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 16,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_47_X_ERROR_7",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 64,
+          "observable_mask": 0
+        }
+      ]
+    },
+    {
+      "name": "loc_48_X_ERROR_8",
+      "outcomes": [
+        {
+          "label": "I",
+          "probability": 0.997,
+          "detector_mask": 0,
+          "observable_mask": 0
+        },
+        {
+          "label": "X",
+          "probability": 0.003,
+          "detector_mask": 64,
+          "observable_mask": 0
+        }
+      ]
+    }
+  ]
+}

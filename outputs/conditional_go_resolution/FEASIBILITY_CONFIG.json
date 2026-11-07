@@ -1,0 +1,64 @@
+{
+  "study": "conditional_go_resolution_small_feasibility_v1",
+  "status": "development_only_not_confirmatory",
+  "historical_artifacts_modified": false,
+  "circuit": {
+    "family": "Stim rotated_memory_z",
+    "distance": 3,
+    "rounds": 5,
+    "noise": "native after-Clifford depolarization plus before-measurement flip"
+  },
+  "decoder_grid_order_gate_then_measurement": [
+    [0.001, 0.001], [0.001, 0.003], [0.001, 0.006],
+    [0.003, 0.001], [0.003, 0.003], [0.003, 0.006],
+    [0.006, 0.001], [0.006, 0.003], [0.006, 0.006]
+  ],
+  "generating_conditions": {
+    "data_heavy": [0.006, 0.001],
+    "nominal": [0.003, 0.003],
+    "measurement_heavy": [0.001, 0.006]
+  },
+  "fixed_models": {
+    "stage1_pooled_fixed_index": 1,
+    "stage1_pooled_fixed_parameters": [0.001, 0.003],
+    "nominal_index": 4,
+    "nominal_parameters": [0.003, 0.003]
+  },
+  "detector_only_selection": {
+    "template_shots_per_grid_point": 2048,
+    "calibration_shots_per_root": 1024,
+    "roots_per_regime": 8,
+    "evaluation_shots_per_root": 4096,
+    "objective": "Jeffreys-smoothed detector-marginal Bernoulli composite log likelihood",
+    "tie_break": "lowest decoder-grid index",
+    "observable_labels_accessed_during_selection": false
+  },
+  "stationary_false_update_feasibility": {
+    "reference_shots": 8192,
+    "calibration_schedules": 100,
+    "validation_schedules": 100,
+    "blocks_per_schedule": 12,
+    "shots_per_block": 128,
+    "trailing_window_blocks": 4,
+    "look_count_per_schedule": 9,
+    "statistic": "maximum absolute studentized detector-marginal change across detectors and all overlapping looks",
+    "threshold_quantile": 0.95,
+    "threshold_tie_rule": "higher empirical quantile",
+    "accepted_updates_per_schedule": 1
+  },
+  "seed_namespace_file": "SEED_SCREEN.json",
+  "primary_outputs": [
+    "DEVELOPMENT_CHECKS.json",
+    "DEVELOPMENT_RAW_EVIDENCE.npz",
+    "UTILITY_PER_ROOT.csv",
+    "TRIGGER_SCHEDULE_MAXIMA.csv",
+    "INDEPENDENT_VERIFICATION.json",
+    "FIXTURE_RESULTS.json"
+  ],
+  "versions": {
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "numpy": "2.5.3"
+  },
+  "shot_total": 456704
+}

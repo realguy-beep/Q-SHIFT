@@ -1,0 +1,54 @@
+{
+  "status": "PRE_REGISTERED_DEVELOPMENT_CASES_BEFORE_NEW_DECODER_OUTCOMES",
+  "created_before_new_comparison_run": true,
+  "scope": "Deterministic exact syndrome enumeration and reduced Stim fragments only; no stochastic Phase 2B shots.",
+  "tie_rule": "For binary observable MAP, choose 0 when masses differ by at most 1e-15; otherwise choose the larger posterior mass.",
+  "case_families": [
+    {
+      "name": "historical_categorical_reproduction",
+      "source": "read-only categorical_decoder_feasibility toy definitions",
+      "cases": ["original_two_qubit_toy"],
+      "purpose": "Check the previously reported 0.0600, 0.1128, 0.0600 risk values and all four syndrome decisions."
+    },
+    {
+      "name": "independent_categorical_chain_toys",
+      "count": 8,
+      "seeds": [61001, 61002, 61003, 61004, 61005, 61006, 61007, 61008],
+      "generation": "For each seed, independently draw two 15-outcome nonidentity Pauli-pair profiles from Dirichlet(alpha=0.35 repeated 15), scale each to total probability 0.12, assign identity probability 0.88, and place one categorical PAULI_CHANNEL_2 at each adjacent pair of a three-qubit repetition-memory toy."
+    },
+    {
+      "name": "separator_parameter_grid",
+      "count": 64,
+      "probabilities": [0.01, 0.03, 0.1, 0.2],
+      "design": "Cartesian product (p,q,r) in that order. Each model contains e(p) D0 L0 ^ D1, e(q) D0, e(r) D1. Its comparison representation changes only the suggested grouping by replacing the first event with e(p) D0 D1 L0. Every point is analyzed; no point is selected by decoder outcome."
+    },
+    {
+      "name": "decomposition_equivalence_fixtures",
+      "count": 3,
+      "cases": ["same_two_detector_event_logical_on_left_vs_right", "four_detector_alternative_pairing_A", "four_detector_alternative_pairing_B"],
+      "purpose": "Check representation invariance of exact event distributions and expose limits of graphlike conversion. The four-detector pairings have identical full event masks but different separator partitions."
+    },
+    {
+      "name": "reduced_phase2b_surface_fragments",
+      "count": 4,
+      "circuits": ["z-memory rounds=1", "x-memory rounds=1", "z-memory rounds=2", "x-memory rounds=2"],
+      "noise": "Frozen Phase 2B balanced channel generator, distance 3, gate probability 0.003, measurement probability 0.003, only round count reduced.",
+      "analysis": "Exact syndrome enumeration for the independent-mechanism DEM posterior; deterministic noiseless/DEM construction. These DEM results are not asserted to equal the categorical physical-channel posterior."
+    },
+    {
+      "name": "full_phase2b_structure_only",
+      "count": 6,
+      "circuits": ["two memory bases x three frozen regimes, distance=3, rounds=5"],
+      "analysis": "Build DEMs and count event/decomposition structure only. No full-syndrome enumeration and no simulation shots."
+    }
+  ],
+  "candidate_definitions": {
+    "representation_aware": "Preserve each independent DEM event probability and its XOR-total detector/logical mask, erase only separator hints, and accept only if every complete event has at most two distinct detector symptoms after parity cancellation. Otherwise reject the entire converted model as unsupported. This preserves the DEM event distribution, not necessarily the original physical circuit distribution or PyMatching optimum.",
+    "local_refinement": "For a binary syndrome, retain independent DEM mechanisms whose detector mask intersects an active detector, plus detector-free mechanisms. Condition all omitted mechanisms to identity, compute an exact local restricted-model posterior up to 12 retained mechanisms, and choose its MAP logical bit. If the cap is exceeded or the syndrome has zero restricted support, fall back to standard PyMatching. This is an explicit restricted-support approximation, not the posterior under the full DEM."
+  },
+  "analysis_rules": {
+    "outputs": "Enumerate every syndrome for every exact toy and feasible reduced fragment; score deterministic decoder predictions against exact categorical and/or exact independent-DEM joint distributions as separately labeled.",
+    "resource_limits": {"wall_minutes": 30, "peak_memory_bytes": 2147483648, "stochastic_phase2b_shots": 0},
+    "no_posthoc_selection": "Report the full 64-point probability grid and all predeclared fixtures; any example quoted in prose is selected by fixed lexicographic rule and accompanied by the complete machine-readable data."
+  }
+}

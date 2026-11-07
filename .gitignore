@@ -1,0 +1,86 @@
+# Python environments, bytecode and test/tool caches
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+htmlcov/
+
+# Credentials and local settings
+.env
+.env.*
+!.env.example
+.gh/
+.git-credentials
+*.pem
+*.key
+*credentials*
+*secret*
+*token*
+
+# Raw shot bundles, generated datasets, checkpoints and serialized models
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+*.joblib
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.parquet
+*.arrow
+*.bin
+*.dat
+*.quarantined
+*.tmp
+*.temp
+
+# Generated per-shot files and evidence folders that can contain held-out data
+**/*per_shot*
+**/*shot_level*
+**/raw/
+**/samples/
+**/predictions/
+**/checkpoints/
+**/independent_test/
+**/sealed_test/
+**/final_test_data/
+
+# Runtime state, logs, telemetry and local databases
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+dashboard/run_data/
+outputs/**/progress.jsonl
+outputs/**/controller.*.log
+outputs/**/dry_run/
+outputs/**/dry_run_*/
+
+# GPU and experiment tracking caches
+.nv/
+torch_extensions/
+wandb/
+tensorboard/
+lightning_logs/
+
+# Machine and editor metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+*.code-workspace
+
+# Large JSON payloads containing per-sample diagnostics; local copies remain intact.
+outputs/matching_representation_investigation/RESULTS.json
+outputs/matching_representation_investigation/DIAGNOSTIC_RESULTS_BEFORE_FIXTURE_CORRECTION.json

@@ -1,0 +1,9 @@
+# Candidate B — bounded local posterior refinement
+
+For a queried syndrome, the prototype retains DEM mechanisms that touch an active detector plus detector-free mechanisms, enumerates those Bernoulli variables exactly, and conditions every omitted exterior mechanism to identity. It computes a normalized posterior over logical masks on that restricted model and chooses the smallest logical-mask integer on posterior ties (tolerance `1e-15`). If more than 12 mechanisms are selected, or the syndrome has no mass in the restricted model, it falls back to the standard matching prediction.
+
+This is **exact only for the explicitly restricted, exterior-zero-conditioned model**. It is not the true local marginal of the full circuit because omitted exterior variables are not summed over. It uses no labels or future data.
+
+On the toy and all eight categorical chains, it matched the exact MAP decisions on every syndrome. In each 8-detector/one-round surface fragment it evaluated 27 of 256 syndrome patterns and fell back on the other 229 (89.5%). The observed exact-DEM risk was 0.00092636 versus 0.00094767 for standard matching in Z memory, and 0.00095120 versus 0.00097326 in X memory. In both cases the valid separator-free matching result was lower still (0.00091733 and 0.00094939 respectively). The two-round fragments exceed this local event-cap regime and were not scored by this local method.
+
+The enumerated work is `O(2^k (k + 2^m))` in a direct implementation for `k` retained Bernoulli mechanisms and `m` logical bits, with an explicit cap `k≤12` (4,096 configurations). Runtime for all 256 one-round syndromes was 4.42 ms for Z and 6.73 ms for X in this environment, including fallback decisions. The toy's maximum was 64 configurations per syndrome. These are small-case measurements only; no full-circuit throughput claim is made.

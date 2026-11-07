@@ -1,0 +1,56 @@
+{
+  "study": "qshift_headroom_feasibility_v1",
+  "status": "development_feasibility_only",
+  "distances": [3, 5, 7],
+  "rounds_equal_distance": true,
+  "memory_bases": ["z", "x"],
+  "native_regimes": {
+    "data_heavy": [0.006, 0.001],
+    "nominal": [0.003, 0.003],
+    "measurement_heavy": [0.001, 0.006]
+  },
+  "native_candidate_grid_order": [
+    [0.001, 0.001], [0.001, 0.003], [0.001, 0.006],
+    [0.003, 0.001], [0.003, 0.003], [0.003, 0.006],
+    [0.006, 0.001], [0.006, 0.003], [0.006, 0.006]
+  ],
+  "pauli_regimes": ["x_biased", "balanced", "z_biased"],
+  "pauli_bias_ratio": 10.0,
+  "pauli_gate_probability": 0.003,
+  "pauli_measurement_probability": 0.003,
+  "pauli_channel_candidate_order": ["x_biased", "balanced", "z_biased"],
+  "calibration_roots_per_cell": 5,
+  "evaluation_roots_per_cell": 5,
+  "shots_per_root": 5000,
+  "template_shots_per_candidate": 5000,
+  "bootstrap_resamples": 20000,
+  "bootstrap_seed": 97990001,
+  "seed_namespaces": {
+    "template_start": 97000001,
+    "calibration_start": 97100001,
+    "evaluation_start": 97200001,
+    "noiseless_diagnostic_start": 97900001,
+    "noise_sensitivity_diagnostic_start": 97910001,
+    "benchmark_start": 97920001
+  },
+  "resource_caps": {
+    "planned_max_total_shots": 3000000,
+    "wall_seconds": 1800,
+    "peak_rss_bytes": 2147483648
+  },
+  "headroom_gate": {
+    "minimum_distinct_regime_candidates": 2,
+    "minimum_calibration_bootstrap_selection_probability": 0.8,
+    "minimum_evaluation_roots_favoring_specialist": 4,
+    "minimum_relative_ler_reduction": 0.05,
+    "minimum_absolute_ler_reduction": 0.0001,
+    "minimum_replicated_distance_strata": 2,
+    "interpretation": "A qualifying basis/family must show two regime-specific winners different from each other and the pooled fixed choice; each winner must meet calibration stability and independent development utility thresholds. The same regime pair must qualify at two or more distances. This is a feasibility gate, not confirmatory significance testing."
+  },
+  "selection_rules": {
+    "pooled_fixed": "minimum equal-weight mean calibration logical-error rate over the three regimes; ties go to the lowest candidate index",
+    "regime_specialist": "minimum calibration logical-error rate in each regime; ties go to the lowest candidate index",
+    "detector_marginal_fit": "Jeffreys-smoothed per-detector Bernoulli profiles; sum composite Bernoulli log score across detectors; ties go to the lowest candidate index",
+    "no_evaluation_label_selection": true
+  }
+}

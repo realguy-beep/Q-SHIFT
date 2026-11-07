@@ -1,0 +1,39 @@
+{
+  "status": "frozen prospective development analysis; no independent test stream",
+  "primary_unit": "independent development root; paired detector/observable shots within root, regime, and model comparison",
+  "primary_metrics": [
+    "equal-regime logical error rate",
+    "equal-regime paired LER difference versus frozen PyMatching",
+    "candidate-only logical failures",
+    "PyMatching-only logical failures",
+    "prediction disagreement rate",
+    "positive-class recall",
+    "per-regime confusion counts"
+  ],
+  "learning_curve_models": [
+    "position_flat_cnn",
+    "balanced_mlp",
+    "pooled_cnn16_capacity_control"
+  ],
+  "learning_curve_train_shots_per_regime": [3000, 10000, 30000],
+  "residual_model": {
+    "name": "residual_position_cnn",
+    "train_shots_per_regime": 10000,
+    "target": "observable XOR PyMatching prediction",
+    "final_prediction": "PyMatching prediction XOR thresholded residual probability"
+  },
+  "partition_roles": {
+    "monitor": "early stopping and best-checkpoint selection by equal-regime NLL",
+    "calibration": "temperature selection by equal-regime NLL",
+    "threshold_selection": "one equal-regime LER threshold; ties nearest 0.5 then lower threshold",
+    "final_development_evaluation": "single post-freeze score; never used for selection"
+  },
+  "uncertainty": {
+    "method": "two-sided Student-t interval across independent root-level paired outcomes",
+    "confidence": 0.95,
+    "minimum_roots_for_interval": 2,
+    "interpretation": "descriptive development uncertainty; not confirmatory inference"
+  },
+  "decision_rule": "No automatic GO claim. A subsequent independent study is considered only if improvement is practically meaningful, reproducible across roots and regimes, and passes a new prospective protocol. A development result cannot establish superiority.",
+  "test_access": "prohibited; no test seeds allocated, no test arrays generated, no test labels loaded"
+}

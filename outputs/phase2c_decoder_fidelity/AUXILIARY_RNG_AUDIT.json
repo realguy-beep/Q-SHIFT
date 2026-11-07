@@ -1,0 +1,19 @@
+{
+  "status": "PASS_SUPPLEMENTAL_AUDIT",
+  "reason": "The frozen runner uses a deterministic sklearn model random_state derived as development Stim seed + 1000. These six estimator RNG seeds were not included in the initial simulator/statistical seed inventory.",
+  "derivation": "model_rng_seed = development_seed + 1000",
+  "model_rng_seeds": [
+    89011001,
+    89011002,
+    89011003,
+    89011004,
+    89011005,
+    89011006
+  ],
+  "unique": true,
+  "collisions_with_recoverable_historical_seeds": [],
+  "collisions_with_initial_44_phase2c_seeds": [],
+  "historical_seed_values_screened": 519,
+  "historical_coverage_reference": "SEED_COLLISION_AUDIT.json (948 files examined; zero read failures)",
+  "scope_note": "These are sklearn estimator-internal RNG initial states, not Stim sampling seeds. This supplemental post-sampling audit does not change any trained model or pilot sample; it documents an inventory omission in the pre-pilot record."
+}

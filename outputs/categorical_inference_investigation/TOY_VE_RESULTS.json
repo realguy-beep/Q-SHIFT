@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "methods": "Dense tensor variable elimination over categorical location variables with XOR parity factors. Output bits are retained; faults are eliminated.",
+  "heuristic_definitions": {
+    "min_fill": "eliminate fault variable minimizing missing edges among its current neighbors, tie-breaking by degree then ID",
+    "min_degree": "eliminate fault variable minimizing current degree, tie-breaking by fill then ID"
+  },
+  "results": [
+    {
+      "model": "one_qubit",
+      "fault_variables": 3,
+      "outcome_domains": [
+        4,
+        4,
+        4
+      ],
+      "output_bits": 3,
+      "factor_nodes": 6,
+      "factor_incidences": 13,
+      "orders": [
+        {
+          "heuristic": "min_fill",
+          "induced_width": 4,
+          "max_combined_factor_states": 256,
+          "max_intermediate_dense_cells": 256,
+          "total_mass": 1.0,
+          "MAP_risk": 0.0026459999999999956,
+          "decisions_match_exhaustive": true,
+          "tie_syndromes": []
+        },
+        {
+          "heuristic": "min_degree",
+          "induced_width": 4,
+          "max_combined_factor_states": 256,
+          "max_intermediate_dense_cells": 256,
+          "total_mass": 1.0,
+          "MAP_risk": 0.0026459999999999956,
+          "decisions_match_exhaustive": true,
+          "tie_syndromes": []
+        }
+      ]
+    },
+    {
+      "model": "two_qubit",
+      "fault_variables": 2,
+      "outcome_domains": [
+        16,
+        16
+      ],
+      "output_bits": 3,
+      "factor_nodes": 5,
+      "factor_incidences": 11,
+      "orders": [
+        {
+          "heuristic": "min_fill",
+          "induced_width": 4,
+          "max_combined_factor_states": 2048,
+          "max_intermediate_dense_cells": 2048,
+          "total_mass": 1.0000000000000004,
+          "MAP_risk": 0.060000000000000026,
+          "decisions_match_exhaustive": true,
+          "tie_syndromes": [
+            1,
+            2
+          ]
+        },
+        {
+          "heuristic": "min_degree",
+          "induced_width": 4,
+          "max_combined_factor_states": 2048,
+          "max_intermediate_dense_cells": 2048,
+          "total_mass": 1.0000000000000004,
+          "MAP_risk": 0.060000000000000026,
+          "decisions_match_exhaustive": true,
+          "tie_syndromes": [
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  ]
+}

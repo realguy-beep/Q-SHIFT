@@ -1,0 +1,19 @@
+﻿experiment_id,phase,design,independent_seed_count,data_scale,status_and_evidence,primary_source
+starter_v0.1_zip,starter/archive,historical starter snapshot,1,2000 shots per probability in archived Step 1,audit only,C:/Users/LENOVO/Downloads/Q-SHIFT_v0.1_starter.zip
+starter_expanded_dataset,starter/expanded,repetition-code dataset and decoder,1,150000 rows; 61 unique detector vectors; repeated rows,leakage/duplication risk; not validated,C:/Users/LENOVO/Downloads/Q-SHIFT_v0.1_starter
+legacy_conversation_classifier,legacy prototype,conversation-reported classifier and XOR,unknown,conversation metrics only; raw artifact not matched,unverified; XOR report worsened residual,conversation reference 6ae9b69e-27a8-83ee-8efe-46554513a2dd
+fresh_matching_benchmark,early outputs,fresh matching and optional RF,1,100k matching shots per p; 60k/20k/20k RF split,exploratory; sparse ML errors,../qshift_benchmark_results.json
+per_regime_lookup_single_seed,early outputs,lookup vs matching,1,2m train/200k validation/1m test per p,mixed single-seed,../qshift_prototype_results.json
+pooled_lookup_single_seed,early outputs,pooled lookup vs matching,1,6m train/900k validation/2m test per p,favorable but unreplicated,../qshift_mixed_regime_results.json
+decoder_experiments_single_seed,early outputs,lookup/DEM comparisons,1,single seed,mixed; no replication,../qshift_decoder_experiments_results.json
+train_more_random_forest,early outputs,RF vs matching,1,500k train/100k validation/200k paired test,worse at middle/high p,../qshift_train_more_results.json
+ten_seed_noise_generalization,early outputs,fixed vs pooled lookup and threshold selection,10,"100k tests/condition/seed; p=.001,.002,.003,.0045,.006,.008",negative; no seed-level significance,../qshift_research_results.json
+time_varying_stream_pilot,early outputs,fixed/adaptive/oracle stream,1,one 600k-shot stream,no adaptive advantage,../qshift_time_varying_results.json
+design_sweep,early outputs,distance/noise exploratory sweep,1,small pilot grid,exploratory; phase/measurement controls limited,../qshift_design_sweep_results.json
+phase1_noise_composition_v2_v3,phase1,controlled composition and early adaptive variants,10,development checkpoints and separate smoke runs,superseded checkpoints; preserve,../noise_composition_phase/results/composition_results_v2.json; composition_results_v3.json
+phase1_guarded_v4,phase1,guarded detector adaptive policy,10,30k train/10k validation/20k test per condition and seed,no switches; ties fixed; per-regime report/JSON discrepancy,../noise_composition_phase/results/composition_results_v4_guarded.json
+phase2_specialist_full,phase2,composition-specific DEM/PyMatching usefulness gate,10,30k calibration; 10k validation; 30k paired test/condition/seed,gate failed; no selector,../phase2_specialist_decoder/results/specialist_results_v1.json
+phase3a_v1_invalid,phase3a,surface-code pilot with incorrect probability scaling,3,12k per condition/seed,invalid; excluded,../phase3_geometry_investigation/phase3a_surface_pilot_v1.json
+phase3a_v2_v3_v4_checkpoints,phase3a,corrected rotated surface-code pilot,3 reused roots,12k per condition/seed; same raw hashes across versions,exploratory; not independent replication,../phase3_geometry_investigation/phase3a_surface_pilot_v4.json
+phase3b_independent_replication,phase3b,frozen X-specialist replication plus controls,20,30k per condition/root; 2.4m total,no specialist advantage; independent replication,../phase3b_independent_replication/RESULTS.json
+master_handoff,documentation,research history and index package,n/a,no experiments run,current handoff,C:\Users\LENOVO\Documents\Codex\2026-11-03\referenced-chatgpt-conversation-this-is-an\outputs\master_project_handoff

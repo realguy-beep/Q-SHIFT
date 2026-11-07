@@ -1,0 +1,69 @@
+{
+  "job_id": "root01_balanced_minibatch_30000",
+  "root": 1,
+  "strategy": "balanced_minibatch",
+  "train_size_per_regime": 30000,
+  "model": "ResidualPositionCNN",
+  "target": "observable_xor_frozen_pymatching_prediction",
+  "inference": "pymatching_xor_predicted_residual",
+  "prevalence": 0.0042,
+  "positive_examples": 378,
+  "training_examples": 90000,
+  "pos_weight": 237.0952380952381,
+  "logit_prior_correction": -5.468461908918759,
+  "best_epoch": 1,
+  "best_monitor_nll": 0.01985785785077643,
+  "monitor_history": [
+    {
+      "epoch": 1,
+      "monitor_nll": 0.01985785785077643,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 2,
+      "monitor_nll": 0.02007446838857481,
+      "selected": false,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 3,
+      "monitor_nll": 0.023597795367743507,
+      "selected": false,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 4,
+      "monitor_nll": 0.024904572618544698,
+      "selected": false,
+      "learning_rate": 0.003
+    }
+  ],
+  "temperature": 1.0,
+  "threshold_min_ler": 0.75,
+  "threshold_selection_ler": 0.004711111111111111,
+  "confidence_gate": {
+    "threshold": 1.01,
+    "fallback": true,
+    "reason": "no threshold passed Bonferroni-Wilson precision gate",
+    "precision_lower_bound": null,
+    "corrections_on_threshold_selection": 0,
+    "beneficial_on_threshold_selection": 0,
+    "selected_ler": null,
+    "familywise_alpha": 0.05,
+    "per_threshold_alpha": 0.000505050505050505
+  },
+  "calibration_brier": 0.004535419771453274,
+  "calibration_ece_10bin": 0.0023466735902604075,
+  "weights_sha256": "a3fd2ea9b5f86f8be4f8b24b7c2a0edb151cb9b90039736518be59a2db456d1f",
+  "selection_data": {
+    "checkpoint": "monitor only",
+    "temperature": "calibration only",
+    "threshold_min_ler": "threshold_selection only",
+    "confidence_gate": "threshold_selection only"
+  },
+  "final_development_evaluation_accessed": false,
+  "gpu_seconds_train_and_select": 11.79378310055472,
+  "parameter_count": 13429,
+  "created_utc": "2026-11-06T23:33:30.289117+00:00"
+}

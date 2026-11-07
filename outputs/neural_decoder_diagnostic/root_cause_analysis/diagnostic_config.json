@@ -1,0 +1,42 @@
+{
+  "distance": 3,
+  "rounds": 5,
+  "memory_basis": "z",
+  "gate_p": 0.003,
+  "measurement_p": 0.003,
+  "bias_ratio": 10.0,
+  "train": {
+    "x_biased": 3000,
+    "balanced": 3000,
+    "z_biased": 3000
+  },
+  "validation": {
+    "x_biased": 1500,
+    "balanced": 1500,
+    "z_biased": 1500
+  },
+  "tiny_balanced_n": 256,
+  "tiny_natural_n": 256,
+  "tiny_learning_rates": [
+    0.001,
+    0.01
+  ],
+  "tiny_max_epochs": 800,
+  "scale_sizes_per_regime": [
+    1500,
+    3000
+  ],
+  "scale_max_epochs": 15,
+  "scale_strategies": [
+    "natural_unweighted",
+    "natural_weighted",
+    "balanced_minibatches"
+  ],
+  "scale_models": [
+    "direct_mlp",
+    "structured_cnn_ch8"
+  ],
+  "seed_inventory_sha256": "2a3223a7444e4b176048590958c252be85d1b681150d844888605a445d8adbd3",
+  "reserved_test_access": "none; no test stream was allocated or sampled",
+  "max_runtime_seconds": 2400
+}

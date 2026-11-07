@@ -1,0 +1,17 @@
+{
+  "study": "qshift_phase2a_decoder_specialization",
+  "classification": "exploratory_development_only",
+  "distance": 3,
+  "rounds": 5,
+  "circuit": "surface_code:rotated_memory_z",
+  "regimes": [
+    {"name": "data_heavy", "gate_probability": 0.006, "measurement_probability": 0.001},
+    {"name": "nominal", "gate_probability": 0.003, "measurement_probability": 0.003},
+    {"name": "measurement_heavy", "gate_probability": 0.001, "measurement_probability": 0.006}
+  ],
+  "decoder_grid": {"probabilities": [0.001, 0.003, 0.006], "iteration_order": "itertools.product(probabilities, repeat=2), each pair is (gate_probability, measurement_probability)"},
+  "selection_source": "outputs/prototype_development/data/calibration_evidence.npz, 20,000 independent calibration shots per regime; labels may select development decoders but are unavailable to runtime policy",
+  "evaluation": {"independent_roots_per_regime": 20, "shots_per_root": 10000, "total_shots": 600000, "evaluation_seed_rule": "99500001 + 1000*regime_index + root_index; regime order data_heavy, nominal, measurement_heavy", "paired_decoding": true},
+  "analysis": {"bootstrap_draws": 20000, "bootstrap_seed": 99600001, "sign_flip_draws": 100000, "sign_flip_seed": 99600002, "per_regime_candidate_comparison_family": 24, "holm_adjustment": true, "primary_headroom": "equal-regime LER(best-per-regime calibration-selected decoder) minus LER(best-global calibration-selected decoder)", "confidence_level": 0.95},
+  "models": {"global_fixed_index_expected_from_stage1": 1, "nominal_fixed_index": 4, "regime_matched_indices": {"data_heavy": 6, "nominal": 4, "measurement_heavy": 2}, "retrospective_oracles_are_diagnostics_only": true}
+}

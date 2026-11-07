@@ -1,0 +1,49 @@
+{
+  "study": "Q-SHIFT Phase 2B Pauli-biased noise decoder specialization",
+  "classification": "exploratory simulation study; no adaptive controller",
+  "circuit": {"distance": 3, "rounds": 5, "memory_bases": ["z", "x"], "detectors_expected": 40, "observables_expected": 1},
+  "noise": {
+    "total_gate_fault_probability_per_instruction": 0.003,
+    "measurement_flip_probability": 0.003,
+    "dominant_to_other_pauli_weight_ratio": 10,
+    "regimes": ["x_biased", "balanced", "z_biased"],
+    "regime_order": "x_biased, balanced, z_biased",
+    "pauli_channel_2_weight_rule": "For each non-II pair AB, unnormalized mass is w(A)*w(B), with w(I)=1 and w(X,Y,Z) set by regime; normalize the 15 masses to the configured total gate fault probability.",
+    "matching_dem_approximate_disjoint_errors": true,
+    "matching_enable_correlations": true
+  },
+  "partitions": {
+    "development_validation_shots_per_memory_regime": 5000,
+    "calibration_shots_per_memory_regime": 20000,
+    "heldout_roots_per_memory_regime": 20,
+    "heldout_shots_per_root": 10000,
+    "heldout_total_shots": 1200000
+  },
+  "seed_allocation": {
+    "diagnostic_seed_base": 87990001,
+    "diagnostic_formula": "87990001 + cell_index (six unique diagnostic seeds)",
+    "development_validation_base": 88000001,
+    "calibration_base": 88100001,
+    "heldout_base": 88200001,
+    "cell_index_order": "memory basis z, x; within basis x_biased, balanced, z_biased",
+    "devval_formula": "88000001 + 100*cell_index",
+    "calibration_formula": "88100001 + 100*cell_index",
+    "heldout_formula": "88200001 + 1000*cell_index + root_index (root_index 0..19)",
+    "bootstrap_seed": 88300001,
+    "signflip_seed": 88300002
+  },
+  "decoder_bank": {
+    "index_order": ["x_biased", "balanced", "z_biased"],
+    "global_fixed_selection": "For each memory basis, minimize the equal-regime mean calibration LER over the three models; ties go to lowest index.",
+    "regime_selected_comparator": "For each memory basis and generating regime, minimize calibration LER over the three models; ties go to lowest index.",
+    "balanced_baseline_index": 1
+  },
+  "statistics": {
+    "primary": "Equal-weight mean across the six memory-basis x generating-regime cells of (calibration-selected regime-index prediction LER minus calibration-selected per-basis global-fixed LER).",
+    "cluster_unit": "Independent Stim RNG root within each basis-regime cell.",
+    "primary_test": "Two-sided paired root-cluster sign-flip Monte Carlo test, 100000 assignments, add-one p-value.",
+    "primary_ci": "95% percentile bootstrap, 100000 resamples, independently resampling roots within each of the six cells and averaging the six cell means.",
+    "secondary_families": ["Two per-memory-basis primary contrasts, Holm adjusted.", "Six per-cell contrasts, Holm adjusted.", "Twelve alternative-model-versus-global-fixed paired root comparisons (two alternatives per cell), Holm adjusted."],
+    "shotwise_test": "Exact two-sided McNemar per comparator and stratum, descriptive only; root-cluster inference is primary."
+  }
+}

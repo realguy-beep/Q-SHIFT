@@ -1,0 +1,30 @@
+{
+  "phase": "3A pilot",
+  "experiment_id": "rotated_memory_z_local_pauli_v1",
+  "code_task": "surface_code:rotated_memory_z",
+  "distance": 3,
+  "rounds": 3,
+  "active_data_qubits": 9,
+  "active_stabilizer_ancillas": 8,
+  "stim_num_qubits": 26,
+  "detectors": 24,
+  "observables": 1,
+  "p_local_nonidentity": 0.01,
+  "measurement_noise": 0.0,
+  "composition": {
+    "x_biased": [0.8, 0.1, 0.1],
+    "z_biased": [0.1, 0.1, 0.8],
+    "depolarizing": [0.3333333333333333, 0.3333333333333333, 0.3333333333333333],
+    "mixed_xz_heldout": [0.5, 0.0, 0.5]
+  },
+  "seeds": [31503001, 31503002, 31503003],
+  "shots_per_condition_seed": 12000,
+  "noise_construction": "Stim generated circuit with after_clifford_depolarization=p; replace each DEPOLARIZE1(p) and each participant of DEPOLARIZE2(p) by PAULI_CHANNEL_1(pX,pY,pZ) with pX+pY+pZ=p. Measurement flips disabled.",
+  "fixed_nominal": "PyMatching from depolarizing p=0.01 DEM",
+  "specialists": ["x_biased", "z_biased", "depolarizing"],
+  "oracle": "PyMatching from the exact test-condition DEM; reference only",
+  "dem_options": {
+    "decompose_errors": true,
+    "approximate_disjoint_errors": true
+  }
+}

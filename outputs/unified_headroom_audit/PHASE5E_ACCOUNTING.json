@@ -1,0 +1,67 @@
+{
+  "status": "RECONCILED_FROM_CONFIG_RUNNER_AND_SAVED_RESULTS",
+  "no_simulation_rerun": true,
+  "runner_sha256": "f55f9e87a57a5e92a3d48c51a77f588f1917f9196dff337b48d80e0ea3377848",
+  "config_sha256": "9ee4ff3433808b2988d619d8e614317eccb3ccf7c8fddbb03878071eecef6555",
+  "result_sha256": "72ee02910f823f61337b7282d031cfff40efaf5db4b59ff41e874436cb6cbc49",
+  "experiment_log_sha256": "dfa43e685785b69272ae41ee96fd26f116a7e8b5a2da579a3f906c142944eea7",
+  "saved_config": {
+    "calibration_roots": 3,
+    "calibration_shots_per_regime_root": 5000,
+    "evaluation_roots": 3,
+    "evaluation_shots_per_regime_root": 10000,
+    "dynamic_replicates": 3,
+    "blocks_per_schedule": 12,
+    "shots_per_block": 256,
+    "seeds": {
+      "calibration": 111000001,
+      "stationary": 112000001,
+      "schedule": 113000001,
+      "dynamic": 114000001
+    },
+    "confirmatory": false
+  },
+  "dynamic": {
+    "schedule_families": [
+      "stationary",
+      "slow",
+      "rapid",
+      "random"
+    ],
+    "schedule_family_count": 4,
+    "replicate_counts": {
+      "stationary": 3,
+      "slow": 3,
+      "rapid": 3,
+      "random": 3
+    },
+    "blocks_expected_from_config": 144,
+    "blocks_saved": 144,
+    "dynamic_shots_expected_from_config": 36864,
+    "dynamic_shots_saved": 36864,
+    "reconciles": true
+  },
+  "other_shot_counts_from_saved_records_or_runner_loops": {
+    "pairwise_regime_disagreement_shots": 90000,
+    "calibration_shots": 45000,
+    "stationary_evaluation_shots": 90000,
+    "stationary_evaluation_expected": 90000,
+    "stationary_evaluation_reconciles": true,
+    "total_all_phase5e_simulator_shots_reconstructed": 261864,
+    "seed_log_entries": 18,
+    "seed_log_shots": 90000,
+    "seed_log_scope": "only pairwise disagreement batches; it is not a complete seed/run ledger"
+  },
+  "log_discrepancy": {
+    "logged_claim": "seven schedule families x four replicates x 12 blocks x 256 shots",
+    "source_of_truth": "phase5e_config.json, run_phase5e.py loop, PHASE5E_RESULTS.json dynamic keys and saved repetitions",
+    "actual_dynamic_design": "4 families x 3 replicates x 12 blocks x 256 shots = 36864 shots",
+    "phase5e_log_claim_matches_runner": false,
+    "explanation": "The seven-by-four description is inconsistent with the saved Phase 5E runner/config and appears to describe the preceding v3 schedule set; it is not used for Phase 5E totals."
+  },
+  "runner_static_checks": {
+    "contains_kinds_stationary_slow_rapid_random": true,
+    "dynamic_seed_formula_present": true,
+    "schedule_seed_formula_present": true
+  }
+}

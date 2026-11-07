@@ -1,0 +1,3 @@
+# Phase 5E experiment log
+
+Executed `python run_phase5e.py` in adaptive/. Runtime about 0.72 s reported by script. Six independent stationary evaluation roots per regime x 5,000 shots (90,000 total/regime) generated regime-specific paired disagreement matrices. Three calibration roots/regime x 5,000 shots selected per-regime candidates; separate three evaluation roots/regime x 10,000 shots scored all nine candidates. Seven schedule families x four replicates x 12 blocks x 256 shots compared policies on common samples. No Stage 2 data used. Git commit unavailable (workspace has no Git repository metadata). Python/Stim/PyMatching versions recorded in PHASE5E_RESULTS.json.

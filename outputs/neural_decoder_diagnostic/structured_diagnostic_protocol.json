@@ -1,0 +1,58 @@
+{
+  "status": "prospective; not executed",
+  "total_shots": 100000,
+  "split_totals": {
+    "train": 70000,
+    "validation": 15000,
+    "test": 15000
+  },
+  "regimes": [
+    "x_biased",
+    "balanced",
+    "z_biased"
+  ],
+  "shots_by_split_and_regime": {
+    "train": {
+      "x_biased": 23334,
+      "balanced": 23333,
+      "z_biased": 23333
+    },
+    "validation": {
+      "x_biased": 5000,
+      "balanced": 5000,
+      "z_biased": 5000
+    },
+    "test": {
+      "x_biased": 5000,
+      "balanced": 5000,
+      "z_biased": 5000
+    }
+  },
+  "noise_parameters": {
+    "gate_p": 0.003,
+    "measurement_p": 0.003,
+    "bias_ratio": 10.0,
+    "distance": 3,
+    "rounds": 5,
+    "memory_basis": "z"
+  },
+  "model_inputs": [
+    "40 syndrome detector bits"
+  ],
+  "model_targets": {
+    "direct": "Stim logical-observable flip bit",
+    "residual": "PyMatching prediction XOR observable flip"
+  },
+  "candidates": [
+    "frozen PyMatching",
+    "DirectMLP",
+    "StructuredConv3DDecoder",
+    "ResidualMLP"
+  ],
+  "validation_policy": "Use validation only for model, threshold, and checkpoint selection. Compute equal-regime mean LER and a 95% stratified paired-shot bootstrap interval for candidate-minus-pooled-fixed; select a neural candidate only when mean LER is lower and the entire interval is below zero. Otherwise retain pooled-fixed.",
+  "validation_uncertainty_note": "The bootstrap is conditional on one seed stream per regime and is a development selection aid, not seed-cluster inference.",
+  "test_policy": "Do not generate or read any test samples until architecture, threshold, and checkpoint selection are frozen. Then report all three regimes and paired outcomes.",
+  "class_imbalance_policy": "Report positive-target prevalence. Compare unweighted BCE with a positive weight computed from training-label prevalence only; assess thresholds on validation. Never estimate class weights from validation/test labels.",
+  "limits": "A 100K-shot diagnostic can reveal gross collapse and regime sensitivity but is not powered to establish a small LER improvement.",
+  "seed_inventory_passed": true
+}

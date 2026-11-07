@@ -1,0 +1,101 @@
+{
+  "protocol": "independent train, validation, and shared held-out test Stim shots; fixed matching DEM; detector-only RF; validation threshold minimizes XOR residual",
+  "seed": 20261104,
+  "shots_per_level": {
+    "train": 500000,
+    "validation": 100000,
+    "shared_test": 200000
+  },
+  "levels": {
+    "0.001": {
+      "detectors": 8,
+      "threshold_selected_on_validation": 0.39367030136101605,
+      "validation_residual_rate": 0.0,
+      "shared_test_before_errors": 317,
+      "shared_test_before_rate": 0.001585,
+      "matching": {
+        "errors": 3,
+        "rate": 1.5e-05,
+        "wilson_95": [
+          5.101366456971543e-06,
+          4.410498252568242e-05
+        ]
+      },
+      "ml": {
+        "errors": 2,
+        "rate": 1e-05,
+        "wilson_95": [
+          2.7423649747610273e-06,
+          3.646417607714484e-05
+        ]
+      },
+      "paired_test": {
+        "both_correct": 199997,
+        "ml_only_wrong": 0,
+        "matching_only_wrong": 1,
+        "both_wrong": 2,
+        "ml_minus_matching_errors": -1
+      }
+    },
+    "0.003": {
+      "detectors": 8,
+      "threshold_selected_on_validation": 0.24953161476688338,
+      "validation_residual_rate": 3e-05,
+      "shared_test_before_errors": 931,
+      "shared_test_before_rate": 0.004655,
+      "matching": {
+        "errors": 19,
+        "rate": 9.5e-05,
+        "wilson_95": [
+          6.082177953566431e-05,
+          0.0001483814963389592
+        ]
+      },
+      "ml": {
+        "errors": 33,
+        "rate": 0.000165,
+        "wilson_95": [
+          0.0001174970064871352,
+          0.00023170358041796162
+        ]
+      },
+      "paired_test": {
+        "both_correct": 199965,
+        "ml_only_wrong": 16,
+        "matching_only_wrong": 2,
+        "both_wrong": 17,
+        "ml_minus_matching_errors": 14
+      }
+    },
+    "0.006": {
+      "detectors": 8,
+      "threshold_selected_on_validation": 0.38685397755843626,
+      "validation_residual_rate": 0.00038,
+      "shared_test_before_errors": 1928,
+      "shared_test_before_rate": 0.00964,
+      "matching": {
+        "errors": 72,
+        "rate": 0.00036,
+        "wilson_95": [
+          0.00028590606126809156,
+          0.00045328703493618114
+        ]
+      },
+      "ml": {
+        "errors": 81,
+        "rate": 0.000405,
+        "wilson_95": [
+          0.00032589545023038816,
+          0.0005032959173506173
+        ]
+      },
+      "paired_test": {
+        "both_correct": 199904,
+        "ml_only_wrong": 24,
+        "matching_only_wrong": 15,
+        "both_wrong": 57,
+        "ml_minus_matching_errors": 9
+      }
+    }
+  }
+}

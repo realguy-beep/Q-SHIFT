@@ -1,0 +1,5097 @@
+{
+  "competition_gate": {
+    "calibration_confidence_gate": {
+      "candidate_better_roots": 15,
+      "candidate_errors_when_selected": 514,
+      "candidate_selected_roots": 21,
+      "candidate_worse_roots": 6,
+      "constant_prevalence_brier": 0.234375,
+      "fallback_fraction": 0.125,
+      "fallback_roots": 3,
+      "features": [
+        "calibration score top-runner-up margin",
+        "selected-minus-pooled calibration score"
+      ],
+      "harmful_selected_roots": 6,
+      "helpful_selected_roots": 12,
+      "limitations": "24 roots only; classifier performance is cross-validated within one exploratory dataset; not an independent policy test.",
+      "out_of_root_auc": 0.5703703703703704,
+      "out_of_root_brier": 0.2370573184960542,
+      "pooled_errors_on_fallback_roots": 172,
+      "ties": 3
+    },
+    "causality": {
+      "calibration_gate_features_precede_evaluation_block": true,
+      "features_use_only_detector_data": true,
+      "held_out_fold_labels_in_training": false,
+      "hidden_regime_id_in_features": false,
+      "regime_id_used_for_stratified_reporting_only": true,
+      "shot_gate_uses_current_detector_only": true,
+      "true_logical_labels_in_gate_features": false
+    },
+    "data": {
+      "disagreements": 225,
+      "roots": 24,
+      "selected_vs_pooled_disagreement_rate": 0.002288818359375,
+      "shots": 98304
+    },
+    "files": {
+      "per_root": "GATE_PER_ROOT.csv",
+      "per_shot_summary": "GATE_DISAGREEMENT_SUMMARY.csv"
+    },
+    "ler": {
+      "always_adaptive_equals_existing_calibration_selected": 0.0068359375,
+      "calibration_confidence_gate_loo_0_5": 0.006978352864583333,
+      "pooled_fixed_no_update": 0.006927490234375,
+      "shot_confidence_gate_loo_root_0_5": 0.0069580078125,
+      "simple_detector_loglik_delta_gt_0": 0.0068359375
+    },
+    "memory": {
+      "analysis_process_after_analysis": {
+        "peak_working_set_bytes": 204648448,
+        "working_set_bytes": 158445568
+      },
+      "analysis_process_before_loading_npz": {
+        "peak_working_set_bytes": 150155264,
+        "working_set_bytes": 150155264
+      },
+      "decode_model_memory": "not measured; saved predictions omit native decoder object sizes",
+      "interpretation": "Process-level Windows counters include Python, NumPy, scikit-learn and mapped arrays; they do not isolate a decoder or online gate."
+    },
+    "model": {
+      "C": 0.1,
+      "threshold": 0.5,
+      "threshold_rule": "fixed 0.5 equal-cost classification cutoff",
+      "type": "StandardScaler + LogisticRegression"
+    },
+    "paired_discordance": {
+      "candidate_only_wrong": 108,
+      "pooled_only_wrong": 117
+    },
+    "paired_errors": {
+      "always_adaptive_equals_existing_calibration_selected": 672,
+      "calibration_confidence_gate_loo_0_5": 686,
+      "pooled_fixed_no_update": 681,
+      "shot_confidence_gate_loo_root_0_5": 684,
+      "simple_detector_loglik_delta_gt_0": 672
+    },
+    "runtime": {
+      "analysis_wall_seconds": 0.4010955000012473,
+      "decode_latency": "not measurable from saved predictions; the gate analysis does not rerun the decoders"
+    },
+    "shot_confidence_gate": {
+      "avoided_candidate_harms_on_fallback": 41,
+      "candidate_choices_on_disagreements": 131,
+      "candidate_harm_rate_when_applied": 0.5114503816793893,
+      "candidate_harms_when_applied": 67,
+      "candidate_helps_when_applied": 64,
+      "constant_prevalence_brier": 0.2496,
+      "cross_validation": "leave-one-calibration/evaluation-root-out; all features for held-out root excluded from fit",
+      "fallback_choices_on_disagreements": 94,
+      "fallback_fraction_on_disagreements": 0.4177777777777778,
+      "features": [
+        "per-shot detector-marginal log-likelihood difference",
+        "detector weight",
+        "calibration top-runner-up margin",
+        "calibration selected-minus-pooled score",
+        "selected decoder index"
+      ],
+      "limitations": "Requires both decoder predictions before gating; increases decode work. Only 225 disagreement shots across 24 roots.",
+      "missed_candidate_wins_on_fallback": 53,
+      "out_of_root_auc": 0.4641104779993669,
+      "out_of_root_brier": 0.25024523604506144,
+      "target": "candidate prediction correct conditional on candidate and pooled predictions disagree"
+    },
+    "simple_detector_likelihood_threshold": {
+      "candidate_choices_on_disagreements": 225,
+      "fallback_choices_on_disagreements": 0,
+      "result": "identical to always-adaptive selection on this evidence; confidence score did not create selectivity",
+      "rule": "use calibrated candidate when its factorized detector-marginal log likelihood exceeds pooled model's"
+    },
+    "source": "outputs/conditional_go_resolution/DEVELOPMENT_RAW_EVIDENCE.npz",
+    "status": "development_only_retrospective_cross_root_analysis_not_confirmatory",
+    "versions": {
+      "numpy": "2.5.3",
+      "scikit_learn": "1.9.1"
+    }
+  },
+  "phase5d_result": {
+    "block_seed_start": 104000001,
+    "calibration_rate_matrix": {
+      "data_heavy": [
+        0.015666666666666666,
+        0.015666666666666666,
+        0.0168,
+        0.015266666666666666,
+        0.015666666666666666,
+        0.015733333333333335,
+        0.015400000000000002,
+        0.0152,
+        0.015666666666666666
+      ],
+      "measurement_heavy": [
+        0.0023333333333333335,
+        0.002133333333333333,
+        0.0017333333333333333,
+        0.0026666666666666666,
+        0.0023333333333333335,
+        0.002266666666666667,
+        0.002733333333333333,
+        0.0026666666666666666,
+        0.0023333333333333335
+      ],
+      "nominal": [
+        0.004666666666666666,
+        0.004533333333333334,
+        0.004733333333333333,
+        0.005066666666666666,
+        0.004666666666666666,
+        0.004666666666666666,
+        0.005266666666666667,
+        0.005066666666666666,
+        0.004666666666666666
+      ]
+    },
+    "calibration_roots": [
+      101000001,
+      101100001,
+      101200001
+    ],
+    "confirmatory_test_run": false,
+    "dynamic": {
+      "data_to_measurement": [
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6
+              ],
+              "delays": [],
+              "errors": 36,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 1
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                6,
+                6,
+                6,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 35,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 1,
+              "shots": 4096,
+              "switches": 2
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ],
+              "delays": [],
+              "errors": 36,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 1
+            }
+          },
+          "sequence": [
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                6,
+                6,
+                6,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 27,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 2
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                6,
+                6,
+                6,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 23,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 2,
+              "shots": 4096,
+              "switches": 2
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                7,
+                7,
+                7,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 27,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 2
+            }
+          },
+          "sequence": [
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                6,
+                6,
+                6,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 26,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 2
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                6,
+                6,
+                6,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 26,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 2,
+              "shots": 4096,
+              "switches": 2
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                7,
+                7,
+                7,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 26,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 2
+            }
+          },
+          "sequence": [
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                7,
+                7,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 30,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 1,
+              "shots": 4096,
+              "switches": 2
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                6,
+                6,
+                6,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 30,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 2,
+              "shots": 4096,
+              "switches": 2
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 30,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 1
+            }
+          },
+          "sequence": [
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy"
+          ]
+        }
+      ],
+      "measurement_to_data": [
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                7
+              ],
+              "delays": [],
+              "errors": 43,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 1,
+              "shots": 4096,
+              "switches": 2
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                2,
+                2,
+                2,
+                6,
+                6,
+                6,
+                6
+              ],
+              "delays": [],
+              "errors": 40,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 2,
+              "shots": 4096,
+              "switches": 2
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1
+              ],
+              "delays": [],
+              "errors": 41,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 1,
+              "shots": 4096,
+              "switches": 2
+            }
+          },
+          "sequence": [
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                6,
+                6
+              ],
+              "delays": [],
+              "errors": 33,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 2
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                2,
+                2,
+                2,
+                6,
+                6,
+                6,
+                6
+              ],
+              "delays": [],
+              "errors": 33,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 1,
+              "shots": 4096,
+              "switches": 2
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                7,
+                7
+              ],
+              "delays": [],
+              "errors": 33,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 2
+            }
+          },
+          "sequence": [
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                6,
+                6
+              ],
+              "delays": [],
+              "errors": 30,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 2
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                2,
+                2,
+                2,
+                6,
+                6,
+                6,
+                6
+              ],
+              "delays": [],
+              "errors": 28,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 1,
+              "shots": 4096,
+              "switches": 2
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                7,
+                7
+              ],
+              "delays": [],
+              "errors": 30,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 2
+            }
+          },
+          "sequence": [
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                6
+              ],
+              "delays": [],
+              "errors": 31,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 1,
+              "shots": 4096,
+              "switches": 2
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                2,
+                2,
+                2,
+                6,
+                6,
+                6,
+                6
+              ],
+              "delays": [],
+              "errors": 31,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 2,
+              "shots": 4096,
+              "switches": 2
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                7
+              ],
+              "delays": [],
+              "errors": 31,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 2
+            }
+          },
+          "sequence": [
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy"
+          ]
+        }
+      ],
+      "nominal_measurement_nominal": [
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                4
+              ],
+              "delays": [],
+              "errors": 16,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 2
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                4,
+                4,
+                2,
+                2,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 16,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 1,
+              "shots": 4096,
+              "switches": 3
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                1
+              ],
+              "delays": [],
+              "errors": 16,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 2
+            }
+          },
+          "sequence": [
+            "nominal",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "nominal",
+            "nominal",
+            "nominal"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 19,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                2,
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 1
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                4,
+                4,
+                2,
+                2,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 19,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                2,
+                1
+              ],
+              "false_switches": 2,
+              "shots": 4096,
+              "switches": 3
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "delays": [],
+              "errors": 19,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                2,
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 0
+            }
+          },
+          "sequence": [
+            "nominal",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "nominal",
+            "nominal",
+            "nominal"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 11,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 1
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                4,
+                4,
+                2,
+                2,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 10,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 1,
+              "shots": 4096,
+              "switches": 3
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "delays": [],
+              "errors": 11,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 0
+            }
+          },
+          "sequence": [
+            "nominal",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "nominal",
+            "nominal",
+            "nominal"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                5,
+                5,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 25,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 1,
+              "shots": 4096,
+              "switches": 2
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                4,
+                4,
+                2,
+                2,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 26,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 1,
+              "shots": 4096,
+              "switches": 3
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 25,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 0,
+              "shots": 4096,
+              "switches": 1
+            }
+          },
+          "sequence": [
+            "nominal",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "nominal",
+            "nominal",
+            "nominal"
+          ]
+        }
+      ],
+      "random": [
+        {
+          "policies": {
+            "ml": {
+              "censored": 1,
+              "chosen": [
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 89,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                2,
+                3,
+                1,
+                1,
+                3,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                4,
+                2,
+                2,
+                null
+              ],
+              "false_switches": 0,
+              "shots": 12288,
+              "switches": 1
+            },
+            "regime_matched": {
+              "censored": 1,
+              "chosen": [
+                1,
+                2,
+                2,
+                2,
+                6,
+                2,
+                2,
+                2,
+                6,
+                4,
+                6,
+                4,
+                6,
+                4,
+                4,
+                6,
+                2,
+                6,
+                2,
+                4,
+                6,
+                4,
+                4,
+                2
+              ],
+              "delays": [],
+              "errors": 78,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                2,
+                3,
+                1,
+                1,
+                3,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                4,
+                2,
+                2,
+                null
+              ],
+              "false_switches": 13,
+              "shots": 12288,
+              "switches": 17
+            },
+            "utility": {
+              "censored": 1,
+              "chosen": [
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                7,
+                7,
+                2,
+                2,
+                1,
+                1,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ],
+              "delays": [],
+              "errors": 82,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                2,
+                3,
+                1,
+                1,
+                3,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                4,
+                2,
+                2,
+                null
+              ],
+              "false_switches": 3,
+              "shots": 12288,
+              "switches": 5
+            }
+          },
+          "sequence": [
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "nominal",
+            "data_heavy",
+            "nominal",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "data_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "nominal",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 1,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                6,
+                6,
+                6,
+                6,
+                6,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                5,
+                5,
+                5,
+                5
+              ],
+              "delays": [],
+              "errors": 68,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                3,
+                3,
+                1,
+                1,
+                1,
+                4,
+                4,
+                1,
+                1,
+                null,
+                1,
+                4,
+                1
+              ],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 3
+            },
+            "regime_matched": {
+              "censored": 1,
+              "chosen": [
+                1,
+                4,
+                2,
+                4,
+                4,
+                4,
+                2,
+                6,
+                6,
+                6,
+                4,
+                6,
+                2,
+                2,
+                6,
+                2,
+                6,
+                2,
+                4,
+                4,
+                4,
+                4,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 65,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                3,
+                3,
+                1,
+                1,
+                1,
+                4,
+                4,
+                1,
+                1,
+                null,
+                1,
+                4,
+                1
+              ],
+              "false_switches": 12,
+              "shots": 12288,
+              "switches": 14
+            },
+            "utility": {
+              "censored": 1,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                7,
+                7,
+                7,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 66,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                3,
+                3,
+                1,
+                1,
+                1,
+                4,
+                4,
+                1,
+                1,
+                null,
+                1,
+                4,
+                1
+              ],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 3
+            }
+          },
+          "sequence": [
+            "measurement_heavy",
+            "nominal",
+            "measurement_heavy",
+            "nominal",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "data_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 1,
+              "chosen": [
+                1,
+                1,
+                6,
+                6,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6
+              ],
+              "delays": [],
+              "errors": 93,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1,
+                7,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                null
+              ],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 3
+            },
+            "regime_matched": {
+              "censored": 1,
+              "chosen": [
+                1,
+                6,
+                2,
+                2,
+                2,
+                2,
+                2,
+                6,
+                4,
+                2,
+                2,
+                2,
+                6,
+                6,
+                4,
+                6,
+                6,
+                2,
+                4,
+                2,
+                6,
+                4,
+                6,
+                2
+              ],
+              "delays": [],
+              "errors": 92,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1,
+                7,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                null
+              ],
+              "false_switches": 14,
+              "shots": 12288,
+              "switches": 15
+            },
+            "utility": {
+              "censored": 1,
+              "chosen": [
+                1,
+                1,
+                7,
+                7,
+                2,
+                2,
+                2,
+                2,
+                2,
+                7,
+                7,
+                2,
+                2,
+                2,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ],
+              "delays": [],
+              "errors": 91,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1,
+                7,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                null
+              ],
+              "false_switches": 3,
+              "shots": 12288,
+              "switches": 5
+            }
+          },
+          "sequence": [
+            "data_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "data_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "nominal",
+            "measurement_heavy",
+            "data_heavy",
+            "nominal",
+            "data_heavy",
+            "measurement_heavy"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 2,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 62,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                3,
+                1,
+                1,
+                1,
+                1,
+                5,
+                1,
+                null,
+                1,
+                3,
+                1,
+                1,
+                1,
+                null,
+                1
+              ],
+              "false_switches": 1,
+              "shots": 12288,
+              "switches": 2
+            },
+            "regime_matched": {
+              "censored": 2,
+              "chosen": [
+                1,
+                4,
+                6,
+                4,
+                2,
+                4,
+                6,
+                2,
+                6,
+                6,
+                4,
+                4,
+                4,
+                6,
+                2,
+                2,
+                4,
+                2,
+                4,
+                2,
+                6,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 67,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                3,
+                1,
+                1,
+                1,
+                1,
+                5,
+                1,
+                null,
+                1,
+                3,
+                1,
+                1,
+                1,
+                null,
+                1
+              ],
+              "false_switches": 12,
+              "shots": 12288,
+              "switches": 17
+            },
+            "utility": {
+              "censored": 2,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 64,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                3,
+                1,
+                1,
+                1,
+                1,
+                5,
+                1,
+                null,
+                1,
+                3,
+                1,
+                1,
+                1,
+                null,
+                1
+              ],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 3
+            }
+          },
+          "sequence": [
+            "nominal",
+            "nominal",
+            "data_heavy",
+            "nominal",
+            "measurement_heavy",
+            "nominal",
+            "data_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "nominal",
+            "data_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "nominal",
+            "measurement_heavy",
+            "nominal",
+            "measurement_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy"
+          ]
+        }
+      ],
+      "rapid": [
+        {
+          "policies": {
+            "ml": {
+              "censored": 1,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                2,
+                2,
+                2,
+                2,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 81,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                2,
+                1,
+                1,
+                2,
+                1,
+                6,
+                1,
+                1,
+                1,
+                null
+              ],
+              "false_switches": 3,
+              "shots": 12288,
+              "switches": 3
+            },
+            "regime_matched": {
+              "censored": 1,
+              "chosen": [
+                1,
+                6,
+                4,
+                4,
+                2,
+                2,
+                6,
+                6,
+                4,
+                4,
+                2,
+                2,
+                6,
+                6,
+                4,
+                4,
+                2,
+                2,
+                6,
+                6,
+                4,
+                4,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 74,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                2,
+                1,
+                1,
+                2,
+                1,
+                6,
+                1,
+                1,
+                1,
+                null
+              ],
+              "false_switches": 8,
+              "shots": 12288,
+              "switches": 12
+            },
+            "utility": {
+              "censored": 1,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1
+              ],
+              "delays": [],
+              "errors": 84,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                2,
+                1,
+                1,
+                2,
+                1,
+                6,
+                1,
+                1,
+                1,
+                null
+              ],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 2
+            }
+          },
+          "sequence": [
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                4,
+                4,
+                4,
+                4,
+                4,
+                6,
+                6,
+                6
+              ],
+              "delays": [],
+              "errors": 109,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                6,
+                1,
+                1,
+                2,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                1
+              ],
+              "false_switches": 3,
+              "shots": 12288,
+              "switches": 3
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                6,
+                4,
+                4,
+                2,
+                2,
+                6,
+                6,
+                4,
+                4,
+                2,
+                2,
+                6,
+                6,
+                4,
+                4,
+                2,
+                2,
+                6,
+                6,
+                4,
+                4,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 100,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                6,
+                1,
+                1,
+                2,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                1
+              ],
+              "false_switches": 8,
+              "shots": 12288,
+              "switches": 12
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                7,
+                7,
+                7
+              ],
+              "delays": [],
+              "errors": 110,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                6,
+                1,
+                1,
+                2,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                1
+              ],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 3
+            }
+          },
+          "sequence": [
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 1,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                2,
+                2,
+                6,
+                6,
+                6,
+                6,
+                2,
+                2,
+                6,
+                6,
+                6,
+                6
+              ],
+              "delays": [],
+              "errors": 91,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                null
+              ],
+              "false_switches": 5,
+              "shots": 12288,
+              "switches": 5
+            },
+            "regime_matched": {
+              "censored": 1,
+              "chosen": [
+                1,
+                6,
+                4,
+                4,
+                2,
+                2,
+                6,
+                6,
+                4,
+                4,
+                2,
+                2,
+                6,
+                6,
+                4,
+                4,
+                2,
+                2,
+                6,
+                6,
+                4,
+                4,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 76,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                null
+              ],
+              "false_switches": 10,
+              "shots": 12288,
+              "switches": 12
+            },
+            "utility": {
+              "censored": 1,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                7,
+                7,
+                1,
+                1,
+                1,
+                2,
+                2,
+                7,
+                7,
+                7,
+                7,
+                2,
+                2,
+                7,
+                7,
+                7,
+                7
+              ],
+              "delays": [],
+              "errors": 91,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                null
+              ],
+              "false_switches": 4,
+              "shots": 12288,
+              "switches": 6
+            }
+          },
+          "sequence": [
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 1,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                6,
+                6,
+                6,
+                6,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 109,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                1,
+                1,
+                null,
+                1
+              ],
+              "false_switches": 3,
+              "shots": 12288,
+              "switches": 3
+            },
+            "regime_matched": {
+              "censored": 1,
+              "chosen": [
+                1,
+                6,
+                4,
+                4,
+                2,
+                2,
+                6,
+                6,
+                4,
+                4,
+                2,
+                2,
+                6,
+                6,
+                4,
+                4,
+                2,
+                2,
+                6,
+                6,
+                4,
+                4,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 99,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                1,
+                1,
+                null,
+                1
+              ],
+              "false_switches": 10,
+              "shots": 12288,
+              "switches": 12
+            },
+            "utility": {
+              "censored": 1,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                7,
+                7,
+                7,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 108,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                1,
+                1,
+                null,
+                1
+              ],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 3
+            }
+          },
+          "sequence": [
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy",
+            "data_heavy",
+            "data_heavy",
+            "nominal",
+            "nominal",
+            "measurement_heavy",
+            "measurement_heavy"
+          ]
+        }
+      ],
+      "slow": [
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                2,
+                2,
+                2,
+                2,
+                2,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 60,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                2,
+                1
+              ],
+              "false_switches": 0,
+              "shots": 12288,
+              "switches": 3
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 64,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                2,
+                1
+              ],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 3
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "delays": [],
+              "errors": 60,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                2,
+                1
+              ],
+              "false_switches": 1,
+              "shots": 12288,
+              "switches": 4
+            }
+          },
+          "sequence": [
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 96,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 0,
+              "shots": 12288,
+              "switches": 3
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 96,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 3,
+              "shots": 12288,
+              "switches": 3
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "delays": [],
+              "errors": 94,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 0,
+              "shots": 12288,
+              "switches": 3
+            }
+          },
+          "sequence": [
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 95,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 0,
+              "shots": 12288,
+              "switches": 3
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 94,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 1,
+              "shots": 12288,
+              "switches": 3
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "delays": [],
+              "errors": 94,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                1
+              ],
+              "false_switches": 0,
+              "shots": 12288,
+              "switches": 3
+            }
+          },
+          "sequence": [
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                7,
+                7,
+                7,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 94,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                3
+              ],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 4
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 96,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                3
+              ],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 3
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 91,
+              "estimate": [],
+              "estimator_delay_blocks": [
+                1,
+                3
+              ],
+              "false_switches": 1,
+              "shots": 12288,
+              "switches": 3
+            }
+          },
+          "sequence": [
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "data_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "measurement_heavy",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal"
+          ]
+        }
+      ],
+      "stationary": [
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                2,
+                2,
+                2,
+                4,
+                4,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 60,
+              "estimate": [],
+              "estimator_delay_blocks": [],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 4
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 57,
+              "estimate": [],
+              "estimator_delay_blocks": [],
+              "false_switches": 1,
+              "shots": 12288,
+              "switches": 1
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 57,
+              "estimate": [],
+              "estimator_delay_blocks": [],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 3
+            }
+          },
+          "sequence": [
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 66,
+              "estimate": [],
+              "estimator_delay_blocks": [],
+              "false_switches": 0,
+              "shots": 12288,
+              "switches": 1
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 66,
+              "estimate": [],
+              "estimator_delay_blocks": [],
+              "false_switches": 1,
+              "shots": 12288,
+              "switches": 1
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2
+              ],
+              "delays": [],
+              "errors": 66,
+              "estimate": [],
+              "estimator_delay_blocks": [],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 3
+            }
+          },
+          "sequence": [
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 63,
+              "estimate": [],
+              "estimator_delay_blocks": [],
+              "false_switches": 0,
+              "shots": 12288,
+              "switches": 1
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 63,
+              "estimate": [],
+              "estimator_delay_blocks": [],
+              "false_switches": 0,
+              "shots": 12288,
+              "switches": 1
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "delays": [],
+              "errors": 63,
+              "estimate": [],
+              "estimator_delay_blocks": [],
+              "false_switches": 0,
+              "shots": 12288,
+              "switches": 0
+            }
+          },
+          "sequence": [
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal"
+          ]
+        },
+        {
+          "policies": {
+            "ml": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                3,
+                3
+              ],
+              "delays": [],
+              "errors": 74,
+              "estimate": [],
+              "estimator_delay_blocks": [],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 3
+            },
+            "regime_matched": {
+              "censored": 0,
+              "chosen": [
+                1,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "delays": [],
+              "errors": 71,
+              "estimate": [],
+              "estimator_delay_blocks": [],
+              "false_switches": 1,
+              "shots": 12288,
+              "switches": 1
+            },
+            "utility": {
+              "censored": 0,
+              "chosen": [
+                1,
+                1,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                7,
+                7
+              ],
+              "delays": [],
+              "errors": 72,
+              "estimate": [],
+              "estimator_delay_blocks": [],
+              "false_switches": 2,
+              "shots": 12288,
+              "switches": 3
+            }
+          },
+          "sequence": [
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal",
+            "nominal"
+          ]
+        }
+      ]
+    },
+    "dynamic_seed_start": 103000001,
+    "evaluation_seed_start": 102000001,
+    "grid": [
+      [
+        0.001,
+        0.001
+      ],
+      [
+        0.001,
+        0.003
+      ],
+      [
+        0.001,
+        0.006
+      ],
+      [
+        0.003,
+        0.001
+      ],
+      [
+        0.003,
+        0.003
+      ],
+      [
+        0.003,
+        0.006
+      ],
+      [
+        0.006,
+        0.001
+      ],
+      [
+        0.006,
+        0.003
+      ],
+      [
+        0.006,
+        0.006
+      ]
+    ],
+    "pairwise_disagreements": [
+      [
+        0,
+        41,
+        208,
+        178,
+        0,
+        24,
+        237,
+        178,
+        0
+      ],
+      [
+        41,
+        0,
+        167,
+        219,
+        41,
+        17,
+        278,
+        219,
+        41
+      ],
+      [
+        208,
+        167,
+        0,
+        382,
+        208,
+        184,
+        441,
+        382,
+        208
+      ],
+      [
+        178,
+        219,
+        382,
+        0,
+        178,
+        202,
+        59,
+        0,
+        178
+      ],
+      [
+        0,
+        41,
+        208,
+        178,
+        0,
+        24,
+        237,
+        178,
+        0
+      ],
+      [
+        24,
+        17,
+        184,
+        202,
+        24,
+        0,
+        261,
+        202,
+        24
+      ],
+      [
+        237,
+        278,
+        441,
+        59,
+        237,
+        261,
+        0,
+        59,
+        237
+      ],
+      [
+        178,
+        219,
+        382,
+        0,
+        178,
+        202,
+        59,
+        0,
+        178
+      ],
+      [
+        0,
+        41,
+        208,
+        178,
+        0,
+        24,
+        237,
+        178,
+        0
+      ]
+    ],
+    "regime_decoder_mapping": {
+      "data_heavy": 6,
+      "measurement_heavy": 2,
+      "nominal": 4
+    },
+    "seed_level_stationary": [
+      {
+        "errors": [
+          146,
+          150,
+          164,
+          135,
+          146,
+          151,
+          137,
+          135,
+          146
+        ],
+        "regime": "data_heavy",
+        "replicate": 0
+      },
+      {
+        "errors": [
+          120,
+          117,
+          141,
+          131,
+          120,
+          121,
+          131,
+          131,
+          120
+        ],
+        "regime": "data_heavy",
+        "replicate": 1
+      },
+      {
+        "errors": [
+          123,
+          120,
+          133,
+          128,
+          123,
+          122,
+          134,
+          128,
+          123
+        ],
+        "regime": "data_heavy",
+        "replicate": 2
+      },
+      {
+        "errors": [
+          60,
+          59,
+          60,
+          65,
+          60,
+          58,
+          65,
+          65,
+          60
+        ],
+        "regime": "nominal",
+        "replicate": 0
+      },
+      {
+        "errors": [
+          45,
+          42,
+          47,
+          44,
+          45,
+          43,
+          50,
+          44,
+          45
+        ],
+        "regime": "nominal",
+        "replicate": 1
+      },
+      {
+        "errors": [
+          52,
+          50,
+          55,
+          53,
+          52,
+          52,
+          52,
+          53,
+          52
+        ],
+        "regime": "nominal",
+        "replicate": 2
+      },
+      {
+        "errors": [
+          21,
+          22,
+          20,
+          23,
+          21,
+          23,
+          23,
+          23,
+          21
+        ],
+        "regime": "measurement_heavy",
+        "replicate": 0
+      },
+      {
+        "errors": [
+          20,
+          18,
+          17,
+          28,
+          20,
+          20,
+          31,
+          28,
+          20
+        ],
+        "regime": "measurement_heavy",
+        "replicate": 1
+      },
+      {
+        "errors": [
+          19,
+          19,
+          17,
+          27,
+          19,
+          18,
+          28,
+          27,
+          19
+        ],
+        "regime": "measurement_heavy",
+        "replicate": 2
+      }
+    ],
+    "selected_best_decoders": {
+      "data_heavy": 7,
+      "measurement_heavy": 2,
+      "nominal": 1
+    },
+    "stationary_evaluation": {
+      "data_heavy": {
+        "best_calibrated_decoder": 7,
+        "errors": [
+          389,
+          387,
+          438,
+          394,
+          389,
+          394,
+          402,
+          394,
+          389
+        ],
+        "rates": [
+          0.012966666666666666,
+          0.0129,
+          0.0146,
+          0.013133333333333334,
+          0.012966666666666666,
+          0.013133333333333334,
+          0.0134,
+          0.013133333333333334,
+          0.012966666666666666
+        ],
+        "shots": 30000
+      },
+      "measurement_heavy": {
+        "best_calibrated_decoder": 2,
+        "errors": [
+          60,
+          59,
+          54,
+          78,
+          60,
+          61,
+          82,
+          78,
+          60
+        ],
+        "rates": [
+          0.002,
+          0.0019666666666666665,
+          0.0018,
+          0.0026,
+          0.002,
+          0.002033333333333333,
+          0.0027333333333333333,
+          0.0026,
+          0.002
+        ],
+        "shots": 30000
+      },
+      "nominal": {
+        "best_calibrated_decoder": 1,
+        "errors": [
+          157,
+          151,
+          162,
+          162,
+          157,
+          153,
+          167,
+          162,
+          157
+        ],
+        "rates": [
+          0.005233333333333334,
+          0.005033333333333333,
+          0.0054,
+          0.0054,
+          0.005233333333333334,
+          0.0051,
+          0.005566666666666667,
+          0.0054,
+          0.005233333333333334
+        ],
+        "shots": 30000
+      }
+    }
+  },
+  "phase5e_findings": "# Phase 5E findings\n\nDevelopment-only audit; Stage 2 and all confirmatory data were untouched. The prior Phase 5D disagreement matrix was accumulated across regimes and therefore repeated as a pooled matrix; Phase 5E recomputes separate matrices.\n\n## Graph audit\n\n| ID | Parameters | edges | edge-weight signature | DEM hash |\n|---:|---|---:|---|---|\n| 0 | [0.001, 0.001] | 142 | 8c3ef0fff10a | 955fe2cb4cc1 |\n| 1 | [0.001, 0.003] | 142 | 65b5aaaece54 | e52a6d13c1e5 |\n| 2 | [0.001, 0.006] | 142 | d5ff763841bc | 94f8dbf675c0 |\n| 3 | [0.003, 0.001] | 142 | 6b8eda8b8da8 | 5e9161d22b88 |\n| 4 | [0.003, 0.003] | 142 | 2d23fcb8e295 | 9d2b75aa2bf8 |\n| 5 | [0.003, 0.006] | 142 | 2a424b0d4358 | 8cf1dc393d6d |\n| 6 | [0.006, 0.001] | 142 | 785f534ace7d | cfa9d0f5e193 |\n| 7 | [0.006, 0.003] | 142 | 9d69b7525168 | 3df9e388c0e9 |\n| 8 | [0.006, 0.006] | 142 | f87d771c51ad | 5204e1ab17ca |\n\nAll nine graph signatures and DEM hashes are distinct; several prediction behaviors are equivalent on sampled syndromes but graph construction is not identical. Zero sampled disagreement is evidence only for those sampled distributions.\n\n## Per-regime performance\n\n### data_heavy: 30000 shots\n\n| Decoder | Errors | LER |\n|---:|---:|---:|\n| 0 | 430 | 0.014333 |\n| 1 | 434 | 0.014467 |\n| 2 | 471 | 0.015700 |\n| 3 | 404 | 0.013467 |\n| 4 | 430 | 0.014333 |\n| 5 | 434 | 0.014467 |\n| 6 | 418 | 0.013933 |\n| 7 | 405 | 0.013500 |\n| 8 | 430 | 0.014333 |\n### nominal: 30000 shots\n\n| Decoder | Errors | LER |\n|---:|---:|---:|\n| 0 | 150 | 0.005000 |\n| 1 | 146 | 0.004867 |\n| 2 | 147 | 0.004900 |\n| 3 | 155 | 0.005167 |\n| 4 | 150 | 0.005000 |\n| 5 | 150 | 0.005000 |\n| 6 | 161 | 0.005367 |\n| 7 | 154 | 0.005133 |\n| 8 | 150 | 0.005000 |\n### measurement_heavy: 30000 shots\n\n| Decoder | Errors | LER |\n|---:|---:|---:|\n| 0 | 66 | 0.002200 |\n| 1 | 64 | 0.002133 |\n| 2 | 57 | 0.001900 |\n| 3 | 82 | 0.002733 |\n| 4 | 66 | 0.002200 |\n| 5 | 66 | 0.002200 |\n| 6 | 86 | 0.002867 |\n| 7 | 82 | 0.002733 |\n| 8 | 66 | 0.002200 |\n\nCalibration selected indices: {\"data_heavy\": 3, \"nominal\": 0, \"measurement_heavy\": 1}. A single global fixed candidate selected: 0. Calibration used three roots/regime; rankings remain uncertain.\n\n## Replicated schedule summaries\n\n| Schedule | Policy | LER |\n|---|---|---:|\n| stationary | pooled_fixed | 0.004557 |\n| stationary | best_global_fixed | 0.004774 |\n| stationary | calibrated_regime_policy | 0.004774 |\n| stationary | regime_matched | 0.004774 |\n| stationary | hindsight_diagnostic | 0.003689 |\n| stationary | adaptive_ml | 0.004557 |\n| stationary | adaptive_utility | 0.004557 |\n| slow | pooled_fixed | 0.011068 |\n| slow | best_global_fixed | 0.010959 |\n| slow | calibrated_regime_policy | 0.010851 |\n| slow | regime_matched | 0.010308 |\n| slow | hindsight_diagnostic | 0.009006 |\n| slow | adaptive_ml | 0.011068 |\n| slow | adaptive_utility | 0.011068 |\n| rapid | pooled_fixed | 0.008138 |\n| rapid | best_global_fixed | 0.008247 |\n| rapid | calibrated_regime_policy | 0.008681 |\n| rapid | regime_matched | 0.008898 |\n| rapid | hindsight_diagnostic | 0.007595 |\n| rapid | adaptive_ml | 0.008138 |\n| rapid | adaptive_utility | 0.008138 |\n| random | pooled_fixed | 0.008572 |\n| random | best_global_fixed | 0.008572 |\n| random | calibrated_regime_policy | 0.008464 |\n| random | regime_matched | 0.009115 |\n| random | hindsight_diagnostic | 0.007595 |\n| random | adaptive_ml | 0.008572 |\n| random | adaptive_utility | 0.008572 |\n\n## Decision\n\nRecommendation: **B. Redesign decoder bank or noise-model representation before investing further in switching.** Decoder correction differences are real but sparse and regime rankings conflict with the preselected regime-matched IDs. The regime-matched mapping and adaptive ML are not guaranteed optimal. The hindsight diagnostic is intentionally optimistic. Four development replicates/schedule with short schedules do not establish superiority. The current bank has nine distinct DEM/weight graphs, so observed equivalences are decoding-decision equivalences on sampled syndromes rather than duplicate graph construction.\n\nNo confirmatory experiment was run. Stim only models Pauli channels here; correlated/burst noise was not added in this sprint.\n",
+  "prototype_dynamic": {
+    "choice_audit": [
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_00_stationary_rep00.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_00_stationary_rep01.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_00_stationary_rep02.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_00_stationary_rep03.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_00_stationary_rep04.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_00_stationary_rep05.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_00_stationary_rep06.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_00_stationary_rep07.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_00_stationary_rep08.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_00_stationary_rep09.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_01_data_to_measurement_rep00.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_01_data_to_measurement_rep01.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_01_data_to_measurement_rep02.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_01_data_to_measurement_rep03.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_01_data_to_measurement_rep04.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_01_data_to_measurement_rep05.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_01_data_to_measurement_rep06.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_01_data_to_measurement_rep07.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_01_data_to_measurement_rep08.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_01_data_to_measurement_rep09.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_02_measurement_to_data_rep00.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_02_measurement_to_data_rep01.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_02_measurement_to_data_rep02.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_02_measurement_to_data_rep03.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_02_measurement_to_data_rep04.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_02_measurement_to_data_rep05.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_02_measurement_to_data_rep06.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_02_measurement_to_data_rep07.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_02_measurement_to_data_rep08.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_02_measurement_to_data_rep09.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_03_nominal_measurement_nominal_rep00.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_03_nominal_measurement_nominal_rep01.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_03_nominal_measurement_nominal_rep02.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_03_nominal_measurement_nominal_rep03.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_03_nominal_measurement_nominal_rep04.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_03_nominal_measurement_nominal_rep05.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_03_nominal_measurement_nominal_rep06.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_03_nominal_measurement_nominal_rep07.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_03_nominal_measurement_nominal_rep08.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_03_nominal_measurement_nominal_rep09.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_04_rapid_cycle_rep00.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_04_rapid_cycle_rep01.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_04_rapid_cycle_rep02.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_04_rapid_cycle_rep03.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_04_rapid_cycle_rep04.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_04_rapid_cycle_rep05.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_04_rapid_cycle_rep06.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_04_rapid_cycle_rep07.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_04_rapid_cycle_rep08.npz",
+        "stored_adaptive_matches_chosen_model": true
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "file": "eval_04_rapid_cycle_rep09.npz",
+        "stored_adaptive_matches_chosen_model": true
+      }
+    ],
+    "schedules": {
+      "00_stationary": {
+        "adaptive_errors": 300,
+        "adaptive_ler": 0.0048828125,
+        "adaptive_minus_pooled_errors": 0,
+        "adaptive_minus_pooled_ler": 0.0,
+        "choice_sequences_match_saved_adaptive_predictions": true,
+        "hindsight_state_matched_errors": 279,
+        "hindsight_state_matched_ler": 0.004541015625,
+        "nominal_errors": 301,
+        "per_block_hindsight_oracle_errors": 234,
+        "per_block_hindsight_oracle_ler": 0.00380859375,
+        "per_shot_bank_oracle_errors": 200,
+        "per_shot_bank_oracle_ler": 0.0032552083333333335,
+        "pooled_fixed_errors": 300,
+        "pooled_fixed_ler": 0.0048828125,
+        "roots": 10,
+        "shots": 61440
+      },
+      "01_data_to_measurement": {
+        "adaptive_errors": 489,
+        "adaptive_ler": 0.007958984375,
+        "adaptive_minus_pooled_errors": 0,
+        "adaptive_minus_pooled_ler": 0.0,
+        "choice_sequences_match_saved_adaptive_predictions": true,
+        "hindsight_state_matched_errors": 451,
+        "hindsight_state_matched_ler": 0.007340494791666667,
+        "nominal_errors": 485,
+        "per_block_hindsight_oracle_errors": 418,
+        "per_block_hindsight_oracle_ler": 0.006803385416666667,
+        "per_shot_bank_oracle_errors": 339,
+        "per_shot_bank_oracle_ler": 0.005517578125,
+        "pooled_fixed_errors": 489,
+        "pooled_fixed_ler": 0.007958984375,
+        "roots": 10,
+        "shots": 61440
+      },
+      "02_measurement_to_data": {
+        "adaptive_errors": 517,
+        "adaptive_ler": 0.008414713541666667,
+        "adaptive_minus_pooled_errors": 0,
+        "adaptive_minus_pooled_ler": 0.0,
+        "choice_sequences_match_saved_adaptive_predictions": true,
+        "hindsight_state_matched_errors": 472,
+        "hindsight_state_matched_ler": 0.007682291666666666,
+        "nominal_errors": 515,
+        "per_block_hindsight_oracle_errors": 431,
+        "per_block_hindsight_oracle_ler": 0.0070149739583333336,
+        "per_shot_bank_oracle_errors": 361,
+        "per_shot_bank_oracle_ler": 0.005875651041666667,
+        "pooled_fixed_errors": 517,
+        "pooled_fixed_ler": 0.008414713541666667,
+        "roots": 10,
+        "shots": 61440
+      },
+      "03_nominal_measurement_nominal": {
+        "adaptive_errors": 244,
+        "adaptive_ler": 0.0039713541666666664,
+        "adaptive_minus_pooled_errors": 0,
+        "adaptive_minus_pooled_ler": 0.0,
+        "choice_sequences_match_saved_adaptive_predictions": true,
+        "hindsight_state_matched_errors": 222,
+        "hindsight_state_matched_ler": 0.00361328125,
+        "nominal_errors": 241,
+        "per_block_hindsight_oracle_errors": 203,
+        "per_block_hindsight_oracle_ler": 0.0033040364583333333,
+        "per_shot_bank_oracle_errors": 179,
+        "per_shot_bank_oracle_ler": 0.0029134114583333334,
+        "pooled_fixed_errors": 244,
+        "pooled_fixed_ler": 0.0039713541666666664,
+        "roots": 10,
+        "shots": 61440
+      },
+      "04_rapid_cycle": {
+        "adaptive_errors": 439,
+        "adaptive_ler": 0.0071451822916666664,
+        "adaptive_minus_pooled_errors": 0,
+        "adaptive_minus_pooled_ler": 0.0,
+        "choice_sequences_match_saved_adaptive_predictions": true,
+        "hindsight_state_matched_errors": 409,
+        "hindsight_state_matched_ler": 0.0066569010416666664,
+        "nominal_errors": 434,
+        "per_block_hindsight_oracle_errors": 384,
+        "per_block_hindsight_oracle_ler": 0.00625,
+        "per_shot_bank_oracle_errors": 331,
+        "per_shot_bank_oracle_ler": 0.005387369791666667,
+        "pooled_fixed_errors": 439,
+        "pooled_fixed_ler": 0.0071451822916666664,
+        "roots": 10,
+        "shots": 61440
+      }
+    },
+    "total_roots": 50,
+    "total_shots": 307200
+  }
+}

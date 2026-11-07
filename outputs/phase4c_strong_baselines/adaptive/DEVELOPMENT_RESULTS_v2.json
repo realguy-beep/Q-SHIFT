@@ -1,0 +1,1532 @@
+{
+  "utility_table_shape": [
+    3,
+    9
+  ],
+  "utility_development": [
+    [
+      0.0145,
+      0.01525,
+      0.017,
+      0.014,
+      0.0145,
+      0.0155,
+      0.015,
+      0.014,
+      0.0145
+    ],
+    [
+      0.007,
+      0.007,
+      0.0075,
+      0.00675,
+      0.007,
+      0.007,
+      0.00775,
+      0.00675,
+      0.007
+    ],
+    [
+      0.002,
+      0.002,
+      0.001,
+      0.00425,
+      0.002,
+      0.00225,
+      0.0045,
+      0.00425,
+      0.002
+    ]
+  ],
+  "schedules": {
+    "data_to_measurement": {
+      "sequence": [
+        "data_heavy",
+        "data_heavy",
+        "data_heavy",
+        "data_heavy",
+        "measurement_heavy",
+        "measurement_heavy",
+        "measurement_heavy",
+        "measurement_heavy"
+      ],
+      "ml": {
+        "shots": 1024,
+        "errors": {
+          "pooled_fixed": 13,
+          "nominal_fixed": 12,
+          "static_calibrated": 11,
+          "adaptive": 13,
+          "oracle": 10
+        },
+        "rates": {
+          "pooled_fixed": 0.0126953125,
+          "nominal_fixed": 0.01171875,
+          "static_calibrated": 0.0107421875,
+          "adaptive": 0.0126953125,
+          "oracle": 0.009765625
+        },
+        "paired_vs_pooled": {
+          "pooled_fixed": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "nominal_fixed": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "static_calibrated": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "adaptive": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "oracle": {
+            "candidate_only": 0,
+            "block_paired": true
+          }
+        },
+        "switches": 0,
+        "false_switches": 0,
+        "transition_detection_delay_blocks": [
+          1
+        ],
+        "mean_detection_delay_blocks": 1.0,
+        "censored_transitions": 0,
+        "chosen_decoder_sequence": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "blocks": [
+          {
+            "block": 0,
+            "state": "data_heavy",
+            "estimate_regime": null,
+            "chosen_decoder": 1,
+            "samples_hash": "e1501409e26cce13c2257fbc0f846c0b8a4195468e5ad454700a5190b37fdaae",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 1,
+            "state": "data_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 1,
+            "samples_hash": "59534008bede21a93ec8b9938bcac4e7a954986f7e2f0073bd16169ad5cf39cb",
+            "errors": {
+              "pooled_fixed": 4,
+              "nominal_fixed": 3,
+              "static_calibrated": 3,
+              "adaptive": 4,
+              "oracle": 3
+            }
+          },
+          {
+            "block": 2,
+            "state": "data_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 1,
+            "samples_hash": "4f9f675a1c96a94857e15e48b8513c2af5d12618e79a7a6067e8d085266d169c",
+            "errors": {
+              "pooled_fixed": 3,
+              "nominal_fixed": 3,
+              "static_calibrated": 3,
+              "adaptive": 3,
+              "oracle": 3
+            }
+          },
+          {
+            "block": 3,
+            "state": "data_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 1,
+            "samples_hash": "5b9a2a67fb0dd97e4bffd3dbdf8437e5dd0a3b01685f40a5928b6d8c5bbefdfa",
+            "errors": {
+              "pooled_fixed": 5,
+              "nominal_fixed": 5,
+              "static_calibrated": 4,
+              "adaptive": 5,
+              "oracle": 4
+            }
+          },
+          {
+            "block": 4,
+            "state": "measurement_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 1,
+            "samples_hash": "22b272c9626a113cdbca19fbbd0d6ad71cc0eae8776ebf29882cec3d8a367ada",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 5,
+            "state": "measurement_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 1,
+            "samples_hash": "1db14188b331f81d2ec61273304f6295600444e0c1c6f2bb614afaafd00e3c2a",
+            "errors": {
+              "pooled_fixed": 1,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 1,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 6,
+            "state": "measurement_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 1,
+            "samples_hash": "b0461692d45ec17adaf5c8c2b28a8074df06a9a5c4294224e8dd1d5b87380310",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 7,
+            "state": "measurement_heavy",
+            "estimate_regime": 1,
+            "chosen_decoder": 1,
+            "samples_hash": "4432ff32bc0ae14a33e8e76a7d3a9aa2d3d955ea9a7132c515d16b84cf00d160",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          }
+        ],
+        "decode_seconds": 0.0016949999990174547,
+        "selection_is_previous_block_only": true
+      },
+      "utility": {
+        "shots": 1024,
+        "errors": {
+          "pooled_fixed": 13,
+          "nominal_fixed": 12,
+          "static_calibrated": 11,
+          "adaptive": 12,
+          "oracle": 10
+        },
+        "rates": {
+          "pooled_fixed": 0.0126953125,
+          "nominal_fixed": 0.01171875,
+          "static_calibrated": 0.0107421875,
+          "adaptive": 0.01171875,
+          "oracle": 0.009765625
+        },
+        "paired_vs_pooled": {
+          "pooled_fixed": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "nominal_fixed": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "static_calibrated": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "adaptive": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "oracle": {
+            "candidate_only": 0,
+            "block_paired": true
+          }
+        },
+        "switches": 1,
+        "false_switches": 1,
+        "transition_detection_delay_blocks": [
+          1
+        ],
+        "mean_detection_delay_blocks": 1.0,
+        "censored_transitions": 0,
+        "chosen_decoder_sequence": [
+          1,
+          1,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "blocks": [
+          {
+            "block": 0,
+            "state": "data_heavy",
+            "estimate_regime": null,
+            "chosen_decoder": 1,
+            "samples_hash": "e1501409e26cce13c2257fbc0f846c0b8a4195468e5ad454700a5190b37fdaae",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 1,
+            "state": "data_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 1,
+            "samples_hash": "59534008bede21a93ec8b9938bcac4e7a954986f7e2f0073bd16169ad5cf39cb",
+            "errors": {
+              "pooled_fixed": 4,
+              "nominal_fixed": 3,
+              "static_calibrated": 3,
+              "adaptive": 4,
+              "oracle": 3
+            }
+          },
+          {
+            "block": 2,
+            "state": "data_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 3,
+            "samples_hash": "4f9f675a1c96a94857e15e48b8513c2af5d12618e79a7a6067e8d085266d169c",
+            "errors": {
+              "pooled_fixed": 3,
+              "nominal_fixed": 3,
+              "static_calibrated": 3,
+              "adaptive": 3,
+              "oracle": 3
+            }
+          },
+          {
+            "block": 3,
+            "state": "data_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 3,
+            "samples_hash": "5b9a2a67fb0dd97e4bffd3dbdf8437e5dd0a3b01685f40a5928b6d8c5bbefdfa",
+            "errors": {
+              "pooled_fixed": 5,
+              "nominal_fixed": 5,
+              "static_calibrated": 4,
+              "adaptive": 4,
+              "oracle": 4
+            }
+          },
+          {
+            "block": 4,
+            "state": "measurement_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 3,
+            "samples_hash": "22b272c9626a113cdbca19fbbd0d6ad71cc0eae8776ebf29882cec3d8a367ada",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 5,
+            "state": "measurement_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 3,
+            "samples_hash": "1db14188b331f81d2ec61273304f6295600444e0c1c6f2bb614afaafd00e3c2a",
+            "errors": {
+              "pooled_fixed": 1,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 1,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 6,
+            "state": "measurement_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 3,
+            "samples_hash": "b0461692d45ec17adaf5c8c2b28a8074df06a9a5c4294224e8dd1d5b87380310",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 7,
+            "state": "measurement_heavy",
+            "estimate_regime": 1,
+            "chosen_decoder": 3,
+            "samples_hash": "4432ff32bc0ae14a33e8e76a7d3a9aa2d3d955ea9a7132c515d16b84cf00d160",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          }
+        ],
+        "decode_seconds": 0.001754799997797818,
+        "selection_is_previous_block_only": true
+      },
+      "same_block_hashes": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "measurement_to_data": {
+      "sequence": [
+        "measurement_heavy",
+        "measurement_heavy",
+        "measurement_heavy",
+        "measurement_heavy",
+        "data_heavy",
+        "data_heavy",
+        "data_heavy",
+        "data_heavy"
+      ],
+      "ml": {
+        "shots": 1024,
+        "errors": {
+          "pooled_fixed": 11,
+          "nominal_fixed": 11,
+          "static_calibrated": 9,
+          "adaptive": 9,
+          "oracle": 9
+        },
+        "rates": {
+          "pooled_fixed": 0.0107421875,
+          "nominal_fixed": 0.0107421875,
+          "static_calibrated": 0.0087890625,
+          "adaptive": 0.0087890625,
+          "oracle": 0.0087890625
+        },
+        "paired_vs_pooled": {
+          "pooled_fixed": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "nominal_fixed": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "static_calibrated": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "adaptive": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "oracle": {
+            "candidate_only": 0,
+            "block_paired": true
+          }
+        },
+        "switches": 1,
+        "false_switches": 1,
+        "transition_detection_delay_blocks": [
+          1
+        ],
+        "mean_detection_delay_blocks": 1.0,
+        "censored_transitions": 0,
+        "chosen_decoder_sequence": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "blocks": [
+          {
+            "block": 0,
+            "state": "measurement_heavy",
+            "estimate_regime": null,
+            "chosen_decoder": 1,
+            "samples_hash": "504afc171364fa19de9e199bf8dab33da96730bb6bfe9ca5351a22b3214f5a80",
+            "errors": {
+              "pooled_fixed": 1,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 1,
+              "oracle": 1
+            }
+          },
+          {
+            "block": 1,
+            "state": "measurement_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 1,
+            "samples_hash": "0213cf51ec5f7cfcab0fd5bf549f78390767caf90686987eed57f02e7e630a3d",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 2,
+            "state": "measurement_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 2,
+            "samples_hash": "983850f18847584d12869da5d16cf5b440db1b5be31ab0bc2a7015b0ed7547c0",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 3,
+            "state": "measurement_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 2,
+            "samples_hash": "ee04bfe475e5f0940ed1ddb959cc3e5ba64b259443386065b30d868926061ac4",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 4,
+            "state": "data_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 2,
+            "samples_hash": "635b6be108b83b879588b56182dec908d8587e943bc588510c3991e7ba1ce4b8",
+            "errors": {
+              "pooled_fixed": 2,
+              "nominal_fixed": 2,
+              "static_calibrated": 2,
+              "adaptive": 2,
+              "oracle": 1
+            }
+          },
+          {
+            "block": 5,
+            "state": "data_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 2,
+            "samples_hash": "9a9b29c1541dd4481f13bbf06afc9ab7e3bdb74d98426a84b782bb3b025e3598",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 6,
+            "state": "data_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 2,
+            "samples_hash": "cbcdf6297d9cccc2e472c718e1f2a065725172d28f8e8510b6e79d5d6f557911",
+            "errors": {
+              "pooled_fixed": 5,
+              "nominal_fixed": 5,
+              "static_calibrated": 3,
+              "adaptive": 3,
+              "oracle": 4
+            }
+          },
+          {
+            "block": 7,
+            "state": "data_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 2,
+            "samples_hash": "70a81308da170232f00a6a941648d69bd197836c8b45488170a7e37ca585d2bc",
+            "errors": {
+              "pooled_fixed": 3,
+              "nominal_fixed": 3,
+              "static_calibrated": 3,
+              "adaptive": 3,
+              "oracle": 3
+            }
+          }
+        ],
+        "decode_seconds": 0.001635399996303022,
+        "selection_is_previous_block_only": true
+      },
+      "utility": {
+        "shots": 1024,
+        "errors": {
+          "pooled_fixed": 11,
+          "nominal_fixed": 11,
+          "static_calibrated": 9,
+          "adaptive": 9,
+          "oracle": 9
+        },
+        "rates": {
+          "pooled_fixed": 0.0107421875,
+          "nominal_fixed": 0.0107421875,
+          "static_calibrated": 0.0087890625,
+          "adaptive": 0.0087890625,
+          "oracle": 0.0087890625
+        },
+        "paired_vs_pooled": {
+          "pooled_fixed": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "nominal_fixed": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "static_calibrated": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "adaptive": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "oracle": {
+            "candidate_only": 0,
+            "block_paired": true
+          }
+        },
+        "switches": 2,
+        "false_switches": 2,
+        "transition_detection_delay_blocks": [
+          1
+        ],
+        "mean_detection_delay_blocks": 1.0,
+        "censored_transitions": 0,
+        "chosen_decoder_sequence": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3
+        ],
+        "blocks": [
+          {
+            "block": 0,
+            "state": "measurement_heavy",
+            "estimate_regime": null,
+            "chosen_decoder": 1,
+            "samples_hash": "504afc171364fa19de9e199bf8dab33da96730bb6bfe9ca5351a22b3214f5a80",
+            "errors": {
+              "pooled_fixed": 1,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 1,
+              "oracle": 1
+            }
+          },
+          {
+            "block": 1,
+            "state": "measurement_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 1,
+            "samples_hash": "0213cf51ec5f7cfcab0fd5bf549f78390767caf90686987eed57f02e7e630a3d",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 2,
+            "state": "measurement_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 2,
+            "samples_hash": "983850f18847584d12869da5d16cf5b440db1b5be31ab0bc2a7015b0ed7547c0",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 3,
+            "state": "measurement_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 2,
+            "samples_hash": "ee04bfe475e5f0940ed1ddb959cc3e5ba64b259443386065b30d868926061ac4",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 4,
+            "state": "data_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 2,
+            "samples_hash": "635b6be108b83b879588b56182dec908d8587e943bc588510c3991e7ba1ce4b8",
+            "errors": {
+              "pooled_fixed": 2,
+              "nominal_fixed": 2,
+              "static_calibrated": 2,
+              "adaptive": 2,
+              "oracle": 1
+            }
+          },
+          {
+            "block": 5,
+            "state": "data_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 2,
+            "samples_hash": "9a9b29c1541dd4481f13bbf06afc9ab7e3bdb74d98426a84b782bb3b025e3598",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 6,
+            "state": "data_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 2,
+            "samples_hash": "cbcdf6297d9cccc2e472c718e1f2a065725172d28f8e8510b6e79d5d6f557911",
+            "errors": {
+              "pooled_fixed": 5,
+              "nominal_fixed": 5,
+              "static_calibrated": 3,
+              "adaptive": 3,
+              "oracle": 4
+            }
+          },
+          {
+            "block": 7,
+            "state": "data_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 3,
+            "samples_hash": "70a81308da170232f00a6a941648d69bd197836c8b45488170a7e37ca585d2bc",
+            "errors": {
+              "pooled_fixed": 3,
+              "nominal_fixed": 3,
+              "static_calibrated": 3,
+              "adaptive": 3,
+              "oracle": 3
+            }
+          }
+        ],
+        "decode_seconds": 0.0016429999959655106,
+        "selection_is_previous_block_only": true
+      },
+      "same_block_hashes": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "nominal_measurement_nominal": {
+      "sequence": [
+        "nominal",
+        "nominal",
+        "nominal",
+        "measurement_heavy",
+        "measurement_heavy",
+        "nominal",
+        "nominal",
+        "nominal"
+      ],
+      "ml": {
+        "shots": 1024,
+        "errors": {
+          "pooled_fixed": 7,
+          "nominal_fixed": 8,
+          "static_calibrated": 7,
+          "adaptive": 8,
+          "oracle": 8
+        },
+        "rates": {
+          "pooled_fixed": 0.0068359375,
+          "nominal_fixed": 0.0078125,
+          "static_calibrated": 0.0068359375,
+          "adaptive": 0.0078125,
+          "oracle": 0.0078125
+        },
+        "paired_vs_pooled": {
+          "pooled_fixed": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "nominal_fixed": {
+            "candidate_only": 1,
+            "block_paired": true
+          },
+          "static_calibrated": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "adaptive": {
+            "candidate_only": 1,
+            "block_paired": true
+          },
+          "oracle": {
+            "candidate_only": 1,
+            "block_paired": true
+          }
+        },
+        "switches": 1,
+        "false_switches": 1,
+        "transition_detection_delay_blocks": [
+          1,
+          1
+        ],
+        "mean_detection_delay_blocks": 1.0,
+        "censored_transitions": 0,
+        "chosen_decoder_sequence": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2
+        ],
+        "blocks": [
+          {
+            "block": 0,
+            "state": "nominal",
+            "estimate_regime": null,
+            "chosen_decoder": 1,
+            "samples_hash": "a8e4f8f7bcd34b074c554c25dc713f37ebeb1562d28ae233d339e34e9b042b7c",
+            "errors": {
+              "pooled_fixed": 1,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 1,
+              "oracle": 1
+            }
+          },
+          {
+            "block": 1,
+            "state": "nominal",
+            "estimate_regime": 2,
+            "chosen_decoder": 1,
+            "samples_hash": "d04b87e83f69c04fba1e8321e4cd9cd10e30d9e8cfbe5ec20701d563078e507d",
+            "errors": {
+              "pooled_fixed": 1,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 1,
+              "oracle": 1
+            }
+          },
+          {
+            "block": 2,
+            "state": "nominal",
+            "estimate_regime": 1,
+            "chosen_decoder": 1,
+            "samples_hash": "74cc76400af12152a4045335d5d8d6d104c2d460d7d4a2f78030c897cc194b67",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 3,
+            "state": "measurement_heavy",
+            "estimate_regime": 1,
+            "chosen_decoder": 1,
+            "samples_hash": "9cfaca8f87e413970cf477cc7c5558af7d4a868e608fcf68cb8dbf777e10f97a",
+            "errors": {
+              "pooled_fixed": 2,
+              "nominal_fixed": 2,
+              "static_calibrated": 2,
+              "adaptive": 2,
+              "oracle": 2
+            }
+          },
+          {
+            "block": 4,
+            "state": "measurement_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 1,
+            "samples_hash": "538b25ad7ca86129aa23d1b36a357b83954305793ec39110d48f8b479f9d3f29",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 5,
+            "state": "nominal",
+            "estimate_regime": 2,
+            "chosen_decoder": 2,
+            "samples_hash": "2ae693e739a253b7e477da8769e5c59c3e77e106fdd43345255fffe51c480823",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 1,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 6,
+            "state": "nominal",
+            "estimate_regime": 1,
+            "chosen_decoder": 2,
+            "samples_hash": "60001eb9d51b5b938fd9dae2a23eb2ea443afb05671aabd31661f82becf19960",
+            "errors": {
+              "pooled_fixed": 2,
+              "nominal_fixed": 3,
+              "static_calibrated": 2,
+              "adaptive": 2,
+              "oracle": 3
+            }
+          },
+          {
+            "block": 7,
+            "state": "nominal",
+            "estimate_regime": 1,
+            "chosen_decoder": 2,
+            "samples_hash": "4d5a372ae6e107602b4ec6e746032cee694ddbe7d6f003bf370e26fcdd57b7d3",
+            "errors": {
+              "pooled_fixed": 1,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 1,
+              "oracle": 1
+            }
+          }
+        ],
+        "decode_seconds": 0.0013267000013001962,
+        "selection_is_previous_block_only": true
+      },
+      "utility": {
+        "shots": 1024,
+        "errors": {
+          "pooled_fixed": 7,
+          "nominal_fixed": 8,
+          "static_calibrated": 7,
+          "adaptive": 8,
+          "oracle": 8
+        },
+        "rates": {
+          "pooled_fixed": 0.0068359375,
+          "nominal_fixed": 0.0078125,
+          "static_calibrated": 0.0068359375,
+          "adaptive": 0.0078125,
+          "oracle": 0.0078125
+        },
+        "paired_vs_pooled": {
+          "pooled_fixed": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "nominal_fixed": {
+            "candidate_only": 1,
+            "block_paired": true
+          },
+          "static_calibrated": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "adaptive": {
+            "candidate_only": 1,
+            "block_paired": true
+          },
+          "oracle": {
+            "candidate_only": 1,
+            "block_paired": true
+          }
+        },
+        "switches": 1,
+        "false_switches": 1,
+        "transition_detection_delay_blocks": [
+          1,
+          1
+        ],
+        "mean_detection_delay_blocks": 1.0,
+        "censored_transitions": 0,
+        "chosen_decoder_sequence": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2
+        ],
+        "blocks": [
+          {
+            "block": 0,
+            "state": "nominal",
+            "estimate_regime": null,
+            "chosen_decoder": 1,
+            "samples_hash": "a8e4f8f7bcd34b074c554c25dc713f37ebeb1562d28ae233d339e34e9b042b7c",
+            "errors": {
+              "pooled_fixed": 1,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 1,
+              "oracle": 1
+            }
+          },
+          {
+            "block": 1,
+            "state": "nominal",
+            "estimate_regime": 2,
+            "chosen_decoder": 1,
+            "samples_hash": "d04b87e83f69c04fba1e8321e4cd9cd10e30d9e8cfbe5ec20701d563078e507d",
+            "errors": {
+              "pooled_fixed": 1,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 1,
+              "oracle": 1
+            }
+          },
+          {
+            "block": 2,
+            "state": "nominal",
+            "estimate_regime": 1,
+            "chosen_decoder": 1,
+            "samples_hash": "74cc76400af12152a4045335d5d8d6d104c2d460d7d4a2f78030c897cc194b67",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 3,
+            "state": "measurement_heavy",
+            "estimate_regime": 1,
+            "chosen_decoder": 1,
+            "samples_hash": "9cfaca8f87e413970cf477cc7c5558af7d4a868e608fcf68cb8dbf777e10f97a",
+            "errors": {
+              "pooled_fixed": 2,
+              "nominal_fixed": 2,
+              "static_calibrated": 2,
+              "adaptive": 2,
+              "oracle": 2
+            }
+          },
+          {
+            "block": 4,
+            "state": "measurement_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 1,
+            "samples_hash": "538b25ad7ca86129aa23d1b36a357b83954305793ec39110d48f8b479f9d3f29",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 5,
+            "state": "nominal",
+            "estimate_regime": 2,
+            "chosen_decoder": 2,
+            "samples_hash": "2ae693e739a253b7e477da8769e5c59c3e77e106fdd43345255fffe51c480823",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 1,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 6,
+            "state": "nominal",
+            "estimate_regime": 1,
+            "chosen_decoder": 2,
+            "samples_hash": "60001eb9d51b5b938fd9dae2a23eb2ea443afb05671aabd31661f82becf19960",
+            "errors": {
+              "pooled_fixed": 2,
+              "nominal_fixed": 3,
+              "static_calibrated": 2,
+              "adaptive": 2,
+              "oracle": 3
+            }
+          },
+          {
+            "block": 7,
+            "state": "nominal",
+            "estimate_regime": 1,
+            "chosen_decoder": 2,
+            "samples_hash": "4d5a372ae6e107602b4ec6e746032cee694ddbe7d6f003bf370e26fcdd57b7d3",
+            "errors": {
+              "pooled_fixed": 1,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 1,
+              "oracle": 1
+            }
+          }
+        ],
+        "decode_seconds": 0.0013353000013012206,
+        "selection_is_previous_block_only": true
+      },
+      "same_block_hashes": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "random": {
+      "sequence": [
+        "data_heavy",
+        "measurement_heavy",
+        "nominal",
+        "data_heavy",
+        "nominal",
+        "nominal",
+        "data_heavy",
+        "data_heavy"
+      ],
+      "ml": {
+        "shots": 1024,
+        "errors": {
+          "pooled_fixed": 12,
+          "nominal_fixed": 13,
+          "static_calibrated": 12,
+          "adaptive": 12,
+          "oracle": 11
+        },
+        "rates": {
+          "pooled_fixed": 0.01171875,
+          "nominal_fixed": 0.0126953125,
+          "static_calibrated": 0.01171875,
+          "adaptive": 0.01171875,
+          "oracle": 0.0107421875
+        },
+        "paired_vs_pooled": {
+          "pooled_fixed": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "nominal_fixed": {
+            "candidate_only": 1,
+            "block_paired": true
+          },
+          "static_calibrated": {
+            "candidate_only": 1,
+            "block_paired": true
+          },
+          "adaptive": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "oracle": {
+            "candidate_only": 0,
+            "block_paired": true
+          }
+        },
+        "switches": 0,
+        "false_switches": 0,
+        "transition_detection_delay_blocks": [
+          1,
+          1,
+          4,
+          1,
+          1
+        ],
+        "mean_detection_delay_blocks": 1.6,
+        "censored_transitions": 0,
+        "chosen_decoder_sequence": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "blocks": [
+          {
+            "block": 0,
+            "state": "data_heavy",
+            "estimate_regime": null,
+            "chosen_decoder": 1,
+            "samples_hash": "70aa7a787b91cb1e57131bbe369861f16ec08ce13eed4c287789b466871d68db",
+            "errors": {
+              "pooled_fixed": 3,
+              "nominal_fixed": 3,
+              "static_calibrated": 3,
+              "adaptive": 3,
+              "oracle": 3
+            }
+          },
+          {
+            "block": 1,
+            "state": "measurement_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 1,
+            "samples_hash": "43592183bd3fcbd787869161d717e6151c3a1efe34618b2940cd373fc616165d",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 2,
+            "state": "nominal",
+            "estimate_regime": 2,
+            "chosen_decoder": 1,
+            "samples_hash": "e967e8c7c19503f2e0b7bd680bb0d145ab2d6a26c177c16efeb2f772786180c3",
+            "errors": {
+              "pooled_fixed": 1,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 1,
+              "oracle": 1
+            }
+          },
+          {
+            "block": 3,
+            "state": "data_heavy",
+            "estimate_regime": 1,
+            "chosen_decoder": 1,
+            "samples_hash": "7b3979d9f6e3a799eee807f73ef900176ee1318357a9cadce8b1680dc76078fb",
+            "errors": {
+              "pooled_fixed": 2,
+              "nominal_fixed": 2,
+              "static_calibrated": 2,
+              "adaptive": 2,
+              "oracle": 2
+            }
+          },
+          {
+            "block": 4,
+            "state": "nominal",
+            "estimate_regime": 2,
+            "chosen_decoder": 1,
+            "samples_hash": "9b986573b4ecf4f2ec2171e09ab16394975a3ea02507f58ff68b67959fead71d",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 5,
+            "state": "nominal",
+            "estimate_regime": 1,
+            "chosen_decoder": 1,
+            "samples_hash": "6d8d8e14618d5aaffb1e4a37975abfe919598e25ab9d09a62d56ca6c36ca2719",
+            "errors": {
+              "pooled_fixed": 1,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 1,
+              "oracle": 1
+            }
+          },
+          {
+            "block": 6,
+            "state": "data_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 1,
+            "samples_hash": "83e56ec1460519600f4bd4a989021bab9e1f59a3aef650f94297741ca2a6fef6",
+            "errors": {
+              "pooled_fixed": 3,
+              "nominal_fixed": 3,
+              "static_calibrated": 3,
+              "adaptive": 3,
+              "oracle": 3
+            }
+          },
+          {
+            "block": 7,
+            "state": "data_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 1,
+            "samples_hash": "ce79884c0db81f4ec554245774a125d0e23fd11bd0d11d528adc92edbacb0fee",
+            "errors": {
+              "pooled_fixed": 2,
+              "nominal_fixed": 2,
+              "static_calibrated": 1,
+              "adaptive": 2,
+              "oracle": 1
+            }
+          }
+        ],
+        "decode_seconds": 0.0017345999985991511,
+        "selection_is_previous_block_only": true
+      },
+      "utility": {
+        "shots": 1024,
+        "errors": {
+          "pooled_fixed": 12,
+          "nominal_fixed": 13,
+          "static_calibrated": 12,
+          "adaptive": 12,
+          "oracle": 11
+        },
+        "rates": {
+          "pooled_fixed": 0.01171875,
+          "nominal_fixed": 0.0126953125,
+          "static_calibrated": 0.01171875,
+          "adaptive": 0.01171875,
+          "oracle": 0.0107421875
+        },
+        "paired_vs_pooled": {
+          "pooled_fixed": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "nominal_fixed": {
+            "candidate_only": 1,
+            "block_paired": true
+          },
+          "static_calibrated": {
+            "candidate_only": 1,
+            "block_paired": true
+          },
+          "adaptive": {
+            "candidate_only": 0,
+            "block_paired": true
+          },
+          "oracle": {
+            "candidate_only": 0,
+            "block_paired": true
+          }
+        },
+        "switches": 0,
+        "false_switches": 0,
+        "transition_detection_delay_blocks": [
+          1,
+          1,
+          4,
+          1,
+          1
+        ],
+        "mean_detection_delay_blocks": 1.6,
+        "censored_transitions": 0,
+        "chosen_decoder_sequence": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "blocks": [
+          {
+            "block": 0,
+            "state": "data_heavy",
+            "estimate_regime": null,
+            "chosen_decoder": 1,
+            "samples_hash": "70aa7a787b91cb1e57131bbe369861f16ec08ce13eed4c287789b466871d68db",
+            "errors": {
+              "pooled_fixed": 3,
+              "nominal_fixed": 3,
+              "static_calibrated": 3,
+              "adaptive": 3,
+              "oracle": 3
+            }
+          },
+          {
+            "block": 1,
+            "state": "measurement_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 1,
+            "samples_hash": "43592183bd3fcbd787869161d717e6151c3a1efe34618b2940cd373fc616165d",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 2,
+            "state": "nominal",
+            "estimate_regime": 2,
+            "chosen_decoder": 1,
+            "samples_hash": "e967e8c7c19503f2e0b7bd680bb0d145ab2d6a26c177c16efeb2f772786180c3",
+            "errors": {
+              "pooled_fixed": 1,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 1,
+              "oracle": 1
+            }
+          },
+          {
+            "block": 3,
+            "state": "data_heavy",
+            "estimate_regime": 1,
+            "chosen_decoder": 1,
+            "samples_hash": "7b3979d9f6e3a799eee807f73ef900176ee1318357a9cadce8b1680dc76078fb",
+            "errors": {
+              "pooled_fixed": 2,
+              "nominal_fixed": 2,
+              "static_calibrated": 2,
+              "adaptive": 2,
+              "oracle": 2
+            }
+          },
+          {
+            "block": 4,
+            "state": "nominal",
+            "estimate_regime": 2,
+            "chosen_decoder": 1,
+            "samples_hash": "9b986573b4ecf4f2ec2171e09ab16394975a3ea02507f58ff68b67959fead71d",
+            "errors": {
+              "pooled_fixed": 0,
+              "nominal_fixed": 0,
+              "static_calibrated": 0,
+              "adaptive": 0,
+              "oracle": 0
+            }
+          },
+          {
+            "block": 5,
+            "state": "nominal",
+            "estimate_regime": 1,
+            "chosen_decoder": 1,
+            "samples_hash": "6d8d8e14618d5aaffb1e4a37975abfe919598e25ab9d09a62d56ca6c36ca2719",
+            "errors": {
+              "pooled_fixed": 1,
+              "nominal_fixed": 1,
+              "static_calibrated": 1,
+              "adaptive": 1,
+              "oracle": 1
+            }
+          },
+          {
+            "block": 6,
+            "state": "data_heavy",
+            "estimate_regime": 2,
+            "chosen_decoder": 1,
+            "samples_hash": "83e56ec1460519600f4bd4a989021bab9e1f59a3aef650f94297741ca2a6fef6",
+            "errors": {
+              "pooled_fixed": 3,
+              "nominal_fixed": 3,
+              "static_calibrated": 3,
+              "adaptive": 3,
+              "oracle": 3
+            }
+          },
+          {
+            "block": 7,
+            "state": "data_heavy",
+            "estimate_regime": 0,
+            "chosen_decoder": 1,
+            "samples_hash": "ce79884c0db81f4ec554245774a125d0e23fd11bd0d11d528adc92edbacb0fee",
+            "errors": {
+              "pooled_fixed": 2,
+              "nominal_fixed": 2,
+              "static_calibrated": 1,
+              "adaptive": 2,
+              "oracle": 1
+            }
+          }
+        ],
+        "decode_seconds": 0.0017005999980028719,
+        "selection_is_previous_block_only": true
+      },
+      "same_block_hashes": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "sample_streams_shared_between_policies": true,
+  "seed_namespaces": {
+    "utility": [
+      91000001,
+      91000002,
+      91000003
+    ],
+    "schedule": [
+      92000001,
+      92000002,
+      92000003,
+      92000004
+    ],
+    "blocks": "93000001 onward"
+  }
+}

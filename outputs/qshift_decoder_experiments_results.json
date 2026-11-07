@@ -1,0 +1,173 @@
+{
+  "protocol": "per-noise independent train/validation/shared-test batches; exact 256-pattern lookup with Laplace smoothing and validation threshold; same test samples for all decoders",
+  "seed": 20261105,
+  "shots_per_level": {
+    "train": 2000000,
+    "validation": 200000,
+    "shared_test": 1000000
+  },
+  "levels": {
+    "0.001": {
+      "train_observable_errors": 3179,
+      "unique_training_patterns": 64,
+      "validation_selected_threshold": 0.9979757085020243,
+      "validation_residual_rate": 1e-05,
+      "test_before_errors": 1579,
+      "test_before_rate": 0.001579,
+      "decoders": {
+        "pattern_lookup": {
+          "errors": 23,
+          "rate": 2.3e-05,
+          "wilson_95": [
+            1.5326884928932e-05,
+            3.451438242858601e-05
+          ]
+        },
+        "matched_dem": {
+          "errors": 9,
+          "rate": 9e-06,
+          "wilson_95": [
+            4.735081123813386e-06,
+            1.7106293794138406e-05
+          ]
+        },
+        "fixed_dem_at_0.003": {
+          "errors": 10,
+          "rate": 1e-05,
+          "wilson_95": [
+            5.431994839843524e-06,
+            1.8409372395220142e-05
+          ]
+        }
+      },
+      "paired_vs_matched_dem": {
+        "pattern_lookup": {
+          "only_this_decoder_wrong": 17,
+          "only_matched_dem_wrong": 3,
+          "net_error_difference": 14,
+          "paired_rate_difference_wilson_approx_95": [
+            5.234656478699766e-06,
+            2.2765343521300235e-05
+          ]
+        },
+        "fixed_dem_at_0.003": {
+          "only_this_decoder_wrong": 1,
+          "only_matched_dem_wrong": 0,
+          "net_error_difference": 1,
+          "paired_rate_difference_wilson_approx_95": [
+            -9.599990199997554e-07,
+            2.959999019999755e-06
+          ]
+        }
+      }
+    },
+    "0.003": {
+      "train_observable_errors": 9636,
+      "unique_training_patterns": 124,
+      "validation_selected_threshold": 0.5714285714285714,
+      "validation_residual_rate": 6e-05,
+      "test_before_errors": 4743,
+      "test_before_rate": 0.004743,
+      "decoders": {
+        "pattern_lookup": {
+          "errors": 94,
+          "rate": 9.4e-05,
+          "wilson_95": [
+            7.682194254264417e-05,
+            0.00011501877932981676
+          ]
+        },
+        "matched_dem": {
+          "errors": 109,
+          "rate": 0.000109,
+          "wilson_95": [
+            9.036892069458452e-05,
+            0.00013147168593455452
+          ]
+        },
+        "fixed_dem_at_0.003": {
+          "errors": 109,
+          "rate": 0.000109,
+          "wilson_95": [
+            9.036892069458452e-05,
+            0.00013147168593455452
+          ]
+        }
+      },
+      "paired_vs_matched_dem": {
+        "pattern_lookup": {
+          "only_this_decoder_wrong": 30,
+          "only_matched_dem_wrong": 45,
+          "net_error_difference": -15,
+          "paired_rate_difference_wilson_approx_95": [
+            -3.197407245300903e-05,
+            1.9740724530090296e-06
+          ]
+        },
+        "fixed_dem_at_0.003": {
+          "only_this_decoder_wrong": 0,
+          "only_matched_dem_wrong": 0,
+          "net_error_difference": 0,
+          "paired_rate_difference_wilson_approx_95": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "0.006": {
+      "train_observable_errors": 18957,
+      "unique_training_patterns": 140,
+      "validation_selected_threshold": 0.5217391304347826,
+      "validation_residual_rate": 0.000315,
+      "test_before_errors": 9536,
+      "test_before_rate": 0.009536,
+      "decoders": {
+        "pattern_lookup": {
+          "errors": 311,
+          "rate": 0.000311,
+          "wilson_95": [
+            0.00027830735981762415,
+            0.0003475316948681131
+          ]
+        },
+        "matched_dem": {
+          "errors": 371,
+          "rate": 0.000371,
+          "wilson_95": [
+            0.0003351260341240462,
+            0.00041071255958840343
+          ]
+        },
+        "fixed_dem_at_0.003": {
+          "errors": 371,
+          "rate": 0.000371,
+          "wilson_95": [
+            0.0003351260341240462,
+            0.00041071255958840343
+          ]
+        }
+      },
+      "paired_vs_matched_dem": {
+        "pattern_lookup": {
+          "only_this_decoder_wrong": 88,
+          "only_matched_dem_wrong": 148,
+          "net_error_difference": -60,
+          "paired_rate_difference_wilson_approx_95": [
+            -9.010986167753016e-05,
+            -2.9890138322469835e-05
+          ]
+        },
+        "fixed_dem_at_0.003": {
+          "only_this_decoder_wrong": 0,
+          "only_matched_dem_wrong": 0,
+          "net_error_difference": 0,
+          "paired_rate_difference_wilson_approx_95": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    }
+  }
+}

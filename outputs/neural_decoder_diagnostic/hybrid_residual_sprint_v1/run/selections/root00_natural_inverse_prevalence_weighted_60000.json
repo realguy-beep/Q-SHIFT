@@ -1,0 +1,99 @@
+{
+  "job_id": "root00_natural_inverse_prevalence_weighted_60000",
+  "root": 0,
+  "strategy": "natural_inverse_prevalence_weighted",
+  "train_size_per_regime": 60000,
+  "model": "ResidualPositionCNN",
+  "target": "observable_xor_frozen_pymatching_prediction",
+  "inference": "pymatching_xor_predicted_residual",
+  "prevalence": 0.004388888888888889,
+  "positive_examples": 790,
+  "training_examples": 180000,
+  "pos_weight": 226.84810126582278,
+  "logit_prior_correction": -5.424280636076367,
+  "best_epoch": 6,
+  "best_monitor_nll": 0.020417333553587387,
+  "monitor_history": [
+    {
+      "epoch": 1,
+      "monitor_nll": 0.025864220002685415,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 2,
+      "monitor_nll": 0.023304152336054037,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 3,
+      "monitor_nll": 0.0215616709144054,
+      "selected": true,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 4,
+      "monitor_nll": 0.022733337247289372,
+      "selected": false,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 5,
+      "monitor_nll": 0.02222032916636435,
+      "selected": false,
+      "learning_rate": 0.003
+    },
+    {
+      "epoch": 6,
+      "monitor_nll": 0.020417333553587387,
+      "selected": true,
+      "learning_rate": 0.0015
+    },
+    {
+      "epoch": 7,
+      "monitor_nll": 0.020623788481920747,
+      "selected": false,
+      "learning_rate": 0.0015
+    },
+    {
+      "epoch": 8,
+      "monitor_nll": 0.021281937647349522,
+      "selected": false,
+      "learning_rate": 0.0015
+    },
+    {
+      "epoch": 9,
+      "monitor_nll": 0.022047665430855262,
+      "selected": false,
+      "learning_rate": 0.0015
+    }
+  ],
+  "temperature": 1.0,
+  "threshold_min_ler": 0.76,
+  "threshold_selection_ler": 0.0044888888888888895,
+  "confidence_gate": {
+    "threshold": 1.01,
+    "fallback": true,
+    "reason": "no threshold passed Bonferroni-Wilson precision gate",
+    "precision_lower_bound": null,
+    "corrections_on_threshold_selection": 0,
+    "beneficial_on_threshold_selection": 0,
+    "selected_ler": null,
+    "familywise_alpha": 0.05,
+    "per_threshold_alpha": 0.000505050505050505
+  },
+  "calibration_brier": 0.004085481209031541,
+  "calibration_ece_10bin": 0.0013613915066355983,
+  "weights_sha256": "4d9b74b9d061b498e612cf2c81084672d95251e951572a2aadc9b76dbc596f1f",
+  "selection_data": {
+    "checkpoint": "monitor only",
+    "temperature": "calibration only",
+    "threshold_min_ler": "threshold_selection only",
+    "confidence_gate": "threshold_selection only"
+  },
+  "final_development_evaluation_accessed": false,
+  "gpu_seconds_train_and_select": 52.04761010025686,
+  "parameter_count": 13429,
+  "created_utc": "2026-11-06T23:32:57.976535+00:00"
+}

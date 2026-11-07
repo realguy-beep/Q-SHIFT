@@ -1,0 +1,253 @@
+{
+  "status": "PASS",
+  "historical_manifest_checks": 20,
+  "software": {
+    "python": "3.12.10",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "numpy": "2.5.3"
+  },
+  "baseline_risks": {
+    "one_qubit": {
+      "exact_categorical_MAP": 0.0026460000000000003,
+      "pymatching_approx_dem_correlation_disabled": 0.0026460000000000003,
+      "pymatching_approx_dem_correlation_enabled": 0.0026460000000000003
+    },
+    "two_qubit": {
+      "exact_categorical_MAP": 0.06,
+      "pymatching_approx_dem_correlation_disabled": 0.1128,
+      "pymatching_approx_dem_correlation_enabled": 0.1128
+    }
+  },
+  "independent_dem": {
+    "mechanisms": 6,
+    "enumerated_configurations": 64,
+    "posterior_mass": 0.9999999999999998,
+    "joint_distribution_TV": 0.004868099999999976,
+    "risk_on_categorical_channel": {
+      "categorical_exact_MAP": 0.06,
+      "independent_DEM_exact_MAP": 0.06,
+      "PyMatching_standard": 0.1128,
+      "PyMatching_correlation_enabled": 0.1128
+    },
+    "risk_on_DEM_channel": {
+      "categorical_exact_MAP": 0.058199999999999995,
+      "independent_DEM_exact_MAP": 0.058199999999999995,
+      "PyMatching_standard": 0.10962551999999999,
+      "PyMatching_correlation_enabled": 0.10962551999999999
+    }
+  },
+  "separator_ablation": {
+    "DEM_MAP": 1,
+    "with_sep_standard": 0,
+    "with_sep_correlated": 0,
+    "without_sep_standard": 1,
+    "without_sep_correlated": 1
+  },
+  "fixed_marginal_variant_risks": [
+    {
+      "exact_categorical_MAP": 0.06000000000000004,
+      "pymatching_standard": 0.11280000000000001,
+      "pymatching_correlation_enabled": 0.11280000000000001
+    },
+    {
+      "exact_categorical_MAP": 0.060000000000000026,
+      "pymatching_standard": 0.11280000000000001,
+      "pymatching_correlation_enabled": 0.11280000000000001
+    },
+    {
+      "exact_categorical_MAP": 0.06000000000000002,
+      "pymatching_standard": 0.1128,
+      "pymatching_correlation_enabled": 0.1128
+    },
+    {
+      "exact_categorical_MAP": 0.06000000000000003,
+      "pymatching_standard": 0.11280000000000001,
+      "pymatching_correlation_enabled": 0.11280000000000001
+    },
+    {
+      "exact_categorical_MAP": 0.06000000000000004,
+      "pymatching_standard": 0.11280000000000001,
+      "pymatching_correlation_enabled": 0.11280000000000001
+    }
+  ],
+  "toy_variable_elimination": [
+    {
+      "model": "one_qubit",
+      "fault_variables": 3,
+      "outcome_domains": [
+        4,
+        4,
+        4
+      ],
+      "output_bits": 3,
+      "factor_nodes": 6,
+      "factor_incidences": 13,
+      "orders": [
+        {
+          "heuristic": "min_fill",
+          "induced_width": 4,
+          "max_combined_factor_states": 256,
+          "max_intermediate_dense_cells": 256,
+          "total_mass": 1.0,
+          "MAP_risk": 0.0026459999999999956,
+          "decisions_match_exhaustive": true,
+          "tie_syndromes": []
+        },
+        {
+          "heuristic": "min_degree",
+          "induced_width": 4,
+          "max_combined_factor_states": 256,
+          "max_intermediate_dense_cells": 256,
+          "total_mass": 1.0,
+          "MAP_risk": 0.0026459999999999956,
+          "decisions_match_exhaustive": true,
+          "tie_syndromes": []
+        }
+      ]
+    },
+    {
+      "model": "two_qubit",
+      "fault_variables": 2,
+      "outcome_domains": [
+        16,
+        16
+      ],
+      "output_bits": 3,
+      "factor_nodes": 5,
+      "factor_incidences": 11,
+      "orders": [
+        {
+          "heuristic": "min_fill",
+          "induced_width": 4,
+          "max_combined_factor_states": 2048,
+          "max_intermediate_dense_cells": 2048,
+          "total_mass": 1.0000000000000004,
+          "MAP_risk": 0.060000000000000026,
+          "decisions_match_exhaustive": true,
+          "tie_syndromes": [
+            1,
+            2
+          ]
+        },
+        {
+          "heuristic": "min_degree",
+          "induced_width": 4,
+          "max_combined_factor_states": 2048,
+          "max_intermediate_dense_cells": 2048,
+          "total_mass": 1.0000000000000004,
+          "MAP_risk": 0.060000000000000026,
+          "decisions_match_exhaustive": true,
+          "tie_syndromes": [
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "circuit_symbolic_heuristics": [
+    {
+      "rounds": 1,
+      "min_fill_width": 20,
+      "min_degree_width": 21
+    },
+    {
+      "rounds": 2,
+      "min_fill_width": 41,
+      "min_degree_width": 41
+    },
+    {
+      "rounds": 3,
+      "min_fill_width": 69,
+      "min_degree_width": 70
+    }
+  ],
+  "fragments": [
+    {
+      "rounds": 1,
+      "detectors": 8,
+      "observables": 1,
+      "fault_locations": 49,
+      "configuration_log2": 129.0,
+      "frontier_width_bits": 9,
+      "frontier_states": 512,
+      "posterior_bytes": 4096,
+      "inference_status": "COMPLETED",
+      "inference_seconds": 0.001554099999339087,
+      "logical_error_probability": 0.0011828070759580635,
+      "peak_working_set_bytes": 36061184,
+      "wall_seconds": 1.017292600001383,
+      "forced_single_fault_checks": 401
+    },
+    {
+      "rounds": 2,
+      "detectors": 16,
+      "observables": 1,
+      "fault_locations": 89,
+      "configuration_log2": 249.0,
+      "frontier_width_bits": 17,
+      "frontier_states": 131072,
+      "posterior_bytes": 1048576,
+      "inference_status": "COMPLETED",
+      "inference_seconds": 0.17421299999841722,
+      "logical_error_probability": 0.0024876355893142946,
+      "peak_working_set_bytes": 41889792,
+      "wall_seconds": 3.1369187999989663,
+      "forced_single_fault_checks": 793
+    },
+    {
+      "rounds": 3,
+      "detectors": 24,
+      "observables": 1,
+      "fault_locations": 129,
+      "configuration_log2": 369.0,
+      "frontier_width_bits": 25,
+      "frontier_states": 33554432,
+      "posterior_bytes": 268435456,
+      "inference_status": "COMPLETED",
+      "inference_seconds": 89.08998530000099,
+      "logical_error_probability": 0.0037193731747700446,
+      "peak_working_set_bytes": 764133376,
+      "wall_seconds": 95.4641746999987,
+      "forced_single_fault_checks": 1185
+    },
+    {
+      "rounds": 4,
+      "detectors": 32,
+      "observables": 1,
+      "fault_locations": 169,
+      "configuration_log2": 489.0,
+      "frontier_width_bits": 33,
+      "frontier_states": 8589934592,
+      "posterior_bytes": 68719476736,
+      "inference_status": "SKIPPED_RESOURCE_PREFLIGHT",
+      "inference_seconds": null,
+      "logical_error_probability": null,
+      "peak_working_set_bytes": 37838848,
+      "wall_seconds": 10.095523999996658,
+      "forced_single_fault_checks": 1577
+    },
+    {
+      "rounds": 5,
+      "detectors": 40,
+      "observables": 1,
+      "fault_locations": 209,
+      "configuration_log2": 609.0,
+      "frontier_width_bits": 41,
+      "frontier_states": 2199023255552,
+      "posterior_bytes": 17592186044416,
+      "inference_status": "SKIPPED_RESOURCE_PREFLIGHT",
+      "inference_seconds": null,
+      "logical_error_probability": null,
+      "peak_working_set_bytes": 38797312,
+      "wall_seconds": 15.314695799999754,
+      "forced_single_fault_checks": 1969
+    }
+  ],
+  "fragment_runner_wall_seconds_sum": 125.02860589999545,
+  "forced_single_fault_checks_sum": 5925,
+  "stochastic_phase2b_evaluation_shots": 0,
+  "decision": "PARTIAL",
+  "decision_reason": "Exact categorical inference was independently validated and a reduced-round distance-3 fragment completed through 3 rounds; the 4- and 5-round dense joint posterior exceeds the 2 GiB budget. A circuit-local exact tree-decomposition path to the full 5-round circuit has not been established."
+}

@@ -1,0 +1,186 @@
+{
+  "direct_mlp": {
+    "status": "completed",
+    "candidate": "direct_mlp",
+    "spec": {
+      "kind": "direct",
+      "width": null,
+      "weighted": false
+    },
+    "best_epoch": 2,
+    "best_validation_ler_at_0_5": 0.052,
+    "best_validation_bce": 0.1806911989847819,
+    "positive_weight": null,
+    "positive_weight_source": null,
+    "history": [
+      {
+        "epoch": 1,
+        "training_samples_seen": 6000,
+        "validation_bce": 0.2695072250366211,
+        "validation_equal_regime_ler": 0.052,
+        "improved": true,
+        "validation_seconds": 0.046346200004336424,
+        "learning_rate": 0.001
+      },
+      {
+        "epoch": 2,
+        "training_samples_seen": 6000,
+        "validation_bce": 0.1806911989847819,
+        "validation_equal_regime_ler": 0.052,
+        "improved": true,
+        "validation_seconds": 0.02907450000202516,
+        "learning_rate": 0.0005
+      }
+    ],
+    "model_path": "C:\\Users\\LENOVO\\Documents\\Codex\\2026-11-03\\referenced-chatgpt-conversation-this-is-an\\outputs\\neural_decoder_diagnostic\\structured_integration\\dev_run_6000\\best_models\\direct_mlp.pt",
+    "global_steps": 96,
+    "elapsed_seconds": 1.1581971999985399,
+    "training_shot_presentations": 12000,
+    "validation_shot_presentations": 6000,
+    "cuda_training_verified": true,
+    "timings": {
+      "stim_generation_and_matching_decode_seconds": 0.04395799998019356,
+      "training_seconds": 0.8133307000171044,
+      "validation_seconds": 0.07542070000636159,
+      "checkpoint_seconds": 0.10390240001288475
+    }
+  },
+  "residual_mlp": {
+    "status": "completed",
+    "candidate": "residual_mlp",
+    "spec": {
+      "kind": "residual",
+      "width": null,
+      "weighted": false
+    },
+    "best_epoch": 2,
+    "best_validation_ler_at_0_5": 0.0036666666666666666,
+    "best_validation_bce": 0.03903767061233521,
+    "positive_weight": null,
+    "positive_weight_source": null,
+    "history": [
+      {
+        "epoch": 1,
+        "training_samples_seen": 6000,
+        "validation_bce": 0.1353437376022339,
+        "validation_equal_regime_ler": 0.0036666666666666666,
+        "improved": true,
+        "validation_seconds": 0.06187779999891063,
+        "learning_rate": 0.001
+      },
+      {
+        "epoch": 2,
+        "training_samples_seen": 6000,
+        "validation_bce": 0.03903767061233521,
+        "validation_equal_regime_ler": 0.0036666666666666666,
+        "improved": true,
+        "validation_seconds": 0.03369319999910658,
+        "learning_rate": 0.0005
+      }
+    ],
+    "model_path": "C:\\Users\\LENOVO\\Documents\\Codex\\2026-11-03\\referenced-chatgpt-conversation-this-is-an\\outputs\\neural_decoder_diagnostic\\structured_integration\\dev_run_6000\\best_models\\residual_mlp.pt",
+    "global_steps": 96,
+    "elapsed_seconds": 0.6705486999999266,
+    "training_shot_presentations": 12000,
+    "validation_shot_presentations": 6000,
+    "cuda_training_verified": true,
+    "timings": {
+      "stim_generation_and_matching_decode_seconds": 0.04785400001856033,
+      "training_seconds": 0.27466269997967174,
+      "validation_seconds": 0.09557099999801721,
+      "checkpoint_seconds": 0.11650099999678787
+    }
+  },
+  "structured_ch8_unweighted": {
+    "status": "completed",
+    "candidate": "structured_ch8_unweighted",
+    "spec": {
+      "kind": "structured",
+      "width": 8,
+      "weighted": false
+    },
+    "best_epoch": 2,
+    "best_validation_ler_at_0_5": 0.052,
+    "best_validation_bce": 0.2050349671045939,
+    "positive_weight": null,
+    "positive_weight_source": null,
+    "history": [
+      {
+        "epoch": 1,
+        "training_samples_seen": 6000,
+        "validation_bce": 0.277122896194458,
+        "validation_equal_regime_ler": 0.052,
+        "improved": true,
+        "validation_seconds": 0.06073439999454422,
+        "learning_rate": 0.001
+      },
+      {
+        "epoch": 2,
+        "training_samples_seen": 6000,
+        "validation_bce": 0.2050349671045939,
+        "validation_equal_regime_ler": 0.052,
+        "improved": true,
+        "validation_seconds": 0.05347080000501592,
+        "learning_rate": 0.0005
+      }
+    ],
+    "model_path": "C:\\Users\\LENOVO\\Documents\\Codex\\2026-11-03\\referenced-chatgpt-conversation-this-is-an\\outputs\\neural_decoder_diagnostic\\structured_integration\\dev_run_6000\\best_models\\structured_ch8_unweighted.pt",
+    "global_steps": 96,
+    "elapsed_seconds": 1.1057070000024396,
+    "training_shot_presentations": 12000,
+    "validation_shot_presentations": 6000,
+    "cuda_training_verified": true,
+    "timings": {
+      "stim_generation_and_matching_decode_seconds": 0.05310170001757797,
+      "training_seconds": 0.6715697999679833,
+      "validation_seconds": 0.11420519999956014,
+      "checkpoint_seconds": 0.11276660000294214
+    }
+  },
+  "structured_ch8_weighted": {
+    "status": "completed",
+    "candidate": "structured_ch8_weighted",
+    "spec": {
+      "kind": "structured",
+      "width": 8,
+      "weighted": true
+    },
+    "best_epoch": 1,
+    "best_validation_ler_at_0_5": 0.061000000000000006,
+    "best_validation_bce": 0.6673824768066406,
+    "positive_weight": 16.191977077363898,
+    "positive_weight_source": "training split only",
+    "history": [
+      {
+        "epoch": 1,
+        "training_samples_seen": 6000,
+        "validation_bce": 0.6673824768066406,
+        "validation_equal_regime_ler": 0.061000000000000006,
+        "improved": true,
+        "validation_seconds": 0.06484550000459421,
+        "learning_rate": 0.001
+      },
+      {
+        "epoch": 2,
+        "training_samples_seen": 6000,
+        "validation_bce": 0.7230157140096029,
+        "validation_equal_regime_ler": 0.948,
+        "improved": false,
+        "validation_seconds": 0.05743209999491228,
+        "learning_rate": 0.0005
+      }
+    ],
+    "model_path": "C:\\Users\\LENOVO\\Documents\\Codex\\2026-11-03\\referenced-chatgpt-conversation-this-is-an\\outputs\\neural_decoder_diagnostic\\structured_integration\\dev_run_6000\\best_models\\structured_ch8_weighted.pt",
+    "global_steps": 96,
+    "elapsed_seconds": 1.0699720999982674,
+    "training_shot_presentations": 12000,
+    "validation_shot_presentations": 6000,
+    "cuda_training_verified": true,
+    "timings": {
+      "stim_generation_and_matching_decode_seconds": 0.06308430000353837,
+      "training_seconds": 0.529339000066102,
+      "validation_seconds": 0.12227759999950649,
+      "checkpoint_seconds": 0.147511699993629
+    }
+  }
+}

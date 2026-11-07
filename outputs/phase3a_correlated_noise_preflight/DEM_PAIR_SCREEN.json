@@ -1,0 +1,1203 @@
+{
+  "status": "NO_SHOT_STRUCTURAL_SCREEN_COMPLETE",
+  "purpose": "Select/report DEM graph-compatibility properties only; no outcomes or decoder performance were sampled.",
+  "fault": "single CORRELATED_ERROR X on a data pair after the first MR boundary",
+  "probability": 0.1,
+  "data_qubits": [
+    1,
+    3,
+    5,
+    8,
+    10,
+    12,
+    15,
+    17,
+    19
+  ],
+  "selected_pair": {
+    "pair": [
+      8,
+      10
+    ],
+    "coordinates": [
+      [
+        1.0,
+        3.0
+      ],
+      [
+        3.0,
+        3.0
+      ]
+    ],
+    "detectors": 40,
+    "observables": 1,
+    "decompose_true": "pass",
+    "dem_errors": 5,
+    "py_matching_graph": "pass",
+    "dem_error_records": [
+      "error(0.1) D8 D10",
+      "error(0.1) D16 D18",
+      "error(0.1) D24 D26",
+      "error(0.1) D32 D34",
+      "error(0.1) D36 D38"
+    ],
+    "decomposition_exception": null,
+    "nondecomposed_dem": "not_attempted",
+    "nondecomposed_py_matching": "not_attempted",
+    "graph_edges": 5
+  },
+  "pair_count": 36,
+  "decomposition_pass_count": 27,
+  "decomposition_fail_count": 9,
+  "results": [
+    {
+      "pair": [
+        1,
+        3
+      ],
+      "coordinates": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          3.0,
+          1.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 0,
+      "py_matching_graph": "pass",
+      "dem_error_records": [],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 0
+    },
+    {
+      "pair": [
+        1,
+        5
+      ],
+      "coordinates": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          5.0,
+          1.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D5 D7",
+        "error(0.1) D13 D15",
+        "error(0.1) D21 D23",
+        "error(0.1) D29 D31",
+        "error(0.1) D37 D39"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        1,
+        8
+      ],
+      "coordinates": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          3.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D8 L0",
+        "error(0.1) D16 L0",
+        "error(0.1) D24 L0",
+        "error(0.1) D32 L0",
+        "error(0.1) D36 L0"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        1,
+        10
+      ],
+      "coordinates": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          3.0,
+          3.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D10 L0",
+        "error(0.1) D18 L0",
+        "error(0.1) D26 L0",
+        "error(0.1) D34 L0",
+        "error(0.1) D38 L0"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        1,
+        12
+      ],
+      "coordinates": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          5.0,
+          3.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "fail",
+      "dem_errors": null,
+      "py_matching_graph": "not_attempted",
+      "dem_error_records": [],
+      "decomposition_exception": "ValueError: Failed to decompose errors into graphlike components with at most two symptoms.\nThe error component that failed to decompose is 'D5, D7, D10, L0'.\n\nIn Python, you can ignore this error by passing `ignore_decomposition_failures=True` to `stim.Circuit.detector_error_model(...)`.\nFrom the command line, you can ignore this error by passing the flag `--ignore_decomposition_failures` to `stim analyze_errors`.",
+      "nondecomposed_dem": "pass",
+      "nondecomposed_py_matching": "fail",
+      "nondecomposed_error_records": [
+        "error(0.1) D5 D7 D10 L0",
+        "error(0.1) D13 D15 D18 L0",
+        "error(0.1) D21 D23 D26 L0",
+        "error(0.1) D29 D31 D34 L0",
+        "error(0.1) D37 D38 D39 L0"
+      ],
+      "nondecomposed_py_matching_exception": "ValueError: Encountered an undecomposed error instruction with 3 or mode detectors. This is not supported when using `enable_correlations=True`. Did you forget to set `decompose_errors=True` when converting the stim circuit to a detector error model?"
+    },
+    {
+      "pair": [
+        1,
+        15
+      ],
+      "coordinates": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D5 D8 L0",
+        "error(0.1) D13 D16 L0",
+        "error(0.1) D21 D24 L0",
+        "error(0.1) D29 D32 L0",
+        "error(0.1) D36 D37 L0"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        1,
+        17
+      ],
+      "coordinates": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          3.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D5 D10 L0",
+        "error(0.1) D13 D18 L0",
+        "error(0.1) D21 D26 L0",
+        "error(0.1) D29 D34 L0",
+        "error(0.1) D37 D38 L0"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        1,
+        19
+      ],
+      "coordinates": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          5.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D5 D10 L0",
+        "error(0.1) D13 D18 L0",
+        "error(0.1) D21 D26 L0",
+        "error(0.1) D29 D34 L0",
+        "error(0.1) D37 D38 L0"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        3,
+        5
+      ],
+      "coordinates": [
+        [
+          3.0,
+          1.0
+        ],
+        [
+          5.0,
+          1.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D5 D7",
+        "error(0.1) D13 D15",
+        "error(0.1) D21 D23",
+        "error(0.1) D29 D31",
+        "error(0.1) D37 D39"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        3,
+        8
+      ],
+      "coordinates": [
+        [
+          3.0,
+          1.0
+        ],
+        [
+          1.0,
+          3.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D8 L0",
+        "error(0.1) D16 L0",
+        "error(0.1) D24 L0",
+        "error(0.1) D32 L0",
+        "error(0.1) D36 L0"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        3,
+        10
+      ],
+      "coordinates": [
+        [
+          3.0,
+          1.0
+        ],
+        [
+          3.0,
+          3.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D10 L0",
+        "error(0.1) D18 L0",
+        "error(0.1) D26 L0",
+        "error(0.1) D34 L0",
+        "error(0.1) D38 L0"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        3,
+        12
+      ],
+      "coordinates": [
+        [
+          3.0,
+          1.0
+        ],
+        [
+          5.0,
+          3.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "fail",
+      "dem_errors": null,
+      "py_matching_graph": "not_attempted",
+      "dem_error_records": [],
+      "decomposition_exception": "ValueError: Failed to decompose errors into graphlike components with at most two symptoms.\nThe error component that failed to decompose is 'D5, D7, D10, L0'.\n\nIn Python, you can ignore this error by passing `ignore_decomposition_failures=True` to `stim.Circuit.detector_error_model(...)`.\nFrom the command line, you can ignore this error by passing the flag `--ignore_decomposition_failures` to `stim analyze_errors`.",
+      "nondecomposed_dem": "pass",
+      "nondecomposed_py_matching": "fail",
+      "nondecomposed_error_records": [
+        "error(0.1) D5 D7 D10 L0",
+        "error(0.1) D13 D15 D18 L0",
+        "error(0.1) D21 D23 D26 L0",
+        "error(0.1) D29 D31 D34 L0",
+        "error(0.1) D37 D38 D39 L0"
+      ],
+      "nondecomposed_py_matching_exception": "ValueError: Encountered an undecomposed error instruction with 3 or mode detectors. This is not supported when using `enable_correlations=True`. Did you forget to set `decompose_errors=True` when converting the stim circuit to a detector error model?"
+    },
+    {
+      "pair": [
+        3,
+        15
+      ],
+      "coordinates": [
+        [
+          3.0,
+          1.0
+        ],
+        [
+          1.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D5 D8 L0",
+        "error(0.1) D13 D16 L0",
+        "error(0.1) D21 D24 L0",
+        "error(0.1) D29 D32 L0",
+        "error(0.1) D36 D37 L0"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        3,
+        17
+      ],
+      "coordinates": [
+        [
+          3.0,
+          1.0
+        ],
+        [
+          3.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D5 D10 L0",
+        "error(0.1) D13 D18 L0",
+        "error(0.1) D21 D26 L0",
+        "error(0.1) D29 D34 L0",
+        "error(0.1) D37 D38 L0"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        3,
+        19
+      ],
+      "coordinates": [
+        [
+          3.0,
+          1.0
+        ],
+        [
+          5.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D5 D10 L0",
+        "error(0.1) D13 D18 L0",
+        "error(0.1) D21 D26 L0",
+        "error(0.1) D29 D34 L0",
+        "error(0.1) D37 D38 L0"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        5,
+        8
+      ],
+      "coordinates": [
+        [
+          5.0,
+          1.0
+        ],
+        [
+          1.0,
+          3.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "fail",
+      "dem_errors": null,
+      "py_matching_graph": "not_attempted",
+      "dem_error_records": [],
+      "decomposition_exception": "ValueError: Failed to decompose errors into graphlike components with at most two symptoms.\nThe error component that failed to decompose is 'D5, D7, D8, L0'.\n\nIn Python, you can ignore this error by passing `ignore_decomposition_failures=True` to `stim.Circuit.detector_error_model(...)`.\nFrom the command line, you can ignore this error by passing the flag `--ignore_decomposition_failures` to `stim analyze_errors`.",
+      "nondecomposed_dem": "pass",
+      "nondecomposed_py_matching": "fail",
+      "nondecomposed_error_records": [
+        "error(0.1) D5 D7 D8 L0",
+        "error(0.1) D13 D15 D16 L0",
+        "error(0.1) D21 D23 D24 L0",
+        "error(0.1) D29 D31 D32 L0",
+        "error(0.1) D36 D37 D39 L0"
+      ],
+      "nondecomposed_py_matching_exception": "ValueError: Encountered an undecomposed error instruction with 3 or mode detectors. This is not supported when using `enable_correlations=True`. Did you forget to set `decompose_errors=True` when converting the stim circuit to a detector error model?"
+    },
+    {
+      "pair": [
+        5,
+        10
+      ],
+      "coordinates": [
+        [
+          5.0,
+          1.0
+        ],
+        [
+          3.0,
+          3.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "fail",
+      "dem_errors": null,
+      "py_matching_graph": "not_attempted",
+      "dem_error_records": [],
+      "decomposition_exception": "ValueError: Failed to decompose errors into graphlike components with at most two symptoms.\nThe error component that failed to decompose is 'D5, D7, D10, L0'.\n\nIn Python, you can ignore this error by passing `ignore_decomposition_failures=True` to `stim.Circuit.detector_error_model(...)`.\nFrom the command line, you can ignore this error by passing the flag `--ignore_decomposition_failures` to `stim analyze_errors`.",
+      "nondecomposed_dem": "pass",
+      "nondecomposed_py_matching": "fail",
+      "nondecomposed_error_records": [
+        "error(0.1) D5 D7 D10 L0",
+        "error(0.1) D13 D15 D18 L0",
+        "error(0.1) D21 D23 D26 L0",
+        "error(0.1) D29 D31 D34 L0",
+        "error(0.1) D37 D38 D39 L0"
+      ],
+      "nondecomposed_py_matching_exception": "ValueError: Encountered an undecomposed error instruction with 3 or mode detectors. This is not supported when using `enable_correlations=True`. Did you forget to set `decompose_errors=True` when converting the stim circuit to a detector error model?"
+    },
+    {
+      "pair": [
+        5,
+        12
+      ],
+      "coordinates": [
+        [
+          5.0,
+          1.0
+        ],
+        [
+          5.0,
+          3.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D10 L0",
+        "error(0.1) D18 L0",
+        "error(0.1) D26 L0",
+        "error(0.1) D34 L0",
+        "error(0.1) D38 L0"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        5,
+        15
+      ],
+      "coordinates": [
+        [
+          5.0,
+          1.0
+        ],
+        [
+          1.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D7 D8 L0",
+        "error(0.1) D15 D16 L0",
+        "error(0.1) D23 D24 L0",
+        "error(0.1) D31 D32 L0",
+        "error(0.1) D36 D39 L0"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        5,
+        17
+      ],
+      "coordinates": [
+        [
+          5.0,
+          1.0
+        ],
+        [
+          3.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D7 D10 L0",
+        "error(0.1) D15 D18 L0",
+        "error(0.1) D23 D26 L0",
+        "error(0.1) D31 D34 L0",
+        "error(0.1) D38 D39 L0"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        5,
+        19
+      ],
+      "coordinates": [
+        [
+          5.0,
+          1.0
+        ],
+        [
+          5.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D7 D10 L0",
+        "error(0.1) D15 D18 L0",
+        "error(0.1) D23 D26 L0",
+        "error(0.1) D31 D34 L0",
+        "error(0.1) D38 D39 L0"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        8,
+        10
+      ],
+      "coordinates": [
+        [
+          1.0,
+          3.0
+        ],
+        [
+          3.0,
+          3.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D8 D10",
+        "error(0.1) D16 D18",
+        "error(0.1) D24 D26",
+        "error(0.1) D32 D34",
+        "error(0.1) D36 D38"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        8,
+        12
+      ],
+      "coordinates": [
+        [
+          1.0,
+          3.0
+        ],
+        [
+          5.0,
+          3.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "fail",
+      "dem_errors": null,
+      "py_matching_graph": "not_attempted",
+      "dem_error_records": [],
+      "decomposition_exception": "ValueError: Failed to decompose errors into graphlike components with at most two symptoms.\nThe error component that failed to decompose is 'D5, D7, D8, D10'.\n\nIn Python, you can ignore this error by passing `ignore_decomposition_failures=True` to `stim.Circuit.detector_error_model(...)`.\nFrom the command line, you can ignore this error by passing the flag `--ignore_decomposition_failures` to `stim analyze_errors`.",
+      "nondecomposed_dem": "pass",
+      "nondecomposed_py_matching": "fail",
+      "nondecomposed_error_records": [
+        "error(0.1) D5 D7 D8 D10",
+        "error(0.1) D13 D15 D16 D18",
+        "error(0.1) D21 D23 D24 D26",
+        "error(0.1) D29 D31 D32 D34",
+        "error(0.1) D36 D37 D38 D39"
+      ],
+      "nondecomposed_py_matching_exception": "ValueError: Encountered an undecomposed error instruction with 3 or mode detectors. This is not supported when using `enable_correlations=True`. Did you forget to set `decompose_errors=True` when converting the stim circuit to a detector error model?"
+    },
+    {
+      "pair": [
+        8,
+        15
+      ],
+      "coordinates": [
+        [
+          1.0,
+          3.0
+        ],
+        [
+          1.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D5",
+        "error(0.1) D13",
+        "error(0.1) D21",
+        "error(0.1) D29",
+        "error(0.1) D37"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        8,
+        17
+      ],
+      "coordinates": [
+        [
+          1.0,
+          3.0
+        ],
+        [
+          3.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "fail",
+      "dem_errors": null,
+      "py_matching_graph": "not_attempted",
+      "dem_error_records": [],
+      "decomposition_exception": "ValueError: Failed to decompose errors into graphlike components with at most two symptoms.\nThe error component that failed to decompose is 'D5, D8, D10'.\n\nIn Python, you can ignore this error by passing `ignore_decomposition_failures=True` to `stim.Circuit.detector_error_model(...)`.\nFrom the command line, you can ignore this error by passing the flag `--ignore_decomposition_failures` to `stim analyze_errors`.",
+      "nondecomposed_dem": "pass",
+      "nondecomposed_py_matching": "fail",
+      "nondecomposed_error_records": [
+        "error(0.1) D5 D8 D10",
+        "error(0.1) D13 D16 D18",
+        "error(0.1) D21 D24 D26",
+        "error(0.1) D29 D32 D34",
+        "error(0.1) D36 D37 D38"
+      ],
+      "nondecomposed_py_matching_exception": "ValueError: Encountered an undecomposed error instruction with 3 or mode detectors. This is not supported when using `enable_correlations=True`. Did you forget to set `decompose_errors=True` when converting the stim circuit to a detector error model?"
+    },
+    {
+      "pair": [
+        8,
+        19
+      ],
+      "coordinates": [
+        [
+          1.0,
+          3.0
+        ],
+        [
+          5.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "fail",
+      "dem_errors": null,
+      "py_matching_graph": "not_attempted",
+      "dem_error_records": [],
+      "decomposition_exception": "ValueError: Failed to decompose errors into graphlike components with at most two symptoms.\nThe error component that failed to decompose is 'D5, D8, D10'.\n\nIn Python, you can ignore this error by passing `ignore_decomposition_failures=True` to `stim.Circuit.detector_error_model(...)`.\nFrom the command line, you can ignore this error by passing the flag `--ignore_decomposition_failures` to `stim analyze_errors`.",
+      "nondecomposed_dem": "pass",
+      "nondecomposed_py_matching": "fail",
+      "nondecomposed_error_records": [
+        "error(0.1) D5 D8 D10",
+        "error(0.1) D13 D16 D18",
+        "error(0.1) D21 D24 D26",
+        "error(0.1) D29 D32 D34",
+        "error(0.1) D36 D37 D38"
+      ],
+      "nondecomposed_py_matching_exception": "ValueError: Encountered an undecomposed error instruction with 3 or mode detectors. This is not supported when using `enable_correlations=True`. Did you forget to set `decompose_errors=True` when converting the stim circuit to a detector error model?"
+    },
+    {
+      "pair": [
+        10,
+        12
+      ],
+      "coordinates": [
+        [
+          3.0,
+          3.0
+        ],
+        [
+          5.0,
+          3.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D5 D7",
+        "error(0.1) D13 D15",
+        "error(0.1) D21 D23",
+        "error(0.1) D29 D31",
+        "error(0.1) D37 D39"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        10,
+        15
+      ],
+      "coordinates": [
+        [
+          3.0,
+          3.0
+        ],
+        [
+          1.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "fail",
+      "dem_errors": null,
+      "py_matching_graph": "not_attempted",
+      "dem_error_records": [],
+      "decomposition_exception": "ValueError: Failed to decompose errors into graphlike components with at most two symptoms.\nThe error component that failed to decompose is 'D5, D8, D10'.\n\nIn Python, you can ignore this error by passing `ignore_decomposition_failures=True` to `stim.Circuit.detector_error_model(...)`.\nFrom the command line, you can ignore this error by passing the flag `--ignore_decomposition_failures` to `stim analyze_errors`.",
+      "nondecomposed_dem": "pass",
+      "nondecomposed_py_matching": "fail",
+      "nondecomposed_error_records": [
+        "error(0.1) D5 D8 D10",
+        "error(0.1) D13 D16 D18",
+        "error(0.1) D21 D24 D26",
+        "error(0.1) D29 D32 D34",
+        "error(0.1) D36 D37 D38"
+      ],
+      "nondecomposed_py_matching_exception": "ValueError: Encountered an undecomposed error instruction with 3 or mode detectors. This is not supported when using `enable_correlations=True`. Did you forget to set `decompose_errors=True` when converting the stim circuit to a detector error model?"
+    },
+    {
+      "pair": [
+        10,
+        17
+      ],
+      "coordinates": [
+        [
+          3.0,
+          3.0
+        ],
+        [
+          3.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D5",
+        "error(0.1) D13",
+        "error(0.1) D21",
+        "error(0.1) D29",
+        "error(0.1) D37"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        10,
+        19
+      ],
+      "coordinates": [
+        [
+          3.0,
+          3.0
+        ],
+        [
+          5.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D5",
+        "error(0.1) D13",
+        "error(0.1) D21",
+        "error(0.1) D29",
+        "error(0.1) D37"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        12,
+        15
+      ],
+      "coordinates": [
+        [
+          5.0,
+          3.0
+        ],
+        [
+          1.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "fail",
+      "dem_errors": null,
+      "py_matching_graph": "not_attempted",
+      "dem_error_records": [],
+      "decomposition_exception": "ValueError: Failed to decompose errors into graphlike components with at most two symptoms.\nThe error component that failed to decompose is 'D7, D8, D10'.\n\nIn Python, you can ignore this error by passing `ignore_decomposition_failures=True` to `stim.Circuit.detector_error_model(...)`.\nFrom the command line, you can ignore this error by passing the flag `--ignore_decomposition_failures` to `stim analyze_errors`.",
+      "nondecomposed_dem": "pass",
+      "nondecomposed_py_matching": "fail",
+      "nondecomposed_error_records": [
+        "error(0.1) D7 D8 D10",
+        "error(0.1) D15 D16 D18",
+        "error(0.1) D23 D24 D26",
+        "error(0.1) D31 D32 D34",
+        "error(0.1) D36 D38 D39"
+      ],
+      "nondecomposed_py_matching_exception": "ValueError: Encountered an undecomposed error instruction with 3 or mode detectors. This is not supported when using `enable_correlations=True`. Did you forget to set `decompose_errors=True` when converting the stim circuit to a detector error model?"
+    },
+    {
+      "pair": [
+        12,
+        17
+      ],
+      "coordinates": [
+        [
+          5.0,
+          3.0
+        ],
+        [
+          3.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D7",
+        "error(0.1) D15",
+        "error(0.1) D23",
+        "error(0.1) D31",
+        "error(0.1) D39"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        12,
+        19
+      ],
+      "coordinates": [
+        [
+          5.0,
+          3.0
+        ],
+        [
+          5.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D7",
+        "error(0.1) D15",
+        "error(0.1) D23",
+        "error(0.1) D31",
+        "error(0.1) D39"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        15,
+        17
+      ],
+      "coordinates": [
+        [
+          1.0,
+          5.0
+        ],
+        [
+          3.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D8 D10",
+        "error(0.1) D16 D18",
+        "error(0.1) D24 D26",
+        "error(0.1) D32 D34",
+        "error(0.1) D36 D38"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        15,
+        19
+      ],
+      "coordinates": [
+        [
+          1.0,
+          5.0
+        ],
+        [
+          5.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 5,
+      "py_matching_graph": "pass",
+      "dem_error_records": [
+        "error(0.1) D8 D10",
+        "error(0.1) D16 D18",
+        "error(0.1) D24 D26",
+        "error(0.1) D32 D34",
+        "error(0.1) D36 D38"
+      ],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 5
+    },
+    {
+      "pair": [
+        17,
+        19
+      ],
+      "coordinates": [
+        [
+          3.0,
+          5.0
+        ],
+        [
+          5.0,
+          5.0
+        ]
+      ],
+      "detectors": 40,
+      "observables": 1,
+      "decompose_true": "pass",
+      "dem_errors": 0,
+      "py_matching_graph": "pass",
+      "dem_error_records": [],
+      "decomposition_exception": null,
+      "nondecomposed_dem": "not_attempted",
+      "nondecomposed_py_matching": "not_attempted",
+      "graph_edges": 0
+    }
+  ]
+}

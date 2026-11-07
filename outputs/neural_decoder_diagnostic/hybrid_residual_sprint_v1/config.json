@@ -1,0 +1,74 @@
+{
+  "study_name": "Q-SHIFT hybrid residual-decoder development sprint v1",
+  "independent_test_access": "prohibited; no test data or test seed stream is allocated",
+  "roots": 5,
+  "circuit": {
+    "memory_basis": "z",
+    "distance": 3,
+    "rounds": 5,
+    "gate_p": 0.003,
+    "measurement_p": 0.003,
+    "bias_ratio": 10.0,
+    "regimes": ["x_biased", "balanced", "z_biased"]
+  },
+  "sampling": {
+    "batch_size": 1024,
+    "train_budgets_per_regime_root": [10000, 30000, 60000],
+    "monitor_shots_per_regime_root": 6000,
+    "calibration_shots_per_regime_root": 15000,
+    "threshold_selection_shots_per_regime_root": 15000,
+    "final_development_shots_per_regime_root": 15000,
+    "diagnostic_shots_per_regime": 128,
+    "maximum_unique_production_shots": 3000000
+  },
+  "models": {
+    "strategies": ["balanced_minibatch", "natural_inverse_prevalence_weighted"],
+    "training": {
+      "channels": 4,
+      "head_width": 16,
+      "dropout": 0.05,
+      "batch_size": 256,
+      "max_epochs": 10,
+      "patience": 3,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0001,
+      "scheduler": {"type": "StepLR", "step_size_epochs": 5, "gamma": 0.5},
+      "checkpoint_every_batches": 20,
+      "evaluation_batch_size": 512
+    },
+    "calibration_temperature_grid": [0.5, 0.7, 0.85, 1.0, 1.2, 1.5, 2.0, 3.0, 4.0],
+    "threshold_grid": [0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10,0.11,0.12,0.13,0.14,0.15,0.16,0.17,0.18,0.19,0.20,0.21,0.22,0.23,0.24,0.25,0.26,0.27,0.28,0.29,0.30,0.31,0.32,0.33,0.34,0.35,0.36,0.37,0.38,0.39,0.40,0.41,0.42,0.43,0.44,0.45,0.46,0.47,0.48,0.49,0.50,0.51,0.52,0.53,0.54,0.55,0.56,0.57,0.58,0.59,0.60,0.61,0.62,0.63,0.64,0.65,0.66,0.67,0.68,0.69,0.70,0.71,0.72,0.73,0.74,0.75,0.76,0.77,0.78,0.79,0.80,0.81,0.82,0.83,0.84,0.85,0.86,0.87,0.88,0.89,0.90,0.91,0.92,0.93,0.94,0.95,0.96,0.97,0.98,0.99],
+    "confidence_gate": {
+      "familywise_alpha": 0.05,
+      "adjustment": "Bonferroni over all 99 fixed thresholds",
+      "minimum_precision_lower_bound": 0.5,
+      "fallback": "no residual correction; frozen PyMatching output",
+      "tie_break": ["lowest equal-regime threshold-selection LER", "threshold closest to 0.5", "higher threshold"]
+    }
+  },
+  "analysis": {
+    "primary": "five-root equal-regime paired LER difference versus frozen PyMatching",
+    "primary_candidate": {"strategy": "balanced_minibatch", "train_size_per_regime": 60000, "policy": "confidence_gate"},
+    "development_go_gate": {
+      "minimum_absolute_ler_reduction": 0.0002,
+      "minimum_favorable_roots": 4,
+      "root_bootstrap_95_ci_upper_below_zero": true,
+      "correction_precision_above": 0.5,
+      "interpretation": "only a gate to propose a separate frozen confirmatory study; never a superiority claim"
+    },
+    "confidence_interval": "two-sided Student-t 95% across five roots; descriptive",
+    "bootstrap_resamples": 100000,
+    "bootstrap_confidence": 0.95,
+    "bootstrap_seed": 2146000002,
+    "exact_root_sign_flip": "all 2^5 sign assignments, two-sided; exploratory",
+    "holm_family": "all nine prespecified candidate-policy-training-size comparisons versus PyMatching",
+    "sign_flip_seed": 2146000001
+  },
+  "limits": {
+    "wall_seconds": 10800,
+    "gpu_seconds": 9000,
+    "minimum_free_disk_gib": 2.0,
+    "maximum_process_rss_gib": 3.0,
+    "maximum_cuda_allocated_gib": 4.0
+  }
+}
