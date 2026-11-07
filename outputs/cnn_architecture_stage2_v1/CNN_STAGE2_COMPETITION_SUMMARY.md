@@ -1,0 +1,5 @@
+# Q-SHIFT CNN Stage 2 Competition Summary
+The frozen five-root development comparison completed with paired Stim samples and an independent read-only evidence audit. It generated 260,000 unique development shots; the independent test remained sealed.
+ResidualPositionCNNV2 had a +0.000090 equal-condition LER difference versus fixed PyMatching (95% descriptive root-level interval [-2.941941940499909e-05, 0.0002094194194049994]); it lost or tied in every root and the frozen gate **failed**. Across the 100,000 final shots, PyMatching made 641 errors and V2 made 650. These data do not demonstrate a neural-decoder advantage.
+A burst-informed PyMatching model made 301 errors on the 50,000 synthetic-burst shots, compared with 386 for nominal PyMatching. This reference knows the injected burst model and is not a deployable detector-only decoder. The burst mechanism is synthetic rather than hardware-calibrated.
+The experiment supports a reproducible comparison and a negative development finding. It does not establish generalization, confirmatory superiority, or hardware performance.

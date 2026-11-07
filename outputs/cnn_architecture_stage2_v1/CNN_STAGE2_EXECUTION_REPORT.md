@@ -1,0 +1,20 @@
+# Q-SHIFT CNN Stage 2 Execution Report
+**Final status: completed after read-only audit recovery.** All 260,000 frozen development shots, 15 model/root jobs, and five roots are present. Independent-test access remains false.
+## Execution and recovery record
+- Training jobs: 15/15; final-development roots: 5/5.- Unique shots: 260,000/260,000; split totals: {'final_development_evaluation': 100000, 'monitor': 20000, 'probability_calibration': 20000, 'threshold_selection': 20000, 'training': 100000}.- Main-run wall time through the first audit failure: 129.25s.- Main-run measured CUDA time: 89.81s; peak tracked CUDA allocation: 25,134,592 bytes.- First 256 dry-run rows were reused within the root-00 nominal training partition; the dry-run report is at run_v1/dry_run_report.json.- The first frozen audit attempt failed only at aggregate reporting with KeyError: 'shots': model summary tried to read shots from a model-metric row instead of its enclosing root/condition record.- No samples or training were rerun. Original failed status was preserved at run_v1/raw/FINALIZATION_FAILURE_V1.json; the independent recovery audit passed and recomputed results from saved evidence.- Recovery audit wall time for a repeat verification: 3.108 seconds. Failure snapshot SHA-256: 216deb931b4aa88cd7c29354ba124cc44934ea69a765b4764b9b197e3a17519a.- Completion status is now backed by the separate read-only recovery audit; the original failed audit JSON remains unchanged.
+## Main result
+Frozen primary endpoint, equal-condition ResidualPositionCNNV2 minus nominal fixed PyMatching: **+0.000090 LER**, descriptive 95% root interval [-2.941941940499909e-05, 0.0002094194194049994]; favorable roots 0/5. **Development gate: FAIL**.The primary CNN did not improve over the fixed baseline. The result is development-only and does not support superiority.
+## Aggregate errors (paired final-development shots)
+- Nominal: fixed PyMatching 255/50,000; historical CNN 254/50,000; V2 CNN 255/50,000; factorized CNN 257/50,000.- Synthetic burst: nominal fixed PyMatching 386/50,000; historical CNN 389/50,000; V2 CNN 395/50,000; factorized CNN 402/50,000.- Across both conditions: fixed PyMatching 641/100,000; historical CNN 643/100,000; V2 CNN 650/100,000; factorized CNN 659/100,000.- Burst-informed PyMatching on burst samples only: 301/50,000 (privileged: it receives the true injected burst model).- Candidate-only/fixed-only failures, disagreements, useful/harmful corrections, and condition-specific root intervals are in CNN_STAGE2_RESULTS.md and CNN_STAGE2_PER_ROOT.csv.
+## Per-root primary paired effects
+
+| Root | Nominal delta | Burst delta | Equal-condition delta |
+|---|---:|---:|---:|
+| dev-root-00 | -0.000100 | +0.000300 | +0.000100 |
+| dev-root-01 | +0.000000 | +0.000000 | +0.000000 |
+| dev-root-02 | +0.000100 | +0.000000 | +0.000050 |
+| dev-root-03 | +0.000000 | +0.000100 | +0.000050 |
+| dev-root-04 | +0.000000 | +0.000500 | +0.000250 |
+
+## Training and runtime
+- Model parameter counts: historical 13,429; V2 13,041; factorized 12,653.- Mean measured model inference wall latency across roots (includes both conditions): {'historical_residual_position_cnn': {'mean_seconds_per_shot': 3.908275999856414e-06, 'median_seconds_per_shot': 4.0273900005558975e-06}, 'residual_position_v2': {'mean_seconds_per_shot': 3.89171000031638e-06, 'median_seconds_per_shot': 3.7065850010549186e-06}, 'factorized_spatiotemporal_residual': {'mean_seconds_per_shot': 3.919943000073545e-06, 'median_seconds_per_shot': 3.848940000170841e-06}}.- Residual-positive training examples were sparse (minimum root-condition count: 42); balanced presentations reused positives hundreds to over a thousand times per example, as recorded by root/model in the training diagnostics CSV.- Thresholds and temperatures were selected only from their designated calibration/threshold splits. Monitor-best checkpoints were restored and independently verified.- The burst condition is synthetic and not hardware-calibrated; DEM conversion uses the inherited approximation. No hardware integration was performed.
