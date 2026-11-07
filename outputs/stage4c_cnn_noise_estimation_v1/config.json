@@ -1,0 +1,70 @@
+{
+  "study": "Q-SHIFT Stage 4C CNN-assisted adaptive PyMatching",
+  "version": "1.0-prospective-development",
+  "status": "FROZEN_BEFORE_SAMPLING",
+  "circuit": {
+    "generator": "outputs/phase3a_correlated_noise_preflight/simulator.py::build_spatial_burst_circuit",
+    "memory_basis": "z",
+    "distance": 3,
+    "rounds": 5,
+    "detectors": 40,
+    "observables": 1,
+    "pauli_regime": "balanced",
+    "gate_probability": 0.003,
+    "measurement_probability": 0.003,
+    "bias_ratio": 10.0,
+    "burst_pair_data_qubits": [8, 10],
+    "dem": {"decompose_errors": true, "approximate_disjoint_errors": true, "pymatching_enable_correlations": true}
+  },
+  "training": {
+    "probabilities": [0.0, 0.01, 0.02],
+    "batch_shots": 250,
+    "batches_per_probability": 120,
+    "total_shots": 90000,
+    "supervised_target": "known generating burst probability for independent detector-only calibration batches",
+    "cnn": {"architecture": "3D convolution over Stim-derived (time=6,y=4,x=4) grid; channels=marginal rate, burst-pair cofire rate, occupancy mask", "channels": 4, "head_width": 16, "loss": "MSE on p/0.02", "optimizer": "AdamW", "learning_rate": 0.003, "weight_decay": 0.0001, "batch_size": 32, "max_epochs": 400, "early_stopping_patience": 30, "selection": "minimum held-out validation MAE; earlier epoch wins ties", "device": "CPU", "dropout": 0.0},
+    "ridge": {"feature_definition": "45 Stage 4B detector-only marginal and pair-cofire means", "alpha_candidates": [0.01, 0.1, 1.0, 10.0], "selection": "minimum validation MAE; smaller alpha wins ties"}
+  },
+  "validation": {"probabilities": [0.005, 0.015], "batch_shots": 250, "batches_per_probability": 60, "total_shots": 30000, "observable_labels_generated": false},
+  "evaluation": {
+    "probabilities": [0.0, 0.004, 0.008, 0.012, 0.016],
+    "roots_per_probability": 7,
+    "calibration_shots_per_root": 2000,
+    "paired_evaluation_shots_per_root": 2500,
+    "neural_and_ridge_inference_chunk_shots": 250,
+    "total_calibration_shots": 70000,
+    "total_paired_evaluation_shots": 87500
+  },
+  "total_unique_shots": 277500,
+  "hard_shot_ceiling": 300000,
+  "estimators": ["stage4b_detector_profile_refit_on_stage4c_training", "ridge_regression", "small_3d_cnn"],
+  "decoder_arms": ["fixed_nominal_pymatching", "stage4b_profile_estimator_pymatching", "ridge_estimator_pymatching", "cnn_estimator_pymatching", "privileged_true_probability_pymatching_reference"],
+  "inference_inputs": ["independent detector-only calibration batch"],
+  "forbidden_inference_inputs": ["observable labels", "true evaluation burst probability", "burst event flags", "evaluation detector samples", "hidden evaluation condition"],
+  "training_partition_policy": "One Stim detector-only array per unique seed; shared by all estimators. Known generation p is a supervised target for training and validation only.",
+  "paired_evaluation_policy": "Every decoder arm uses identical saved evaluation detector rows and observable row order; observable labels are only passed to scoring after predictions exist.",
+  "statistical_plan": {
+    "primary_estimand": "Equal-weight mean across nonzero p={0.004,0.008,0.012,0.016} of root-mean paired LER difference CNN-estimator PyMatching minus Stage4B-profile-estimator PyMatching.",
+    "practical_minimum_improvement": 0.0002,
+    "bootstrap": {"method": "stratified independent-root bootstrap, resample 7 roots with replacement within each p stratum", "replicates": 20000, "confidence": 0.95, "seed": 4230000553, "interval": "two-sided percentile", "shared_root_index_cube": true},
+    "primary_test": {"method": "two-sided Monte Carlo paired root sign-flip; independently flip signs within each nonzero p stratum", "assignments": 100000, "seed": 4230000554, "plus_one": true, "ties": "count as extreme", "stream_order": ["primary_cnn_minus_profile", "secondary_cnn_minus_fixed", "secondary_cnn_minus_ridge", "secondary_ridge_minus_profile"]},
+    "secondary_family": "Three equal-weight root-stratified sign-flip tests: CNN minus fixed nominal, CNN minus Ridge-assisted, Ridge-assisted minus Stage4B profile; Holm correction across these three. Condition-specific effects are descriptive.",
+    "zero_burst_safety": "one-sided 95% stratified root-bootstrap upper bound for CNN minus Stage4B profile at p=0",
+    "root_is_inference_unit": true,
+    "shot_level_resampling": false
+  },
+  "decision_rule": {
+    "cnn_keep_requires_all": [
+      "primary point estimate <= -0.0002 absolute LER",
+      "primary 95% root-bootstrap interval upper endpoint < 0",
+      "primary two-sided sign-flip p < 0.05",
+      "at least 3 of 4 nonzero condition means favor CNN",
+      "zero-burst one-sided 95% upper bound <= +0.0002",
+      "CNN is not materially worse than Ridge in validation estimation MAE (<=0.0005 absolute p)"
+    ],
+    "otherwise": "DROP if evidence shows no advantage or is unfavorable; INCONCLUSIVE if uncertainty prevents a reliable keep/drop distinction. Prefer the simpler Stage4B profile estimator absent a demonstrated CNN advantage."
+  },
+  "resources": {"wall_seconds_max": 1800, "peak_rss_bytes_max": 2147483648, "cuda_required": false, "device": "CPU", "maximum_unique_shots": 300000},
+  "independent_test": {"allocated": false, "accessed": false, "enumerated": false},
+  "claims_boundary": "Development-only synthetic-noise feasibility result; no hardware validation or independent confirmation."
+}

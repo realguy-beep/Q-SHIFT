@@ -1,0 +1,141 @@
+{
+  "inventory_status": "DOCUMENTATION_LEVEL_INVENTORY_NOT_GLOBAL_ROW_DEDUPLICATION",
+  "created_date": "2026-11-07",
+  "current_sealed_competition_test_accessed": false,
+  "global_unique_row_count": null,
+  "global_unique_row_count_reason": "Phases have separate partitions and some template/model reuse; no cross-phase row-level deduplication was performed. Sealed independent-test material was not inspected.",
+  "studies": [
+    {
+      "study": "CNN Stage 2 architecture comparison",
+      "path": "outputs/cnn_architecture_stage2_v1/",
+      "reported_shots_within_study": 260000,
+      "coverage": "training 100000; monitoring 20000; probability calibration 20000; threshold selection 20000; final development evaluation 100000",
+      "roots": 5,
+      "audit": "PASS; predictions independently recomputed and PyMatching re-decoded",
+      "raw_retention": "local ignored run archives and weights; lightweight results and audit tracked",
+      "independent_test_accessed": false,
+      "source": "outputs/cnn_architecture_stage2_v1/CNN_STAGE2_INDEPENDENT_AUDIT.md"
+    },
+    {
+      "study": "CNN Stage 3 residual-gate comparison",
+      "path": "outputs/cnn_stage3_residual_gate_v1/",
+      "reported_shots_within_study": 200000,
+      "coverage": "30 saved partitions across five independent roots",
+      "roots": 5,
+      "audit": "PASS recovery audit; historical runner status remains failed due to finalization import error",
+      "raw_retention": "local evidence; report and audit metadata tracked",
+      "independent_test_accessed": false,
+      "source": "outputs/cnn_stage3_residual_gate_v1/CNN_STAGE3_INDEPENDENT_AUDIT.md"
+    },
+    {
+      "study": "Phase 3A correlated-noise deterministic preflight",
+      "path": "outputs/phase3a_correlated_noise_preflight/",
+      "reported_shots_within_study": 2592,
+      "coverage": "preflight unique records; formal preflight also reports 2880 draws including deterministic replays; no production experiment",
+      "roots": null,
+      "audit": "deterministic validation passed; not a performance study",
+      "raw_retention": "small preflight outputs and reports",
+      "independent_test_accessed": false,
+      "source": "outputs/phase3a_correlated_noise_preflight/PHASE3A_FINAL_REPORT.md"
+    },
+    {
+      "study": "Stage 4 detector-estimation feasibility pilot",
+      "path": "outputs/stage4_noise_adaptive_feasibility_v1/",
+      "reported_shots_within_study": 48000,
+      "coverage": "six roots; detector calibration and paired evaluation at two unseen burst probabilities",
+      "roots": 6,
+      "audit": "PASS; saved arrays and paired counts independently recomputed",
+      "raw_retention": "pilot arrays and audit artifacts retained locally",
+      "independent_test_accessed": false,
+      "source": "outputs/stage4_noise_adaptive_feasibility_v1/STAGE4_FEASIBILITY_PILOT_FINDINGS.md"
+    },
+    {
+      "study": "Stage 4 detector-calibrated adaptive PyMatching development",
+      "path": "outputs/stage4_noise_adaptive_development_v1/",
+      "reported_shots_within_study": 175500,
+      "coverage": "profile 18000; calibration 70000; paired evaluation 87500; seven roots at each of five conditions",
+      "roots": 35,
+      "audit": "PASS; estimator reconstruction and all decoder predictions independently verified",
+      "raw_retention": "local ignored raw arrays plus lightweight audit/results",
+      "independent_test_accessed": false,
+      "source": "outputs/stage4_noise_adaptive_development_v1/STAGE4_INDEPENDENT_AUDIT.md"
+    },
+    {
+      "study": "Stage 4C CNN noise-estimator comparison",
+      "path": "outputs/stage4c_cnn_noise_estimation_v1/",
+      "reported_shots_within_study": 277500,
+      "coverage": "training 90000; validation 30000; detector calibration 70000; paired evaluation 87500",
+      "roots": 35,
+      "audit": "PASS; frozen hashes, independent CNN retraining, estimator reconstruction and five decoder predictions verified",
+      "raw_retention": "44 local ignored raw files under run/; evidence hashes in EVIDENCE_MANIFEST.json",
+      "independent_test_accessed": false,
+      "source": "outputs/stage4c_cnn_noise_estimation_v1/STAGE4C_INDEPENDENT_AUDIT.md"
+    },
+    {
+      "study": "Stage 4A model-adequacy experiment",
+      "path": "outputs/phase4a_model_adequacy/",
+      "reported_shots_within_study": 4050256,
+      "coverage": "templates 450000; calibration 1200000; validation 600000; test 1800000; noiseless diagnostic 256",
+      "roots": 20,
+      "audit": "Stage 0 independent verification recorded PASS in the later integrity reaudit",
+      "raw_retention": "reports and raw evidence retained locally; follow historical manifest and audit",
+      "current_sealed_competition_test_accessed": false,
+      "source": "outputs/phase4a_model_adequacy/PHASE4A_RESULTS.md",
+      "interpretation": "The Phase 4A experiment's own held-out test split was evaluated as authorized by its protocol; the later current sealed competition test remains unopened."
+    },
+    {
+      "study": "Phase 4B independent replication",
+      "path": "outputs/phase4b_replication/",
+      "reported_shots_within_study": 1650256,
+      "core_root_allocation_shots": 1200000,
+      "coverage": "fresh templates 450000 (nine models x 50000 shots), calibration 400000, validation 200000, paired test 600000, noiseless diagnostic 256; fresh templates deviated from the protocol's reuse plan",
+      "roots": 20,
+      "audit": "saved test predictions independently re-decoded; calibration arrays were not saved, so full calibration reconstruction was not possible",
+      "raw_retention": "test arrays/predictions locally retained; calibration data absent per recovery audit",
+      "current_sealed_competition_test_accessed": false,
+      "source": "outputs/phase4b_evidence_verification/PHASE4B_EVIDENCE_AUDIT.md",
+      "interpretation": "Phase 4B's own paired test split was evaluated under its protocol; the separate current sealed competition test remains unopened."
+    },
+    {
+      "study": "Correlation-aware decoder development pilot",
+      "path": "outputs/correlation_pilot/",
+      "reported_shots_within_study": 720000,
+      "coverage": "six strata, twelve roots per stratum, 10000 paired shots per root, four decoder arms",
+      "roots": 72,
+      "audit": "PASS; detector/observable bundles and predictions independently verified",
+      "raw_retention": "paired pilot arrays locally retained; historical evidence preserved",
+      "independent_test_accessed": false,
+      "source": "outputs/correlation_pilot/INDEPENDENT_EVIDENCE_AUDIT.md"
+    },
+    {
+      "study": "Autonomous CNN development run",
+      "path": "outputs/neural_decoder_diagnostic/",
+      "reported_shots_within_study": 750000,
+      "coverage": "50 jobs, five development roots; status completed and independent_test_access=0 according to Phase 3A historical audit",
+      "roots": 5,
+      "audit": "377 run-manifest entries checked; one expected later stdout-log addition documented",
+      "raw_retention": "historical run artifacts local; not included in this catalog's raw-data inventory",
+      "independent_test_accessed": false,
+      "source": "outputs/phase3a_correlated_noise_preflight/PHASE3A_FINAL_REPORT.md"
+    },
+    {
+      "study": "Hybrid residual development sprint",
+      "path": "outputs/neural_decoder_diagnostic/hybrid_residual_sprint_v1/",
+      "reported_shots_within_study": 1665384,
+      "coverage": "1665000 production shots plus 384 diagnostic shots; original controller status remains failed, separate evidence audit passed",
+      "roots": null,
+      "jobs": 30,
+      "audit": "292 saved artifact hashes checked; independent audit recovery retained separately",
+      "raw_retention": "historical data/weights/predictions retained locally",
+      "independent_test_accessed": false,
+      "source": "outputs/phase3a_correlated_noise_preflight/PHASE3A_FINAL_REPORT.md"
+    }
+  ],
+  "caveats": [
+    "Per-study shot counts come from the cited reports and are not a globally unique count.",
+    "Stage 4B calibration arrays were absent; do not claim calibration fitting was independently reproduced.",
+    "Some raw arrays are ignored by Git and stay only in the local research workspace.",
+    "The inventory deliberately excludes the current sealed independent-test paths, names, samples and labels. Earlier phase-specific held-out splits are summarized only from reports.",
+    "Some studies generated/used templates that may be reused across later studies; template reuse is not treated as new unique row count unless included in that study's allocation."
+  ]
+}
