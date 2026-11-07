@@ -1,0 +1,177 @@
+{
+  "status": "PASS_DIAGNOSTIC_ONLY_NO_TRAINING",
+  "scope": "Small plumbing diagnostic only; not a training, model-selection, or performance study.",
+  "independent_test_access": 0,
+  "training_steps": 0,
+  "final_evaluation_shots": 0,
+  "runtime": {
+    "matching_construction_seconds": 0.007056599992210977,
+    "paired_decode_seconds": 0.00156309999874793,
+    "wall_seconds": 4.243341199995484
+  },
+  "software": {
+    "python": "3.12.10",
+    "torch": "2.14.1+cu126",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "cuda_available": true,
+    "cuda_device_name": "NVIDIA GeForce RTX 4050 Laptop GPU"
+  },
+  "seeds": {
+    "stim_correlated_diagnostic": 1973040111,
+    "torch_candidate_initialization": 1973040112,
+    "torch_repeatability_test": 1973040113,
+    "stim_noiseless_structure_check": 1973040114
+  },
+  "seed_screen": {
+    "archived_recoverable_values": 2076,
+    "additional_phase3a_values_checked": 9,
+    "new_seed_count": 4,
+    "new_seed_values_unique": true,
+    "historical_collisions": [],
+    "phase3a_collisions": []
+  },
+  "circuit": {
+    "memory_basis": "z",
+    "distance": 3,
+    "rounds": 5,
+    "regime": "balanced",
+    "gate_probability": 0.003,
+    "measurement_probability": 0.003,
+    "burst_pair": [
+      8,
+      10
+    ],
+    "burst_probability_per_round": 0.01,
+    "detectors": 40,
+    "observables": 1,
+    "same_detector_coordinates_as_base": true,
+    "dem_conversion": {
+      "decompose_errors": true,
+      "approximate_disjoint_errors": true
+    },
+    "fixed_dem_error_records": 586,
+    "burst_dem_error_records": 591,
+    "fixed_matching_edges": 142,
+    "burst_matching_edges": 147,
+    "noiseless_check_shots": 16,
+    "noiseless_detector_nonzero": 0,
+    "noiseless_observable_nonzero": 0
+  },
+  "paired_correlated_diagnostic": {
+    "shots": 256,
+    "detector_shape": [
+      256,
+      40
+    ],
+    "observable_shape": [
+      256,
+      1
+    ],
+    "detector_sha256": "1ee7ada716f8b6c6e6f3b8b493d6e3087304458b5cef7e9ed0b72cd9ff742417",
+    "observable_sha256": "0fb37ff8461e6433e5a6479310eb1fb667c25382ea2af916840985998729004d",
+    "paired_prediction_sha256": "b06e170d45a33e3b0a53efc7715316988aef572bc3add77ed814e5d365c8b70d",
+    "frozen_pymatching": {
+      "errors": 1,
+      "ler_diagnostic_only": 0.00390625
+    },
+    "burst_informed_pymatching": {
+      "errors": 1,
+      "ler_diagnostic_only": 0.00390625
+    },
+    "decoder_disagreements": 0,
+    "same_detector_and_label_arrays": true,
+    "interpretation": "Counts on 256 diagnostic shots validate paired wiring only; do not interpret them as a decoder comparison or evidence of improvement."
+  },
+  "candidate_forward_checks": {
+    "historical_residual_position_cnn": {
+      "parameters": 13429,
+      "float32_parameter_storage_bytes": 53716,
+      "input_detector_shape": [
+        256,
+        40
+      ],
+      "input_matching_prediction_shape": [
+        256
+      ],
+      "output_logit_shape": [
+        256
+      ],
+      "finite_forward": true,
+      "cpu_batch_inference_median_seconds": 0.004795592000009492,
+      "cpu_per_shot_inference_median_microseconds": 18.73278125003708,
+      "cpu_benchmark_trials": 5,
+      "cpu_forwards_per_trial": 25,
+      "trained": false,
+      "scored_as_decoder": false,
+      "cuda_batch_inference_median_seconds": 0.0009345638275146484,
+      "cuda_per_shot_inference_median_microseconds": 3.6506399512290955,
+      "cuda_benchmark_trials": 5,
+      "cuda_forwards_per_trial": 100,
+      "cuda_peak_allocated_bytes": 10390016
+    },
+    "residual_position_v2": {
+      "parameters": 13041,
+      "float32_parameter_storage_bytes": 52164,
+      "input_detector_shape": [
+        256,
+        40
+      ],
+      "input_matching_prediction_shape": [
+        256
+      ],
+      "output_logit_shape": [
+        256
+      ],
+      "finite_forward": true,
+      "cpu_batch_inference_median_seconds": 0.004704103999538347,
+      "cpu_per_shot_inference_median_microseconds": 18.37540624819667,
+      "cpu_benchmark_trials": 5,
+      "cpu_forwards_per_trial": 25,
+      "trained": false,
+      "scored_as_decoder": false,
+      "cuda_batch_inference_median_seconds": 0.0009798348999023438,
+      "cuda_per_shot_inference_median_microseconds": 3.8274800777435303,
+      "cuda_benchmark_trials": 5,
+      "cuda_forwards_per_trial": 100,
+      "cuda_peak_allocated_bytes": 10191872
+    },
+    "factorized_spatiotemporal_residual": {
+      "parameters": 12653,
+      "float32_parameter_storage_bytes": 50612,
+      "input_detector_shape": [
+        256,
+        40
+      ],
+      "input_matching_prediction_shape": [
+        256
+      ],
+      "output_logit_shape": [
+        256
+      ],
+      "finite_forward": true,
+      "cpu_batch_inference_median_seconds": 0.004109967999975197,
+      "cpu_per_shot_inference_median_microseconds": 16.054562499903113,
+      "cpu_benchmark_trials": 5,
+      "cpu_forwards_per_trial": 25,
+      "trained": false,
+      "scored_as_decoder": false,
+      "cuda_batch_inference_median_seconds": 0.001004369888305664,
+      "cuda_per_shot_inference_median_microseconds": 3.9233198761940002,
+      "cuda_benchmark_trials": 5,
+      "cuda_forwards_per_trial": 100,
+      "cuda_peak_allocated_bytes": 10190336
+    }
+  },
+  "source_hashes": {
+    "outputs\\cnn_architecture_stage1_v1\\cnn_architectures.py": "422f32317594ebd335ace5e4eee5282d4830ac644cf76b74cb6df7c86b816394",
+    "outputs\\cnn_architecture_stage1_v1\\run_preflight.py": "b60cf07d97e2b2714e4ee8be00e3f1055ea34b9ecb8ef74ad6159b8f356ac3f2",
+    "outputs\\cnn_architecture_stage1_v1\\preflight_config.json": "c8cb641ed690405af2c1be5f47271c4455c4b6bcdc08fd7b88945f2ac40eaad1",
+    "outputs\\cnn_architecture_stage1_v1\\seed_inventory.json": "f5ab1f123f2a10555411e9d7ea7fd4b8f79e10927833f464eebf20b9aeccd44a",
+    "outputs\\cnn_architecture_stage1_v1\\tests\\test_cnn_architectures.py": "1acb0f7ec595eb1314c919f7da5c27387443f27a8d0a279e6e21dcb45c59aec0",
+    "dashboard\\structured_decoder.py": "8a064fa48df78a2f9eba4ad13d835a88edf67bc2f44c711217428273d4b653a9",
+    "outputs\\phase2b_pauli_bias\\noise_model.py": "256826516353c5d3effb6a0b85969934ac2b61edc2848148d935087e54dffcbd",
+    "outputs\\phase3a_correlated_noise_preflight\\simulator.py": "c938ffc9f4169a9d0c7c92bf5c66e48a03a64f45d3d06f160a31d11b188da239",
+    "outputs\\neural_decoder_diagnostic\\autonomous_development\\experiment.py": "76c8ecd93d5e58e6d9564bd74d71c072c11aae0f44af7ceedbca0d26eecaf82c"
+  }
+}

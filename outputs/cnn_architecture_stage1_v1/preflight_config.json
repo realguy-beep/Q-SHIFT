@@ -1,0 +1,39 @@
+{
+  "phase": "CNN architecture improvement Stage 1 preflight",
+  "status": "diagnostic-only; no training and no held-out evaluation",
+  "circuit": {
+    "generator": "outputs/phase3a_correlated_noise_preflight/simulator.py over frozen Phase 2B noise_model.build_circuit",
+    "memory_basis": "z",
+    "distance": 3,
+    "rounds": 5,
+    "regime": "balanced",
+    "gate_probability": 0.003,
+    "measurement_probability": 0.003,
+    "bias_ratio": 10.0,
+    "burst_pair_data_qubits": [8, 10],
+    "burst_probability_per_round": 0.01
+  },
+  "diagnostics": {
+    "stim_correlated_shots": 256,
+    "stim_noiseless_shots": 16,
+    "model_batch_size": 8,
+    "training_steps": 0,
+    "final_evaluation_shots": 0,
+    "independent_test_access": 0
+  },
+  "seed_inventory": "seed_inventory.json",
+  "decoder_arms": [
+    "Frozen no-burst PyMatching model from the Phase 2B nominal circuit",
+    "Burst-informed PyMatching from the same circuit with the preflight burst mechanism"
+  ],
+  "neural_candidates": [
+    "ResidualPositionCNNV2",
+    "FactorizedSpatialTemporalResidualCNN"
+  ],
+  "candidate_task": "predict observable XOR frozen PyMatching prediction; correction is XORed with the same frozen PyMatching prediction",
+  "dem_conversion": {
+    "decompose_errors": true,
+    "approximate_disjoint_errors": true,
+    "reason": "preserves Phase 2B categorical Pauli-channel conversion setting; inherited approximation is disclosed"
+  }
+}
