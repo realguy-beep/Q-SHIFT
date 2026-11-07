@@ -387,14 +387,22 @@ def batch_jobs(shot_counts: dict, batch_size: int, epoch: int, shuffle_seed: int
 
 
 def stream_batch(envs: dict, inventory: dict, split: str, regime: str, batch_index: int,
-                 count: int) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+                 count: int, stage_counts: dict | None = None) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     if split not in {"train", "validation"}:
         raise RuntimeError("The structured worker has no test-sampling path; requested split is blocked.")
     stream = next(item for item in inventory["streams"]
                   if item["split"] == split and item["regime"] == regime)
     seed = int(stream["root"]) + int(batch_index)
+    sim_tick = time.perf_counter()
     d, y = sample(envs[regime]["circuit"], seed, count)
+    if stage_counts is not None:
+        stage_counts["simulation_shots"] = stage_counts.get("simulation_shots", 0) + int(count)
+        stage_counts["simulation_seconds"] = stage_counts.get("simulation_seconds", 0.0) + time.perf_counter() - sim_tick
+    decode_tick = time.perf_counter()
     matching = decode_matching(envs[regime]["matching"], d)
+    if stage_counts is not None:
+        stage_counts["decoding_shots"] = stage_counts.get("decoding_shots", 0) + int(count)
+        stage_counts["decoding_seconds"] = stage_counts.get("decoding_seconds", 0.0) + time.perf_counter() - decode_tick
     return d, y, matching
 
 
@@ -466,7 +474,8 @@ def restore_rng_state(state: dict, device: torch.device) -> None:
 
 def _validation_loss_and_ler(model, spec: dict, envs: dict, inventory: dict, val_counts: dict,
                              batch_size: int, device: torch.device,
-                             positive_weight: float | None = None) -> tuple[float, float]:
+                             positive_weight: float | None = None,
+                             stage_counts: dict | None = None) -> tuple[float, float]:
     per_regime_ler = []
     total_loss, total_count = 0.0, 0
     model.eval()
@@ -475,7 +484,8 @@ def _validation_loss_and_ler(model, spec: dict, envs: dict, inventory: dict, val
             wrong, count = 0, 0
             for batch_index, start in enumerate(range(0, int(val_counts[regime]), batch_size)):
                 size = min(batch_size, int(val_counts[regime]) - start)
-                d, y, fixed = stream_batch(envs, inventory, "validation", regime, batch_index, size)
+                d, y, fixed = stream_batch(envs, inventory, "validation", regime, batch_index, size,
+                                           stage_counts=stage_counts)
                 x = torch.as_tensor(d, dtype=torch.float32, device=device)
                 y_t = torch.as_tensor(y, dtype=torch.float32, device=device)
                 f_t = torch.as_tensor(fixed, dtype=torch.float32, device=device)
@@ -545,7 +555,9 @@ def train_candidate(name: str, cfg: dict, envs: dict, coords: dict, inventory: d
     pos_weight_value = _positive_weight(spec, prevalence)
     pos_weight_tensor = (torch.tensor([pos_weight_value], dtype=torch.float32, device=device)
                          if pos_weight_value is not None else None)
+    train_shots_per_epoch = sum(int(train_counts[r]) for r in REGIMES)
     total_steps = sum(math.ceil(int(train_counts[r]) / int(cfg["batch_size"])) for r in REGIMES) * int(cfg["max_epochs"])
+    total_presentations = train_shots_per_epoch * int(cfg["max_epochs"])
     checkpoint_path = run_dir / "checkpoints" / f"{name}.pt"
     config_hash_value = config_hash(cfg)
     epoch, next_job_idx, global_step, best_ler, best_loss, best_epoch, patience_count = 0, 0, 0, None, None, None, 0
@@ -565,6 +577,9 @@ def train_candidate(name: str, cfg: dict, envs: dict, coords: dict, inventory: d
         best_state, history = saved["best_model_state"], list(saved["history"])
         restore_rng_state(saved["rng_state"], device)
     started = time.perf_counter()
+    last_progress_emit = started
+    stage_counts = {"simulation_shots": 0, "decoding_shots": 0,
+                    "simulation_seconds": 0.0, "decoding_seconds": 0.0}
     checkpoint_seconds = 0.0
     sim_seconds = 0.0
     decode_seconds = 0.0
@@ -580,7 +595,8 @@ def train_candidate(name: str, cfg: dict, envs: dict, coords: dict, inventory: d
             validation_tick = time.perf_counter()
             val_loss, val_ler = _validation_loss_and_ler(model, spec, envs, inventory, val_counts,
                                                          int(cfg["batch_size"]), device,
-                                                         positive_weight=pos_weight_value)
+                                                         positive_weight=pos_weight_value,
+                                                         stage_counts=stage_counts)
             validation_seconds = time.perf_counter() - validation_tick
             validation_total_seconds += validation_seconds
             scheduler.step(val_ler)
@@ -605,10 +621,25 @@ def train_candidate(name: str, cfg: dict, envs: dict, coords: dict, inventory: d
             _save_fit_state(checkpoint_path, state)
             checkpoint_seconds += time.perf_counter() - checkpoint_tick
             if event_callback:
-                event_callback({"type": "progress", "status": "running", "candidate": name,
+                completed_epoch_shots = epoch * train_shots_per_epoch
+                elapsed_fit = max(1e-9, time.perf_counter() - started)
+                epoch_rate = completed_epoch_shots / elapsed_fit
+                event_callback({"type": "progress", "status": "running", "phase": "training", "candidate": name,
                                 "epoch": epoch, "global_step": global_step,
-                                "total_training_shots": sum(int(v) for v in train_counts.values()),
-                                "training_samples_processed": sum(int(v) for v in train_counts.values()),
+                                "total_training_shots": train_shots_per_epoch,
+                                "training_samples_processed": completed_epoch_shots,
+                                "total_shots": total_presentations,
+                                "completed_shots": completed_epoch_shots,
+                                "generated_shots": stage_counts["simulation_shots"],
+                                "processed_shots": completed_epoch_shots,
+                                "progress_percent": min(100.0, 100.0 * completed_epoch_shots /
+                                                         max(1, total_presentations)),
+                                "throughput_shots_s": epoch_rate,
+                                "eta_seconds": (max(0, total_presentations - completed_epoch_shots) / epoch_rate
+                                                if epoch_rate > 0 else None),
+                                "shot_unit_label": "candidate training presentations",
+                                "stage_counts": {"simulation": stage_counts["simulation_shots"],
+                                                 "decoding": stage_counts["decoding_shots"]},
                                 "training_passes_completed": epoch,
                                 "validation_ler": float(val_ler), "validation_loss": float(val_loss),
                                 "device": str(device), "cuda_training_verified": device.type == "cuda",
@@ -620,7 +651,8 @@ def train_candidate(name: str, cfg: dict, envs: dict, coords: dict, inventory: d
 
         regime, batch_index, size = jobs[next_job_idx]
         t = time.perf_counter()
-        d, y, fixed = stream_batch(envs, inventory, "train", regime, batch_index, size)
+        d, y, fixed = stream_batch(envs, inventory, "train", regime, batch_index, size,
+                                   stage_counts=stage_counts)
         sim_seconds += time.perf_counter() - t
         target_np = np.bitwise_xor(fixed, y) if spec["kind"] == "residual" else y
         x = torch.as_tensor(d, dtype=torch.float32, device=device)
@@ -649,8 +681,9 @@ def train_candidate(name: str, cfg: dict, envs: dict, coords: dict, inventory: d
         request = (run_dir / "control.request").read_text(encoding="utf-8").strip() if requested else ""
         checkpoint_requested = (run_dir / "checkpoint.request").is_file()
         wall_expired = max_wall > 0 and (time.perf_counter() - started) >= max_wall
-        if (steps_since_ckpt >= int(cfg["checkpoint_frequency_steps"]) or request in ("pause", "stop")
-                or checkpoint_requested or wall_expired):
+        checkpoint_due = (steps_since_ckpt >= int(cfg["checkpoint_frequency_steps"]) or request in ("pause", "stop")
+                          or checkpoint_requested or wall_expired)
+        if checkpoint_due:
             state = _fit_checkpoint_payload(name, config_hash_value, model, optimizer, scheduler, epoch,
                                             next_job_idx, global_step, best_ler, best_loss, best_epoch,
                                             patience_count, best_state, history, model_seed)
@@ -660,16 +693,36 @@ def train_candidate(name: str, cfg: dict, envs: dict, coords: dict, inventory: d
             steps_since_ckpt = 0
             if checkpoint_requested:
                 (run_dir / "checkpoint.request").unlink(missing_ok=True)
-            if event_callback:
-                event_callback({"type": "progress", "status": "running", "candidate": name,
+        emit_due = time.perf_counter() - last_progress_emit >= 1.0
+        if event_callback and (checkpoint_due or emit_due):
+            presented_in_epoch = sum(int(job[2]) for job in jobs[:next_job_idx])
+            completed_presentations = epoch * train_shots_per_epoch + presented_in_epoch
+            elapsed_fit = max(1e-9, time.perf_counter() - started)
+            train_rate = completed_presentations / elapsed_fit
+            remaining_presentations = max(0, total_presentations - completed_presentations)
+            event_callback({"type": "progress", "status": "running", "phase": "training", "candidate": name,
                                 "epoch": epoch + 1, "global_step": global_step,
-                                "total_training_shots": sum(int(v) for v in train_counts.values()),
-                                "training_samples_processed": int(sum(int(v) for v in train_counts.values()) *
-                                                                       next_job_idx / max(1, len(jobs))),
+                                "total_training_shots": train_shots_per_epoch,
+                                "training_samples_processed": completed_presentations,
+                                "total_shots": total_presentations,
+                                "completed_shots": completed_presentations,
+                                "generated_shots": stage_counts["simulation_shots"],
+                                "processed_shots": completed_presentations,
+                                "progress_percent": min(100.0, 100.0 * completed_presentations /
+                                                         max(1, total_presentations)),
+                                "phase_completed_shots": presented_in_epoch,
+                                "phase_total_shots": sum(int(v) for v in train_counts.values()),
+                                "shot_unit_label": "candidate training presentations",
+                                "throughput_shots_s": train_rate,
+                                "eta_seconds": remaining_presentations / train_rate if train_rate > 0 else None,
+                                "elapsed_seconds": elapsed_fit,
+                                "stage_counts": {"simulation": stage_counts["simulation_shots"],
+                                                 "decoding": stage_counts["decoding_shots"]},
                                 "training_passes_completed": epoch,
                                 "device": str(device), "cuda_training_verified": device.type == "cuda",
                                 "cuda_device_name": torch.cuda.get_device_name(0) if device.type == "cuda" else None,
                                 "python_executable": sys.executable, "gpu_telemetry": device_snapshot()})
+            last_progress_emit = time.perf_counter()
         if request in ("pause", "stop") or wall_expired:
             if requested:
                 (run_dir / "control.request").unlink(missing_ok=True)

@@ -2,11 +2,11 @@
   'use strict';
   const $ = (id) => document.getElementById(id);
   const state = { runId: null, run: null, metrics: [], socket: null, retry: 0, retryTimer: null,
-                  generation: 0, telemetry: null, awaitingConfirmation: null };
+                  pollTimer: null, generation: 0, telemetry: null, awaitingConfirmation: null };
   const pretty = (n) => new Intl.NumberFormat('en-US').format(Number(n || 0));
   const pct = (x, digits = 3) => Number.isFinite(Number(x)) ? `${(Number(x) * 100).toFixed(digits)}%` : '—';
   const seconds = (v) => {
-    if (!Number.isFinite(Number(v))) return '—';
+    if (v == null || !Number.isFinite(Number(v))) return '—';
     const s = Math.max(0, Math.round(Number(v)));
     if (s < 60) return `${s}s`;
     if (s < 3600) return `${Math.floor(s / 60)}m ${s % 60}s`;
@@ -35,7 +35,7 @@
   }
 
   function displayRunStatus(status) {
-    const label = (status || 'idle').toUpperCase();
+    const label = status === 'stopped' ? 'CANCELLED / STOPPED' : (status || 'idle').toUpperCase();
     const el = $('run-status');
     el.className = `run-status ${status || 'idle'}`;
     el.innerHTML = `<span class="status-led"></span> ${label}`;
@@ -54,13 +54,14 @@
     e.innerHTML = `<span class="status-led"></span><span>${label}</span>`;
   }
 
-  function renderTelemetry(t) {
+  function renderTelemetry(t, runProgress = null) {
     if (!t) return;
     state.telemetry = t;
-    const gpu = t.gpu || {};
+    const gpuActive = window.QShiftProgress.canShowGpuTelemetry(runProgress, state.run?.status);
+    const gpu = gpuActive ? (runProgress?.gpu_telemetry?.gpu || t.gpu || {}) : {};
     const sys = t.system || {};
-    $('gpu-name').textContent = gpu.available ? (gpu.name || 'NVIDIA GPU') : 'GPU telemetry unavailable';
-    $('gpu-source').textContent = gpu.available ? `${gpu.source || 'NVML'} · live local telemetry` : (gpu.unavailable_reason || 'No telemetry provider');
+    $('gpu-name').textContent = gpuActive ? (gpu.name || 'CUDA training active') : (t.gpu?.available ? 'GPU detected · not used by this run' : 'GPU use not verified');
+    $('gpu-source').textContent = gpuActive ? `${gpu.source || 'NVML'} · verified current run` : 'GPU readings are hidden unless this run records CUDA training';
     $('gpu-util').textContent = gpu.available && gpu.utilization_percent != null ? `${Math.round(gpu.utilization_percent)}%` : '—';
     $('gpu-util-bar').style.width = `${Math.max(0, Math.min(100, Number(gpu.utilization_percent || 0)))}%`;
     $('gpu-memory').textContent = gpu.available && gpu.memory_percent != null ? `${Number(gpu.memory_percent).toFixed(0)}%` : '—';
@@ -73,9 +74,14 @@
     $('cpu-util').textContent = sys.cpu_percent != null ? `${Number(sys.cpu_percent).toFixed(0)}%` : '—';
     $('ram-used').textContent = sys.ram_used_bytes != null ? `${mib(sys.ram_used_bytes)} / ${mib(sys.ram_total_bytes)}` : '—';
     const chip = $('cuda-chip');
-    if (t.cuda_available) {
-      chip.textContent = 'CUDA READY'; chip.className = 'gpu-chip good';
-      $('device-label').textContent = 'CUDA · mixed precision when supported';
+    if (gpuActive) {
+      chip.textContent = 'CUDA ACTIVE'; chip.className = 'gpu-chip good';
+      $('device-label').textContent = `CUDA training · ${runProgress.cuda_device_name || t.cuda_device_name || 'GPU'}`;
+    } else if (t.cuda_available) {
+      chip.textContent = 'CUDA AVAILABLE'; chip.className = 'gpu-chip warn';
+      $('device-label').textContent = runProgress?.device === 'cpu'
+        ? 'CPU run · CUDA available but not used'
+        : 'CUDA is available; this run has not verified GPU training';
     } else {
       chip.textContent = 'CUDA UNAVAILABLE'; chip.className = 'gpu-chip warn';
       $('device-label').textContent = 'CPU fallback · ' + (t.cuda_unavailable_reason || 'CUDA unavailable');
@@ -84,33 +90,46 @@
 
   function updateProgress(e) {
     if (!e) return;
-    const target = Number(e.total_training_shots || state.run?.config?.training_shots || 8000);
-    const done = Number(e.training_samples_processed ?? e.generated_training_shots ?? 0);
-    const percent = target ? Math.min(100, done * 100 / target) : 0;
-    $('progress-percent').innerHTML = `${percent.toFixed(0)}<span>%</span>`;
-    $('progress-fill').style.width = `${percent}%`;
+    const p = window.QShiftProgress.normalizeProgress(e, state.run?.config || {});
+    const done = p.completedShots;
+    const total = p.totalShots;
+    const percent = p.percent;
+    $('progress-percent').innerHTML = percent == null ? '—' : `${percent.toFixed(0)}<span>%</span>`;
+    $('progress-fill').style.width = `${percent == null ? 0 : percent}%`;
     $('processed-shots').textContent = pretty(done);
-    $('target-shots').textContent = pretty(target);
-    $('generated-shots').textContent = pretty(e.generated_training_shots || 0);
-    $('trained-shots').textContent = pretty(e.training_samples_processed || 0);
-    $('throughput').textContent = e.throughput_shots_s ? pretty(Math.round(e.throughput_shots_s)) : '—';
-    $('eta').textContent = seconds(e.eta_seconds);
+    $('target-shots').textContent = total == null ? '—' : pretty(total);
+    $('generated-shots').textContent = e.generated_shots == null ? pretty(done) : pretty(e.generated_shots);
+    $('trained-shots').textContent = pretty(p.processedShots);
+    $('throughput').textContent = p.throughput == null ? '—' : pretty(Math.round(p.throughput));
+    $('eta').textContent = seconds(p.etaSeconds);
     $('elapsed').textContent = `elapsed ${seconds(e.elapsed_seconds)}`;
     $('step-caption').textContent = `step ${pretty(e.step || 0)} / ${pretty(e.steps_total || 0)}`;
-    $('val-count').textContent = pretty(e.generated_validation_shots || e.validation_shots || 0);
-    $('test-count').textContent = pretty(e.generated_test_shots || 0);
-    $('sample-passes').textContent = pretty(e.training_sample_passes || 0);
+    $('phase-caption').textContent = p.phase.replaceAll('_', ' ');
+    $('phase-shot-count').textContent = p.phaseCompleted == null ? 'stage count not reported' :
+      `${pretty(p.phaseCompleted)} / ${p.phaseTotal == null ? '—' : pretty(p.phaseTotal)} shots`;
+    $('val-count').textContent = e.generated_validation_shots == null ? '—' : pretty(e.generated_validation_shots);
+    $('test-count').textContent = e.generated_test_shots == null ? '—' : pretty(e.generated_test_shots);
+    $('sample-passes').textContent = e.training_sample_passes == null ? '—' : pretty(e.training_sample_passes);
+    const stages = p.stages || {};
+    for (const stage of ['simulation', 'calibration', 'decoding', 'analysis']) {
+      const value = stages[stage];
+      $( `stage-${stage}` ).textContent = value == null ? 'Not reported' :
+        (typeof value === 'object' ? `${pretty(value.completed ?? value.shots ?? 0)} / ${value.total == null ? '—' : pretty(value.total)}` : pretty(value));
+    }
     if (e.device) {
       const verified = e.cuda_training_verified === true;
       $('device-label').textContent = verified
         ? `CUDA training · ${e.cuda_device_name || 'GPU'}${e.mixed_precision ? ' · AMP' : ''}`
         : `${String(e.device).toUpperCase()}${e.mixed_precision ? ' · AMP' : ''}`;
     }
-    if (e.gpu_telemetry) renderTelemetry(e.gpu_telemetry);
+    if (e.gpu_telemetry) renderTelemetry(e.gpu_telemetry, e);
     if (e.candidate) $('architecture-label').textContent = `Training · ${e.candidate}`;
     else if (e.model_selection) $('architecture-label').textContent = e.model_selection === 'direct_mlp' ? 'Direct detector-to-logical MLP' : e.model_selection === 'structured_3d_cnn' ? 'Geometry-aware structured 3D CNN' : 'Direct MLP + residual MLP';
     $('progress-panel').classList.toggle('running', e.status === 'running');
     $('last-update').textContent = `UPDATED ${new Date().toLocaleTimeString()}`;
+    const error = $('progress-error');
+    error.hidden = !p.error;
+    error.textContent = p.error ? `Worker error: ${p.error}` : '';
     if (e.validation_ler != null) $('test-state').textContent = 'VALIDATION LIVE';
     renderCharts();
   }
@@ -352,6 +371,7 @@
   function addEvent(event) {
     if (!event) return;
     if (event.type === 'progress') {
+      if (state.run) state.run.status = event.status || 'running';
       state.metrics.push({ type: 'progress', ...event });
       if (state.metrics.length > 2000) state.metrics.splice(0, state.metrics.length - 2000);
       updateProgress(event);
@@ -361,11 +381,13 @@
       state.metrics = (event.metrics || []).map(m => ({ type: m.type, ...(m.payload || {}) })).filter(m => m.type === 'progress');
       if (event.run?.state?.summary?.metrics) renderComparison(event.run.state.summary.metrics);
       renderCharts();
-    } else if (['completed', 'failed', 'paused', 'stopped', 'interrupted'].includes(event.type)) {
+    } else if (['completed', 'failed', 'paused', 'stopped', 'cancelled', 'interrupted'].includes(event.type)) {
       state.run = state.run || {};
       state.run.status = event.status || event.type;
       if (event.summary) state.run.state = { ...(state.run.state || {}), summary: event.summary };
       displayRunStatus(event.status || event.type);
+      if (event.error) { $('progress-error').hidden = false; $('progress-error').textContent = `Worker ${event.type}: ${event.error}`; }
+      if (state.pollTimer) { clearInterval(state.pollTimer); state.pollTimer = null; }
       if (event.metrics || event.summary?.metrics) renderComparison(event.metrics || event.summary.metrics);
       if (event.type === 'completed' && state.run?.config?.worker_kind === 'structured_3d_cnn') {
         $('test-state').textContent = 'DEVELOPMENT VALIDATION';
@@ -394,7 +416,7 @@
     ws.onerror = () => { setConnection('offline', 'Stream error'); };
     ws.onclose = () => {
       if (generation !== state.generation) return;
-      if (state.run && ['completed', 'failed', 'paused', 'stopped', 'interrupted'].includes(state.run.status)) {
+      if (state.run && ['completed', 'failed', 'paused', 'stopped', 'cancelled', 'interrupted'].includes(state.run.status)) {
         setConnection('', 'Saved locally'); return;
       }
       state.retry += 1;
@@ -405,10 +427,46 @@
     };
   }
 
+  function startProgressPolling(runId) {
+    if (state.pollTimer) clearInterval(state.pollTimer);
+    let lastProgressKey = null;
+    let busy = false;
+    const poll = async () => {
+      if (!runId || busy) return;
+      busy = true;
+      try {
+        const snapshot = await api(`/api/runs/${encodeURIComponent(runId)}/progress`);
+        if (state.runId !== runId) return;
+        state.run = { ...(state.run || {}), id: runId, status: snapshot.status,
+          updated_at: snapshot.updated_at, error: snapshot.error,
+          state: { ...(state.run?.state || {}), progress: snapshot.progress, summary: snapshot.summary } };
+        if (snapshot.progress) {
+          const key = JSON.stringify(snapshot.progress);
+          if (key !== lastProgressKey) {
+            lastProgressKey = key;
+            state.metrics.push({ type: 'progress', ...snapshot.progress });
+            if (state.metrics.length > 2000) state.metrics.splice(0, state.metrics.length - 2000);
+            updateProgress(snapshot.progress);
+            renderCharts();
+          }
+        }
+        displayRunStatus(snapshot.status);
+        if (snapshot.error) { $('progress-error').hidden = false; $('progress-error').textContent = `Worker error: ${snapshot.error}`; }
+        if (['completed', 'failed', 'paused', 'stopped', 'cancelled', 'interrupted'].includes(snapshot.status)) {
+          if (state.pollTimer) { clearInterval(state.pollTimer); state.pollTimer = null; }
+          setConnection('', 'Saved locally');
+        }
+      } catch (error) {
+        setConnection('offline', `Progress API retry · ${error.message}`);
+      } finally { busy = false; }
+    };
+    poll();
+    state.pollTimer = setInterval(poll, 2500);
+  }
+
   async function loadState() {
     try {
       const data = await api('/api/state');
-      renderTelemetry(data.telemetry);
       // The latest SQLite row is history, not a live worker and not the separate
       // autonomous controller. Keep showing it for continuity, but label it.
       const historical = !data.active_run;
@@ -417,15 +475,19 @@
         setExperimentMetadata(run, historical);
         const detail = await api(`/api/runs/${run.id}`);
         setExperimentMetadata(detail.run, historical);
+        renderTelemetry(data.telemetry, detail.run.state?.progress || detail.run.execution);
         state.metrics = (detail.metrics || []).map(m => ({ type: m.type, ...(m.payload || {}) })).filter(m => m.type === 'progress');
         if (detail.run.state?.summary?.metrics) renderComparison(detail.run.state.summary.metrics);
         renderCharts();
-        if (['running', 'queued', 'pausing'].includes(detail.run.status)) connect(run.id);
-        else setConnection('', 'Saved locally');
+        if (['running', 'queued', 'pausing'].includes(detail.run.status)) {
+          connect(run.id); startProgressPolling(run.id);
+        } else { renderTelemetry(data.telemetry, detail.run.state?.progress || detail.run.execution); setConnection('', 'Saved locally'); }
       } else {
         $('console-run-label').textContent = 'NO DASHBOARD WORKER RUN';
         $('experiment-name').textContent = 'No active dashboard training run';
         displayRunStatus('idle');
+        renderTelemetry(data.telemetry, null);
+        if (state.pollTimer) { clearInterval(state.pollTimer); state.pollTimer = null; }
         setConnection('', 'Local service ready');
       }
     } catch (error) {
@@ -541,7 +603,7 @@
   loadAutonomousRun();
   setInterval(loadAutonomousRun, 5000);
   setInterval(async () => {
-    try { const h = await api('/api/health'); renderTelemetry(h.telemetry); }
+    try { const h = await api('/api/health'); renderTelemetry(h.telemetry, state.run?.state?.progress || state.run?.execution || null); }
     catch (_) { if (!state.run) setConnection('offline', 'Backend unavailable'); }
   }, 3000);
 })();

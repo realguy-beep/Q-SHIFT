@@ -246,6 +246,69 @@ class StructuredDecoderTests(unittest.TestCase):
 
 
 class ControlAndApiTests(unittest.TestCase):
+    def test_progress_endpoint_survives_refresh_and_reports_terminal_state(self):
+        with tempfile.TemporaryDirectory() as td:
+            db = Path(td) / "runs.sqlite3"
+            with patch.object(storage, "DB_PATH", db):
+                storage.init_db()
+                with TestClient(dashboard_app.app, client=("127.0.0.1", 54327)) as client:
+                    # Create after lifespan recovery so this fixture represents a live job,
+                    # rather than a queued job recovered as interrupted on backend start.
+                    storage.create_run("progress-snapshot", {"training_shots": 1000}, {})
+                    progress = {"type": "progress", "status": "running", "phase": "decoding",
+                                "completed_shots": 350, "total_shots": 2000,
+                                "throughput_shots_s": 21.5, "eta_seconds": 76.7,
+                                "stage_counts": {"simulation": 500, "decoding": 350}}
+                    storage.append_event("progress-snapshot", progress)
+                    live = client.get("/api/runs/progress-snapshot/progress").json()
+                    self.assertEqual(live["progress"], progress)
+                    self.assertEqual(live["status"], "running")
+                    self.assertGreater(live["updated_at"], 0)
+                    for status in ("completed", "failed", "cancelled", "interrupted", "paused"):
+                        storage.append_event("progress-snapshot", {"type": status, "status": status,
+                            "summary": {"terminal_status": status}, "error": "fixture failure" if status == "failed" else None})
+                        terminal = client.get("/api/runs/progress-snapshot/progress").json()
+                        self.assertEqual(terminal["status"], status)
+                        self.assertEqual(terminal["summary"]["terminal_status"], status)
+
+    def test_worker_failure_log_preserves_traceback_and_marks_interrupted(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            db, runs = root / "runs.sqlite3", root / "runs"
+            run_id = "worker-log-error"
+            with patch.object(storage, "DB_PATH", db), patch.object(manager_module, "RUNS_DIR", runs):
+                storage.init_db()
+                storage.create_run(run_id, {}, {})
+                class FailedProcess:
+                    stdout = io.StringIO("Traceback (most recent call last):\n  File 'worker.py', line 1\nValueError: bad sample\n")
+                    def wait(self): return 1
+                WorkerManager()._drain(run_id, FailedProcess())
+                log = (runs / run_id / "worker.log").read_text(encoding="utf-8")
+                self.assertIn("Traceback (most recent call last):", log)
+                self.assertIn("ValueError: bad sample", log)
+                self.assertEqual(storage.get_run(run_id)["status"], "interrupted")
+                self.assertIn("ValueError: bad sample", storage.get_run(run_id)["error"])
+
+    def test_websocket_snapshot_closes_subscribe_race(self):
+        with tempfile.TemporaryDirectory() as td:
+            db = Path(td) / "runs.sqlite3"
+            with patch.object(storage, "DB_PATH", db):
+                storage.init_db()
+                storage.create_run("ws-progress-race", {}, {})
+                original = dashboard_app.manager.subscribe
+                event = {"type": "progress", "status": "running", "phase": "simulation",
+                         "completed_shots": 17, "total_shots": 100}
+                def subscribe_then_write(run_id):
+                    queue = original(run_id)
+                    storage.append_event(run_id, event)
+                    return queue
+                with patch.object(dashboard_app.manager, "subscribe", side_effect=subscribe_then_write):
+                    with TestClient(dashboard_app.app, client=("127.0.0.1", 54328)) as client:
+                        with client.websocket_connect("/ws/ws-progress-race") as websocket:
+                            snapshot = websocket.receive_json()
+                            self.assertEqual(snapshot["type"], "snapshot")
+                            self.assertEqual(snapshot["run"]["state"]["progress"], event)
+
     def test_loopback_ipv4_dashboard_health_and_control_routes(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)

@@ -47,7 +47,7 @@ def sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
-def split_samples(circuit, matching, plan, split, count, batch_size):
+def split_samples(circuit, matching, plan, split, count, batch_size, progress_callback=None):
     ds, ys, ps = [], [], []
     sample_seconds = 0.0
     decode_seconds = 0.0
@@ -58,6 +58,9 @@ def split_samples(circuit, matching, plan, split, count, batch_size):
         tick = time.perf_counter()
         d, y = sample(circuit, batch_seed(plan, split, index), size)
         sample_seconds += time.perf_counter() - tick
+        if progress_callback:
+            progress_callback("simulation", split, count - remaining + size, count,
+                              sample_seconds, decode_seconds)
         tick = time.perf_counter()
         p = decode_matching(matching, d)
         decode_seconds += time.perf_counter() - tick
@@ -66,6 +69,9 @@ def split_samples(circuit, matching, plan, split, count, batch_size):
         ps.append(p)
         remaining -= size
         index += 1
+        if progress_callback:
+            progress_callback("decoding", split, count - remaining, count,
+                              sample_seconds, decode_seconds)
     return np.concatenate(ds), np.concatenate(ys), np.concatenate(ps), {
         "stim_generation_seconds": sample_seconds,
         "pymatching_decode_seconds": decode_seconds,
@@ -172,9 +178,59 @@ def run(config_path: Path, run_dir: Path, resume: bool = False):
     if np.any(zero_pred):
         raise RuntimeError("Frozen PyMatching baseline did not return a zero correction for the zero syndrome.")
 
+    total_shots = int(cfg["training_shots"] + cfg["validation_shots"] + cfg["test_shots"])
+    started = time.perf_counter()
+    processed = 0
+    last_emit = started
+    progress = {"generated_training": int(processed), "generated_validation": 0,
+                "generated_test": 0, "decoded_training": int(processed),
+                "decoded_validation": 0, "decoded_test": 0, "trained": int(processed),
+                "analysis_completed": 0}
+
+    def emit_progress(phase, phase_completed=None, phase_total=None, split=None):
+        generated = progress["generated_training"] + progress["generated_validation"] + progress["generated_test"]
+        completed_work = progress["trained"] + progress["decoded_validation"] + progress["decoded_test"]
+        elapsed = max(1e-9, time.perf_counter() - started)
+        speed = completed_work / elapsed if completed_work else 0.0
+        remaining_work = max(0, total_shots - completed_work)
+        eta = remaining_work / speed if speed > 0 else None
+        event = {"type": "progress", "status": "running", "phase": phase,
+                 "run_id": run_dir.name, "total_shots": total_shots,
+                 # A shot is complete only once its relevant generation/decoding
+                 # (and training use, for train shots) has finished. Generated
+                 # volume is reported separately and never drives completion ETA.
+                 "completed_shots": completed_work, "processed_shots": completed_work,
+                 "generated_shots": generated,
+                 "progress_percent": completed_work * 100.0 / total_shots if total_shots else None,
+                 "phase_completed_shots": phase_completed, "phase_total_shots": phase_total,
+                 "split": split, "generated_training_shots": progress["generated_training"],
+                 "training_samples_processed": progress["trained"],
+                 "generated_validation_shots": progress["generated_validation"],
+                 "generated_test_shots": progress["generated_test"],
+                 "total_training_shots": cfg["training_shots"],
+                 "throughput_shots_s": speed, "elapsed_seconds": elapsed,
+                 "eta_seconds": eta,
+                 "stage_counts": {"simulation": generated, "decoding": progress["decoded_training"] +
+                                  progress["decoded_validation"] + progress["decoded_test"],
+                                  "analysis": progress["analysis_completed"]},
+                 "device": str(device), "cuda_training_verified": cuda_training_verified,
+                 "cuda_device_name": cuda_device_name, "python_executable": sys.executable,
+                 "gpu_telemetry": device_snapshot(), "model_selection": cfg["model_selection"]}
+        emit(event)
+
+    def split_progress(phase, split, done, total, sample_seconds, decode_seconds):
+        generated_key = f"generated_{split}"
+        decoded_key = f"decoded_{split}"
+        progress[generated_key] = max(progress[generated_key], int(done)) if phase == "simulation" else progress[generated_key]
+        if phase == "decoding": progress[decoded_key] = max(progress[decoded_key], int(done))
+        emit_progress(f"{phase}_{split}", done, total, split)
+
+    emit_progress("preparing")
     steps_total = (cfg["training_shots"] + cfg["batch_size"] - 1) // cfg["batch_size"]
     val_d, val_y, val_match, val_generation_metrics = split_samples(circuit, matching, plan, "validation",
-                                                                     cfg["validation_shots"], cfg["batch_size"])
+                                                                     cfg["validation_shots"], cfg["batch_size"],
+                                                                     progress_callback=split_progress)
+    progress["decoded_validation"] = len(val_y)
     val_direct, val_residual, = (None, None)
     direct = DirectMLP().to(device)
     use_residual = cfg["model_selection"] == "direct_plus_residual"
@@ -208,11 +264,14 @@ def run(config_path: Path, run_dir: Path, resume: bool = False):
         np.random.set_state(state["numpy_rng_state"])
         random.setstate(state["python_rng_state"])
 
+    progress["generated_training"] = int(processed)
+    progress["decoded_training"] = int(processed)
+    progress["trained"] = int(processed)
+
     identity_val = np.zeros_like(val_y, dtype=np.uint8)
     baseline_val_errors = int(np.count_nonzero(val_match ^ val_y))
     baseline_val_ler = baseline_val_errors / len(val_y)
-    started = time.perf_counter()
-    last_emit = 0.0
+    last_emit = time.perf_counter()
     seen_total = processed
     emit({"type": "progress", "status": "running", "run_id": run_dir.name,
           "generated_training_shots": processed, "training_samples_processed": processed,
@@ -224,7 +283,15 @@ def run(config_path: Path, run_dir: Path, resume: bool = False):
           "elapsed_seconds": 0.0, "eta_seconds": None, "device": str(device),
           "cuda_training_verified": cuda_training_verified, "cuda_device_name": cuda_device_name,
           "python_executable": sys.executable,
-          "gpu_telemetry": device_snapshot(), "model_selection": cfg["model_selection"]})
+          "gpu_telemetry": device_snapshot(), "model_selection": cfg["model_selection"],
+          "phase": "training", "total_shots": total_shots,
+          "completed_shots": progress["decoded_validation"],
+          "generated_shots": progress["generated_validation"],
+          "processed_shots": progress["decoded_validation"],
+          "progress_percent": progress["decoded_validation"] * 100.0 / total_shots,
+          "phase_completed_shots": processed, "phase_total_shots": cfg["training_shots"],
+          "stage_counts": {"simulation": progress["generated_validation"],
+                           "decoding": progress["decoded_validation"], "analysis": 0}})
 
     for step_idx in range(start_step, steps_total):
         stop_file = run_dir / "control.request"
@@ -232,7 +299,9 @@ def run(config_path: Path, run_dir: Path, resume: bool = False):
         batch_start = step_idx * cfg["batch_size"]
         count = min(cfg["batch_size"], cfg["training_shots"] - batch_start)
         d_np, y_np = sample(circuit, batch_seed(plan, "train", step_idx), count)
+        progress["generated_training"] += count
         match_np = decode_matching(matching, d_np)
+        progress["decoded_training"] += count
         x = torch.from_numpy(d_np.astype(np.float32)).to(device)
         y = torch.from_numpy(y_np.astype(np.float32)).to(device)
         m = torch.from_numpy(match_np.astype(np.float32)).to(device)
@@ -268,6 +337,7 @@ def run(config_path: Path, run_dir: Path, resume: bool = False):
                 raise RuntimeError("Could not verify that the first optimization step executed on CUDA.")
         step = step_idx + 1
         processed += count
+        progress["trained"] = processed
         loss_value = float((direct_loss.detach().float() + (residual_loss.detach().float() if residual is not None else 0)) /
                            (2 if residual is not None else 1))
         loss_history.append(loss_value)
@@ -312,7 +382,7 @@ def run(config_path: Path, run_dir: Path, resume: bool = False):
             speed = processed / elapsed
             remain = max(0, cfg["training_shots"] - processed)
             event = {"type": "progress", "status": "running", "run_id": run_dir.name,
-                     "generated_training_shots": processed, "training_samples_processed": processed,
+                     "generated_training_shots": progress["generated_training"], "training_samples_processed": processed,
                      "training_sample_passes": processed * (2 if residual is not None else 1),
                      "total_training_shots": cfg["training_shots"], "generated_validation_shots": len(val_y),
                      "generated_test_shots": 0, "step": step, "steps_total": steps_total,
@@ -326,19 +396,38 @@ def run(config_path: Path, run_dir: Path, resume: bool = False):
                      "cuda_training_verified": cuda_training_verified,
                      "cuda_device_name": cuda_device_name, "python_executable": sys.executable,
                      "gpu_telemetry": device_snapshot(), "model_selection": cfg["model_selection"],
-                     "checkpoint_saved": do_checkpoint}
+                     "checkpoint_saved": do_checkpoint,
+                     "phase": "training", "total_shots": total_shots,
+                     "completed_shots": processed + progress["decoded_validation"],
+                     "generated_shots": progress["generated_training"] + progress["generated_validation"],
+                     "processed_shots": processed + progress["decoded_validation"],
+                     "progress_percent": (processed + progress["decoded_validation"]) * 100.0 / total_shots,
+                     "phase_completed_shots": processed, "phase_total_shots": cfg["training_shots"],
+                     "throughput_shots_s": (processed + progress["decoded_validation"]) / max(elapsed, 1e-9),
+                     "stage_counts": {"simulation": progress["generated_training"] + progress["generated_validation"],
+                                      "decoding": progress["decoded_training"] + progress["decoded_validation"],
+                                      "analysis": progress["analysis_completed"]}}
+            remaining_work = max(0, total_shots - int(event["processed_shots"]))
+            event["eta_seconds"] = (remaining_work / event["throughput_shots_s"]
+                                    if event["throughput_shots_s"] > 0 else None)
             emit(event)
             last_emit = now
 
     # Test is generated and read only after all gradient updates are complete.
     test_d, test_y, test_match, test_generation_metrics = split_samples(circuit, matching, plan, "test",
-                                                                         cfg["test_shots"], cfg["batch_size"])
+                                                                         cfg["test_shots"], cfg["batch_size"],
+                                                                         progress_callback=split_progress)
+    progress["decoded_test"] = len(test_y)
+    progress["generated_test"] = len(test_y)
+    emit_progress("analysis", 0, 1, "test")
     direct_pred, residual_pred, test_inference_metrics = evaluate_models(test_d, test_y, test_match, direct, residual, device)
     predictions = {"identity_no_decode": np.zeros_like(test_y, dtype=np.uint8),
                    "pymatching": test_match, "direct_neural": direct_pred}
     if residual_pred is not None:
         predictions["pymatching_neural_residual"] = residual_pred
     comparison = compare_predictions(test_y, predictions)
+    progress["analysis_completed"] = 1
+    emit_progress("analysis", 1, 1, "test")
     evidence_path = run_dir / "test_evidence.npz"
     np.savez_compressed(evidence_path, detectors=test_d, observable=test_y,
                         identity_no_decode=predictions["identity_no_decode"], pymatching=test_match,

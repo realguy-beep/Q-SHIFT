@@ -101,22 +101,30 @@ class WorkerManager:
     def _drain(self, run_id: str, proc: subprocess.Popen):
         last_log = None
         terminal_seen = False
+        run_dir = RUNS_DIR / run_id
+        run_dir.mkdir(parents=True, exist_ok=True)
+        log_path = run_dir / "worker.log"
         try:
             assert proc.stdout is not None
-            for raw in proc.stdout:
-                line = raw.strip()
-                if not line:
-                    continue
-                try:
-                    event = json.loads(line)
-                    if not isinstance(event, dict) or "type" not in event:
-                        raise ValueError("worker event is not an object with a type")
-                except Exception:
-                    last_log = line[-2000:]
-                    continue
-                storage.append_event(run_id, event)
-                self._publish(run_id, event)
-                terminal_seen |= event.get("type") in {"completed", "failed", "paused", "stopped", "interrupted"}
+            with log_path.open("a", encoding="utf-8", errors="replace") as log:
+                for raw in proc.stdout:
+                    line = raw.rstrip("\r\n")
+                    if not line:
+                        continue
+                    # Keep both structured events and ordinary worker output so
+                    # a stalled or failed run has a durable local diagnostic log.
+                    log.write(f"{time.strftime('%Y-%m-%dT%H:%M:%S%z')} {line}\n")
+                    log.flush()
+                    try:
+                        event = json.loads(line)
+                        if not isinstance(event, dict) or "type" not in event:
+                            raise ValueError("worker event is not an object with a type")
+                    except Exception:
+                        last_log = line[-2000:]
+                        continue
+                    storage.append_event(run_id, event)
+                    self._publish(run_id, event)
+                    terminal_seen |= event.get("type") in {"completed", "failed", "paused", "stopped", "cancelled", "interrupted"}
         except Exception as exc:
             last_log = f"Worker event reader failed: {exc}"
         finally:

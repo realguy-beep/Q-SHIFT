@@ -89,12 +89,12 @@ def append_event(run_id: str, event: dict, db_path: Path | None = None):
         state = json.loads(row["state_json"])
         if event_type == "progress":
             state["progress"] = event
-        if event_type in ("completed", "failed", "paused", "stopped", "interrupted"):
+        if event_type in ("completed", "failed", "paused", "stopped", "cancelled", "interrupted"):
             state["summary"] = event.get("summary", state.get("summary"))
         new_status = status or row["status"]
         if event_type == "progress":
             new_status = "running"
-        elif event_type in ("completed", "failed", "paused", "stopped", "interrupted"):
+        elif event_type in ("completed", "failed", "paused", "stopped", "cancelled", "interrupted"):
             new_status = event_type
         state["status"] = new_status
         c.execute("UPDATE runs SET updated_at=?,status=?,state_json=?,error=? WHERE id=?",

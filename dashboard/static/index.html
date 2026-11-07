@@ -104,14 +104,16 @@
         <article class="panel progress-panel" id="progress-panel">
           <div class="panel-head"><div><span class="section-kicker">LIVE PROGRESS</span><h2>Training stream</h2></div><span class="big-number" id="progress-percent">0<span>%</span></span></div>
           <div class="progress-track"><div class="progress-fill" id="progress-fill"></div><div class="progress-glow" id="progress-glow"></div></div>
-          <div class="progress-caption"><span><b id="processed-shots">0</b> <small>/</small> <span id="target-shots">8,000</span> train samples</span><span id="step-caption">step 0 / 32</span></div>
+          <div class="progress-caption"><span><b id="processed-shots">—</b> <small>/</small> <span id="target-shots">—</span> completed / total shots</span><span id="step-caption">Waiting for backend progress</span></div>
+          <div class="phase-line"><span>Current phase</span><b id="phase-caption">Waiting for worker event</b><span id="phase-shot-count">—</span></div>
           <div class="metric-strip">
-            <div><span>Generated</span><b id="generated-shots">0</b><small>train samples</small></div>
-            <div><span>Processed</span><b id="trained-shots">0</b><small>unique train rows</small></div>
+            <div><span>Generated</span><b id="generated-shots">—</b><small>persisted worker counts</small></div>
+            <div><span>Processed</span><b id="trained-shots">—</b><small>completed rows</small></div>
             <div><span>Throughput</span><b id="throughput">—</b><small>samples / sec</small></div>
             <div><span>Time left</span><b id="eta">—</b><small id="elapsed">elapsed —</small></div>
           </div>
-          <div class="split-counters"><span>Validation <b id="val-count">0</b></span><span>Held-out test <b id="test-count">0</b></span><span>Model sample-passes <b id="sample-passes">0</b></span></div>
+          <div class="split-counters"><span>Simulation <b id="stage-simulation">—</b></span><span>Calibration <b id="stage-calibration">Not reported</b></span><span>Decoding <b id="stage-decoding">—</b></span><span>Analysis <b id="stage-analysis">—</b></span><span>Validation <b id="val-count">—</b></span><span>Held-out test <b id="test-count">—</b></span><span>Model sample-passes <b id="sample-passes">—</b></span></div>
+          <div class="progress-error" id="progress-error" role="status" hidden></div>
         </article>
 
         <article class="panel gpu-panel">
@@ -169,6 +171,7 @@
 
   <dialog id="large-confirm" class="confirm-dialog"><div class="dialog-icon">!</div><span class="section-kicker">RESOURCE CONFIRMATION</span><h2 id="confirm-title">Confirm long training run</h2><p id="confirm-copy">This training budget can run for a long time and consume GPU resources. No test results will be used for training.</p><div class="dialog-details" id="confirm-details"></div><div class="dialog-actions"><button class="button-secondary" id="confirm-cancel">Cancel</button><button class="button-primary" id="confirm-continue">I understand · continue</button></div></dialog>
   <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
-  <script src="/static/app.js?v=autonomous-readonly-1" defer></script>
+  <script src="/static/progress.js?v=job-progress-v2" defer></script>
+  <script src="/static/app.js?v=job-monitor-v2" defer></script>
 </body>
 </html>

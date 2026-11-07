@@ -392,6 +392,18 @@ async def get_run(run_id: str):
     return {"run": attach_execution_identity(run), "metrics": storage.get_metrics(run_id, limit=2000)}
 
 
+@app.get("/api/runs/{run_id}/progress")
+async def get_run_progress(run_id: str):
+    """Small persisted snapshot for polling and WebSocket recovery."""
+    run = storage.get_run(run_id)
+    if not run:
+        raise HTTPException(status_code=404, detail="Run not found.")
+    state = run.get("state") or {}
+    return {"run_id": run_id, "status": run["status"], "updated_at": run["updated_at"],
+            "progress": state.get("progress"), "summary": state.get("summary"),
+            "error": run.get("error"), "worker_pid": run.get("worker_pid")}
+
+
 @app.post("/api/runs", status_code=201)
 async def start_run(request: StartRequest):
     active = manager.active_run()
@@ -493,13 +505,18 @@ async def websocket_run(websocket: WebSocket, run_id: str):
         _log_rejected_request("WebSocket", host, websocket)
         await websocket.close(code=1008, reason="localhost only")
         return
-    run = storage.get_run(run_id)
-    if not run:
+    if not storage.get_run(run_id):
         await websocket.close(code=1008, reason="unknown run")
         return
     await websocket.accept()
     q = manager.subscribe(run_id)
     try:
+        # Subscribe before taking the durable snapshot. An event racing this
+        # read is then represented by the snapshot, the queue, or both.
+        run = storage.get_run(run_id)
+        if not run:
+            await websocket.close(code=1008, reason="unknown run")
+            return
         await websocket.send_json({"type": "snapshot", "run": run,
                                    "metrics": storage.get_metrics(run_id, limit=2000)})
         while True:
