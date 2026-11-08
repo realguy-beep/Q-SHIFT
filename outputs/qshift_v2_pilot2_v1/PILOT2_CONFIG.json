@@ -1,0 +1,377 @@
+{
+  "protocol_id": "qshift-v2-pilot2-v1",
+  "status": "frozen_before_sampling",
+  "allocation": {
+    "evaluation_scenarios": [
+      "stationary_p0",
+      "stationary_p008",
+      "stationary_p016",
+      "step_up",
+      "step_down",
+      "smooth",
+      "transient",
+      "measurement_mismatch"
+    ],
+    "evaluation_replicates": 20,
+    "warmup_shots_per_evaluation_stream": 200,
+    "scored_shots_per_evaluation_stream": 1300,
+    "block_size": 50,
+    "stationary_calibration_replicates_per_p": 12,
+    "stationary_calibration_warmup": 200,
+    "stationary_calibration_scored": 800,
+    "tuning_replicates_per_schedule": 6,
+    "tuning_warmup": 200,
+    "tuning_scored": 300,
+    "profile_shots_per_p": 1000,
+    "static_selection_shots_per_p": 500,
+    "unique_shot_budget": 300000,
+    "planned_unique_shots": 298500
+  },
+  "profile_probabilities": [
+    0,
+    0.005,
+    0.01,
+    0.015,
+    0.02
+  ],
+  "static_candidates": [
+    0.0,
+    0.002,
+    0.004,
+    0.006,
+    0.008,
+    0.01,
+    0.012,
+    0.014,
+    0.016,
+    0.018,
+    0.02
+  ],
+  "adaptive_graph_grid": [
+    0.0,
+    0.002,
+    0.004,
+    0.006,
+    0.008,
+    0.01,
+    0.012,
+    0.014,
+    0.016,
+    0.018,
+    0.02
+  ],
+  "policies": [
+    "fixed_p0",
+    "static_dev",
+    "batch_profile",
+    "trailing_200",
+    "ewma_08",
+    "periodic_200",
+    "event_glr",
+    "oracle_true_p"
+  ],
+  "decoder_modes": [
+    false,
+    true
+  ],
+  "dem": {
+    "decompose_errors": true,
+    "approximate_disjoint_errors": true
+  },
+  "pymatching": {
+    "construction_enable_correlations": "same as mode",
+    "decode_batch_enable_correlations": "same as mode"
+  },
+  "profile_training_seed_root": 880000000,
+  "seed_algorithm": "pre-enumerated unique Stim sampler seeds, contiguous from seed_start",
+  "seed_start": 880000000,
+  "tuning_seed": 9400285,
+  "tuning_candidate_budget": 24,
+  "false_alarm_target_per_1000_stationary_scored_shots": 1.0,
+  "false_alarm_p_values": [
+    0,
+    0.008,
+    0.016
+  ],
+  "detection_tuning_scenarios": [
+    "step_up",
+    "step_down",
+    "smooth",
+    "transient"
+  ],
+  "candidate_space": {
+    "threshold": [
+      4,
+      8,
+      12,
+      16
+    ],
+    "history_blocks": [
+      2,
+      4,
+      8
+    ],
+    "minimum_dwell_blocks": [
+      2,
+      4
+    ],
+    "hysteresis": [
+      0,
+      0.002
+    ],
+    "profile_window": [
+      100,
+      200
+    ],
+    "pair_summary": [
+      "all5",
+      "first3",
+      "any5"
+    ]
+  },
+  "candidates": [
+    {
+      "candidate_id": "C00",
+      "threshold": 4.0,
+      "history_blocks": 4,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.0,
+      "profile_window": 100,
+      "pair_summary": "any5"
+    },
+    {
+      "candidate_id": "C01",
+      "threshold": 4.0,
+      "history_blocks": 4,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.002,
+      "profile_window": 200,
+      "pair_summary": "first3"
+    },
+    {
+      "candidate_id": "C02",
+      "threshold": 4.0,
+      "history_blocks": 4,
+      "min_dwell_blocks": 4,
+      "hysteresis": 0.002,
+      "profile_window": 100,
+      "pair_summary": "first3"
+    },
+    {
+      "candidate_id": "C03",
+      "threshold": 4.0,
+      "history_blocks": 8,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.002,
+      "profile_window": 100,
+      "pair_summary": "all5"
+    },
+    {
+      "candidate_id": "C04",
+      "threshold": 4.0,
+      "history_blocks": 8,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.002,
+      "profile_window": 100,
+      "pair_summary": "any5"
+    },
+    {
+      "candidate_id": "C05",
+      "threshold": 4.0,
+      "history_blocks": 8,
+      "min_dwell_blocks": 4,
+      "hysteresis": 0.002,
+      "profile_window": 100,
+      "pair_summary": "all5"
+    },
+    {
+      "candidate_id": "C06",
+      "threshold": 8.0,
+      "history_blocks": 2,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.0,
+      "profile_window": 100,
+      "pair_summary": "any5"
+    },
+    {
+      "candidate_id": "C07",
+      "threshold": 8.0,
+      "history_blocks": 2,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.002,
+      "profile_window": 200,
+      "pair_summary": "all5"
+    },
+    {
+      "candidate_id": "C08",
+      "threshold": 8.0,
+      "history_blocks": 2,
+      "min_dwell_blocks": 4,
+      "hysteresis": 0.0,
+      "profile_window": 100,
+      "pair_summary": "any5"
+    },
+    {
+      "candidate_id": "C09",
+      "threshold": 8.0,
+      "history_blocks": 4,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.0,
+      "profile_window": 100,
+      "pair_summary": "first3"
+    },
+    {
+      "candidate_id": "C10",
+      "threshold": 8.0,
+      "history_blocks": 8,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.0,
+      "profile_window": 200,
+      "pair_summary": "first3"
+    },
+    {
+      "candidate_id": "C11",
+      "threshold": 8.0,
+      "history_blocks": 8,
+      "min_dwell_blocks": 4,
+      "hysteresis": 0.002,
+      "profile_window": 100,
+      "pair_summary": "any5"
+    },
+    {
+      "candidate_id": "C12",
+      "threshold": 12.0,
+      "history_blocks": 2,
+      "min_dwell_blocks": 4,
+      "hysteresis": 0.002,
+      "profile_window": 100,
+      "pair_summary": "any5"
+    },
+    {
+      "candidate_id": "C13",
+      "threshold": 12.0,
+      "history_blocks": 2,
+      "min_dwell_blocks": 4,
+      "hysteresis": 0.002,
+      "profile_window": 200,
+      "pair_summary": "all5"
+    },
+    {
+      "candidate_id": "C14",
+      "threshold": 12.0,
+      "history_blocks": 4,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.002,
+      "profile_window": 200,
+      "pair_summary": "first3"
+    },
+    {
+      "candidate_id": "C15",
+      "threshold": 12.0,
+      "history_blocks": 4,
+      "min_dwell_blocks": 4,
+      "hysteresis": 0.0,
+      "profile_window": 100,
+      "pair_summary": "all5"
+    },
+    {
+      "candidate_id": "C16",
+      "threshold": 12.0,
+      "history_blocks": 8,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.0,
+      "profile_window": 100,
+      "pair_summary": "any5"
+    },
+    {
+      "candidate_id": "C17",
+      "threshold": 12.0,
+      "history_blocks": 8,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.002,
+      "profile_window": 100,
+      "pair_summary": "all5"
+    },
+    {
+      "candidate_id": "C18",
+      "threshold": 12.0,
+      "history_blocks": 8,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.002,
+      "profile_window": 200,
+      "pair_summary": "all5"
+    },
+    {
+      "candidate_id": "C19",
+      "threshold": 12.0,
+      "history_blocks": 8,
+      "min_dwell_blocks": 4,
+      "hysteresis": 0.0,
+      "profile_window": 200,
+      "pair_summary": "all5"
+    },
+    {
+      "candidate_id": "C20",
+      "threshold": 16.0,
+      "history_blocks": 2,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.0,
+      "profile_window": 200,
+      "pair_summary": "first3"
+    },
+    {
+      "candidate_id": "C21",
+      "threshold": 16.0,
+      "history_blocks": 2,
+      "min_dwell_blocks": 4,
+      "hysteresis": 0.0,
+      "profile_window": 100,
+      "pair_summary": "all5"
+    },
+    {
+      "candidate_id": "C22",
+      "threshold": 16.0,
+      "history_blocks": 4,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.002,
+      "profile_window": 200,
+      "pair_summary": "first3"
+    },
+    {
+      "candidate_id": "C23",
+      "threshold": 16.0,
+      "history_blocks": 8,
+      "min_dwell_blocks": 2,
+      "hysteresis": 0.002,
+      "profile_window": 100,
+      "pair_summary": "all5"
+    }
+  ],
+  "statistical": {
+    "cluster_unit": "independent stream",
+    "bootstrap_replicates": 20000,
+    "interval": "two-sided percentile 95% stratified within scenario",
+    "scenarios_equal_weight": true,
+    "bootstrap_seed": 8820261108,
+    "primary_comparators": [
+      "static_dev",
+      "ewma_08"
+    ],
+    "primary_success": "upper 95% interval < 0 for both comparisons in at least one decoder mode",
+    "noninferiority_margin_event_vs_ewma_pp": 0.1,
+    "cost_tradeoff_cpu_savings_fraction": 0.2,
+    "switch_reduction_fraction": 0.2
+  },
+  "stop": {
+    "unique_shots": 300000,
+    "cpu_hours": 8,
+    "rss_gib": 8
+  },
+  "forbidden": {
+    "stage5_access": false,
+    "sealed_data_access": false,
+    "full_study": false,
+    "logical_labels_in_online_policy": false,
+    "true_p_in_online_policy": false
+  }
+}
