@@ -4,6 +4,7 @@
   const state = { runId: null, run: null, metrics: [], socket: null, retry: 0, retryTimer: null,
                   pollTimer: null, generation: 0, telemetry: null, awaitingConfirmation: null };
   const pretty = (n) => new Intl.NumberFormat('en-US').format(Number(n || 0));
+  const reportedCount = (n) => n == null || !Number.isFinite(Number(n)) ? '—' : pretty(n);
   const pct = (x, digits = 3) => Number.isFinite(Number(x)) ? `${(Number(x) * 100).toFixed(digits)}%` : '—';
   const seconds = (v) => {
     if (v == null || !Number.isFinite(Number(v))) return '—';
@@ -96,10 +97,10 @@
     const percent = p.percent;
     $('progress-percent').innerHTML = percent == null ? '—' : `${percent.toFixed(0)}<span>%</span>`;
     $('progress-fill').style.width = `${percent == null ? 0 : percent}%`;
-    $('processed-shots').textContent = pretty(done);
-    $('target-shots').textContent = total == null ? '—' : pretty(total);
-    $('generated-shots').textContent = e.generated_shots == null ? pretty(done) : pretty(e.generated_shots);
-    $('trained-shots').textContent = pretty(p.processedShots);
+    $('processed-shots').textContent = reportedCount(done);
+    $('target-shots').textContent = reportedCount(total);
+    $('generated-shots').textContent = reportedCount(p.generatedShots);
+    $('trained-shots').textContent = reportedCount(p.processedShots);
     $('throughput').textContent = p.throughput == null ? '—' : pretty(Math.round(p.throughput));
     $('eta').textContent = seconds(p.etaSeconds);
     $('elapsed').textContent = `elapsed ${seconds(e.elapsed_seconds)}`;
