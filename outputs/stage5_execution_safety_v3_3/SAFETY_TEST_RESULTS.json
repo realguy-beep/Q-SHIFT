@@ -1,0 +1,70 @@
+{
+  "decision": "GO_FOR_SAFETY_REPAIR_ONLY_STAGE5_SAMPLING_NOT_AUTHORIZED",
+  "test_command": "python -m unittest outputs.stage5_execution_safety_v3_3.test_safety_v3",
+  "test_status": "PASS",
+  "test_count": 15,
+  "test_failures": 0,
+  "test_runtime_seconds": 52.501,
+  "test_names": [
+    "test_frozen_53_hashes",
+    "test_safety_sources_were_frozen_before_any_benchmark_sampling",
+    "test_cli_preflight_verifies_both_freezes_without_sampling",
+    "test_exclusive_lock_and_live_contention",
+    "test_crash_releases_os_lock_and_stale_owner_is_visible",
+    "test_worker_lock_survives_launcher_release_and_blocks_duplicate",
+    "test_npz_commit_markers_across_crash_boundaries",
+    "test_json_replace_crash_preserves_previous_complete_document",
+    "test_deadline_during_aggregation_and_artifact_write",
+    "test_deadline_during_finalizer_artifact_write_never_completes",
+    "test_small_paired_benchmark_completes_and_audits",
+    "test_post_sampler_precheckpoint_crash_replays_same_uncommitted_stream",
+    "test_commit_before_status_crash_resumes_without_duplicate_calibration",
+    "test_replace_without_commit_marker_fails_closed",
+    "test_active_sampler_interruption_is_not_claimed_completed"
+  ],
+  "safety_freeze": {
+    "state": "FROZEN_BEFORE_BENCHMARK_SAMPLING",
+    "source_hash_count": 13,
+    "all_source_hashes_match": true,
+    "benchmark_streams": 8,
+    "stage5_rows_opened": false
+  },
+  "historical_stage5_freeze": {
+    "status": "PRETEST_FROZEN_NOT_AUTHORIZED",
+    "hashes_expected": 53,
+    "hashes_matching": 53,
+    "allocation_shots": 27225000,
+    "endpoint_b_boundary": -0.0002,
+    "endpoint_b_alternative": -0.0003
+  },
+  "benchmark_only_runs": [
+    {
+      "name": "paired_audit",
+      "status": "completed",
+      "roots": 2,
+      "unique_shots": 1536,
+      "predictions_redecoded": true,
+      "checkpoint_hashes_verified": 2,
+      "archive_sha256": [
+        "0808fe13fa26c66b46873d4be33da36c60f5cc58928789a905ac0aceb9d8822b",
+        "ef55de40b78f7a2719c56097a209f83d5b9103a4a7354449fb53e21bc6a01eb9"
+      ]
+    },
+    {
+      "name": "active_sampler_interruption_recovery",
+      "status": "completed",
+      "roots": 1,
+      "unique_shots": 1000064,
+      "predictions_redecoded": true,
+      "checkpoint_hashes_verified": 1,
+      "recovery_event": "uncommitted_stream_will_replay_same_frozen_seed",
+      "pre_recovery_committed_shots": 0,
+      "archive_sha256": [
+        "1c178799a65e07f923da08751d5e32c1f4fc48e4983f1555dbcf40ee977908ab"
+      ]
+    }
+  ],
+  "stage5_evaluation_shots_generated": 0,
+  "stage5_run_directory_exists": false,
+  "sealed_outcomes_accessed": false
+}
