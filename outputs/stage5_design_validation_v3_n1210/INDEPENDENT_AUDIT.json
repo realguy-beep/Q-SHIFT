@@ -1,0 +1,28 @@
+{
+  "audit": "Independent full PCG64 stream replay and inferential recomputation; no import from production design_mc.py",
+  "freeze_sha256": "d1a6bf6ef2c0ed86c7a4c3d6cc8fb331201a52ee02ef7a7d52230883a73039ac",
+  "stage5_shots_generated": 0,
+  "sealed_historical_test_accessed": false,
+  "historical_evidence_hashes_verified": 6,
+  "input_hashes_verified": 8,
+  "primary_calibration_cells_replayed": 11,
+  "primary_validation_cells_replayed": 11,
+  "primary_power_cells_replayed": 20,
+  "p0_calibration_cells_replayed": 4,
+  "p0_validation_cells_replayed": 4,
+  "p0_safety_power_cells_replayed": 8,
+  "all_replay_counts_match": true,
+  "recomputed_gates": {
+    "primary_type1_pass": true,
+    "primary_one_sided_coverage_pass": true,
+    "primary_central_coverage_pass": true,
+    "p0_type1_pass": true,
+    "p0_coverage_pass": true,
+    "formal_power_pass": true
+  },
+  "audit_runtime_seconds": 568.481062412262,
+  "limitations": [
+    "Exact replay verifies implementation consistency under NumPy/PCG64 on this environment; it cannot validate the completeness of the finite distribution envelope or seven-root SD inputs.",
+    "Holm secondary condition-level inference is not covered by this primary-endpoint operating-characteristic audit."
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "study": "Q-SHIFT Stage 5 Endpoint B design validation v3, n=1210",
+  "classification": "synthetic root-effect Monte Carlo only; no Stage 5 samples",
+  "allocation_roots_per_stratum": 1210,
+  "stage5_shot_projection": {
+    "conditions": 5,
+    "calibration_shots_per_root": 2000,
+    "evaluation_shots_per_root": 2500,
+    "total_projected_if_later_authorized": 27225000
+  },
+  "estimand": "equal-weight mean of four nonzero condition root-level paired adaptive-minus-fixed LER differences",
+  "null_boundary": -0.0002,
+  "primary_alpha": 0.05,
+  "condition_sd": [0.0008141603913585719, 0.0009641181512261915, 0.0010690449676496975, 0.001969288002831287],
+  "offsets_zero_mean": [-0.00015, -0.00005, 0.00005, 0.00015],
+  "null_scenarios": [
+    {"name":"normal_q1_5","distribution":"normal","sd_multiplier":1.5},
+    {"name":"normal_q2","distribution":"normal","sd_multiplier":2.0},
+    {"name":"student_t5_q1_5","distribution":"student_t5","sd_multiplier":1.5},
+    {"name":"student_t3_q2","distribution":"student_t3","sd_multiplier":2.0},
+    {"name":"right_skew_lognormal_q1_5","distribution":"lognormal_sigma1","sd_multiplier":1.5},
+    {"name":"right_skew_lognormal_q2","distribution":"lognormal_sigma1","sd_multiplier":2.0},
+    {"name":"zero_inflated65_q1_5","distribution":"zero_inflated65_normal","sd_multiplier":1.5},
+    {"name":"zero_inflated65_q2","distribution":"zero_inflated65_normal","sd_multiplier":2.0},
+    {"name":"tied_asymmetric65_q1_5","distribution":"tied_asymmetric65","sd_multiplier":1.5},
+    {"name":"tied_asymmetric65_q2","distribution":"tied_asymmetric65","sd_multiplier":2.0},
+    {"name":"balanced_offsets_normal_q1_5","distribution":"normal","sd_multiplier":1.5,"offsets":[-0.00015,-0.00005,0.00005,0.00015]}
+  ],
+  "power_scenarios": [
+    {"name":"normal_q1_5","distribution":"normal","sd_multiplier":1.5,"formal_gate":true},
+    {"name":"student_t5_q1_5","distribution":"student_t5","sd_multiplier":1.5,"formal_gate":true},
+    {"name":"right_skew_lognormal_q1_5","distribution":"lognormal_sigma1","sd_multiplier":1.5,"formal_gate":true},
+    {"name":"zero_inflated65_q1_5","distribution":"zero_inflated65_normal","sd_multiplier":1.5,"formal_gate":true},
+    {"name":"tied_asymmetric65_q1_5","distribution":"tied_asymmetric65","sd_multiplier":1.5,"formal_gate":true},
+    {"name":"normal_q2","distribution":"normal","sd_multiplier":2.0,"formal_gate":false},
+    {"name":"student_t3_q2","distribution":"student_t3","sd_multiplier":2.0,"formal_gate":false},
+    {"name":"right_skew_lognormal_q2","distribution":"lognormal_sigma1","sd_multiplier":2.0,"formal_gate":false},
+    {"name":"zero_inflated65_q2","distribution":"zero_inflated65_normal","sd_multiplier":2.0,"formal_gate":false,"added_to_complete_previously_missing_sensitivity":true},
+    {"name":"tied_asymmetric65_q2","distribution":"tied_asymmetric65","sd_multiplier":2.0,"formal_gate":false}
+  ],
+  "power_effects": [-0.0003, -0.0004],
+  "p0_no_harm": {
+    "boundary":0.0002,
+    "base_sd":0.00015118578920369095,
+    "scenarios":[
+      {"name":"normal_q1_5","distribution":"normal","sd_multiplier":1.5},
+      {"name":"normal_q2","distribution":"normal","sd_multiplier":2.0},
+      {"name":"zero_inflated65_q2","distribution":"zero_inflated65_normal","sd_multiplier":2.0},
+      {"name":"tied_asymmetric65_q2","distribution":"tied_asymmetric65","sd_multiplier":2.0}
+    ],
+    "power_true_effects":[0.0,0.0001]
+  },
+  "monte_carlo": {
+    "calibration_replicates_per_scenario":100000,
+    "validation_replicates_per_scenario":100000,
+    "power_replicates_per_scenario_effect":100000,
+    "batch_size":128,
+    "wilson_confidence":0.95,
+    "critical_quantiles":{"one_sided_calibration":0.952,"central_tail":0.976},
+    "acceptance":{"type1_wilson_upper_max":0.052,"one_sided_coverage_wilson_lower_min":0.94,"central_coverage_wilson_lower_min":0.94,"formal_power_effect":-0.0003,"formal_power_wilson_lower_min":0.80,"formal_power_sd_multiplier":1.5}
+  },
+  "rng":{"bit_generator":"PCG64","design_seed_namespace_start":12000000001},
+  "resource_limits":{"max_peak_rss_bytes":2147483648,"max_wall_seconds":7200,"stage5_evaluation_shots_generated":0,"sealed_historical_test_accessed":false},
+  "historical_inputs":{"stage5_v2_config":"outputs/stage5_preexecution_v1/STAGE5_V2_CONFIG.json","stage5_design_v2_config":"outputs/stage5_design_validation_v2/DESIGN_SIMULATION_CONFIG.json","stage5_final_decision_allocation_source":"outputs/stage5_final_decision_v1/ALLOCATION_ESTIMATES.json"}
+}
