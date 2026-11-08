@@ -1,0 +1,23 @@
+{
+  "protocol_id": "qshift-v2-dev-pilot-v1",
+  "status": "completed_development_only",
+  "stim": "1.16.0",
+  "pymatching": "2.4.0",
+  "dem": {"decompose_errors": true, "approximate_disjoint_errors": true},
+  "matching": {"construction_enable_correlations": true, "decode_enable_correlations_explicit": true},
+  "profile_probabilities": [0.0, 0.005, 0.01, 0.015, 0.02],
+  "profile_shots_per_probability": 300,
+  "static_selection_shots_per_probability": 300,
+  "warmup_calibration_shots": 100,
+  "scored_shots_per_stream": 300,
+  "block_size": 50,
+  "streams": 10,
+  "replicates_per_scenario": 2,
+  "scenarios": ["stationary", "step_up", "step_down", "smooth", "transient"],
+  "policies": ["fixed_p0", "static_dev", "batch_profile", "oracle_true_p", "trailing_100", "ewma_08", "periodic_100", "event_glr"],
+  "event_glr": {"threshold": 8.0, "window_blocks": 4, "minimum_dwell_blocks": 2, "p_hysteresis": 0.001},
+  "seed_root": 20771108,
+  "independent_test_access": 0,
+  "stage5_access": 0,
+  "full_study_authorized": false
+}
