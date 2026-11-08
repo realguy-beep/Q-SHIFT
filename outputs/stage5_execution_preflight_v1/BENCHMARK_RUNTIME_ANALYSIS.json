@@ -1,0 +1,76 @@
+{
+  "benchmark_only": true,
+  "stage5_evaluation_shots": 0,
+  "analysis_method": "descriptive nonparametric bootstrap of 19 between-root archive-completion intervals; 20,000 resamples, PCG64 runtime seed from benchmark inventory",
+  "runtime_bootstrap_seed": 80000000041,
+  "root_intervals": 19,
+  "root_interval_seconds": {
+    "min": 0.06723856925964355,
+    "median": 0.08002138137817383,
+    "mean": 0.081881372552169,
+    "sd": 0.013367566936386842,
+    "max": 0.10390543937683105,
+    "bootstrap_95_mean_ci": [
+      0.07614640248449224,
+      0.0877723825605292
+    ],
+    "bootstrap_99_mean_upper": 0.08882218511481033
+  },
+  "fixed_time_outside_intervals_seconds": 1.8595129215100314,
+  "full_allocation_linear_end_to_end_sample_seconds": 1033.1158475003758,
+  "conservative_statistical_analysis_overhead_seconds": 253.35080480000033,
+  "linear_projection_sample_plus_analysis_seconds": 1286.4666523003762,
+  "root_interval_projection_sample_plus_analysis": {
+    "mean_seconds": 750.5926216621328,
+    "bootstrap_95_seconds": [
+      715.8960527526884,
+      786.233232212712
+    ],
+    "bootstrap_99_upper_seconds": 792.5845376661129
+  },
+  "slowdown_sensitivity": {
+    "1x_slower": {
+      "seconds": 1286.4666523003762,
+      "minutes": 21.441110871672937,
+      "within_7200_seconds": true
+    },
+    "2x_slower": {
+      "seconds": 2319.582499800752,
+      "minutes": 38.659708330012535,
+      "within_7200_seconds": true
+    },
+    "4x_slower": {
+      "seconds": 4385.814194801504,
+      "minutes": 73.09690324669172,
+      "within_7200_seconds": true
+    },
+    "6x_slower": {
+      "seconds": 6452.045889802255,
+      "minutes": 107.53409816337093,
+      "within_7200_seconds": true
+    },
+    "7x_slower": {
+      "seconds": 7485.161737302631,
+      "minutes": 124.75269562171052,
+      "within_7200_seconds": false
+    }
+  },
+  "archive": {
+    "benchmark_root_file_count": 20,
+    "final_compressed_bytes": 193099,
+    "mean_compressed_bytes_per_root": 9654.95,
+    "projected_compressed_bytes_at_6050_roots": 58412447.50000001,
+    "frozen_uncompressed_upper_estimate_bytes": 1150000000
+  },
+  "peak_memory": {
+    "execution_benchmark_bytes": 89014272,
+    "statistics_aggregation_synthetic_probe_bytes": 115445760,
+    "configured_limit_bytes": 2147483648
+  },
+  "restart_sampling_accounting": {
+    "first_invocation_sampled_shots": 2000,
+    "resume_invocation_sampled_shots": 88000,
+    "total_sampled_shots": 90000,
+    "total_sampler_calls": 40
+  }
+}
