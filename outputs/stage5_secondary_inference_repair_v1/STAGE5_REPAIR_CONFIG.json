@@ -1,0 +1,53 @@
+{
+  "study": "Q-SHIFT Stage 5 Endpoint B n=1210 with prospectively repaired secondary inference",
+  "status": "readiness candidate; NOT authorized to sample",
+  "circuit": {
+    "memory_basis": "z",
+    "regime": "balanced",
+    "distance": 3,
+    "rounds": 5,
+    "detectors": 40,
+    "observables": 1,
+    "gate_p": 0.003,
+    "measurement_p": 0.003,
+    "bias_ratio": 10.0,
+    "burst_pair": [8, 10],
+    "dem": {"decompose_errors": true, "approximate_disjoint_errors": true, "enable_correlations": true}
+  },
+  "probabilities": [0.0, 0.004, 0.008, 0.012, 0.016],
+  "roots_per_condition": 1210,
+  "calibration_shots_per_root": 2000,
+  "evaluation_shots_per_root": 2500,
+  "allocation": {"roots": 6050, "calibration_shots": 12100000, "evaluation_shots": 15125000, "unique_shots": 27225000},
+  "decoder_arms": ["fixed_nominal_pymatching", "frozen_detector_profile_adaptive_pymatching", "privileged_true_probability_reference"],
+  "primary_inference": {
+    "endpoint": "equal-weight mean of p=.004,.008,.012,.016 root-paired adaptive-minus-fixed LER differences",
+    "null_boundary": -0.0002,
+    "planning_alternative": -0.0003,
+    "one_sided_alpha": 0.05,
+    "studentized_cutoff": 1.7816207021549997,
+    "central_lower_cutoff": 2.137193932514808,
+    "central_upper_cutoff": 1.9923827628079207,
+    "p0_no_harm_boundary": 0.0002,
+    "p0_one_sided_cutoff": 1.7054886064222943,
+    "source_design_freeze": "outputs/stage5_design_validation_v3_n1210/DESIGN_VALIDATION_FREEZE.json",
+    "source_simulation_result": "outputs/stage5_design_validation_v3_n1210/DESIGN_MC_RESULTS.json",
+    "scope": "preserves the validated n=1210 finite-envelope Endpoint B and separate p=0 no-harm procedure"
+  },
+  "secondary_inference": {
+    "family": "four nonzero conditions; Holm step-down alpha=.05",
+    "null": "condition-level root-paired mean difference >= 0 versus < 0",
+    "statistic": "studentized mean of independent root-level paired LER differences",
+    "reference_shapes": ["normal", "standardized Student-t(5)", "standardized Student-t(3)", "standardized lognormal sigma=1", "65%-zero-inflated normal", "65%-zero/28%-lower/7%-upper tied asymmetric"],
+    "root_variability_multipliers_validated": [1.5, 2.0],
+    "reference_replicates_per_shape": 1000000,
+    "dkw_total_failure_probability": 0.001,
+    "dkw_epsilon": 0.0021671019736932244,
+    "tie_policy": "right-continuous empirical CDF; ties included using searchsorted(side='right')",
+    "confidence_bounds": "invert same finite-envelope tests; Bonferroni alpha=.0125 for simultaneous four-condition upper bounds",
+    "scope": "conditional on the six prespecified location-scale root-effect families; not distribution-free"
+  },
+  "resources": {"max_unique_shots": 27225000, "wall_seconds_max": 7200, "rss_bytes_max": 2147483648, "free_disk_min_bytes": 536870912},
+  "sampling_guard": {"requires_flags": ["--run", "--authorize-stage5-sampling"], "separate_explicit_user_authorization_required": true},
+  "data_boundary": {"stage5_evaluation_shots_generated": 0, "sealed_historical_test_accessed": false, "stage4c_modified": false, "website_worktree_modified": false}
+}

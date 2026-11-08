@@ -1,0 +1,50 @@
+{
+  "purpose": "prospective design validation of Stage 5 condition-level secondary inference; no Stage 5 sampling",
+  "n_roots_per_condition": 1210,
+  "condition_sd": [0.0008141603913585719, 0.0009641181512261915, 0.0010690449676496975, 0.001969288002831287],
+  "variability_multipliers": [1.5, 2.0],
+  "families": [
+    {"name":"normal", "distribution":"normal"},
+    {"name":"student_t5", "distribution":"student_t5"},
+    {"name":"student_t3", "distribution":"student_t3"},
+    {"name":"right_skew_lognormal_sigma1", "distribution":"lognormal_sigma1"},
+    {"name":"zero_inflated65_normal", "distribution":"zero_inflated65_normal"},
+    {"name":"tied_asymmetric65", "distribution":"tied_asymmetric65"}
+  ],
+  "calibration_replicates_per_family": 1000000,
+  "validation_replicates_per_condition_family_scale": 200000,
+  "batch_size": 128,
+  "total_dkw_failure_probability": 0.001,
+  "dkw_bound": "two-sided DKW with Bonferroni allocation across six reference distributions",
+  "holm_alpha": 0.05,
+  "holm_steps": [0.0125, 0.016666666666666666, 0.025, 0.05],
+  "partial_null_alternatives": [-0.0003, -0.01],
+  "least_favorable_partial_null": "assign raw p=0 to every false null; simulate the true-null p-values under zero mean",
+  "power_effects": [-0.0003, -0.0004],
+  "mc_confidence": 0.95,
+  "acceptance": {
+    "marginal_cells": 192,
+    "marginal_simultaneous_wilson_upper_le_step_alpha_plus": 0.002,
+    "fwer_cells": 516,
+    "simultaneous_wilson_upper_fwer_max": 0.052,
+    "simultaneous_coverage_cells": 12,
+    "simultaneous_wilson_lower_coverage_min": 0.94,
+    "secondary_power_gate": "none was specified in the historical protocol; report with intervals, do not invent a pass gate"
+  },
+  "rng": {
+    "bit_generator": "PCG64",
+    "namespace_start": 13000000001,
+    "calibration_streams": 6,
+    "validation_streams": 10,
+    "stream_roles": ["six independent null-reference calibration streams; one independent validation stream for each of ten family-by-variability cells"]
+  },
+  "primary_endpoint_unchanged": {
+    "endpoint": "equal-weight mean of four nonzero-condition root-paired adaptive-minus-fixed LER differences",
+    "boundary": -0.0002,
+    "planning_alternative": -0.0003,
+    "roots_per_condition": 1210,
+    "projected_shots_if_later_authorized": 27225000
+  },
+  "stage5_evaluation_shots_generated": 0,
+  "sealed_test_accessed": false
+}
