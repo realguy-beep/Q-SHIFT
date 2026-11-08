@@ -1,0 +1,150 @@
+{
+  "audit_method": "separate implementation; no imports from atomic_safety_v43 or recovery_v43",
+  "audit_status": "PASS",
+  "base_commit": "8c06750808582137f6a81e2170ad702a552594fb",
+  "fixture_seed_collision_audit": {
+    "benchmark_fixture_identifiers_screened": 9,
+    "collisions": 0,
+    "historical_reserved_values_screened": 12100,
+    "seed_values_emitted": false
+  },
+  "historical_freeze_checks": {
+    "stage5_v2_53": {
+      "declared": 53,
+      "mismatches": [],
+      "verified": 53
+    },
+    "stage5_v3_3_13": {
+      "declared": 13,
+      "mismatches": [],
+      "verified": 13
+    },
+    "stage5_v3_4_2_14": {
+      "declared": 14,
+      "mismatches": [],
+      "verified": 14
+    }
+  },
+  "independent_subprocess_test_run": {
+    "command": "python -m unittest -v outputs.stage5_execution_safety_v3_4_3.test_recovery_v43",
+    "exit_code": 0,
+    "output": "test_compare_and_swap_never_overwrites_newer_state (outputs.stage5_execution_safety_v3_4_3.test_recovery_v43.RecoverySafetyV43Tests.test_compare_and_swap_never_overwrites_newer_state) ... ok\ntest_complete_evaluation_checkpoint_without_resampling_and_idempotent_retry (outputs.stage5_execution_safety_v3_4_3.test_recovery_v43.RecoverySafetyV43Tests.test_complete_evaluation_checkpoint_without_resampling_and_idempotent_retry) ... ok\ntest_crash_after_new_intent_supersedes_old_committed_checkpoint_safely (outputs.stage5_execution_safety_v3_4_3.test_recovery_v43.RecoverySafetyV43Tests.test_crash_after_new_intent_supersedes_old_committed_checkpoint_safely) ... ok\ntest_duplicate_or_noncanonical_root_fails (outputs.stage5_execution_safety_v3_4_3.test_recovery_v43.RecoverySafetyV43Tests.test_duplicate_or_noncanonical_root_fails) ... ok\ntest_idempotent_reconstruction_counts_eval_complete_but_not_complete_roots (outputs.stage5_execution_safety_v3_4_3.test_recovery_v43.RecoverySafetyV43Tests.test_idempotent_reconstruction_counts_eval_complete_but_not_complete_roots) ... ok\ntest_inflight_without_matching_durable_archive_fails_closed (outputs.stage5_execution_safety_v3_4_3.test_recovery_v43.RecoverySafetyV43Tests.test_inflight_without_matching_durable_archive_fails_closed) ... ok\ntest_ledger_fails_closed_on_orphan_temp_or_unapplied_intent (outputs.stage5_execution_safety_v3_4_3.test_recovery_v43.RecoverySafetyV43Tests.test_ledger_fails_closed_on_orphan_temp_or_unapplied_intent) ... ok\ntest_prediction_and_commit_hash_corruption_fail_closed (outputs.stage5_execution_safety_v3_4_3.test_recovery_v43.RecoverySafetyV43Tests.test_prediction_and_commit_hash_corruption_fail_closed) ... ok\ntest_recovery_copy_provenance_and_source_immutability (outputs.stage5_execution_safety_v3_4_3.test_recovery_v43.RecoverySafetyV43Tests.test_recovery_copy_provenance_and_source_immutability) ... ok\ntest_recovery_mutation_refuses_original_unmarked_directory (outputs.stage5_execution_safety_v3_4_3.test_recovery_v43.RecoverySafetyV43Tests.test_recovery_mutation_refuses_original_unmarked_directory) ... ok\ntest_seed_collision_and_unknown_checkpoint_phase_fail_closed (outputs.stage5_execution_safety_v3_4_3.test_recovery_v43.RecoverySafetyV43Tests.test_seed_collision_and_unknown_checkpoint_phase_fail_closed) ... ok\ntest_status_write_contention_two_real_subprocesses (outputs.stage5_execution_safety_v3_4_3.test_recovery_v43.RecoverySafetyV43Tests.test_status_write_contention_two_real_subprocesses) ... ok\ntest_subprocess_crashes_at_checkpoint_write_boundaries (outputs.stage5_execution_safety_v3_4_3.test_recovery_v43.RecoverySafetyV43Tests.test_subprocess_crashes_at_checkpoint_write_boundaries) ... ok\ntest_windows_transient_replace_retry_and_persistent_denial_preserve_exact_payload (outputs.stage5_execution_safety_v3_4_3.test_recovery_v43.RecoverySafetyV43Tests.test_windows_transient_replace_retry_and_persistent_denial_preserve_exact_payload) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 4.113s\n\nOK\n",
+    "passed": true,
+    "test_count": 14,
+    "test_records": [
+      {
+        "name": "test_compare_and_swap_never_overwrites_newer_state",
+        "status": "ok"
+      },
+      {
+        "name": "test_complete_evaluation_checkpoint_without_resampling_and_idempotent_retry",
+        "status": "ok"
+      },
+      {
+        "name": "test_crash_after_new_intent_supersedes_old_committed_checkpoint_safely",
+        "status": "ok"
+      },
+      {
+        "name": "test_duplicate_or_noncanonical_root_fails",
+        "status": "ok"
+      },
+      {
+        "name": "test_idempotent_reconstruction_counts_eval_complete_but_not_complete_roots",
+        "status": "ok"
+      },
+      {
+        "name": "test_inflight_without_matching_durable_archive_fails_closed",
+        "status": "ok"
+      },
+      {
+        "name": "test_ledger_fails_closed_on_orphan_temp_or_unapplied_intent",
+        "status": "ok"
+      },
+      {
+        "name": "test_prediction_and_commit_hash_corruption_fail_closed",
+        "status": "ok"
+      },
+      {
+        "name": "test_recovery_copy_provenance_and_source_immutability",
+        "status": "ok"
+      },
+      {
+        "name": "test_recovery_mutation_refuses_original_unmarked_directory",
+        "status": "ok"
+      },
+      {
+        "name": "test_seed_collision_and_unknown_checkpoint_phase_fail_closed",
+        "status": "ok"
+      },
+      {
+        "name": "test_status_write_contention_two_real_subprocesses",
+        "status": "ok"
+      },
+      {
+        "name": "test_subprocess_crashes_at_checkpoint_write_boundaries",
+        "status": "ok"
+      },
+      {
+        "name": "test_windows_transient_replace_retry_and_persistent_denial_preserve_exact_payload",
+        "status": "ok"
+      }
+    ],
+    "tests_reported": 14
+  },
+  "limitations": [
+    "This is an independent scripted audit in the same workspace, not an external human or second-agent review.",
+    "Repair primitives are not integrated into the frozen Stage 5 worker, supervisor, auditor, or finalizer.",
+    "No production recovery or full-scale run was performed."
+  ],
+  "no_sampling_code_audit": {
+    "callback_label_arguments": false,
+    "complete_function_arguments": [
+      "path"
+    ],
+    "passed": true,
+    "sampler_calls": [],
+    "stim_imported": false
+  },
+  "original_evidence": {
+    "forensic_manifest_declared": 56,
+    "forensic_manifest_mismatches": [],
+    "forensic_manifest_verified": 56,
+    "preinvestigation_inventory_declared": 265,
+    "preinvestigation_inventory_sha256": "09e06d452b35f1b3298157081184491be6aa264b1fcd111e99944e729736b29b",
+    "preinvestigation_inventory_verified": 265,
+    "preinvestigation_missing": [],
+    "preinvestigation_modified": [],
+    "preserved": true
+  },
+  "original_stage5_run_state": {
+    "completed_roots": 123,
+    "forensic_archived_rows": 558000,
+    "forensic_partial_root_phase": "evaluation_complete",
+    "full_study_statistics_run": false,
+    "recovery_executed": false,
+    "stage5_shots_generated_by_v43": 0,
+    "status": "worker_failed",
+    "status_accounted_shots": 555500
+  },
+  "recorded_test_summary": {
+    "exit_code": 0,
+    "fixtures_disposable_only": true,
+    "stage5_sampling_performed": false,
+    "status": "PASS",
+    "test_count": 14
+  },
+  "recorded_test_summary_matches_independent_rerun": true,
+  "source_hash_checks": {
+    "PROTOCOL_V43.md": true,
+    "REPRODUCE_V43.md": true,
+    "V43_SAFETY_CONFIG.json": true,
+    "atomic_safety_v43.py": true,
+    "independent_audit_v43.py": true,
+    "prepare_freeze_v43.py": true,
+    "recovery_v43.py": true,
+    "run_tests_v43.py": true,
+    "subprocess_fixture_v43.py": true,
+    "test_recovery_v43.py": true
+  },
+  "superseded_freeze_chain_verified": true
+}

@@ -1,0 +1,38 @@
+{
+  "revision": "stage5-recovery-safety-v3.4.3",
+  "base_commit": "8c06750808582137f6a81e2170ad702a552594fb",
+  "scope": "filesystem persistence and archive-derived recovery only",
+  "stage5_sampling_enabled": false,
+  "historical_run_mutation_enabled": false,
+  "scientific_protocol_changes": false,
+  "retryable_windows_error_codes": [5, 32, 33],
+  "retry_backoff_seconds": [0.02, 0.04, 0.08, 0.16, 0.24],
+  "replace_attempts": 6,
+  "checkpoint_schema": {
+    "detector_count": 40,
+    "calibration_shots_per_root": 2000,
+    "evaluation_shots_per_root": 2500,
+    "prediction_arms": 3,
+    "accepted_phases": ["calibration_complete", "evaluation_complete", "complete"]
+  },
+  "recovery_requirements": {
+    "separate_destination_required": true,
+    "source_manifest_verification_required": true,
+    "recovery_provenance_marker_required_for_mutation": true,
+    "complete_only_from_saved_evaluation_arrays": true,
+    "sampler_api_present": false,
+    "prediction_recomputation_required": true,
+    "counter_reconstruction_idempotent": true
+  },
+  "test_fixtures": {
+    "kind": "disposable synthetic NumPy fixtures and Windows subprocess failure injection",
+    "fixture_seed_ids": [510001, 510002, 520001, 520002, 530001, 530002],
+    "fixture_numpy_rng_ids": [600001, 600002, 600003],
+    "historical_stage5_seed_collision_count": 0
+  },
+  "known_platform_limitations": [
+    "Windows directory fsync is not provided by the portable Python implementation; file contents are fsynced.",
+    "Repair primitives are not integrated into the frozen v3.4.2 runner or finalizer.",
+    "No recovery was run against the historical Stage 5 directory."
+  ]
+}
