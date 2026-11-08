@@ -1,0 +1,69 @@
+{
+  "disposable_test_commands": [
+    {
+      "command": [
+        "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "unittest",
+        "outputs.stage5_execution_safety_v3_4_4.test_recovery_service_v44",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stderr": "test_duplicate_expected_root_is_rejected (outputs.stage5_execution_safety_v3_4_4.test_recovery_service_v44.RecoveryIntegrationTests.test_duplicate_expected_root_is_rejected) ... ok\ntest_interrupted_checkpoint_commit_recovers_from_exact_intent (outputs.stage5_execution_safety_v3_4_4.test_recovery_service_v44.RecoveryIntegrationTests.test_interrupted_checkpoint_commit_recovers_from_exact_intent) ... ok\ntest_original_failed_run_is_never_a_recovery_target (outputs.stage5_execution_safety_v3_4_4.test_recovery_service_v44.RecoveryIntegrationTests.test_original_failed_run_is_never_a_recovery_target) ... ok\ntest_recovery_copy_completes_saved_evaluation_without_sampling (outputs.stage5_execution_safety_v3_4_4.test_recovery_service_v44.RecoveryIntegrationTests.test_recovery_copy_completes_saved_evaluation_without_sampling) ... ok\ntest_recovery_service_has_no_sampling_or_stage5_cli (outputs.stage5_execution_safety_v3_4_4.test_recovery_service_v44.RecoveryIntegrationTests.test_recovery_service_has_no_sampling_or_stage5_cli) ... ok\ntest_tampered_recovery_copy_is_rejected (outputs.stage5_execution_safety_v3_4_4.test_recovery_service_v44.RecoveryIntegrationTests.test_tampered_recovery_copy_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 5.029s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "outputs/stage5_execution_safety_v3_4_4/run_ownership_regressions_v44.py"
+      ],
+      "exit_code": 0,
+      "stderr": "test_atomic_temp_names_fit_long_windows_workspace_paths (stage5_v42_process_tests.ProcessOwnershipV4Tests.test_atomic_temp_names_fit_long_windows_workspace_paths) ... ok\ntest_benchmark_normal_completion_counts_hashes_and_final_status (stage5_v42_process_tests.ProcessOwnershipV4Tests.test_benchmark_normal_completion_counts_hashes_and_final_status) ... ok\ntest_independent_deadline_watchdog_expires_child (stage5_v42_process_tests.ProcessOwnershipV4Tests.test_independent_deadline_watchdog_expires_child) ... ok\ntest_lock_contention_fails_closed_in_same_process (stage5_v42_process_tests.ProcessOwnershipV4Tests.test_lock_contention_fails_closed_in_same_process) ... ok\ntest_same_seed_crash_recovery_has_one_committed_count_and_journal (stage5_v42_process_tests.ProcessOwnershipV4Tests.test_same_seed_crash_recovery_has_one_committed_count_and_journal) ... ok\ntest_second_launcher_rejected_while_worker_role_lock_is_held (stage5_v42_process_tests.ProcessOwnershipV4Tests.test_second_launcher_rejected_while_worker_role_lock_is_held) ... ok\ntest_suspended_process_handoff_gap_is_reclaimed_safely (stage5_v42_process_tests.ProcessOwnershipV4Tests.test_suspended_process_handoff_gap_is_reclaimed_safely) ... ok\ntest_windows_real_subprocess_supervisor_death_all_child_phases (stage5_v42_process_tests.ProcessOwnershipV4Tests.test_windows_real_subprocess_supervisor_death_all_child_phases) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 21.070s\n\nOK\n",
+      "stdout": "{\"errors\": [], \"excluded_test\": \"test_frozen_hashes_and_stage5_boundary\", \"exclusion_reason\": \"The legacy test asserts that the original run directory does not exist; this documented failed run must be preserved and exists.\", \"failures\": [], \"selected_tests\": 8, \"stage5_sampling_authorized\": false, \"stage5_sampling_started\": false, \"status\": \"PASS\"}\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "outputs/stage5_execution_safety_v3_4_4/recovery_runner_v44.py",
+        "--preflight"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\n  \"status\": \"PASS_NO_SAMPLING_PREFLIGHT\",\n  \"freeze\": {\n    \"v44_source_hashes\": 12,\n    \"stage5_v2_hashes\": 53,\n    \"v342_safety_hashes\": 14,\n    \"base_commit\": \"8c06750808582137f6a81e2170ad702a552594fb\"\n  },\n  \"source\": {\n    \"manifest_file_count\": 265,\n    \"status\": \"worker_failed\",\n    \"original_run_path\": \"C:\\\\Users\\\\LENOVO\\\\Documents\\\\Codex\\\\2026-11-03\\\\referenced-chatgpt-conversation-this-is-an\\\\outputs\\\\stage5_secondary_inference_repair_v1\\\\run\",\n    \"target_exists\": false\n  },\n  \"stage5_evaluation_samples_generated_by_preflight\": 0,\n  \"recovery_or_sampling_executed\": false\n}\n"
+    }
+  ],
+  "disposable_test_commands_passed": 3,
+  "forensic_entries_verified": 56,
+  "forensic_hash_mismatches_before_after": [
+    [],
+    []
+  ],
+  "historical_v3_4_3_audit_status": "PASS",
+  "original_run_files_verified_before_after": [
+    265,
+    265
+  ],
+  "original_run_hash_mismatches_before_after": [
+    [],
+    []
+  ],
+  "recovery_copy_created": false,
+  "sealed_outcomes_accessed": false,
+  "stage5_evaluation_sampling_executed": false,
+  "stage5_recovery_executed": false,
+  "stage5_v2_hash_mismatches": [],
+  "stage5_v2_hashes_verified": 53,
+  "status": "PASS_WITH_DEVIATION",
+  "v3_3_hash_mismatches": [],
+  "v3_3_hashes_verified": 13,
+  "v3_4_2_hash_mismatches": [],
+  "v3_4_2_hashes_verified": 14,
+  "v3_4_2_raw_test_report_integrity": {
+    "current_sha256": "3d0aa61720a2f7258da661d48163d02bdaba3cc3e22457c97799c69c30b3f64c",
+    "manifest_sha256": "d191d48d999bf169cbcaa5a9e42fb604e8241f387bee84e19c598402dc319a4c",
+    "note": "The v3.4.2 test runner was invoked during this task and rewrote its untracked raw-result JSON; the original bytes are not recoverable from the repository. Its tracked summary and frozen source hashes remain intact. This is disclosed as a local historical-artifact deviation.",
+    "status": "FAIL_LOCAL_ARTIFACT_MISMATCH"
+  },
+  "v44_frozen_source_hashes_verified": 12,
+  "v44_source_hash_mismatches": []
+}
