@@ -1,50 +1,62 @@
-# Q-SHIFT supervisor review handoff
+# Q-SHIFT supervisor review handoff — V2 checkpoint 2
 
-## Review checkpoint
+## Review state
 
-- PR: [#1 — Strong fixed baselines for synthetic burst noise](https://github.com/realguy-beep/Q-SHIFT/pull/1), base `main`, branch `codex/research-strong-baselines-v1`.
-- Supervisor comment: [checkpoint 1, 2026-11-11](https://github.com/realguy-beep/Q-SHIFT/pull/1#issuecomment-6796430085).
-- Reviewed source commit: `2dad2f37456886ee32a6b3b1e05511f2ec5df893`.
-- Correction implementation commit: `91dddabe5d5ab9ef18791f79d7fba841086f82cb`.
-- Scope: correct the prospective pooled-calibration input boundary, preserve and explain V1's deviation, and stop for supervisor review. No sampling or merge is authorized.
+- PR: [#1 — Strong fixed baselines for synthetic burst noise](https://github.com/realguy-beep/Q-SHIFT/pull/1), branch `codex/research-strong-baselines-v1`, base `main`.
+- Supervisor review: [Review #2, comment 6796937443](https://github.com/realguy-beep/Q-SHIFT/pull/1#issuecomment-6796937443).
+- Source revision reviewed: `5c3aaf48d5807a5dbdb33dc3c6a878c7e496a931`.
+- V2 preparation commit: `9b72cb1140b067f6b8bde09f68c725e20f50254f`.
+- Scope: V2 runner calibration-boundary test, corrected primary comparison, fairness/leakage review, collision-screened prospective inventory, review-only pre-sampling freeze, and fixture-tested independent audit tooling.
+- **No V2 sampling was performed; `sampling_authorized` remains false. No sealed evaluation outcomes were accessed. PR remains unmerged.**
 
-## Corrections in this review checkpoint
+## Changes for Review #2
 
-1. Preserved V1 and added a separately versioned candidate at `outputs/strong_fixed_baselines_v2/`. Its independent template batches alone fit detector profiles. Final calibration enters the pooled estimator as detector matrices, concatenated before estimation; the API rejects condition-tagged tuples. The V2 runner fails closed while `sampling_authorized` is false, before reading a seed inventory or invoking a sampler.
-2. Added regression coverage for template-only profile fitting, pooled detector-only estimation, tagged-input rejection, data shape/binary validation, runner call path, disabled sampling, and refusal before inventory/sampler access.
-3. Added a prospective plan that requires new independent roots, a pre-sampling source/config/seed freeze, separate selection/validation/evaluation partitions, no-harm and practical-benefit rules, and an independent saved-array audit. It explicitly accounts for information and resource differences: pooled static and per-root adaptive each receive 1.2M calibration detector shots plus the same 60k templates, but aggregate/use information differently; safety-static additionally receives 450k selection plus 450k validation labeled shots.
-4. Expanded repository guidance with supervisor checkpoints and a prohibition on merge/auto-merge without explicit authorization.
-5. Added `REVIEW_CORRECTION_MANIFEST.json`, which hashes the candidate source/config/docs and references the original V1 freezes/manifests/audit outputs. Manifest SHA-256 for this checkpoint: `0b9fb6c963a784f4d6e12a9d7997e48a60c72bc177f8f10ddf7ae14b235b4686`.
+1. **Calibration integration test.** `run_development_v2.py::run_pooled_calibration_stage` now owns the collection boundary. It passes template `(probability, detector matrix)` batches only to template-profile fitting. It collects the final calibration stream as detector-only matrices, rejects archives containing observable labels, concatenates those matrices, and gives only that detector array to the pooled probability estimator. The mocked integration test exercises the runner orchestration without Stim and checks sampler arguments, fit inputs, estimator inputs, and the pooled matrix. Marker-only/ambiguous commits fail closed before sampling. The full runner still refuses before inventory or sampler access while authorization is false.
+2. **Primary comparison.** The primary is now the equal-weight mean over `p > 0` of root-paired `adaptive − pooled detector-calibrated fixed PyMatching` LER. The `−0.0002` practical-benefit boundary is reported as a benchmark; this is a development study, with a descriptive root-stratified bootstrap interval and no confirmatory p-value.
+3. **Safety arms.** The zero-burst no-harm selector and its validation fallback to nominal `p=0` remain intact. The safety-constrained static arm is retained as a secondary comparator. It is not substituted for the stronger pooled-fixed primary reference. Final `p=0` effects are reported for deployable arms and cannot alter choices.
+4. **Fairness/leakage.** All five arms use identical evaluation detector/observable arrays. Shared independent templates are 60,000 shots. Pooled-fixed and adaptive each receive 1,200,000 final detector-calibration shots in total, but pooled-fixed estimates one global parameter while adaptive estimates per root; equal total shots do not imply equal information aggregation, estimator variance, decoder builds, or compute. The safety-static selector additionally receives 450,000 selection and 450,000 validation labeled shots; that imbalance is disclosed. No evaluation outcomes, generating labels, hidden event flags, or future samples enter deployable calibration or selection.
+5. **Seed inventory.** `seed_inventory_v2_r2.json` screens 1,610 unique candidate seeds against 25 hash-verified allowlisted historical metadata sources plus 48 tracked seed inventory/manifest metadata files (29,128 large-integer tokens screened). It reports zero collisions among candidate streams and zero collisions against screened metadata. The 3,660,000-shot allocation is exact. The previous no-sample `seed_inventory_v2.json` remains preserved but is superseded and excluded from historical RNG screening. Historical coverage is explicitly incomplete: undocumented/unrecorded RNG use cannot be ruled out. Regenerating the inventory after the implementation commit produced byte-identical output.
+6. **Prospective freeze and independent audit.** `PRETEST_FREEZE_V2.json` binds 20 source/configuration/protocol/test/auditor files and records `PRETEST_FREEZE_REVIEW_ONLY`, `sampling_authorized=false`, and `sampling_performed_at_freeze=false`. `audit_saved_arrays_v2.py` is separate from the runner/reporting code. It verifies committed archive hashes, metadata, detector/observable/prediction shapes, seed/root mapping, independently rebuilds the frozen decoder bank, re-decodes paired stored detector arrays, and reconstructs calibration and aggregate metrics. Fixture tests exercise its validation paths. There is no V2 run to audit yet; a real saved-array replay remains future work after separate authorization.
 
-## Reproduction and checks performed
+## Protocol summary
+
+The candidate keeps the frozen distance-3, five-round rotated Z-memory circuit; native parameters and five burst probabilities; five paired decoder arms; 20 selection roots and 20 validation roots per condition; 120 evaluation roots per condition; 2,000 final calibration and 2,500 paired evaluation shots per root; 60,000 template, 450,000 selection, 450,000 validation, 1,200,000 final calibration, and 1,500,000 evaluation shots (3,660,000 total). No circuit, decoder, allocation, or statistical choice was changed during this checkpoint other than correcting the primary comparator to the supervisor-specified pooled-fixed baseline.
+
+The bootstrap resamples independent roots within each nonzero condition and gives each of the four conditions equal weight. It is descriptive and conditional on these conditions; no generalization or statistical-superiority claim follows. The static selector's no-burst rule is based on selection/validation only, with no reselection on evaluation data.
+
+## Reproduction and validation
 
 Run from the repository root:
 
 ```powershell
-python -m unittest outputs.strong_fixed_baselines_v2.test_pooled_calibration_v2 -v
+python -m unittest outputs.strong_fixed_baselines_v2.test_pooled_calibration_v2 outputs.strong_fixed_baselines_v2.test_saved_array_audit_v2 outputs.strong_fixed_baselines_v2.test_seed_inventory_v2 -v
 python -m unittest outputs.strong_fixed_baselines_v1.test_experiment -v
-python -c "import sys;sys.path.insert(0,'outputs/strong_fixed_baselines_v1');import freeze_pretest; f=freeze_pretest.verify_freeze(); print('verified_files=',len(f))"
+python -c "import sys;sys.path.insert(0,'outputs/strong_fixed_baselines_v1');import freeze_pretest;f=freeze_pretest.verify_freeze();print('V1 V14 records=',len(f))"
+python -m outputs.strong_fixed_baselines_v2.freeze_pretest_v2
 python outputs/strong_fixed_baselines_v2/build_review_manifest.py
 ```
 
-Observed here: V2 regression tests **7/7 passed** (0.263 s); V1 baseline tests **16/16 passed** (1.536 s); V1 V14 freeze verification returned **15 verified file records**. The review manifest builder hashed 10 current source/config/document files and 6 historical references, and confirmed the V1 runner still matches its V14 recorded SHA-256. The recorded manifest hash above is for the generated file at this checkpoint.
+Observed: V2 tests **19/19 passed**; V1 unit tests **16/16 passed**; V1 V14 freeze verified **15 records**; V2 review-only freeze verified **20 hashes**; Python compilation passed for runner, calibration helper, auditor, seed builder, freeze tools, and manifest builder. The mocked integration path did not call Stim sampling. Fixture-only auditor tests passed. The source review manifest hashes 22 current review files and 7 historical references and confirms the V1 runner still matches the V14 hash.
 
-The V2 suite uses in-memory/mocked samples and refuses before any sampling. The V1 command is its small existing unit suite, not a new research experiment. No new study sampling, large experiment, raw NPZ replay, sealed-test access, or Stage 5 result access was performed during this review. These local checks are not an independent supervisor replay.
+## Key SHA-256 values
 
-## Historical evidence, deviation, and audit boundary
+- V2 review-only freeze: `820c1f648f7516b82d7f4b3e6dd4c3617909bc9f3c9c5d5d59371f2bf2c06531`
+- Final seed inventory r2: `9f38d03d3315bf74e33e2a994446bc1e103b9e08827d8b1cc8553516fbdc72c7`
+- V2 config: `8a3a3e2d8fb062852465696aed4601ae19df89708316cdaa51430d1021323860`
+- V2 runner: `f55f616ea75aae12162e00b1bd4104a65924b2c3016cc910153e1e3b3564118b`
+- Independent saved-array auditor: `0270033c5954e3c84c4a7e63aa26153d5a5fb5c797407591de93eccdcd99f0ec`
+- Source review manifest: `e1fc7a07b30b439fd290cff60e1737215a9cee728e59eef68a1188bb3e2acbdf`
 
-- V1 files, freezes V1–V14, historical run/recovery data, and post-run reconstruction were not edited. The V1 original runner remains unsuitable for prospective reuse: its final-calibration pathway attached generating-probability tags and passed those tagged batches to profile fitting. That is the disclosed V1 protocol deviation; the preserved runner is not silently repaired or reclassified.
-- Historical references and hashes are in `outputs/strong_fixed_baselines_v1/FINAL_EVIDENCE_MANIFEST.json`, `PRETEST_FREEZE_V14.json`, `POSTRUN_RECONSTRUCTION_FREEZE_V1.json`, and `POSTRUN_RECONSTRUCTION_VERIFICATION_V1.json`. The saved-array audit procedure is `POSTRUN_RECONSTRUCTION_PROTOCOL_V1.md`; executable audit/reconstruction sources are `audit_saved_run_reconstruction_v1.py` and `analyze_results_reconstruction_v1.py`.
-- The local manifest records hashes for the excluded NPZ evidence and corrected per-shot prediction archives. Those raw files remain local/ignored; this checkpoint did not open, copy, upload, or independently rehash them. The supervisor's review was a source/documentation review, not a replay of the 3.66M-shot evidence.
-- The V1 reconstruction remains development evidence after a material implementation deviation. Adaptive-minus-pooled-static was `−0.00002917` absolute LER with descriptive root-bootstrap interval `[−0.00005167, −0.00000750]`, below the `0.0002` practical benchmark. The larger contrast to safety-static reflects that arm's fallback to nominal. Do not claim confirmatory superiority, practical benefit, hardware validity, or general-noise validity.
-- The independent Stage 5 audit directory was absent from this clone. Prior documentation says it existed in the earlier workspace; no Stage 5 outcome material was accessed to fill that gap.
+The complete 20-file freeze hash inventory is in `outputs/strong_fixed_baselines_v2/PRETEST_FREEZE_V2.json`; per-file metadata-source hashes and collision counts are in `seed_inventory_v2_r2.json` and `SEED_COLLISION_AUDIT_V2.md`.
 
-## Ready and not ready for review
+## Preserved evidence and unresolved limits
 
-**Ready:** prospective V2 calibration boundary and tests; correction of the documented V1 code-reuse issue; transparent V1 deviation/result language; disclosed calibration-resource differences; reproducible local unit-test and freeze-verification commands.
+- No tracked V1 or Stage 5 evidence path changed. The historical V1 runner remains hash-matched to V14 and its previously documented calibration deviation remains visible; V1 is not silently reclassified. Stage 5 result/outcome files were not accessed; only the specified Stage 5 seed metadata inventory and prior source metadata were used for collision screening.
+- The V2 run directory is absent and no V2 arrays, estimates, predictions, or performance results exist. The independent auditor has only been validated on disposable synthetic fixtures, not a real saved run.
+- Seed disjointness is verified only against recoverable, hash-verified metadata coverage; unrecorded RNG use is unknowable from these files.
+- The plan is development-only and does not establish superiority, practical benefit, or confirmatory power. Resource/information differences remain as disclosed above.
+- `sampling_authorized` must remain false until supervisor review and separate explicit owner authorization. Do not merge PR #1 or enable auto-merge.
 
-**Not ready:** V2 seed-collision clearance, a V2 seed inventory, a V2 pretest freeze, raw V1 array replay in this clone, any V2 performance result, or sampling authorization. Candidate namespace `19,000,000,001` remains a proposal only. Existing Stage 5 material remains sealed.
+## Requested next action
 
-## Required next action
-
-Stop at PR #1 for the supervisor's next review. Keep the PR open and unmerged; do not enable auto-merge. Do not generate a V2 inventory/freeze or sample the candidate study until a separate review and explicit owner authorization.
+Supervisor review of this V2 candidate and its review-only freeze. No experiment launch is requested or authorized by this handoff.
