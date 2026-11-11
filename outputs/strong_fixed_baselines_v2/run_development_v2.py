@@ -24,7 +24,7 @@ from outputs.strong_fixed_baselines_v2.pooled_calibration_v2 import calibrate_po
 
 
 CONFIG_PATH = HERE / "experiment_config_v2.json"
-INVENTORY_PATH = HERE / "seed_inventory_v2.json"
+INVENTORY_PATH = HERE / "seed_inventory_v2_r2.json"
 
 
 def pkey(p: float) -> str:
@@ -230,6 +230,8 @@ def load_template_batches(run_dir: Path, cfg: dict, inventory: dict, started: fl
         path = archive_path(run_dir, "templates", p, None)
         if path.exists() or path.with_suffix(path.suffix + ".commit.json").exists():
             arrays, _ = load_checkpoint(path, partition="templates", p=float(p), root=None, seed=int(seed["seed"]))
+            if set(arrays) != {"detectors"}:
+                raise RuntimeError(f"template archives must be detector-only: {path}")
             d = arrays["detectors"]
         else:
             d = sample_arrays(float(p), int(seed["seed"]), shots, cfg, labels=False)
@@ -272,6 +274,75 @@ def write_immutable_json(path: Path, value: dict) -> None:
 def require_sampling_authorized(cfg: dict) -> None:
     if cfg.get("execution", {}).get("sampling_authorized") is not True:
         raise PermissionError("v2 candidate is not authorized for sampling; stop before any sampler call")
+
+
+def run_pooled_calibration_stage(
+    run_dir: Path,
+    cfg: dict,
+    inventory: dict,
+    started: float,
+    template_batches: list[tuple[float, np.ndarray]],
+) -> tuple[object, float, np.ndarray, list[dict]]:
+    """Load/sample detector-only calibration streams, then fit the pooled model.
+
+    This orchestration boundary is intentionally testable without Stim sampling.
+    Condition/root metadata is retained only in ``cal_refs`` for provenance;
+    only detector matrices are passed to the estimator.
+    """
+    eval_roots = int(cfg["partitions"]["evaluation_roots_per_condition"])
+    detector_batches: list[np.ndarray] = []
+    cal_refs = []
+    for p in map(float, cfg["circuit"]["probabilities"]):
+        for root in range(eval_roots):
+            health(cfg, started)
+            seed = stream_for(inventory, "calibration", "heldout_development", p, root)
+            shots = int(cfg["decoders"]["calibration_shots_per_root"])
+            path = archive_path(run_dir, "heldout_development_calibration", p, root)
+            marker = path.with_suffix(path.suffix + ".commit.json")
+            if path.exists() or marker.exists():
+                arrays, _meta = load_checkpoint(
+                    path,
+                    partition="heldout_development_calibration",
+                    p=p,
+                    root=root,
+                    seed=int(seed["seed"]),
+                )
+            else:
+                detectors = sample_arrays(p, int(seed["seed"]), shots, cfg, labels=False)
+                checkpoint(
+                    run_dir,
+                    "heldout_development_calibration",
+                    p,
+                    root,
+                    seed,
+                    {"detectors": detectors},
+                )
+                arrays = read_data(
+                    path,
+                    "heldout_development_calibration",
+                    p,
+                    root,
+                    int(seed["seed"]),
+                )
+            if set(arrays) != {"detectors"}:
+                raise RuntimeError(f"final calibration archives must be detector-only: {path}")
+            detector_batches.append(arrays["detectors"])
+            cal_refs.append({
+                "probability": p,
+                "root": root,
+                "seed": int(seed["seed"]),
+                "path": str(path.relative_to(run_dir)),
+                "sha256": sha256(path),
+            })
+            record_latest_checkpoint(
+                run_dir, "heldout_development_calibration", started, p, root, path
+            )
+    # The helper's second argument is arrays-only by API.  No p/root metadata
+    # collected above is passed into profile fitting or pooled estimation.
+    estimator, pooled_p, pooled_detectors = calibrate_pooled_static(
+        template_batches, detector_batches
+    )
+    return estimator, pooled_p, pooled_detectors, cal_refs
 
 
 def main() -> None:
@@ -377,26 +448,8 @@ def main() -> None:
         write_immutable_json(run_dir / "BASELINE_SELECTION_FREEZE.json", safe_selection_freeze)
 
         # Final calibration detector pool. No observable labels are saved or used.
-        eval_roots = int(cfg["partitions"]["evaluation_roots_per_condition"])
-        final_calibration_detector_batches: list[np.ndarray] = []
-        cal_refs = []
-        for p in map(float, cfg["circuit"]["probabilities"]):
-            for root in range(eval_roots):
-                health(cfg, started)
-                seed = stream_for(inv, "calibration", "heldout_development", p, root)
-                shots = int(cfg["decoders"]["calibration_shots_per_root"])
-                path = archive_path(run_dir, "heldout_development_calibration", p, root)
-                if not path.exists():
-                    d = sample_arrays(p, int(seed["seed"]), shots, cfg, labels=False)
-                    checkpoint(run_dir, "heldout_development_calibration", p, root, seed, {"detectors": d})
-                arrays = read_data(path, "heldout_development_calibration", p, root, int(seed["seed"]))
-                final_calibration_detector_batches.append(arrays["detectors"])
-                cal_refs.append({"probability": p, "root": root, "seed": int(seed["seed"]), "path": str(path.relative_to(run_dir)), "sha256": sha256(path)})
-                record_latest_checkpoint(run_dir, "heldout_development_calibration", started, p, root, path)
-        # The fitter sees only independent template probability tags. Final
-        # calibration data enter through a detector-array-only API.
-        pooled_estimator, p_pool, pooled_detectors = calibrate_pooled_static(
-            template_batches, final_calibration_detector_batches
+        pooled_estimator, p_pool, pooled_detectors, cal_refs = run_pooled_calibration_stage(
+            run_dir, cfg, inv, started, template_batches
         )
         pooled_cal_record = {"estimated_p": float(p_pool), "calibration_shots": int(pooled_detectors.shape[0]),
                             "calibration_archives": cal_refs,

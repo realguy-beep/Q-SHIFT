@@ -87,7 +87,7 @@
   "sealed_test_access": false,
   "seeds": {
     "historical_allowlist_source": "outputs/stage5_secondary_inference_repair_v1/STAGE5_SAMPLE_SEED_INVENTORY.json",
-    "inventory_path": "outputs/strong_fixed_baselines_v2/seed_inventory_v2.json",
+    "inventory_path": "outputs/strong_fixed_baselines_v2/seed_inventory_v2_r2.json",
     "namespace_start": 19000000001
   },
   "statistics": {
@@ -95,10 +95,13 @@
     "interval": "stratified root-cluster percentile bootstrap, 95%",
     "p_values": "none; development-only descriptive study",
     "practical_benefit_benchmark": 0.0002,
-    "primary_contrast": "equal-weight nonzero-condition mean of root-paired adaptive_minus_safety_static LER",
+    "primary_contrast": "equal-weight mean across p>0 of per-condition root-paired adaptive_minus_pooled_detector_static LER",
+    "primary_practical_effect_benchmark": 0.0002,
+    "primary_benefit_boundary": -0.0002,
+    "primary_inference": "development-only descriptive 95% condition-stratified root-cluster percentile bootstrap; no confirmatory p-values",
     "secondary_contrasts": [
-      "adaptive_minus_pooled_detector_static",
       "adaptive_minus_nominal_fixed",
+      "adaptive_minus_safety_constrained_static",
       "safety_static_minus_nominal_fixed",
       "pooled_detector_static_minus_nominal_fixed",
       "adaptive_minus_privileged_true_p_reference"
