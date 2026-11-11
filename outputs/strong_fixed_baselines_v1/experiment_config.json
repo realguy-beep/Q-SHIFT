@@ -1,0 +1,80 @@
+{
+  "study": "Q-SHIFT strong fixed-baseline comparison v1",
+  "classification": "development_feasibility_not_confirmatory",
+  "historical_stage5_modified": false,
+  "sealed_test_access": false,
+  "circuit": {
+    "generator": "outputs/phase3a_correlated_noise_preflight/simulator.py",
+    "memory_basis": "z",
+    "regime": "balanced",
+    "distance": 3,
+    "rounds": 5,
+    "detectors": 40,
+    "observables": 1,
+    "gate_p": 0.003,
+    "measurement_p": 0.003,
+    "bias_ratio": 10.0,
+    "burst_pair": [8, 10],
+    "probabilities": [0.0, 0.004, 0.008, 0.012, 0.016],
+    "dem": {
+      "decompose_errors": true,
+      "approximate_disjoint_errors": true,
+      "enable_correlations": true
+    }
+  },
+  "decoders": {
+    "nominal_fixed_p": 0.0,
+    "static_candidate_grid": [0.0, 0.002, 0.004, 0.006, 0.008, 0.01, 0.012, 0.014, 0.016],
+    "profile_template_probabilities": [0.0, 0.01, 0.02],
+    "profile_grid_step": 0.00001,
+    "calibration_shots_per_root": 2000,
+    "evaluation_shots_per_root": 2500,
+    "static_zero_burst_mean_harm_limit": 0.0002,
+    "validation_upper_bound_harm_limit": 0.0002
+  },
+  "partitions": {
+    "template_shots_per_probability": 20000,
+    "selection_roots_per_condition": 20,
+    "validation_roots_per_condition": 20,
+    "evaluation_roots_per_condition": 120
+  },
+  "allocation": {
+    "template_shots": 60000,
+    "selection_shots": 450000,
+    "validation_shots": 450000,
+    "evaluation_calibration_shots": 1200000,
+    "paired_evaluation_shots": 1500000,
+    "unique_shots": 3660000
+  },
+  "statistics": {
+    "primary_contrast": "equal-weight nonzero-condition mean of root-paired adaptive_minus_safety_static LER",
+    "secondary_contrasts": [
+      "adaptive_minus_pooled_detector_static",
+      "adaptive_minus_nominal_fixed",
+      "safety_static_minus_nominal_fixed",
+      "pooled_detector_static_minus_nominal_fixed",
+      "adaptive_minus_privileged_true_p_reference"
+    ],
+    "bootstrap_replicates": 100000,
+    "interval": "stratified root-cluster percentile bootstrap, 95%",
+    "p_values": "none; development-only descriptive study",
+    "practical_benefit_benchmark": 0.0002,
+    "zero_burst_harm_benchmark": 0.0002
+  },
+  "seeds": {
+    "namespace_start": 18000000001,
+    "inventory_path": "outputs/strong_fixed_baselines_v1/seed_inventory.json",
+    "historical_allowlist_source": "outputs/stage5_secondary_inference_repair_v1/STAGE5_SAMPLE_SEED_INVENTORY.json"
+  },
+  "resources": {
+    "wall_seconds_max": 7200,
+    "rss_bytes_max": 2147483648,
+    "free_disk_min_bytes": 5368709120,
+    "checkpoint_frequency": "after each partition/root archive",
+    "benchmark_template_shots": 500,
+    "benchmark_calibration_shots": 1000,
+    "benchmark_evaluation_shots": 1000,
+    "benchmark_probability": 0.008,
+    "benchmark_separate_from_allocation": true
+  }
+}
