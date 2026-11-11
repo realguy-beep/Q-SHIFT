@@ -60,3 +60,54 @@ The complete 20-file freeze hash inventory is in `outputs/strong_fixed_baselines
 ## Requested next action
 
 Supervisor review of this V2 candidate and its review-only freeze. No experiment launch is requested or authorized by this handoff.
+
+## Supervisor Review #3 — V2.3 authorization candidate (2026-11-11)
+
+### Review state and boundary
+
+- PR: [#1 — Strong fixed baselines for synthetic burst noise](https://github.com/realguy-beep/Q-SHIFT/pull/1), branch `codex/research-strong-baselines-v1`.
+- Supervisor Review #3: https://github.com/realguy-beep/Q-SHIFT/pull/1#issuecomment-6798467814.
+- Exact reviewed starting commit: `98d7cc9ec77861e0421970ca47dfb9ea3044f5f7` (local `main` was not used or modified).
+- V2.3 authorization implementation commit: `a0d80e9b458df1ebc93de27c927d83de9be23a9e` (`fix(research): add fail-closed V2 owner authorization`). This commit is on the existing research branch; handoff is committed separately after it.
+- **No V2 sampling, Stage 5 sampling, sealed outcome access, real owner approval, or real run was performed.** V2 scientific config and all candidate freezes remain unauthorized (`sampling_authorized=false`, `sampling_performed=false`). PR remains open, draft, and unmerged.
+
+### Corrections and discovered issues
+
+1. The V2 freeze/config conflict was handled through a separate authorization layer. The original V2 scientific configuration (`8a3a3e2d8fb062852465696aed4601ae19df89708316cdaa51430d1021323860`) and freeze (`820c1f648f7516b82d7f4b3e6dd4c3617909bc9f3c9c5d5d59371f2bf2c06531`) remain unchanged and continue to require `sampling_authorized=false`. The new launcher requires an explicit local approval record bound to the exact clean commit, candidate/original freeze, config, seed inventory, frozen runner, launch/auth code, and runtime fingerprint; only after validation does it supply the original runner an in-memory config copy with the authorization guard enabled. The original runner and freeze verifier remain unchanged.
+2. V2.1 exposed a real authorization-validator defect: it applied a 64-hex SHA-256 regex to the 40-hex Git commit ID. Its owner-approval path is unreachable. Its separately frozen candidate is preserved and **not repaired in place**; freeze SHA-256 is `b6274e67bd2fa413af084d12a79fd11d2c7dde55077d74e049675fe3081fbade` (15 hashes).
+3. V2.2 separated commit-ID and SHA-256 validation, and its synthetic valid approval reached the mocked sampler, but the first full test run had one test assertion error: the mock was expected to receive two positional arguments although the call correctly included `shots`, `cfg`, and `labels=False`. V2.2 and its freeze remain unchanged; freeze SHA-256 is `bdd406f33b51853b1819522df7b222583649ed68b322fd57bd23c232cfb0e063` (17 hashes).
+4. V2.3 carries the corrected authorization validation, fixes the mock assertion, uses separate `run_v2_3_token` and `OWNER_APPROVAL_V2_3_TOKEN.json` paths (covered by the pre-existing `*token*` ignore rule), and verifies/hashes its V2.2 predecessor. Its create-only candidate freeze is `dab92dadb57b4f1536ac0cbc2a14707ba5ac358c37594ea640f4a3e47d2206a2` (17 hashes). It is a review candidate, **not** owner authorization.
+5. The auditor adapter verifies the approval receipt and execution identity and then calls the unchanged V2 saved-array auditor. The adapter has only been exercised using synthetic fixtures; no real V2 arrays exist to audit. No source-verification checks were relaxed.
+
+### Authorization, runtime provenance, and remaining risks
+
+- Missing/malformed/unapproved approvals fail before seed-inventory access or sampler invocation. Approval binds the precise clean Git HEAD, V2/V2.3 freezes, frozen scientific config/inventory/runner, launch and verifier hashes, and runtime fingerprint. Resume goes through the same gate; CLI exposes no authorization bypass; environment variables are ignored for authorization.
+- Approval file is local-only and no real one was created. `.gitignore` uses the existing `*token*` rule for both approval and V2.3 run path. A JSON record is procedural, not a digital signature; `approved_by` is not independently authenticated by software and relies on account/filesystem access controls.
+- Runtime observed during this review: Python 3.12.10; Windows 11 build 26300; Stim 1.16.0; PyMatching 2.4.0; NumPy 2.5.3. The launcher hashes these runtime versions and requires them to be installed; it does not install or pin dependencies. Any runtime/source/commit drift invalidates approval.
+- Existing seed collision coverage is limited to recoverable metadata; undocumented RNG use remains unknown. Calibration/evaluation imbalance and the development-only statistical interpretation in V2 remain disclosed in the original protocol. A real-array independent audit and end-to-end runtime benchmark remain unperformed.
+- The original V2, V1 and Stage 5 paths were not edited. Regression checks re-verified the V2 freeze, V1 V14 runner hash, and the Stage 5 seed-inventory metadata hash referenced by the V2 freeze. Only the Stage 5 seed metadata was checked; sealed outcomes were not accessed.
+
+### Validation commands and results
+
+From `C:\Users\LENOVO\Documents\QSHIFT-Research\Q-SHIFT`:
+
+```powershell
+python -m compileall -q outputs/strong_fixed_baselines_v2_3 outputs/strong_fixed_baselines_v2_1
+python -m unittest outputs.strong_fixed_baselines_v2_3.test_authorization_v2_3 -v
+python -m unittest outputs.strong_fixed_baselines_v2.test_pooled_calibration_v2 outputs.strong_fixed_baselines_v2.test_saved_array_audit_v2 outputs.strong_fixed_baselines_v2.test_seed_inventory_v2 -v
+python -m unittest outputs.strong_fixed_baselines_v1.test_experiment -v
+python -c "import sys;sys.path.insert(0,'outputs/strong_fixed_baselines_v1');import freeze_pretest;f=freeze_pretest.verify_freeze();print('V1 V14 records=',len(f))"
+python -m outputs.strong_fixed_baselines_v2.freeze_pretest_v2
+python -m outputs.strong_fixed_baselines_v2_1.candidate_freeze_v2_1
+python -m outputs.strong_fixed_baselines_v2_2.candidate_freeze_v2_2
+python -m outputs.strong_fixed_baselines_v2_3.candidate_freeze_v2_3
+```
+
+Results: V2.3 authorization/provenance tests **16/16 PASS**; original V2 regression tests **19/19 PASS**; V1 tests **16/16 PASS**; V1 V14 verified **15 records**; original V2 freeze verified **20 hashes**; V2.1 freeze **15 hashes verified**; V2.2 **17 hashes verified**; V2.3 **17 hashes verified**. Compileall passed. Synthetic positive-path test confirms the mocked sampler is invoked, checks the in-memory authorization guard is true while on-disk config and original freeze stay false, and produces no NPZ samples. Unauthorized, `--resume`, malformed, tampered, wrong-commit/hash, missing-identity, completed-run, duplicate-provenance and bypass tests are covered. V2.1's suite remains 13/15 due the commit-ID width defect; V2.2 remains 15/16 due the assertion-only argument mismatch documented above; these failures are retained as intermediate evidence and are not counted as V2.3 failures.
+
+Precommit review staged 28 files (3,325 insertions), no file exceeded 2 MB, and the staged secret scan reported no findings. Paths were limited to `.gitignore` and versioned V2.1–V2.3 authorization candidates; no raw datasets, checkpoints, secrets, V1 results, Stage 5 outcomes or website worktree files were staged. The `.gitignore` change uses an existing broad `*token*` rule for the V2.2/V2.3 local approval and run paths without editing the V2.1-bound ignore file content after its freeze.
+
+### Requested next action
+
+Review V2.3 authorization and its 17-file candidate freeze. No Stage 5 work is authorized. **Do not launch V2 sampling** until a future supervisor review and separate explicit owner authorization; no real owner approval is present. Do not merge PR #1.
+
