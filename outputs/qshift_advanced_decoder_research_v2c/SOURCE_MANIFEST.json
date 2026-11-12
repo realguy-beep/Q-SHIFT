@@ -1,0 +1,207 @@
+{
+  "audit": "Q-SHIFT Phase 2C deterministic joint estimator design review",
+  "reviewed_checkpoint": "7597510a41be09b6b9c727e7ae6091627011424f",
+  "branch": "qshift-advanced-research",
+  "software": {
+    "python": "3.12",
+    "stim": "1.16.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "scope": "Population-feature comparison and local analytic finite-history sensitivity only; no stochastic outcomes or decoder metrics.",
+  "parameters": {
+    "p_burst": [
+      0.0,
+      0.02
+    ],
+    "p_measurement": [
+      0.0,
+      0.01
+    ],
+    "gate_p_fixed": 0.003,
+    "template_steps": {
+      "burst": 0.001,
+      "measurement": 0.001
+    },
+    "fit_grid_step": 0.0001
+  },
+  "restrictions_observed": [
+    "No Stim sampling",
+    "No stochastic simulation",
+    "No decoder benchmark or logical-outcome evaluation",
+    "No model training",
+    "No seed generation/inventory",
+    "No protected or sealed evaluation access",
+    "No protocol freeze or experiment authorization"
+  ],
+  "source_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "252cd1b41ec29a7d6f51542cda14ee32aab4038ae7cbd223e9a90191e2c9dff0"
+    },
+    {
+      "path": "outputs/phase2b_pauli_bias/noise_model.py",
+      "sha256": "256826516353c5d3effb6a0b85969934ac2b61edc2848148d935087e54dffcbd"
+    },
+    {
+      "path": "outputs/phase3a_correlated_noise_preflight/simulator.py",
+      "sha256": "c938ffc9f4169a9d0c7c92bf5c66e48a03a64f45d3d06f160a31d11b188da239"
+    },
+    {
+      "path": "outputs/stage4_noise_adaptive_feasibility_v1/prototype.py",
+      "sha256": "2b95f11fe3daf9cb8cd212b493b801c0d27d31c8cdc9a760bb1265c927a0e371"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2/PHASE2_RESEARCH_PROTOCOL.md",
+      "sha256": "f368418fa344c9a9ca1aaabe6a618e0340be8badccdc82b00068223701ce196e"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2_review/CORRECTED_STATISTICAL_DESIGN.md",
+      "sha256": "8c88ff5796d1e0a727948ba515fd4e631fb62709531f62df32e37b5e66ddd879"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2_review/BASELINE_AND_COST_SPECIFICATION.md",
+      "sha256": "8a53089266255096005d99e6ccb8172c7647135c40f8220cb2ff800fdf8ca36c"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v1/LITERATURE_MATRIX.md",
+      "sha256": "73d919d56851e768da3e37ae46a0c6b12538cbd7029cbd152e5e69aeaf46aadf"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v1/NEXT_EXPERIMENT_DRAFT.md",
+      "sha256": "0f928a89e8fbc41376fac0a3168ce903ae34500247d9f3732c77f12932c5c185"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v1/PHASE1_REPORT.md",
+      "sha256": "23ad9088b15b7a1ce89740eaa902d10a57f457c4421df405498879bb7980ee48"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v1/SOURCE_HASHES.json",
+      "sha256": "1cdc7878a3decaf3168e1a76fbd403a4a2b0c960ac3e0a17c710f01845ee47b4"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2/BASELINE_FAIRNESS_MATRIX.md",
+      "sha256": "a80bea3997903caf9051e1596111951b083ee9946d5928e20b343383a5b5f197"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2/EXPERIMENT_BUDGET_OPTIONS.md",
+      "sha256": "0fa583f9510fc64e9b1c314e41fc4e6f2c36758294e7299323e03455e093798f"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2/PHASE2_RESEARCH_PROTOCOL.md",
+      "sha256": "f368418fa344c9a9ca1aaabe6a618e0340be8badccdc82b00068223701ce196e"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2/PHASE2_SOURCE_MANIFEST.json",
+      "sha256": "350f5832fae375e00c3dd1d521eafcdd4fd36fb2bcf9b094f36929823010d965"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2/PRE_REGISTRATION_DRAFT.md",
+      "sha256": "be30072388707ca5d6a471ca0bc8f0c54393833fd3174155d4f1bf7b4a48b647"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2/STATISTICAL_FEASIBILITY.md",
+      "sha256": "bb7aa39de3fc3aae7f70c0f70b82a7f6dbcb353418bff04d21f0664894a853c7"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2/SUPERVISOR_REVIEW_REQUEST.md",
+      "sha256": "e4bc272b79516c84ed373ed4c0671b35c2371a0ecbbe250deb3fa70dc4d9839b"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2_review/BASELINE_AND_COST_SPECIFICATION.md",
+      "sha256": "8a53089266255096005d99e6ccb8172c7647135c40f8220cb2ff800fdf8ca36c"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2_review/CORRECTED_BUDGET_ACCOUNTING.md",
+      "sha256": "88d5ad623cc507c6bd27088018b85596b5916a1c1e68fc5cd9faa7d7b4784918"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2_review/CORRECTED_STATISTICAL_DESIGN.md",
+      "sha256": "8c88ff5796d1e0a727948ba515fd4e631fb62709531f62df32e37b5e66ddd879"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2_review/OPEN_FREEZE_DECISIONS.md",
+      "sha256": "2489634180c415065c0b90183c44f51aa00f87d949c5d10ec139b59e4f4d0bed"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2_review/SOURCE_AND_CHANGE_MANIFEST.json",
+      "sha256": "5fffd513d21fed9b44e686314f6ddd56aa6c6cd0094ff6ef8b52a776e5860d0b"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2_review/SUPERVISOR_REVIEW_8_RESPONSE.md",
+      "sha256": "b394f8a52e7c9154d81a730872786e46c0382a306bd10f672ce751f4c728240f"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/analysis_results.json",
+      "sha256": "3775e6b2f5e688dfb37e28de9451f88a927c62c93050c0a9e34b7aeb0b030877"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/analyze_identifiability.py",
+      "sha256": "17962d43ca960f10ead0570076972cf220972c27760294f1c5e7462f2d0d7744"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/DEM_EXPECTATION_DERIVATION.md",
+      "sha256": "273f7ab8a2deec865c4220821bd88f22ebf28ac5f72baf4d8f09eff3824b8aa2"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/DETERMINISTIC_VALIDATION.md",
+      "sha256": "0147554b6e26d5cd47895a21f085722a1f9ae7d93c58d80c7d646ec2a5a2a50b"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/FEATURE_SENSITIVITY.md",
+      "sha256": "0547b29c8de1355307d3fe17dd583eddc5551882ac5b88a0166f569d1ec36fb4"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/IDENTIFIABILITY_REPORT.md",
+      "sha256": "3fb00200a806d5b3629eb9c7c6050480396488bbaf4b3e11e4af31956f968c71"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/MODEL_ADEQUACY_DECISION.md",
+      "sha256": "300878f23408ec0644fb9a339d036a58579ac2893694c8a35e675de5f5c0db87"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/SOURCE_MANIFEST.json",
+      "sha256": "c96b1e20fa774d667a40eaec9681b6ce76d20fb44b839ed0059d8163a2268217"
+    }
+  ],
+  "deliverable_and_analysis_hashes": [
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/JOINT_ESTIMATOR_DESIGN.md",
+      "sha256": "a94422ac24c68afc091ace84096caa23d6a892d6a895c1052fe0f56ed2e6bb98"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/DETERMINISTIC_COMPARISON.md",
+      "sha256": "a7e57fb144701ae5d5a445de6f40aa8d99b1440d33f81c6dfbd5fa5832f6a42d"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/FINITE_SAMPLE_THEORY.md",
+      "sha256": "ad4bc9cb8dfffb75b2cdaa6cfc8e2dee685c9b9fe87c0af643ac009b6c9d0118"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/NUISANCE_AND_FAILURE_MODES.md",
+      "sha256": "4318e055842052cb81a66359c68ffdf77ed3690c2ab5029b6671d22ef87ea55c"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/DEVELOPMENT_PROTOCOL_PROPOSAL.md",
+      "sha256": "746fa8e417effaca6665e13f1220999540b1b969fc21b3c1926281ae79522c32"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/VALIDATION_REPORT.md",
+      "sha256": "f3fa676ac04a93cf5af2636311099ab213b1b9623a51a6c2d9c9ae50b0e3315a"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/joint_estimator_comparison.py",
+      "sha256": "c847e5354588c14e9b4d7d0c0d7969a28df79cb483f2ffafe08110167d30ea41"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/comparison_results.json",
+      "sha256": "5a7ebebec21e84d9ed4b2286c75e915362982b522bd26c74c5e09d8e628ff7c6"
+    }
+  ],
+  "notes": [
+    "Phase 1, Phase 2, Phase 2A and Phase 2B files are historical inputs and remain unchanged.",
+    "Exact categorical circuit expectations and approximate DEM expectations are analyzed separately.",
+    "The XOR-convolution cross-check shares deterministic fault masks with the character calculation.",
+    "No Stage 5 material, sealed outcomes, or protected seed inventories were accessed."
+  ]
+}

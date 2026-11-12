@@ -1,0 +1,805 @@
+{
+  "provenance": {
+    "stim": "1.16.0",
+    "reviewed_checkpoint": "7597510a41be09b6b9c727e7ae6091627011424f",
+    "feature_dimension": 45,
+    "model_rectangle": {
+      "p_burst": [
+        0,
+        0.02
+      ],
+      "p_measurement": [
+        0,
+        0.01
+      ]
+    },
+    "templates": {
+      "p_burst_step": 0.001,
+      "p_measurement_step": 0.001,
+      "fit_step": 0.0001
+    },
+    "gls": {
+      "fixed_covariance_reference": [
+        0.01,
+        0.003
+      ],
+      "eigenvalue_floor_relative": 1e-06
+    }
+  },
+  "mapping": {
+    "alternative_counts": {
+      "1q_alternatives": 120,
+      "2q_alternatives": 1800,
+      "measurement_alternatives": 49,
+      "burst_alternatives": 5
+    },
+    "burst_masks": [
+      {
+        "instruction_index": 39,
+        "detector_indices": [
+          8,
+          10
+        ]
+      },
+      {
+        "instruction_index": 65,
+        "detector_indices": [
+          16,
+          18
+        ]
+      },
+      {
+        "instruction_index": 95,
+        "detector_indices": [
+          24,
+          26
+        ]
+      },
+      {
+        "instruction_index": 125,
+        "detector_indices": [
+          32,
+          34
+        ]
+      },
+      {
+        "instruction_index": 155,
+        "detector_indices": [
+          36,
+          38
+        ]
+      }
+    ]
+  },
+  "interpolation": {
+    "circuit": {
+      "heldout_points": 200,
+      "max_abs_error": 4.869544960192651e-06,
+      "max_feature_rms_error": 1.2840820259320588e-06,
+      "worst_point": [
+        0.0005,
+        0.0005
+      ]
+    },
+    "dem": {
+      "heldout_points": 200,
+      "max_abs_error": 4.869651232766725e-06,
+      "max_feature_rms_error": 1.2841327235405454e-06,
+      "worst_point": [
+        0.0005,
+        0.0005
+      ]
+    }
+  },
+  "exact_vs_dem_gap": {
+    "node_count": 231,
+    "max_abs_feature_mean_gap": 3.31158234750939e-05,
+    "rms_over_all_node_features": 2.1168567492268548e-05,
+    "worst_node": [
+      0.0,
+      0.0
+    ],
+    "nominal_and_mismatch": {
+      "nominal": {
+        "max_abs": 3.271962576284482e-05,
+        "rms": 2.1360105177819073e-05
+      },
+      "mismatch": {
+        "max_abs": 3.2325812390265884e-05,
+        "rms": 2.109976595005984e-05
+      }
+    }
+  },
+  "lattice_identifiability": {
+    "circuit": {
+      "lattice_points": 231,
+      "minimum_small_singular_value": 3.141859119341801,
+      "maximum_raw_condition": 4.218212977020467,
+      "minimum_singular_value_point": [
+        0.0,
+        0.01
+      ],
+      "maximum_condition_point": [
+        0.0,
+        0.01
+      ],
+      "minimum_rank": 2,
+      "warning": "finite lattice only; does not establish continuum/global identifiability"
+    },
+    "dem": {
+      "lattice_points": 231,
+      "minimum_small_singular_value": 3.1420155249049886,
+      "maximum_raw_condition": 4.21816991424894,
+      "minimum_singular_value_point": [
+        0.0,
+        0.01
+      ],
+      "maximum_condition_point": [
+        0.0,
+        0.01
+      ],
+      "minimum_rank": 2,
+      "warning": "finite lattice only; does not establish continuum/global identifiability"
+    }
+  },
+  "gls_regularization": {
+    "circuit": {
+      "reference": [
+        0.01,
+        0.003
+      ],
+      "covariance_eigenvalue_min": 0.002927650301742246,
+      "covariance_eigenvalue_max": 0.0782972461453477,
+      "covariance_condition": 26.744056863196047,
+      "ridge_floor": 7.829724614534769e-08,
+      "regularized_weight_condition": 26.74336838108821,
+      "covariance_rank": 45
+    },
+    "dem": {
+      "reference": [
+        0.01,
+        0.003
+      ],
+      "covariance_eigenvalue_min": 0.0029250063794340054,
+      "covariance_eigenvalue_max": 0.07823440492856962,
+      "covariance_condition": 26.746746769047434,
+      "ridge_floor": 7.823440492856962e-08,
+      "regularized_weight_condition": 26.746058145749906,
+      "covariance_rank": 45
+    }
+  },
+  "population_comparison_exact_circuit_truth": {
+    "nominal": {
+      "truth": [
+        0.008,
+        0.003
+      ],
+      "A_existing_profile_exact_templates": {
+        "estimate": [
+          0.008,
+          0.003
+        ],
+        "score": 0.0,
+        "runner_up_gap": 1.6389805599386501e-07,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "A_existing_profile_DEM_templates": {
+        "estimate": [
+          0.008,
+          0.003
+        ],
+        "score": 1.424983700414946e-08,
+        "runner_up_gap": 1.373443769472929e-07,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "B_joint_standardized_exact_templates": {
+        "estimate": [
+          0.008,
+          0.003
+        ],
+        "score": 0.0,
+        "runner_up_gap": 1.6389805599386501e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "B_joint_standardized_DEM_templates": {
+        "estimate": [
+          0.008,
+          0.003
+        ],
+        "score": 1.424983700414946e-08,
+        "runner_up_gap": 1.373443769472929e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_exact_templates": {
+        "estimate": [
+          0.008,
+          0.003
+        ],
+        "score": 0.0,
+        "runner_up_gap": 4.514182065448318e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_DEM_templates": {
+        "estimate": [
+          0.008,
+          0.003
+        ],
+        "score": 3.0580529839500333e-07,
+        "runner_up_gap": 4.460182023820085e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      }
+    },
+    "measurement_mismatch": {
+      "truth": [
+        0.008,
+        0.006
+      ],
+      "A_existing_profile_exact_templates": {
+        "estimate": [
+          0.0109,
+          0.003
+        ],
+        "score": 0.0012135293812651565,
+        "runner_up_gap": 1.3057466897743036e-07,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "A_existing_profile_DEM_templates": {
+        "estimate": [
+          0.0109,
+          0.003
+        ],
+        "score": 0.0012206077283764454,
+        "runner_up_gap": 1.0225424341482083e-07,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "B_joint_standardized_exact_templates": {
+        "estimate": [
+          0.008,
+          0.006
+        ],
+        "score": 0.0,
+        "runner_up_gap": 1.5920603365785303e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "B_joint_standardized_DEM_templates": {
+        "estimate": [
+          0.008,
+          0.006
+        ],
+        "score": 1.391150552088641e-08,
+        "runner_up_gap": 1.3281211594512853e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_exact_templates": {
+        "estimate": [
+          0.008,
+          0.006
+        ],
+        "score": 0.0,
+        "runner_up_gap": 4.384900407752999e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_DEM_templates": {
+        "estimate": [
+          0.008,
+          0.006
+        ],
+        "score": 2.9665532386521275e-07,
+        "runner_up_gap": 4.308436133772218e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      }
+    },
+    "low_burst_boundary": {
+      "truth": [
+        0.0,
+        0.003
+      ],
+      "A_existing_profile_exact_templates": {
+        "estimate": [
+          0.0,
+          0.003
+        ],
+        "score": 0.0,
+        "runner_up_gap": 1.6389805599387944e-07,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "A_existing_profile_DEM_templates": {
+        "estimate": [
+          0.0,
+          0.003
+        ],
+        "score": 1.4356499924004793e-08,
+        "runner_up_gap": 1.362275814206343e-07,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "B_joint_standardized_exact_templates": {
+        "estimate": [
+          0.0,
+          0.003
+        ],
+        "score": 0.0,
+        "runner_up_gap": 1.6389805599387944e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "B_joint_standardized_DEM_templates": {
+        "estimate": [
+          0.0,
+          0.003
+        ],
+        "score": 1.4356499924004793e-08,
+        "runner_up_gap": 1.362275814206343e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_exact_templates": {
+        "estimate": [
+          0.0,
+          0.003
+        ],
+        "score": 0.0,
+        "runner_up_gap": 4.514182065448692e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_DEM_templates": {
+        "estimate": [
+          0.0,
+          0.003
+        ],
+        "score": 3.0621670942885026e-07,
+        "runner_up_gap": 4.428637767159796e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      }
+    },
+    "high_burst_boundary": {
+      "truth": [
+        0.02,
+        0.003
+      ],
+      "A_existing_profile_exact_templates": {
+        "estimate": [
+          0.02,
+          0.003
+        ],
+        "score": 0.0,
+        "runner_up_gap": 1.6389805599387176e-07,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "A_existing_profile_DEM_templates": {
+        "estimate": [
+          0.02,
+          0.003
+        ],
+        "score": 1.4097816703100393e-08,
+        "runner_up_gap": 1.8888269259926645e-07,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "B_joint_standardized_exact_templates": {
+        "estimate": [
+          0.02,
+          0.003
+        ],
+        "score": 0.0,
+        "runner_up_gap": 1.6389805599387176e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "B_joint_standardized_DEM_templates": {
+        "estimate": [
+          0.02,
+          0.003
+        ],
+        "score": 1.4097816703100393e-08,
+        "runner_up_gap": 1.8888269259926645e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_exact_templates": {
+        "estimate": [
+          0.02,
+          0.003
+        ],
+        "score": 0.0,
+        "runner_up_gap": 4.514182065448481e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_DEM_templates": {
+        "estimate": [
+          0.02,
+          0.003
+        ],
+        "score": 3.0543007348243503e-07,
+        "runner_up_gap": 4.52215944287262e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      }
+    },
+    "low_measurement_boundary": {
+      "truth": [
+        0.008,
+        0.0
+      ],
+      "A_existing_profile_exact_templates": {
+        "estimate": [
+          0.0051,
+          0.003
+        ],
+        "score": 0.0012447912240597082,
+        "runner_up_gap": 7.80580785247724e-08,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "A_existing_profile_DEM_templates": {
+        "estimate": [
+          0.0051,
+          0.003
+        ],
+        "score": 0.0012390433570673084,
+        "runner_up_gap": 5.3296171024846614e-08,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "B_joint_standardized_exact_templates": {
+        "estimate": [
+          0.008,
+          0.0
+        ],
+        "score": 0.0,
+        "runner_up_gap": 1.6871765276253286e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "B_joint_standardized_DEM_templates": {
+        "estimate": [
+          0.008,
+          0.0
+        ],
+        "score": 1.4596303083239783e-08,
+        "runner_up_gap": 1.420241999752435e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_exact_templates": {
+        "estimate": [
+          0.008,
+          0.0
+        ],
+        "score": 0.0,
+        "runner_up_gap": 4.6470355596994346e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_DEM_templates": {
+        "estimate": [
+          0.008,
+          0.0
+        ],
+        "score": 3.153472135295349e-07,
+        "runner_up_gap": 4.617068987984183e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      }
+    },
+    "high_measurement_boundary": {
+      "truth": [
+        0.008,
+        0.01
+      ],
+      "A_existing_profile_exact_templates": {
+        "estimate": [
+          0.0148,
+          0.003
+        ],
+        "score": 0.006497566611053727,
+        "runner_up_gap": 2.179815697129356e-08,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "A_existing_profile_DEM_templates": {
+        "estimate": [
+          0.0149,
+          0.003
+        ],
+        "score": 0.0065160047309535275,
+        "runner_up_gap": 8.803249335227747e-09,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "B_joint_standardized_exact_templates": {
+        "estimate": [
+          0.008,
+          0.01
+        ],
+        "score": 0.0,
+        "runner_up_gap": 1.531424863691679e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "B_joint_standardized_DEM_templates": {
+        "estimate": [
+          0.008,
+          0.01
+        ],
+        "score": 1.347258998104691e-08,
+        "runner_up_gap": 1.2699043203128493e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_exact_templates": {
+        "estimate": [
+          0.008,
+          0.01
+        ],
+        "score": 0.0,
+        "runner_up_gap": 4.217905587175729e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_DEM_templates": {
+        "estimate": [
+          0.008,
+          0.01
+        ],
+        "score": 2.850292991546749e-07,
+        "runner_up_gap": 4.113804766088411e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      }
+    },
+    "corner_low": {
+      "truth": [
+        0.0,
+        0.0
+      ],
+      "A_existing_profile_exact_templates": {
+        "estimate": [
+          0.0,
+          0.003
+        ],
+        "score": 0.0013928770142921433,
+        "runner_up_gap": 9.966576604794868e-06,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "A_existing_profile_DEM_templates": {
+        "estimate": [
+          0.0,
+          0.003
+        ],
+        "score": 0.001386401461389202,
+        "runner_up_gap": 9.943875508564189e-06,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "B_joint_standardized_exact_templates": {
+        "estimate": [
+          0.0,
+          0.0
+        ],
+        "score": 0.0,
+        "runner_up_gap": 1.6871765276254758e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "B_joint_standardized_DEM_templates": {
+        "estimate": [
+          0.0,
+          0.0
+        ],
+        "score": 1.4703645671191637e-08,
+        "runner_up_gap": 1.4087730880128004e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_exact_templates": {
+        "estimate": [
+          0.0,
+          0.0
+        ],
+        "score": 0.0,
+        "runner_up_gap": 4.64703555969987e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_DEM_templates": {
+        "estimate": [
+          0.0,
+          0.0
+        ],
+        "score": 3.1567316904225225e-07,
+        "runner_up_gap": 4.5846787126501725e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      }
+    },
+    "corner_high": {
+      "truth": [
+        0.02,
+        0.01
+      ],
+      "A_existing_profile_exact_templates": {
+        "estimate": [
+          0.02,
+          0.003
+        ],
+        "score": 0.0071664177569083585,
+        "runner_up_gap": 2.1280942856921267e-05,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "A_existing_profile_DEM_templates": {
+        "estimate": [
+          0.02,
+          0.003
+        ],
+        "score": 0.007186958751856522,
+        "runner_up_gap": 2.1316851121623223e-05,
+        "grid_step": 0.0001,
+        "grid_count": 201
+      },
+      "B_joint_standardized_exact_templates": {
+        "estimate": [
+          0.02,
+          0.01
+        ],
+        "score": 0.0,
+        "runner_up_gap": 1.531424863691867e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "B_joint_standardized_DEM_templates": {
+        "estimate": [
+          0.02,
+          0.01
+        ],
+        "score": 1.3322847852690873e-08,
+        "runner_up_gap": 1.7782042923382398e-07,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_exact_templates": {
+        "estimate": [
+          0.02,
+          0.01
+        ],
+        "score": 0.0,
+        "runner_up_gap": 4.2179055871762726e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      },
+      "C_joint_GLS_DEM_templates": {
+        "estimate": [
+          0.02,
+          0.01
+        ],
+        "score": 2.8437153339104716e-07,
+        "runner_up_gap": 4.2787562459879005e-06,
+        "grid_step": 0.0001,
+        "grid_count": 20301
+      }
+    }
+  },
+  "finite_sample_local_theory": {
+    "point": [
+      0.008,
+      0.003
+    ],
+    "delta_method_variance_n_times_var_pburst_A": 0.0022687737070869424,
+    "delta_method_covariance_n_times_cov_theta_B": [
+      [
+        0.0021819845952950395,
+        -8.789723298300283e-05
+      ],
+      [
+        -8.789723298300289e-05,
+        0.0002757081764190997
+      ]
+    ],
+    "delta_method_covariance_n_times_cov_theta_C": [
+      [
+        0.0018038838970982835,
+        -1.6565570177445678e-05
+      ],
+      [
+        -1.656557017744562e-05,
+        0.00023360092399275602
+      ]
+    ],
+    "note": "Local asymptotic sandwich coefficients only; divide by N for covariance approximation. Not finite-sample accuracy or coverage."
+  },
+  "independent_validation": {
+    "character_vs_independent_xor_convolution": [
+      {
+        "point": [
+          0.008,
+          0.003
+        ],
+        "max_abs_character_vs_xor_convolution": 1.9810542095655137e-14
+      },
+      {
+        "point": [
+          0.008,
+          0.006
+        ],
+        "max_abs_character_vs_xor_convolution": 1.999442278410868e-14
+      },
+      {
+        "point": [
+          0.0,
+          0.003
+        ],
+        "max_abs_character_vs_xor_convolution": 1.9810542095655137e-14
+      },
+      {
+        "point": [
+          0.02,
+          0.01
+        ],
+        "max_abs_character_vs_xor_convolution": 2.0126261768282916e-14
+      }
+    ],
+    "mismatch_gls_fit_score_weight_product": 2.9665532386521275e-07,
+    "mismatch_gls_fit_score_direct_solve": 2.9665532386521285e-07,
+    "gls_score_abs_difference": 1.0587911840678754e-22,
+    "interpolation_node_reproduction_max_abs": 0.0
+  },
+  "mismatch_guard_population_check": {
+    "1000": {
+      "approx_chi2_threshold_99pct_df44": 68.7095129693454,
+      "nominal": {
+        "A_profile_estimate": 0.008,
+        "null_GLS_burst_estimate": 0.008,
+        "population_rms_residual_after_null_GLS_fit": 0.0,
+        "population_noncentrality_approx": 0.0,
+        "would_flag_at_provisional_threshold": false,
+        "fallback": "retain last accepted decoder setting; raise mismatch alarm"
+      },
+      "mismatch": {
+        "A_profile_estimate": 0.0109,
+        "null_GLS_burst_estimate": 0.0083,
+        "population_rms_residual_after_null_GLS_fit": 0.036403171224214,
+        "population_noncentrality_approx": 37.82545519474814,
+        "would_flag_at_provisional_threshold": false,
+        "fallback": "retain last accepted decoder setting; raise mismatch alarm"
+      }
+    },
+    "10000": {
+      "approx_chi2_threshold_99pct_df44": 68.7095129693454,
+      "nominal": {
+        "A_profile_estimate": 0.008,
+        "null_GLS_burst_estimate": 0.008,
+        "population_rms_residual_after_null_GLS_fit": 0.0,
+        "population_noncentrality_approx": 0.0,
+        "would_flag_at_provisional_threshold": false,
+        "fallback": "retain last accepted decoder setting; raise mismatch alarm"
+      },
+      "mismatch": {
+        "A_profile_estimate": 0.0109,
+        "null_GLS_burst_estimate": 0.0083,
+        "population_rms_residual_after_null_GLS_fit": 0.036403171224214,
+        "population_noncentrality_approx": 378.25455194748133,
+        "would_flag_at_provisional_threshold": true,
+        "fallback": "retain last accepted decoder setting; raise mismatch alarm"
+      }
+    }
+  }
+}
