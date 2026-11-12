@@ -1,7 +1,16 @@
 # Q-SHIFT research status
 
-**Last reviewed:** 2026-11-11
+**Last reviewed:** 2026-11-12
 **Project status:** simulation-based research prototype; no demonstrated adaptive or neural-decoder advantage over strong fixed PyMatching; no quantum-hardware integration.
+
+## Core software integration v1 (engineering-only; 2026-11-12)
+
+- Added a typed decoder/observable interface and PyMatching adapter. The dashboard compatibility path preserves the Phase 2B model's existing correlation-enabled construction and decode behavior; no noise-model or result interpretation changed.
+- Tightened dashboard configuration, existing seed-plan input checks, and simulator input checks; added contextual sampler failures, a collision-screened domain-separated seed helper for future versioned work, and a paired development evaluator that refuses protected-test scope.
+- Added a causal decoder-registry/controller hook with explicit confidence, block provenance, hysteresis/dwell, fallback, and separate estimated/configured noise metadata. It is infrastructure only and has not been used to produce performance results.
+- Added a short interface note explaining that decoder output is a logical-observable prediction, not a physical correction instruction.
+- Deterministic tests exercised small DEM decoding and in-memory arrays only. No Stim sampling, training, protected evaluation, Stage 5 run, or hardware action occurred.
+- This milestone does not change the scientific baseline: fixed PyMatching remains the strongest established method in this repository; adaptive and neural superiority remain unproven. See outputs/core_system_upgrade_v1/ for implementation and validation limitations.
 
 ## Supported findings
 

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+from numbers import Integral
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -13,7 +14,15 @@ MODEL_OFFSET = 70_000_000
 MAX_STIM_SEED = 2_147_483_647
 
 
+def _strict_int(value: int, name: str) -> int:
+    if isinstance(value, bool) or not isinstance(value, Integral):
+        raise ValueError(f"{name} must be an integer.")
+    return int(value)
+
+
 def batches(shots: int, batch_size: int) -> int:
+    shots = _strict_int(shots, "shots")
+    batch_size = _strict_int(batch_size, "batch_size")
     if shots <= 0 or batch_size <= 0:
         raise ValueError("shot and batch sizes must be positive")
     return (shots + batch_size - 1) // batch_size
@@ -21,7 +30,8 @@ def batches(shots: int, batch_size: int) -> int:
 
 def seed_plan(base_seed: int, training_shots: int, validation_shots: int,
               test_shots: int, batch_size: int) -> dict:
-    if not 1 <= int(base_seed) <= MAX_STIM_SEED:
+    base_seed = _strict_int(base_seed, "base_seed")
+    if not 1 <= base_seed <= MAX_STIM_SEED:
         raise ValueError(f"seed must be in [1, {MAX_STIM_SEED}]")
     train_n = batches(training_shots, batch_size)
     val_n = batches(validation_shots, batch_size)
@@ -41,11 +51,13 @@ def seed_plan(base_seed: int, training_shots: int, validation_shots: int,
             if max(ranges[a][0], ranges[b][0]) <= min(ranges[a][1], ranges[b][1]):
                 raise ValueError(f"derived stream overlap: {a} and {b}")
     return {
-        "base_seed": int(base_seed),
+        "base_seed": base_seed,
         "method": "split-specific root offsets; deterministic batch seed = stream root + batch index",
         "stream_ranges_inclusive": ranges,
         "batches": {"train": train_n, "validation": val_n, "test": test_n},
-        "shots": {"train": int(training_shots), "validation": int(validation_shots), "test": int(test_shots)},
+        "shots": {"train": _strict_int(training_shots, "training_shots"),
+                  "validation": _strict_int(validation_shots, "validation_shots"),
+                  "test": _strict_int(test_shots, "test_shots")},
         "no_overlap_within_run": True,
         "max_stim_seed": MAX_STIM_SEED,
     }
@@ -83,6 +95,7 @@ def screen_plan(plan: dict, extra_allocations: list[dict] | None = None) -> dict
 
 
 def batch_seed(plan: dict, split: str, batch_index: int) -> int:
+    batch_index = _strict_int(batch_index, "batch_index")
     if split not in ("train", "validation", "test"):
         raise ValueError("split must be train, validation, or test")
     if not 0 <= batch_index < plan["batches"][split]:

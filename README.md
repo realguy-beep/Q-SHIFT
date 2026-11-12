@@ -8,6 +8,12 @@ The project demonstrates a working local simulator, decoder and training dashboa
 
 See [RESEARCH_STATUS.md](RESEARCH_STATUS.md) for the current evidence summary and [EXPERIMENT_INDEX.md](EXPERIMENT_INDEX.md) for study locations, audit state, seed records and reproduction references.
 
+## Core software integration v1
+
+The engineering-only core upgrade adds a typed decoder adapter, explicit PyMatching correlation configuration, strict dashboard configuration and sampler-boundary validation, a causal fallback selector interface, and paired development-record helpers. It does not change the frozen research protocols, train a decoder, or add new performance results. Fixed PyMatching remains the strongest established baseline; adaptive or neural superiority has not been demonstrated.
+
+See [outputs/core_system_upgrade_v1/ARCHITECTURE_INVENTORY.md](outputs/core_system_upgrade_v1/ARCHITECTURE_INVENTORY.md), [outputs/core_system_upgrade_v1/RESEARCH_DECODER_INTEGRATION_CONTRACT.md](outputs/core_system_upgrade_v1/RESEARCH_DECODER_INTEGRATION_CONTRACT.md), and [outputs/core_system_upgrade_v1/REPRODUCE.md](outputs/core_system_upgrade_v1/REPRODUCE.md) for component details and deterministic checks.
+
 ## Prototype architecture
 
 ```text
@@ -46,6 +52,12 @@ python dashboard\run_local.py
 Open `http://127.0.0.1:8765`. The server is configured for local use. CUDA readiness is based on PyTorch's CUDA availability; GPU telemetry is a separate reading. Without a CUDA-enabled PyTorch installation, supported training runs use CPU.
 
 ## Tests and bounded diagnostics
+
+For the engineering-only core integration without Stim sampling:
+
+```powershell
+python -m unittest dashboard.tests.test_core_system_v1 -v
+```
 
 From the repository root:
 

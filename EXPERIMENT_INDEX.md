@@ -36,3 +36,7 @@ The saved structured development run used 6,000 training and 3,000 validation sh
 ## Index maintenance
 
 When a new milestone is complete, add its directory, frozen status, seed-manifest path, integrity-manifest path/hash, and safe reproduction/audit command. Keep new raw arrays and checkpoints local. Do not change a historical row to hide a failed or superseded result.
+
+## Engineering-only core integration (2026-11-12)
+
+outputs/core_system_upgrade_v1/ is a software-engineering milestone based on research commit 0ff77c70e38a7e6c2ff547958aee00b0ae5c1fe5. It introduces decoder contracts, strict dashboard validation, explicit correlation-mode handling, causal fallback hooks, and a paired development-record utility. It generated **zero experiment shots** and has no LER result. Its SHA-256 inventory is in MANIFEST.json; run only the no-sampling commands in REPRODUCE.md. The package refuses protected-test scope. Fixed PyMatching remains the strongest established baseline; this work makes no superiority claim.
