@@ -1,0 +1,1546 @@
+{
+  "archive_counts": {
+    "all_npz": 303,
+    "invalid_five_arm_prediction_archives": 100,
+    "selection_calibration": 100,
+    "selection_samples": 100,
+    "templates": 3
+  },
+  "audit_status": "RAW_SELECTION_STREAMS_VALID_PREDICTION_SCHEMA_INVALID",
+  "bug_diagnosis": "runner passed five generating-condition p values into candidate decoder scoring, producing shape (5,2500) instead of frozen candidate-grid shape (9,2500); index failure occurred before baseline selection",
+  "file_sha256": {
+    "run\\selection\\p_0.000\\root_000.npz": "6c81e312112a5dee2ed860d957f0e676ef85e04f8681c4f7b7d46d599a696b86",
+    "run\\selection\\p_0.000\\root_000.npz.commit.json": "f8926f78fb47dbd445c179af17c290a490979b1c1fd0650afaf3cdae9e0b6c78",
+    "run\\selection\\p_0.000\\root_001.npz": "11222f91735b9ff99d4402301dbaea7241b123fa778c3b31e9a8968ffd3fbd2a",
+    "run\\selection\\p_0.000\\root_001.npz.commit.json": "18cd3cea73c45c410384963920bb6dae2cb93335ca2c796005850ed450b46819",
+    "run\\selection\\p_0.000\\root_002.npz": "3cbda31563c9b1045c630647b6b737172648faa88e4bedaca15d1242b2e74272",
+    "run\\selection\\p_0.000\\root_002.npz.commit.json": "f935142043d5c7b72cde6a528941238c245bbd2a31152da97b1c2fa683788fba",
+    "run\\selection\\p_0.000\\root_003.npz": "d593e97ef612534f47f2f14988e369ecef28aabfcd0ea0ec16905883b89ac89a",
+    "run\\selection\\p_0.000\\root_003.npz.commit.json": "4bce743eff873d909cb6ef106a7548843c5c0889132218643b8f107e20a19fea",
+    "run\\selection\\p_0.000\\root_004.npz": "8e07a072d4a07cb674b85f79f9c5f0ba99a1bda4a08072790676d6ee37ae99f3",
+    "run\\selection\\p_0.000\\root_004.npz.commit.json": "f419adc6a6aa5c4d07b148672eb56f994a3a083456325e27d4323e336e07887a",
+    "run\\selection\\p_0.000\\root_005.npz": "01fb36a1858bef815edd3cacd044cc7fe77ca82a05790e5274187903200a45f6",
+    "run\\selection\\p_0.000\\root_005.npz.commit.json": "86cfe0199576f856fbdd7e467463f615aceb7eab8ec89a769297339eef5fa509",
+    "run\\selection\\p_0.000\\root_006.npz": "a9c1b6a0c5f96a012f068c72ca72466850ed690a1a346565665b17d042cd95db",
+    "run\\selection\\p_0.000\\root_006.npz.commit.json": "d526dcdde8dd89d682fb9ebdb5c9e7bb5ffa43ccec4c4037445e694a009e6e9b",
+    "run\\selection\\p_0.000\\root_007.npz": "25c1230e582b1f87640b0855370f6460013326a00ca3ef1f8dbb85e8ca4a20f8",
+    "run\\selection\\p_0.000\\root_007.npz.commit.json": "28a4529d7c1f30615ac88c1ff0dbaee3b4059430e7eefdadb2c916b3a62c598a",
+    "run\\selection\\p_0.000\\root_008.npz": "24a2059e0af97ef3052919a1006c1730e0718df17f61906d53cc92a3feeeba47",
+    "run\\selection\\p_0.000\\root_008.npz.commit.json": "e7983fd9748f8e7e3370cc8fa4f09d3b59461a527618e38a4d001302184356d5",
+    "run\\selection\\p_0.000\\root_009.npz": "66499584f171a19371c9765b8ada1d1833e3fda7aa7911722b8874fc50467e50",
+    "run\\selection\\p_0.000\\root_009.npz.commit.json": "939f4cca70f3eeff81b3747e1bb11b3e3c76e43d26430eb02a804553967c56d5",
+    "run\\selection\\p_0.000\\root_010.npz": "d1fa0dc663d4c2f70a762d1185eefab49388fa12da3e613409e8c4d276e18f0d",
+    "run\\selection\\p_0.000\\root_010.npz.commit.json": "d28bad16e265dbc430b75b97ee1a25e7ab4bc0a593f5cae4d82b9bf9086a4903",
+    "run\\selection\\p_0.000\\root_011.npz": "8d05d83e0f1ac5056dad104ab772775ff8e75ee560065f68381cf26e3d78e959",
+    "run\\selection\\p_0.000\\root_011.npz.commit.json": "e0a0c59288da895e6b01eb50900b58b512bd671020e84b1935d8ece626aa11c6",
+    "run\\selection\\p_0.000\\root_012.npz": "0d6aa0f44e9d97bf7cfcc4a2f44f0090356fb945dbaa461f31d29d86f73b2a24",
+    "run\\selection\\p_0.000\\root_012.npz.commit.json": "cefc9f8be6438afd1b9ba0789f4c839abf0366ff0f6e5d727881ede79ccf58b2",
+    "run\\selection\\p_0.000\\root_013.npz": "afa26b2251bb4b3f804f6f9bfcdc3984596b4164f245cfce137d878bf4349560",
+    "run\\selection\\p_0.000\\root_013.npz.commit.json": "f91b3f73cb1d93544abf1266ee7e4c7f828a9096af8a3a1d6ed0cac35e170362",
+    "run\\selection\\p_0.000\\root_014.npz": "869b08b2c131704b7f5a39f9de92418a996ff2dbe751039950c2cdbaa3feb379",
+    "run\\selection\\p_0.000\\root_014.npz.commit.json": "5942f95a3e660faedb2059e7da3acedc3e6dbcbdf75fb2df5efee7e1bb599155",
+    "run\\selection\\p_0.000\\root_015.npz": "93768fe21c0f1fbd56ecc05ce7acc64fb1293201d90b631eeacc46fb8582e772",
+    "run\\selection\\p_0.000\\root_015.npz.commit.json": "291d319b044ab66e340c4a077cd68ec8d18fad8f39e4b63b5397a6e306f440c6",
+    "run\\selection\\p_0.000\\root_016.npz": "62592b07d8971918ba8aab2e9c4c9afaa6cf4630850d5254cc3e19ba9103e770",
+    "run\\selection\\p_0.000\\root_016.npz.commit.json": "2a1287cec08e430d88628b3308558fe2f61783c820959523cc85736173c0f892",
+    "run\\selection\\p_0.000\\root_017.npz": "8fac6c552bdc8cd3e6e345356792ba27ab0ac6d23949bbe35a10a7354f44d4d7",
+    "run\\selection\\p_0.000\\root_017.npz.commit.json": "bda58edcb0d39b22b66f5cabb784082c9656595513e27129d27e9d5d5c14205e",
+    "run\\selection\\p_0.000\\root_018.npz": "2bf6625729640575e1b89752714b27988e3e7277073eb00301e361dfe251b512",
+    "run\\selection\\p_0.000\\root_018.npz.commit.json": "89e4d591bdbfad63554e01041c69c071b8046d68002eb761a226c62be9f058c5",
+    "run\\selection\\p_0.000\\root_019.npz": "ae4487a1267e2d2a356e79dd38233920424577296ae069c26649fe291fcda3ab",
+    "run\\selection\\p_0.000\\root_019.npz.commit.json": "bf63b3df7baf911ae7e194cb8d0222556ff4abc8e7b606e1c1f7bb678d2fb764",
+    "run\\selection\\p_0.004\\root_000.npz": "8b985a5c103f5421ea3c3390e02ad5a9f5d1b1efffea9b23775c5e4764eecf17",
+    "run\\selection\\p_0.004\\root_000.npz.commit.json": "61177a9639af4cb7352a188afdda4ac13552c26f821043d540806b0fec120765",
+    "run\\selection\\p_0.004\\root_001.npz": "543b6566834b5177a28880d2940e5c5f2634c76e3b3c72e63b99c70d26feb009",
+    "run\\selection\\p_0.004\\root_001.npz.commit.json": "be4593e39f7730927f7b0113cca37b6a33b7076f9bafb3f5565d7e2bfd29090c",
+    "run\\selection\\p_0.004\\root_002.npz": "14712b573af5c25e7c8cc625a8f6d85a42ca597659062498831374a533d2629a",
+    "run\\selection\\p_0.004\\root_002.npz.commit.json": "da4e22de37343f0f13dcd13c8560fac8ced36d2ff937e0f3d4061da3961a70ea",
+    "run\\selection\\p_0.004\\root_003.npz": "9077904b2c6145ccba42e20b91ff56b6aa4629ec8c4211cd36e5da56323f7c72",
+    "run\\selection\\p_0.004\\root_003.npz.commit.json": "40339dc82d6896e1a7e22fa75f37f373804036db855f4265fb47e718d8ba6f32",
+    "run\\selection\\p_0.004\\root_004.npz": "9954f8f67d470351ef551d2b04c667882ba6524f6adcee993dabdd122edddbe7",
+    "run\\selection\\p_0.004\\root_004.npz.commit.json": "09dee46d5ce1acfae109eb59e3168a62f211ac80aed80dfa10118e9cb8449d34",
+    "run\\selection\\p_0.004\\root_005.npz": "75fd31b2b60d7551305ed1ea2d291752597345cdf5ac63bb30919b695c3e614c",
+    "run\\selection\\p_0.004\\root_005.npz.commit.json": "cf8a9e61c0c50466b40169e39bd43d933e0fd23d25b606a4d7c1ee77084c6ed1",
+    "run\\selection\\p_0.004\\root_006.npz": "2c607dbb493008aa12afa4038881e46f763146199f36bcfb18923081b1a7bebe",
+    "run\\selection\\p_0.004\\root_006.npz.commit.json": "fe50f98a1a61621b8dfc6a5700a28b554b44d54a7008d3cbcdee1350fe27325f",
+    "run\\selection\\p_0.004\\root_007.npz": "9e471cb1d3af26e36caa28f0df0230ee9fac1cee8e26451dda5a1a8b4e887a7c",
+    "run\\selection\\p_0.004\\root_007.npz.commit.json": "19b95ef44d31f99470c6d59a1dc2dbe4620714985dc3c54e7d542bcfffc398a7",
+    "run\\selection\\p_0.004\\root_008.npz": "f23cde92a3c3e82197f770a6ab22d4894334f307f656f8d02dd94956264aff26",
+    "run\\selection\\p_0.004\\root_008.npz.commit.json": "97bebd4dbc8de0993e9c45ec5a4f558215cd869f662abd74b5611bcde5d2f468",
+    "run\\selection\\p_0.004\\root_009.npz": "05706802fa89fb83378c9fc0d7ec8c9150c69e91e68f8c7a0dc6b1c9c746a563",
+    "run\\selection\\p_0.004\\root_009.npz.commit.json": "9587ee89ba6d726b5425caf48600bd819fdfb89dc1100a8be50ca93789f2f16d",
+    "run\\selection\\p_0.004\\root_010.npz": "a07d53284b831802bd82eb6e8a014a8d4e0ac3b5debeeb56bc149ab0383c43ec",
+    "run\\selection\\p_0.004\\root_010.npz.commit.json": "4d6236687282ffc476f6e08daf56d55624dd2565be03c94c92bada6461174b6f",
+    "run\\selection\\p_0.004\\root_011.npz": "228d78ce6d6b34aba2a890c48bdeb0add1917c901d9a9ae6ed9379e2ab64d065",
+    "run\\selection\\p_0.004\\root_011.npz.commit.json": "9e4ed8a342df779c216598c039b7ab9a7b5f53669c8d06a8151f57bebe4ba520",
+    "run\\selection\\p_0.004\\root_012.npz": "cb62aa1a7a032c80c6c2ca5a47e0eb108217e2e8aa047330925fa171b0100b11",
+    "run\\selection\\p_0.004\\root_012.npz.commit.json": "1a40e05a688aae3f82853cbca259a0ece646b9732ac6d21865a7086b25b6d7c3",
+    "run\\selection\\p_0.004\\root_013.npz": "04f7d427d29618d2222cccaf7ccd82edc975e74f23f30c67f112f733d24ea539",
+    "run\\selection\\p_0.004\\root_013.npz.commit.json": "d4456d973bcbe73cbc67826f107e19c221d675666569bb80a6aacb547de412ac",
+    "run\\selection\\p_0.004\\root_014.npz": "8fd51afcc2874f43b181e4a2eb6d7f72764542f6fcd0e96e3091dc1e8447af30",
+    "run\\selection\\p_0.004\\root_014.npz.commit.json": "93f1dbfad83240064da76d44b2638973f6b9ca9c04e5290b0440cb0a155284f7",
+    "run\\selection\\p_0.004\\root_015.npz": "eb509e4afbd857da58b043c89402119ac2801967b069220d821a7fb5f9872563",
+    "run\\selection\\p_0.004\\root_015.npz.commit.json": "adbe438fdfdee7a4470ab6da36d797fe3481e880a5ba628a4f5083ba5161de87",
+    "run\\selection\\p_0.004\\root_016.npz": "8e5f979b183cb918a7d8b831cb791e36fcb5a47d9f70a49f76779be8cf4e1e12",
+    "run\\selection\\p_0.004\\root_016.npz.commit.json": "b1173d38df293379a23ecd4934dddc21c50a58288141de697a3ab69d6203c27b",
+    "run\\selection\\p_0.004\\root_017.npz": "a05be1920d9f827fbed6e708c0adee9a8bf6f022ab4b2d5b4062c98b085831a7",
+    "run\\selection\\p_0.004\\root_017.npz.commit.json": "c0b02762cd847c1fcab083db8971a6a626a6ec5d62a872938caf1eca606dd4aa",
+    "run\\selection\\p_0.004\\root_018.npz": "8b9457fa06d04d9a12b92e7f4d1c52654dfd96fe346d07aeba807c7883354d24",
+    "run\\selection\\p_0.004\\root_018.npz.commit.json": "291923dd538c96e0da24fe3b4d35c56ab15bf044f93bde3e625a7bfd883c782f",
+    "run\\selection\\p_0.004\\root_019.npz": "138a8280297448666ea276054528b8140ad7954291b157ee32b0f615532e5701",
+    "run\\selection\\p_0.004\\root_019.npz.commit.json": "153c5f197d22e8046bc3469c381c241df75bb60b7059c36cc32b420cc97070c8",
+    "run\\selection\\p_0.008\\root_000.npz": "e2a8db94c73dec5c252c9274a2f9e7b1647d9f8c637a00704da47f751b0898c2",
+    "run\\selection\\p_0.008\\root_000.npz.commit.json": "5d66bf8ef0c9c9a9ffa011887e6f9ef7d76e3729bd2e35f97316b379c972b885",
+    "run\\selection\\p_0.008\\root_001.npz": "c3f0c4394ea0bbc78f5eea3e8914ee3f7db61544b60cf591fe40d13d4c3030c2",
+    "run\\selection\\p_0.008\\root_001.npz.commit.json": "c72805158dc32143749f03aaceb5e252f5d1305c5e085fd1e1dd0efdc2aa7cb4",
+    "run\\selection\\p_0.008\\root_002.npz": "8bc7a2d3548bd2ed41d33690ee13da04e7b7e971a9d84bde5578747387cf7254",
+    "run\\selection\\p_0.008\\root_002.npz.commit.json": "36bcc0cfb1f21803b5214e9ca529a7fd5c2ac8e559ecf09af823b52bcc9b4f0c",
+    "run\\selection\\p_0.008\\root_003.npz": "17086eb8d023886b2793fa3ae4734dcd22243c04c55ebcd4afc2b8d3abe5b926",
+    "run\\selection\\p_0.008\\root_003.npz.commit.json": "4dfcc6c9ada7acc9667f2a70bba33701a4d18ccffae54e97823108da2cd2e61e",
+    "run\\selection\\p_0.008\\root_004.npz": "918469998e85dca57c925f65fc85f684343d4633686b0bb5f263d7f19a906ca2",
+    "run\\selection\\p_0.008\\root_004.npz.commit.json": "210ad855fa15bb3218238f1421c88b909affb2cd9d7666d3e81626e2604243b0",
+    "run\\selection\\p_0.008\\root_005.npz": "5049ce62656afe27a1f635f370c5d4b28e7fd57aa8824c7c309ff6a2a10a8070",
+    "run\\selection\\p_0.008\\root_005.npz.commit.json": "4d57e4bde2c0507dd0c60396d92609b9ed1016b0d224f154d14301cbccb791b2",
+    "run\\selection\\p_0.008\\root_006.npz": "c2333d0520d4054b63f484ad821fe1f33e7c7f8ba7db2d2d5178159f760522cb",
+    "run\\selection\\p_0.008\\root_006.npz.commit.json": "cd38edfe288aa79c9c1f5a4c0b95c895ef0bafc282d1c78598c0fa036081693a",
+    "run\\selection\\p_0.008\\root_007.npz": "5466c1d46b78c406c8eead05b907c2c08384bc7e191f90d41b5660e72a79ae26",
+    "run\\selection\\p_0.008\\root_007.npz.commit.json": "63de1b63b7406ede073a588396f50f02d7ce74297b1819c86da5a322d93ac876",
+    "run\\selection\\p_0.008\\root_008.npz": "a07f5a86fbb7116ecc305093c2555e96f09a87b55a230b9a32c396bd3dfe33b2",
+    "run\\selection\\p_0.008\\root_008.npz.commit.json": "eec3dcf792a99c6baaefa41f574c10b8e3ef85c05367ff2c8e605391a8a2f3c6",
+    "run\\selection\\p_0.008\\root_009.npz": "6242a1a8944219b6586f6607a9d89c00225714c35eecdb3fe7373d37b414fce3",
+    "run\\selection\\p_0.008\\root_009.npz.commit.json": "c8b9d660820ac2cc6867b04e63488f3d6e425f776b82644238424e8dbb018a27",
+    "run\\selection\\p_0.008\\root_010.npz": "8e3b66fb821dd4cbed3354cc861815d05a9e2b5e68dc9158ea9649d00a29d521",
+    "run\\selection\\p_0.008\\root_010.npz.commit.json": "799d71281c92d7ab22065c36952c48bb80f0883e663b09cee7df27ba04d1c21f",
+    "run\\selection\\p_0.008\\root_011.npz": "5b5c98e3151b3fdad251ae47e50e848847cb5feb3358c3143cdfbb0ca747cfdb",
+    "run\\selection\\p_0.008\\root_011.npz.commit.json": "12a803c798bb7b03d43d9863ce7fad54f09c8db04675da020aae12e089904e24",
+    "run\\selection\\p_0.008\\root_012.npz": "d70b74e89b5f4309937a07a9bcc49efe5b03ad823cc46d1b53bdd1cfce8262fd",
+    "run\\selection\\p_0.008\\root_012.npz.commit.json": "aa436fe18e93fe9f93fb7dfebf7c438f19b1e337e369bf0a32d0d70c5166e095",
+    "run\\selection\\p_0.008\\root_013.npz": "8fd45291f94f82e5c8132d591b2abca46c5d5a622d441187c7b6680402a7d8b6",
+    "run\\selection\\p_0.008\\root_013.npz.commit.json": "be1ff8ccb8fd93a5c5dfa53703c8d4fd824a471ce6bf3f13bd62f32c3c1d8c4f",
+    "run\\selection\\p_0.008\\root_014.npz": "d3da00f64b57f65b85ebd7f8e4418a89eb970511d35f7fd7192c69c620dfc317",
+    "run\\selection\\p_0.008\\root_014.npz.commit.json": "45476186afcb1e40afe25132768e119cdf58b50062ed2c81b585d64249337de9",
+    "run\\selection\\p_0.008\\root_015.npz": "118dcc1af7b560fb067b7306d6e8814029cc27df31a33953f2b93cbbfb335dd4",
+    "run\\selection\\p_0.008\\root_015.npz.commit.json": "ae03e478f26f07f5b7ce58dc6e10fe1b17f0fe3576fd83c006aaf191e0eb288b",
+    "run\\selection\\p_0.008\\root_016.npz": "c61a23d028e9feb3fa3fb4a251ab54c94dad009203e0290fedeb7dbfb51c0f8a",
+    "run\\selection\\p_0.008\\root_016.npz.commit.json": "82574789402389f793f5ea655ab7b4a90a23b1c0bcc11b5a8f895f38a62c762c",
+    "run\\selection\\p_0.008\\root_017.npz": "f390917b7c6e43df653998d980f27ad090d5bd36f56fc54885c7cc84fa668cba",
+    "run\\selection\\p_0.008\\root_017.npz.commit.json": "1b4392d4a059d72da6665ac9dfa9dfd1b129acc4c37098115d320c2ca0e28664",
+    "run\\selection\\p_0.008\\root_018.npz": "5abb55c6b0eb81130c23cdbe54325483a8c49228c62be06279040bacebd7a4dd",
+    "run\\selection\\p_0.008\\root_018.npz.commit.json": "ddefddda4de6b22822dc38e9b3c9db93cd8a0c9f1b5d238573a91073f0d7dbe3",
+    "run\\selection\\p_0.008\\root_019.npz": "075bed7697a4c2d3ecde358e976532f3d1c4b48a1333eba27ec372b52db0a9c7",
+    "run\\selection\\p_0.008\\root_019.npz.commit.json": "78bfe069b2b9e1d170461cbdd5ab459a2e59c7e7b2d30ec2916d22e39653f351",
+    "run\\selection\\p_0.012\\root_000.npz": "f38c6f58f0754530c79cb7a92be732d7d78d0f3fa6fa16fcf6031c024eac91aa",
+    "run\\selection\\p_0.012\\root_000.npz.commit.json": "5f00a41d020a766ba26b6477f916e0c388f20e41f9f8ced8e24b6dd9bbb97f07",
+    "run\\selection\\p_0.012\\root_001.npz": "20b1b0df674e9b6dac5c80651af289110ad71e74cffb609f7e8b54b0b4e977ba",
+    "run\\selection\\p_0.012\\root_001.npz.commit.json": "7563cbfaa5121be5f12341c2c0c680852267df70544bb59753b9dfedb48cb9ce",
+    "run\\selection\\p_0.012\\root_002.npz": "55e36f532c07d439f22183c178684e46cbb273753f7bc0d40ba2f6033ded7dc4",
+    "run\\selection\\p_0.012\\root_002.npz.commit.json": "ae82c105c501cbd4c5fa859d01ea68e4b6bc6061db52026928f4d2ad09ac007f",
+    "run\\selection\\p_0.012\\root_003.npz": "38b4d54369cbb4e0b32676e4204d6fa39cd8336a6b3b7b04eef6a324f8e21121",
+    "run\\selection\\p_0.012\\root_003.npz.commit.json": "d1cb88eadf0d12795e3b17e6615b8a388cd522e8b5d1b577d36f9ed72432dd6c",
+    "run\\selection\\p_0.012\\root_004.npz": "1d47fe83597d4757c60126e7bf6048fd14bbc02a37117b08b704c8ab45c76817",
+    "run\\selection\\p_0.012\\root_004.npz.commit.json": "816ea63d6c0580b395ae0c366594057e30253c8c875d9270bcf23efc83e91272",
+    "run\\selection\\p_0.012\\root_005.npz": "cec3231f4f99d93c06c62b58c4dc1e8ae6439b4b20a28601370653f25b371d45",
+    "run\\selection\\p_0.012\\root_005.npz.commit.json": "69cc97a84132ea9774dcff2d3aaaceefe67d32720be23d126d9829bc2ddecc95",
+    "run\\selection\\p_0.012\\root_006.npz": "9b8de4e0cd8854af40bcb6f62fcbdc78f2f4205149ada8f34a1585774dac53b6",
+    "run\\selection\\p_0.012\\root_006.npz.commit.json": "814913872e899eab073c4d3ebb3bf6d2034bd58a28f9290061e4c810a30c5009",
+    "run\\selection\\p_0.012\\root_007.npz": "6e76465cc2a3c36569fb40374941ffc7d51fa2e488516f37eb22bbd28826db5f",
+    "run\\selection\\p_0.012\\root_007.npz.commit.json": "6f603c1f63d33fce054336619c239adb477765cce21b0a70e66c74fb8a32b64d",
+    "run\\selection\\p_0.012\\root_008.npz": "0b3c8baa8096762b70867b4c05f76dc1f9cd6caac0a37dfcd4903ff4edec8d0a",
+    "run\\selection\\p_0.012\\root_008.npz.commit.json": "cd7c123e94495a4f60381d4197dc838ccd5c7a8d115c044073877bb374203f1d",
+    "run\\selection\\p_0.012\\root_009.npz": "b7d129541f42776137af26fee3de20359e9d28a8307a31d8f74598e9bf863ff9",
+    "run\\selection\\p_0.012\\root_009.npz.commit.json": "1824c41067937b5e9bb3455ddf2036e4c93006de6573b06a9ad0a905b6e43050",
+    "run\\selection\\p_0.012\\root_010.npz": "59fa1a789ededbd3e3830386d5a6f3c53d29b0f93dd251c8e43615c7f32297c2",
+    "run\\selection\\p_0.012\\root_010.npz.commit.json": "0261e99ee9fb2673c93c98a87ee3d4481eb1f5bf0ab7ade08463db6a4fc7c66d",
+    "run\\selection\\p_0.012\\root_011.npz": "869a64df9e968e75cb0cf7fe221e611c8f837332e2089b4fa396ecfdff186c56",
+    "run\\selection\\p_0.012\\root_011.npz.commit.json": "8c55270c60d965d153eb8b41e8f0acb78f5b6e1d9e9a2d97691e8045ca504c4b",
+    "run\\selection\\p_0.012\\root_012.npz": "cee8d4de5550cc0c9c4c60f8f9ce7c1505d6a98cf98a4d705ec0b5b422f99138",
+    "run\\selection\\p_0.012\\root_012.npz.commit.json": "f41e993995c2c3847af37fffc7fc78470a22fc9cf86c1b0b1c6063c55826c83e",
+    "run\\selection\\p_0.012\\root_013.npz": "61ac2b18fc5f59e23d1b4bcd18e3c88f920b05b914b2ab1bfacf26f15fefe55f",
+    "run\\selection\\p_0.012\\root_013.npz.commit.json": "c1c6ac1bf6f69974ab803271caf4a667139bb58e85b6a74a757a98a67469b76b",
+    "run\\selection\\p_0.012\\root_014.npz": "5a765887e3785bddd29baeea23df31b77216cf178701b11946a1b195fedae86e",
+    "run\\selection\\p_0.012\\root_014.npz.commit.json": "c9458ff5104cddcedb617261ece599bb2e04dca09ecb3be9fecb185eb3377784",
+    "run\\selection\\p_0.012\\root_015.npz": "f218f57bb0d2117ae818b35310a8481956b76ce95975c414bff547722923f8aa",
+    "run\\selection\\p_0.012\\root_015.npz.commit.json": "ddd3dd0eb948eac7665e55511175b288ea96de9d4399d1aa33c9625b0a2e4ec4",
+    "run\\selection\\p_0.012\\root_016.npz": "b4de1eeae3bcf199c2d32d233a780789616aae96654b03f1d1a3f72bf8fa00f2",
+    "run\\selection\\p_0.012\\root_016.npz.commit.json": "0cf3efb89533142d77d9e124a3c0a4e2bc3102ea5969f00f5750f9004b275e4a",
+    "run\\selection\\p_0.012\\root_017.npz": "6b880b54029481a89df52d6da6dd7a6cbef0ad1805b2c39248c9e17282582533",
+    "run\\selection\\p_0.012\\root_017.npz.commit.json": "ca5cbe757efcd499f1b081b08b4b0d2b1bc64fd95e974b5f8b1f03758303025a",
+    "run\\selection\\p_0.012\\root_018.npz": "e597c30ed5f24ed6b6a2280b1d49999b120335f8c6b72ac4d0f56053fdbe1b83",
+    "run\\selection\\p_0.012\\root_018.npz.commit.json": "88aac5f578be4b9e7fd82900657e34fc65476ba203378d4128501f3cc994a034",
+    "run\\selection\\p_0.012\\root_019.npz": "387e15b68bfcfc1bbcb611f9fd231784bc35d2fc9b8a63f4d824597884653cf4",
+    "run\\selection\\p_0.012\\root_019.npz.commit.json": "ad40e7eae60bca2e5c1a4a3ae442859b3d1bcabb5feb6cad5936aae011753ff2",
+    "run\\selection\\p_0.016\\root_000.npz": "5d2ac24e341344d22f938d650a68118cd1f79546eaaccc341924594da3eb67dd",
+    "run\\selection\\p_0.016\\root_000.npz.commit.json": "859a87acb3c3a1fb3ab601d3ad9eb1aa50074f0707650c50d2deee9828bb6a4a",
+    "run\\selection\\p_0.016\\root_001.npz": "710d813638956673b1a213adb361988eca53cddd06d68b18b73374769d68c3ff",
+    "run\\selection\\p_0.016\\root_001.npz.commit.json": "75ee831fc6bf0b45e49e22da52d5c50247ec65643bda44f56c2e203fc94ae739",
+    "run\\selection\\p_0.016\\root_002.npz": "fbb2ada1751321f7e2df5f3f3f8925e0d7051adccb9d3d5dbd322551af8c3572",
+    "run\\selection\\p_0.016\\root_002.npz.commit.json": "de15e78689f4f8bc5241f815387cdd003ce13f53f24dc9f4235946f2f1e4b389",
+    "run\\selection\\p_0.016\\root_003.npz": "6710a0087e2431e0f5b406ced4a98f4d94b947168fb6c36dd925a58c038fc9a7",
+    "run\\selection\\p_0.016\\root_003.npz.commit.json": "d2d02365f2720195eee700c62d3566be0052fc91c7bc63ecc6cda2374cd9b84b",
+    "run\\selection\\p_0.016\\root_004.npz": "8c3f0153943df09e3d9e782ec4a2256a301d0f36b28a5f693ad29e28b04d9a17",
+    "run\\selection\\p_0.016\\root_004.npz.commit.json": "41b6a948c64c73fb7531def20c6975df54734496f5d10a4eab8fc6f8e452ecd8",
+    "run\\selection\\p_0.016\\root_005.npz": "bd9cb984b586dc4b70895345b25e87762c0835d94638d83a95c5f42516a72992",
+    "run\\selection\\p_0.016\\root_005.npz.commit.json": "ac1b18867cd810c8c85c03a904d4787085b4732ffbbd9c75f036360d181bd52e",
+    "run\\selection\\p_0.016\\root_006.npz": "a8d9886966c291000534d2269dcee199275c1140bd301c1cba7c82ef4c1dd2f6",
+    "run\\selection\\p_0.016\\root_006.npz.commit.json": "70835a2252c684138cc520db09bcf8ab5090ab279f38ee7c777c0b0bfe8d847e",
+    "run\\selection\\p_0.016\\root_007.npz": "b5b0dd488f0919c1e7dc72e3b93761f8e1787f2af8514ec69b68bf49a8c18c6a",
+    "run\\selection\\p_0.016\\root_007.npz.commit.json": "5c0ff1ef0602c919f46fa626d23be19eb7d35ba8963e4099aa53cd2e3c7e1619",
+    "run\\selection\\p_0.016\\root_008.npz": "1b8024a2ca3b7ec58608907b33c10c7af2a4299b00534a389510a669347fd44e",
+    "run\\selection\\p_0.016\\root_008.npz.commit.json": "1b089ac076917d820d0b204bfa63955274c7f0f59655592a694530a85d80c42d",
+    "run\\selection\\p_0.016\\root_009.npz": "cbe06f1e06f3d12d991607e740e62a898998432bcd0481e0e32b6eab540fde3b",
+    "run\\selection\\p_0.016\\root_009.npz.commit.json": "290f2c2b494590b5f607698703f7c1fe504b9a236dcd1c9fd277970c76e71348",
+    "run\\selection\\p_0.016\\root_010.npz": "4c4fd2c4d9d90489e043f9cde85397d7f1cdccddcd929ef1f7ca2e83c749aca1",
+    "run\\selection\\p_0.016\\root_010.npz.commit.json": "5d26904b8d822d35302da626f7f00ffd1e921572c01f356e6d687b8abe99b7ef",
+    "run\\selection\\p_0.016\\root_011.npz": "ae10a351dbbf4eb5da89269ceeb807f653b0c1af9bf4c2f20b80b2e39e9b7be1",
+    "run\\selection\\p_0.016\\root_011.npz.commit.json": "2d042d9cd5512da4415526f999a42e33ed35f07d69e8dfa7cd6f09ec5d8bc0b1",
+    "run\\selection\\p_0.016\\root_012.npz": "3a7b4d16760289d8868d70dac2bb2fa17f525c5e9d7fecdcd5abbe33122d1ec6",
+    "run\\selection\\p_0.016\\root_012.npz.commit.json": "edf054c6712e9cd817ece39255a6daa2dad780662a07f404a003287503752093",
+    "run\\selection\\p_0.016\\root_013.npz": "7b77c51fdb501d2e7c195f24bb354bae7b2d01f3c94de3092f9efd4841b77a38",
+    "run\\selection\\p_0.016\\root_013.npz.commit.json": "8990bb8fcb55e4acbbc4c8b80f88490ccc0cfe220f72d2a4c02cca29004b77c9",
+    "run\\selection\\p_0.016\\root_014.npz": "f2b1a1dedb6d149b8e7dadfec8503cc47c19986eb17e6d6d1ed52b8362aaebc4",
+    "run\\selection\\p_0.016\\root_014.npz.commit.json": "925d92844f5ce688fa7e6cefa6bda40b491f3442f7b09bea468dfcfc702311dc",
+    "run\\selection\\p_0.016\\root_015.npz": "b859e97cf31ecc9987824d6442e0efda1813653e20e9bdc02338389c70441875",
+    "run\\selection\\p_0.016\\root_015.npz.commit.json": "0b39ec78387d5f9b336d7834142915d4d2935512820c593e26f7cc5942d2199d",
+    "run\\selection\\p_0.016\\root_016.npz": "9bfd4555091928c44e12c37eb2054acad7b1a918c0dc26e84a9488902065c610",
+    "run\\selection\\p_0.016\\root_016.npz.commit.json": "39d4498f991faca7cf5b342da9150554539662bead3ebd932991956ac24a0864",
+    "run\\selection\\p_0.016\\root_017.npz": "113666174441f2a6ae2417f96d87e1cf42ce0291c755ffe12bb7b090d3ea58f0",
+    "run\\selection\\p_0.016\\root_017.npz.commit.json": "19b8e58a90ec2ddf98329823c831d11634b659ddea1a823b24131352b2ca0ee3",
+    "run\\selection\\p_0.016\\root_018.npz": "ebb7346cb27633b1c720e29fc5b606566b0645795a66aae28e61319e76b4e5ac",
+    "run\\selection\\p_0.016\\root_018.npz.commit.json": "eceb5c87e42b10b1f64462a95601aba858853d22391b1cb2ded5b52df4e3e71e",
+    "run\\selection\\p_0.016\\root_019.npz": "bd72aaa90f0f9f5f15c264653c8c1bafe641d49e459b7cb43b100603f373aee0",
+    "run\\selection\\p_0.016\\root_019.npz.commit.json": "380d16dc969778ccb6cad9ba897cd4e43e16cacff5394a5178eb76ff1ce7cf56",
+    "run\\selection_calibration\\p_0.000\\root_000.npz": "d8835e8e7664ac9659bc6091cb7db374bf8171cf2dad24b284fb68735df64a7d",
+    "run\\selection_calibration\\p_0.000\\root_000.npz.commit.json": "9dffbd98606a72010707bfc743fffc3eec62b00f57fc146545833e3d128cc900",
+    "run\\selection_calibration\\p_0.000\\root_001.npz": "315d86b745ed3e64a669a337b9fb2d0b0c2d2822f67dc706cdef9d39431a7285",
+    "run\\selection_calibration\\p_0.000\\root_001.npz.commit.json": "2a17cf089b57ec7315209e6d682260c82e6cf6e27387cfdf539be08130902128",
+    "run\\selection_calibration\\p_0.000\\root_002.npz": "005e0fef40f3f25e50ac599a0b9b5b913b51e34be15379fe0437a7cbd9694122",
+    "run\\selection_calibration\\p_0.000\\root_002.npz.commit.json": "bf35ffaba4543586f9f37c1d39142301c8c275feb85295a87b91245d26b72e0e",
+    "run\\selection_calibration\\p_0.000\\root_003.npz": "9d4e869c2913608510c429237ee3dbf6a4909be06a8e51b62434e252b5bf81c6",
+    "run\\selection_calibration\\p_0.000\\root_003.npz.commit.json": "7b03856b03839b1ae6a7dd941328068b6ce974ce8943f662982d12edddf4d551",
+    "run\\selection_calibration\\p_0.000\\root_004.npz": "7a2a35d6ecd4d4205ee4c604ef667687ba9a936444274d1121bf0e98d4fbc29c",
+    "run\\selection_calibration\\p_0.000\\root_004.npz.commit.json": "32efeeb39815b31217721e96fe616190546e95719e4483a5547564b7c8d8ad2b",
+    "run\\selection_calibration\\p_0.000\\root_005.npz": "665930b410038d783a44519b4224756ab50f1da42a198b11ec9ab8314629c7d3",
+    "run\\selection_calibration\\p_0.000\\root_005.npz.commit.json": "c787696c4c8c70cc81ea04eeb3b3c51966a2b7afe1abdf6f8469b29719cf20f2",
+    "run\\selection_calibration\\p_0.000\\root_006.npz": "7a4dfa75c3c37e23b095e081ebc73bf3d723f468350ed21bbef23d8cc8571888",
+    "run\\selection_calibration\\p_0.000\\root_006.npz.commit.json": "811ecd175de60caa6e8ed98c76fdc7786e342f48395d52a7b334fadd65e02cc9",
+    "run\\selection_calibration\\p_0.000\\root_007.npz": "cd97cbfce08c1b22554c38a385539d31cebdc0a7b2f3969a2c03242e5acb671c",
+    "run\\selection_calibration\\p_0.000\\root_007.npz.commit.json": "a494678d4f40f9eb25f0be5afd86fdb149467605d95915e11536ded7e6188f2d",
+    "run\\selection_calibration\\p_0.000\\root_008.npz": "2f309749bbea0b7e2d6c9bf3b4782520bd5805408510455513c29934bbd753d7",
+    "run\\selection_calibration\\p_0.000\\root_008.npz.commit.json": "347c7423c4bd5073fb324bc504cfa1068833d30017aa4b72f09a92838fa5576a",
+    "run\\selection_calibration\\p_0.000\\root_009.npz": "e3ebcbfd7efb895d32a073b9b687efcdd3e55aeb3b63b9d8b43d0d3a83cd63d1",
+    "run\\selection_calibration\\p_0.000\\root_009.npz.commit.json": "76b0b96965068bd5536d1186f44e9ce7b54422af426da5c71f335d136e821959",
+    "run\\selection_calibration\\p_0.000\\root_010.npz": "fb994fc9a4369d6d79e4e6b0270f5e897d3022c17f17b195a861c45310ccfbf1",
+    "run\\selection_calibration\\p_0.000\\root_010.npz.commit.json": "42fca706fda5462ab68a2fd5a54c5c86397ff47356769ec4e565fd26f96fefde",
+    "run\\selection_calibration\\p_0.000\\root_011.npz": "379c979d4ea1ee325d53df4b54c847833dca106217a19173f8d507e00cdf4689",
+    "run\\selection_calibration\\p_0.000\\root_011.npz.commit.json": "01e98080b63ec7d01b8d2cd918e22b622f2dfcbf260d5740361b1113033d3798",
+    "run\\selection_calibration\\p_0.000\\root_012.npz": "cf85841a6284d701761d71d014fe78614066028b9cdec2bee125fa2655befded",
+    "run\\selection_calibration\\p_0.000\\root_012.npz.commit.json": "f43131f3a69a6f75c10cf7574426572f08f0c1f3876e654cbf3be7758e72d3a0",
+    "run\\selection_calibration\\p_0.000\\root_013.npz": "ddb961db03fc0daa10f591c5ea3274503044e53578a9ff7497a3d37ff7fdedbd",
+    "run\\selection_calibration\\p_0.000\\root_013.npz.commit.json": "b28b41816abab1090038fa84eba096692df2c5648a21f8f71ce2ad395fb4b5e0",
+    "run\\selection_calibration\\p_0.000\\root_014.npz": "57861209bdf8f5c8c707a76dd7ac78df84b77477d8e26b66e30f3e89cbe96203",
+    "run\\selection_calibration\\p_0.000\\root_014.npz.commit.json": "410b5b7f93cce95d9e10ca0f544ee9a78b0b6b92b2727487a039f6e17b04b181",
+    "run\\selection_calibration\\p_0.000\\root_015.npz": "9dca276557fe2da4974cc7553057813c83d560916f3dfb02df7566a889760f41",
+    "run\\selection_calibration\\p_0.000\\root_015.npz.commit.json": "fa99f2eff30748447e5cb3c52844b0d05cfcb4b103881ff9a5236e07cdbdaa68",
+    "run\\selection_calibration\\p_0.000\\root_016.npz": "4b98a7f2a97052bb1c25c252cf2169d92cc2f5f2ecc932b85e0983f5802cc5b2",
+    "run\\selection_calibration\\p_0.000\\root_016.npz.commit.json": "193eb01207167b34a37ce67472e21448218750dd246b775963479f057859b804",
+    "run\\selection_calibration\\p_0.000\\root_017.npz": "97a8e29ec63d0f33b2c1ac3acb18973842b72a096544032a54b1e5ebc7d0e1c9",
+    "run\\selection_calibration\\p_0.000\\root_017.npz.commit.json": "c43e35c121bc20a2d7c58b7543b8688d27e8c94daa5eefb3fd37717e00b13e46",
+    "run\\selection_calibration\\p_0.000\\root_018.npz": "e71c714851f96d1023aca1910044598775485dbddfd2a9cea7d1baa1316eb0c2",
+    "run\\selection_calibration\\p_0.000\\root_018.npz.commit.json": "bfcc9e6cb5d4d82dd40fcb17c234b14b4ddddaaf8371ce7b8a1b6692c802db67",
+    "run\\selection_calibration\\p_0.000\\root_019.npz": "5ce20a8b7f5fac3578d5e2252b17064a02df8a9480e9c5aedb345f6634313be9",
+    "run\\selection_calibration\\p_0.000\\root_019.npz.commit.json": "47b11228a2dbc4a83ec8b78b337c5cfe6a7f5d73d66bf35092c0af927e61df34",
+    "run\\selection_calibration\\p_0.004\\root_000.npz": "c78bfa705bfa875c49e35e0d7eaa0c489dc5e175321b2faafd01f449b3a011f3",
+    "run\\selection_calibration\\p_0.004\\root_000.npz.commit.json": "f8345d336356cda0e5c20cf6a45baa8147328c30a583ab2ba46264360e946df5",
+    "run\\selection_calibration\\p_0.004\\root_001.npz": "fa6ab37ae28afec10c2ae9f1f9d5b4b9f54069da694353d4b08f20ede1e80d4d",
+    "run\\selection_calibration\\p_0.004\\root_001.npz.commit.json": "ef925c20a2e2bce095bcc5141432a122805810cc9023a02654f43e6483a21f8c",
+    "run\\selection_calibration\\p_0.004\\root_002.npz": "fbe837a94665504543c9096b3613e62a6e91abe0f44b73145b410267e3f66f50",
+    "run\\selection_calibration\\p_0.004\\root_002.npz.commit.json": "896d92935fadf6b0d606b6cdc97f193383e16dd1cc449430abf28e399d732cfe",
+    "run\\selection_calibration\\p_0.004\\root_003.npz": "9c6e94be9ac71fb51bc99d981097d6db3a0791b2d6f7440499654e35984ab710",
+    "run\\selection_calibration\\p_0.004\\root_003.npz.commit.json": "1c6ebd1eb661ee0c14228b31e2d06ceda77567d49eb3e86410d75f8d7857e533",
+    "run\\selection_calibration\\p_0.004\\root_004.npz": "3bcff415932a3071a18efc4425ca23a95b20b6df0389e41c50a1da1775491e8b",
+    "run\\selection_calibration\\p_0.004\\root_004.npz.commit.json": "5e66feb6cd4ef108408adecec901a3195a1c3397b4d4c9455cf95212367c9116",
+    "run\\selection_calibration\\p_0.004\\root_005.npz": "8d03875e94cace9f2383c137dbc81d3d349a02a39dff856ef48656cf63bba03f",
+    "run\\selection_calibration\\p_0.004\\root_005.npz.commit.json": "b3c559aa65f012fefd71b417130619ec6dbe8027dbda9292e17d4ad01916cefa",
+    "run\\selection_calibration\\p_0.004\\root_006.npz": "cffe83d21bb1880a97a93354dfcf4b67323c2b73decd8505b70ea3f6a840e644",
+    "run\\selection_calibration\\p_0.004\\root_006.npz.commit.json": "3f625931c55d4fb52edcdaae6f2671a8e5ea203c695e535bcef842ad3653d4a7",
+    "run\\selection_calibration\\p_0.004\\root_007.npz": "b5a655978f339f6200035d6edfd827b96e5f10d9c6701b0c435df1f9a0a29d08",
+    "run\\selection_calibration\\p_0.004\\root_007.npz.commit.json": "569afa064f59a16d8e5067ce96104ed4317e3215a238d43bb17bfd759b9bbd6f",
+    "run\\selection_calibration\\p_0.004\\root_008.npz": "39bc1a626fdabcf7f65ec7d5ba7ba75fc2330ea06e4ca83324df35705c5eec23",
+    "run\\selection_calibration\\p_0.004\\root_008.npz.commit.json": "002f65b017db8a11cb894535488b4d110d325bd6caf22edadea92898c5544af2",
+    "run\\selection_calibration\\p_0.004\\root_009.npz": "f0f3aa9378d883745d2af19ae4f8801980ab032545bdae316268102dffa5125f",
+    "run\\selection_calibration\\p_0.004\\root_009.npz.commit.json": "abf242abb8cb3f4e515668a6d7d72582df48df277cb1e4c2ab44ab00354dc66e",
+    "run\\selection_calibration\\p_0.004\\root_010.npz": "e449ce94511d73ec1d8bcbc00b6d7625f48c74b3919c1277c0806124897e4c00",
+    "run\\selection_calibration\\p_0.004\\root_010.npz.commit.json": "a9c6c0f6375393ae4d3d3e4db4aaa141a5a4d43fa0df83151ca0f028cef59821",
+    "run\\selection_calibration\\p_0.004\\root_011.npz": "b4e57d312f5fa57fa9b3ca673e87603b5fe1325285b631b899ea60fd9cea8df4",
+    "run\\selection_calibration\\p_0.004\\root_011.npz.commit.json": "c615ae3985361ebdc7137ebab71437a7cb655e306907a2a9542744165f2983e6",
+    "run\\selection_calibration\\p_0.004\\root_012.npz": "2dd74fc4b0431b763190758f23324c45164d6e4f365b706773e31253bbc0d2b6",
+    "run\\selection_calibration\\p_0.004\\root_012.npz.commit.json": "22de3869d67401b3597ab88456c2b788e1da5a6d0edc1e1fba2dd7a9756433a6",
+    "run\\selection_calibration\\p_0.004\\root_013.npz": "c796fb4a39e4c73c35cbe01e6497a1800c7245b7acf78b6e37efd9512f6df1b0",
+    "run\\selection_calibration\\p_0.004\\root_013.npz.commit.json": "b148b7ce33769eb74829beaf8db8cc66ae6172db525a6d3e7004fb8b4ccb60a0",
+    "run\\selection_calibration\\p_0.004\\root_014.npz": "795fcec968c5f6215d8b61b68a2e0730f90af01f0e3c929e0a6236465cc83398",
+    "run\\selection_calibration\\p_0.004\\root_014.npz.commit.json": "cb0ba47eeb362f7c5c698c6c9d403b5b2fcf23e95cdbb951321abee89cebb790",
+    "run\\selection_calibration\\p_0.004\\root_015.npz": "c24c616fc1497480daf9dee96fae0ea5da6a12223efdea112790f6f770753c40",
+    "run\\selection_calibration\\p_0.004\\root_015.npz.commit.json": "deefbbb8907a56072ef16cecae75cfe526fc0c8bb4069df5371e98a2c97cb1de",
+    "run\\selection_calibration\\p_0.004\\root_016.npz": "72c16b2ea59e1578fe796cef3d2d0fd5f7b574ca5a677f6279e13845d127f036",
+    "run\\selection_calibration\\p_0.004\\root_016.npz.commit.json": "4a66ca924db8ad43a756cb93d4c9b8b74e079ecf227da0d65b95b3445ea9aa1a",
+    "run\\selection_calibration\\p_0.004\\root_017.npz": "179bd82e1dfac9defcefa69d7d75c64983b88874a33f7d24aaf86e01d655471c",
+    "run\\selection_calibration\\p_0.004\\root_017.npz.commit.json": "b5ae8343b458ba48021fdfffe3a8e949fc9788b0db43fe66b47c04596f923260",
+    "run\\selection_calibration\\p_0.004\\root_018.npz": "cff6f7cbb344c1952a706bb4acca79f28f4fed3c71d19d38b868b0a595f45ee5",
+    "run\\selection_calibration\\p_0.004\\root_018.npz.commit.json": "b4f807118b775bce507fb24dc049fb59b06e2bc02f982510b8d7027019efc56b",
+    "run\\selection_calibration\\p_0.004\\root_019.npz": "15521684821412f26eeb41a931db3156fa5ec03e1ebb6b60bd946b0457bea599",
+    "run\\selection_calibration\\p_0.004\\root_019.npz.commit.json": "05ca31b63a9d2a3183f64cb4276ea583ae0ffa4a14b4424fd353b309e8c26fcb",
+    "run\\selection_calibration\\p_0.008\\root_000.npz": "9885f6883471a18400131fac73ba3cca06bb042edf0b77d2447590943e03c230",
+    "run\\selection_calibration\\p_0.008\\root_000.npz.commit.json": "57229bde4c4754b13995e1b164ae0df0bd496acbb2c5cee70b3af58a72bf979f",
+    "run\\selection_calibration\\p_0.008\\root_001.npz": "fb7e77e4b896e4c3b1fc1e94201c5ea2f0a6744c30114e62fd99e30438e8467c",
+    "run\\selection_calibration\\p_0.008\\root_001.npz.commit.json": "0e91a5c20b482c7e84f86f70dd68edcddaf1bc77a5466a063d099f743afd2071",
+    "run\\selection_calibration\\p_0.008\\root_002.npz": "a448faea0e8d07cf497fc1821fbbbdeef68cc6c0edb3e9ce7a2b78990e37837a",
+    "run\\selection_calibration\\p_0.008\\root_002.npz.commit.json": "3b450049665b9dc80e20d0499ca143a18b65f87229b24cbec910d050ef1c8905",
+    "run\\selection_calibration\\p_0.008\\root_003.npz": "fe66d2cc95820ea671183bd8de9bf0dec30d2fa93fee59776dcb523009a7b673",
+    "run\\selection_calibration\\p_0.008\\root_003.npz.commit.json": "5bed7358f4ab3e1e8bda43b3518e09543e6623284220e8dd8f3d1317a464afb9",
+    "run\\selection_calibration\\p_0.008\\root_004.npz": "c68169851b370e8863608dd1f54addc27d326dae84f3e6e365c1b49d3f5d8b6f",
+    "run\\selection_calibration\\p_0.008\\root_004.npz.commit.json": "e8a4ec9740ac0ae028d8230dcbdffceaf3a85d4571d6e2bf0f88162898173144",
+    "run\\selection_calibration\\p_0.008\\root_005.npz": "aaeafa9e7bfe364e7f0199cc7744d5e75c47b3f3f3112058e48b0cd8ff94847d",
+    "run\\selection_calibration\\p_0.008\\root_005.npz.commit.json": "c4351bc9db14ec4dbf94bc188007ae475619fa58947c65223d6253dd62ba9ebc",
+    "run\\selection_calibration\\p_0.008\\root_006.npz": "c3f97c74ab8935459c860ce121777d89fe80602aeb6298138edfb0400a4cb878",
+    "run\\selection_calibration\\p_0.008\\root_006.npz.commit.json": "d523341ec6167e1af95baed5d6d480fd25d20f075605bca39dae885aa38e9a31",
+    "run\\selection_calibration\\p_0.008\\root_007.npz": "0c996aa7fc82dc52e3c28807800d79ce63ca07e008289fbf9ec1b08d8d9ac778",
+    "run\\selection_calibration\\p_0.008\\root_007.npz.commit.json": "934c021762142817339ed7a939cd46c4229fcedac7bdf191bf9ab723873ba346",
+    "run\\selection_calibration\\p_0.008\\root_008.npz": "06a3d4836036478cc176a019ede08917f473acd95ce330cb5533043f5fbe9eb3",
+    "run\\selection_calibration\\p_0.008\\root_008.npz.commit.json": "b475b9c7296093f7b478de3c40fc7c8c0baef43e96cee8bec1647d3ac8e2e97e",
+    "run\\selection_calibration\\p_0.008\\root_009.npz": "0a8e31f98477506c7455a684fe44d51c786b043d0bef02c3390971e82edba4a0",
+    "run\\selection_calibration\\p_0.008\\root_009.npz.commit.json": "a30974c0ca535a045acdc6e10044c107492dd7e59cf62f31f74626c1140c1ba6",
+    "run\\selection_calibration\\p_0.008\\root_010.npz": "987513fc39be2d0b149c2b85643e30231f629cd3745282778a03286cc8c9ec08",
+    "run\\selection_calibration\\p_0.008\\root_010.npz.commit.json": "44bcc584415c33965fd111f920ea5e3a2f9ed8e72cd06fd104a15e0863d0af90",
+    "run\\selection_calibration\\p_0.008\\root_011.npz": "004102b6b78ee4f8715b6eef84faf5aa1bacf60538f832ae9d13a7ad199ec52a",
+    "run\\selection_calibration\\p_0.008\\root_011.npz.commit.json": "d8ccfe24cbaa69e77815bf844b854b3255438f8360cfd8956a3675841daaf377",
+    "run\\selection_calibration\\p_0.008\\root_012.npz": "0e42a9d0ad2eb53d5c70e371187647075dbb27f1a0f324a146c8fc5aa0fe5a2b",
+    "run\\selection_calibration\\p_0.008\\root_012.npz.commit.json": "396750868c04bf1f34198aba21e1dc1a3c2d83a025d3a5bfc4ae4d75077fa15b",
+    "run\\selection_calibration\\p_0.008\\root_013.npz": "d4f4c059874f16bf315fe9f6224dbf03e5e5ecfcd2622e14a2e2dafd07291341",
+    "run\\selection_calibration\\p_0.008\\root_013.npz.commit.json": "43a6dc63bd3f1e76314c2ba9d5d043361a696658c730d5b9ee9e5cf90b5754e0",
+    "run\\selection_calibration\\p_0.008\\root_014.npz": "aa5db4bce1042578df01f91a53e5bfed89a333ac2d8bbe2c89953d5c6f3d2b87",
+    "run\\selection_calibration\\p_0.008\\root_014.npz.commit.json": "9556190dcd5fd3433672cc0a383ddadb8195cf0873518a1b2fd5f185dd7e3cdc",
+    "run\\selection_calibration\\p_0.008\\root_015.npz": "c38b772bc51b15a17884b81711c80b87a985f61158e834d040f3a0816cfdbee5",
+    "run\\selection_calibration\\p_0.008\\root_015.npz.commit.json": "1e4c540b460b1af82b9d3739207c0d5e92e88490d8efb9e9a1f3a115f4db9d40",
+    "run\\selection_calibration\\p_0.008\\root_016.npz": "7ed1db34e5caa92e2a83deda34448713be9b8f783906abacd39bf674a8b41d1c",
+    "run\\selection_calibration\\p_0.008\\root_016.npz.commit.json": "95dbc50b771033d00b888c8d0aaed6d8c1e10cff0931c4072464dcf04ae98bed",
+    "run\\selection_calibration\\p_0.008\\root_017.npz": "361c60c6ee6bba2bd91cea7165d2b0ff0b85422993714f22bec4e0ebc6b08d95",
+    "run\\selection_calibration\\p_0.008\\root_017.npz.commit.json": "97925000d34a71c318c7adb03a2bde1ae6377e84a75a4fa591303f8e161f968a",
+    "run\\selection_calibration\\p_0.008\\root_018.npz": "d8d6782ce7e0efbb9239b79757e7f7e92d61e997ddf570721ae3f4897587a664",
+    "run\\selection_calibration\\p_0.008\\root_018.npz.commit.json": "9a8665b24bb66dfef54f56d8e9e71ecfef70a6de7ae4c82d0149ad4e0c535c87",
+    "run\\selection_calibration\\p_0.008\\root_019.npz": "21b274a844d75966a021932effdf3a5e61dacd90291abcdfb6e6e51527fbae94",
+    "run\\selection_calibration\\p_0.008\\root_019.npz.commit.json": "fd68308a2a52224099637f9fffa603c380144a8df939dbe50a1dd6c9e393c5c5",
+    "run\\selection_calibration\\p_0.012\\root_000.npz": "ec85f323e15ef4fb7f105ca3f45a2bc98432c47d9cc66ee45463eff2632986f2",
+    "run\\selection_calibration\\p_0.012\\root_000.npz.commit.json": "9074d08682590738e6e936e7d03a66db5e609f747904f43a5d867e7049853cfa",
+    "run\\selection_calibration\\p_0.012\\root_001.npz": "04edda5dfe8e422552eee0a487da4d9b4020d52196b07c638c72b1772079eed2",
+    "run\\selection_calibration\\p_0.012\\root_001.npz.commit.json": "b1c275ba435065a42a80405b06fa338a612c1288be8a4a0bd6757d0fa31577b7",
+    "run\\selection_calibration\\p_0.012\\root_002.npz": "7f6067aaef0702783b73995e51b5afbc2a929b8cf4a7afef6ebfb34b7275ea6a",
+    "run\\selection_calibration\\p_0.012\\root_002.npz.commit.json": "743a6c800ad178089e3694009016689caa3e3e8bdc138e66892d3273378fa166",
+    "run\\selection_calibration\\p_0.012\\root_003.npz": "53049219b12d47a886e5bba8220ffa646d045cd96610b97ecf23395f807d5f16",
+    "run\\selection_calibration\\p_0.012\\root_003.npz.commit.json": "06a7c4a25eac7cd5628364b69396612a4bc1b4bb9730b40d6dfb14fd9c85029e",
+    "run\\selection_calibration\\p_0.012\\root_004.npz": "8e530e2babff8f3d37e9f6aacb372909f41fa4ad178a5675a00ce5daae9a85f0",
+    "run\\selection_calibration\\p_0.012\\root_004.npz.commit.json": "c2756d5d267551561d075f4e45e9b32518d4f8ba4d2962742a56b255872b2b44",
+    "run\\selection_calibration\\p_0.012\\root_005.npz": "8e0fc981ab423b94856c5d6a9beb78bfc2f2e46cae86828544c955dc200c8878",
+    "run\\selection_calibration\\p_0.012\\root_005.npz.commit.json": "a065fdea239ad8bfc46fc089a811d6ffae1795c77350bd5e57c661ec0fb6088e",
+    "run\\selection_calibration\\p_0.012\\root_006.npz": "975aa70a966cadc8860319df332c53efed459c68bdf4c9dcd0a979a34805876a",
+    "run\\selection_calibration\\p_0.012\\root_006.npz.commit.json": "47d53c3f3e793d3a2133e4bdb50f617943952f2c6420ea5a50d058a1038b2611",
+    "run\\selection_calibration\\p_0.012\\root_007.npz": "2993994ce2c8425dfa2ac699a62b187be14ccd7ac5583062256483efa1356406",
+    "run\\selection_calibration\\p_0.012\\root_007.npz.commit.json": "b5b36302294333040886ba2afa2de617aec19ed4362bcab1708c2b20da53fee9",
+    "run\\selection_calibration\\p_0.012\\root_008.npz": "350e47c238fd90189201218145723c3ceb1aff7ede06f248c648522fe30d00aa",
+    "run\\selection_calibration\\p_0.012\\root_008.npz.commit.json": "f39175e24791a0cb0247aea89b45970ab0d1fcbf73899b2b2ae16fca2dd1e97b",
+    "run\\selection_calibration\\p_0.012\\root_009.npz": "d5aec8920290dd9f32b6af7e193d83b5701018422126d0b311d8c1ac3b31fb89",
+    "run\\selection_calibration\\p_0.012\\root_009.npz.commit.json": "c495eff3a1dad2aa40683515d74675c6cfe3e016b64b41378138c3d7f96d7f9f",
+    "run\\selection_calibration\\p_0.012\\root_010.npz": "d45f612f188252b6eb9b6b1f1bd2089611de311a11634a7828a8c35003ac600f",
+    "run\\selection_calibration\\p_0.012\\root_010.npz.commit.json": "52e672ac8f8ab6021bf8865b47fb13e3af0f559005b414d03bed0906852d539e",
+    "run\\selection_calibration\\p_0.012\\root_011.npz": "c230e1a2dcb31dc7754c1dd54f13c2c88c7f496b209ae560cf4ef9b3b5c30b1d",
+    "run\\selection_calibration\\p_0.012\\root_011.npz.commit.json": "c7d84b5edd80a14210cc7199b59c96e7c0ac75ec98636264a0bcc42fc6d67151",
+    "run\\selection_calibration\\p_0.012\\root_012.npz": "666deba98c2a7f071c5719898e9d0c830f631a70eb8a56a70d9c754e90bb4ae1",
+    "run\\selection_calibration\\p_0.012\\root_012.npz.commit.json": "658e47227280d2a3e3fc633fd0e61c4bc608e0251440089c5ec406f2f6e26d51",
+    "run\\selection_calibration\\p_0.012\\root_013.npz": "9c7652dff0f2fdd0d755541a44c56c1a240130053346e621efc3a8d2dad961c7",
+    "run\\selection_calibration\\p_0.012\\root_013.npz.commit.json": "80bbd50f4420aa8405325979bc16b4460d91951c4f9ecf2a96a5bfbccd256be0",
+    "run\\selection_calibration\\p_0.012\\root_014.npz": "7e124bc5abf4ff9ccf37b47cb52270d02afd4051ea0613f2366597e57adb3f34",
+    "run\\selection_calibration\\p_0.012\\root_014.npz.commit.json": "cb7da37b8faea35a2653a9d74e88baf06a03ec3eb5bd628b638291c4dfce42b5",
+    "run\\selection_calibration\\p_0.012\\root_015.npz": "5cd882f8acc2ef1b01444fa9d94c144ed4d3a1425066a9a01aab4b93b6fb23ce",
+    "run\\selection_calibration\\p_0.012\\root_015.npz.commit.json": "ac418598d69d103792f49747f0ed1d6bf989415f2a8099d56e5c000c615707bd",
+    "run\\selection_calibration\\p_0.012\\root_016.npz": "8db30da325eac711d482272cb65c0313658a5e0695f731c745de7b4cd8f67822",
+    "run\\selection_calibration\\p_0.012\\root_016.npz.commit.json": "0578724ce26fea3a04863076a0faa1056e3241d8e3d6acbd1b08a0ff8fbea210",
+    "run\\selection_calibration\\p_0.012\\root_017.npz": "fc2f5971b308b3e93e2f5c09326a6a333aa827c7234d435f271b91ac66e4f77d",
+    "run\\selection_calibration\\p_0.012\\root_017.npz.commit.json": "28ba9f64d133ddf4e5104e32e8c89b9b4e0beed9ce1ed77dd97b9992ff8dfc6f",
+    "run\\selection_calibration\\p_0.012\\root_018.npz": "4d080cdeda48a2365c4a485e714ae37d18e17d1e6d9c485fc872eb566c7341a2",
+    "run\\selection_calibration\\p_0.012\\root_018.npz.commit.json": "e9fd2423d7d6f2762f5fde9c8437db8252235da5f7d6ea1069aa756ad001133e",
+    "run\\selection_calibration\\p_0.012\\root_019.npz": "a61e9bc0f30a065948a9739e853d2785ef40adaa89b24f04e06893ffde64ab61",
+    "run\\selection_calibration\\p_0.012\\root_019.npz.commit.json": "798aa734f22625e76b3cf23d081d190d57ff46e9c178d37a581a479ac7d154e4",
+    "run\\selection_calibration\\p_0.016\\root_000.npz": "1c529dda8c5907b2d846e5c46cbcdfe4f183ef37e2770c560ed42eb88d76d503",
+    "run\\selection_calibration\\p_0.016\\root_000.npz.commit.json": "ead507e7082f0f87c3621b29282a0ca3b8166b649dab4b5caffb8f7fdc87c2c7",
+    "run\\selection_calibration\\p_0.016\\root_001.npz": "c8e98d6dc7ded0a0570b833f7f00e4711970dd9f136947a793d74993f2c6edd3",
+    "run\\selection_calibration\\p_0.016\\root_001.npz.commit.json": "1744cc9cd9005e846ea38bb9fddadb97ac578bce502813d7c27b5924d4b854a7",
+    "run\\selection_calibration\\p_0.016\\root_002.npz": "17f0629255b869630337a99a800ca3d680a47d332b0b3e3accc561d5c90faa45",
+    "run\\selection_calibration\\p_0.016\\root_002.npz.commit.json": "c4a3c9ef1c97b5b4fc00a8bb1b3d3193bf1f668c9f0e2c982fe81bf1ea3305ec",
+    "run\\selection_calibration\\p_0.016\\root_003.npz": "b9b90265825ea1366f314cce28fc93b4dcdaf13043ac68d7760ff18878235f2d",
+    "run\\selection_calibration\\p_0.016\\root_003.npz.commit.json": "edd91049e5c7ff291b9affef54eecd69e8415226862d2571c27cb8e00ea5bdaf",
+    "run\\selection_calibration\\p_0.016\\root_004.npz": "0473266c98b9420dcff2898337a4bb9893358aef7da5fa0ccae9c7c3fa6c652b",
+    "run\\selection_calibration\\p_0.016\\root_004.npz.commit.json": "3e59e295b4118d538f83dba3f913c0342aac35301fd38e64d17f32300cecec78",
+    "run\\selection_calibration\\p_0.016\\root_005.npz": "2e8164ec345c94cda25b5b1e4c6dafe7a2e3052d4efaa8873fc6726352215fd7",
+    "run\\selection_calibration\\p_0.016\\root_005.npz.commit.json": "6a931fb32d4044e046e9c627a9cbb2690cbe4fc9101a33ab8cb2be15bdbf1be4",
+    "run\\selection_calibration\\p_0.016\\root_006.npz": "4bbf8d7fc7f0608d2244418aa75dfdb0e3a46933dee4e7f1121815b4c5f1d0cd",
+    "run\\selection_calibration\\p_0.016\\root_006.npz.commit.json": "cbe9e349ba07a074b7af4372c16b9f06183cdc3dba57a10f13a53eb314d8d68b",
+    "run\\selection_calibration\\p_0.016\\root_007.npz": "5a950acaf5482053444ef51731388cad1eb3a5f43b746faf33064381cb2480f5",
+    "run\\selection_calibration\\p_0.016\\root_007.npz.commit.json": "f56958be70841e4ab205a0a27011f29e7f709de6cfaed5c1cc84784e7dc8cfb5",
+    "run\\selection_calibration\\p_0.016\\root_008.npz": "68835215df808e2332b83e0b5d412a865dbc2ecd33ec9b9548c315f281c1fdba",
+    "run\\selection_calibration\\p_0.016\\root_008.npz.commit.json": "3c266732869eb8eec073a7c82cf74eeb37edb823226af1cef7e137ac761ecb79",
+    "run\\selection_calibration\\p_0.016\\root_009.npz": "b41ebf8895bd48753b12ac7f31f03f5be781d4e804e2a728b03d2056260cb6ce",
+    "run\\selection_calibration\\p_0.016\\root_009.npz.commit.json": "443a4516950c19928b2156660abbe7072891e74c48a748c174519bd8ddd8fc2b",
+    "run\\selection_calibration\\p_0.016\\root_010.npz": "2a4a975e840ff1355b72c2956b4a9ff4db4532c673f4a247635bcba23840ca7b",
+    "run\\selection_calibration\\p_0.016\\root_010.npz.commit.json": "186bc6249acd51f99de30757583f12f7f82802bdd09b9e731d0f5ed273e49e35",
+    "run\\selection_calibration\\p_0.016\\root_011.npz": "d825923cca5a7498bf62310aa926125970151c09d45ade0f3606c3df08aa62df",
+    "run\\selection_calibration\\p_0.016\\root_011.npz.commit.json": "4fd1576dbfea51b1e3f0d41e4db7c0f0aa7f674010d76ea2d9ff7a57161b1955",
+    "run\\selection_calibration\\p_0.016\\root_012.npz": "f9ef899b376575dc8089130112e408103269f871c1c1374662edc4aaa557cff2",
+    "run\\selection_calibration\\p_0.016\\root_012.npz.commit.json": "0d89ab1796e574cc8289a977f106d9a34ea7c66a72282c86280dd4f7f2eb1551",
+    "run\\selection_calibration\\p_0.016\\root_013.npz": "0f78fcc8add88048b5fbaa0a40bde464335883ef025256b2900937e3a14a4890",
+    "run\\selection_calibration\\p_0.016\\root_013.npz.commit.json": "108344dbc39885359d2ee57205d0f0e74fbab11f98eec5a50e7440de812f042b",
+    "run\\selection_calibration\\p_0.016\\root_014.npz": "83312fba67b7cf1cc18b71d0ca901820f451037f8216d23f1095cfe999b231bc",
+    "run\\selection_calibration\\p_0.016\\root_014.npz.commit.json": "8ceafc4adec68f6500231eb4bcd6edd40812b426f1724a61bc8564dbd185beb2",
+    "run\\selection_calibration\\p_0.016\\root_015.npz": "735573b2d5f79aa0d391ee4789b80d6032ce68222f5c840960422a096956729f",
+    "run\\selection_calibration\\p_0.016\\root_015.npz.commit.json": "f4f55ff58e59fed319d9461796ff6be2e6fb04508a1ece6a22f7133570957901",
+    "run\\selection_calibration\\p_0.016\\root_016.npz": "cd057a525885df95ef3db4dd9f0cd2ee53090afa94eb43d942f112114f78f9d7",
+    "run\\selection_calibration\\p_0.016\\root_016.npz.commit.json": "21e53a331af4d46c9e0570418c30de5bc855198d0b152c8f320f1fb2320eeef2",
+    "run\\selection_calibration\\p_0.016\\root_017.npz": "2ad015667912e7b842785da1eac96ae8398e0218700591979cb41d46362e999a",
+    "run\\selection_calibration\\p_0.016\\root_017.npz.commit.json": "8ddf92cbc4e42d2630c6c0721bda6b9f64421425af67b95fc2c3ed9e1faef1fa",
+    "run\\selection_calibration\\p_0.016\\root_018.npz": "18a0f61b058ca4373f8298e070428e2b126aaff40cd4900a51f757e8381e4ffc",
+    "run\\selection_calibration\\p_0.016\\root_018.npz.commit.json": "f31be384a67a2a21d01e108c5441397cb10fc3a6eec5d1de38e81a70d51d76ed",
+    "run\\selection_calibration\\p_0.016\\root_019.npz": "16b3c04ad6e8975357bc6ffe6180113cb78b68cd3c9e9c287369c342b482ad58",
+    "run\\selection_calibration\\p_0.016\\root_019.npz.commit.json": "b319fb0ebd62c25599255119a7047312075bf33dc1660ac518721d056c5e0464",
+    "run\\selection_predictions\\p_0.000\\root_000.npz": "9ec935e0b68e3c746a9796612173e58790a85a7ea1e0e659796dc71e3928e460",
+    "run\\selection_predictions\\p_0.000\\root_000.npz.commit.json": "9c89af49fd2049ca3c646138f7a3d797a942a643d7a4c5f5c22c247753b0da43",
+    "run\\selection_predictions\\p_0.000\\root_001.npz": "47a9610ae398c4fc9e7df58404e0ae5cb1ceb9ae31168db46000e7ceb20fe4a2",
+    "run\\selection_predictions\\p_0.000\\root_001.npz.commit.json": "4b8ea58d5248bca94e739f1a314d8bbb2f2221c425741decc83faa52226eaafc",
+    "run\\selection_predictions\\p_0.000\\root_002.npz": "89b2b6ee75b9f1ceee1f11a1efa57e6bbfd412a9ec920d50cc88671040b5642c",
+    "run\\selection_predictions\\p_0.000\\root_002.npz.commit.json": "b83af0163eefac72f928cffd356d1429261597d6500940077d100b7a08b3dbbb",
+    "run\\selection_predictions\\p_0.000\\root_003.npz": "04e0a81d315111a5901a88b31b6946bb5c0d85ccc1811f3a785279594e4c3218",
+    "run\\selection_predictions\\p_0.000\\root_003.npz.commit.json": "213eaa9e5501b73a466f612c34f2675628509979ab8d1c9bba00956b4064d34d",
+    "run\\selection_predictions\\p_0.000\\root_004.npz": "8308b6065bca3d78836e8effe51100182e4dbdec98280eb877242e00421945b9",
+    "run\\selection_predictions\\p_0.000\\root_004.npz.commit.json": "413ad52da100ab4f0a78acf71d3a44a704820cea00da59c5540a5c42a4e07183",
+    "run\\selection_predictions\\p_0.000\\root_005.npz": "65193cff5e057ffd9fcebf563b9a055bd3946c93429eabbfcf8028fea2a2468f",
+    "run\\selection_predictions\\p_0.000\\root_005.npz.commit.json": "6669fcc69ddb065156f97329582a951f9165cc07ffd0d11f836f298977716083",
+    "run\\selection_predictions\\p_0.000\\root_006.npz": "9d59c06762b21be632cb9d3cd4f54e892ee2f801d059420f45d82c6afcf35721",
+    "run\\selection_predictions\\p_0.000\\root_006.npz.commit.json": "6645cea0e68db57596b81ef3ec2eec8c375701def07c95dee9ca2e096f996381",
+    "run\\selection_predictions\\p_0.000\\root_007.npz": "69323118dcd323a7274043949569e412e56fec88ab9830f7ca11e0c31d1fbc5f",
+    "run\\selection_predictions\\p_0.000\\root_007.npz.commit.json": "4127684795ab4bf7ed3ddc8abdfe0edf1c16f86a614c10cb3900e6239a1d6305",
+    "run\\selection_predictions\\p_0.000\\root_008.npz": "965d99ce7aacd31130810aedf1ce159785c44d75553b1aa01c134ffde41812e3",
+    "run\\selection_predictions\\p_0.000\\root_008.npz.commit.json": "3ba42541a9ba09dcf094f783e365057c8724a3048ee4a825b50183d98346dbbf",
+    "run\\selection_predictions\\p_0.000\\root_009.npz": "d16821fccc0f0d126fc2833277ce672b66d63ff7bdc25afef685f73e32bd1f47",
+    "run\\selection_predictions\\p_0.000\\root_009.npz.commit.json": "7eefff6d22da5ee00ba86f525bf0446895533db8a88f2a47161369c055c81525",
+    "run\\selection_predictions\\p_0.000\\root_010.npz": "3935212610de4ef1ca902fc57c17d247706daa50c7eb885c8b833a09e993d794",
+    "run\\selection_predictions\\p_0.000\\root_010.npz.commit.json": "5ffa1e3043eba339f5bdefde3887e8b7e52deefc3d5b6c378a3e4c9216f0258a",
+    "run\\selection_predictions\\p_0.000\\root_011.npz": "c40df57ca7357abb5c9804a4a1447f04623f216e7e9cfdd012fcc65505a7c827",
+    "run\\selection_predictions\\p_0.000\\root_011.npz.commit.json": "56e5ea2a70439a04dbc664783a611d6017b88dcf9a1e14d2d9ce76a38d75f4ce",
+    "run\\selection_predictions\\p_0.000\\root_012.npz": "6203eeac2dd318a7095b1cac20e93502fc4eb638969a38cab1000d3647b4c6b8",
+    "run\\selection_predictions\\p_0.000\\root_012.npz.commit.json": "8d6125f96e0977d7aaf8334363860eb5b4eacc8335d606bfd08aef49002ccdcb",
+    "run\\selection_predictions\\p_0.000\\root_013.npz": "8721bccfbea62e52447b6609c724f06736d5467fe16a6c40b6699aaeffcab94f",
+    "run\\selection_predictions\\p_0.000\\root_013.npz.commit.json": "2110cbb0304b94a48eda1541924774d80a1d16e78697118b233932bc0ff75342",
+    "run\\selection_predictions\\p_0.000\\root_014.npz": "f09fe495f90853b8e7330dbfca18790247a68d36e2f4c59c7c37a229a3544031",
+    "run\\selection_predictions\\p_0.000\\root_014.npz.commit.json": "1508332ec491395590e1ef55ae87b05538bf9a7723a0dc11ae8464f9aac8ec8d",
+    "run\\selection_predictions\\p_0.000\\root_015.npz": "7cb6ca3040c489d41202e06bf032116d823dd37acf54822897de88d29dea5f50",
+    "run\\selection_predictions\\p_0.000\\root_015.npz.commit.json": "5ce8ebe4b55f1b84d142294f307d65d49d2a7de8ac8bb618b6fa6409bdd719dc",
+    "run\\selection_predictions\\p_0.000\\root_016.npz": "e2262008b546282bff661d68c6fbc055d5ca1d27f3bfb3c957721755680ac034",
+    "run\\selection_predictions\\p_0.000\\root_016.npz.commit.json": "56537cdab7b36458c672ebf7fc1bcbeb881c8634223890f7a95ce792f25e83ad",
+    "run\\selection_predictions\\p_0.000\\root_017.npz": "d47b6f3207d88031e344f34c59f299e805af907c8a40848558ebfcae7a65b6aa",
+    "run\\selection_predictions\\p_0.000\\root_017.npz.commit.json": "f82a9da90410abad6427d5fb923949f8f62771fd6b25ade2c1542a7f5cb8abe0",
+    "run\\selection_predictions\\p_0.000\\root_018.npz": "d9cf398b817e2c21206cf40a965593890bb8654003347d15196a9cbf0500681c",
+    "run\\selection_predictions\\p_0.000\\root_018.npz.commit.json": "ceef08c0ede65a00798203f61118095cc54538c20e3b898fca6a7e791bd2b26e",
+    "run\\selection_predictions\\p_0.000\\root_019.npz": "4593dd843d50a204ec0eb54d91c2c700e3c0c7b200cabbcb9f1622a2c5a3c99b",
+    "run\\selection_predictions\\p_0.000\\root_019.npz.commit.json": "2fb055345b3857788066ac4f702a2942e0252a682e40d880ad060f36bc6144df",
+    "run\\selection_predictions\\p_0.004\\root_000.npz": "9173681fe9dcd6daf442a9646f369548de8a50a685c6374f8b1103b77c44539e",
+    "run\\selection_predictions\\p_0.004\\root_000.npz.commit.json": "964b81bc80430a65b1ec73c3cd216b33652c8f53daa9014dc627c3a16b3a58da",
+    "run\\selection_predictions\\p_0.004\\root_001.npz": "bf8b0f0829c2d38cef5d25014a2779b6539f5ef81ade482e03cc1af29aaba771",
+    "run\\selection_predictions\\p_0.004\\root_001.npz.commit.json": "c2182b3bddddb60550798451cd5b03347f326225aff052bb475b8e200633908b",
+    "run\\selection_predictions\\p_0.004\\root_002.npz": "c806f6da24d9b4929bd1f8a4ce90a5fc573d1a441602f9b6c8edcc09adcca744",
+    "run\\selection_predictions\\p_0.004\\root_002.npz.commit.json": "4c3ee0501bb8e9e9470915aded0dacaea7bda08f0d56352ed125c46b05541c20",
+    "run\\selection_predictions\\p_0.004\\root_003.npz": "c56d4f78314adb7371fb9c5614fd60ea228b88401347e7f57817ae2e73cfc8b7",
+    "run\\selection_predictions\\p_0.004\\root_003.npz.commit.json": "c78808bba5cafc5420f4df7c062db3d82f24a15f467b7ebb94f6d05dd70ef676",
+    "run\\selection_predictions\\p_0.004\\root_004.npz": "43e5d22faf6bb2e46881ceda10b8ac55c7465905246a272b08ff12f11b697421",
+    "run\\selection_predictions\\p_0.004\\root_004.npz.commit.json": "ecf594895acd75d09e711d929453bd237be9605250b2f6baeadad981dfff2be7",
+    "run\\selection_predictions\\p_0.004\\root_005.npz": "9639ca7eb629a98c50fc442ab963685c7c08c2f29829c5f6efd1fcd11ad1aaee",
+    "run\\selection_predictions\\p_0.004\\root_005.npz.commit.json": "ebd07c5d33f036387f1d3072a7b4868f275c9bdab9741de3efe39e27069b5bef",
+    "run\\selection_predictions\\p_0.004\\root_006.npz": "87014873445c07e0fd140c5ba4a4fba50c2262e84efff069665cdd694f05f524",
+    "run\\selection_predictions\\p_0.004\\root_006.npz.commit.json": "a5c402dd0b92d66832e27927b8d47888cd7326a65d318013af56f791c623dee3",
+    "run\\selection_predictions\\p_0.004\\root_007.npz": "4dfacb384da6fd8692e3d4737efc06b54ce545df480d089721ddf97bb6640a84",
+    "run\\selection_predictions\\p_0.004\\root_007.npz.commit.json": "8d21262adb66490cb29edee7d8322f15fc6a0a8bad78f8de0a9e0845651857c6",
+    "run\\selection_predictions\\p_0.004\\root_008.npz": "6b10e46462de727327da4d8e5d901fc71327eb8fbaac7efcba99f0bacfacd280",
+    "run\\selection_predictions\\p_0.004\\root_008.npz.commit.json": "3822e64e1cdcb9ad823ec87b9b4e7f0c3664353f7f40020a802bd98d3c3d5147",
+    "run\\selection_predictions\\p_0.004\\root_009.npz": "71a09fc38191d68b2757fd567aaa1c07abc31fb8547720d676c502d4eaaba714",
+    "run\\selection_predictions\\p_0.004\\root_009.npz.commit.json": "95cdde8b02a8bdf6cba4467010baa90355e2fdbbdc59e594f22d8f02abd47329",
+    "run\\selection_predictions\\p_0.004\\root_010.npz": "82e5cf1bf46af87ef53f771d9f52922a964d0a054d1651171f17769309e3f06b",
+    "run\\selection_predictions\\p_0.004\\root_010.npz.commit.json": "ea7983b4f6a9bab8f9b5028d0a5a4d47b2530ea9acafa87eef445858c4f6374e",
+    "run\\selection_predictions\\p_0.004\\root_011.npz": "545de0bc768b6ad0ca71a395433aaa5586d0360d75bcd9f6f6fe2bcd681736e5",
+    "run\\selection_predictions\\p_0.004\\root_011.npz.commit.json": "ed8d563b84ab1f84cdccd880ec1aaf887f53522025ea1b68d5d5857bb9607d8e",
+    "run\\selection_predictions\\p_0.004\\root_012.npz": "253c52785247e45b99f0308c70995c285e2630f00e439d8943b2551426b45376",
+    "run\\selection_predictions\\p_0.004\\root_012.npz.commit.json": "72756452302398c4b3b21c388ab000bd32a3887afa08ff9fdc48b696c564e8ac",
+    "run\\selection_predictions\\p_0.004\\root_013.npz": "426fe5a202c13c4abccc6646b019a9ce23fea8c8f74726b2bf6f0bf163d14178",
+    "run\\selection_predictions\\p_0.004\\root_013.npz.commit.json": "f0b38ae82d151ccea0855cf9713a405fa49758411ed35effeecf832675c4bd6e",
+    "run\\selection_predictions\\p_0.004\\root_014.npz": "dd8f10d6e8869850e89f1b507c2effc351f34b00f56529496c22366e6559fbc4",
+    "run\\selection_predictions\\p_0.004\\root_014.npz.commit.json": "dafed45262b9f83cda76e3b282bcf3c5077d3be2ec2e934fda7ef02bccc1bc99",
+    "run\\selection_predictions\\p_0.004\\root_015.npz": "e2b814ec7c8c29dee1268e18927cea34079ff584f9a8c687e391a1cde45bae1c",
+    "run\\selection_predictions\\p_0.004\\root_015.npz.commit.json": "ba2379621d6b403494f2ce220d09a2d55eb9593a56a873c3bcc98845b3dc06ea",
+    "run\\selection_predictions\\p_0.004\\root_016.npz": "4ca00bac45c93e25749a9320fd26bf14e53f55172298ff8f4441d71936b05b7e",
+    "run\\selection_predictions\\p_0.004\\root_016.npz.commit.json": "ea682713b95968a820d740b4b14821fb10419fea96c9cdc86a58d3deb45f3b56",
+    "run\\selection_predictions\\p_0.004\\root_017.npz": "e186e032a8505a42f4802335f26c7ec73c5fa6df61b0f454c71da34423ae06d1",
+    "run\\selection_predictions\\p_0.004\\root_017.npz.commit.json": "8b598f2c7a23e1964b92044e3b431eea04f35f61b4f58af51696721585ab04c0",
+    "run\\selection_predictions\\p_0.004\\root_018.npz": "c4eb84598de203c13c4afe5d9438ba85fc989e3b9f013418e3de9c7d635ab2a5",
+    "run\\selection_predictions\\p_0.004\\root_018.npz.commit.json": "6f94315fddfc094524735c6a0b756084195b5fa1a1800fa1ec00f1652d8fa43e",
+    "run\\selection_predictions\\p_0.004\\root_019.npz": "b8f4ebed68625ad687d738bd10cee6e50d8762661e379e065a23a4b8b4d4098c",
+    "run\\selection_predictions\\p_0.004\\root_019.npz.commit.json": "a5f91d6ef4d0e13ecb6941aa4c340c395db42c788f027d2ef31a5bc5b9e44679",
+    "run\\selection_predictions\\p_0.008\\root_000.npz": "b5a54ea8da94096f8b55d694871bfd3d031a11bd1bb9fa70870c6a6d3cb56ad7",
+    "run\\selection_predictions\\p_0.008\\root_000.npz.commit.json": "6d7d74c6cf2152484daf71e6313299f4b7ee8c2cbdd9a91055077bb4e7caeb54",
+    "run\\selection_predictions\\p_0.008\\root_001.npz": "e2ff497e44e5863d676f8a2eac3a570aadb825a9ca21cb07935ed440c7cd3341",
+    "run\\selection_predictions\\p_0.008\\root_001.npz.commit.json": "5e4dff06a70e16c924a5a85512bc9591f0c34b6eecdd3a394ee9cbe361e3df8e",
+    "run\\selection_predictions\\p_0.008\\root_002.npz": "0c3a6dab3de5e9259c1a863be44b9750125f107d29a0b27c88288b1c32561266",
+    "run\\selection_predictions\\p_0.008\\root_002.npz.commit.json": "3ed3066d62f4554935ea5511f4ad9ea02b2d0f2f8bc67043a66213d55b4a51a1",
+    "run\\selection_predictions\\p_0.008\\root_003.npz": "1c0238030b9b44bf325d2e0146d38b139c77021d2bb0eacf7876233c11626f11",
+    "run\\selection_predictions\\p_0.008\\root_003.npz.commit.json": "ed4d025071bbcbf8bbd4210a68b14ff683764696b267e277d0f8c996405aef7c",
+    "run\\selection_predictions\\p_0.008\\root_004.npz": "dfc115453f3c0450034f9592ba510b2ddbd73174a4350cadbb5df764417bcfd2",
+    "run\\selection_predictions\\p_0.008\\root_004.npz.commit.json": "e21a9d7ddbacb4636aab9040ec50cdf79eb79e34beb9b0b7b88684fa993c0635",
+    "run\\selection_predictions\\p_0.008\\root_005.npz": "ce69652bf3aa2f4741bdb6464c8503586b0b750e0ea10d66e6539d3253a03941",
+    "run\\selection_predictions\\p_0.008\\root_005.npz.commit.json": "0ef2ef5083cc47b5a14f64656f7436d1b1b3090fbfa9ddacf424fbbc9184a8ea",
+    "run\\selection_predictions\\p_0.008\\root_006.npz": "d1fb05b4037a304f4c15e8f0c1d9898330d028ba04ee3099a320d6eb4432f806",
+    "run\\selection_predictions\\p_0.008\\root_006.npz.commit.json": "3960a6e44d271c9c03b02f31b03eadfc849b293ce4592088027c6f12b8fd1804",
+    "run\\selection_predictions\\p_0.008\\root_007.npz": "beb50798063f827708842df74e94ae1b793b8f87281b85f9cb5702b4fab784d1",
+    "run\\selection_predictions\\p_0.008\\root_007.npz.commit.json": "a85d45ee2f4c46fe32f6b512a2b1cad6523aa7dee97bca8c397bc14ae936b50d",
+    "run\\selection_predictions\\p_0.008\\root_008.npz": "939e1d4c19ab9a492851b5a7ad2b4cb0bbac476d57bef10f1bb2aee2a1d3f13d",
+    "run\\selection_predictions\\p_0.008\\root_008.npz.commit.json": "f0eb9327a6df4c420da33dd87c1df93ae49745ca569897afc3323920363741ed",
+    "run\\selection_predictions\\p_0.008\\root_009.npz": "e957219b9edaa9b7da7697c7b12b7db3ba3de02b7b69f99c34f52dc4e2cb4910",
+    "run\\selection_predictions\\p_0.008\\root_009.npz.commit.json": "1910ead586c90cfa340c7f931d8542660c8442599050dcb9051433a2a22c7175",
+    "run\\selection_predictions\\p_0.008\\root_010.npz": "ffa529d150f09cb7b017e44e88062c90812018225fda34b0ec7abab826784b3d",
+    "run\\selection_predictions\\p_0.008\\root_010.npz.commit.json": "3c8958b35ae3f0b066998f6c7fec159c123368e4ef636a19ac554ced0955c637",
+    "run\\selection_predictions\\p_0.008\\root_011.npz": "7e125e7ea9d79458285dc6cc1ab502e9e9d7dd8463bef48a15858ac03a95b623",
+    "run\\selection_predictions\\p_0.008\\root_011.npz.commit.json": "1d662a006b240beb57e169c81ebf1ca2017301620a9a6cc8bc19a9355d4c6cc0",
+    "run\\selection_predictions\\p_0.008\\root_012.npz": "3324ee281713bdbbcff0dc9d64b0e636144eee2fa3ea822ced2dcaaca4411f08",
+    "run\\selection_predictions\\p_0.008\\root_012.npz.commit.json": "bfbef591b1d1c1e97f113e6ed98ced3bef0ba98c91ae61bdcd74af31f40e25be",
+    "run\\selection_predictions\\p_0.008\\root_013.npz": "f8bcff10720ca1c4d4a19284ff1cf17e7ed8a538c44475638b6e2afec2c21b66",
+    "run\\selection_predictions\\p_0.008\\root_013.npz.commit.json": "82ee6a3111497ad0ed919fc3c2a219f93f359b7dcc42a5166c799fadfe10800e",
+    "run\\selection_predictions\\p_0.008\\root_014.npz": "83f560b348e6cd1fa209629a7ad2010ae3fa977d9f3cfe88327192a6ce2b9d66",
+    "run\\selection_predictions\\p_0.008\\root_014.npz.commit.json": "3381ed941b43fc34db3d25ea30017160a5c9842e866e22cea6947ee7740f7e9a",
+    "run\\selection_predictions\\p_0.008\\root_015.npz": "62a9d2f5414dc990586a9a82f40a0faf1a30282575174cc21024f247a7c81854",
+    "run\\selection_predictions\\p_0.008\\root_015.npz.commit.json": "5746e12351f77d1befc0383c1a59129b363eed3671f2f09bf80b427db912adb6",
+    "run\\selection_predictions\\p_0.008\\root_016.npz": "d0a41860d52600c69dc13eb1deb01fdf6c755aeef4ab134784be39175583c0c5",
+    "run\\selection_predictions\\p_0.008\\root_016.npz.commit.json": "920a677cc6bcf5fe1b13ca3f86bd02a1617ba3909a91c568fb503f196769fa07",
+    "run\\selection_predictions\\p_0.008\\root_017.npz": "f8a15f75cda60342ec9293fa2ce81d96477311ba137e4ac49c2edfdd5c7b7eb7",
+    "run\\selection_predictions\\p_0.008\\root_017.npz.commit.json": "e3dac433687aaf2d68aab4c32f0d3ec811f4a6f81e9a0a70cd02701ee4da28fd",
+    "run\\selection_predictions\\p_0.008\\root_018.npz": "e89b78f6f4bf0b351710e4df7a1a7806ed82f8df4b8f9f9ef835b6f3fd48d08f",
+    "run\\selection_predictions\\p_0.008\\root_018.npz.commit.json": "fbff6f2066ec716f50efbdf7035a919203f915fe1a5634fa7bbb07dcf1193986",
+    "run\\selection_predictions\\p_0.008\\root_019.npz": "a97a259d5df910d1a83a90cbbdd338a1fead9860b448a2c8ed6e36e9576adef6",
+    "run\\selection_predictions\\p_0.008\\root_019.npz.commit.json": "6f705712179a31d3cb481c4f69baf4ec8cd57dbdfa4ce8ced841f8cd522c0aed",
+    "run\\selection_predictions\\p_0.012\\root_000.npz": "d36c54cf422f45ed1a3d96875c95e4ea086b5ebd91519e3743658bf4d0e61300",
+    "run\\selection_predictions\\p_0.012\\root_000.npz.commit.json": "7d60ac20caa11e8874ffeaba52a9aa351c081757b33a661e3b9e928444431b94",
+    "run\\selection_predictions\\p_0.012\\root_001.npz": "e174f793a430a2c881e2e40b36c4aabe3f2d6b8be31c3bca81727edf60b6fc95",
+    "run\\selection_predictions\\p_0.012\\root_001.npz.commit.json": "a6cbd69e2ab592cb5b2d0f7ee704edb419f8add52eb305b94851d9cf52466cc3",
+    "run\\selection_predictions\\p_0.012\\root_002.npz": "2c7fcb34d0ff47b6729b7a9c3b6fb150def22e499e2f028d1fa07976e2cea1a2",
+    "run\\selection_predictions\\p_0.012\\root_002.npz.commit.json": "53da6435ce5fd49a6a2af0c5450a1769c4f0b3f9cbc9b6545679f29810413696",
+    "run\\selection_predictions\\p_0.012\\root_003.npz": "4d6422f53d0c1e759a63ebf989b58f3dae0ea5149b748121e2e934caa9ebcdca",
+    "run\\selection_predictions\\p_0.012\\root_003.npz.commit.json": "501192a29b4789d05eb17a9ddb6c59bfeda711f6f6c1249eb43d697afef0b597",
+    "run\\selection_predictions\\p_0.012\\root_004.npz": "092bb03fd78a9d7b778d521b2e1c433dbf7c223221644ac780259bf65617d342",
+    "run\\selection_predictions\\p_0.012\\root_004.npz.commit.json": "3687d1bb24733c02f1f8d53ff03cda456f3ebea8e680928b81010ec799ab0e2f",
+    "run\\selection_predictions\\p_0.012\\root_005.npz": "8f9f4d00a0485bdf7474ec06ed75f532fe8e3866a65afc30bd77f98fbafef568",
+    "run\\selection_predictions\\p_0.012\\root_005.npz.commit.json": "bbeead89d4edafcb633b88d4a78214e224d80ff4b7640d566510c9a89cdce0c4",
+    "run\\selection_predictions\\p_0.012\\root_006.npz": "1826f82c1efe02347f29ae7e1d117a2bc5eb4e6fe5c22863927306a28553321f",
+    "run\\selection_predictions\\p_0.012\\root_006.npz.commit.json": "e6392f44f4a4ccfefda795fe74ce6de1a6f23741a70e40ab5e5966f14a87dac1",
+    "run\\selection_predictions\\p_0.012\\root_007.npz": "e50673f5edb134df6888c0785646188712778f454924f9349caa330512cbc0b3",
+    "run\\selection_predictions\\p_0.012\\root_007.npz.commit.json": "b3dbda568a015c51371400e1d1b8e68024db9c9b35f9a275a5ff96adfbf57836",
+    "run\\selection_predictions\\p_0.012\\root_008.npz": "194be136d8eb335ca8074c734611f38c5e95e8d0f1d34a13173b9d4b120c99ee",
+    "run\\selection_predictions\\p_0.012\\root_008.npz.commit.json": "fd157d215047557a0375e969af8cd9fe40fe58ac8ca8dfa41c438e69e5a793a2",
+    "run\\selection_predictions\\p_0.012\\root_009.npz": "2e5af35be1e51ebdbf7e097d6b949b5f90aadf602c04fe6e0c28246f312b6cb9",
+    "run\\selection_predictions\\p_0.012\\root_009.npz.commit.json": "156cca27a63f16bfab8d4a5fd5e02c597a6951acf779f84e14d73a43823f9701",
+    "run\\selection_predictions\\p_0.012\\root_010.npz": "7fa5e6de8f43b657343ee9992f283d1659d9d90cdc4feb89303e3ca8250ac821",
+    "run\\selection_predictions\\p_0.012\\root_010.npz.commit.json": "db1e63a6aaca5c073353bb693492211699d7b44306ead01d3cbebb1467cc0e6a",
+    "run\\selection_predictions\\p_0.012\\root_011.npz": "829a664baba8f0556b4501deffd23684f072d3aaa8333fb2c922c4106b915112",
+    "run\\selection_predictions\\p_0.012\\root_011.npz.commit.json": "a2db4c40661364c70b2aab350696288db5cad00d184f70f91117041b88bc0381",
+    "run\\selection_predictions\\p_0.012\\root_012.npz": "d5c138620e8e5a127dc1abc95bb9104beae4c98db3f8faac19fc15099e07d389",
+    "run\\selection_predictions\\p_0.012\\root_012.npz.commit.json": "cec64dfe4458a49afc9d745bf1f13f8714cb794eba982445adcbb6b1e0b117a9",
+    "run\\selection_predictions\\p_0.012\\root_013.npz": "6bde88bff8d9f0b2867eca0c3ccc02603ab2001826fa275f06db1c2655a78d59",
+    "run\\selection_predictions\\p_0.012\\root_013.npz.commit.json": "ebdeb10e348b1b70311a6cebc445117809d5d2b3e61d50e036abd528a9eb508a",
+    "run\\selection_predictions\\p_0.012\\root_014.npz": "78b138135760dc9032c3a526ae0d55c47d2673ac9b521c27e1c4fe5c3da3d3ab",
+    "run\\selection_predictions\\p_0.012\\root_014.npz.commit.json": "2fb04d0f309355d5cec9e17085f166fd8343a85a663b0a12e1a4d3402ee4a7e9",
+    "run\\selection_predictions\\p_0.012\\root_015.npz": "af1abe90060624c006bfa427277bbada2c41ce9d31cfb5dbd024e8091d47f97e",
+    "run\\selection_predictions\\p_0.012\\root_015.npz.commit.json": "96d3ad9aeed64efe26491985f08081bd7deb46c387a4843c4df73be054f8b47f",
+    "run\\selection_predictions\\p_0.012\\root_016.npz": "903bd26a829d10d7c08363fdf33f296e5b9a3178cb4464a6fa1ff2dc67cb1af6",
+    "run\\selection_predictions\\p_0.012\\root_016.npz.commit.json": "27ace83a0b81bc30f208c6f99d5fec5ec99fc0c9a733ff6c1f8f4d7015574f42",
+    "run\\selection_predictions\\p_0.012\\root_017.npz": "c7b84023703e2b351c054ddbeb6a8e65b5b746b70dd316bfa79acefcb75eba7a",
+    "run\\selection_predictions\\p_0.012\\root_017.npz.commit.json": "c246a7624b7bd35e63232c60ceec85a164cf365d6962324f4feffdfe0a6bf087",
+    "run\\selection_predictions\\p_0.012\\root_018.npz": "3e0cdb388ce9689d60bde9c42c0a283e29a3be6942615655a622af5ec37bfabf",
+    "run\\selection_predictions\\p_0.012\\root_018.npz.commit.json": "85a945576bf031e2eaf423c5a69b70eb2b61db0db398f8ac01b20d8509322bf7",
+    "run\\selection_predictions\\p_0.012\\root_019.npz": "0e62f50640b06223301b54fe5c9541a3c110e734b057254833b197fa9a482c26",
+    "run\\selection_predictions\\p_0.012\\root_019.npz.commit.json": "706c398918d21f87a5548679179459dd33a27e1578c3df379709f9df9cf35f8c",
+    "run\\selection_predictions\\p_0.016\\root_000.npz": "438ff6e9bb029b079964be3d5dab4f9f95773fba813ee1ebece8eb0c1cab22e9",
+    "run\\selection_predictions\\p_0.016\\root_000.npz.commit.json": "894b6b0834a9329456d3c917f75a8ed24deb101093261692a9cc7b91433dcffd",
+    "run\\selection_predictions\\p_0.016\\root_001.npz": "38b81589db33931516d2b4a91a2191f83865494982fc6af52457b07ec04f1bea",
+    "run\\selection_predictions\\p_0.016\\root_001.npz.commit.json": "50be7adb26d70a4f65743bfc78a7f9c39932b9b16db6fa2c971cea77d17edef8",
+    "run\\selection_predictions\\p_0.016\\root_002.npz": "982a4371e8edfb84cfe959b3740524720c20e785f4513438956e24cb73130b4b",
+    "run\\selection_predictions\\p_0.016\\root_002.npz.commit.json": "f1271f6e8cfbe5d485e421f552ad9e6a2731b1b83c962ed5a3836f03110285fe",
+    "run\\selection_predictions\\p_0.016\\root_003.npz": "6d16fb2b12983a9c887e18ddec41cbda015f9f86bfec738422da6df5a1250a4c",
+    "run\\selection_predictions\\p_0.016\\root_003.npz.commit.json": "89e4102eb8021c267f5ff86b3a4fa6fb45870356d7bff09ad801c571b8c5c829",
+    "run\\selection_predictions\\p_0.016\\root_004.npz": "8da6cd757e06369b24058263c331adcb038886b0cb105657f67b5cf2fa6c48bd",
+    "run\\selection_predictions\\p_0.016\\root_004.npz.commit.json": "fabaa205b8527ca5166110cd37f98110d64310032c3ff4158842641ee54ed8f5",
+    "run\\selection_predictions\\p_0.016\\root_005.npz": "8444abb0fcde6e67adc54d62ba23be83304c23797b74fe6a424f2ec9addcfdf4",
+    "run\\selection_predictions\\p_0.016\\root_005.npz.commit.json": "72b5f46ab7bf6beb6d35b9047c774a1d5a4f9701e513bb76709309ff0c896e11",
+    "run\\selection_predictions\\p_0.016\\root_006.npz": "50a5a7cbf369a1aecec9079493b79ea8776057e1b28184da754ccc2bd4fae9ba",
+    "run\\selection_predictions\\p_0.016\\root_006.npz.commit.json": "e4117330fba339404944eab12fd68b4c088e30ed2e23c0f0d3a3b3cef9fa8a05",
+    "run\\selection_predictions\\p_0.016\\root_007.npz": "5b1338c6074c6f34ef5612d92dc9106978dc10c54e03b5a86ada34207115fc9f",
+    "run\\selection_predictions\\p_0.016\\root_007.npz.commit.json": "a3482bde87a231d7b7b6c7c5cc2b5265a62b8ff9ee313a54ee3324407cafb8b8",
+    "run\\selection_predictions\\p_0.016\\root_008.npz": "ea2a0b946c9fe1db35503bbfeb83690e1eeb0f926076bf25ffdf811f9bf1376e",
+    "run\\selection_predictions\\p_0.016\\root_008.npz.commit.json": "c06e4814ad21ca2346eab41c13dfb8e6c555a35ce64350d4bf270af777478e94",
+    "run\\selection_predictions\\p_0.016\\root_009.npz": "5f96665cb235b525c08709a03cb6be4a826c786d8d529d991d92a3d50aadcf10",
+    "run\\selection_predictions\\p_0.016\\root_009.npz.commit.json": "f2d105a48313a20545d2dc2a3aae79f81962e9e801bc7e55093624a3c358c141",
+    "run\\selection_predictions\\p_0.016\\root_010.npz": "848a76506df5a4a726b60dc7cbf3dde57f5c13f39846b05991b6f692aee05c4c",
+    "run\\selection_predictions\\p_0.016\\root_010.npz.commit.json": "f23acc3465f8a765dc486507ca9e748d2e440132b870f8baa96d547429dfc2c9",
+    "run\\selection_predictions\\p_0.016\\root_011.npz": "245c617627946d41ed8bb66c517f8641e6659fbf03fbc00bc421e6d3695612a3",
+    "run\\selection_predictions\\p_0.016\\root_011.npz.commit.json": "63d551d7a0d481f57383e1714059ba1b935602d005090e51859f99249b3b6fde",
+    "run\\selection_predictions\\p_0.016\\root_012.npz": "392828aac83457d6f7d19eb55e58801b592596a016d0a61902406639b046196e",
+    "run\\selection_predictions\\p_0.016\\root_012.npz.commit.json": "763c41a0423d32596a46bd1564c2de82619d10d58beb2a5da1c198a02d3629bc",
+    "run\\selection_predictions\\p_0.016\\root_013.npz": "057a4743f0f3302d9728957e8b4fdcacbabca3aaea07aefc6f511c461b75cf0d",
+    "run\\selection_predictions\\p_0.016\\root_013.npz.commit.json": "085af2a1b13c82ac7351cb989aa6c3bab44e7a0366c5547cc369f89087a2e884",
+    "run\\selection_predictions\\p_0.016\\root_014.npz": "9efa47808f8cdf082572a4016e990ef9b3b5e738942a98f1984a08021113fa6d",
+    "run\\selection_predictions\\p_0.016\\root_014.npz.commit.json": "b4b31a7e5f15bd71f9fec179901cf5fda45d02a5ccf10b6a6e4371f1789217b7",
+    "run\\selection_predictions\\p_0.016\\root_015.npz": "1292a6797de7edd4d770efb4f133e189dafe5b4f52edd15d350ce69680369e7b",
+    "run\\selection_predictions\\p_0.016\\root_015.npz.commit.json": "cca86f30b370eb4bcf71c6d440073e1e67ae2168dbf6e97926a4a5edc0c48ff6",
+    "run\\selection_predictions\\p_0.016\\root_016.npz": "c922b9cf20a1b34e234c0a213e70e32b911a392a79ccd820e94a3e269b500993",
+    "run\\selection_predictions\\p_0.016\\root_016.npz.commit.json": "725850203e66052fbb8ef6b4e7b0d78dca207354d7daf412d09a1a3c5cf4bb77",
+    "run\\selection_predictions\\p_0.016\\root_017.npz": "f0a4b1176ac9bed187ba53b357fbb760aae5b8b743a7944aae7a70fb5980251b",
+    "run\\selection_predictions\\p_0.016\\root_017.npz.commit.json": "5932874e8e9f1390d5a69580b0cba59fff52dc3918919cb441e338a58a55d5b9",
+    "run\\selection_predictions\\p_0.016\\root_018.npz": "d0b4734c428a0335b649af372b8e69890fe96f1c48870e77e9c49a0c21c19f58",
+    "run\\selection_predictions\\p_0.016\\root_018.npz.commit.json": "cd175332a98a57ea5e3d7b815a16134a9e0bc18649a7bf5796a0bf5f372bc191",
+    "run\\selection_predictions\\p_0.016\\root_019.npz": "62f3006b733de1b93207c965dd5bf8820a2ce69ca9a412a28a9ee90e477008de",
+    "run\\selection_predictions\\p_0.016\\root_019.npz.commit.json": "3c470ac95cefc5e686432f12042f9d9324aa6e923105d121cafd4a90fa149c20",
+    "run\\selection_scores.json": "9b152b2bbcb0aa6c42bc176369eb0b19eaaef13107b1cfde7a8c4185d910a139",
+    "run\\templates\\p_0.000.npz": "1db03bef2e0778b46138067430802a8a7698d76e68df1324f012789e0db90734",
+    "run\\templates\\p_0.000.npz.commit.json": "4c83a5cc193d8f2695228e4631aeb3288cbd80e8b03bcec509b7da2af4611859",
+    "run\\templates\\p_0.010.npz": "2aa51ef59e0e9c29132c862124abd1bbf6c3b36f92491b5a265c08667d0ede66",
+    "run\\templates\\p_0.010.npz.commit.json": "0fb2b30825389b11ba38f18ee5c1970c94a33edf41cc213a8ff64dafd95ffe84",
+    "run\\templates\\p_0.020.npz": "93fa5d7287786bbdef3448d98ae3795abf50792b7ef1d2b61047e04d799cef90",
+    "run\\templates\\p_0.020.npz.commit.json": "cd7042c15779a6892b17d0d25df5c77e566fd042127f35ca2fcb1685f7ab835b",
+    "status.json": "66226238eb22729f191c61d2609f38c72887b56a144eec4a75fb75a44858e809"
+  },
+  "original_status_preserved": {
+    "allocated_unique_shots": 3660000,
+    "completed_archives": 0,
+    "current_condition_probability": 0.016,
+    "current_root": 19,
+    "elapsed_seconds": 14.63180685043335,
+    "error": "list index out of range",
+    "error_type": "IndexError",
+    "final_evaluation_shots": 0,
+    "latest_committed_checkpoint": "selection\\p_0.016\\root_019.npz",
+    "latest_committed_checkpoint_sha256": "bd72aaa90f0f9f5f15c264653c8c1bafe641d49e459b7cb43b100603f373aee0",
+    "phase": "selection",
+    "pid": 4740,
+    "sampled_partition_shots": 0,
+    "schema_version": 1,
+    "started_unix": 1794397927.6460123,
+    "status": "failed",
+    "updated_unix": 1794397942.3219185
+  },
+  "recovery_policy": "leave original run untouched; copy only verified template and selection calibration/scoring sample archives to a distinct recovery directory; recompute candidate predictions from all nine frozen DEMs there; never copy or overwrite the invalid prediction outputs or selection_scores.json",
+  "study_final_evaluation_shots": 0,
+  "unique_sample_shots_verified": 510000,
+  "validation_shots": 0,
+  "wrong_prediction_archives": [
+    {
+      "p": 0.0,
+      "root": 0,
+      "sha256": "9ec935e0b68e3c746a9796612173e58790a85a7ea1e0e659796dc71e3928e460",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 1,
+      "sha256": "47a9610ae398c4fc9e7df58404e0ae5cb1ceb9ae31168db46000e7ceb20fe4a2",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 2,
+      "sha256": "89b2b6ee75b9f1ceee1f11a1efa57e6bbfd412a9ec920d50cc88671040b5642c",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 3,
+      "sha256": "04e0a81d315111a5901a88b31b6946bb5c0d85ccc1811f3a785279594e4c3218",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 4,
+      "sha256": "8308b6065bca3d78836e8effe51100182e4dbdec98280eb877242e00421945b9",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 5,
+      "sha256": "65193cff5e057ffd9fcebf563b9a055bd3946c93429eabbfcf8028fea2a2468f",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 6,
+      "sha256": "9d59c06762b21be632cb9d3cd4f54e892ee2f801d059420f45d82c6afcf35721",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 7,
+      "sha256": "69323118dcd323a7274043949569e412e56fec88ab9830f7ca11e0c31d1fbc5f",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 8,
+      "sha256": "965d99ce7aacd31130810aedf1ce159785c44d75553b1aa01c134ffde41812e3",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 9,
+      "sha256": "d16821fccc0f0d126fc2833277ce672b66d63ff7bdc25afef685f73e32bd1f47",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 10,
+      "sha256": "3935212610de4ef1ca902fc57c17d247706daa50c7eb885c8b833a09e993d794",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 11,
+      "sha256": "c40df57ca7357abb5c9804a4a1447f04623f216e7e9cfdd012fcc65505a7c827",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 12,
+      "sha256": "6203eeac2dd318a7095b1cac20e93502fc4eb638969a38cab1000d3647b4c6b8",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 13,
+      "sha256": "8721bccfbea62e52447b6609c724f06736d5467fe16a6c40b6699aaeffcab94f",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 14,
+      "sha256": "f09fe495f90853b8e7330dbfca18790247a68d36e2f4c59c7c37a229a3544031",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 15,
+      "sha256": "7cb6ca3040c489d41202e06bf032116d823dd37acf54822897de88d29dea5f50",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 16,
+      "sha256": "e2262008b546282bff661d68c6fbc055d5ca1d27f3bfb3c957721755680ac034",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 17,
+      "sha256": "d47b6f3207d88031e344f34c59f299e805af907c8a40848558ebfcae7a65b6aa",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 18,
+      "sha256": "d9cf398b817e2c21206cf40a965593890bb8654003347d15196a9cbf0500681c",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.0,
+      "root": 19,
+      "sha256": "4593dd843d50a204ec0eb54d91c2c700e3c0c7b200cabbcb9f1622a2c5a3c99b",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 0,
+      "sha256": "9173681fe9dcd6daf442a9646f369548de8a50a685c6374f8b1103b77c44539e",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 1,
+      "sha256": "bf8b0f0829c2d38cef5d25014a2779b6539f5ef81ade482e03cc1af29aaba771",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 2,
+      "sha256": "c806f6da24d9b4929bd1f8a4ce90a5fc573d1a441602f9b6c8edcc09adcca744",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 3,
+      "sha256": "c56d4f78314adb7371fb9c5614fd60ea228b88401347e7f57817ae2e73cfc8b7",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 4,
+      "sha256": "43e5d22faf6bb2e46881ceda10b8ac55c7465905246a272b08ff12f11b697421",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 5,
+      "sha256": "9639ca7eb629a98c50fc442ab963685c7c08c2f29829c5f6efd1fcd11ad1aaee",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 6,
+      "sha256": "87014873445c07e0fd140c5ba4a4fba50c2262e84efff069665cdd694f05f524",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 7,
+      "sha256": "4dfacb384da6fd8692e3d4737efc06b54ce545df480d089721ddf97bb6640a84",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 8,
+      "sha256": "6b10e46462de727327da4d8e5d901fc71327eb8fbaac7efcba99f0bacfacd280",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 9,
+      "sha256": "71a09fc38191d68b2757fd567aaa1c07abc31fb8547720d676c502d4eaaba714",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 10,
+      "sha256": "82e5cf1bf46af87ef53f771d9f52922a964d0a054d1651171f17769309e3f06b",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 11,
+      "sha256": "545de0bc768b6ad0ca71a395433aaa5586d0360d75bcd9f6f6fe2bcd681736e5",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 12,
+      "sha256": "253c52785247e45b99f0308c70995c285e2630f00e439d8943b2551426b45376",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 13,
+      "sha256": "426fe5a202c13c4abccc6646b019a9ce23fea8c8f74726b2bf6f0bf163d14178",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 14,
+      "sha256": "dd8f10d6e8869850e89f1b507c2effc351f34b00f56529496c22366e6559fbc4",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 15,
+      "sha256": "e2b814ec7c8c29dee1268e18927cea34079ff584f9a8c687e391a1cde45bae1c",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 16,
+      "sha256": "4ca00bac45c93e25749a9320fd26bf14e53f55172298ff8f4441d71936b05b7e",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 17,
+      "sha256": "e186e032a8505a42f4802335f26c7ec73c5fa6df61b0f454c71da34423ae06d1",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 18,
+      "sha256": "c4eb84598de203c13c4afe5d9438ba85fc989e3b9f013418e3de9c7d635ab2a5",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.004,
+      "root": 19,
+      "sha256": "b8f4ebed68625ad687d738bd10cee6e50d8762661e379e065a23a4b8b4d4098c",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 0,
+      "sha256": "b5a54ea8da94096f8b55d694871bfd3d031a11bd1bb9fa70870c6a6d3cb56ad7",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 1,
+      "sha256": "e2ff497e44e5863d676f8a2eac3a570aadb825a9ca21cb07935ed440c7cd3341",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 2,
+      "sha256": "0c3a6dab3de5e9259c1a863be44b9750125f107d29a0b27c88288b1c32561266",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 3,
+      "sha256": "1c0238030b9b44bf325d2e0146d38b139c77021d2bb0eacf7876233c11626f11",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 4,
+      "sha256": "dfc115453f3c0450034f9592ba510b2ddbd73174a4350cadbb5df764417bcfd2",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 5,
+      "sha256": "ce69652bf3aa2f4741bdb6464c8503586b0b750e0ea10d66e6539d3253a03941",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 6,
+      "sha256": "d1fb05b4037a304f4c15e8f0c1d9898330d028ba04ee3099a320d6eb4432f806",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 7,
+      "sha256": "beb50798063f827708842df74e94ae1b793b8f87281b85f9cb5702b4fab784d1",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 8,
+      "sha256": "939e1d4c19ab9a492851b5a7ad2b4cb0bbac476d57bef10f1bb2aee2a1d3f13d",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 9,
+      "sha256": "e957219b9edaa9b7da7697c7b12b7db3ba3de02b7b69f99c34f52dc4e2cb4910",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 10,
+      "sha256": "ffa529d150f09cb7b017e44e88062c90812018225fda34b0ec7abab826784b3d",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 11,
+      "sha256": "7e125e7ea9d79458285dc6cc1ab502e9e9d7dd8463bef48a15858ac03a95b623",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 12,
+      "sha256": "3324ee281713bdbbcff0dc9d64b0e636144eee2fa3ea822ced2dcaaca4411f08",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 13,
+      "sha256": "f8bcff10720ca1c4d4a19284ff1cf17e7ed8a538c44475638b6e2afec2c21b66",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 14,
+      "sha256": "83f560b348e6cd1fa209629a7ad2010ae3fa977d9f3cfe88327192a6ce2b9d66",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 15,
+      "sha256": "62a9d2f5414dc990586a9a82f40a0faf1a30282575174cc21024f247a7c81854",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 16,
+      "sha256": "d0a41860d52600c69dc13eb1deb01fdf6c755aeef4ab134784be39175583c0c5",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 17,
+      "sha256": "f8a15f75cda60342ec9293fa2ce81d96477311ba137e4ac49c2edfdd5c7b7eb7",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 18,
+      "sha256": "e89b78f6f4bf0b351710e4df7a1a7806ed82f8df4b8f9f9ef835b6f3fd48d08f",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.008,
+      "root": 19,
+      "sha256": "a97a259d5df910d1a83a90cbbdd338a1fead9860b448a2c8ed6e36e9576adef6",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 0,
+      "sha256": "d36c54cf422f45ed1a3d96875c95e4ea086b5ebd91519e3743658bf4d0e61300",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 1,
+      "sha256": "e174f793a430a2c881e2e40b36c4aabe3f2d6b8be31c3bca81727edf60b6fc95",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 2,
+      "sha256": "2c7fcb34d0ff47b6729b7a9c3b6fb150def22e499e2f028d1fa07976e2cea1a2",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 3,
+      "sha256": "4d6422f53d0c1e759a63ebf989b58f3dae0ea5149b748121e2e934caa9ebcdca",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 4,
+      "sha256": "092bb03fd78a9d7b778d521b2e1c433dbf7c223221644ac780259bf65617d342",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 5,
+      "sha256": "8f9f4d00a0485bdf7474ec06ed75f532fe8e3866a65afc30bd77f98fbafef568",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 6,
+      "sha256": "1826f82c1efe02347f29ae7e1d117a2bc5eb4e6fe5c22863927306a28553321f",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 7,
+      "sha256": "e50673f5edb134df6888c0785646188712778f454924f9349caa330512cbc0b3",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 8,
+      "sha256": "194be136d8eb335ca8074c734611f38c5e95e8d0f1d34a13173b9d4b120c99ee",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 9,
+      "sha256": "2e5af35be1e51ebdbf7e097d6b949b5f90aadf602c04fe6e0c28246f312b6cb9",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 10,
+      "sha256": "7fa5e6de8f43b657343ee9992f283d1659d9d90cdc4feb89303e3ca8250ac821",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 11,
+      "sha256": "829a664baba8f0556b4501deffd23684f072d3aaa8333fb2c922c4106b915112",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 12,
+      "sha256": "d5c138620e8e5a127dc1abc95bb9104beae4c98db3f8faac19fc15099e07d389",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 13,
+      "sha256": "6bde88bff8d9f0b2867eca0c3ccc02603ab2001826fa275f06db1c2655a78d59",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 14,
+      "sha256": "78b138135760dc9032c3a526ae0d55c47d2673ac9b521c27e1c4fe5c3da3d3ab",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 15,
+      "sha256": "af1abe90060624c006bfa427277bbada2c41ce9d31cfb5dbd024e8091d47f97e",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 16,
+      "sha256": "903bd26a829d10d7c08363fdf33f296e5b9a3178cb4464a6fa1ff2dc67cb1af6",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 17,
+      "sha256": "c7b84023703e2b351c054ddbeb6a8e65b5b746b70dd316bfa79acefcb75eba7a",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 18,
+      "sha256": "3e0cdb388ce9689d60bde9c42c0a283e29a3be6942615655a622af5ec37bfabf",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.012,
+      "root": 19,
+      "sha256": "0e62f50640b06223301b54fe5c9541a3c110e734b057254833b197fa9a482c26",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 0,
+      "sha256": "438ff6e9bb029b079964be3d5dab4f9f95773fba813ee1ebece8eb0c1cab22e9",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 1,
+      "sha256": "38b81589db33931516d2b4a91a2191f83865494982fc6af52457b07ec04f1bea",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 2,
+      "sha256": "982a4371e8edfb84cfe959b3740524720c20e785f4513438956e24cb73130b4b",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 3,
+      "sha256": "6d16fb2b12983a9c887e18ddec41cbda015f9f86bfec738422da6df5a1250a4c",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 4,
+      "sha256": "8da6cd757e06369b24058263c331adcb038886b0cb105657f67b5cf2fa6c48bd",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 5,
+      "sha256": "8444abb0fcde6e67adc54d62ba23be83304c23797b74fe6a424f2ec9addcfdf4",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 6,
+      "sha256": "50a5a7cbf369a1aecec9079493b79ea8776057e1b28184da754ccc2bd4fae9ba",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 7,
+      "sha256": "5b1338c6074c6f34ef5612d92dc9106978dc10c54e03b5a86ada34207115fc9f",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 8,
+      "sha256": "ea2a0b946c9fe1db35503bbfeb83690e1eeb0f926076bf25ffdf811f9bf1376e",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 9,
+      "sha256": "5f96665cb235b525c08709a03cb6be4a826c786d8d529d991d92a3d50aadcf10",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 10,
+      "sha256": "848a76506df5a4a726b60dc7cbf3dde57f5c13f39846b05991b6f692aee05c4c",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 11,
+      "sha256": "245c617627946d41ed8bb66c517f8641e6659fbf03fbc00bc421e6d3695612a3",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 12,
+      "sha256": "392828aac83457d6f7d19eb55e58801b592596a016d0a61902406639b046196e",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 13,
+      "sha256": "057a4743f0f3302d9728957e8b4fdcacbabca3aaea07aefc6f511c461b75cf0d",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 14,
+      "sha256": "9efa47808f8cdf082572a4016e990ef9b3b5e738942a98f1984a08021113fa6d",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 15,
+      "sha256": "1292a6797de7edd4d770efb4f133e189dafe5b4f52edd15d350ce69680369e7b",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 16,
+      "sha256": "c922b9cf20a1b34e234c0a213e70e32b911a392a79ccd820e94a3e269b500993",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 17,
+      "sha256": "f0a4b1176ac9bed187ba53b357fbb760aae5b8b743a7944aae7a70fb5980251b",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 18,
+      "sha256": "d0b4734c428a0335b649af372b8e69890fe96f1c48870e77e9c49a0c21c19f58",
+      "shape": [
+        5,
+        2500
+      ]
+    },
+    {
+      "p": 0.016,
+      "root": 19,
+      "sha256": "62f3006b733de1b93207c965dd5bf8820a2ce69ca9a412a28a9ee90e477008de",
+      "shape": [
+        5,
+        2500
+      ]
+    }
+  ]
+}

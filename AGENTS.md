@@ -27,3 +27,11 @@
 ## Project-specific baseline
 
 The strongest recurring conventional baseline is fixed PyMatching. Existing adaptive and neural results have not demonstrated a reliable improvement over it. A position-preserving CNN improved over the earlier pooled CNN on small development data but remained worse than PyMatching. Keep that distinction explicit.
+
+## Supervisor review checkpoints
+
+- Before acting on supervisor feedback, read the latest PR conversation and inline review comments; use the exact reviewed commit as the starting point and preserve the original comment's scope.
+- Record each response in the repository-root `REVIEW_HANDOFF.md`, including reviewed commit, requested corrections, changed files, tests, evidence links/hashes, limitations, and whether additional sampling is authorized.
+- If the supervisor requests a stop for another review, stop after pushing the reviewed corrections and handoff. Do not continue to the next phase while waiting.
+- Never merge, enable auto-merge, or close a research PR unless the project owner explicitly authorizes that action. A request to open/update a PR is not merge authorization.
+- Do not represent source review or unit tests as an independent raw-data replay. State which checks were actually rerun and which are prior local evidence.

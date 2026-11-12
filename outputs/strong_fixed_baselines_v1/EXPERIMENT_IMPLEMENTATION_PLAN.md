@@ -1,0 +1,13 @@
+# Implementation plan — Strong fixed-baseline comparison v1
+
+1. `prepare_seed_inventory.py` verifies and reads only the 25 historical seed metadata files named by the existing Stage 5 inventory; it creates disjoint profile, selection, validation, final-calibration, final-evaluation, bootstrap and separate benchmark streams.
+2. Run the no-shot unit/structural tests. Preserve freeze revisions V1–V5 and all benchmark failure records. The v2 benchmark failed after 3,500 non-study shots because the seed inventory lacked per-stream shot counts; v3 failed after a separate 3,500 shots due a stale role lookup. The exact errors and retired seeds are documented. `PRETEST_FREEZE_V6.json` freezes direct seed/allocation checks, resume-safe final-root status, and the successful benchmark-v4 report. The 3,500 benchmark-v4 samples exercise the nine-candidate and five-arm decoder paths, pooled profile estimation, representative compressed I/O, memory and a 100,000-resample root-bootstrap workload. They are outside the 3.66M study allocation.
+3. `run_development.py` verifies the source/config/protocol/seed hashes, exclusive lock, resources and circuit/DEM graph definitions before any study shot generation.
+4. Generate profile templates, selection-development and independent validation partitions. Select one safety-constrained fixed p using selection labels only; validation either accepts that p under the p=0 bound or triggers the frozen p=0 fallback.
+5. Generate the final-development calibration detector pool from its preallocated calibration seeds. Estimate one pooled p using detector arrays only. Write `FINAL_EVAL_SELECTION_FREEZE.json` before the final-development evaluation sampler is invoked.
+6. Generate one final-development detector/observable matrix per root and score nominal, pooled static, safety static, per-root adaptive and privileged reference matchers on those same arrays.
+7. Save atomically by partition/root with commit markers. On resume, validate the marker and archive hash; ambiguous orphan data fail closed. Each final root checkpoint is durable before moving on. `status.json` distinguishes sampling completion from independent-audit completion.
+8. `audit_saved_run.py` independently rebuilds and re-decodes all saved arrays and reproduces the selection/calibration calculations. Only after that audit passes may `analyze_results.py` create aggregate tables and the report.
+9. Development data are retained locally and excluded by the repository's `*.npz` ignore rule. Commit only protocol, source, tests, lightweight CSV/JSON summaries, and documentation.
+
+No Stage 5 runner, output, seed, decoder, or result is modified. This version does not execute a confirmatory test or alter a frozen Stage 5 decision.
