@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Q-SHIFT · Interactive Code Model</title>
+  <style>
+    :root{color-scheme:dark;--bg:#07111d;--panel:#101d2c;--line:#263c50;--text:#eff7ff;--muted:#9bb1c5;--cyan:#50e5f4;--violet:#a88aff;--pink:#ff6fbb;--green:#72f0c3;--amber:#ffc66e}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 12% 0%,#13243a 0,transparent 42%),var(--bg);color:var(--text);font:15px/1.5 "Segoe UI",system-ui,sans-serif}
+    header,main,footer{width:min(1180px,calc(100% - 32px));margin:auto}header{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}.brand{font-size:18px;font-weight:750;letter-spacing:.14em;color:var(--cyan)}header a{color:var(--muted);text-decoration:none}main{padding:28px 0 44px}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:.18em;font-weight:700}h1{font-size:clamp(28px,4vw,43px);line-height:1.08;margin:8px 0 10px}h2{font-size:19px;margin:0 0 8px}p{color:var(--muted);margin:4px 0}.tag{display:inline-flex;border:1px solid #315161;border-radius:999px;padding:5px 10px;color:var(--green);font-size:11px;letter-spacing:.08em}.layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:16px;margin-top:24px}.panel{background:linear-gradient(150deg,#132237,#0c1725);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 14px 40px #02091266}.board{min-width:0}.board-head,.control-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.board-wrap{margin-top:16px;background:#07111c;border:1px solid #203449;border-radius:13px;padding:10px}.board svg{display:block;width:100%;height:auto;max-height:480px}.gridline{stroke:#22364a;stroke-width:1.4;stroke-dasharray:5 7}.data-node{fill:#102839;stroke:#50e5f4;stroke-width:3;cursor:pointer}.data-node.selected{fill:#56304d;stroke:var(--pink);stroke-width:5}.data-node.input{fill:#8d3d75;stroke:#ffb6db;stroke-width:5}.node-label{fill:#eaf8ff;font-size:13px;text-anchor:middle;pointer-events:none}.qid-label{fill:#92adc2;font-size:9px;text-anchor:middle;pointer-events:none}.check-node{fill:#231e3c;stroke:var(--violet);stroke-width:2.5}.check-node.event{fill:#693de8;stroke:#d0baff;stroke-width:4;filter:drop-shadow(0 0 7px #a88aff)}.check-node.unavailable{fill:#121c28;stroke:#52677b;stroke-dasharray:3 3}.check-label{fill:#e9e2ff;font-size:10px;text-anchor:middle;pointer-events:none}.legend{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin-top:12px}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;background:var(--cyan)}.dot.pink{background:var(--pink)}.dot.violet{background:var(--violet)}.controls{display:flex;flex-direction:column;gap:14px}.field{display:grid;gap:6px}.field label{color:var(--muted);font-size:12px}.field select{background:#07111d;color:var(--text);border:1px solid #354c62;border-radius:8px;padding:10px;font:inherit}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}.buttons button:last-child{grid-column:1/-1}.btn{border:1px solid #3c536a;border-radius:9px;padding:11px 12px;background:#13263a;color:var(--text);font-weight:700;cursor:pointer}.btn:hover:not(:disabled){border-color:var(--cyan);box-shadow:0 0 18px #50e5f426}.btn.primary{background:linear-gradient(110deg,#0e7788,#5945a5);border:0}.btn.reset{color:#ffd7a0}.btn:disabled{opacity:.42;cursor:not-allowed}.status{border-left:3px solid var(--cyan);padding:8px 10px;background:#0a1622;border-radius:4px 8px 8px 4px}.status.error{border-color:#ff7687}.status.good{border-color:var(--green)}.divider{height:1px;background:var(--line);margin:2px 0}.resultbox{min-height:90px;padding:12px;border:1px solid #293e53;border-radius:10px;background:#091522}.resultbox strong{color:var(--cyan)}.resultbox .truth{color:var(--green)}.small{font-size:12px;color:var(--muted)}.round-row{display:flex;align-items:center;gap:8px;margin-top:12px}.round-row input{flex:1;accent-color:var(--cyan)}.notice{border:1px solid #664a31;background:#211b15;color:#ffe0b0;border-radius:10px;padding:10px 12px;font-size:12px;margin-top:14px}.events{font-family:ui-monospace,Consolas,monospace;color:#c9d9e8;font-size:12px;overflow-wrap:anywhere}.footer{padding:15px 0 24px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:820px){.layout{grid-template-columns:1fr}.board svg{max-height:390px}}@media(max-width:520px){header,main,footer{width:min(100% - 20px,1180px)}header{align-items:flex-start;flex-direction:column;gap:6px}.panel{padding:14px}.buttons{grid-template-columns:1fr}.buttons button:last-child{grid-column:auto}}
+  </style>
+</head>
+<body>
+  <header><a class="brand" href="/">Q-SHIFT</a><span class="tag">DETERMINISTIC EXHIBITION MODE</span></header>
+  <main>
+    <div class="eyebrow">ONE CONTROLLED SIMULATED FAULT</div>
+    <h1>See the clues. Then decode.</h1>
+    <p>This separate learning mode inserts one known Pauli fault into an ideal Stim surface-code circuit, derives the detector events from its measurement record, and asks PyMatching to predict the logical observable.</p>
+    <div class="layout">
+      <section class="panel board" aria-labelledby="boardTitle">
+        <div class="board-head"><div><h2 id="boardTitle">Distance-3 rotated Z-memory geometry</h2><p>Data sites and check locations follow the Stim circuit coordinates.</p></div><span id="transportTag" class="tag">DESKTOP MOCK</span></div>
+        <div class="board-wrap"><svg id="codeMap" viewBox="0 0 700 500" role="img" aria-label="Stim-derived surface-code geometry"></svg></div>
+        <div class="legend"><span><i class="dot"></i>Data qubit</span><span><i class="dot violet"></i>Check site</span><span><i class="dot pink"></i>Known simulated input fault</span></div>
+        <div class="round-row"><label for="timeSlice">Detector time slice <b id="timeValue">0</b></label><input id="timeSlice" type="range" min="0" max="5" value="0" disabled></div>
+        <div class="small" id="timeSummary">Inject a fault to derive the six-round detector-event history.</div>
+      </section>
+      <section class="panel controls" aria-labelledby="controlTitle">
+        <div class="control-head"><div><h2 id="controlTitle">Interactive trial</h2><p>Desktop controls use the same local state machine as the mocked ESP32 protocol.</p></div></div>
+        <div class="field"><label for="dataIndex">Data qubit (row-major)</label><select id="dataIndex"></select></div>
+        <div class="field"><label for="pauli">Known simulated Pauli input</label><select id="pauli"><option>X — flips a Z measurement relation</option><option>Y — combined Pauli fault</option><option>Z — flips an X measurement relation</option></select></div>
+        <div class="buttons"><button class="btn primary" id="inject">1 · Inject Error</button><button class="btn" id="decode" disabled>2 · Decode</button><button class="btn reset" id="reset">3 · Reset</button></div>
+        <div class="status" id="status" role="status" aria-live="polite">Loading verified Stim geometry…</div>
+        <div class="resultbox" id="result"><span class="small">No trial yet.</span></div>
+        <div class="small">Only detector bits are passed to PyMatching. The simulated reference observable is revealed after decoding and is never an input to the decoder.</div>
+      </section>
+    </div>
+    <div class="notice"><b>Educational simulation only.</b> This does not connect to a quantum processor. The highlighted qubit is the known simulated input fault, not a fault inferred by PyMatching. This interface does not invent a physical correction path; it displays the predicted logical observable.</div>
+  </main>
+  <footer><span>Q-SHIFT · isolated exhibition software</span><span>ESP32 firmware is not preloaded; hardware remains unverified.</span></footer>
+  <script>
+    const $=id=>document.getElementById(id);let currentState=null;let busy=false;let layoutReady=false;
+    function setStatus(text,kind=''){const el=$('status');el.textContent=text;el.className='status '+kind}
+    function svgNode(name,attrs={},parent=$('codeMap')){const n=document.createElementNS('http://www.w3.org/2000/svg',name);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,String(v));parent.appendChild(n);return n}
+    function point(x,y){return [90+x*78,38+y*67]}
+    function renderLayout(layout){
+      const svg=$('codeMap');svg.replaceChildren();
+      const data=layout.data_sites,checks=layout.check_sites;
+      const xs=[90,558],ys=[38,440];svgNode('line',{x1:xs[0],y1:point(0,0)[1],x2:xs[1],y2:point(0,6)[1],class:'gridline'});
+      for(let x=0;x<=6;x+=2){const p1=point(x,0),p2=point(x,6);svgNode('line',{x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1],class:'gridline'})}
+      for(let y=0;y<=6;y+=2){const p1=point(0,y),p2=point(6,y);svgNode('line',{x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1],class:'gridline'})}
+      for(const site of checks){const [cx,cy]=point(site.x,site.y);svgNode('rect',{x:cx-15,y:cy-15,width:30,height:30,rx:7,class:'check-node',id:'check-'+site.led_index});const t=svgNode('text',{x:cx,y:cy+4,class:'check-label'});t.textContent=site.basis+String(site.led_index+1)}
+      for(const site of data){const [cx,cy]=point(site.x,site.y);svgNode('circle',{cx,cy,r:22,class:'data-node',id:'data-'+site.data_index});const t=svgNode('text',{x:cx,y:cy+5,class:'node-label'});t.textContent='D'+String(site.data_index+1);const q=svgNode('text',{x:cx,y:cy+36,class:'qid-label'});q.textContent='Stim '+site.stim_qubit}
+      const sel=$('dataIndex');sel.replaceChildren();for(const site of data){const o=document.createElement('option');o.value=site.data_index;o.textContent=`D${site.data_index+1} · Stim q${site.stim_qubit} · (${site.x}, ${site.y})`;sel.appendChild(o)}sel.value='4';
+      sel.addEventListener('change',highlightSelected);highlightSelected();
+    }
+    function highlightSelected(){for(const n of document.querySelectorAll('.data-node')){n.classList.remove('selected');n.classList.remove('input')}const el=$('data-'+$('dataIndex').value);if(el)el.classList.add('selected');if(currentState?.fault_input){const f=$('data-'+currentState.fault_input.data_index);if(f)f.classList.add('input')}}
+    function renderState(state){currentState=state;if(state.layout&&!layoutReady){renderLayout(state.layout);layoutReady=true}const labels={desktop_mock_no_esp32_connected:'DESKTOP MOCK · NO ESP32',usb_serial_connected:'USB SERIAL CONNECTED',usb_serial_disconnected:'USB SERIAL DISCONNECTED'};$('transportTag').textContent=labels[state.transport]||'TRANSPORT UNKNOWN';$('timeSlice').disabled=!state.detector_frames;if(!state.detector_frames){$('timeSlice').value='0';for(const el of document.querySelectorAll('.check-node')){el.classList.remove('event');el.classList.remove('unavailable')}}renderFrame();highlightSelected();
+      $('inject').disabled=busy||state.phase!=='idle';$('decode').disabled=busy||state.phase!=='syndrome_ready';$('reset').disabled=busy||state.phase==='idle';
+      const fault=state.fault_input;
+      if(fault){setStatus(`Known simulated ${fault.pauli} input on D${fault.data_index+1} (Stim q${fault.stim_qubit}); detector history derived.`,state.phase==='decoded'?'good':'')}
+      else setStatus('Idle · no simulated fault has been injected.');
+      if(state.phase==='decoded'){
+        const p=state.decoder.predicted_logical_observable,truth=state.simulation_reference.logical_observable,correct=state.simulation_reference.correct;
+        $('result').innerHTML=`<strong>PyMatching predicted logical observable:</strong> ${p}<br><span class="truth">Simulated reference outcome:</span> ${truth} · ${correct?'prediction matches':'prediction differs'}<br><span class="small">The reference outcome is simulation truth, shown only after decoding.</span>`;
+      }else if(state.detector_events){$('result').innerHTML=`<strong>Detector events:</strong> <span class="events">${state.detector_events.map((b,i)=>b?i:null).filter(v=>v!==null).join(', ')||'none'}</span><br><span class="small">40 space-time detector bits; select a time slice to view the eight check LEDs.</span>`}
+      else $('result').innerHTML='<span class="small">No trial yet.</span>';
+    }
+    function renderFrame(){const s=currentState;if(!s?.detector_frames)return;const t=Number($('timeSlice').value),frame=s.detector_frames[t];$('timeValue').textContent=String(t);let active=0;
+      frame.events.forEach((event,i)=>{const el=$('check-'+i);if(!el)return;el.classList.toggle('event',Boolean(frame.valid[i]&&event));el.classList.toggle('unavailable',!frame.valid[i]);if(frame.valid[i]&&event)active++});
+      const absent=frame.valid.filter(v=>!v).length;$('timeSummary').textContent=`Time slice ${t}: ${active} triggered check event${active===1?'':'s'}; ${absent} check site${absent===1?' is':'s are'} outside this boundary slice.`;
+    }
+    async function request(path,body){const response=await fetch(path,{method:body===undefined?'GET':'POST',headers:body===undefined?{}:{'Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body),cache:'no-store'});const data=await response.json().catch(()=>({detail:'Invalid response from local server'}));if(!response.ok)throw new Error(data.detail||`HTTP ${response.status}`);return data}
+    async function action(button,fn){if(busy)return;busy=true;button.disabled=true;let failure=null;try{const state=await fn();renderState(state)}catch(e){failure=e.message}finally{busy=false;if(currentState)renderState(currentState);if(failure)setStatus(failure,'error')}}
+    $('inject').addEventListener('click',()=>action($('inject'),()=>request('/api/interactive/inject',{data_index:Number($('dataIndex').value),pauli:$('pauli').value[0]})));
+    $('decode').addEventListener('click',()=>action($('decode'),()=>request('/api/interactive/decode',{})));
+    $('reset').addEventListener('click',()=>action($('reset'),()=>request('/api/interactive/reset',{})));
+    $('timeSlice').addEventListener('input',renderFrame);
+    request('/api/interactive/state').then(renderState).catch(e=>setStatus(`Local interactive engine unavailable: ${e.message}`,'error'));
+    setInterval(()=>{if(!busy)request('/api/interactive/state').then(renderState).catch(()=>{})},1000);
+  </script>
+</body>
+</html>

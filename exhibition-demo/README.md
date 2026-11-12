@@ -35,6 +35,16 @@ To run the automated checks, install test-only packages once and run:
 - Updates progress only after sampling and decoding each batch. `generated_shots` and `completed_shots` are separate backend fields. The two error counts, paired decoder disagreements, selected estimate, and measured elapsed time come from the run.
 - Stores the active run ID in the browser tab’s session storage so refresh or a short connection interruption can reconnect while the same server process remains alive. The server keeps run status in memory; restarting the server loses that status and the page will say so rather than reconstructing results.
 
+## Interactive single-fault model (E1)
+
+Open `http://127.0.0.1:8765/interactive` after starting the same local server. This is a separate, deterministic learning mode with **Inject Error**, **Decode**, and **Reset** steps. It starts in desktop mock mode and works without an ESP32.
+
+The mode derives its layout and detector mapping from the existing distance-3, five-round `surface_code:rotated_memory_z` circuit. It strips only stochastic noise instructions from that circuit, inserts one explicit X/Y/Z Pauli after the first stabilizer-measurement round, simulates one fixed-seed noiseless tableau trajectory, and converts that measurement record with Stim's measurement-to-detector converter compiled from the unmodified ideal reference circuit. It does not call a Stim sampler or create evaluation shots. PyMatching receives only the 40 detector bits; the simulated reference observable is displayed only after decoding. The decoder output is the predicted logical observable, not a per-qubit physical correction map.
+
+The 9 data indicators use Stim qubits `1,3,5 / 8,10,12 / 15,17,19`; the 8 check indicators use `2,9,11,13,14,16,18,25`. Detector events remain grouped by their actual Stim spatial coordinate and detector-time slice, including unavailable boundary checks. The highlighted data site is a **known simulated input**, not a fault inferred by the decoder.
+
+The ESP32 interface is specified in [`interactive_demo/FIRMWARE_PROTOCOL_E1.md`](interactive_demo/FIRMWARE_PROTOCOL_E1.md). The JSON-Lines protocol, optional host-side pySerial worker, and in-memory serial mock are implemented; a loopback test exercises the worker. No physical COM port was opened and no firmware was flashed. Complete the separate wiring and power review before connecting or programming hardware. To enable a future host bridge, install the optional `requirements-hardware.txt` and set `QSHIFT_ESP32_PORT` before starting the server. This mode is an educational simulation and not a quantum-processor connection.
+
 ## Scientific scope and limits
 
 This is an **educational live simulation**, not the frozen Stage 5 research runner and not a hardware demonstration. It adds the synthetic paired-X event after each of five `MR` instructions in Stim’s generated circuit and uses `decompose_errors=True, approximate_disjoint_errors=True` when constructing the matching graph. The demo’s 17-point detector-profile estimator is a simplified nearest-profile procedure; it is not the exact frozen Stage 5 implementation. Do not pool or present live demo results as additional Stage 5 shots.

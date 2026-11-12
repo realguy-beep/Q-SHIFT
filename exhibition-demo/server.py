@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import logging
+import os
 import secrets
 import threading
 import time
@@ -17,6 +18,8 @@ import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
+
+from interactive_demo.api import create_interactive_integration
 
 ROOT = Path(__file__).resolve().parent
 EVALUATION_SHOT_CHOICES = (1_000, 5_000, 10_000)
@@ -353,6 +356,38 @@ def run(req: RunRequest) -> dict[str, str]:
 @app.get("/api/run/{job_id}")
 def run_status(job_id: str) -> dict[str, Any]:
     return _snapshot(job_id)
+
+
+# E1 is a separate deterministic, single-fault learning mode. The existing
+# /api/run batch experiment and its scientific meaning are left unchanged.
+_interactive_router, _interactive_engine, _interactive_serial_processor = (
+    create_interactive_integration(make_circuit, build_decoder)
+)
+app.include_router(_interactive_router)
+app.state.interactive_engine = _interactive_engine
+app.state.interactive_serial_processor = _interactive_serial_processor
+app.state.interactive_serial_bridge = None
+
+
+@app.on_event("startup")
+async def _start_optional_esp32_bridge() -> None:
+    # Desktop mock is the default. Opening a COM port requires explicit opt-in.
+    port = os.environ.get("QSHIFT_ESP32_PORT", "").strip()
+    if not port:
+        return
+    from interactive_demo.serial_bridge import SerialBridgeWorker
+
+    bridge = SerialBridgeWorker(port, _interactive_serial_processor).start()
+    app.state.interactive_serial_bridge = bridge
+    logger.info("optional ESP32 JSON-Lines bridge requested for %s", port)
+
+
+@app.on_event("shutdown")
+async def _stop_optional_esp32_bridge() -> None:
+    bridge = getattr(app.state, "interactive_serial_bridge", None)
+    if bridge is not None:
+        bridge.stop()
+        app.state.interactive_serial_bridge = None
 
 
 def _open_browser_when_ready() -> None:
