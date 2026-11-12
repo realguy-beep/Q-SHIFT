@@ -18,22 +18,30 @@ from scipy.stats import t as student_t
 def _root_errors(records:list[dict], *, split:str, scenario:str, family:str,
                  history:int, change_after:int|None, target:str)->dict[str,float]:
     grouped=defaultdict(list)
+    endpoints=defaultdict(set)
     for row in records:
         if row['split']!=split or row['scenario']!=scenario or row['template_family']!=family:
             continue
         if int(row['history_length'])!=history: continue
         if change_after is not None and int(row['history_end_exclusive'])<change_after+history:
             continue
+        arm=row['arm']; root=row['root_id']
+        if arm not in ('A','B'): raise ValueError(f'unknown paired arm {arm!r}')
+        endpoint=(int(row['history_end_exclusive']),int(row['next_block_start']))
+        if endpoint in endpoints[(root,arm)]:
+            raise ValueError(f'duplicate update endpoint for {scenario}/{root}/{arm}: {endpoint}')
+        endpoints[(root,arm)].add(endpoint)
         error=abs(float(row[target])-float(row['truth_'+target]))
-        grouped[(row['root_id'],row['arm'])].append(error)
+        grouped[(root,arm)].append(error)
     out={}
     roots=sorted({root for root,_ in grouped})
     for root in roots:
         arms={arm:np.asarray(grouped[(root,arm)],dtype=np.float64) for arm in ('A','B')}
         if any(len(v)==0 for v in arms.values()):
             raise ValueError(f'missing paired arm for {scenario}/{root}')
-        if len(arms['A'])!=len(arms['B']):
-            raise ValueError(f'unpaired update counts for {scenario}/{root}')
+        if endpoints[(root,'A')]!=endpoints[(root,'B')]:
+            raise ValueError(f'unpaired update endpoints for {scenario}/{root}')
+        if len(arms['A'])!=len(arms['B']): raise ValueError(f'unpaired update counts for {scenario}/{root}')
         out[root+':A']=float(arms['A'].mean())
         out[root+':B']=float(arms['B'].mean())
     return out

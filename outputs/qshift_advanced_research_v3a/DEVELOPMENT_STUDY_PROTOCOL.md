@@ -78,7 +78,7 @@ python outputs/qshift_advanced_research_v3a/run_finite_history_study.py `
   --config outputs/qshift_advanced_research_v3a/finite_history_study_config.json `
   --templates outputs/qshift_advanced_research_v3a/template_bank_v1.json `
   --seed-manifest outputs/qshift_advanced_research_v3a/approved_development_seed_manifest.json `
-  --authorization-record outputs/qshift_advanced_research_v3a/sampling_authorization.json `
+  --authorization-record outputs/qshift_advanced_research_v3a/approved_run_record.json `
   --output-dir outputs/qshift_advanced_research_v3a/runs/approved_run_001
 python outputs/qshift_advanced_research_v3a/analyze_finite_history_study.py `
   --results outputs/qshift_advanced_research_v3a/runs/approved_run_001/finite_history_results.json `
@@ -86,3 +86,17 @@ python outputs/qshift_advanced_research_v3a/analyze_finite_history_study.py `
 ```
 
 Those authorization and seed files do not exist in this package. The command fails closed until both are supplied and validated. Do not create them or run this command without separate approval.
+
+## 10. Phase 3B execution-integrity addendum
+
+This addendum specifies runner mechanics and does not change either estimator, the primary estimand, the five condition schedules, root allocation, nested history lengths, model-family arms, or statistical analysis above.
+
+- The executable verifies exact hashes for this protocol, the study configuration, template bank, runner, estimator, analyzer, template generator, and circuit-builder source, plus a fingerprint of the Python/NumPy/Stim versions. Approval also binds the seed-manifest SHA-256 and stable manifest ID, development-only scope, exact condition and split allocation, approved maximum roots/shots, an explicit CPU limit, a memory limit no greater than 2 GiB, expiry, approver, and approval reference.
+- Sampling is replayed causally in blocks. At boundary `t`, each eligible estimate uses only `detectors[t-N:t]`; all A/B and exact/DEM fits share that computed feature mean. The estimate is recorded for the next block before that block is requested from the sampler. At the 5,000-shot transition, the first new-condition block is sampled only after the boundary estimate. The primary step-change analysis remains restricted to `t >= 5,000 + N`.
+- Each root is the checkpoint unit. Root files contain a checksum over canonical JSON, a hash of the exact seed-manifest root entry, and the approved run fingerprint. The checkpoint index and final result are written through same-directory temporary files followed by atomic replacement. Resume verifies every hash, adopts complete orphan root files, skips verified completed roots, and refuses corrupted or mismatched artifacts. Partial temporary files are preserved in an `incomplete_checkpoints/` directory and the corresponding unfinished root can be recomputed from the same pre-approved seeds.
+- Root order is lexicographic by `(split, scenario, root_id)`. Within a root, records are ordered by chronological boundary, then history length, template family in configured order, and arm `A` before `B`. Final JSON is streamed from root checkpoints so the runner does not accumulate the full study in memory.
+- On Windows, checkpoint temp and destination files are kept on the same volume and replaced with `os.replace`; file contents are flushed with `fsync`. Python does not provide a portable directory-entry `fsync` guarantee on this platform, so sudden power-loss durability of rename metadata is not claimed. Checksums detect incomplete or corrupted artifacts on restart.
+
+The approval schema is `qshift-finite-history-approval-v2`. This package contains no such approved record and no production seed manifest. The records created by unit tests are ephemeral fixtures in temporary directories, marked test-only, and are used only with mocked deterministic detector blocks.
+
+`finite_history_pilot_config.json` proposes a separate, development-only execution check with two roots per condition (10 total) and no held-out-development allocation. It retains the same five condition schedules and 10,100 shots per root but is not the primary estimator-comparison analysis and must not be pooled into the 3.03-million-shot proposal. It has no seed inventory or authorization; any execution requires a new approval binding its own config and seed-manifest hashes.

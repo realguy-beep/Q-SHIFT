@@ -142,7 +142,8 @@ class QShiftEstimatorTests(unittest.TestCase):
             auth.write_text('{}')
             absent_seed_manifest=Path(tmp)/'must-not-be-opened.json'
             with self.assertRaises(PermissionError):
-                validate_authorization(auth,absent_seed_manifest,config)
+                validate_authorization(auth,absent_seed_manifest,BASE/'finite_history_study_config.json',
+                                       BANK_PATH,config)
 
     def test_study_protocol_config_allocation_is_internally_consistent(self):
         config=json.loads((BASE/'finite_history_study_config.json').read_text())
@@ -162,7 +163,8 @@ class QShiftEstimatorTests(unittest.TestCase):
                 for arm,error in (('A',aerr[i]),('B',berr[i])):
                     records.append({'split':'heldout_development','scenario':scenario,
                         'template_family':'exact_categorical','history_length':1000,
-                        'history_end_exclusive':6000,'root_id':f'{scenario}-{i}','arm':arm,
+                        'history_end_exclusive':6000,'next_block_start':6000,
+                        'root_id':f'{scenario}-{i}','arm':arm,
                         'truth_p_burst':.008,'p_burst':.008+error,
                         'truth_p_measurement':.006,'p_measurement':.006})
         out=analyze_payload({'records':records})

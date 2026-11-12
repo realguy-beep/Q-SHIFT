@@ -1,0 +1,94 @@
+{
+  "schema": "qshift-finite-history-study-v1",
+  "status": "proposal_not_authorized",
+  "split_roots_per_condition": {
+    "development": 2
+  },
+  "shots_per_root": 10100,
+  "update_block_shots": 100,
+  "history_lengths": [
+    200,
+    1000,
+    5000,
+    10000
+  ],
+  "conditions": {
+    "stationary_nominal": [
+      {
+        "shots": 10100,
+        "p_burst": 0.008,
+        "p_measurement": 0.003,
+        "gate_p": 0.003
+      }
+    ],
+    "measurement_step_up": [
+      {
+        "shots": 5000,
+        "p_burst": 0.008,
+        "p_measurement": 0.003,
+        "gate_p": 0.003
+      },
+      {
+        "shots": 5100,
+        "p_burst": 0.008,
+        "p_measurement": 0.006,
+        "gate_p": 0.003
+      }
+    ],
+    "measurement_step_down": [
+      {
+        "shots": 5000,
+        "p_burst": 0.008,
+        "p_measurement": 0.006,
+        "gate_p": 0.003
+      },
+      {
+        "shots": 5100,
+        "p_burst": 0.008,
+        "p_measurement": 0.003,
+        "gate_p": 0.003
+      }
+    ],
+    "gate_low_stationary": [
+      {
+        "shots": 10100,
+        "p_burst": 0.008,
+        "p_measurement": 0.003,
+        "gate_p": 0.002
+      }
+    ],
+    "gate_high_stationary": [
+      {
+        "shots": 10100,
+        "p_burst": 0.008,
+        "p_measurement": 0.003,
+        "gate_p": 0.004
+      }
+    ]
+  },
+  "template_calibration": {
+    "sampled_shots": 0,
+    "source": "fixed analytical template_bank_v1.json",
+    "estimand_conditioning": "conditional on this deterministic bank"
+  },
+  "template_families": [
+    "exact_categorical",
+    "approximate_dem"
+  ],
+  "inference": {
+    "interval": "stratified Welch t interval on independent root-level paired differences",
+    "primary_upper_confidence": 0.95,
+    "two_sided_descriptive_confidence": 0.95,
+    "resampling": false
+  },
+  "resources": {
+    "raw_detector_storage_uncompressed_lower_bound_bytes": 121200000,
+    "peak_rss_abort_bytes": 2147483648,
+    "cpu_time_limit_seconds": null,
+    "note": "Pilot only; 10 roots and 101000 shots. Approval must bind this file and a separately created development-only seed manifest. This configuration grants no sampling authority."
+  },
+  "protected_test_access": false,
+  "decoder_evaluation": false,
+  "sampling_authorized": false,
+  "run_mode": "development_pipeline_pilot"
+}

@@ -41,11 +41,14 @@ def detector_features(detectors: np.ndarray) -> np.ndarray:
         raise EstimatorInputError("detector history must contain at least one shot")
     if not np.issubdtype(d.dtype, np.number) and d.dtype != np.bool_:
         raise EstimatorInputError("detectors must be numeric binary values")
-    if not np.isfinite(d).all() or not np.isin(d, (0, 1)).all():
+    if not np.isfinite(d).all() or not np.logical_or(d == 0, d == 1).all():
         raise EstimatorInputError("detectors must contain only finite 0/1 values")
     d = d.astype(np.uint8, copy=False)
-    pairs = np.column_stack([d[:, i] & d[:, j] for i, j in FEATURE_PAIRS])
-    return np.concatenate([d, pairs], axis=1).astype(np.uint8, copy=False)
+    out = np.empty((d.shape[0], FEATURE_COUNT), dtype=np.uint8)
+    out[:, :DETECTOR_COUNT] = d
+    for k, (i, j) in enumerate(FEATURE_PAIRS):
+        out[:, DETECTOR_COUNT + k] = d[:, i] & d[:, j]
+    return out
 
 
 def validate_feature_mean(mean: np.ndarray) -> np.ndarray:
@@ -211,13 +214,17 @@ class CandidateA:
         pm_idx = 3  # the published .001 grid contains p_m=.003
         self.templates = bank.means[family][knots, pm_idx, :]
         self.scales = bank.scales[family]
+        # These values depend only on the immutable template bank. Cache them
+        # once instead of rebuilding 45 interpolants for every history.
+        self._scaled_surface = np.column_stack([
+            np.interp(A_GRID, BURST_KNOTS, self.templates[:, k])
+            for k in range(FEATURE_COUNT)
+        ]) / self.scales[None, :]
 
     def estimate_mean(self, mean: np.ndarray, history_length: int | None = None) -> Estimate:
         target = validate_feature_mean(mean)
-        expected = np.column_stack([
-            np.interp(A_GRID, BURST_KNOTS, self.templates[:, k])
-            for k in range(FEATURE_COUNT)])
-        scores = np.mean(((expected-target[None, :])/self.scales[None, :])**2, axis=1)
+        residual = self._scaled_surface - target[None, :] / self.scales[None, :]
+        scores = np.einsum('ij,ij->i', residual, residual) / FEATURE_COUNT
         idx = int(np.argmin(scores))  # ordered grid supplies lower-p tie break
         pb = float(A_GRID[idx])
         hit = bool(idx == 0 or idx == len(A_GRID)-1)
@@ -240,19 +247,26 @@ class CandidateB:
         self.tie_tolerance = float(tie_tolerance)
         self.scales = bank.scales[family]
         self.surface = self._build_surface()
+        self._scaled_surface = self.surface / self.scales[None, None, :]
 
     def _build_surface(self) -> np.ndarray:
         table = self.bank.means[self.family]
-        out = np.empty((len(FIT_BURST_GRID), len(FIT_MEASUREMENT_GRID), FEATURE_COUNT))
-        for i, pb in enumerate(FIT_BURST_GRID):
-            for j, pm in enumerate(FIT_MEASUREMENT_GRID):
-                out[i,j] = bilinear(table, float(pb), float(pm))
-        return out
+        bi = np.clip(np.searchsorted(BURST_GRID, FIT_BURST_GRID, side="right") - 1, 0, 19)
+        mj = np.clip(np.searchsorted(MEASUREMENT_GRID, FIT_MEASUREMENT_GRID, side="right") - 1, 0, 9)
+        bu = (FIT_BURST_GRID - BURST_GRID[bi]) / (BURST_GRID[bi + 1] - BURST_GRID[bi])
+        mv = (FIT_MEASUREMENT_GRID - MEASUREMENT_GRID[mj]) / (MEASUREMENT_GRID[mj + 1] - MEASUREMENT_GRID[mj])
+        b0, b1 = bi[:, None], (bi + 1)[:, None]
+        m0, m1 = mj[None, :], (mj + 1)[None, :]
+        u, v = bu[:, None, None], mv[None, :, None]
+        a00, a10 = table[b0, m0], table[b1, m0]
+        a01, a11 = table[b0, m1], table[b1, m1]
+        return ((1-u)*(1-v)*a00 + u*(1-v)*a10
+                + (1-u)*v*a01 + u*v*a11)
 
     def estimate_mean(self, mean: np.ndarray, history_length: int | None = None) -> Estimate:
         target = validate_feature_mean(mean)
-        scores = np.mean(((self.surface-target[None,None,:]) /
-                          self.scales[None,None,:])**2, axis=2)
+        residual = self._scaled_surface - target[None, None, :] / self.scales[None, None, :]
+        scores = np.einsum('ijk,ijk->ij', residual, residual) / FEATURE_COUNT
         best = float(scores.min())
         # Flatten order is p_burst outer, p_measurement inner. Include exact
         # floating-point score ties only; the first index is lexicographically lower.
