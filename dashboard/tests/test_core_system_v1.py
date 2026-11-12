@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import sys
 import unittest
+import hashlib
+from dataclasses import replace
 from pathlib import Path
 
 import numpy as np
@@ -41,6 +43,28 @@ class ConstantDecoder:
         d = np.asarray(detectors)
         self.seen_hashes.append(d.tobytes())
         return DecoderPrediction(np.full((len(d), 1), self.value, dtype=np.uint8), self.metadata, 0.0)
+
+
+class ControlledPredictionDecoder:
+    def __init__(self, registered_metadata, returned_metadata=None, *, return_value=None,
+                 row_delta=0, mutate_metadata=False):
+        self.metadata = registered_metadata
+        self.returned_metadata = returned_metadata or registered_metadata
+        self.return_value = return_value
+        self.row_delta = row_delta
+        self.mutate_metadata = mutate_metadata
+
+    def decode(self, detectors):
+        if self.mutate_metadata:
+            self.metadata = replace(self.metadata, version="mutated-during-decode")
+        if self.return_value is not None:
+            return self.return_value
+        rows = max(0, len(detectors) + self.row_delta)
+        return DecoderPrediction(
+            np.zeros((rows, self.returned_metadata.observable_count), dtype=np.uint8),
+            self.returned_metadata,
+            0.0,
+        )
 
 
 class ConfigurationValidationTests(unittest.TestCase):
@@ -166,14 +190,18 @@ class ControllerContractTests(unittest.TestCase):
         self.estimate = NoiseEstimate({"burst_probability": 0.02}, 0.95, 256)
 
     def test_detector_only_proposal_requires_prior_block_and_hysteresis(self):
-        first = self.selector.choose(0, SelectionProposal("specialist", .95, -1, "profile match", self.estimate))
+        first = self.selector.choose(0, None)
         second = self.selector.choose(
             1, SelectionProposal("specialist", .95, 0, "profile match", self.estimate),
             configured_noise={"nominal_probability": .003},
         )
+        third = self.selector.choose(
+            2, SelectionProposal("specialist", .95, 1, "profile match", self.estimate)
+        )
         self.assertEqual(first.selected_decoder, "fixed")
-        self.assertEqual(second.selected_decoder, "specialist")
-        self.assertTrue(second.switched)
+        self.assertEqual(second.selected_decoder, "fixed")
+        self.assertEqual(third.selected_decoder, "specialist")
+        self.assertTrue(third.switched)
         self.assertEqual(second.estimated_noise["burst_probability"], .02)
         self.assertEqual(second.configured_noise["nominal_probability"], .003)
 
@@ -185,13 +213,13 @@ class ControllerContractTests(unittest.TestCase):
 
     def test_low_confidence_unknown_and_missing_estimates_fall_back(self):
         proposals = [
-            SelectionProposal("specialist", .2, -1, "low", self.estimate),
-            SelectionProposal("missing", .99, -1, "unknown", self.estimate),
-            SelectionProposal("specialist", .99, -1, "no estimate", None),
+            SelectionProposal("specialist", .2, 0, "low", self.estimate),
+            SelectionProposal("missing", .99, 1, "unknown", self.estimate),
+            SelectionProposal("specialist", .99, 2, "no estimate", None),
         ]
-        for block, proposal in enumerate(proposals):
+        for index, proposal in enumerate(proposals):
             with self.subTest(proposal=proposal):
-                self.assertEqual(self.selector.choose(block, proposal).selected_decoder, "fixed")
+                self.assertEqual(self.selector.choose(index + 1, proposal).selected_decoder, "fixed")
 
     def test_invalid_proposal_object_fails_closed(self):
         decision = self.selector.choose(0, object())
@@ -200,13 +228,13 @@ class ControllerContractTests(unittest.TestCase):
 
     def test_effective_confidence_cannot_exceed_estimator_confidence(self):
         weak = NoiseEstimate({"burst_probability": .02}, .3, 256)
-        decision = self.selector.choose(0, SelectionProposal("specialist", .99, -1, "weak estimate", weak))
+        decision = self.selector.choose(1, SelectionProposal("specialist", .99, 0, "weak estimate", weak))
         self.assertEqual(decision.selected_decoder, "fixed")
         self.assertEqual(decision.confidence, .3)
 
     def test_decision_logs_conservative_effective_confidence(self):
         estimate = NoiseEstimate({"burst_probability": .02}, .85, 256)
-        decision = self.selector.choose(0, SelectionProposal("specialist", .99, -1, "profile", estimate))
+        decision = self.selector.choose(1, SelectionProposal("specialist", .99, 0, "profile", estimate))
         self.assertEqual(decision.confidence, .85)
 
     def test_experimental_decoder_requires_explicit_opt_in(self):
@@ -215,11 +243,59 @@ class ControllerContractTests(unittest.TestCase):
         enabled = SafeDecoderSelector(self.registry, fallback_name="fixed", allow_experimental=True)
         self.assertEqual(enabled.fallback_name, "fixed")
 
+    def test_registry_rejects_untyped_decoder_metadata(self):
+        class BadMetadataDecoder:
+            metadata = {"name": "bad"}
+            def decode(self, detectors):
+                return detectors
+
+        with self.assertRaisesRegex(TypeError, "DecoderMetadata"):
+            DecoderRegistry().register("bad", BadMetadataDecoder())
+
     def test_estimates_cannot_label_themselves_as_hidden_regime_truth(self):
         valid = NoiseEstimate({"burst_probability": .01, "bias_ratio": 10.0}, .9, 10)
         self.assertEqual(valid.parameters["bias_ratio"], 10.0)
         with self.assertRaisesRegex(ValueError, "detector-only"):
             NoiseEstimate({"burst_probability": .01}, .9, 10, source="hidden_regime")
+
+    def test_block_indices_must_be_nonnegative_increasing_integers(self):
+        for invalid in (-1, True, 1.5):
+            with self.subTest(invalid=invalid):
+                selector = SafeDecoderSelector(self.registry, fallback_name="fixed")
+                with self.assertRaisesRegex(ValueError, "nonnegative"):
+                    selector.choose(invalid, None)
+                # Invalid calls do not consume block 0 or alter the fallback.
+                self.assertEqual(selector.choose(0, None).selected_decoder, "fixed")
+        selector = SafeDecoderSelector(self.registry, fallback_name="fixed")
+        self.assertEqual(selector.choose(np.int64(0), None).block_index, 0)
+        with self.assertRaisesRegex(ValueError, "strictly increasing"):
+            selector.choose(0, None)
+
+    def test_negative_same_and_future_based_on_blocks_fail_closed(self):
+        for current, based_on in ((0, -1), (1, -1), (1, 1), (1, 2), (1, True), (1, 0.5)):
+            with self.subTest(current=current, based_on=based_on):
+                selector = SafeDecoderSelector(
+                    self.registry, fallback_name="fixed", hysteresis_blocks=1,
+                    minimum_dwell_blocks=1, allow_experimental=True,
+                )
+                proposal = SelectionProposal("specialist", .99, based_on, "fixture", self.estimate)
+                decision = selector.choose(current, proposal)
+                self.assertEqual(decision.selected_decoder, "fixed")
+                self.assertTrue(decision.fallback_used)
+                self.assertIn("non-causal", decision.reason)
+
+    def test_previous_completed_block_can_select_and_fallback_remains_available(self):
+        selector = SafeDecoderSelector(
+            self.registry, fallback_name="fixed", hysteresis_blocks=1,
+            minimum_dwell_blocks=1, allow_experimental=True,
+        )
+        specialist = selector.choose(
+            1, SelectionProposal("specialist", .99, 0, "earlier block", self.estimate)
+        )
+        self.assertEqual(specialist.selected_decoder, "specialist")
+        fallback = selector.choose(2, None)
+        self.assertEqual(fallback.selected_decoder, "fixed")
+        self.assertTrue(fallback.fallback_used)
 
 
 class PairedEvaluationTests(unittest.TestCase):
@@ -246,6 +322,72 @@ class PairedEvaluationTests(unittest.TestCase):
         self.assertEqual(record["records"]["candidate"]["candidate_only_failures"], 2)
         self.assertEqual(record["records"]["candidate"]["baseline_only_failures"], 2)
         self.assertTrue(record["sample_sha256"])
+        expected_legacy_hash = hashlib.sha256(
+            detectors.astype(np.uint8).tobytes(order="C")
+            + labels.reshape(-1, 1).astype(np.uint8).tobytes(order="C")
+        ).hexdigest()
+        self.assertEqual(record["sample_sha256"], expected_legacy_hash)
+        identity = record["sample_identity"]
+        self.assertEqual(identity["identity_schema"], "qshift-paired-evidence-v1")
+        self.assertEqual(identity["detectors"]["canonical_shape"], [4, 2])
+        self.assertEqual(identity["detectors"]["canonical_dtype"], "uint8")
+        self.assertIn("caller-provided column order", identity["detectors"]["convention"])
+        self.assertEqual(identity["observables"]["provided_shape"], [4])
+        self.assertEqual(identity["observables"]["canonical_shape"], [4, 1])
+        self.assertIn("correlation_mode", identity["decoder_metadata"]["fixed"])
+        self.assertEqual(len(identity["evidence_sha256"]), 64)
+        self.assertIn("do not prove upstream provenance", identity["provenance_limit"])
+
+    def test_returned_metadata_must_match_every_registered_field(self):
+        registered = ConstantDecoder("fixed", 0).metadata
+        altered = (
+            replace(registered, name="spoofed"),
+            replace(registered, implementation="other-implementation"),
+            replace(registered, version="9"),
+            replace(registered, detector_count=3),
+            replace(registered, observable_count=2),
+            replace(registered, noise_model_id="other-noise"),
+            replace(registered, correlation_mode=True),
+            replace(registered, experimental=True),
+            replace(registered, construction_provenance="spoofed provenance"),
+        )
+        detectors = np.zeros((2, 2), dtype=np.uint8)
+        labels = np.zeros(2, dtype=np.uint8)
+        for metadata in altered:
+            with self.subTest(metadata=metadata):
+                decoder = ControlledPredictionDecoder(registered, metadata)
+                with self.assertRaisesRegex(ValueError, "metadata differs"):
+                    evaluate_paired(detectors, labels, {"fixed": decoder},
+                                    baseline_name="fixed", scope="development", sample_id="meta")
+
+    def test_returned_wrong_decoder_identity_is_rejected(self):
+        registered = ConstantDecoder("fixed", 0).metadata
+        spoofed = replace(registered, name="other-decoder")
+        decoder = ControlledPredictionDecoder(registered, spoofed)
+        with self.assertRaisesRegex(ValueError, "metadata differs"):
+            evaluate_paired(np.zeros((1, 2)), np.zeros(1), {"fixed": decoder},
+                            baseline_name="fixed", scope="development", sample_id="identity")
+
+    def test_invalid_prediction_return_type_is_rejected(self):
+        registered = ConstantDecoder("fixed", 0).metadata
+        decoder = ControlledPredictionDecoder(registered, return_value={"bits": [[0]]})
+        with self.assertRaisesRegex(TypeError, "must return DecoderPrediction"):
+            evaluate_paired(np.zeros((1, 2)), np.zeros(1), {"fixed": decoder},
+                            baseline_name="fixed", scope="development", sample_id="type")
+
+    def test_prediction_shot_shape_must_match_paired_samples(self):
+        registered = ConstantDecoder("fixed", 0).metadata
+        decoder = ControlledPredictionDecoder(registered, row_delta=-1)
+        with self.assertRaisesRegex(ValueError, "predictions have shape"):
+            evaluate_paired(np.zeros((2, 2)), np.zeros(2), {"fixed": decoder},
+                            baseline_name="fixed", scope="development", sample_id="shape")
+
+    def test_registered_metadata_cannot_change_during_evaluation(self):
+        registered = ConstantDecoder("fixed", 0).metadata
+        decoder = ControlledPredictionDecoder(registered, mutate_metadata=True)
+        with self.assertRaisesRegex(ValueError, "metadata changed"):
+            evaluate_paired(np.zeros((1, 2)), np.zeros(1), {"fixed": decoder},
+                            baseline_name="fixed", scope="development", sample_id="mutated")
 
     def test_protected_test_scope_is_refused(self):
         decoder = ConstantDecoder("fixed", 0)

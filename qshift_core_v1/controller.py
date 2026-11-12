@@ -6,7 +6,7 @@ import math
 from numbers import Integral, Real
 from typing import Mapping
 
-from .contracts import DecoderProtocol
+from .contracts import DecoderMetadata, DecoderProtocol
 
 
 @dataclass(frozen=True)
@@ -66,10 +66,12 @@ class DecoderRegistry:
         self._decoders: dict[str, DecoderProtocol] = {}
 
     def register(self, name: str, decoder: DecoderProtocol) -> None:
-        if not name or name in self._decoders:
+        if not isinstance(name, str) or not name.strip() or name in self._decoders:
             raise ValueError(f"Decoder name is empty or already registered: {name!r}.")
         if not hasattr(decoder, "metadata") or not callable(getattr(decoder, "decode", None)):
             raise TypeError("Registered decoder must satisfy DecoderProtocol.")
+        if not isinstance(decoder.metadata, DecoderMetadata):
+            raise TypeError("Registered decoder must expose DecoderMetadata.")
         if decoder.metadata.name != name:
             raise ValueError("Registry name must match decoder metadata.name.")
         self._decoders[name] = decoder
@@ -134,8 +136,10 @@ class SafeDecoderSelector:
         *,
         configured_noise: Mapping[str, float] | None = None,
     ) -> SelectionDecision:
-        if type(current_block) is not int or current_block <= self._last_block:
-            raise ValueError("current_block must be a strictly increasing integer.")
+        if (isinstance(current_block, bool) or not isinstance(current_block, Integral)
+                or current_block < 0 or current_block <= self._last_block):
+            raise ValueError("current_block must be a nonnegative, strictly increasing integer.")
+        current_block = int(current_block)
         configured_record = None
         if configured_noise is not None:
             if not isinstance(configured_noise, Mapping):
@@ -172,6 +176,7 @@ class SafeDecoderSelector:
                 reason = "invalid proposal reason; fixed fallback"
             elif (isinstance(proposal.based_on_through_block, bool)
                   or not isinstance(proposal.based_on_through_block, Integral)
+                  or proposal.based_on_through_block < 0
                   or proposal.based_on_through_block >= current_block):
                 reason = "non-causal proposal rejected; fixed fallback"
             elif not isinstance(proposal.estimate, NoiseEstimate):
