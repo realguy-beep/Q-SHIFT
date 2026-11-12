@@ -1,0 +1,649 @@
+{
+  "provenance": {
+    "reviewed_phase2c_checkpoint": "a5e6a86b24affc355169dbbf188e3ee1e247b1e7",
+    "stim": "1.16.0",
+    "parameter_rectangle": {
+      "burst": [
+        0,
+        0.02
+      ],
+      "measurement": [
+        0,
+        0.01
+      ]
+    },
+    "test_grid_step": 0.0001,
+    "reference_covariance_point": [
+      0.01,
+      0.003
+    ],
+    "test": "fixed-reference covariance score after constrained fixed-measurement profile fit",
+    "no_sampling": true
+  },
+  "burst_mapping": {
+    "alternative_counts": {
+      "1q_alternatives": 120,
+      "2q_alternatives": 1800,
+      "measurement_alternatives": 49,
+      "burst_alternatives": 5
+    },
+    "burst_masks": [
+      {
+        "instruction_index": 39,
+        "detector_indices": [
+          8,
+          10
+        ]
+      },
+      {
+        "instruction_index": 65,
+        "detector_indices": [
+          16,
+          18
+        ]
+      },
+      {
+        "instruction_index": 95,
+        "detector_indices": [
+          24,
+          26
+        ]
+      },
+      {
+        "instruction_index": 125,
+        "detector_indices": [
+          32,
+          34
+        ]
+      },
+      {
+        "instruction_index": 155,
+        "detector_indices": [
+          36,
+          38
+        ]
+      }
+    ]
+  },
+  "candidate_cases": {
+    "exact_categorical": {
+      "reference_covariance": {
+        "min_eigenvalue": 0.0029276503017422488,
+        "max_eigenvalue": 0.0782972461453477,
+        "mean_eigenvalue": 0.026143307167587698,
+        "condition": 26.744056863196022,
+        "rank": 45
+      },
+      "ridge": 7.829724614534769e-08,
+      "cases": {
+        "exact_categorical:nominal_null": {
+          "data_point": [
+            0.008,
+            0.003
+          ],
+          "template_kind": "exact_categorical",
+          "null_grid_fit_pburst": 0.008,
+          "grid_runner_up_gap": 4.514182065448318e-06,
+          "population_residual_energy_per_shot_discrete_grid": 0.0,
+          "lambda_population_energy_N1000_N10000": {
+            "1000": 0.0,
+            "10000": 0.0
+          },
+          "continuous_tangent_projected_energy_per_shot": 0.0,
+          "whitened_truth_covariance_eigenvalue_summary": {
+            "min": 0.8107066799012984,
+            "max": 1.0020290464634616,
+            "mean": 0.9789911324167788,
+            "sd": 0.058790279461089896,
+            "rank": 45
+          },
+          "continuous_projection_covariance_positive_eigenvalues": {
+            "count": 44,
+            "min": 0.8111319463250223,
+            "max": 1.0020285003105007,
+            "mean": 0.9827457773722891,
+            "range_note": "should be near one for a central/noncentral chi-square reference; not assumed"
+          },
+          "counterfactual_idealized_probabilities": {
+            "1000": {
+              "lambda_continuous_projection": 0.0,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 0.009999999999999915,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            },
+            "10000": {
+              "lambda_continuous_projection": 0.0,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 0.009999999999999915,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            }
+          },
+          "fit_grid_fixed_step": 0.0001
+        },
+        "exact_categorical:measurement_mismatch": {
+          "data_point": [
+            0.008,
+            0.006
+          ],
+          "template_kind": "exact_categorical",
+          "null_grid_fit_pburst": 0.0083,
+          "grid_runner_up_gap": 4.028461616435719e-06,
+          "population_residual_energy_per_shot_discrete_grid": 0.03782529373138455,
+          "lambda_population_energy_N1000_N10000": {
+            "1000": 37.825293731384555,
+            "10000": 378.2529373138455
+          },
+          "continuous_tangent_projected_energy_per_shot": 0.037825280665653535,
+          "whitened_truth_covariance_eigenvalue_summary": {
+            "min": 0.826181992643565,
+            "max": 1.7138683988345496,
+            "mean": 1.1874385141010144,
+            "sd": 0.19717206402343468,
+            "rank": 45
+          },
+          "continuous_projection_covariance_positive_eigenvalues": {
+            "count": 44,
+            "min": 0.8262539943187205,
+            "max": 1.7138595172060995,
+            "mean": 1.1951902840133903,
+            "range_note": "should be near one for a central/noncentral chi-square reference; not assumed"
+          },
+          "counterfactual_idealized_probabilities": {
+            "1000": {
+              "lambda_continuous_projection": 37.82528066565354,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 0.7978732651722946,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            },
+            "10000": {
+              "lambda_continuous_projection": 378.25280665653537,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 1.0,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            }
+          },
+          "fit_grid_fixed_step": 0.0001
+        },
+        "approximate_dem:nominal_null": {
+          "data_point": [
+            0.008,
+            0.003
+          ],
+          "template_kind": "exact_categorical",
+          "null_grid_fit_pburst": 0.008,
+          "grid_runner_up_gap": 4.459578587004001e-06,
+          "population_residual_energy_per_shot_discrete_grid": 3.055388123388364e-07,
+          "lambda_population_energy_N1000_N10000": {
+            "1000": 0.00030553881233883644,
+            "10000": 0.0030553881233883642
+          },
+          "continuous_tangent_projected_energy_per_shot": 3.0537369162509653e-07,
+          "whitened_truth_covariance_eigenvalue_summary": {
+            "min": 0.8106773032348333,
+            "max": 1.001260606593805,
+            "mean": 0.9783169969155305,
+            "sd": 0.05857431136280288,
+            "rank": 45
+          },
+          "continuous_projection_covariance_positive_eigenvalues": {
+            "count": 44,
+            "min": 0.8110948556993368,
+            "max": 1.0012603511099114,
+            "mean": 0.9820577881336887,
+            "range_note": "should be near one for a central/noncentral chi-square reference; not assumed"
+          },
+          "counterfactual_idealized_probabilities": {
+            "1000": {
+              "lambda_continuous_projection": 0.00030537369162509655,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 0.010001010837790966,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            },
+            "10000": {
+              "lambda_continuous_projection": 0.0030537369162509653,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 0.010010111807193967,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            }
+          },
+          "fit_grid_fixed_step": 0.0001
+        },
+        "approximate_dem:measurement_mismatch": {
+          "data_point": [
+            0.008,
+            0.006
+          ],
+          "template_kind": "exact_categorical",
+          "null_grid_fit_pburst": 0.0083,
+          "grid_runner_up_gap": 3.950420500241358e-06,
+          "population_residual_energy_per_shot_discrete_grid": 0.03767552694272063,
+          "lambda_population_energy_N1000_N10000": {
+            "1000": 37.67552694272063,
+            "10000": 376.7552694272063
+          },
+          "continuous_tangent_projected_energy_per_shot": 0.037675509341132014,
+          "whitened_truth_covariance_eigenvalue_summary": {
+            "min": 0.8260975693887554,
+            "max": 1.7136692943789902,
+            "mean": 1.1867760155119929,
+            "sd": 0.19720440092045705,
+            "rank": 45
+          },
+          "continuous_projection_covariance_positive_eigenvalues": {
+            "count": 44,
+            "min": 0.8261692632635101,
+            "max": 1.7136604254825847,
+            "mean": 1.1945148156856913,
+            "range_note": "should be near one for a central/noncentral chi-square reference; not assumed"
+          },
+          "counterfactual_idealized_probabilities": {
+            "1000": {
+              "lambda_continuous_projection": 37.67550934113201,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 0.7951646951606546,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            },
+            "10000": {
+              "lambda_continuous_projection": 376.75509341132016,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 1.0,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            }
+          },
+          "fit_grid_fixed_step": 0.0001
+        }
+      },
+      "central_cutoffs": {
+        "chi2_44_99pct": 68.7095129693454,
+        "chi2_45_99pct": 69.95683206583814
+      }
+    },
+    "approximate_dem": {
+      "reference_covariance": {
+        "min_eigenvalue": 0.002925006379434007,
+        "max_eigenvalue": 0.07823440492856962,
+        "mean_eigenvalue": 0.026126182486688077,
+        "condition": 26.74674676904742,
+        "rank": 45
+      },
+      "ridge": 7.823440492856962e-08,
+      "cases": {
+        "exact_categorical:nominal_null": {
+          "data_point": [
+            0.008,
+            0.003
+          ],
+          "template_kind": "approximate_dem",
+          "null_grid_fit_pburst": 0.008,
+          "grid_runner_up_gap": 4.460182023820085e-06,
+          "population_residual_energy_per_shot_discrete_grid": 3.0580529839500264e-07,
+          "lambda_population_energy_N1000_N10000": {
+            "1000": 0.00030580529839500264,
+            "10000": 0.0030580529839500264
+          },
+          "continuous_tangent_projected_energy_per_shot": 3.056399386466098e-07,
+          "whitened_truth_covariance_eigenvalue_summary": {
+            "min": 0.8107268210675399,
+            "max": 1.0028451493002821,
+            "mean": 0.9796637913520081,
+            "sd": 0.05901315464835779,
+            "rank": 45
+          },
+          "continuous_projection_covariance_positive_eigenvalues": {
+            "count": 44,
+            "min": 0.8111574662125041,
+            "max": 1.0028441035273157,
+            "mean": 0.9834326867788392,
+            "range_note": "should be near one for a central/noncentral chi-square reference; not assumed"
+          },
+          "counterfactual_idealized_probabilities": {
+            "1000": {
+              "lambda_continuous_projection": 0.0003056399386466098,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 0.010001011719146208,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            },
+            "10000": {
+              "lambda_continuous_projection": 0.003056399386466098,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 0.010010120626729286,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            }
+          },
+          "fit_grid_fixed_step": 0.0001
+        },
+        "exact_categorical:measurement_mismatch": {
+          "data_point": [
+            0.008,
+            0.006
+          ],
+          "template_kind": "approximate_dem",
+          "null_grid_fit_pburst": 0.0083,
+          "grid_runner_up_gap": 4.0918462036257375e-06,
+          "population_residual_energy_per_shot_discrete_grid": 0.03799888734018928,
+          "lambda_population_energy_N1000_N10000": {
+            "1000": 37.998887340189285,
+            "10000": 379.9888734018928
+          },
+          "continuous_tangent_projected_energy_per_shot": 0.037998877433148164,
+          "whitened_truth_covariance_eigenvalue_summary": {
+            "min": 0.8262275686573645,
+            "max": 1.7142208505056695,
+            "mean": 1.1882351278488692,
+            "sd": 0.19722214235645394,
+            "rank": 45
+          },
+          "continuous_projection_covariance_positive_eigenvalues": {
+            "count": 44,
+            "min": 0.8262996843029238,
+            "max": 1.7142119587978861,
+            "mean": 1.196003929282651,
+            "range_note": "should be near one for a central/noncentral chi-square reference; not assumed"
+          },
+          "counterfactual_idealized_probabilities": {
+            "1000": {
+              "lambda_continuous_projection": 37.99887743314817,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 0.8009811723557008,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            },
+            "10000": {
+              "lambda_continuous_projection": 379.98877433148164,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 1.0,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            }
+          },
+          "fit_grid_fixed_step": 0.0001
+        },
+        "approximate_dem:nominal_null": {
+          "data_point": [
+            0.008,
+            0.003
+          ],
+          "template_kind": "approximate_dem",
+          "null_grid_fit_pburst": 0.008,
+          "grid_runner_up_gap": 4.5148289258421805e-06,
+          "population_residual_energy_per_shot_discrete_grid": 0.0,
+          "lambda_population_energy_N1000_N10000": {
+            "1000": 0.0,
+            "10000": 0.0
+          },
+          "continuous_tangent_projected_energy_per_shot": 0.0,
+          "whitened_truth_covariance_eigenvalue_summary": {
+            "min": 0.810697467544853,
+            "max": 1.0020295273143824,
+            "mean": 0.9789890906365609,
+            "sd": 0.05879591221979595,
+            "rank": 45
+          },
+          "continuous_projection_covariance_positive_eigenvalues": {
+            "count": 44,
+            "min": 0.8111204019074799,
+            "max": 1.0020289836361733,
+            "mean": 0.982744119605767,
+            "range_note": "should be near one for a central/noncentral chi-square reference; not assumed"
+          },
+          "counterfactual_idealized_probabilities": {
+            "1000": {
+              "lambda_continuous_projection": 0.0,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 0.009999999999999915,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            },
+            "10000": {
+              "lambda_continuous_projection": 0.0,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 0.009999999999999915,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            }
+          },
+          "fit_grid_fixed_step": 0.0001
+        },
+        "approximate_dem:measurement_mismatch": {
+          "data_point": [
+            0.008,
+            0.006
+          ],
+          "template_kind": "approximate_dem",
+          "null_grid_fit_pburst": 0.0083,
+          "grid_runner_up_gap": 4.013759684250162e-06,
+          "population_residual_energy_per_shot_discrete_grid": 0.037848401998389854,
+          "lambda_population_energy_N1000_N10000": {
+            "1000": 37.84840199838985,
+            "10000": 378.4840199838985
+          },
+          "continuous_tangent_projected_energy_per_shot": 0.037848388095848416,
+          "whitened_truth_covariance_eigenvalue_summary": {
+            "min": 0.8261431644809671,
+            "max": 1.7140216917531925,
+            "mean": 1.1875720735060329,
+            "sd": 0.19725401027849854,
+            "rank": 45
+          },
+          "continuous_projection_covariance_positive_eigenvalues": {
+            "count": 44,
+            "min": 0.8262149708892496,
+            "max": 1.7140128127771044,
+            "mean": 1.195327892738703,
+            "range_note": "should be near one for a central/noncentral chi-square reference; not assumed"
+          },
+          "counterfactual_idealized_probabilities": {
+            "1000": {
+              "lambda_continuous_projection": 37.848388095848414,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 0.798288910910296,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            },
+            "10000": {
+              "lambda_continuous_projection": 378.4838809584842,
+              "central_chi2_df44_99pct_cutoff": 68.7095129693454,
+              "ncx2_tail_if_identity_covariance_df44": 1.0,
+              "status": "counterfactual sensitivity only; not an alarm operating characteristic"
+            }
+          },
+          "fit_grid_fixed_step": 0.0001
+        }
+      },
+      "central_cutoffs": {
+        "chi2_44_99pct": 68.7095129693454,
+        "chi2_45_99pct": 69.95683206583814
+      }
+    }
+  },
+  "candidate_A_population_limit_verification": {
+    "nominal": {
+      "truth": [
+        0.008,
+        0.003
+      ],
+      "A_exact_population_limit": {
+        "estimate_pburst": 0.008,
+        "assumed_pmeasurement": 0.003,
+        "grid_step": 1e-05,
+        "grid_count": 2001,
+        "score": 5.233080911682806e-32,
+        "feature_scales": "population-limit pooled variance over five burst template batches"
+      },
+      "A_DEM_template_population_limit": {
+        "estimate_pburst": 0.008010000000000001,
+        "assumed_pmeasurement": 0.003,
+        "grid_step": 1e-05,
+        "grid_count": 2001,
+        "score": 1.3228672871232469e-08,
+        "feature_scales": "population-limit pooled variance over five burst template batches"
+      },
+      "phase2c_comparison_grid_implementation": {
+        "estimate_pburst": 0.008,
+        "grid_step": 0.0001,
+        "template_interpolation": "bilinear .001 joint lattice row, not original five-knot line"
+      },
+      "absolute_estimate_difference_exactA_vs_phase2c_grid": 0.0
+    },
+    "mismatch": {
+      "truth": [
+        0.008,
+        0.006
+      ],
+      "A_exact_population_limit": {
+        "estimate_pburst": 0.010910000000000001,
+        "assumed_pmeasurement": 0.003,
+        "grid_step": 1e-05,
+        "grid_count": 2001,
+        "score": 0.0012135276879070153,
+        "feature_scales": "population-limit pooled variance over five burst template batches"
+      },
+      "A_DEM_template_population_limit": {
+        "estimate_pburst": 0.010920000000000001,
+        "assumed_pmeasurement": 0.003,
+        "grid_step": 1e-05,
+        "grid_count": 2001,
+        "score": 0.001220601947044102,
+        "feature_scales": "population-limit pooled variance over five burst template batches"
+      },
+      "phase2c_comparison_grid_implementation": {
+        "estimate_pburst": 0.0109,
+        "grid_step": 0.0001,
+        "template_interpolation": "bilinear .001 joint lattice row, not original five-knot line"
+      },
+      "absolute_estimate_difference_exactA_vs_phase2c_grid": 1.0000000000001327e-05
+    },
+    "measurement_low": {
+      "truth": [
+        0.008,
+        0.0
+      ],
+      "A_exact_population_limit": {
+        "estimate_pburst": 0.00513,
+        "assumed_pmeasurement": 0.003,
+        "grid_step": 1e-05,
+        "grid_count": 2001,
+        "score": 0.0012447802228915071,
+        "feature_scales": "population-limit pooled variance over five burst template batches"
+      },
+      "A_DEM_template_population_limit": {
+        "estimate_pburst": 0.00513,
+        "assumed_pmeasurement": 0.003,
+        "grid_step": 1e-05,
+        "grid_count": 2001,
+        "score": 0.0012390249161810184,
+        "feature_scales": "population-limit pooled variance over five burst template batches"
+      },
+      "phase2c_comparison_grid_implementation": {
+        "estimate_pburst": 0.0051,
+        "grid_step": 0.0001,
+        "template_interpolation": "bilinear .001 joint lattice row, not original five-knot line"
+      },
+      "absolute_estimate_difference_exactA_vs_phase2c_grid": 2.9999999999999645e-05
+    },
+    "measurement_high": {
+      "truth": [
+        0.008,
+        0.01
+      ],
+      "A_exact_population_limit": {
+        "estimate_pburst": 0.01484,
+        "assumed_pmeasurement": 0.003,
+        "grid_step": 1e-05,
+        "grid_count": 2001,
+        "score": 0.006497535994783077,
+        "feature_scales": "population-limit pooled variance over five burst template batches"
+      },
+      "A_DEM_template_population_limit": {
+        "estimate_pburst": 0.01485,
+        "assumed_pmeasurement": 0.003,
+        "grid_step": 1e-05,
+        "grid_count": 2001,
+        "score": 0.00651596814479534,
+        "feature_scales": "population-limit pooled variance over five burst template batches"
+      },
+      "phase2c_comparison_grid_implementation": {
+        "estimate_pburst": 0.0148,
+        "grid_step": 0.0001,
+        "template_interpolation": "bilinear .001 joint lattice row, not original five-knot line"
+      },
+      "absolute_estimate_difference_exactA_vs_phase2c_grid": 4.0000000000000105e-05
+    }
+  },
+  "fixed_gate_noise_sensitivity": {
+    "gate_values": [
+      0.002,
+      0.003,
+      0.004
+    ],
+    "local_45x3_jacobian_singular_values": [
+      47.138560778488426,
+      7.131878932024895,
+      3.2277061257249917
+    ],
+    "local_condition": 14.604353352615208,
+    "derivative_column_cosines_burst_measurement_gate": [
+      [
+        1.0,
+        0.4431180559740585,
+        0.3208514264737528
+      ],
+      [
+        0.4431180559740585,
+        1.0,
+        0.8414902373063088
+      ],
+      [
+        0.3208514264737528,
+        0.8414902373063088,
+        1.0
+      ]
+    ],
+    "population_fits_with_templates_fixed_at_gate_p_003": {
+      "0.002": {
+        "exact_truth_fit_exact_templates": [
+          0.0083,
+          0.0004
+        ],
+        "exact_truth_fit_DEM_templates": [
+          0.0083,
+          0.0004
+        ],
+        "DEM_truth_fit_DEM_templates": [
+          0.0083,
+          0.0004
+        ],
+        "exact_vs_DEM_truth_mean_max_abs": 1.4795995826544228e-05,
+        "exact_vs_DEM_truth_mean_rms": 9.663354070175366e-06
+      },
+      "0.003": {
+        "exact_truth_fit_exact_templates": [
+          0.008,
+          0.003
+        ],
+        "exact_truth_fit_DEM_templates": [
+          0.008,
+          0.003
+        ],
+        "DEM_truth_fit_DEM_templates": [
+          0.008,
+          0.003
+        ],
+        "exact_vs_DEM_truth_mean_max_abs": 3.271962576284482e-05,
+        "exact_vs_DEM_truth_mean_rms": 2.1360105177819073e-05
+      },
+      "0.004": {
+        "exact_truth_fit_exact_templates": [
+          0.0077,
+          0.0056
+        ],
+        "exact_truth_fit_DEM_templates": [
+          0.0077,
+          0.0056
+        ],
+        "DEM_truth_fit_DEM_templates": [
+          0.0077,
+          0.0056
+        ],
+        "exact_vs_DEM_truth_mean_max_abs": 5.71692701005766e-05,
+        "exact_vs_DEM_truth_mean_rms": 3.730748269352762e-05
+      }
+    },
+    "note": "Only the existing balanced categorical gate-channel rate is varied; no new mechanism or sampling."
+  }
+}
