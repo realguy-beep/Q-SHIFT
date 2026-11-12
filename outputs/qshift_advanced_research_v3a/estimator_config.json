@@ -1,0 +1,49 @@
+{
+  "config_schema": "qshift-estimator-config-v1",
+  "template_bank": "outputs/qshift_advanced_research_v3a/template_bank_v1.json",
+  "default_template_family": "exact_categorical",
+  "template_families": [
+    "exact_categorical",
+    "approximate_dem"
+  ],
+  "gate_p_assumed": 0.003,
+  "parameter_bounds": {
+    "p_burst": [
+      0.0,
+      0.02
+    ],
+    "p_measurement": [
+      0.0,
+      0.01
+    ]
+  },
+  "candidate_a": {
+    "profile_p_burst_knots": [
+      0.0,
+      0.005,
+      0.01,
+      0.015,
+      0.02
+    ],
+    "fixed_p_measurement": 0.003,
+    "interpolation": "piecewise_linear",
+    "fit_step": 0.00001,
+    "scale": "population-limit pooled within-plus-between feature variance with equal weights for five knots; variance floor 1e-6"
+  },
+  "candidate_b": {
+    "p_burst_template_step": 0.001,
+    "p_measurement_template_step": 0.001,
+    "interpolation": "bilinear",
+    "fit_step_both_parameters": 0.0001,
+    "objective": "mean squared feature residual standardized by family-specific Candidate A profile scales",
+    "absolute_score_tie_tolerance": 0.0,
+    "tie_break": "lower p_burst then lower p_measurement"
+  },
+  "input": {
+    "detector_columns": 40,
+    "binary_only": true,
+    "feature_order": "D0..D39 then D8&D10,D16&D18,D24&D26,D32&D34,D36&D38"
+  },
+  "sampling_performed": false,
+  "decoder_evaluation_performed": false
+}

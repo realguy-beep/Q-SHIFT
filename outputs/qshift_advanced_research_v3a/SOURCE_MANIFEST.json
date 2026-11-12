@@ -1,0 +1,262 @@
+{
+  "workstream": "Q-SHIFT Phase 3A joint noise estimator implementation",
+  "branch": "qshift-advanced-research",
+  "base_commit": "abcafd6f36023ae5016ccf2e7c69a674e608351d",
+  "software": {
+    "python": "3.12",
+    "numpy": "2.5.3",
+    "stim": "1.16.0"
+  },
+  "model_scope": {
+    "p_burst": [
+      0.0,
+      0.02
+    ],
+    "p_measurement": [
+      0.0,
+      0.01
+    ],
+    "gate_p_assumed": 0.003,
+    "detectors": 40,
+    "features": 45,
+    "feature_pairs": [
+      [
+        8,
+        10
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        32,
+        34
+      ],
+      [
+        36,
+        38
+      ]
+    ],
+    "template_grid_steps": {
+      "p_burst": 0.001,
+      "p_measurement": 0.001
+    },
+    "candidate_b_fit_step": 0.0001,
+    "candidate_a_knots": [
+      0,
+      0.005,
+      0.01,
+      0.015,
+      0.02
+    ],
+    "candidate_a_fit_step": 1e-05
+  },
+  "template_families": {
+    "exact_categorical": "exact independent location/categorical fault algebra; no sampling",
+    "approximate_dem": "Stim DEM converted with decompose_errors=True and approximate_disjoint_errors=True; expectation exact for emitted approximate DEM"
+  },
+  "validation": {
+    "unit_tests": "13 deterministic tests passed (latest run: 3.935 seconds)",
+    "template_generator": "deterministic, round-trip verified",
+    "study_runner": "not invoked; authorization and seed manifest absent",
+    "analysis_cli": "help path checked; no sampling or resampling"
+  },
+  "integrity": {
+    "only_new_directory": "outputs/qshift_advanced_research_v3a/",
+    "sampling_performed": false,
+    "decoder_evaluation": false,
+    "protected_data_access": false,
+    "frozen_phase2c_sources_verified_by_test": true
+  },
+  "source_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "252cd1b41ec29a7d6f51542cda14ee32aab4038ae7cbd223e9a90191e2c9dff0"
+    },
+    {
+      "path": "outputs/phase2b_pauli_bias/noise_model.py",
+      "sha256": "256826516353c5d3effb6a0b85969934ac2b61edc2848148d935087e54dffcbd"
+    },
+    {
+      "path": "outputs/phase3a_correlated_noise_preflight/simulator.py",
+      "sha256": "c938ffc9f4169a9d0c7c92bf5c66e48a03a64f45d3d06f160a31d11b188da239"
+    },
+    {
+      "path": "outputs/stage4_noise_adaptive_feasibility_v1/prototype.py",
+      "sha256": "2b95f11fe3daf9cb8cd212b493b801c0d27d31c8cdc9a760bb1265c927a0e371"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/analysis_results.json",
+      "sha256": "3775e6b2f5e688dfb37e28de9451f88a927c62c93050c0a9e34b7aeb0b030877"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/analyze_identifiability.py",
+      "sha256": "17962d43ca960f10ead0570076972cf220972c27760294f1c5e7462f2d0d7744"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/DEM_EXPECTATION_DERIVATION.md",
+      "sha256": "273f7ab8a2deec865c4220821bd88f22ebf28ac5f72baf4d8f09eff3824b8aa2"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/DETERMINISTIC_VALIDATION.md",
+      "sha256": "0147554b6e26d5cd47895a21f085722a1f9ae7d93c58d80c7d646ec2a5a2a50b"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/FEATURE_SENSITIVITY.md",
+      "sha256": "0547b29c8de1355307d3fe17dd583eddc5551882ac5b88a0166f569d1ec36fb4"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/IDENTIFIABILITY_REPORT.md",
+      "sha256": "3fb00200a806d5b3629eb9c7c6050480396488bbaf4b3e11e4af31956f968c71"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/MODEL_ADEQUACY_DECISION.md",
+      "sha256": "300878f23408ec0644fb9a339d036a58579ac2893694c8a35e675de5f5c0db87"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2b/SOURCE_MANIFEST.json",
+      "sha256": "c96b1e20fa774d667a40eaec9681b6ce76d20fb44b839ed0059d8163a2268217"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/comparison_results.json",
+      "sha256": "5a7ebebec21e84d9ed4b2286c75e915362982b522bd26c74c5e09d8e628ff7c6"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/DETERMINISTIC_COMPARISON.md",
+      "sha256": "a7e57fb144701ae5d5a445de6f40aa8d99b1440d33f81c6dfbd5fa5832f6a42d"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/DEVELOPMENT_PROTOCOL_PROPOSAL.md",
+      "sha256": "746fa8e417effaca6665e13f1220999540b1b969fc21b3c1926281ae79522c32"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/FINITE_SAMPLE_THEORY.md",
+      "sha256": "ad4bc9cb8dfffb75b2cdaa6cfc8e2dee685c9b9fe87c0af643ac009b6c9d0118"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/joint_estimator_comparison.py",
+      "sha256": "c847e5354588c14e9b4d7d0c0d7969a28df79cb483f2ffafe08110167d30ea41"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/JOINT_ESTIMATOR_DESIGN.md",
+      "sha256": "a94422ac24c68afc091ace84096caa23d6a892d6a895c1052fe0f56ed2e6bb98"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/NUISANCE_AND_FAILURE_MODES.md",
+      "sha256": "4318e055842052cb81a66359c68ffdf77ed3690c2ab5029b6671d22ef87ea55c"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/SOURCE_MANIFEST.json",
+      "sha256": "a5688d984b9f14d3d6e1f71450a62fdcbddab5f9fc2a534ecaeec0522068409d"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c/VALIDATION_REPORT.md",
+      "sha256": "f3fa676ac04a93cf5af2636311099ab213b1b9623a51a6c2d9c9ae50b0e3315a"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c_review/CORRECTION_REPORT.md",
+      "sha256": "dd8b888d589063dea85d5cfba20359cd01c71c657311e40b4a214fce98fde967"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c_review/guard_distribution_results.json",
+      "sha256": "bb24a34f92310124880fe4dc77e641d59f418c302ddf8a09260833f778ec80c0"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c_review/guard_distribution_review.py",
+      "sha256": "0a823fa1a2687a9f2ad0bc4c1622bc5fa49339ae4a255f5c5c61a79c608ec3db"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c_review/GUARD_STATISTICS_DERIVATION.md",
+      "sha256": "f03eb26115fb28f1079f94c332190c4f88162548a70efad89d5df656c373bf58"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c_review/MODEL_SENSITIVITY_REVIEW.md",
+      "sha256": "eb979515c44b2d9d01eb9a54d442dcb470e95dce7ddf4299624e28bb6b0365bd"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c_review/SOURCE_MANIFEST.json",
+      "sha256": "a09280eb69f282045b4f717b45895cca8b586647d1697c80d78a509de30c49d6"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c_review/UPDATED_RESEARCH_DECISION.md",
+      "sha256": "fec90c5de75eae7b91fff71df48deef589c0292c0dba71b7ef0d69bbddbebe95"
+    },
+    {
+      "path": "outputs/qshift_advanced_decoder_research_v2c_review/VALIDATION_REPORT.md",
+      "sha256": "98dba5c77a309e578626505f35c4618c83fc0e810b88d4a9bc45806189dfe83b"
+    }
+  ],
+  "new_deliverables": [
+    {
+      "path": "outputs/qshift_advanced_research_v3a/.gitattributes",
+      "sha256": "f102787df6993229c0893d2cdfb1efcd8b2564cacdf6c0fac79581e70a88213b",
+      "bytes": 53
+    },
+    {
+      "path": "outputs/qshift_advanced_research_v3a/analyze_finite_history_study.py",
+      "sha256": "68d5bf49934902bd0e8ad857c87433544dd8b5dce4cfb6feeed3df845f06ab9e",
+      "bytes": 6267
+    },
+    {
+      "path": "outputs/qshift_advanced_research_v3a/DEVELOPMENT_STUDY_PROTOCOL.md",
+      "sha256": "174d1016c489f7342f318f16d671aa9246eaa071c3013789edc55ba606454a40",
+      "bytes": 9297
+    },
+    {
+      "path": "outputs/qshift_advanced_research_v3a/estimator_config.json",
+      "sha256": "36cadc529d599746c2791386a2aaf55cde971df2c1b842b245f97630b317c291",
+      "bytes": 1367
+    },
+    {
+      "path": "outputs/qshift_advanced_research_v3a/finite_history_study_config.json",
+      "sha256": "f0b86ca0e26c1562ffc0a4c6a484330cc23052321fe74d089f4463cf67530795",
+      "bytes": 1924
+    },
+    {
+      "path": "outputs/qshift_advanced_research_v3a/generate_templates.py",
+      "sha256": "3d1700c051ed97787a7eb4b9b9c42356cb2afedea1a26f141e5c53fbde005aef",
+      "bytes": 2981
+    },
+    {
+      "path": "outputs/qshift_advanced_research_v3a/qshift_estimators.py",
+      "sha256": "cfae655317e261715103fda38fc526192bc219fd6a233d9ec83e1c6aebb01582",
+      "bytes": 13436
+    },
+    {
+      "path": "outputs/qshift_advanced_research_v3a/README.md",
+      "sha256": "07d74c5d81b596ff2cb440128464809a049073de56ee5cad2d829008e7a4ffef",
+      "bytes": 3993
+    },
+    {
+      "path": "outputs/qshift_advanced_research_v3a/run_finite_history_study.py",
+      "sha256": "7f39d46c958915e07dc2a5e102505bb8cd53a1c5cf395bef34e6121bfd523576",
+      "bytes": 9800
+    },
+    {
+      "path": "outputs/qshift_advanced_research_v3a/template_bank_v1.json",
+      "sha256": "79fa5c3cbd6a25d2e250e6ca514a3cdabb015d3d95c6a0086dca9ed948abd7aa",
+      "bytes": 670214
+    },
+    {
+      "path": "outputs/qshift_advanced_research_v3a/tests/test_qshift_estimators.py",
+      "sha256": "0ad5c056087e55132ed44f9ca652fa125f77454a7153ec5c9e0ed372339d043b",
+      "bytes": 9119
+    },
+    {
+      "path": "outputs/qshift_advanced_research_v3a/VALIDATION_REPORT.md",
+      "sha256": "e346f20c067a5af5d8b2796c1e6204d622c3a33a6b02566a8aaec5c57a5f066a",
+      "bytes": 3188
+    }
+  ],
+  "notes": [
+    "Candidate A is population-limit source-faithful with equal-weight five profile batches, not a sampled implementation.",
+    "Gate p is fixed at .003 and is not estimated.",
+    "Candidate C and Candidate D are not implemented as estimators or alarms.",
+    "Study config is a proposal and sampling_authorized=false; future runner requires a separate approval record and development-only seed manifest.",
+    "No new seeds were created; no Stage 5 material was accessed."
+  ]
+}
