@@ -15,6 +15,27 @@ from .serial_protocol import MAX_LINE_BYTES, SerialCommandProcessor
 logger = logging.getLogger("qshift.exhibition.serial")
 
 
+def _log_device_diagnostics(raw_line: bytes) -> None:
+    """Log only the bounded, documented counters in an E2 hello message."""
+    try:
+        message = json.loads(raw_line.decode("utf-8", errors="strict"))
+    except (UnicodeError, json.JSONDecodeError):
+        return
+    if not isinstance(message, dict) or message.get("type") != "hello":
+        return
+    diag = message.get("diag")
+    if not isinstance(diag, dict):
+        return
+    safe = {}
+    for key in ("fw", "retry", "bad_rx", "reconnects", "button_drops", "tx_blocked"):
+        value = diag.get(key)
+        if key == "fw" and isinstance(value, str):
+            safe[key] = value[:24]
+        elif key != "fw" and isinstance(value, int) and not isinstance(value, bool) and value >= 0:
+            safe[key] = value
+    logger.info("ESP32 firmware diagnostics: %s", json.dumps(safe, sort_keys=True))
+
+
 class SerialBridgeWorker:
     def __init__(
         self,
@@ -91,6 +112,7 @@ class SerialBridgeWorker:
                             if dropping_oversized_line:
                                 replies = self.processor.handle_line(b"x" * (MAX_LINE_BYTES + 1))
                             else:
+                                _log_device_diagnostics(bytes(buffer))
                                 replies = self.processor.handle_line(bytes(buffer))
                             buffer.clear()
                             dropping_oversized_line = False

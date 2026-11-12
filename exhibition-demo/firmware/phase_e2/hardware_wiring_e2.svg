@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Q-SHIFT E2 proposed wiring</title>
+  <desc id="desc">USB powers the ESP32 only. A separate regulated five volt supply powers the seventeen pixel WS2812B chain and the five volt side of a dual-supply level translator. Grounds are shared. GPIO18 drives the translator input; GPIO25, 26, and 27 connect to buttons; GPIO22 and 23 drive green and red status LEDs.</desc>
+  <defs>
+    <style>
+      .bg{fill:#07101f}.box{fill:#101d31;stroke:#42d9ee;stroke-width:2;rx:16}.box2{fill:#17162d;stroke:#9b7cff;stroke-width:2;rx:16}
+      .title{font:700 30px Arial,sans-serif;fill:#eff9ff}.h{font:700 18px Arial,sans-serif;fill:#eff9ff}.t{font:15px Arial,sans-serif;fill:#c4d6e7}.small{font:13px Arial,sans-serif;fill:#9db2c5}
+      .red{stroke:#ff647c;stroke-width:4;fill:none}.yellow{stroke:#f4c95d;stroke-width:4;fill:none}.cyan{stroke:#49dceb;stroke-width:3;fill:none}.violet{stroke:#ad88ff;stroke-width:3;fill:none}.ground{stroke:#a9bdcc;stroke-width:4;fill:none}.warn{fill:#35151e;stroke:#ff647c;stroke-width:2;rx:10}
+    </style>
+    <marker id="arrc" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#49dceb"/></marker>
+    <marker id="arrv" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#ad88ff"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="820"/>
+  <text x="54" y="58" class="title">Q-SHIFT E2 · proposed low-voltage wiring</text>
+  <text x="56" y="88" class="small">Illustrative connection plan only. Confirm the exact ESP32 board and component datasheets before assembly or energizing.</text>
+
+  <rect class="box" x="70" y="145" width="240" height="165"/>
+  <text class="h" x="96" y="180">Laptop USB</text>
+  <text class="t" x="96" y="210">USB data + board power</text>
+  <text class="t" x="96" y="238">ESP32 receives USB 5 V</text>
+  <text class="small" x="96" y="270">No LED supply on USB/VIN pin</text>
+
+  <rect class="box2" x="410" y="130" width="325" height="215"/>
+  <text class="h" x="440" y="166">ESP32 DevKit</text>
+  <text class="t" x="440" y="198">GPIO18 → data translator A</text>
+  <text class="t" x="440" y="226">GPIO25 / 26 / 27 → buttons</text>
+  <text class="t" x="440" y="254">GPIO22 / 23 → status LEDs</text>
+  <text class="small" x="440" y="291">USB powers controller only</text>
+
+  <rect class="box" x="850" y="140" width="280" height="190"/>
+  <text class="h" x="880" y="177">SN74LVC1T45</text>
+  <text class="t" x="880" y="207">VCCA = ESP32 3.3 V</text>
+  <text class="t" x="880" y="235">VCCB = LED supply 5 V</text>
+  <text class="t" x="880" y="263">DIR = HIGH (A → B)</text>
+  <text class="small" x="880" y="294">100 nF local decoupling</text>
+
+  <rect class="box" x="850" y="410" width="280" height="190"/>
+  <text class="h" x="880" y="447">17 × WS2812B chain</text>
+  <text class="t" x="880" y="477">Pixel 0–8: data qubits</text>
+  <text class="t" x="880" y="505">Pixel 9–16: check indicators</text>
+  <text class="t" x="880" y="533">5 V and ground from supply</text>
+  <text class="small" x="880" y="565">330–470 Ω in data; 1000 µF at input</text>
+
+  <rect class="box" x="70" y="420" width="240" height="140"/>
+  <text class="h" x="96" y="457">Regulated LED supply</text>
+  <text class="t" x="96" y="487">5 V, 2 A, protected</text>
+  <text class="small" x="96" y="520">Do not use 11.1/12 V</text>
+
+  <rect class="box2" x="410" y="425" width="325" height="145"/>
+  <text class="h" x="440" y="462">3 buttons + status LEDs</text>
+  <text class="t" x="440" y="492">Buttons: GPIO ↔ switch ↔ GND</text>
+  <text class="t" x="440" y="520">Status LEDs: GPIO → 1 kΩ → LED</text>
+  <text class="small" x="440" y="548">Never connect 5 V to GPIO</text>
+
+  <path class="cyan" marker-end="url(#arrc)" d="M310 224 H410"/>
+  <text class="small" x="322" y="208">USB cable</text>
+  <path class="red" d="M310 492 H790 M790 290 V492 H850 M790 440 H850"/>
+  <text class="small" x="420" y="480">external +5 V LED-only distribution</text>
+  <path class="ground" d="M310 535 H800 M800 320 V570 H850 M800 320 H850 M500 535 V345"/>
+  <text class="small" x="475" y="555">shared GND; positive +5 V rails stay separate</text>
+  <path class="violet" marker-end="url(#arrv)" d="M735 218 H850"/>
+  <text class="small" x="741" y="200">GPIO18 A-side data</text>
+  <path class="cyan" marker-end="url(#arrc)" d="M1130 245 H1160 V430 H1130"/>
+  <text class="small" x="950" y="393">B → 330–470 Ω → DIN</text>
+  <path class="cyan" marker-end="url(#arrc)" d="M575 345 V425"/>
+  <text class="small" x="590" y="388">GPIO button/status wires</text>
+
+  <rect class="warn" x="385" y="650" width="745" height="105"/>
+  <text class="h" x="415" y="687" fill="#ffb3be">POWER ISOLATION RULE</text>
+  <text class="t" x="415" y="717">USB powers the board; external 5 V powers LEDs/translator. Tie grounds together, but leave the two +5 V rails separate.</text>
+  <text class="t" x="415" y="740">Confirm the exact board schematic and translator wiring before use. This drawing is not an authorization to power hardware.</text>
+</svg>

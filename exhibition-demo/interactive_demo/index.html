@@ -39,7 +39,7 @@
   </main>
   <footer><span>Q-SHIFT · isolated exhibition software</span><span>ESP32 firmware is not preloaded; hardware remains unverified.</span></footer>
   <script>
-    const $=id=>document.getElementById(id);let currentState=null;let busy=false;let layoutReady=false;
+    const $=id=>document.getElementById(id);let currentState=null;let busy=false;let layoutReady=false;let sliceEditing=false;
     function setStatus(text,kind=''){const el=$('status');el.textContent=text;el.className='status '+kind}
     function svgNode(name,attrs={},parent=$('codeMap')){const n=document.createElementNS('http://www.w3.org/2000/svg',name);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,String(v));parent.appendChild(n);return n}
     function point(x,y){return [90+x*78,38+y*67]}
@@ -55,7 +55,7 @@
       sel.addEventListener('change',highlightSelected);highlightSelected();
     }
     function highlightSelected(){for(const n of document.querySelectorAll('.data-node')){n.classList.remove('selected');n.classList.remove('input')}const el=$('data-'+$('dataIndex').value);if(el)el.classList.add('selected');if(currentState?.fault_input){const f=$('data-'+currentState.fault_input.data_index);if(f)f.classList.add('input')}}
-    function renderState(state){currentState=state;if(state.layout&&!layoutReady){renderLayout(state.layout);layoutReady=true}const labels={desktop_mock_no_esp32_connected:'DESKTOP MOCK · NO ESP32',usb_serial_connected:'USB SERIAL CONNECTED',usb_serial_disconnected:'USB SERIAL DISCONNECTED'};$('transportTag').textContent=labels[state.transport]||'TRANSPORT UNKNOWN';$('timeSlice').disabled=!state.detector_frames;if(!state.detector_frames){$('timeSlice').value='0';for(const el of document.querySelectorAll('.check-node')){el.classList.remove('event');el.classList.remove('unavailable')}}renderFrame();highlightSelected();
+    function renderState(state){currentState=state;if(state.layout&&!layoutReady){renderLayout(state.layout);layoutReady=true}const labels={desktop_mock_no_esp32_connected:'DESKTOP MOCK · NO ESP32',usb_serial_connected:'USB SERIAL CONNECTED',usb_serial_disconnected:'USB SERIAL DISCONNECTED'};$('transportTag').textContent=labels[state.transport]||'TRANSPORT UNKNOWN';$('timeSlice').disabled=!state.detector_frames;if(!sliceEditing)$('timeSlice').value=String(state.detector_frames?(state.display_slice_index??0):0);if(!state.detector_frames){for(const el of document.querySelectorAll('.check-node')){el.classList.remove('event');el.classList.remove('unavailable')}}renderFrame();highlightSelected();
       $('inject').disabled=busy||state.phase!=='idle';$('decode').disabled=busy||state.phase!=='syndrome_ready';$('reset').disabled=busy||state.phase==='idle';
       const fault=state.fault_input;
       if(fault){setStatus(`Known simulated ${fault.pauli} input on D${fault.data_index+1} (Stim q${fault.stim_qubit}); detector history derived.`,state.phase==='decoded'?'good':'')}
@@ -75,7 +75,8 @@
     $('inject').addEventListener('click',()=>action($('inject'),()=>request('/api/interactive/inject',{data_index:Number($('dataIndex').value),pauli:$('pauli').value[0]})));
     $('decode').addEventListener('click',()=>action($('decode'),()=>request('/api/interactive/decode',{})));
     $('reset').addEventListener('click',()=>action($('reset'),()=>request('/api/interactive/reset',{})));
-    $('timeSlice').addEventListener('input',renderFrame);
+    $('timeSlice').addEventListener('input',()=>{sliceEditing=true;renderFrame()});
+    $('timeSlice').addEventListener('change',async()=>{const sliceIndex=Number($('timeSlice').value);try{const state=await request('/api/interactive/slice',{slice_index:sliceIndex});sliceEditing=false;renderState(state)}catch(e){sliceEditing=false;setStatus(`Slice sync failed: ${e.message}`,'error');if(currentState)renderState(currentState)}});
     request('/api/interactive/state').then(renderState).catch(e=>setStatus(`Local interactive engine unavailable: ${e.message}`,'error'));
     setInterval(()=>{if(!busy)request('/api/interactive/state').then(renderState).catch(()=>{})},1000);
   </script>

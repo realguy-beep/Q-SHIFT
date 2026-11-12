@@ -45,6 +45,20 @@ The 9 data indicators use Stim qubits `1,3,5 / 8,10,12 / 15,17,19`; the 8 check 
 
 The ESP32 interface is specified in [`interactive_demo/FIRMWARE_PROTOCOL_E1.md`](interactive_demo/FIRMWARE_PROTOCOL_E1.md). The JSON-Lines protocol, optional host-side pySerial worker, and in-memory serial mock are implemented; a loopback test exercises the worker. No physical COM port was opened and no firmware was flashed. Complete the separate wiring and power review before connecting or programming hardware. To enable a future host bridge, install the optional `requirements-hardware.txt` and set `QSHIFT_ESP32_PORT` before starting the server. This mode is an educational simulation and not a quantum-processor connection.
 
+### ESP32 firmware preparation (E2)
+
+The source-only ESP32 implementation is in [`firmware/phase_e2/`](firmware/phase_e2/). It preserves the E1 JSON-Lines v1 hello/button/ACK/state exchange, retries the same sequence after lost acknowledgements, keeps the 17-pixel mapping, and shows the selected one of six detector frames. The laptop time-slice slider now writes a shared `display_slice_index`; firmware's periodic full-state hello follows that selection so the two displays stay aligned. `GET /api/interactive/state` and `POST /api/interactive/slice` are demo-only endpoints. The protocol details and wiring guide are [`FIRMWARE_PROTOCOL_E2.md`](firmware/phase_e2/FIRMWARE_PROTOCOL_E2.md) and [`HARDWARE_GUIDE_E2.md`](firmware/phase_e2/HARDWARE_GUIDE_E2.md); the wiring diagram is [`hardware_wiring_e2.svg`](firmware/phase_e2/hardware_wiring_e2.svg).
+
+The provided PlatformIO profile is explicitly for a classic ESP32-WROOM-32 DevKit V1. Verify the physical board marking before build. PlatformIO was not installed in the implementation environment, so firmware compilation is not verified. Do not flash or power a board until the separate wiring and power review is complete. The recommended topology keeps laptop USB positive power on the ESP32 and an independent regulated 5 V LED supply on the pixels/translator, sharing ground only and leaving the positive rails separate.
+
+Run the deterministic E1 + E2 host contract tests from this directory with:
+
+```powershell
+python -m unittest tests.test_interactive_e1 tests.test_firmware_e2 -v
+```
+
+These tests exercise the production host protocol processor and a desktop contract harness; they do not replace compiling/flashing the firmware or validating physical wiring.
+
 ## Scientific scope and limits
 
 This is an **educational live simulation**, not the frozen Stage 5 research runner and not a hardware demonstration. It adds the synthetic paired-X event after each of five `MR` instructions in Stim’s generated circuit and uses `decompose_errors=True, approximate_disjoint_errors=True` when constructing the matching graph. The demo’s 17-point detector-profile estimator is a simplified nearest-profile procedure; it is not the exact frozen Stage 5 implementation. Do not pool or present live demo results as additional Stage 5 shots.

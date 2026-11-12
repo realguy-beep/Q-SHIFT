@@ -19,6 +19,10 @@ class InjectRequest(BaseModel):
     pauli: Literal["X", "Y", "Z"] = "X"
 
 
+class SliceRequest(BaseModel):
+    slice_index: int = Field(ge=0, le=5, strict=True)
+
+
 def create_interactive_integration(
     circuit_factory: Callable[[float], stim.Circuit],
     decoder_factory: Callable[[float], object],
@@ -76,5 +80,13 @@ def create_interactive_integration(
     def interactive_reset(request: Request) -> dict:
         result = engine.reset()
         return add_transport(result, request)
+
+    @router.post("/api/interactive/slice")
+    def interactive_slice(body: SliceRequest, request: Request) -> dict:
+        try:
+            result = engine.set_display_slice(body.slice_index)
+            return add_transport(result, request)
+        except ValueError as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
 
     return router, engine, serial_processor

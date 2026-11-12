@@ -56,6 +56,7 @@ class InteractiveDemoEngine:
         self._observable: int | None = None
         self._prediction: int | None = None
         self._run_id = 0
+        self._display_slice_index = 0
 
     @property
     def phase(self) -> str:
@@ -128,6 +129,14 @@ class InteractiveDemoEngine:
             self._transitions.append("decoded")
             return self.snapshot()
 
+    def set_display_slice(self, slice_index: int) -> dict[str, Any]:
+        """Select one of the six detector-history frames for the exhibit."""
+        if isinstance(slice_index, bool) or not isinstance(slice_index, int) or not 0 <= slice_index < 6:
+            raise ValueError("slice_index must be an integer from 0 through 5")
+        with self._lock:
+            self._display_slice_index = slice_index
+            return self.snapshot()
+
     def reset(self) -> dict[str, Any]:
         with self._lock:
             previous = self._phase
@@ -137,6 +146,7 @@ class InteractiveDemoEngine:
             self._detectors = None
             self._observable = None
             self._prediction = None
+            self._display_slice_index = 0
             return self.snapshot()
 
     def snapshot(self) -> dict[str, Any]:
@@ -167,6 +177,7 @@ class InteractiveDemoEngine:
                 "run_id": self._run_id,
                 "mode": "deterministic_simulation_only",
                 "phase": self._phase,
+                "display_slice_index": self._display_slice_index,
                 "transitions": list(self._transitions),
                 "code": {
                     "id": "stim_rotated_memory_z_d3_r5_e1",
