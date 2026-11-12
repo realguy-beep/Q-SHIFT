@@ -179,3 +179,41 @@ V1, V2, V2.1–V2.3, and Stage 5 research files were not modified. The Stage 5 s
 - Final handoff commit and pushed branch head: reported in the completion response; PR head is updated by the fast-forward push.
 - No force-push, merge, PR close, or auto-merge. PR #1 remains draft/open/unmerged.
 - Recommendation: **NO-GO for V2 sampling at this checkpoint**. V2.4 removes the duplicate-completion resume blocker for supervisor review, but sampling still requires Supervisor Review #5 and separate explicit owner authorization. No independent real-array audit or empirical outcome exists.
+
+## Supervisor Review — Core Upgrade v1 Corrections + NS-0 (2026-11-12)
+
+### Review and scope
+
+- Reviewed commit: `feb8c23715f0270e9c9ce1bb6444e414a26976bc`.
+- Corrective implementation commit: `e65ccc0921f12f87a6d1ec5004a9660cdab3ef7a` on `codex/core-system-upgrade`.
+- Changes are limited to `qshift_core_v1/evaluation.py`, `qshift_core_v1/controller.py`, deterministic regressions, and `outputs/core_system_upgrade_v1_1/` review/audit documentation. No sampling or training was authorized or performed.
+
+### Requested corrections
+
+1. `evaluate_paired` requires each decoder to return `DecoderPrediction`; it compares full prediction metadata against the registered metadata, detects metadata mutation during decode, and checks shape and runtime validity.
+2. Existing schema-version-1 top-level `sample_sha256` and result fields remain. Additive identity metadata records shapes, dtypes, conventions, and decoder metadata, and explicitly disclaims provenance/leakage proof.
+3. The controller accepts only nonnegative, strictly increasing block indices. `based_on_through_block` must be a nonnegative integer strictly before the current block. Invalid timing falls back to the registered fixed decoder; hysteresis and dwell remain.
+4. A read-only V2.4 audit checked 17 entries: 13 expected-hash mismatches, all entries unchanged from the recorded base after newline normalization, and all authorization flags false. V2.4 remains HOLD; no historical freeze was rewritten.
+
+### Validation
+
+- `python -m unittest dashboard.tests.test_core_system_v1 -v` — **35 passed**.
+- `python -m unittest dashboard.tests.test_dashboard.SeedAndConfigTests dashboard.tests.test_dashboard.MetricAndStorageTests -v` — **11 passed**.
+- `python -m unittest dashboard.tests.test_dashboard.StructuredDecoderTests.test_qshift_stim_coordinates_make_expected_round_geometry dashboard.tests.test_dashboard.StructuredDecoderTests.test_residual_target_and_xor_correction_convention -v` — **2 passed**.
+- `python -m compileall -q qshift_core_v1 dashboard\configuration.py dashboard\seed_protocol.py dashboard\simulator.py dashboard\tests\test_core_system_v1.py outputs\core_system_upgrade_v1_1` — passed.
+- `node --check dashboard\static\app.js` and Python HTML parsing — passed.
+- `audit_v2_4_hold.py`, `create_manifest.py`, and `verify_manifest.py` passed for the documented historical state. The historical expected-hash audit itself is explicitly **not** reported as a pass.
+
+The deterministic PyMatching fixtures cover both explicit correlation modes and legacy Phase 2B behavior using supplied syndromes; no Stim sampler was invoked. No protected outcomes, research runs, Stage 5 evidence, or exhibition files were modified or accessed.
+
+### Evidence hashes and handoff
+
+- v1.1 engineering manifest SHA-256: `b70182b669fe8945fb5b2a2aca9556bef589ffd942782ff10a7d3aef223af3b7`.
+- V2.4 HOLD audit JSON SHA-256: `22dccabcd80d98d0e1ba2d0c489803f4af194751fb4fc0f6ce226d3e19e16766`.
+- Detailed reports: `outputs/core_system_upgrade_v1_1/CORRECTIVE_REVIEW_REPORT.md`, `V2_4_HOLD_CONFIRMATION.md`, `NS0_ENGINEERING_READINESS.md`, `UNRESOLVED_INTEGRATION_RISKS.md`, and `REPRODUCE.md`.
+- NS-0 readiness is **CONDITIONAL**: flat same-order detector inputs can accept candidates; geometry-changing or history-based candidates need a separately versioned input/circuit-identity contract. No speculative architecture was implemented.
+- No merge, expensive experiment, decoder-performance claim, or hardware claim.
+
+### Next action
+
+Stop for the next supervisor review. No research sampling is authorized.
