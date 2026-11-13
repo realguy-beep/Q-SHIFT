@@ -22,11 +22,14 @@ from qshift_ns4a_v2_deterministic.checkpoint import atomic_write_json
 from .analysis import analyze_verified_archives
 from .archive_store import build_archive_arrays, commit_root_archive, archive_path
 from .audit import audit_run_directory
-from .models import CONFIG_PATH, build_evaluation_bank, build_model_catalog, evaluation_decoder_views
+from .models import (
+    CONFIG_PATH, build_evaluation_bank, build_model_catalog, evaluation_decoder_views,
+    evaluation_model_identity_map,
+)
 from .protocol import validate_allocation
 from .resource_guard import ResourceGuard
 from .run_state import RunDirectoryLock, RunStateStore
-from .runner import _CheckedDecoderView, _write_once_json
+from .runner import _CheckedDecoderView, _expected_audit_bindings, _write_once_json
 
 
 FIXTURE_DEFINITION = "uint32 modular detector pattern; parity label derived from fixed detector columns and condition index; no RNG, Stim sampler, hidden regime labels, or experimental shot source"
@@ -135,9 +138,11 @@ def run_full_deterministic_rehearsal(*, output_directory: str | Path | None = No
             selected, _ = state.require_frozen_selection()
 
             evaluation_rows = 0
+            evaluation_model_identities: dict[str, dict[str, str]] = {}
             for condition_index, condition_id in enumerate(CONDITIONS):
                 bank, bm_registration = build_evaluation_bank(catalog, condition_id, selected)
                 try:
+                    evaluation_model_identities[condition_id] = evaluation_model_identity_map(bank)
                     views = evaluation_decoder_views(bank, catalog.conditions[condition_id].circuit)
                     for root_index in range(10):
                         root_id = make_root_id("evaluation", condition_id, root_index)
@@ -182,7 +187,8 @@ def run_full_deterministic_rehearsal(*, output_directory: str | Path | None = No
                 finally:
                     bm_registration.adapter.close()
 
-            independent = audit_run_directory(run_dir, state.read())
+            audit_bindings = _expected_audit_bindings(catalog, evaluation_model_identities)
+            independent = audit_run_directory(run_dir, state.read(), **audit_bindings)
             audit_bytes = json.dumps(independent, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()
             audit_sha = _write_once_json(run_dir / "INDEPENDENT_AUDIT.json", independent)
             state.record_independent_audit(audit_sha)

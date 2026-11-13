@@ -2,6 +2,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
+import hashlib
+import json
+import copy
 
 import pytest
 import stim
@@ -14,6 +17,9 @@ from qshift_ns4a_v2_runner.integrity import (
 )
 from qshift_ns4a_v2_runner.resource_guard import ResourceGuard, ResourceLimitError
 from qshift_ns4a_v2_runner.runner import StimRootSampler
+from qshift_ns4a_v2_runner.audit import RunAuditError, audit_run_directory
+from qshift_ns4a_v2_runner.models import build_evaluation_bank, build_model_catalog, evaluation_model_identity_map
+from qshift_ns4a_v2_deterministic.protocol import CANDIDATE_IDS, CONDITIONS
 
 
 @dataclass
@@ -85,10 +91,11 @@ def test_cli_default_is_sampler_free_dry_run(monkeypatch, capsys):
     assert '"status": "fixture"' in capsys.readouterr().out
 
 
-def test_full_108_root_rehearsal_uses_no_stim_sampler(monkeypatch):
+def test_full_108_root_rehearsal_uses_no_stim_sampler_and_saved_arrays_reaudit(tmp_path, monkeypatch):
     monkeypatch.setattr(stim.Circuit, "compile_detector_sampler",
                         lambda *a, **k: pytest.fail("deterministic rehearsal invoked Stim sampler"))
-    result = run_full_deterministic_rehearsal()
+    run_directory = tmp_path / "full-fixture-run"
+    result = run_full_deterministic_rehearsal(output_directory=run_directory)
     assert result["status"] == "PASS_SYNTHETIC_FIXTURE_ONLY"
     assert result["stim_sampler_calls"] == 0
     assert result["generated_experimental_events"] == 0
@@ -102,4 +109,43 @@ def test_full_108_root_rehearsal_uses_no_stim_sampler(monkeypatch):
     assert result["independent_auditor"] == "PASS"
     assert result["independently_recomputed_total_rows"] == 304_000
     assert result["checkpoint_state"] == "completed"
-    assert result["temporary_outputs_removed"] is True
+    assert result["temporary_outputs_removed"] is False
+
+    # Reconstruct expected identities independently after rehearsal shutdown,
+    # then reopen every saved archive and commit marker.
+    catalog = build_model_catalog()
+    selected = result["selected_candidate_on_fixture_only"]
+    assert selected in CANDIDATE_IDS
+    evaluation_models = {}
+    for condition in CONDITIONS:
+        bank, registration = build_evaluation_bank(catalog, condition, selected)
+        try:
+            evaluation_models[condition] = evaluation_model_identity_map(bank)
+        finally:
+            registration.adapter.close()
+    from qshift_ns4a_v2_runner.runner import _expected_audit_bindings
+    bindings = _expected_audit_bindings(catalog, evaluation_models)
+    checkpoint = json.loads((run_directory / "checkpoint.json").read_text(encoding="utf-8"))
+    independent = audit_run_directory(run_directory, checkpoint, **bindings)
+    saved_report = json.loads((run_directory / "INDEPENDENT_AUDIT.json").read_text(encoding="utf-8"))
+    assert independent["audit"] == "PASS"
+    assert independent["verified_roots"] == 108
+    assert independent["total_shots"] == 304_000
+    assert independent["total_shots"] == saved_report["total_shots"]
+    assert len(list((run_directory / "roots").glob("*.npz"))) == 108
+    assert len(list((run_directory / "roots").glob("*.commit.json"))) == 108
+    for partition, expected_count in (("selection", 48), ("evaluation", 60)):
+        rows = independent[f"{partition}_archive_audit"]["per_root"]
+        assert len(rows) == expected_count
+        for row in rows:
+            path = run_directory / "roots" / f"{partition}__{row['condition_id']}__r{row['root_index']:02d}.npz"
+            assert hashlib.sha256(path.read_bytes()).hexdigest() == row["archive_sha256"]
+
+    bad_model_binding = copy.deepcopy(bindings)
+    bad_model_binding["expected_model_identity_sha256_by_partition_condition"]["selection"][CONDITIONS[0]][CANDIDATE_IDS[0]] = "0" * 64
+    with pytest.raises(RunAuditError, match="decoder/DEM identity"):
+        audit_run_directory(run_directory, checkpoint, **bad_model_binding)
+    bad_seed_binding = copy.deepcopy(bindings)
+    bad_seed_binding["expected_seed_bindings"][("evaluation", CONDITIONS[0], 0)]["root_seed_ref"] = "fixture-only:wrong-reference"
+    with pytest.raises(RunAuditError, match="seed-inventory identity"):
+        audit_run_directory(run_directory, checkpoint, **bad_seed_binding)

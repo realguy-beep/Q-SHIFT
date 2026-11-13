@@ -34,7 +34,11 @@ from .integrity import (
     AuthorizedExecution, IntegrityError, execution_output_path, load_authorized_execution,
     runtime_fingerprint, sha256_file,
 )
-from .models import CONFIG_PATH, ModelCatalog, build_evaluation_bank, build_model_catalog, evaluation_decoder_views
+from .models import (
+    CONFIG_PATH, ModelCatalog, build_evaluation_bank, build_model_catalog,
+    evaluation_decoder_views, evaluation_model_identity_map,
+    validate_dem_identity_manifest,
+)
 from .protocol import validate_allocation
 from .resource_guard import ResourceGuard
 from .run_state import RunDirectoryLock, RunStateError, RunStateStore
@@ -144,6 +148,52 @@ def _root_paths(run_dir: Path, partition: str) -> list[Path]:
         archive_path(run_dir, partition, condition, make_root_id(partition, condition, i))
         for condition in CONDITIONS for i in range(n)
     ]
+
+
+def _expected_audit_bindings(catalog: ModelCatalog, evaluation_models: Mapping[str, Mapping[str, str]],
+                             execution: AuthorizedExecution | None = None) -> dict[str, Any]:
+    """Create explicit bindings from reconstructed models and the frozen inventory.
+
+    Fixture calls intentionally use null numeric seeds and fixture-only references;
+    production calls use exact values from the immutable authorized inventory.
+    """
+    selection_models = {
+        condition: {
+            candidate: identity.identity_sha256
+            for candidate, identity in catalog.selection_model_identities_by_condition[condition].items()
+        }
+        for condition in CONDITIONS
+    }
+    if set(evaluation_models) != set(CONDITIONS):
+        raise ProductionExecutionError("independent audit lacks reconstructed evaluation-model identities for all conditions.")
+    seed_bindings: dict[tuple[str, str, int], dict[str, Any]] = {}
+    for partition, count in (("selection", 8), ("evaluation", 10)):
+        for condition in CONDITIONS:
+            for index in range(count):
+                key = (partition, condition, index)
+                if execution is None:
+                    seed_bindings[key] = {
+                        "seed": None,
+                        "root_seed_ref": f"fixture-only:no-seed:{partition}:{condition}:r{index:02d}",
+                    }
+                else:
+                    if key not in execution.root_seeds:
+                        raise ProductionExecutionError(f"authorized seed inventory is missing root binding {key}.")
+                    seed_bindings[key] = {
+                        "seed": execution.root_seeds[key],
+                        "root_seed_ref": _root_seed_ref(execution.seed_inventory_sha256, *key),
+                    }
+    return {
+        "expected_model_identity_sha256_by_partition_condition": {
+            "selection": selection_models,
+            "evaluation": {condition: dict(evaluation_models[condition]) for condition in CONDITIONS},
+        },
+        "expected_sampling_identity_sha256_by_condition": {
+            condition: catalog.conditions[condition].sampling_identity.identity_sha256
+            for condition in CONDITIONS
+        },
+        "expected_seed_bindings": seed_bindings,
+    }
 
 
 def _write_once_json(path: Path, payload: Mapping[str, Any]) -> str:
@@ -338,8 +388,10 @@ def execute_authorized(
         guard.check("checkpoint_and_seed_preflight")
         _verify_checkpoint_seed_bindings(state, execution)
         catalog = build_model_catalog(protocol_path)
-        if catalog.dem_identity_manifest() != execution.dem_identity_manifest:
-            raise IntegrityError("Reconstructed circuit/DEM identities differ from the immutable DEM manifest.")
+        try:
+            validate_dem_identity_manifest(catalog.dem_identity_manifest(), execution.dem_identity_manifest)
+        except Exception as exc:
+            raise IntegrityError(f"Reconstructed circuit/DEM identities differ from the immutable DEM manifest: {exc}") from exc
         guard.check("six_DEM_and_twelve_candidate_construction")
         sampler: RootSampler = StimRootSampler(_sampling_permit(execution))
 
@@ -376,11 +428,13 @@ def execute_authorized(
             (row["partition"], row["condition_id"], row["root_id"])
             for row in state.read()["committed_roots"]
         }
+        evaluation_model_identities: dict[str, dict[str, str]] = {}
         for condition in CONDITIONS:
             guard.check("evaluation_decoder_bank_construction_start")
             bank, _registration = build_evaluation_bank(catalog, condition, selected)
-            guard.check("evaluation_decoder_bank_construction_complete")
             try:
+                evaluation_model_identities[condition] = evaluation_model_identity_map(bank)
+                guard.check("evaluation_decoder_bank_construction_complete")
                 for root_index in range(10):
                     root_id = make_root_id("evaluation", condition, root_index)
                     if ("evaluation", condition, root_id) not in committed:
@@ -401,7 +455,8 @@ def execute_authorized(
 
         checkpoint = state.read()
         guard.check("before_independent_saved_array_audit")
-        independent = audit_run_directory(run_dir, checkpoint)
+        audit_bindings = _expected_audit_bindings(catalog, evaluation_model_identities, execution)
+        independent = audit_run_directory(run_dir, checkpoint, **audit_bindings)
         audit_path = run_dir / "INDEPENDENT_AUDIT.json"
         audit_hash = _write_once_json(audit_path, independent)
         state.record_independent_audit(audit_hash)

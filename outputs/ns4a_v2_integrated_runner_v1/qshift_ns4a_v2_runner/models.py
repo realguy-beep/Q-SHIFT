@@ -22,7 +22,7 @@ from qshift_core_v1.sampling_model_identity import (
     StimDEMArtifact,
 )
 
-from .protocol import CANDIDATE_IDS, CONDITIONS, MODES
+from .protocol import CANDIDATE_IDS, CONDITIONS, EVALUATION_ARMS, MODES
 
 
 PACKAGE_DIR = Path(__file__).resolve().parent
@@ -37,6 +37,13 @@ from simulator import build_spatial_burst_circuit  # noqa: E402
 
 
 OBSERVABLE_MEANING = "Stim OBSERVABLE_INCLUDE parity; bit 1 denotes a logical-observable flip"
+EVALUATION_IMPLEMENTATION_BY_ARM = {
+    "nominal_ordinary_pymatching": "nominal_ordinary_pymatching",
+    "nominal_correlation_enabled_pymatching": "nominal_correlation_enabled_pymatching",
+    "pooled_selected_fixed_pymatching": "pooled_selected_fixed_pymatching",
+    "matched_selected_dem_pymatching_other_mode_control": "matched_selected_dem_pymatching_other_mode_control",
+    "beliefmatching_same_selected_dem": "beliefmatching",
+}
 DEM_SETTINGS = DEMConstructionSettingsV2(
     decompose_errors=True,
     approximate_disjoint_errors=True,
@@ -46,6 +53,53 @@ DEM_SETTINGS = DEMConstructionSettingsV2(
 
 class ModelConstructionError(RuntimeError):
     """A frozen candidate could not be constructed without interpretation."""
+
+
+def validate_dem_identity_manifest(actual: dict[str, Any], expected: dict[str, Any]) -> None:
+    """Fail closed on malformed, incomplete, or different reconstructed DEM identities."""
+    if actual != expected:
+        raise ModelConstructionError("Reconstructed circuit/DEM identities differ from the immutable DEM manifest.")
+    if (actual.get("schema") != "qshift-ns4a-v2-dem-identity-manifest-v1"
+            or tuple(actual.get("conditions", ())) != CONDITIONS
+            or actual.get("dem_settings") != DEM_SETTINGS.stim_kwargs()
+            or tuple(actual.get("selection_candidate_order", ())) != CANDIDATE_IDS):
+        raise ModelConstructionError("DEM identity manifest schema, condition order, settings, or candidate order is invalid.")
+    rows = actual.get("by_condition")
+    if not isinstance(rows, dict) or set(rows) != set(CONDITIONS):
+        raise ModelConstructionError("DEM identity manifest must contain exactly all six condition records.")
+    for condition, row in rows.items():
+        if (row.get("detector_count") != 40 or row.get("observable_count") != 1
+                or row.get("stim_version") != "1.16.0" or row.get("alias_guard") != "PASS"):
+            raise ModelConstructionError(f"DEM dimensions/version/alias guard are invalid for {condition}.")
+        for field in ("source_circuit_sha256", "sampling_identity_sha256", "dem_sha256",
+                      "detector_order_sha256", "observable_semantics_sha256"):
+            value = row.get(field)
+            if not isinstance(value, str) or len(value) != 64 or any(c not in "0123456789abcdef" for c in value):
+                raise ModelConstructionError(f"DEM identity {field} is invalid for {condition}.")
+    candidate_map = actual.get("candidate_to_dem_mode")
+    if not isinstance(candidate_map, dict) or set(candidate_map) != set(CANDIDATE_IDS):
+        raise ModelConstructionError("DEM identity manifest candidate-to-model mapping is incomplete.")
+    for candidate in CANDIDATE_IDS:
+        row = candidate_map[candidate]
+        family, mode = candidate.split("::", 1)
+        if (row.get("dem_sha256") != rows[family]["dem_sha256"]
+                or row.get("correlation_mode") is not (mode == MODES[1])):
+            raise ModelConstructionError(f"candidate DEM identity or correlation mode is inconsistent: {candidate}.")
+    if actual.get("beliefmatching_uses_selected_dem_and_same_assumed_noise_provenance_as_selected_pm") is not True:
+        raise ModelConstructionError("BeliefMatching information-parity declaration is absent.")
+
+
+def evaluation_model_identity_map(bank: Any) -> dict[str, str]:
+    """Return expected registered identity hashes in frozen evaluation-arm order."""
+    if set(EVALUATION_IMPLEMENTATION_BY_ARM) != set(EVALUATION_ARMS):
+        raise ModelConstructionError("Evaluation arm-to-registration map differs from the frozen arm roster.")
+    result = {
+        arm: bank.adapter(registered).model_identity.identity_sha256
+        for arm, registered in EVALUATION_IMPLEMENTATION_BY_ARM.items()
+    }
+    if tuple(result) != EVALUATION_ARMS:
+        raise ModelConstructionError("Evaluation model identity map is not in frozen arm order.")
+    return result
 
 
 @dataclass(frozen=True)
@@ -384,13 +438,7 @@ def evaluation_decoder_views(bank: Any, circuit: Any) -> dict[str, Any]:
     """Map registered implementation names explicitly to frozen arm labels."""
     from .runner import _CheckedDecoderView
 
-    registered_by_arm = {
-        "nominal_ordinary_pymatching": "nominal_ordinary_pymatching",
-        "nominal_correlation_enabled_pymatching": "nominal_correlation_enabled_pymatching",
-        "pooled_selected_fixed_pymatching": "pooled_selected_fixed_pymatching",
-        "matched_selected_dem_pymatching_other_mode_control": "matched_selected_dem_pymatching_other_mode_control",
-        "beliefmatching_same_selected_dem": "beliefmatching",
-    }
+    registered_by_arm = EVALUATION_IMPLEMENTATION_BY_ARM
     if set(registered_by_arm) != set(__import__("qshift_ns4a_v2_deterministic.protocol", fromlist=["EVALUATION_ARMS"]).EVALUATION_ARMS):
         raise ModelConstructionError("Explicit implementation-to-arm map differs from frozen arm roster.")
     return {arm: _CheckedDecoderView(bank.adapter(registered), circuit)
