@@ -7,6 +7,8 @@ from qshift_ns4a_v2_runner.models import (
     build_evaluation_bank,
     build_model_catalog,
     evaluation_decoder_views,
+    validate_dem_identity_manifest,
+    ModelConstructionError,
 )
 
 
@@ -24,6 +26,21 @@ def test_catalog_builds_all_six_dems_and_twelve_ordered_candidates(catalog):
     assert all(c.dem_artifact.record.observable_count == 1 for c in catalog.conditions.values())
     assert all(d.metadata.detector_count == 40 and d.metadata.observable_count == 1
                for d in catalog.selection_decoders.values())
+
+
+def test_dem_identity_manifest_rejects_invalid_or_changed_dem_identities(catalog):
+    import copy
+
+    expected = catalog.dem_identity_manifest()
+    validate_dem_identity_manifest(copy.deepcopy(expected), expected)
+    invalid = copy.deepcopy(expected)
+    invalid["by_condition"][CONDITIONS[0]]["dem_sha256"] = "0" * 64
+    with pytest.raises(ModelConstructionError, match="differ"):
+        validate_dem_identity_manifest(invalid, expected)
+    invalid = copy.deepcopy(expected)
+    invalid["candidate_to_dem_mode"][CANDIDATE_IDS[0]]["correlation_mode"] = True
+    with pytest.raises(ModelConstructionError, match="differ"):
+        validate_dem_identity_manifest(invalid, expected)
 
 
 @pytest.mark.parametrize("condition", CONDITIONS)

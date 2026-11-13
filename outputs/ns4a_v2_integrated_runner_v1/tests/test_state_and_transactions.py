@@ -7,6 +7,7 @@ import numpy as np
 import pytest
 
 from qshift_ns4a_v2_deterministic.protocol import CANDIDATE_IDS, CONDITIONS, make_root_id, selection_shots
+from qshift_ns4a_v2_deterministic.selection import SelectionRootScore, choose_global_candidate
 from qshift_ns4a_v2_deterministic.sample_schema import make_sample_ids
 from qshift_ns4a_v2_runner.archive_store import (
     TransactionError,
@@ -167,3 +168,100 @@ def test_completion_rejects_incomplete_roster_even_with_selection_and_audit_flag
     state._write(payload)
     with pytest.raises(RunStateError, match="all 48 selection and 60 evaluation roots"):
         state.mark_completed()
+
+
+def _commit_complete_tied_selection(state, root_dir):
+    """Build a deterministic all-zero selection archive roster; no sampler used."""
+    records = []
+    for condition_index, condition in enumerate(CONDITIONS):
+        for root_index in range(8):
+            root_id = make_root_id("selection", condition, root_index)
+            shots = selection_shots(condition_index, root_index)
+            seed_ref = f"fixture-only:no-seed:selection:{condition}:r{root_index:02d}"
+            detectors = np.zeros((shots, 40), dtype=np.uint8)
+            labels = np.zeros((shots, 1), dtype=np.uint8)
+            predictions = np.zeros((len(CANDIDATE_IDS), shots, 1), dtype=np.uint8)
+            identities = {candidate: hashlib.sha256(candidate.encode()).hexdigest() for candidate in CANDIDATE_IDS}
+            state.begin_root(partition="selection", condition_id=condition, root_index=root_index,
+                             shots=shots, seed=None, root_seed_ref=seed_ref)
+            arrays = build_archive_arrays(
+                partition="selection", condition_id=condition, root_id=root_id,
+                detectors=detectors, observables=labels, predictions=predictions,
+                model_identity_sha256_by_candidate=identities,
+                sampling_identity_sha256=H1, root_seed_ref=seed_ref,
+                extra_metadata={"synthetic_fixture": True},
+            )
+            marker = commit_root_archive(root_dir, arrays, root_seed_ref=seed_ref)
+            state.commit_root(marker, seed=None)
+            records.append(SelectionRootScore(
+                condition, root_index, root_id, shots,
+                {candidate: 0 for candidate in CANDIDATE_IDS},
+            ))
+    winner = choose_global_candidate(records)
+    winner["selection_archive_sha256"] = {
+        archive_path(root_dir, "selection", condition, make_root_id("selection", condition, root_index)).name:
+        hashlib.sha256(archive_path(root_dir, "selection", condition,
+                                    make_root_id("selection", condition, root_index)).read_bytes()).hexdigest()
+        for condition in CONDITIONS for root_index in range(8)
+    }
+    return winner
+
+
+def test_selection_freeze_rejects_valid_but_mismatched_candidate_and_accepts_recomputed_winner(tmp_path):
+    state = _new_store(tmp_path)
+    winner = _commit_complete_tied_selection(state, tmp_path)
+    assert winner["selected_candidate"] == CANDIDATE_IDS[0]
+    wrong = dict(winner, selected_candidate=CANDIDATE_IDS[1])
+    with pytest.raises(RunStateError, match="selection winner or its archive hashes disagree"):
+        state.freeze_selection(wrong)
+    state.freeze_selection(winner)
+    selected, _ = state.require_frozen_selection()
+    assert selected == CANDIDATE_IDS[0]
+
+
+def test_checkpoint_selected_candidate_tampering_is_detected_against_frozen_winner(tmp_path):
+    state = _new_store(tmp_path)
+    winner = _commit_complete_tied_selection(state, tmp_path)
+    state.freeze_selection(winner)
+    raw = json.loads(state.checkpoint_path.read_text(encoding="utf-8"))
+    raw["selected_candidate"] = CANDIDATE_IDS[1]
+    state.checkpoint_path.write_text(json.dumps(raw), encoding="utf-8")
+    restarted = RunStateStore(tmp_path, protocol_sha256=H1, source_manifest_sha256=H2, fixture_mode=True)
+    with pytest.raises(RunStateError, match="selection winner/checkpoint identity mismatch"):
+        restarted.require_frozen_selection()
+
+
+def test_tampered_checkpoint_archive_binding_is_detected_before_resume(tmp_path):
+    state = _new_store(tmp_path)
+    condition = CONDITIONS[0]
+    ref = f"fixture-only:no-seed:selection:{condition}:r00"
+    state.begin_root(partition="selection", condition_id=condition, root_index=0,
+                     shots=selection_shots(0, 0), seed=None, root_seed_ref=ref)
+    row = commit_root_archive(tmp_path, _selection_arrays(), root_seed_ref=ref)
+    state.commit_root(row, seed=None)
+    raw = json.loads(state.checkpoint_path.read_text(encoding="utf-8"))
+    raw["committed_roots"][0]["archive_sha256"] = "0" * 64
+    state.checkpoint_path.write_text(json.dumps(raw), encoding="utf-8")
+    restarted = RunStateStore(tmp_path, protocol_sha256=H1, source_manifest_sha256=H2, fixture_mode=True)
+    with pytest.raises(RunStateError, match="checkpoint schema validation|checkpoint/commit-marker mismatch"):
+        restarted.validate_resume(protocol_sha256=H1, source_manifest_sha256=H2)
+
+
+def test_interrupted_archive_marker_write_is_not_recovered_or_resampled(tmp_path, monkeypatch):
+    import qshift_ns4a_v2_runner.archive_store as archive_module
+
+    state = _new_store(tmp_path)
+    condition = CONDITIONS[0]
+    ref = f"fixture-only:no-seed:selection:{condition}:r00"
+    state.begin_root(partition="selection", condition_id=condition, root_index=0,
+                     shots=selection_shots(0, 0), seed=None, root_seed_ref=ref)
+    monkeypatch.setattr(archive_module, "atomic_write_json",
+                        lambda *args, **kwargs: (_ for _ in ()).throw(OSError("injected marker-write interruption")))
+    with pytest.raises(TransactionError, match="injected marker-write interruption"):
+        commit_root_archive(tmp_path, _selection_arrays(), root_seed_ref=ref)
+    path = archive_path(tmp_path, "selection", condition, make_root_id("selection", condition, 0))
+    assert path.is_file()
+    assert not path.with_suffix(".commit.json").exists()
+    restarted = RunStateStore(tmp_path, protocol_sha256=H1, source_manifest_sha256=H2, fixture_mode=True)
+    with pytest.raises(RunStateError, match="archive/marker pair is incomplete"):
+        restarted.recover_committed_inflight()

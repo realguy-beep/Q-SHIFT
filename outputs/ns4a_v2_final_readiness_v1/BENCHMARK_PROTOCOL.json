@@ -1,0 +1,48 @@
+{
+  "schema": "qshift-ns4a-v2-benchmark-protocol-v1",
+  "namespace": "qshift-ns4a-v2-execution-readiness-benchmark-v1",
+  "purpose": "bounded runtime, memory, persistence, and recovery feasibility only; no scientific outcome analysis",
+  "conditions": [
+    "balanced_no_burst",
+    "x_biased_no_burst",
+    "z_biased_no_burst",
+    "balanced_burst_0.005",
+    "balanced_burst_0.010",
+    "balanced_burst_0.015"
+  ],
+  "shots_per_condition": 1000,
+  "maximum_total_shots": 6000,
+  "pipeline": {
+    "stim_generation": "six detector-only samples; separate_observables=false; no labels retained",
+    "pymatching_candidate_decoding": "all twelve frozen selection candidates on each condition's exact detector array",
+    "beliefmatching_decoding": "five-arm evaluation bank per condition; fixed nominal ordinary PM used only as a predeclared timing anchor",
+    "archive_io": "atomic detector-only NPZ plus commit marker and hashes; no labels or LER metrics",
+    "recovery_overhead": "reopen every committed NPZ, validate schema and row identity, recompute SHA-256, and verify marker",
+    "peak_memory": "Windows process PeakWorkingSetSize high-water measurement; fail closed if unavailable"
+  },
+  "hard_limits": {
+    "sampler_calls": 6,
+    "maximum_sampler_shots_per_call": 1000,
+    "candidate_decoders": 12,
+    "evaluation_arms": 5,
+    "sampler_returns_observables": false,
+    "maximum_wall_clock_seconds": 600,
+    "maximum_peak_working_set_bytes": 1073741824,
+    "minimum_free_disk_bytes": 1073741824,
+    "maximum_output_bytes": 134217728
+  },
+  "approval": {
+    "required": true,
+    "owner_id": "realguy-beep",
+    "scope": "bounded_benchmark_only",
+    "validity_max_seconds": 86400,
+    "statement": "I, realguy-beep, explicitly authorize only the bounded NS-4A V2 execution-readiness benchmark bound to its exact protocol, source manifest, and benchmark-only seed inventory."
+  },
+  "seed_requirements": {
+    "numeric_seeds_allocated": false,
+    "inventory_schema": "qshift-ns4a-v2-benchmark-seed-inventory-v1",
+    "collision_screen_required": true,
+    "historical_metadata_may_be_read_only_through_a_separately_approved_explicit_allowlist": true
+  },
+  "statistics": "none; benchmark output must not contain observables, logical errors, LER, p-values, confidence intervals, or model-selection decisions"
+}

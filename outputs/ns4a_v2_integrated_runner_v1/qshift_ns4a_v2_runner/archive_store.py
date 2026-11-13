@@ -125,10 +125,12 @@ def commit_root_archive(
     marker = {**record, "marker_schema": "qshift-ns4a-v2-root-commit-v1"}
     try:
         atomic_write_json(marker_path, marker)
-    except Exception:
+    except Exception as exc:
         # Leave any committed bytes untouched. Presence without a matching
         # checkpoint/marker is an explicit recovery blocker, never overwrite.
-        raise
+        raise TransactionError(
+            f"commit marker write failed after archive persistence: {type(exc).__name__}: {exc}"
+        ) from exc
     checked = read_and_verify_commit(path, marker_path)
     if checked != record:
         raise TransactionError("written commit marker did not round-trip exactly.")

@@ -8,13 +8,15 @@ import os
 from pathlib import Path
 import time
 import uuid
+from fractions import Fraction
 from typing import Any, Iterator, Mapping
 
 from qshift_ns4a_v2_deterministic.checkpoint import (
     CheckpointError, atomic_write_json, root_commit_marker,
     validate_checkpoint_payload, validate_resume_state,
 )
-from qshift_ns4a_v2_deterministic.protocol import CONDITIONS, make_root_id, shots_for_root
+from qshift_ns4a_v2_deterministic.audit_saved_arrays import audit_saved_arrays
+from qshift_ns4a_v2_deterministic.protocol import CANDIDATE_IDS, CONDITIONS, make_root_id, shots_for_root
 
 from .archive_store import archive_path, read_and_verify_commit
 
@@ -85,6 +87,7 @@ class RunStateStore:
         self.wall_clock_seconds = float(wall_clock_seconds)
         self.epoch_clock = epoch_clock
         self._last_hash: str | None = None
+        self._verified_selection_sha256: str | None = None
 
     @staticmethod
     def _digest(path: Path) -> str:
@@ -114,7 +117,7 @@ class RunStateStore:
             "run_deadline_epoch_utc": now + self.wall_clock_seconds,
             "fixture_mode": self.fixture_mode,
         }
-        validate_checkpoint_payload(payload)
+        self._validate_payload(payload)
         self._last_hash = atomic_write_json(self.checkpoint_path, payload)
 
     def read(self) -> dict[str, Any]:
@@ -122,7 +125,7 @@ class RunStateStore:
             payload = json.loads(self.checkpoint_path.read_text(encoding="utf-8"))
         except Exception as exc:
             raise RunStateError("checkpoint is missing or malformed.") from exc
-        validate_checkpoint_payload(payload)
+        self._validate_payload(payload)
         if (payload.get("protocol_sha256") != self.protocol_sha256
                 or payload.get("source_manifest_sha256") != self.source_manifest_sha256
                 or payload.get("execution_manifest_sha256") != (self.execution_manifest_sha256 or self.protocol_sha256)
@@ -133,6 +136,82 @@ class RunStateStore:
             raise RunStateError("checkpoint changed outside the active run-state writer.")
         self._last_hash = actual
         return payload
+
+    def _validate_payload(self, payload: Mapping[str, Any]) -> None:
+        try:
+            validate_checkpoint_payload(payload)
+        except Exception as exc:
+            raise RunStateError(f"checkpoint schema validation failed: {exc}") from exc
+        if not isinstance(payload.get("fixture_mode"), bool):
+            raise RunStateError("checkpoint fixture_mode must be an explicit boolean.")
+        for field in ("execution_manifest_sha256", "seed_inventory_sha256"):
+            value = payload.get(field)
+            if (not isinstance(value, str) or len(value) != 64
+                    or any(ch not in "0123456789abcdef" for ch in value)):
+                raise RunStateError(f"checkpoint {field} is missing or malformed.")
+        started, deadline = payload.get("run_started_epoch_utc"), payload.get("run_deadline_epoch_utc")
+        if (isinstance(started, bool) or not isinstance(started, (int, float))
+                or isinstance(deadline, bool) or not isinstance(deadline, (int, float))
+                or not started < deadline):
+            raise RunStateError("checkpoint persisted deadline is missing or malformed.")
+
+        frozen = payload.get("selection_frozen")
+        selected = payload.get("selected_candidate")
+        selection_hash = payload.get("selection_freeze_sha256")
+        if type(frozen) is not bool:
+            raise RunStateError("checkpoint selection_frozen must be an explicit boolean.")
+        if frozen:
+            if selected not in CANDIDATE_IDS or not self._valid_sha256(selection_hash):
+                raise RunStateError("frozen selection must name a frozen-grid candidate and file digest.")
+        elif selected is not None or selection_hash is not None:
+            raise RunStateError("unfrozen selection cannot contain a selected candidate or freeze digest.")
+
+        audit_verified = payload.get("independent_audit_verified")
+        audit_hash = payload.get("independent_audit_sha256")
+        if type(audit_verified) is not bool:
+            raise RunStateError("checkpoint independent_audit_verified must be an explicit boolean.")
+        if audit_verified != (audit_hash is not None) or (audit_hash is not None and not self._valid_sha256(audit_hash)):
+            raise RunStateError("checkpoint independent-audit flag and digest disagree.")
+
+        committed = payload.get("committed_roots", [])
+        numeric_seeds: set[int] = set()
+        root_seed_refs: set[str] = set()
+        for row in committed:
+            seed = row.get("seed")
+            if seed is None:
+                if not payload["fixture_mode"]:
+                    raise RunStateError("production committed roots must retain their exact numeric seed.")
+            elif type(seed) is not int or seed < 0 or seed > 2**63 - 1 or seed in numeric_seeds:
+                raise RunStateError("committed root seed is invalid or duplicated.")
+            else:
+                numeric_seeds.add(seed)
+            seed_ref = row.get("root_seed_ref")
+            if not isinstance(seed_ref, str) or not seed_ref or seed_ref in root_seed_refs:
+                raise RunStateError("committed root seed reference is missing or duplicated.")
+            root_seed_refs.add(seed_ref)
+
+        inflight = payload.get("in_flight_root")
+        if inflight is not None:
+            if payload.get("state") != "in_progress" or not isinstance(inflight, Mapping):
+                raise RunStateError("in-flight root is only valid in an in-progress checkpoint.")
+            try:
+                root_id = make_root_id(inflight.get("partition"), inflight.get("condition_id"), int(inflight.get("root_id", "")[-2:]))
+                expected_shots = shots_for_root(inflight["partition"], inflight["condition_id"], int(root_id[-2:]))
+            except Exception as exc:
+                raise RunStateError("in-flight root identity is malformed.") from exc
+            if (inflight.get("root_id") != root_id or inflight.get("shots") != expected_shots
+                    or not isinstance(inflight.get("root_seed_ref"), str) or not inflight["root_seed_ref"]):
+                raise RunStateError("in-flight root does not match the frozen root/shot identity.")
+            seed = inflight.get("seed")
+            if ((seed is None and not payload["fixture_mode"])
+                    or (seed is not None and (type(seed) is not int or seed < 0 or seed > 2**63 - 1))
+                    or seed in numeric_seeds or inflight["root_seed_ref"] in root_seed_refs):
+                raise RunStateError("in-flight seed or seed reference is invalid or already committed.")
+
+    @staticmethod
+    def _valid_sha256(value: Any) -> bool:
+        return (isinstance(value, str) and len(value) == 64
+                and all(ch in "0123456789abcdef" for ch in value))
 
     def remaining_wall_clock_seconds(self) -> float:
         payload = self.read()
@@ -151,7 +230,7 @@ class RunStateStore:
         return remaining
 
     def _write(self, payload: Mapping[str, Any]) -> None:
-        validate_checkpoint_payload(payload)
+        self._validate_payload(payload)
         previous = self._last_hash
         try:
             digest = atomic_write_json(self.checkpoint_path, payload, expected_previous_sha256=previous)
@@ -206,11 +285,13 @@ class RunStateStore:
         payload = self.read()
         expected = {("selection", c, make_root_id("selection", c, r)) for c in CONDITIONS for r in range(8)}
         committed = {(r["partition"], r["condition_id"], r["root_id"]) for r in payload["committed_roots"]}
-        if payload.get("in_flight_root") is not None or not expected.issubset(committed):
-            raise RunStateError("all 48 selection roots must be committed before freezing the winner.")
+        if payload.get("in_flight_root") is not None or committed != expected or len(payload["committed_roots"]) != 48:
+            raise RunStateError("exactly all 48 selection roots, and no evaluation roots, must be committed before freezing the winner.")
         candidate = winner.get("selected_candidate")
-        if not isinstance(candidate, str) or not candidate:
-            raise RunStateError("selection result lacks one selected global candidate.")
+        if candidate not in CANDIDATE_IDS:
+            raise RunStateError("selection result does not name a candidate in the frozen 12-model grid.")
+        self._verify_committed_directory(payload)
+        self._verify_selection_winner_against_saved_arrays(winner)
         if self.selection_path.exists() or payload.get("selection_frozen"):
             raise RunStateError("selection winner already frozen; selection cannot be changed.")
         serialized = dict(winner)
@@ -230,7 +311,41 @@ class RunStateStore:
         winner = json.loads(self.selection_path.read_text(encoding="utf-8"))
         if winner.get("selected_candidate") != payload.get("selected_candidate"):
             raise RunStateError("selection winner/checkpoint identity mismatch.")
+        current_hash = self._digest(self.selection_path)
+        if self._verified_selection_sha256 != current_hash:
+            self._verify_committed_directory(payload)
+            self._verify_selection_winner_against_saved_arrays(winner)
+            self._verified_selection_sha256 = current_hash
         return str(payload["selected_candidate"]), winner
+
+    def _verify_selection_winner_against_saved_arrays(self, winner: Mapping[str, Any]) -> None:
+        paths = [
+            archive_path(self.root, "selection", condition, make_root_id("selection", condition, root_index))
+            for condition in CONDITIONS for root_index in range(8)
+        ]
+        try:
+            audit = audit_saved_arrays(paths, partition="selection")
+        except Exception as exc:
+            raise RunStateError(f"independent selection archive recomputation failed: {exc}") from exc
+        result = audit.get("selection", {})
+        archive_hashes = {path.name: self._digest(path) for path in paths}
+        expected_ties = result.get("exact_tie_set")
+        expected_scores = result.get("score_by_candidate_fraction")
+        expected_float_scores = {
+            candidate: float(Fraction(value)) for candidate, value in (expected_scores or {}).items()
+        }
+        tie_set = winner.get("exact_tie_set")
+        candidate_order = winner.get("candidate_order")
+        selection_conditions = winner.get("selection_conditions")
+        if (audit.get("audit") != "PASS" or result.get("selected_candidate") not in CANDIDATE_IDS
+                or winner.get("selected_candidate") != result.get("selected_candidate")
+                or not isinstance(tie_set, (list, tuple)) or list(tie_set) != expected_ties
+                or winner.get("score_fraction_by_candidate") != expected_scores
+                or winner.get("score_by_candidate") != expected_float_scores
+                or not isinstance(candidate_order, (list, tuple)) or list(candidate_order) != list(CANDIDATE_IDS)
+                or not isinstance(selection_conditions, (list, tuple)) or list(selection_conditions) != list(CONDITIONS)
+                or winner.get("selection_archive_sha256") != archive_hashes):
+            raise RunStateError("selection winner or its archive hashes disagree with independent saved-array recomputation.")
 
     def pause_at_boundary(self) -> None:
         payload = self.read()

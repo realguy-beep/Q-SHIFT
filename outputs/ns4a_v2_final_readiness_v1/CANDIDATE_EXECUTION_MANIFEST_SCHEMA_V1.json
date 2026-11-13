@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "qshift-ns4a-v2-candidate-execution-manifest-v1",
+  "title": "Candidate immutable NS-4A V2 execution manifest",
+  "description": "Schema only. No execution-manifest instance, production seeds, freeze activation, or authorization is created by this file. The exact field contract mirrors qshift_ns4a_v2_runner.integrity.load_authorized_execution.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "status", "experiment_id", "sampling_authorized", "git_commit",
+    "protocol_path", "protocol_sha256", "source_manifest_path", "source_manifest_sha256",
+    "seed_inventory_path", "seed_inventory_sha256", "historical_seed_screen_path",
+    "historical_seed_screen_sha256", "dem_identity_manifest_path", "dem_identity_manifest_sha256",
+    "runtime_fingerprint", "runtime_fingerprint_sha256", "output_directory", "resource_limits"
+  ],
+  "properties": {
+    "schema": {"const": "qshift-ns4a-v2-execution-manifest-v1"},
+    "status": {"const": "frozen_for_owner_authorization"},
+    "experiment_id": {"const": "qshift-ns4a-v2"},
+    "sampling_authorized": {"const": true},
+    "git_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "protocol_path": {"const": "outputs/qshift_ns4a_pilot_protocol_v2/proposed_config_v2.json"},
+    "protocol_sha256": {"$ref": "#/$defs/sha256"},
+    "source_manifest_path": {"const": "outputs/ns4a_v2_final_readiness_v1/SOURCE_HASH_MANIFEST_V4.json"},
+    "source_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "seed_inventory_path": {"const": "outputs/ns4a_v2_final_readiness_v1/PRODUCTION_SEED_INVENTORY_V1.json"},
+    "seed_inventory_sha256": {"$ref": "#/$defs/sha256"},
+    "historical_seed_screen_path": {"const": "outputs/ns4a_v2_final_readiness_v1/HISTORICAL_SEED_SCREEN_V1.json"},
+    "historical_seed_screen_sha256": {"$ref": "#/$defs/sha256"},
+    "dem_identity_manifest_path": {"const": "outputs/ns4a_v2_final_readiness_v1/DEM_IDENTITY_MANIFEST_V1.json"},
+    "dem_identity_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "runtime_fingerprint": {"type": "object", "minProperties": 1},
+    "runtime_fingerprint_sha256": {"$ref": "#/$defs/sha256"},
+    "output_directory": {"const": "outputs/ns4a_v2_integrated_runner_v1/production_run"},
+    "resource_limits": {
+      "type": "object", "additionalProperties": false,
+      "required": ["wall_clock_seconds", "peak_rss_bytes", "free_disk_reserve_bytes"],
+      "properties": {
+        "wall_clock_seconds": {"type": "integer", "const": 1800},
+        "peak_rss_bytes": {"type": "integer", "const": 2147483648},
+        "free_disk_reserve_bytes": {"type": "integer", "const": 1073741824}
+      }
+    }
+  },
+  "$defs": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+  "owner_authorization_contract": {
+    "schema": "qshift-ns4a-v2-owner-authorization-v1",
+    "required_fields": ["schema", "owner_id", "experiment_id", "sampling_authorized", "execution_manifest_sha256", "authorization_statement", "authorized_utc"],
+    "owner_id": "realguy-beep",
+    "experiment_id": "qshift-ns4a-v2",
+    "sampling_authorized": true,
+    "authorization_statement": "I, realguy-beep, explicitly authorize execution of the frozen Q-SHIFT NS-4A V2 304,000-shot development experiment bound to the exact immutable execution manifest."
+  }
+}
