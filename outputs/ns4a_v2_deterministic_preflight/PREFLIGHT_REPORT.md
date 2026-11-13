@@ -11,6 +11,7 @@
 - Exact content inputs, SHA-256 digests, byte counts, upstream commit, and the adapter-copy check are in [SOURCE_INPUT_INVENTORY.json](SOURCE_INPUT_INVENTORY.json).
 - The upstream NS-3B adapter blob at `e4ff201e3db18a2d18e7474bef4a83542eaa3da8` matches the integrated adapter byte-for-byte (SHA-256 `702dc36ef4dedd38347b0e78541d1d2d2ff063c2462dbab29aa2095f583c2106`). The upstream lockfile was read from that exact Git object only.
 - No historical outcome files or Stage 5 material were read. No sampler was called; no random detector events, labels, training, model selection, or accuracy/performance comparison was used.
+- **Metadata-only scope note:** one `git ls-files` command emitted tracked path names while checking repository state. It did not open or read those file blobs. The exact sparse-checkout patterns were separately verified against the 22 source inputs plus this output directory. This is a filename-metadata exposure outside the content allowlist; it did not expose outcome contents.
 
 ## Deterministic construction results
 
