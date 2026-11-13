@@ -1,0 +1,720 @@
+{
+  "schema": "qshift-ns4a-v2-prepare-only-source-dependency-manifest-v1",
+  "review_base_commit": "762771a6f7648ebdf69af2883d71e3d26ea92522",
+  "review_branch": "codex/ns4a-v2-execution-readiness",
+  "status": "PREPARE_ONLY_NOT_FROZEN_NOT_AUTHORIZED",
+  "hash_algorithm": "SHA-256 of exact committed Git blob bytes; raw worktree SHA-256 and CRLF-normalized correspondence are recorded separately.",
+  "sampling_authorized": false,
+  "sampling_performed": false,
+  "sampler_calls": 0,
+  "random_detector_events": 0,
+  "training_performed": false,
+  "sealed_or_stage5_outcome_accessed": false,
+  "scientific_proposal": {
+    "protocol_path": "outputs/qshift_ns4a_pilot_protocol_v2/NS4A_PROTOCOL_REVISION_V2.md",
+    "config_path": "outputs/qshift_ns4a_pilot_protocol_v2/proposed_config_v2.json",
+    "conditions": [
+      {
+        "id": "balanced_no_burst",
+        "regime": "balanced",
+        "burst_probability": 0.0
+      },
+      {
+        "id": "x_biased_no_burst",
+        "regime": "x_biased",
+        "burst_probability": 0.0
+      },
+      {
+        "id": "z_biased_no_burst",
+        "regime": "z_biased",
+        "burst_probability": 0.0
+      },
+      {
+        "id": "balanced_burst_0.005",
+        "regime": "balanced",
+        "burst_probability": 0.005
+      },
+      {
+        "id": "balanced_burst_0.010",
+        "regime": "balanced",
+        "burst_probability": 0.01
+      },
+      {
+        "id": "balanced_burst_0.015",
+        "regime": "balanced",
+        "burst_probability": 0.015
+      }
+    ],
+    "selection_conditions": [
+      {
+        "id": "balanced_no_burst",
+        "regime": "balanced",
+        "burst_probability": 0.0
+      },
+      {
+        "id": "x_biased_no_burst",
+        "regime": "x_biased",
+        "burst_probability": 0.0
+      },
+      {
+        "id": "z_biased_no_burst",
+        "regime": "z_biased",
+        "burst_probability": 0.0
+      },
+      {
+        "id": "balanced_burst_0.005",
+        "regime": "balanced",
+        "burst_probability": 0.005
+      },
+      {
+        "id": "balanced_burst_0.010",
+        "regime": "balanced",
+        "burst_probability": 0.01
+      },
+      {
+        "id": "balanced_burst_0.015",
+        "regime": "balanced",
+        "burst_probability": 0.015
+      }
+    ],
+    "allocation": {
+      "selection_roots_per_condition": 8,
+      "selection_condition_count": 6,
+      "selection_unique_shots": 64000,
+      "evaluation_roots_per_condition": 10,
+      "evaluation_shots_per_root": 4000,
+      "evaluation_condition_count": 6,
+      "evaluation_unique_shots": 240000,
+      "total_unique_shots": 304000,
+      "hard_shot_ceiling": 304000,
+      "allocation_rationale": "Selection remains 64000 shots but is spread across all six target cells to match the equal-condition primary estimand; evaluation remains 240000. Eight roots/cell and 1333/1334 shots/root are a bounded feasibility allocation, not a power claim.",
+      "root_seed_inventory": "UNALLOCATED; later collision screening and separate owner-approved freeze required before any sampling",
+      "selection_shots_per_root_min": 1333,
+      "selection_shots_per_root_max": 1334,
+      "selection_shot_schedule": "48 root-condition cells receive 1333 shots each; add one shot to roots 0-2 in each of the first four ordered conditions and roots 0-1 in the final two ordered conditions; exactly 64000 selection shots",
+      "selection_extra_shots": 16,
+      "seed_streams_must_be_disjoint": [
+        "selection",
+        "evaluation",
+        "selection_rank_bootstrap",
+        "primary_bootstrap",
+        "sign_flip"
+      ]
+    },
+    "primary_endpoint": {
+      "name": "equal-condition-weighted root-paired BM_minus_pooled_fixed_LER",
+      "formula": "mean over 6 conditions of mean over 10 roots of (BM errors - pooled-selected PM errors) / shots",
+      "direction": "negative favors BeliefMatching",
+      "confirmatory": false
+    },
+    "statistics": {
+      "root_stratified_bootstrap_resamples": 100000,
+      "bootstrap_interval": "two-sided percentile 95%; resample roots within condition and preserve paired arms",
+      "root_cluster_sign_flip_resamples": 100000,
+      "sign_flip": "two-sided; add-one p; sensitivity only under independent roots and symmetric root-level null",
+      "secondary_holm_family": [
+        "BM vs ordinary PM using selected DEM",
+        "BM vs correlation-enabled PM using selected DEM",
+        "pooled-selected PM vs nominal ordinary PM"
+      ],
+      "shot_level_mcnemar": "descriptive only; not primary due root clustering",
+      "practical_relative_reduction": "aspirational 45-50% only; not a success threshold"
+    },
+    "proposed_resource_limits": {
+      "wall_clock_seconds": 1800,
+      "peak_rss_bytes": 2147483648,
+      "free_disk_reserve_bytes": 1073741824,
+      "note": "proposed stop limits; end-to-end pipeline has not been benchmarked"
+    }
+  },
+  "selection_grid": {
+    "model_family_count": 6,
+    "mode_count": 2,
+    "candidate_count": 12,
+    "candidate_order": [
+      {
+        "assumed_model_family": "balanced_no_burst",
+        "pymatching_mode": "ordinary_pymatching"
+      },
+      {
+        "assumed_model_family": "balanced_no_burst",
+        "pymatching_mode": "correlation_enabled_pymatching"
+      },
+      {
+        "assumed_model_family": "x_biased_no_burst",
+        "pymatching_mode": "ordinary_pymatching"
+      },
+      {
+        "assumed_model_family": "x_biased_no_burst",
+        "pymatching_mode": "correlation_enabled_pymatching"
+      },
+      {
+        "assumed_model_family": "z_biased_no_burst",
+        "pymatching_mode": "ordinary_pymatching"
+      },
+      {
+        "assumed_model_family": "z_biased_no_burst",
+        "pymatching_mode": "correlation_enabled_pymatching"
+      },
+      {
+        "assumed_model_family": "balanced_burst_probability_0.005",
+        "pymatching_mode": "ordinary_pymatching"
+      },
+      {
+        "assumed_model_family": "balanced_burst_probability_0.005",
+        "pymatching_mode": "correlation_enabled_pymatching"
+      },
+      {
+        "assumed_model_family": "balanced_burst_probability_0.010",
+        "pymatching_mode": "ordinary_pymatching"
+      },
+      {
+        "assumed_model_family": "balanced_burst_probability_0.010",
+        "pymatching_mode": "correlation_enabled_pymatching"
+      },
+      {
+        "assumed_model_family": "balanced_burst_probability_0.015",
+        "pymatching_mode": "ordinary_pymatching"
+      },
+      {
+        "assumed_model_family": "balanced_burst_probability_0.015",
+        "pymatching_mode": "correlation_enabled_pymatching"
+      }
+    ],
+    "selection_objective": "minimum equal-condition mean of root-level LER across all six independent selection conditions; one globally fixed configuration selected",
+    "tie_break": "model-family order in revised config, then ordinary before correlation-enabled",
+    "all_candidates_share_selection_arrays": "REQUIRED_BY_V2_NOT_EXECUTED",
+    "implementation_status": "NOT_IMPLEMENTED",
+    "selection_scoring_validated_on_data": false
+  },
+  "assumed_dem_identities": [
+    {
+      "family": "balanced_burst_0.005",
+      "circuit_sha256": "d97f48514d2b490e0d3bea80bbbff6a58d01dbd367804e7ab9b6338d19182ee3",
+      "dem_sha256": "5c1becc727a5000e19e5f338be192244282d303aaa3dda5c2c0c63eb928ab83c",
+      "detector_order_sha256": "4df606e0198d8b3f4a393fbd452f5078f221935ed20a3eff936d9059bc3150e4",
+      "observable_semantics_sha256": "9573b0b43c93ed90a6e50295fed09bc9fdc4172cb0f0ab062d528d4b119f6c7e",
+      "detectors": 40,
+      "observables": 1,
+      "dem_settings": {
+        "allow_gauge_detectors": false,
+        "approximate_disjoint_errors": true,
+        "block_decomposition_from_introducing_remnant_edges": false,
+        "decompose_errors": true,
+        "flatten_loops": false,
+        "ignore_decomposition_failures": false
+      },
+      "alias_guard": "PASS"
+    },
+    {
+      "family": "balanced_burst_0.010",
+      "circuit_sha256": "bc679e70b5aa50ce23d9761f990e6270fc3f75ea43d7dab7bc84bdde14de11a7",
+      "dem_sha256": "8e0854b17f584dccec4baa6694d80abbd78b1341b3038281ac42a041ce66cb91",
+      "detector_order_sha256": "4df606e0198d8b3f4a393fbd452f5078f221935ed20a3eff936d9059bc3150e4",
+      "observable_semantics_sha256": "9573b0b43c93ed90a6e50295fed09bc9fdc4172cb0f0ab062d528d4b119f6c7e",
+      "detectors": 40,
+      "observables": 1,
+      "dem_settings": {
+        "allow_gauge_detectors": false,
+        "approximate_disjoint_errors": true,
+        "block_decomposition_from_introducing_remnant_edges": false,
+        "decompose_errors": true,
+        "flatten_loops": false,
+        "ignore_decomposition_failures": false
+      },
+      "alias_guard": "PASS"
+    },
+    {
+      "family": "balanced_burst_0.015",
+      "circuit_sha256": "9bc89aea15b611fff6e9af858edbd9ac896264093abcf72085a5a4733053057a",
+      "dem_sha256": "8debaa2f252458247c52ed83733307c5254158e661a9f90cf38b3214ebdb88cc",
+      "detector_order_sha256": "4df606e0198d8b3f4a393fbd452f5078f221935ed20a3eff936d9059bc3150e4",
+      "observable_semantics_sha256": "9573b0b43c93ed90a6e50295fed09bc9fdc4172cb0f0ab062d528d4b119f6c7e",
+      "detectors": 40,
+      "observables": 1,
+      "dem_settings": {
+        "allow_gauge_detectors": false,
+        "approximate_disjoint_errors": true,
+        "block_decomposition_from_introducing_remnant_edges": false,
+        "decompose_errors": true,
+        "flatten_loops": false,
+        "ignore_decomposition_failures": false
+      },
+      "alias_guard": "PASS"
+    },
+    {
+      "family": "balanced_no_burst",
+      "circuit_sha256": "3d8b248bb8e23cb64649835ccb8cff9e8c880ed9e997f40914272b25c726eae0",
+      "dem_sha256": "7761142fdafe5be0eafdb3602159782a93d055740b19f7e622a4ab5699b0f1e6",
+      "detector_order_sha256": "4df606e0198d8b3f4a393fbd452f5078f221935ed20a3eff936d9059bc3150e4",
+      "observable_semantics_sha256": "9573b0b43c93ed90a6e50295fed09bc9fdc4172cb0f0ab062d528d4b119f6c7e",
+      "detectors": 40,
+      "observables": 1,
+      "dem_settings": {
+        "allow_gauge_detectors": false,
+        "approximate_disjoint_errors": true,
+        "block_decomposition_from_introducing_remnant_edges": false,
+        "decompose_errors": true,
+        "flatten_loops": false,
+        "ignore_decomposition_failures": false
+      },
+      "alias_guard": "PASS"
+    },
+    {
+      "family": "x_biased_no_burst",
+      "circuit_sha256": "cdd93dc13a80a838fdf2e86cd011425a17d6b56e10240070566422e5290206b0",
+      "dem_sha256": "d829fa17f21cc45fa800c91ecdbe5db7112a20e93aed49eb0ead1296735e96e8",
+      "detector_order_sha256": "4df606e0198d8b3f4a393fbd452f5078f221935ed20a3eff936d9059bc3150e4",
+      "observable_semantics_sha256": "9573b0b43c93ed90a6e50295fed09bc9fdc4172cb0f0ab062d528d4b119f6c7e",
+      "detectors": 40,
+      "observables": 1,
+      "dem_settings": {
+        "allow_gauge_detectors": false,
+        "approximate_disjoint_errors": true,
+        "block_decomposition_from_introducing_remnant_edges": false,
+        "decompose_errors": true,
+        "flatten_loops": false,
+        "ignore_decomposition_failures": false
+      },
+      "alias_guard": "PASS"
+    },
+    {
+      "family": "z_biased_no_burst",
+      "circuit_sha256": "97bb2a8a7d6e514c476988511f410d6f37ff20057a55509000a444a68e30ee1f",
+      "dem_sha256": "0c4adcd5af3bcd7f7b89432d37e1ae5074a82d1e20df4e93bec5b509c7c3eafc",
+      "detector_order_sha256": "4df606e0198d8b3f4a393fbd452f5078f221935ed20a3eff936d9059bc3150e4",
+      "observable_semantics_sha256": "9573b0b43c93ed90a6e50295fed09bc9fdc4172cb0f0ab062d528d4b119f6c7e",
+      "detectors": 40,
+      "observables": 1,
+      "dem_settings": {
+        "allow_gauge_detectors": false,
+        "approximate_disjoint_errors": true,
+        "block_decomposition_from_introducing_remnant_edges": false,
+        "decompose_errors": true,
+        "flatten_loops": false,
+        "ignore_decomposition_failures": false
+      },
+      "alias_guard": "PASS"
+    }
+  ],
+  "dem_identity_source": "Existing deterministic PR #7 compatibility matrix; not a new construction in this task.",
+  "dependency": {
+    "python": "3.12.10",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "numpy": "2.2.6",
+    "scipy": "1.18.1",
+    "beliefmatching": "0.2.0",
+    "beliefmatching_upstream_commit": "4458c278bbec273c8c1a26411dadccc49222f8ef",
+    "lock_path": "outputs/ns4a_v2_lockmatched_env_recovery_v1/requirements-ns3b.lock.txt",
+    "lock_sha256": "403d567f1063e5406fac93e9292ddb43a5524c274992b9dff29d14ddf06a3fac",
+    "lock_source_git_commit": "e4ff201e3db18a2d18e7474bef4a83542eaa3da8",
+    "lock_source_git_path": "outputs/qshift_ns3_decoder_research/ns3b_beliefmatching/requirements-ns3b.lock.txt",
+    "upstream_adapter_sha256": "702dc36ef4dedd38347b0e78541d1d2d2ff063c2462dbab29aa2095f583c2106",
+    "upstream_single_file_hash_note": "The lock identifies the upstream repository commit; the source digest checks the imported file only and is not a digest of the complete upstream repository."
+  },
+  "contracts": {
+    "sampling_model_identity": "qshift_core_v1/sampling_model_identity.py",
+    "decoder_model_identity": "qshift_core_v1/sampling_model_identity.py",
+    "circuit_identity": "qshift_core_v1/circuit_identity.py",
+    "decoder_protocol": "qshift_core_v1/contracts.py",
+    "checked_paired_runtime": "qshift_core_v1/decoder_runtime_v2.py",
+    "pymatching_adapter": "qshift_core_v1/pymatching_adapter.py",
+    "beliefmatching_adapter": "qshift_core_v1/research_adapters/beliefmatching_adapter_ns3b.py",
+    "beliefmatching_registration": "qshift_core_v1/research_adapters/beliefmatching_integration_ns2d.py",
+    "information_parity": "same sampling identity, DEM digest, assumed model ID and canonical provenance are checked against named PM adapter",
+    "evidence_scope": "detector batches go to decoder calls; labels held by scorer until calls return; condition metadata must not select a decoder at evaluation"
+  },
+  "future_implementation": {
+    "scientific_runner": {
+      "status": "NOT_IMPLEMENTED",
+      "required_before_freeze": true,
+      "path": "outputs/ns4a_v2_execution_readiness_v1/run_ns4a_v2.py",
+      "sha256": null
+    },
+    "selection_scorer": {
+      "status": "NOT_IMPLEMENTED",
+      "required_before_freeze": true,
+      "path": "outputs/ns4a_v2_execution_readiness_v1/selection_v2.py",
+      "sha256": null
+    },
+    "statistical_analysis": {
+      "status": "NOT_IMPLEMENTED",
+      "required_before_freeze": true,
+      "path": "outputs/ns4a_v2_execution_readiness_v1/analyze_v2.py",
+      "sha256": null
+    },
+    "independent_saved_array_auditor": {
+      "status": "NOT_IMPLEMENTED",
+      "required_before_freeze": true,
+      "path": "outputs/ns4a_v2_execution_readiness_v1/audit_saved_arrays_v2.py",
+      "sha256": null
+    },
+    "validation_tests": {
+      "status": "NOT_IMPLEMENTED",
+      "required_before_freeze": true,
+      "path": "outputs/ns4a_v2_execution_readiness_v1/tests/",
+      "sha256": null
+    },
+    "seed_inventory": {
+      "status": "UNALLOCATED_BY_DESIGN",
+      "required_before_sampling": true,
+      "path": "outputs/ns4a_v2_execution_readiness_v1/seed_inventory.json",
+      "sha256": null
+    }
+  },
+  "input_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "b00963a12c0e28b1619d9aa615275efce15060322fb102094e5f437a10874505",
+      "bytes": 3747,
+      "git_blob_oid": "806e4afaae56626307850343d55942b5975686c5",
+      "worktree_sha256": "b00963a12c0e28b1619d9aa615275efce15060322fb102094e5f437a10874505",
+      "worktree_bytes": 3747,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/phase4b_replication/PHASE4B_PROTOCOL.md",
+      "sha256": "eacf1ec11b1416e53f67e129c9d81db798e076bd9c040370657c80771652bfdf",
+      "bytes": 986,
+      "git_blob_oid": "35c1423a4409015f967223acaa6c381e59059cff",
+      "worktree_sha256": "eacf1ec11b1416e53f67e129c9d81db798e076bd9c040370657c80771652bfdf",
+      "worktree_bytes": 986,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/phase4c_strong_baselines/PHASE4C_STAGE1_PROTOCOL.md",
+      "sha256": "dee1b8bd1ef99ed7ad4b6a32cc5e2c250231fc1cb944106dd3b46ad5542f806f",
+      "bytes": 1746,
+      "git_blob_oid": "fcb4a5c059b2fe9cc32e42c3ac89069233e210fd",
+      "worktree_sha256": "dee1b8bd1ef99ed7ad4b6a32cc5e2c250231fc1cb944106dd3b46ad5542f806f",
+      "worktree_bytes": 1746,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/phase4c_strong_baselines/run_stage1.py",
+      "sha256": "f96f95f8a2af894359b642e36292c7d0947695df3a14b43ff9ea1c9dbf3a2542",
+      "bytes": 5789,
+      "git_blob_oid": "76b019e5a39e3578219f62624599fd6466a7fdf9",
+      "worktree_sha256": "f96f95f8a2af894359b642e36292c7d0947695df3a14b43ff9ea1c9dbf3a2542",
+      "worktree_bytes": 5789,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/phase2b_pauli_bias/noise_model.py",
+      "sha256": "256826516353c5d3effb6a0b85969934ac2b61edc2848148d935087e54dffcbd",
+      "bytes": 6176,
+      "git_blob_oid": "de0e39305ab87de8db1a4677ff1baf12b5a432dc",
+      "worktree_sha256": "256826516353c5d3effb6a0b85969934ac2b61edc2848148d935087e54dffcbd",
+      "worktree_bytes": 6176,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/phase3a_correlated_noise_preflight/simulator.py",
+      "sha256": "c938ffc9f4169a9d0c7c92bf5c66e48a03a64f45d3d06f160a31d11b188da239",
+      "bytes": 3955,
+      "git_blob_oid": "df01710051d79118a78add30f9949777edf0d8a4",
+      "worktree_sha256": "c938ffc9f4169a9d0c7c92bf5c66e48a03a64f45d3d06f160a31d11b188da239",
+      "worktree_bytes": 3955,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/qshift_ns4a_pilot_protocol/NS4A_SCIENTIFIC_PROTOCOL.md",
+      "sha256": "963426a4a56e8c0714fd2774ce2c60acfd3226210ee124567dfa0bc63d878122",
+      "bytes": 11871,
+      "git_blob_oid": "6e071fd7ddb5697a5e775dea33150f2d1cba3d6d",
+      "worktree_sha256": "963426a4a56e8c0714fd2774ce2c60acfd3226210ee124567dfa0bc63d878122",
+      "worktree_bytes": 11871,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/qshift_ns4a_pilot_protocol/NS4A_STATISTICAL_DESIGN.md",
+      "sha256": "ca297fdb8e301a5f759cae50129bf60da993326f9976ba2c721a7958c3cae454",
+      "bytes": 7523,
+      "git_blob_oid": "a746696d908f826b4c0ec68829eab090df5d3e9e",
+      "worktree_sha256": "ca297fdb8e301a5f759cae50129bf60da993326f9976ba2c721a7958c3cae454",
+      "worktree_bytes": 7523,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/qshift_ns4a_pilot_protocol/NS4A_EXECUTION_GATE_CHECKLIST.md",
+      "sha256": "5e50df36141d327d020bc14131a71e01cd619225512444102bf7cdc6cf23d7e4",
+      "bytes": 4388,
+      "git_blob_oid": "084e50363d558556b1d471a19fa63dc11b4a4e8d",
+      "worktree_sha256": "5e50df36141d327d020bc14131a71e01cd619225512444102bf7cdc6cf23d7e4",
+      "worktree_bytes": 4388,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/qshift_ns4a_pilot_protocol/NS4A_RESOURCE_ESTIMATE.md",
+      "sha256": "716098bb141e1056c96ea7293c61381fb4f00d04e079e86812817c62cd8f91d5",
+      "bytes": 3945,
+      "git_blob_oid": "5591c72528779544a76cf242bb7f0329062dd225",
+      "worktree_sha256": "716098bb141e1056c96ea7293c61381fb4f00d04e079e86812817c62cd8f91d5",
+      "worktree_bytes": 3945,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/qshift_ns4a_pilot_protocol/proposed_config.json",
+      "sha256": "c4dfa71ba64526b7fe8e86dc181f804d168b4349a74bd348acb0a41309fd7392",
+      "bytes": 6351,
+      "git_blob_oid": "0cc6cb7546336232c9873f7c2499fbfbbc42635a",
+      "worktree_sha256": "c4dfa71ba64526b7fe8e86dc181f804d168b4349a74bd348acb0a41309fd7392",
+      "worktree_bytes": 6351,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/qshift_ns4a_pilot_protocol_v2/NS4A_PROTOCOL_REVISION_V2.md",
+      "sha256": "b320261fdf6bb95e28b5da764d7fca2196628826655a232f9259eb66d1ebbb49",
+      "bytes": 10486,
+      "git_blob_oid": "3802f30892c53212ac606ab7d6fb746e1776e39a",
+      "worktree_sha256": "b320261fdf6bb95e28b5da764d7fca2196628826655a232f9259eb66d1ebbb49",
+      "worktree_bytes": 10486,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/qshift_ns4a_pilot_protocol_v2/NS4A_REVISION_INPUTS.json",
+      "sha256": "2e308935129ffa45a4182685344fea91708499531e2af4d683d50ae5699e99cc",
+      "bytes": 3470,
+      "git_blob_oid": "04370231ee17eb29ef5beed2de48aa6c35aac88f",
+      "worktree_sha256": "2e308935129ffa45a4182685344fea91708499531e2af4d683d50ae5699e99cc",
+      "worktree_bytes": 3470,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/qshift_ns4a_pilot_protocol_v2/NS4A_REVISION_MANIFEST.json",
+      "sha256": "4e82cd771d170670e844ff520794c7521281d8837a2f65a46fc2481f3bf660f5",
+      "bytes": 1282,
+      "git_blob_oid": "94ae65341dbb005beef5a56199bb516aa6d558aa",
+      "worktree_sha256": "4e82cd771d170670e844ff520794c7521281d8837a2f65a46fc2481f3bf660f5",
+      "worktree_bytes": 1282,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/qshift_ns4a_pilot_protocol_v2/NS4A_SCIENTIFIC_JUSTIFICATION_V2.md",
+      "sha256": "b4d38ad857537abf97981349c49bc44fe35cfd0c0363c0d0d75ca01399c36352",
+      "bytes": 6706,
+      "git_blob_oid": "61196394dcfa5f6030b9032efec501c30e24543e",
+      "worktree_sha256": "b4d38ad857537abf97981349c49bc44fe35cfd0c0363c0d0d75ca01399c36352",
+      "worktree_bytes": 6706,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/qshift_ns4a_pilot_protocol_v2/NS4A_SUPERVISOR_HANDOFF_V2.md",
+      "sha256": "2754d004aae5227ad56b383163c6a2743cb1afa1788cd21c54061231bc61a602",
+      "bytes": 3430,
+      "git_blob_oid": "4ed08129a5d79548685f9323ac07fef6291ab422",
+      "worktree_sha256": "2754d004aae5227ad56b383163c6a2743cb1afa1788cd21c54061231bc61a602",
+      "worktree_bytes": 3430,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/qshift_ns4a_pilot_protocol_v2/proposed_config_v2.json",
+      "sha256": "ae1725ef867dc5cfdfccd109cfe774512078916473dc7a42bab7ec1943b83726",
+      "bytes": 9658,
+      "git_blob_oid": "6b85d6b6d87144248719e12c9fb72c57f275972a",
+      "worktree_sha256": "ae1725ef867dc5cfdfccd109cfe774512078916473dc7a42bab7ec1943b83726",
+      "worktree_bytes": 9658,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "qshift_core_v1/contracts.py",
+      "sha256": "d1fc3005ff45f4bc90e993e2deb6330573b068769f5185edb04aaeb3f55da9b2",
+      "bytes": 3744,
+      "git_blob_oid": "d96f7ec0a066a72f04e7b19bac16e7b641b58a23",
+      "worktree_sha256": "d1fc3005ff45f4bc90e993e2deb6330573b068769f5185edb04aaeb3f55da9b2",
+      "worktree_bytes": 3744,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "qshift_core_v1/circuit_identity.py",
+      "sha256": "770546b694ffd82825004bf6f8149232733cf00b40e9aa6f36f96eb2eb9bacbe",
+      "bytes": 21767,
+      "git_blob_oid": "d8a4ea9dcbb887ec219aa4d0b13bd351c5c68d72",
+      "worktree_sha256": "770546b694ffd82825004bf6f8149232733cf00b40e9aa6f36f96eb2eb9bacbe",
+      "worktree_bytes": 21767,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "qshift_core_v1/decoder_runtime_v2.py",
+      "sha256": "306dba20a5bebdb3059236d1f2766c34ee7bf676415b74c309d00a1784e26df9",
+      "bytes": 17792,
+      "git_blob_oid": "76e04a7c892dba5c086b8ded9deb223f8c8c433f",
+      "worktree_sha256": "306dba20a5bebdb3059236d1f2766c34ee7bf676415b74c309d00a1784e26df9",
+      "worktree_bytes": 17792,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "qshift_core_v1/pymatching_adapter.py",
+      "sha256": "2adf2a8c06dc95c084a17dd78183351f1f244c6f1e2515d8afd9bdb7e79fcef9",
+      "bytes": 4893,
+      "git_blob_oid": "e0f693c081d4a3a885fcc40d2213893aab460c07",
+      "worktree_sha256": "2adf2a8c06dc95c084a17dd78183351f1f244c6f1e2515d8afd9bdb7e79fcef9",
+      "worktree_bytes": 4893,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "qshift_core_v1/sampling_model_identity.py",
+      "sha256": "84a0f7a9c159920cf4845629b9f4af0732cfdfbd42a6afcc8c98f8308e97c84d",
+      "bytes": 39821,
+      "git_blob_oid": "2b306439db1a54ae96b884dfee4181adad1e6691",
+      "worktree_sha256": "84a0f7a9c159920cf4845629b9f4af0732cfdfbd42a6afcc8c98f8308e97c84d",
+      "worktree_bytes": 39821,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "qshift_core_v1/research_adapters/beliefmatching_adapter_ns3b.py",
+      "sha256": "702dc36ef4dedd38347b0e78541d1d2d2ff063c2462dbab29aa2095f583c2106",
+      "bytes": 17782,
+      "git_blob_oid": "e56f4fef98e7eac0b15b69b5f9eacd72b5156f11",
+      "worktree_sha256": "702dc36ef4dedd38347b0e78541d1d2d2ff063c2462dbab29aa2095f583c2106",
+      "worktree_bytes": 17782,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "qshift_core_v1/research_adapters/beliefmatching_integration_ns2d.py",
+      "sha256": "e5d1f53eb1e1110577e0e38214919c187adf24da20da4130713221f3c38f0c25",
+      "bytes": 7712,
+      "git_blob_oid": "9fb607d1c01f33a03b701784421b893a0fdd0fe4",
+      "worktree_sha256": "e5d1f53eb1e1110577e0e38214919c187adf24da20da4130713221f3c38f0c25",
+      "worktree_bytes": 7712,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "qshift_core_v1/baselines.py",
+      "sha256": "b51f1936f332749ab7f73f094482ef433931f9e4a324a7d42700e87eaaaa7cb2",
+      "bytes": 1216,
+      "git_blob_oid": "944aaa9dc19b29baec303b8139b11bf183a3bfd0",
+      "worktree_sha256": "b51f1936f332749ab7f73f094482ef433931f9e4a324a7d42700e87eaaaa7cb2",
+      "worktree_bytes": 1216,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "qshift_core_v1/controller.py",
+      "sha256": "b27bb76d59273fc1af06cb1c0db8bd545df21be6997c939ebfba9d540ef7bf90",
+      "bytes": 10783,
+      "git_blob_oid": "6282105e348f7be76312bf29e327ff3b39a411b2",
+      "worktree_sha256": "b27bb76d59273fc1af06cb1c0db8bd545df21be6997c939ebfba9d540ef7bf90",
+      "worktree_bytes": 10783,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "qshift_core_v1/evaluation.py",
+      "sha256": "3012cd5822aa8b93f74b8b07f909aea60264278563fffc1a16b94d3df71c0c65",
+      "bytes": 8819,
+      "git_blob_oid": "d0d2dc94fa1ad200630dcf704145a7eebcec3ebf",
+      "worktree_sha256": "3012cd5822aa8b93f74b8b07f909aea60264278563fffc1a16b94d3df71c0c65",
+      "worktree_bytes": 8819,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/ns4a_v2_lockmatched_env_recovery_v1/requirements-ns3b.lock.txt",
+      "sha256": "403d567f1063e5406fac93e9292ddb43a5524c274992b9dff29d14ddf06a3fac",
+      "bytes": 481,
+      "git_blob_oid": "2c6d112175fd73c09041f366c856f5fa527cb718",
+      "worktree_sha256": "403d567f1063e5406fac93e9292ddb43a5524c274992b9dff29d14ddf06a3fac",
+      "worktree_bytes": 481,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/ns4a_v2_lockmatched_env_recovery_v1/ENVIRONMENT_PROVENANCE.md",
+      "sha256": "0c0644e479a858f59d346d8abcd5af53bfae248379d17fc152bb5bacdbdeb679",
+      "bytes": 3975,
+      "git_blob_oid": "5f645756e481c100a775b6a7de5ce72e0ac6c741",
+      "worktree_sha256": "0c0644e479a858f59d346d8abcd5af53bfae248379d17fc152bb5bacdbdeb679",
+      "worktree_bytes": 3975,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/ns4a_v2_lockmatched_env_recovery_v1/DEPENDENCY_VERIFICATION.json",
+      "sha256": "c06b759fd89f985722455f96748135abfc8bee0d74e6bedf19bfd5adbec7668e",
+      "bytes": 8474,
+      "git_blob_oid": "e12e4e06b3a044cd06db7311db7a3a4982e8f901",
+      "worktree_sha256": "c06b759fd89f985722455f96748135abfc8bee0d74e6bedf19bfd5adbec7668e",
+      "worktree_bytes": 8474,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/ns4a_v2_lockmatched_env_recovery_v1/BELIEFMATCHING_COMPATIBILITY_MATRIX.json",
+      "sha256": "98936e513eb1a4437936e7aa812caa43a25fe79aed134d97bbf38520ac990744",
+      "bytes": 37513,
+      "git_blob_oid": "11799f318c92336cb28ce7a8d3f9d71438e1fd59",
+      "worktree_sha256": "98936e513eb1a4437936e7aa812caa43a25fe79aed134d97bbf38520ac990744",
+      "worktree_bytes": 37513,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/ns4a_v2_lockmatched_env_recovery_v1/LOCKMATCHED_PREFLIGHT_SUMMARY.json",
+      "sha256": "9260a14203c0909104c77861c11fbd39c6c5a9685530a93398c63e47cf76428e",
+      "bytes": 1618,
+      "git_blob_oid": "c20a335271dfe152202556d1dcd069996af465c8",
+      "worktree_sha256": "9260a14203c0909104c77861c11fbd39c6c5a9685530a93398c63e47cf76428e",
+      "worktree_bytes": 1618,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/ns4a_v2_lockmatched_env_recovery_v1/INDEPENDENT_PREFLIGHT_VERIFICATION.json",
+      "sha256": "b040b19284f6a58f1dc5b0a9ac90f78c53ff54cd269d652e1c737f7c74213dd1",
+      "bytes": 8375,
+      "git_blob_oid": "9361d2e8656d0e5f0121124e3b576e3b7ec54c40",
+      "worktree_sha256": "b040b19284f6a58f1dc5b0a9ac90f78c53ff54cd269d652e1c737f7c74213dd1",
+      "worktree_bytes": 8375,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/ns4a_v2_lockmatched_env_recovery_v1/SOURCE_INPUT_INVENTORY.json",
+      "sha256": "6b71e31859cc2f25177fa99d00faff501cdf83cc241b7e4493f24622d79439e3",
+      "bytes": 8720,
+      "git_blob_oid": "b2bc941d64ef9b3a15d77392ee8952b9d85a7e8e",
+      "worktree_sha256": "6b71e31859cc2f25177fa99d00faff501cdf83cc241b7e4493f24622d79439e3",
+      "worktree_bytes": 8720,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/ns4a_v2_lockmatched_env_recovery_v1/ARTIFACT_SHA256_MANIFEST.json",
+      "sha256": "0a20d37277bcc05d78d47f1c3b46169423046386c7ec1ce84a2d9fb6e7418dde",
+      "bytes": 2875,
+      "git_blob_oid": "2c5d75369b19b3fc3be6edbc6df15385da89ab28",
+      "worktree_sha256": "0a20d37277bcc05d78d47f1c3b46169423046386c7ec1ce84a2d9fb6e7418dde",
+      "worktree_bytes": 2875,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/ns4a_v2_lockmatched_env_recovery_v1/DETERMINISTIC_PREFLIGHT_RERUN.md",
+      "sha256": "48f36e46d3f1f0788906efc2788c472b2840cb138ff9b50dbd146afccecd5409",
+      "bytes": 6068,
+      "git_blob_oid": "d1679bc97c444eaee3344e3df71e65ff67976fef",
+      "worktree_sha256": "48f36e46d3f1f0788906efc2788c472b2840cb138ff9b50dbd146afccecd5409",
+      "worktree_bytes": 6068,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/ns4a_v2_lockmatched_env_recovery_v1/VALIDATION_SUMMARY.md",
+      "sha256": "474cc75fee1c50726d0f3e4de544594006f20d1dabd610bba3219c5ffd56c9dc",
+      "bytes": 3023,
+      "git_blob_oid": "34c6bc3cd3f22af6ae4e8beafc0234cd47cabf09",
+      "worktree_sha256": "474cc75fee1c50726d0f3e4de544594006f20d1dabd610bba3219c5ffd56c9dc",
+      "worktree_bytes": 3023,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/ns4a_v2_lockmatched_env_recovery_v1/run_lockmatched_preflight.py",
+      "sha256": "eb0a0951d6234cb74a5129c5a79c850549b9c6d1484dd38b1c208ab04f991c78",
+      "bytes": 42206,
+      "git_blob_oid": "560f3783be9e8ed973d05b474dc833cb7b67073d",
+      "worktree_sha256": "eb0a0951d6234cb74a5129c5a79c850549b9c6d1484dd38b1c208ab04f991c78",
+      "worktree_bytes": 42206,
+      "normalized_worktree_matches_git_blob": true
+    },
+    {
+      "path": "outputs/ns4a_v2_lockmatched_env_recovery_v1/verify_lockmatched_preflight.py",
+      "sha256": "a25b37bc79c6a8e6fb29a84cfc9eabae70b40466145c5d55d2347321a2d5b47a",
+      "bytes": 22188,
+      "git_blob_oid": "0f195f506695089a6f3eec9a94e3f5b03936b1cc",
+      "worktree_sha256": "a25b37bc79c6a8e6fb29a84cfc9eabae70b40466145c5d55d2347321a2d5b47a",
+      "worktree_bytes": 22188,
+      "normalized_worktree_matches_git_blob": true
+    }
+  ],
+  "manifest_self_hash": "EXCLUDED"
+}
