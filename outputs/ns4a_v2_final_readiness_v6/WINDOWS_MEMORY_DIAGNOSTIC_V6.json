@@ -1,0 +1,47 @@
+{
+  "schema": "qshift-v6-windows-peak-working-set-diagnostic-v1",
+  "platform": "Windows 64-bit",
+  "python": "3.12.10",
+  "diagnostic_is_sampler_free": true,
+  "legacy_v5_reproduction": {
+    "get_process_memory_info_returned_false": true,
+    "legacy_get_current_process_restype": "ctypes.c_long",
+    "legacy_get_process_memory_info_argtypes": null,
+    "legacy_get_process_memory_info_restype": "ctypes.c_long",
+    "legacy_handle_value": -1,
+    "legacy_return_width_bytes": 4,
+    "native_handle_width_bytes": 8,
+    "legacy_last_error_available": false,
+    "truncated_handle_probe": {
+      "handle_passed_to_typed_psapi": "0x00000000ffffffff",
+      "GetProcessMemoryInfo_returned_false": true,
+      "captured_windows_error": 6
+    },
+    "interpretation": "The V5 ctypes declarations used default 32-bit integer return/argument conversion for a pointer-sized HANDLE and omitted GetProcessMemoryInfo prototypes. The exact legacy call failed; separately, the explicit 32-bit-truncated handle failed with Windows error 6 (invalid handle). The exact legacy call did not preserve GetLastError."
+  },
+  "corrected_measurement": {
+    "api": "PSAPI.GetProcessMemoryInfo via WinDLL(use_last_error=True)",
+    "get_current_process_restype": "wintypes.HANDLE",
+    "get_process_memory_info_argtypes": [
+      "wintypes.HANDLE",
+      "POINTER(PROCESS_MEMORY_COUNTERS_EX)",
+      "wintypes.DWORD"
+    ],
+    "get_process_memory_info_restype": "wintypes.BOOL",
+    "process_memory_counters_ex_bytes": 80,
+    "pointer_bytes": 8,
+    "python_pid": 11240,
+    "peak_working_set_bytes": 17309696,
+    "independent_powershell_peak_working_set_bytes": 17317888,
+    "independent_wmi_peak_working_set_bytes": 17317888,
+    "absolute_difference_bytes": 8192,
+    "comparison_tolerance_bytes": 4194304,
+    "independent_comparison_pass": true
+  },
+  "counts": {
+    "stim_sampler_calls": 0,
+    "stim_shots": 0,
+    "labels": 0
+  },
+  "limits_changed": false
+}
