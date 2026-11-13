@@ -257,3 +257,30 @@ Stop for the next supervisor review. No research sampling is authorized.
 ### Review state
 
 Await supervisor review. No sampling, training, protected outcomes, merge, or automatic NS-4B progression is authorized.
+
+## NS-4A V2 — V5 source-identity binding repair (2026-11-13)
+
+### Reviewed checkpoint and publication
+
+- Starting HEAD: `bdc8cf327f747611f1015100dfefe0fb6bc24c47`, on `codex/ns4a-v2-final-readiness`.
+- Repair branch: `codex/ns4a-v2-source-identity-v5`.
+- Implementation checkpoint commit: `cb9ef16deca053c62a685bd6f424e5f07d2f8252`.
+- The final branch HEAD after this handoff-only update is reported in the publication response. Any future owner authorization must bind that final HEAD exactly, not the starting checkpoint or implementation parent.
+- V4 remains unchanged. No benchmark authorization file was created; no sampler calls or shots occurred.
+
+### Changes and validation
+
+- Added `benchmark_identity_v5.py`, a separate `benchmark_v5.py` runner, a V5 launcher, build/verifier scripts, deterministic tests, and V5 source identity/report documents.
+- Committed the existing six-seed inventory and preserved all four earlier collision-screen attempts. The final corrected collision report supersedes them and confirms the six seeds are unique/disjoint from the approved metadata fields.
+- V5 manifest SHA-256: `c3debd93346f6b04c3acc0d514f52e3b973f76c9f1b3dfb7867285d9df31403d`; source-tree SHA-256: `5383cb4f071b291ed19027de19c0a54b6366e4f4de452ac4b93df6af7dfaff0f`; 73 files verified. Manifest excludes itself and the final commit SHA. The post-commit owner payload binds HEAD + manifest + protocol + inventory hashes.
+- Fresh tests: `python -m unittest discover -s outputs/ns4a_v2_final_readiness_v5 -p test_benchmark_source_identity_v5.py -v` — 14 passed.
+- Fresh source check: `python outputs/ns4a_v2_final_readiness_v5/verify_source_manifest_v5.py` — PASS, 73 files. `python -m py_compile` passed for all six new Python files; `git diff --check` passed.
+- Historical V4 verifier was attempted and failed because the active interpreter lacks pinned `iniconfig`; installed NumPy is 2.5.3 versus the lock's 2.2.6. Python 3.12.10, Stim 1.16.0, and PyMatching 2.4.0 were present. No packages were installed. V5 retains the locked-environment fail-closed gate.
+
+### Limits and review state
+
+- The authorization payload's `owner_id` is declarative, not a digital signature. The token remains owner-created at the exact V5 path and is not included in source hashes or Git.
+- No stochastic benchmark, scientific sampling, training, Stage 5 access, or historical outcome inspection occurred. V2.4 remains HOLD; Research Codex remains ON HOLD.
+- Draft PR is intended to target `codex/ns4a-v2-final-readiness`; no merge is authorized.
+
+Await supervisor review. No benchmark execution is authorized by this repair.
