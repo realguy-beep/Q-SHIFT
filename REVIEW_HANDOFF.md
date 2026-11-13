@@ -217,3 +217,43 @@ The deterministic PyMatching fixtures cover both explicit correlation modes and 
 ### Next action
 
 Stop for the next supervisor review. No research sampling is authorized.
+
+## NS-4A — BeliefMatching development pilot protocol proposal (2026-11-13)
+
+### Scope and status
+
+- Prepared on branch `codex/ns4a-pilot-protocol`, based exactly on accepted NS-2D checkpoint `924746ee3851f7662365e7834f998159d1b286a7`.
+- Research source reviewed: `codex/ns3b-beliefmatching-research` at `e4ff201e3db18a2d18e7474bef4a83542eaa3da8`; NS-2D PR #2 remains draft/open/unmerged.
+- This is a proposed development-only protocol. `sampling_authorized=false`; no sampler, training, stochastic benchmark or protected Stage 5 outcome access occurred. V2.4 and Stage 5 restrictions remain unchanged; Research Codex remains HOLD.
+
+### Proposal
+
+- Compare NS-3B BeliefMatching with ordinary and correlation-enabled PyMatching plus one globally selected pooled-fixed PyMatching configuration. The primary BM/PM pair uses the same selected decomposed approximate DEM and declared noise provenance.
+- Six Z-memory distance-3/five-round evaluation strata: balanced, X-biased, and Z-biased no-burst; balanced spatial X8/X10 burst at p=0.005, 0.010, and 0.015 per each of five MR boundaries. The 0.005/0.015 settings are proposed sensitivity points; the Phase 3A source accepts the range, but they have not been preflighted. Data-heavy and measurement-heavy channels are not in the inspected Phase 2B/3A generator and are excluded.
+- Separate selection partition: 4 conditions × 8 roots × 2,000 shots = 64,000. Evaluation: 6 conditions × 10 independent roots × 4,000 shots = 240,000. Total proposed budget: 304,000 unique shots. This is not a power claim.
+- Primary estimate: equal-condition mean of root-paired BM-minus-pooled-fixed PM LER differences. Root-stratified bootstrap interval and root-cluster sign-flip sensitivity; small-root/skew limitations are explicit. 45–50% relative reduction remains aspirational, not a gate.
+- Future larger-development review gate requires integrity, favorable primary estimate/interval, and at least four of six favorable condition means. Passing only permits a new design review; it does not authorize execution or establish confirmation.
+
+### Files added
+
+- `outputs/qshift_ns4a_pilot_protocol/NS4A_SCIENTIFIC_PROTOCOL.md`
+- `outputs/qshift_ns4a_pilot_protocol/NS4A_BASELINE_AUDIT.md`
+- `outputs/qshift_ns4a_pilot_protocol/NS4A_STATISTICAL_DESIGN.md`
+- `outputs/qshift_ns4a_pilot_protocol/NS4A_RESOURCE_ESTIMATE.md`
+- `outputs/qshift_ns4a_pilot_protocol/NS4A_RISK_REGISTER.md`
+- `outputs/qshift_ns4a_pilot_protocol/NS4A_EXECUTION_GATE_CHECKLIST.md`
+- `outputs/qshift_ns4a_pilot_protocol/NS4A_SUPERVISOR_HANDOFF.md`
+- `outputs/qshift_ns4a_pilot_protocol/proposed_config.json` — explicitly `NOT_AUTHORIZED_FOR_EXECUTION`, with no numeric seeds allocated.
+- `outputs/qshift_ns4a_pilot_protocol/NS4A_REFERENCE_INPUTS.json` — source/protocol SHA-256 inventory.
+- `outputs/qshift_ns4a_pilot_protocol/NS4A_PREPARATION_MANIFEST.json` — package hash/size inventory, excluding its own self-hash.
+
+### Evidence and limitations
+
+- Source review covered `outputs/phase2b_pauli_bias/noise_model.py`, `PHASE2B_PROTOCOL.md`, `NOISE_MODEL_SPECIFICATION.md`; `outputs/phase3a_correlated_noise_preflight/simulator.py`, `CORRELATED_NOISE_HYPOTHESIS.md`; and the NS-2D implementation/provenance/fixture documents and adapter source. NS-3B alias-collision and handoff materials were read from the separate research worktree. No outcome arrays were used to tune the proposal.
+- Existing NS-2D fixed fixture is five manually specified detector rows, has no labels, and cannot establish accuracy, discordance, power, or scalable throughput. Timing projections are arithmetic from tiny fixtures only; full Stim end-to-end runtime and native RSS remain unknown.
+- Before any later freeze: allocate and metadata-screen fresh seeds, resolve the NS-2D NumPy lock/runtime discrepancy, run deterministic all-condition DEM/order/alias checks, benchmark the actual end-to-end path under caps, and obtain separate sampling authorization. Any unsafe DEM or identity mismatch blocks this exact design; no condition may be dropped after results.
+- `git diff --check` passed. A PowerShell static check parsed the proposed config and reference-input inventory, recomputed the 64,000 + 240,000 = 304,000 shot arithmetic, checked authorization flags, and verified 15/15 input and 10/10 output/handoff SHA-256 plus byte-size records. No automated suite was rerun because this checkpoint changes documents/configuration only; NS-2D deterministic test counts remain historical, not freshly rerun.
+
+### Review state
+
+Await supervisor review. No sampling, training, protected outcomes, merge, or automatic NS-4B progression is authorized.

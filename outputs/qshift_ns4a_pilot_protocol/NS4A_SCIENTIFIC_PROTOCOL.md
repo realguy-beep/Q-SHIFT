@@ -1,0 +1,59 @@
+# NS-4A — BeliefMatching Development Pilot Protocol
+
+**Status: proposed design only. Sampling is not authorized.** This protocol is based on the NS-2D engineering checkpoint `924746ee3851f7662365e7834f998159d1b286a7` and the published NS-3B research source at `e4ff201e3db18a2d18e7474bef4a83542eaa3da8`. It is not a frozen experiment and creates no execution permission. NS-2D PR #2 remains open and draft. V2.4 remains on HOLD; Stage 5 and its protected outcomes are out of scope.
+
+## Question
+
+On identical development-only detector samples, does the NS-3B BeliefMatching implementation produce a lower logical-error rate than a single strong, calibration-selected static PyMatching configuration when both receive the same declared decoder-model information? The pilot also measures differences from ordinary and correlation-enabled PyMatching, condition-specific behavior, failures, and computational cost. A favorable result would motivate review of a larger study; it would not establish an adaptive-decoding benefit, a confirmatory result, or hardware performance.
+
+## Circuit and supported noise conditions
+
+Use the documented Stim rotated Z-memory surface-code circuit, distance 3, five rounds, 40 detectors, and one logical observable. Keep gate-fault mass at 0.003, measurement-flip probability at 0.003, and Pauli bias ratio at 10:1:1 except where the condition definition changes Pauli composition. The Phase 2B generator defines `balanced`, `x_biased`, and `z_biased`; its balanced one-qubit Pauli mass is divided equally over X/Y/Z and its biased settings allocate 80/10/10 percent. Its two-qubit channel is categorical over the 15 non-identity Pauli pairs, weighted by products of I/X/Y/Z axis weights. The three bias conditions do not change total gate or measurement error rates.
+
+The Phase 3A simulator adds simultaneous X errors on data qubits 8 and 10 (`CORRELATED_ERROR X8 X10`) immediately after each of five `MR` boundaries. Each boundary is an independent Bernoulli event with the specified `p_burst`. This is a synthetic spatial common-cause proxy, not a calibrated device model; it is not temporal persistence. The proposed held-out development burst probabilities are 0.005, 0.010, and 0.015 per boundary. The simulator accepts probabilities in [0,1], but only 0.010 is the documented Phase 3A preflight setting. The 0.005 and 0.015 settings are prospective sensitivity points and require deterministic construction checks before any later authorization.
+
+The six evaluation strata are: (1) balanced, no burst; (2) X-biased, no burst; (3) Z-biased, no burst; (4) balanced with burst p=0.005; (5) balanced with burst p=0.010; and (6) balanced with burst p=0.015. All use the same Z-memory circuit topology and detector/observable conventions. There is no data-heavy or measurement-heavy condition in the cited Phase 2B/3A generator. These will not be approximated by relabeling Pauli-axis bias. A future study may add a separately specified rate-asymmetric noise generator.
+
+## Partitions and proposed shot budget
+
+Use new, independently seeded calibration/selection roots and evaluation roots. The proposed allocation is:
+
+| Partition | Conditions | Roots per condition | Shots per root | Unique shots |
+|---|---:|---:|---:|---:|
+| Model-selection/calibration | 4 tuning conditions: balanced, X-biased, Z-biased (all no burst), and balanced burst p=0.010 | 8 | 2,000 | 64,000 |
+| Final development evaluation | 6 conditions listed above | 10 | 4,000 | 240,000 |
+| **Total** |  |  |  | **304,000** |
+
+The selection roots are disjoint from all evaluation roots. The p=0.010 selection and evaluation conditions use separate roots and seeds. The p=0.005 and p=0.015 evaluation conditions are absent from model selection. This provides a limited held-out-parameter sensitivity check without pretending to test broad generalization. Every evaluation root-condition cell is sampled once; all decoder arms receive the same detector rows and observable labels in that cell. No shots are reserved for unplanned diagnostics; any change to this allocation requires a new reviewed protocol.
+
+The root/shot counts are a bounded feasibility design, not a power claim. Ten evaluation roots per condition gives 60 independent root-condition clusters for an initial heterogeneity assessment; 4,000 paired shots per root targets useful discordance counts without multiplying root count beyond this bounded first study. The combined count was chosen to be near a 0.0005 normal-approximation half-width under the explicitly hypothetical sensitivity case `q=0.01` and `tau=0.001`; it is not based on observed NS-4A data and is not a validated precision guarantee. Eight selection roots per condition provide repeated calibration scores for ranking stability, but may not select a stable winner. The existing five-row NS-2D fixture has no labels and cannot estimate paired discordance or root variance. The statistical design therefore reports precision sensitivity over explicit hypothetical values and makes the realized between-root variance a key feasibility result. Actual numeric seeds and stream IDs are intentionally unallocated here; they must be generated and collision-screened into a complete inventory, with hashes, before a separately authorized freeze. No seed namespace is silently reserved by this document.
+
+## Decoder arms and fair model information
+
+Every circuit, Stim circuit digest, DEM digest, detector order, observable convention, and assumed-noise provenance must be recorded separately. Sampling identity describes the generating circuit; decoder-model identity describes the assumed DEM and decoder. Never conflate the two.
+
+1. **Nominal ordinary PyMatching:** the balanced, no-burst assumed model, with correlations disabled both when constructing the matcher and when decoding.
+2. **Nominal correlation-enabled PyMatching:** the identical nominal DEM and weights, with correlations enabled both at construction and decoding. It isolates the mode option; it is not called a stronger decoder by definition.
+3. **Strong pooled-fixed PyMatching (primary comparator):** choose one global static decoder configuration from a predeclared grid using only model-selection roots. The grid comprises four assumed DEM families—balanced/no-burst, X-biased/no-burst, Z-biased/no-burst, balanced/burst p=0.010—each evaluated in ordinary and correlation-enabled PyMatching mode. Select the single configuration minimizing the equally weighted mean LER over the four selection conditions. Deterministic ties are resolved in the fixed order listed in `proposed_config.json`: model index first, then ordinary before correlation-enabled. The selected configuration is used unchanged in all six evaluation strata; it receives no regime or burst-state label.
+4. **Matched-model PyMatching controls:** evaluate ordinary and correlation-enabled PyMatching using the exact selected DEM from arm 3. These isolate the algorithm/mode comparison with the same selected model information. If an arm duplicates an already reported configuration, identify and deduplicate it in execution metadata without changing its label semantics.
+5. **BeliefMatching (primary candidate):** instantiate NS-3B BeliefMatching from the exact selected DEM and provenance chosen for arm 3. It receives the same detector rows and no logical labels or hidden generating condition. Registration remains `experimental_opt_in=True`; it is not a default/fallback.
+
+The primary comparison is BeliefMatching versus the selected pooled-fixed PyMatching configuration. Model selection itself uses a separate, labeled development calibration partition, equally weighted by the four selection conditions; it is not performed on evaluation labels. All eight candidate PyMatching models are rescored on the same selection detector arrays. The selected configuration, DEM, assumptions, tie outcome, software hashes, and identity records are frozen before evaluation sampling. No model or threshold is fitted using evaluation data.
+
+The BM/PyMatching comparison is a decoder algorithm/representation comparison on a shared *decomposed, approximate* Stim DEM, not a claim that the algorithms implement mathematically equivalent inference. The exact conversion settings are `decompose_errors=True, approximate_disjoint_errors=True`; the same concrete DEM and weights are provided to BM and its matched PyMatching comparator. If the selected DEM is unsafe under the NS-3B detector-support/logical-signature collision guard, or any evaluation condition lacks verified detector/observable compatibility, sampling must not start. Do not weaken or bypass the guard.
+
+## Information boundary and paired evidence
+
+Decoder calls receive only a copied detector-only `DetectorBatch` with the declared detector-order fingerprint. Observable labels are held by the scoring harness and are passed only to selection/scoring code after decoder calls return. The model selector may use labels from the separately allocated selection partition. Evaluation labels are unavailable to constructors, registration, decoding, selection, or early stopping. The NS-2D wrapper retains `SamplingIdentity` (including the generating-noise ID) as audit metadata, but the current NS-3B `from_dem` factory call passes only the decoder DEM and `max_bp_iters` to the upstream implementation, and the upstream `decode_batch` receives only a copied detector matrix. A future runner must add an input-isolation spy test and ensure no condition label is copied into the decoder's own model provenance or inference arguments beyond the identity fields required by the adapter contract.
+
+Within each root-condition evaluation cell, persist the packed/unpacked detector evidence, observable labels, each decoder's binary predictions, sampling and model identities, seed record, and hashes. Check before scoring that every arm's detector input content hash and shape are identical and unchanged. Paired disagreements are counted shot by shot; root is the independent resampling unit. A content hash establishes byte identity of stored arrays only; it does not prove upstream provenance, consent, authorization, or absence of leakage.
+
+## Prespecified reporting and progression rule
+
+Report each arm's error count, total shots, LER, absolute difference, relative reduction (undefined when the comparator LER is zero), paired discordances (BM-wrong/PM-correct and PM-wrong/BM-correct), per-root differences, decoder disagreements, failed decodes, construction time, inference time, RSS, and evidence hashes. Report every condition separately; also report the equal-condition-weighted primary result. Negative and null results receive the same reporting detail as favorable results.
+
+The pilot does not authorize an adaptive policy or a confirmatory study. A recommendation to *design* a larger development study may be made only if all integrity/compatibility checks pass, the primary point estimate favors BM, the prespecified root-cluster 95% interval excludes zero in the favorable direction, and at least four of six condition means favor BM. This gate is a feasibility screen only; it is not a scientific confirmation. If the interval spans zero or there is no paired prediction difference, stop and report NO-GO/INCONCLUSIVE for scaling. A larger study still requires an owner-approved practical effect margin, variance-based sample-size calculation, fresh seed freeze, and separate authorization. The aspirational 45–50% relative reduction is not a pass threshold.
+
+## Status
+
+This is a prospective design, not an authorization or a pretest freeze. `proposed_config.json` has `NOT_AUTHORIZED_FOR_EXECUTION`, `sampling_authorized=false`, and `sampling_performed=false`. No Stim sampling, decoder-performance benchmarking, training, protected Stage 5 access, or experimental outcomes were produced for this protocol-preparation task.

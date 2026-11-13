@@ -1,0 +1,133 @@
+{
+  "schema": "qshift-ns4a-proposed-pilot-v1",
+  "status": "NOT_AUTHORIZED_FOR_EXECUTION",
+  "sampling_authorized": false,
+  "sampling_performed": false,
+  "sealed_test_access": false,
+  "base_engineering_commit": "924746ee3851f7662365e7834f998159d1b286a7",
+  "research_source_commit": "e4ff201e3db18a2d18e7474bef4a83542eaa3da8",
+  "research_codex_status": "HOLD",
+  "integration_pr": "https://github.com/realguy-beep/Q-SHIFT/pull/2",
+  "experiment": {
+    "name": "Q-SHIFT NS-4A BeliefMatching development feasibility",
+    "purpose": "paired exploratory development pilot; not confirmatory",
+    "circuit": {
+      "code_family": "Stim rotated surface-code memory",
+      "memory_basis": "z",
+      "distance": 3,
+      "rounds": 5,
+      "detectors": 40,
+      "observables": 1,
+      "stim_version_required": "1.16.0"
+    },
+    "generator": {
+      "source": "outputs/phase2b_pauli_bias/noise_model.py",
+      "gate_fault_probability": 0.003,
+      "measurement_flip_probability": 0.003,
+      "bias_ratio": 10.0,
+      "regimes": ["balanced", "x_biased", "z_biased"],
+      "burst_source": "outputs/phase3a_correlated_noise_preflight/simulator.py",
+      "burst_pair_data_qubits": [8, 10],
+      "burst_event": "simultaneous X on both data qubits after each MR boundary",
+      "burst_boundaries_per_shot": 5,
+      "round_events_independent": true,
+      "burst_probability_unit": "per MR boundary"
+    },
+    "selection_conditions": [
+      {"id": "balanced_no_burst", "regime": "balanced", "burst_probability": 0.0},
+      {"id": "x_biased_no_burst", "regime": "x_biased", "burst_probability": 0.0},
+      {"id": "z_biased_no_burst", "regime": "z_biased", "burst_probability": 0.0},
+      {"id": "balanced_burst_0.010", "regime": "balanced", "burst_probability": 0.01}
+    ],
+    "evaluation_conditions": [
+      {"id": "balanced_no_burst", "regime": "balanced", "burst_probability": 0.0},
+      {"id": "x_biased_no_burst", "regime": "x_biased", "burst_probability": 0.0},
+      {"id": "z_biased_no_burst", "regime": "z_biased", "burst_probability": 0.0},
+      {"id": "balanced_burst_0.005", "regime": "balanced", "burst_probability": 0.005},
+      {"id": "balanced_burst_0.010", "regime": "balanced", "burst_probability": 0.01},
+      {"id": "balanced_burst_0.015", "regime": "balanced", "burst_probability": 0.015}
+    ],
+    "allocation": {
+      "selection_roots_per_condition": 8,
+      "selection_shots_per_root": 2000,
+      "selection_condition_count": 4,
+      "selection_unique_shots": 64000,
+      "evaluation_roots_per_condition": 10,
+      "evaluation_shots_per_root": 4000,
+      "evaluation_condition_count": 6,
+      "evaluation_unique_shots": 240000,
+      "total_unique_shots": 304000,
+      "hard_shot_ceiling": 304000,
+      "allocation_rationale": "10 evaluation roots per stratum and 4000 shots/root are an initial heterogeneity pilot; optimistic precision sensitivity approaches 0.0005 half-width only under hypothetical q=0.01 and tau=0.001; not a power claim",
+      "root_seed_inventory": "UNALLOCATED; collision screen and owner-approved freeze required before any sampling",
+      "seed_streams_must_be_disjoint": ["selection", "evaluation", "selection_rank_bootstrap", "primary_bootstrap", "sign_flip"]
+    },
+    "decoder_models": {
+      "dem_settings": {
+        "decompose_errors": true,
+        "approximate_disjoint_errors": true
+      },
+      "selection_grid_model_families": [
+        "balanced_no_burst",
+        "x_biased_no_burst",
+        "z_biased_no_burst",
+        "balanced_burst_probability_0.010"
+      ],
+      "selection_modes": ["ordinary_pymatching", "correlation_enabled_pymatching"],
+      "selection_grid_size": 8,
+      "selection_objective": "equal-condition-weighted LER over selection conditions",
+      "tie_break": "model-family order in config, then ordinary before correlation-enabled",
+      "primary_pair_information": "BeliefMatching and pooled-fixed PyMatching use byte-identical selected DEM and identical declared noise provenance",
+      "beliefmatching_experimental_opt_in_required": true,
+      "all_candidate_dems_must_pass_upstream_alias_guard": true
+    },
+    "arms": [
+      "nominal_ordinary_pymatching",
+      "nominal_correlation_enabled_pymatching",
+      "pooled_selected_fixed_pymatching",
+      "matched_selected_dem_pymatching_other_mode_control",
+      "beliefmatching_same_selected_dem"
+    ],
+    "primary_endpoint": {
+      "name": "equal-condition-weighted root-paired BM_minus_pooled_fixed_LER",
+      "formula": "mean over 6 conditions of mean over 10 roots of (BM errors - pooled-selected PM errors) / shots",
+      "direction": "negative favors BeliefMatching",
+      "confirmatory": false
+    },
+    "statistics": {
+      "root_stratified_bootstrap_resamples": 100000,
+      "bootstrap_interval": "two-sided percentile 95%; resample roots within condition and preserve paired arms",
+      "root_cluster_sign_flip_resamples": 100000,
+      "sign_flip": "two-sided; add-one p; sensitivity only under independent roots and symmetric root-level null",
+      "secondary_holm_family": [
+        "BM vs ordinary PM using selected DEM",
+        "BM vs correlation-enabled PM using selected DEM",
+        "pooled-selected PM vs nominal ordinary PM"
+      ],
+      "shot_level_mcnemar": "descriptive only; not primary due root clustering",
+      "practical_relative_reduction": "aspirational 45-50% only; not a success threshold"
+    },
+    "progression_gate_for_review_of_larger_development_only": {
+      "integrity_checks_all_pass": true,
+      "primary_point_estimate_favors_bm": true,
+      "primary_root_bootstrap_95pct_upper_endpoint_below_zero": true,
+      "at_least_four_of_six_condition_means_favor_bm": true,
+      "automatic_execution": false,
+      "separate_owner_authorization_required": true
+    },
+    "resource_limits_proposed": {
+      "wall_clock_seconds": 1800,
+      "peak_rss_bytes": 2147483648,
+      "free_disk_reserve_bytes": 1073741824,
+      "note": "proposed stop limits; end-to-end pipeline has not been benchmarked"
+    }
+  },
+  "prohibitions": [
+    "no Stage 5 or sealed evaluation access",
+    "no training or adaptive controller evaluation",
+    "no seed substitution or duplicate root on recovery",
+    "no tuning on evaluation labels",
+    "no automatic transition to NS-4B",
+    "no hardware performance claim"
+  ]
+}
