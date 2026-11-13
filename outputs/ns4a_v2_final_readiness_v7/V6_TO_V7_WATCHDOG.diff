@@ -1,0 +1,726 @@
+--- V6 job_watchdog.py (preserved; SHA256 8037BB786C789E474C42847513DD5C5C0A69735850632CA1DA4E03C3A7506211)
++++ V7 job_watchdog_v7.py
+@@ -1,99 +1,630 @@
+ from __future__ import annotations
+-import argparse, ctypes, json, os, pathlib, subprocess, sys, time
++
++"""Windows Job Object watchdog V7; synthetic/engineering use only.
++
++This module does not import Q-SHIFT, Stim, or a benchmark launcher. It supervises
++an explicitly supplied process command and writes lifecycle evidence as JSON.
++"""
++
++import argparse
++import ctypes
++import json
++import os
++import pathlib
++import subprocess
++import sys
++import time
+ from ctypes import wintypes
+-
+-if os.name != 'nt': raise SystemExit('Windows only')
+-k=ctypes.WinDLL('kernel32', use_last_error=True)
+-class SECURITY_ATTRIBUTES(ctypes.Structure):
+-    _fields_=[('nLength',wintypes.DWORD),('lpSecurityDescriptor',wintypes.LPVOID),('bInheritHandle',wintypes.BOOL)]
+-class STARTUPINFO(ctypes.Structure):
+-    _fields_=[('cb',wintypes.DWORD),('lpReserved',wintypes.LPWSTR),('lpDesktop',wintypes.LPWSTR),('lpTitle',wintypes.LPWSTR),('dwX',wintypes.DWORD),('dwY',wintypes.DWORD),('dwXSize',wintypes.DWORD),('dwYSize',wintypes.DWORD),('dwXCountChars',wintypes.DWORD),('dwYCountChars',wintypes.DWORD),('dwFillAttribute',wintypes.DWORD),('dwFlags',wintypes.DWORD),('wShowWindow',wintypes.WORD),('cbReserved2',wintypes.WORD),('lpReserved2',wintypes.LPBYTE),('hStdInput',wintypes.HANDLE),('hStdOutput',wintypes.HANDLE),('hStdError',wintypes.HANDLE)]
+-class PROCESS_INFORMATION(ctypes.Structure):
+-    _fields_=[('hProcess',wintypes.HANDLE),('hThread',wintypes.HANDLE),('dwProcessId',wintypes.DWORD),('dwThreadId',wintypes.DWORD)]
+-class BASIC_LIMIT(ctypes.Structure):
+-    _fields_=[('PerProcessUserTimeLimit',ctypes.c_longlong),('PerJobUserTimeLimit',ctypes.c_longlong),('LimitFlags',wintypes.DWORD),('MinimumWorkingSetSize',ctypes.c_size_t),('MaximumWorkingSetSize',ctypes.c_size_t),('ActiveProcessLimit',wintypes.DWORD),('Affinity',ctypes.c_size_t),('PriorityClass',wintypes.DWORD),('SchedulingClass',wintypes.DWORD)]
+-class IO_COUNTERS(ctypes.Structure):
+-    _fields_=[('ReadOperationCount',ctypes.c_ulonglong),('WriteOperationCount',ctypes.c_ulonglong),('OtherOperationCount',ctypes.c_ulonglong),('ReadTransferCount',ctypes.c_ulonglong),('WriteTransferCount',ctypes.c_ulonglong),('OtherTransferCount',ctypes.c_ulonglong)]
+-class EXT_LIMIT(ctypes.Structure):
+-    _fields_=[('BasicLimitInformation',BASIC_LIMIT),('IoInfo',IO_COUNTERS),('ProcessMemoryLimit',ctypes.c_size_t),('JobMemoryLimit',ctypes.c_size_t),('PeakProcessMemoryUsed',ctypes.c_size_t),('PeakJobMemoryUsed',ctypes.c_size_t)]
+-class BASIC_ACCOUNTING(ctypes.Structure):
+-    _fields_=[('TotalUserTime',ctypes.c_longlong),('TotalKernelTime',ctypes.c_longlong),('ThisPeriodTotalUserTime',ctypes.c_longlong),('ThisPeriodTotalKernelTime',ctypes.c_longlong),('TotalPageFaultCount',wintypes.DWORD),('TotalProcesses',wintypes.DWORD),('ActiveProcesses',wintypes.DWORD),('TotalTerminatedProcesses',wintypes.DWORD)]
+-k.CreateJobObjectW.argtypes=[wintypes.LPVOID,wintypes.LPCWSTR]; k.CreateJobObjectW.restype=wintypes.HANDLE
+-k.SetInformationJobObject.argtypes=[wintypes.HANDLE,wintypes.INT, wintypes.LPVOID,wintypes.DWORD]; k.SetInformationJobObject.restype=wintypes.BOOL
+-k.CreateFileW.argtypes=[wintypes.LPCWSTR,wintypes.DWORD,wintypes.DWORD,ctypes.POINTER(SECURITY_ATTRIBUTES),wintypes.DWORD,wintypes.DWORD,wintypes.HANDLE]; k.CreateFileW.restype=wintypes.HANDLE
+-k.CreateProcessW.argtypes=[wintypes.LPCWSTR,wintypes.LPWSTR,wintypes.LPVOID,wintypes.LPVOID,wintypes.BOOL,wintypes.DWORD,wintypes.LPVOID,wintypes.LPCWSTR,ctypes.POINTER(STARTUPINFO),ctypes.POINTER(PROCESS_INFORMATION)]; k.CreateProcessW.restype=wintypes.BOOL
+-k.AssignProcessToJobObject.argtypes=[wintypes.HANDLE,wintypes.HANDLE]; k.AssignProcessToJobObject.restype=wintypes.BOOL
+-k.ResumeThread.argtypes=[wintypes.HANDLE]; k.ResumeThread.restype=wintypes.DWORD
+-k.QueryInformationJobObject.argtypes=[wintypes.HANDLE,wintypes.INT,wintypes.LPVOID,wintypes.DWORD,ctypes.POINTER(wintypes.DWORD)]; k.QueryInformationJobObject.restype=wintypes.BOOL
+-k.WaitForSingleObject.argtypes=[wintypes.HANDLE,wintypes.DWORD]; k.WaitForSingleObject.restype=wintypes.DWORD
+-k.GetExitCodeProcess.argtypes=[wintypes.HANDLE,ctypes.POINTER(wintypes.DWORD)]; k.GetExitCodeProcess.restype=wintypes.BOOL
+-k.TerminateJobObject.argtypes=[wintypes.HANDLE,wintypes.UINT]; k.TerminateJobObject.restype=wintypes.BOOL
+-k.CloseHandle.argtypes=[wintypes.HANDLE]; k.CloseHandle.restype=wintypes.BOOL
+-
+-def winerr(label): return OSError(ctypes.get_last_error(), label)
+-def active(job):
+-    a=BASIC_ACCOUNTING(); n=wintypes.DWORD()
+-    if not k.QueryInformationJobObject(job,1,ctypes.byref(a),ctypes.sizeof(a),ctypes.byref(n)): raise winerr('QueryInformationJobObject')
+-    return int(a.ActiveProcesses)
+-def write_status(path,doc):
+-    tmp=path.with_suffix(path.suffix+'.partial')
+-    tmp.write_text(json.dumps(doc,sort_keys=True,indent=2)+'\n',encoding='utf-8')
+-    os.replace(tmp,path)
+-def main():
+-    ap=argparse.ArgumentParser(); ap.add_argument('--exe',required=True); ap.add_argument('--argv-file',required=True); ap.add_argument('--cwd',required=True); ap.add_argument('--timeout',required=True,type=float); ap.add_argument('--status',required=True); ap.add_argument('--log',required=True); args=ap.parse_args()
+-    exe=str(pathlib.Path(args.exe).resolve()); cwd=str(pathlib.Path(args.cwd).resolve()); argv=json.loads(pathlib.Path(args.argv_file).read_text(encoding='utf-8'))
+-    if not isinstance(argv,list) or any(not isinstance(x,str) for x in argv): raise SystemExit('argv must be JSON string list')
+-    status=pathlib.Path(args.status); log=pathlib.Path(args.log); status.parent.mkdir(parents=True,exist_ok=True); log.parent.mkdir(parents=True,exist_ok=True)
+-    job=k.CreateJobObjectW(None,None)
+-    if not job: raise winerr('CreateJobObjectW')
+-    proc=PROCESS_INFORMATION(); log_handle=None; start=time.monotonic(); max_active=0; state='failed'; exit_code=None; timed_out=False; pid=None; detail=None
++from dataclasses import dataclass
++from typing import Any, Callable, Protocol
++
++WAIT_OBJECT_0 = 0
++WAIT_TIMEOUT = 0x102
++WAIT_FAILED = 0xFFFFFFFF
++STILL_ACTIVE = 259
++MAX_TIMEOUT_SECONDS = 600.0
++ERROR_MORE_DATA = 234
++JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE = 0x2000
++JOB_OBJECT_BASIC_ACCOUNTING_INFORMATION = 1
++JOB_OBJECT_BASIC_PROCESS_ID_LIST = 3
++JOB_OBJECT_EXTENDED_LIMIT_INFORMATION = 9
++CREATE_SUSPENDED = 0x00000004
++CREATE_NO_WINDOW = 0x08000000
++SYNCHRONIZE = 0x00100000
++PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
++
++
++class WatchdogError(RuntimeError):
++    pass
++
++
++class Backend(Protocol):
++    def create_job(self) -> Any: ...
++    def enable_kill_on_close(self, job: Any) -> None: ...
++    def spawn_suspended(self, command: list[str], cwd: str | None, log_path: str | None) -> Any: ...
++    def assign(self, job: Any, process: Any) -> None: ...
++    def resume(self, process: Any) -> None: ...
++    def close_child_log(self, process: Any) -> None: ...
++    def wait_root(self, process: Any, milliseconds: int) -> int: ...
++    def root_exit_code(self, process: Any) -> int: ...
++    def terminate_unassigned(self, process: Any, code: int) -> bool: ...
++    def active_count(self, job: Any) -> int: ...
++    def process_ids(self, job: Any) -> list[int]: ...
++    def inspect_process(self, pid: int, job: Any) -> dict[str, Any]: ...
++    def terminate_job(self, job: Any, code: int) -> None: ...
++    def close_process(self, process: Any) -> None: ...
++    def close_job(self, job: Any) -> None: ...
++
++
++@dataclass
++class ProcessHandles:
++    process: Any
++    thread: Any
++    pid: int
++    log_handle: Any = None
++    stdin_handle: Any = None
++
++
++class _SecurityAttributes(ctypes.Structure):
++    _fields_ = [
++        ("nLength", wintypes.DWORD),
++        ("lpSecurityDescriptor", wintypes.LPVOID),
++        ("bInheritHandle", wintypes.BOOL),
++    ]
++
++
++class _StartupInfo(ctypes.Structure):
++    _fields_ = [
++        ("cb", wintypes.DWORD), ("lpReserved", wintypes.LPWSTR),
++        ("lpDesktop", wintypes.LPWSTR), ("lpTitle", wintypes.LPWSTR),
++        ("dwX", wintypes.DWORD), ("dwY", wintypes.DWORD),
++        ("dwXSize", wintypes.DWORD), ("dwYSize", wintypes.DWORD),
++        ("dwXCountChars", wintypes.DWORD), ("dwYCountChars", wintypes.DWORD),
++        ("dwFillAttribute", wintypes.DWORD), ("dwFlags", wintypes.DWORD),
++        ("wShowWindow", wintypes.WORD), ("cbReserved2", wintypes.WORD),
++        ("lpReserved2", wintypes.LPBYTE), ("hStdInput", wintypes.HANDLE),
++        ("hStdOutput", wintypes.HANDLE), ("hStdError", wintypes.HANDLE),
++    ]
++
++
++class _ProcessInformation(ctypes.Structure):
++    _fields_ = [
++        ("hProcess", wintypes.HANDLE), ("hThread", wintypes.HANDLE),
++        ("dwProcessId", wintypes.DWORD), ("dwThreadId", wintypes.DWORD),
++    ]
++
++
++class _BasicLimitInformation(ctypes.Structure):
++    _fields_ = [
++        ("PerProcessUserTimeLimit", ctypes.c_longlong),
++        ("PerJobUserTimeLimit", ctypes.c_longlong),
++        ("LimitFlags", wintypes.DWORD),
++        ("MinimumWorkingSetSize", ctypes.c_size_t),
++        ("MaximumWorkingSetSize", ctypes.c_size_t),
++        ("ActiveProcessLimit", wintypes.DWORD),
++        ("Affinity", ctypes.c_size_t), ("PriorityClass", wintypes.DWORD),
++        ("SchedulingClass", wintypes.DWORD),
++    ]
++
++
++class _IoCounters(ctypes.Structure):
++    _fields_ = [(n, ctypes.c_ulonglong) for n in (
++        "ReadOperationCount", "WriteOperationCount", "OtherOperationCount",
++        "ReadTransferCount", "WriteTransferCount", "OtherTransferCount",
++    )]
++
++
++class _ExtendedLimitInformation(ctypes.Structure):
++    _fields_ = [
++        ("BasicLimitInformation", _BasicLimitInformation),
++        ("IoInfo", _IoCounters),
++        ("ProcessMemoryLimit", ctypes.c_size_t),
++        ("JobMemoryLimit", ctypes.c_size_t),
++        ("PeakProcessMemoryUsed", ctypes.c_size_t),
++        ("PeakJobMemoryUsed", ctypes.c_size_t),
++    ]
++
++
++class _BasicAccountingInformation(ctypes.Structure):
++    _fields_ = [
++        ("TotalUserTime", ctypes.c_longlong),
++        ("TotalKernelTime", ctypes.c_longlong),
++        ("ThisPeriodTotalUserTime", ctypes.c_longlong),
++        ("ThisPeriodTotalKernelTime", ctypes.c_longlong),
++        ("TotalPageFaults", wintypes.DWORD),
++        ("TotalProcesses", wintypes.DWORD),
++        ("ActiveProcesses", wintypes.DWORD),
++        ("TotalTerminatedProcesses", wintypes.DWORD),
++    ]
++
++
++class _FileTime(ctypes.Structure):
++    _fields_ = [("dwLowDateTime", wintypes.DWORD), ("dwHighDateTime", wintypes.DWORD)]
++
++    def integer(self) -> int:
++        return (int(self.dwHighDateTime) << 32) | int(self.dwLowDateTime)
++
++
++class _ProcessEntry32W(ctypes.Structure):
++    _fields_ = [
++        ("dwSize", wintypes.DWORD), ("cntUsage", wintypes.DWORD),
++        ("th32ProcessID", wintypes.DWORD), ("th32DefaultHeapID", ctypes.c_size_t),
++        ("th32ModuleID", wintypes.DWORD), ("cntThreads", wintypes.DWORD),
++        ("th32ParentProcessID", wintypes.DWORD), ("pcPriClassBase", ctypes.c_long),
++        ("dwFlags", wintypes.DWORD), ("szExeFile", wintypes.WCHAR * 260),
++    ]
++
++
++class WindowsJobBackend:
++    """Small, explicitly typed Win32 wrapper. No fallback to weaker APIs."""
++
++    def __init__(self) -> None:
++        if os.name != "nt":
++            raise WatchdogError("V7 requires Windows Job Objects")
++        self.k = ctypes.WinDLL("kernel32", use_last_error=True)
++        self._declare_apis()
++
++    def _declare_apis(self) -> None:
++        k = self.k
++        k.CreateJobObjectW.argtypes = [wintypes.LPVOID, wintypes.LPCWSTR]
++        k.CreateJobObjectW.restype = wintypes.HANDLE
++        k.SetInformationJobObject.argtypes = [wintypes.HANDLE, wintypes.INT, wintypes.LPVOID, wintypes.DWORD]
++        k.SetInformationJobObject.restype = wintypes.BOOL
++        k.CreateProcessW.argtypes = [wintypes.LPCWSTR, wintypes.LPWSTR, wintypes.LPVOID,
++            wintypes.LPVOID, wintypes.BOOL, wintypes.DWORD, wintypes.LPVOID,
++            wintypes.LPCWSTR, ctypes.POINTER(_StartupInfo), ctypes.POINTER(_ProcessInformation)]
++        k.CreateProcessW.restype = wintypes.BOOL
++        k.CreateFileW.argtypes = [wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD,
++            ctypes.POINTER(_SecurityAttributes), wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE]
++        k.CreateFileW.restype = wintypes.HANDLE
++        k.AssignProcessToJobObject.argtypes = [wintypes.HANDLE, wintypes.HANDLE]
++        k.AssignProcessToJobObject.restype = wintypes.BOOL
++        k.ResumeThread.argtypes = [wintypes.HANDLE]
++        k.ResumeThread.restype = wintypes.DWORD
++        k.QueryInformationJobObject.argtypes = [wintypes.HANDLE, wintypes.INT,
++            wintypes.LPVOID, wintypes.DWORD, ctypes.POINTER(wintypes.DWORD)]
++        k.QueryInformationJobObject.restype = wintypes.BOOL
++        k.WaitForSingleObject.argtypes = [wintypes.HANDLE, wintypes.DWORD]
++        k.WaitForSingleObject.restype = wintypes.DWORD
++        k.GetExitCodeProcess.argtypes = [wintypes.HANDLE, ctypes.POINTER(wintypes.DWORD)]
++        k.GetExitCodeProcess.restype = wintypes.BOOL
++        k.TerminateProcess.argtypes = [wintypes.HANDLE, wintypes.UINT]
++        k.TerminateProcess.restype = wintypes.BOOL
++        k.TerminateJobObject.argtypes = [wintypes.HANDLE, wintypes.UINT]
++        k.TerminateJobObject.restype = wintypes.BOOL
++        k.CloseHandle.argtypes = [wintypes.HANDLE]
++        k.CloseHandle.restype = wintypes.BOOL
++        k.OpenProcess.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
++        k.OpenProcess.restype = wintypes.HANDLE
++        k.IsProcessInJob.argtypes = [wintypes.HANDLE, wintypes.HANDLE, ctypes.POINTER(wintypes.BOOL)]
++        k.IsProcessInJob.restype = wintypes.BOOL
++        k.GetProcessTimes.argtypes = [wintypes.HANDLE, ctypes.POINTER(_FileTime),
++            ctypes.POINTER(_FileTime), ctypes.POINTER(_FileTime), ctypes.POINTER(_FileTime)]
++        k.GetProcessTimes.restype = wintypes.BOOL
++        k.QueryFullProcessImageNameW.argtypes = [wintypes.HANDLE, wintypes.DWORD,
++            wintypes.LPWSTR, ctypes.POINTER(wintypes.DWORD)]
++        k.QueryFullProcessImageNameW.restype = wintypes.BOOL
++        k.CreateToolhelp32Snapshot.argtypes = [wintypes.DWORD, wintypes.DWORD]
++        k.CreateToolhelp32Snapshot.restype = wintypes.HANDLE
++        k.Process32FirstW.argtypes = [wintypes.HANDLE, ctypes.POINTER(_ProcessEntry32W)]
++        k.Process32FirstW.restype = wintypes.BOOL
++        k.Process32NextW.argtypes = [wintypes.HANDLE, ctypes.POINTER(_ProcessEntry32W)]
++        k.Process32NextW.restype = wintypes.BOOL
++
++    @staticmethod
++    def _check(ok: Any, label: str) -> None:
++        if not ok:
++            err = ctypes.get_last_error()
++            raise OSError(err, f"{label} failed (WinError {err})")
++
++    @staticmethod
++    def _is_valid_handle(handle: Any) -> bool:
++        if handle is None:
++            return False
++        value = handle if isinstance(handle, int) else getattr(handle, "value", None)
++        return value not in (None, 0, -1, ctypes.c_void_p(-1).value)
++
++    def create_job(self) -> Any:
++        job = self.k.CreateJobObjectW(None, None)
++        self._check(job, "CreateJobObjectW")
++        return job
++
++    def enable_kill_on_close(self, job: Any) -> None:
++        limits = _ExtendedLimitInformation()
++        limits.BasicLimitInformation.LimitFlags = JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE
++        self._check(self.k.SetInformationJobObject(job, JOB_OBJECT_EXTENDED_LIMIT_INFORMATION,
++            ctypes.byref(limits), ctypes.sizeof(limits)), "SetInformationJobObject(KILL_ON_JOB_CLOSE)")
++
++    def spawn_suspended(self, command: list[str], cwd: str | None, log_path: str | None) -> ProcessHandles:
++        if not command or not all(isinstance(x, str) for x in command):
++            raise ValueError("command must be a nonempty list of strings")
++        app = str(pathlib.Path(command[0]).resolve())
++        cmd = ctypes.create_unicode_buffer(subprocess.list2cmdline([app, *command[1:]]))
++        si = _StartupInfo()
++        si.cb = ctypes.sizeof(si)
++        pi = _ProcessInformation()
++        log_handle = stdin_handle = None
++        try:
++            inherit = False
++            if log_path is not None:
++                pathlib.Path(log_path).parent.mkdir(parents=True, exist_ok=True)
++                sa = _SecurityAttributes()
++                sa.nLength = ctypes.sizeof(sa)
++                sa.bInheritHandle = True
++                # Append-only: V7 never truncates an existing diagnostic log.
++                log_handle = self.k.CreateFileW(str(pathlib.Path(log_path).resolve()),
++                    0x00000004, 0x00000003, ctypes.byref(sa), 4, 0x00000080, None)
++                if not self._is_valid_handle(log_handle):
++                    err = ctypes.get_last_error()
++                    raise OSError(err, f"CreateFileW(child log) failed (WinError {err})")
++                stdin_handle = self.k.CreateFileW("NUL", 0x80000000, 0x00000003,
++                    ctypes.byref(sa), 3, 0x00000080, None)
++                if not self._is_valid_handle(stdin_handle):
++                    err = ctypes.get_last_error()
++                    raise OSError(err, f"CreateFileW(NUL stdin) failed (WinError {err})")
++                si.dwFlags = 0x00000100  # STARTF_USESTDHANDLES
++                si.hStdInput = stdin_handle
++                si.hStdOutput = log_handle
++                si.hStdError = log_handle
++                inherit = True
++            self._check(self.k.CreateProcessW(app, cmd, None, None, inherit,
++                CREATE_SUSPENDED | CREATE_NO_WINDOW, None, cwd, ctypes.byref(si), ctypes.byref(pi)),
++                "CreateProcessW(CREATE_SUSPENDED)")
++            return ProcessHandles(pi.hProcess, pi.hThread, int(pi.dwProcessId), log_handle, stdin_handle)
++        except Exception:
++            if self._is_valid_handle(stdin_handle):
++                self.k.CloseHandle(stdin_handle)
++            if self._is_valid_handle(log_handle):
++                self.k.CloseHandle(log_handle)
++            raise
++
++    def assign(self, job: Any, process: ProcessHandles) -> None:
++        self._check(self.k.AssignProcessToJobObject(job, process.process), "AssignProcessToJobObject")
++
++    def resume(self, process: ProcessHandles) -> None:
++        result = self.k.ResumeThread(process.thread)
++        if result == 0xFFFFFFFF:
++            self._check(False, "ResumeThread")
++
++    def close_child_log(self, process: ProcessHandles) -> None:
++        # The child inherited these handles at CreateProcess; close only the
++        # watchdog's copies once the suspended child has been resumed.
++        if self._is_valid_handle(process.stdin_handle):
++            self.k.CloseHandle(process.stdin_handle)
++            process.stdin_handle = None
++        if self._is_valid_handle(process.log_handle):
++            self.k.CloseHandle(process.log_handle)
++            process.log_handle = None
++
++    def wait_root(self, process: ProcessHandles, milliseconds: int) -> int:
++        result = int(self.k.WaitForSingleObject(process.process, max(0, milliseconds)))
++        if result == WAIT_FAILED:
++            self._check(False, "WaitForSingleObject(root)")
++        if result not in (WAIT_OBJECT_0, WAIT_TIMEOUT):
++            raise WatchdogError(f"unexpected root wait result 0x{result:08x}")
++        return result
++
++    def root_exit_code(self, process: ProcessHandles) -> int:
++        code = wintypes.DWORD()
++        self._check(self.k.GetExitCodeProcess(process.process, ctypes.byref(code)), "GetExitCodeProcess(root)")
++        return int(code.value)
++
++    def terminate_unassigned(self, process: ProcessHandles, code: int) -> bool:
++        self._check(self.k.TerminateProcess(process.process, code), "TerminateProcess(unassigned root)")
++        wait = int(self.k.WaitForSingleObject(process.process, 0))
++        if wait == WAIT_FAILED:
++            self._check(False, "WaitForSingleObject(unassigned root)")
++        return wait == WAIT_OBJECT_0
++
++    def active_count(self, job: Any) -> int:
++        info = _BasicAccountingInformation()
++        returned = wintypes.DWORD()
++        self._check(self.k.QueryInformationJobObject(job, JOB_OBJECT_BASIC_ACCOUNTING_INFORMATION,
++            ctypes.byref(info), ctypes.sizeof(info), ctypes.byref(returned)), "QueryInformationJobObject(accounting)")
++        return int(info.ActiveProcesses)
++
++    def process_ids(self, job: Any) -> list[int]:
++        # JOB_OBJECT_BASIC_PROCESS_ID_LIST has two DWORDs then ULONG_PTR[];
++        # retry based on both assigned and returned counts to handle growth races.
++        header = ctypes.sizeof(wintypes.DWORD) * 2
++        capacity = 16
++        while capacity <= 65536:
++            storage = ctypes.create_string_buffer(header + capacity * ctypes.sizeof(ctypes.c_size_t))
++            returned = wintypes.DWORD()
++            ok = self.k.QueryInformationJobObject(job, JOB_OBJECT_BASIC_PROCESS_ID_LIST,
++                storage, len(storage), ctypes.byref(returned))
++            assigned = wintypes.DWORD.from_buffer(storage, 0).value
++            listed = wintypes.DWORD.from_buffer(storage, ctypes.sizeof(wintypes.DWORD)).value
++            if ok and listed <= capacity and assigned <= listed:
++                ids = (ctypes.c_size_t * listed).from_buffer(storage, header)
++                return [int(pid) for pid in ids]
++            error = ctypes.get_last_error()
++            needed = max(assigned, listed, capacity + 1)
++            if not ok and error not in (ERROR_MORE_DATA, 0):
++                raise OSError(error, f"QueryInformationJobObject(process IDs) failed (WinError {error})")
++            capacity = max(capacity * 2, needed)
++        raise WatchdogError("Job Object process list did not stabilize within 65,536 entries")
++
++    def _parent_pid(self, pid: int) -> int | None:
++        INVALID_HANDLE_VALUE = ctypes.c_void_p(-1).value
++        snap = self.k.CreateToolhelp32Snapshot(0x00000002, 0)
++        if not snap or ctypes.cast(snap, ctypes.c_void_p).value == INVALID_HANDLE_VALUE:
++            return None
++        try:
++            entry = _ProcessEntry32W()
++            entry.dwSize = ctypes.sizeof(entry)
++            if not self.k.Process32FirstW(snap, ctypes.byref(entry)):
++                return None
++            while True:
++                if int(entry.th32ProcessID) == pid:
++                    return int(entry.th32ParentProcessID)
++                entry.dwSize = ctypes.sizeof(entry)
++                if not self.k.Process32NextW(snap, ctypes.byref(entry)):
++                    return None
++        finally:
++            self.k.CloseHandle(snap)
++
++    def inspect_process(self, pid: int, job: Any) -> dict[str, Any]:
++        handle = self.k.OpenProcess(SYNCHRONIZE | PROCESS_QUERY_LIMITED_INFORMATION, False, pid)
++        if not handle:
++            err = ctypes.get_last_error()
++            return {"pid": pid, "state": "inaccessible", "winerror": err}
++        try:
++            in_job = wintypes.BOOL()
++            self._check(self.k.IsProcessInJob(handle, job, ctypes.byref(in_job)), "IsProcessInJob")
++            if not in_job.value:
++                return {"pid": pid, "state": "stale_or_reused_pid", "in_job": False}
++            created, exited, kernel, user = _FileTime(), _FileTime(), _FileTime(), _FileTime()
++            self._check(self.k.GetProcessTimes(handle, ctypes.byref(created), ctypes.byref(exited),
++                ctypes.byref(kernel), ctypes.byref(user)), "GetProcessTimes")
++            wait = int(self.k.WaitForSingleObject(handle, 0))
++            if wait == WAIT_FAILED:
++                self._check(False, "WaitForSingleObject(member)")
++            if wait not in (WAIT_OBJECT_0, WAIT_TIMEOUT):
++                raise WatchdogError(f"unexpected member wait result 0x{wait:08x}")
++            state = "exited" if wait == WAIT_OBJECT_0 else "live"
++            code = wintypes.DWORD()
++            self._check(self.k.GetExitCodeProcess(handle, ctypes.byref(code)), "GetExitCodeProcess(member)")
++            path_buf = ctypes.create_unicode_buffer(32768)
++            path_len = wintypes.DWORD(len(path_buf))
++            path = None
++            if self.k.QueryFullProcessImageNameW(handle, 0, path_buf, ctypes.byref(path_len)):
++                path = path_buf.value
++            else:
++                path = {"unavailable_winerror": ctypes.get_last_error()}
++            return {
++                "pid": pid, "state": state, "creation_time_filetime": created.integer(),
++                "executable_path": path, "parent_pid": self._parent_pid(pid),
++                "exit_code": int(code.value) if state == "exited" else None,
++                "exit_code_matches_still_active_constant": int(code.value) == STILL_ACTIVE,
++            }
++        finally:
++            self.k.CloseHandle(handle)
++
++    def terminate_job(self, job: Any, code: int) -> None:
++        self._check(self.k.TerminateJobObject(job, code), "TerminateJobObject")
++
++    def close_process(self, process: ProcessHandles) -> None:
++        self.close_child_log(process)
++        if self._is_valid_handle(process.thread):
++            self.k.CloseHandle(process.thread)
++            process.thread = None
++        if self._is_valid_handle(process.process):
++            self.k.CloseHandle(process.process)
++            process.process = None
++
++    def close_job(self, job: Any) -> None:
++        if self._is_valid_handle(job):
++            self.k.CloseHandle(job)
++
++
++def _snapshot(api: Backend, job: Any, seen: dict[int, int]) -> dict[str, Any]:
++    pids = api.process_ids(job)
++    active = api.active_count(job)
++    members = []
++    for pid in pids:
++        item = api.inspect_process(pid, job)
++        created = item.get("creation_time_filetime")
++        if created is not None:
++            previous = seen.get(pid)
++            if previous is not None and previous != created:
++                item["state"] = "pid_reused"
++                item["previous_creation_time_filetime"] = previous
++            else:
++                seen[pid] = created
++        members.append(item)
++    return {"active_process_count": active, "job_process_ids": pids, "members": members}
++
++
++def _terminate_and_drain(
++    api: Backend, job: Any, deadline: float, code: int = 125,
++    clock: Callable[[], float] = time.monotonic,
++    sleep: Callable[[float], None] = time.sleep,
++) -> dict[str, Any]:
++    result: dict[str, Any] = {"termination_requested": False, "post_termination": []}
+     try:
+-        limits=EXT_LIMIT(); limits.BasicLimitInformation.LimitFlags=0x2000
+-        if not k.SetInformationJobObject(job,9,ctypes.byref(limits),ctypes.sizeof(limits)): raise winerr('SetInformationJobObject(KILL_ON_JOB_CLOSE)')
+-        sec=SECURITY_ATTRIBUTES(); sec.nLength=ctypes.sizeof(sec); sec.bInheritHandle=True
+-        log_handle=k.CreateFileW(str(log),0x40000000,0x3,ctypes.byref(sec),2,0x80,None)
+-        if not log_handle or int(log_handle)==-1: raise winerr('CreateFileW(log)')
+-        si=STARTUPINFO(); si.cb=ctypes.sizeof(si); si.dwFlags=0x1|0x100; si.wShowWindow=0; si.hStdOutput=log_handle; si.hStdError=log_handle; si.hStdInput=None
+-        cmd=subprocess.list2cmdline([exe,*argv]); cmd_buf=ctypes.create_unicode_buffer(cmd)
+-        flags=0x4|0x08000000
+-        if not k.CreateProcessW(exe,cmd_buf,None,None,True,flags,None,cwd,ctypes.byref(si),ctypes.byref(proc)): raise winerr('CreateProcessW(CREATE_SUSPENDED)')
+-        pid=int(proc.dwProcessId)
+-        if not k.AssignProcessToJobObject(job,proc.hProcess):
+-            k.TerminateProcess(proc.hProcess,125); k.WaitForSingleObject(proc.hProcess,5000); raise winerr('AssignProcessToJobObject')
+-        if k.ResumeThread(proc.hThread)==0xFFFFFFFF:
+-            k.TerminateJobObject(job,125); k.WaitForSingleObject(proc.hProcess,5000); raise winerr('ResumeThread')
+-        if log_handle: k.CloseHandle(log_handle); log_handle=None
+-        state='running'; write_status(status,{'state':state,'pid':pid,'elapsed_seconds':0.0,'active_processes':active(job),'max_active_processes':1,'timeout_seconds':args.timeout,'kill_on_watchdog_close':True})
++        api.terminate_job(job, code)
++        result["termination_requested"] = True
++    except Exception as exc:
++        result["termination_error"] = f"{type(exc).__name__}: {exc}"
++        return result
++    # Cleanup is part of the same deadline. Bound each query/poll and never
++    # relabel a forced-termination path as success.
++    while clock() < deadline:
++        try:
++            snap = _snapshot(api, job, {})
++            result["post_termination"].append(snap)
++            if snap["active_process_count"] == 0 and not snap["job_process_ids"]:
++                result["job_drained_after_termination"] = True
++                return result
++        except Exception as exc:
++            result["post_termination_error"] = f"{type(exc).__name__}: {exc}"
++            return result
++        sleep(min(0.01, max(0.0, deadline - clock())))
++    result["job_drained_after_termination"] = False
++    result["cleanup_deadline_expired"] = True
++    return result
++
++
++def run_watchdog(
++    command: list[str], *, timeout_seconds: float = 600.0, grace_seconds: float = 0.250,
++    poll_seconds: float = 0.010, cwd: str | None = None, api: Backend | None = None,
++    log_path: pathlib.Path | None = None,
++    status_path: pathlib.Path | None = None, clock: Callable[[], float] = time.monotonic,
++    sleep: Callable[[float], None] = time.sleep,
++) -> dict[str, Any]:
++    """Run one process tree; return auditable status. Forced cleanup is failure."""
++    if timeout_seconds <= 0 or timeout_seconds > MAX_TIMEOUT_SECONDS or grace_seconds < 0 or poll_seconds <= 0:
++        raise ValueError("timeout must be in (0, 600] seconds, poll positive, and grace nonnegative")
++    if not command or not all(isinstance(part, str) for part in command):
++        raise ValueError("command must be a nonempty list of strings")
++    api = api or WindowsJobBackend()
++    started = clock()
++    deadline = started + timeout_seconds
++    job = process = None
++    assigned = False
++    seen: dict[int, int] = {}
++    snapshots: list[dict[str, Any]] = []
++    status: dict[str, Any] = {
++        "schema": "qshift-watchdog-v7", "state": "starting", "command": command,
++        "started_monotonic": started, "timeout_seconds": timeout_seconds,
++        "grace_seconds": grace_seconds, "kill_on_job_close": True,
++        "forced_termination_is_failure": True, "process_snapshots": snapshots,
++        "child_log_path": str(log_path) if log_path is not None else None,
++    }
++    try:
++        if clock() >= deadline:
++            raise TimeoutError("overall deadline expired before job creation")
++        job = api.create_job()
++        api.enable_kill_on_close(job)
++        process = api.spawn_suspended(command, cwd, str(log_path) if log_path is not None else None)
++        status["root_pid"] = process.pid
++        if clock() >= deadline:
++            raise TimeoutError("overall deadline expired before child resume")
++        api.assign(job, process)
++        assigned = True
++        api.resume(process)
++        api.close_child_log(process)
++        status["state"] = "running"
+         while True:
+-            elapsed=time.monotonic()-start; count=active(job); max_active=max(max_active,count)
+-            if elapsed>=args.timeout:
+-                if not k.TerminateJobObject(job,124): raise winerr('TerminateJobObject(timeout)')
+-                timed_out=True; state='timed_out'; k.WaitForSingleObject(proc.hProcess,5000)
++            remaining = deadline - clock()
++            if remaining <= 0:
++                status["state"] = "deadline_expired"
++                status["termination"] = _terminate_and_drain(api, job, deadline, clock=clock, sleep=sleep)
+                 break
+-            wait=k.WaitForSingleObject(proc.hProcess,200)
+-            if wait==0: break
+-            if wait not in (0x102,): raise winerr('WaitForSingleObject')
+-            write_status(status,{'state':'running','pid':pid,'elapsed_seconds':elapsed,'active_processes':count,'max_active_processes':max_active,'timeout_seconds':args.timeout,'kill_on_watchdog_close':True})
+-        code=wintypes.DWORD()
+-        if not k.GetExitCodeProcess(proc.hProcess,ctypes.byref(code)): raise winerr('GetExitCodeProcess')
+-        exit_code=int(code.value); count=active(job)
+-        if not timed_out and count:
+-            k.TerminateJobObject(job,125); state='orphaned_child_failure'; detail=f'{count} job process(es) remained after launcher exit'
+-        elif not timed_out:
+-            state='completed' if exit_code==0 else 'failed'
+-        final={'state':state,'pid':pid,'exit_code':exit_code,'elapsed_seconds':time.monotonic()-start,'active_processes_after_cleanup':active(job),'max_active_processes':max_active,'timeout_seconds':args.timeout,'timed_out':timed_out,'kill_on_watchdog_close':True,'detail':detail,'log_path':str(log)}
+-        write_status(status,final); print(json.dumps(final,sort_keys=True)); return 124 if timed_out else (0 if state=='completed' else 1)
+-    except Exception as e:
+-        try:
+-            if proc.hProcess: k.TerminateJobObject(job,125); k.WaitForSingleObject(proc.hProcess,5000)
+-        except Exception: pass
+-        doc={'state':'failed','pid':pid,'elapsed_seconds':time.monotonic()-start,'error':str(e),'active_processes_after_cleanup':active(job),'kill_on_watchdog_close':True}
+-        try: write_status(status,doc)
+-        except Exception: pass
+-        print(json.dumps(doc,sort_keys=True)); return 1
++            wait_result = api.wait_root(process, min(100, max(1, int(remaining * 1000))))
++            if wait_result == WAIT_OBJECT_0:
++                status["root_exit_code"] = api.root_exit_code(process)
++                root_exited_at = clock()
++                status["root_exit_monotonic"] = root_exited_at
++                grace_deadline = min(root_exited_at + grace_seconds, deadline)
++                status["grace_deadline_monotonic"] = grace_deadline
++                failure_reason: str | None = None
++                while True:
++                    now = clock()
++                    if now >= deadline:
++                        status["state"] = "deadline_expired_during_grace"
++                        status["termination"] = _terminate_and_drain(api, job, deadline, clock=clock, sleep=sleep)
++                        failure_reason = "overall deadline expired during post-root drain grace"
++                        break
++                    try:
++                        snap = _snapshot(api, job, seen)
++                    except Exception as exc:
++                        status["state"] = "job_query_failed"
++                        status["query_error"] = f"{type(exc).__name__}: {exc}"
++                        status["termination"] = _terminate_and_drain(api, job, deadline, clock=clock, sleep=sleep)
++                        failure_reason = "job membership/liveness query failed; fail-closed cleanup requested"
++                        break
++                    snapshots.append({"monotonic": now, **snap})
++                    if snap["active_process_count"] == 0 and not snap["job_process_ids"]:
++                        status["drain"] = "zero_active_and_zero_job_pids"
++                        status["state"] = "completed" if status["root_exit_code"] == 0 else "root_failed"
++                        break
++                    if now >= grace_deadline:
++                        live = [m for m in snap["members"] if m.get("state") == "live"]
++                        unknown = [m for m in snap["members"] if m.get("state") not in ("live", "exited")]
++                        if live:
++                            status["state"] = "persistent_live_descendant_terminated"
++                            failure_reason = "confirmed live job member persisted beyond grace"
++                        elif unknown or snap["active_process_count"] != len(snap["job_process_ids"]):
++                            status["state"] = "unclassified_member_terminated"
++                            failure_reason = "persistent job membership could not be fully identified/liveness-checked"
++                        else:
++                            status["state"] = "persistent_job_membership_terminated"
++                            failure_reason = "job membership persisted beyond grace without a confirmed live member"
++                        status["termination"] = _terminate_and_drain(api, job, deadline, clock=clock, sleep=sleep)
++                        break
++                    sleep(min(poll_seconds, max(0.0, grace_deadline - now), max(0.0, deadline - now)))
++                if failure_reason:
++                    status["failure_reason"] = failure_reason
++                break
++            if wait_result != WAIT_TIMEOUT:
++                raise WatchdogError(f"unexpected root wait result {wait_result}")
++        status["elapsed_seconds"] = max(0.0, clock() - started)
++        status["deadline_enforced_by"] = "watchdog_monotonic_clock"
++    except Exception as exc:
++        status["state"] = "failed_closed"
++        status["error"] = f"{type(exc).__name__}: {exc}"
++        if process is not None and not assigned:
++            try:
++                terminated = api.terminate_unassigned(process, 125)
++                status["unassigned_root_terminated"] = True
++                status["unassigned_root_exit_confirmed"] = bool(terminated)
++            except Exception as cleanup_exc:
++                status["unassigned_root_termination_error"] = f"{type(cleanup_exc).__name__}: {cleanup_exc}"
++        if job is not None and assigned:
++            status["termination"] = _terminate_and_drain(api, job, deadline, clock=clock, sleep=sleep)
++        elif job is not None:
++            status["termination"] = {
++                "termination_requested": False,
++                "reason": "root was not assigned/resumed; Job Object has no launched workload",
++            }
++        status["elapsed_seconds"] = max(0.0, clock() - started)
+     finally:
+-        if log_handle: k.CloseHandle(log_handle)
+-        if proc.hThread: k.CloseHandle(proc.hThread)
+-        if proc.hProcess: k.CloseHandle(proc.hProcess)
+-        if job: k.CloseHandle(job)
+-if __name__=='__main__': raise SystemExit(main())
++        # Job close retains the original kill-on-close guarantee.
++        if process is not None:
++            try:
++                api.close_process(process)
++            except Exception as exc:
++                status["process_handle_close_error"] = f"{type(exc).__name__}: {exc}"
++                status["state"] = "failed_closed"
++        if job is not None:
++            try:
++                api.close_job(job)
++            except Exception as exc:
++                status["job_handle_close_error"] = f"{type(exc).__name__}: {exc}"
++                status["state"] = "failed_closed"
++    if status_path is not None:
++        status_path.parent.mkdir(parents=True, exist_ok=True)
++        tmp = status_path.with_name(status_path.name + ".partial")
++        tmp.write_text(json.dumps(status, sort_keys=True, indent=2) + "\n", encoding="utf-8")
++        os.replace(tmp, status_path)
++    return status
++
++
++def main(argv: list[str] | None = None) -> int:
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--timeout", type=float, default=600.0)
++    parser.add_argument("--grace-ms", type=float, default=250.0)
++    parser.add_argument("--poll-ms", type=float, default=10.0)
++    parser.add_argument("--cwd")
++    parser.add_argument("--status", type=pathlib.Path)
++    parser.add_argument("--log", type=pathlib.Path, required=True,
++                        help="append-only child stdout/stderr log path")
++    parser.add_argument("command", nargs=argparse.REMAINDER, help="command after --")
++    args = parser.parse_args(argv)
++    command = args.command[1:] if args.command and args.command[0] == "--" else args.command
++    if not command:
++        parser.error("provide a child command after --")
++    try:
++        result = run_watchdog(command, timeout_seconds=args.timeout, grace_seconds=args.grace_ms / 1000,
++            poll_seconds=args.poll_ms / 1000, cwd=args.cwd, status_path=args.status, log_path=args.log)
++    except Exception as exc:
++        print(json.dumps({"schema": "qshift-watchdog-v7", "state": "failed_closed", "error": str(exc)}))
++        return 1
++    print(json.dumps(result, sort_keys=True))
++    return 0 if result.get("state") == "completed" else 1
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
