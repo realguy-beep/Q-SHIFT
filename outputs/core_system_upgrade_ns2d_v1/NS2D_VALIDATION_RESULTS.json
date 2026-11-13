@@ -1,0 +1,73 @@
+{
+  "schema": "qshift-ns2d-validation-v1",
+  "classification": "deterministic engineering validation only",
+  "sampling_performed": false,
+  "training_performed": false,
+  "protected_stage5_accessed": false,
+  "tests": [
+    {
+      "suite": "NS-2D integration + NS-2B/NS-2C regression",
+      "command": ".venv/Scripts/python.exe -m unittest dashboard.tests.test_beliefmatching_ns2c_integration dashboard.tests.test_decoder_runtime_v2 dashboard.tests.test_sampling_model_identity_v2 dashboard.tests.test_circuit_identity_v1 dashboard.tests.test_core_system_v1 -q",
+      "passed": 80,
+      "failed": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "Published NS-3B BeliefMatching adapter deterministic tests",
+      "command": "from research worktree ns3b_beliefmatching directory: .venv/Scripts/python.exe -m unittest -q test_beliefmatching_adapter",
+      "passed": 14,
+      "failed": 0,
+      "status": "PASS"
+    }
+  ],
+  "fixture": {
+    "script": "outputs/core_system_upgrade_ns2d_v1/run_fixed_fixture_demo.py",
+    "shots": 5,
+    "detectors_per_shot": 40,
+    "observables": 1,
+    "circuit_sha256": "bc679e70b5aa50ce23d9761f990e6270fc3f75ea43d7dab7bc84bdde14de11a7",
+    "dem_sha256": "8e0854b17f584dccec4baa6694d80abbd78b1341b3038281ac42a041ce66cb91",
+    "sampling_identity_sha256": "321694de472039106a345d130dde7a28b14c6be729f39cd47e190c8c4073137c",
+    "detector_fixture_sha256": "911b3231f6ddf3be6bd192e6362925f2ec839fa1271a3e4f2c76b216c2273a3e",
+    "predictions": {
+      "pymatching_ordinary": [0, 0, 1, 0, 1],
+      "pymatching_correlated": [0, 0, 1, 0, 1],
+      "beliefmatching": [0, 0, 1, 0, 1]
+    },
+    "disagreements_vs_ordinary": {
+      "pymatching_correlated": 0,
+      "beliefmatching": 0
+    },
+    "logical_error_rate": null,
+    "logical_error_rate_reason": "No observable labels were supplied.",
+    "construction_milliseconds_single_observation": {
+      "pymatching_ordinary": 1.852,
+      "pymatching_correlated": 2.1879,
+      "beliefmatching": 141.908
+    },
+    "paired_harness_wall_seconds_single_observation": {
+      "pymatching_ordinary": 0.0007395,
+      "pymatching_correlated": 0.000773,
+      "beliefmatching": 0.000844
+    },
+    "timings_are_benchmarks": false
+  },
+  "publication_dependency_audit": {
+    "source_manifest_entries_checked": 36,
+    "source_manifest_entries_passed": 36,
+    "unchanged_base_dependencies_checked": 5,
+    "unchanged_base_dependencies_passed": 5,
+    "documented_copy_transformations_checked": 16,
+    "documented_copy_transformations_passed": 16,
+    "publication_authored_markdown_checked": 2,
+    "publication_authored_markdown_passed": 2,
+    "adapter_sha256_expected": "702dc36ef4dedd38347b0e78541d1d2d2ff063c2462dbab29aa2095f583c2106",
+    "adapter_sha256_actual": "702dc36ef4dedd38347b0e78541d1d2d2ff063c2462dbab29aa2095f583c2106",
+    "status": "PASS"
+  },
+  "known_repaired_harness_issues": [
+    "Direct demo execution initially lacked repository root on sys.path; fixed by adding the resolved repository root.",
+    "Initial combined unittest invocation exposed test-only simulator module-name pollution; fixed by loading the Phase 3A fixture simulator under a private module name. Final combined suite passes.",
+    "One adapter-test shell attempt used an invalid relative executable path and did not launch Python; the corrected absolute-path invocation ran and passed all 14 tests."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "qshift-ns2d-supervisor-review1-validation-v1",
+  "reviewed_base_commit": "ee096304fa72d6668101fbe0f54475b663e2c273",
+  "sampling_performed": false,
+  "training_performed": false,
+  "protected_stage5_accessed": false,
+  "historical_validation_json_modified": false,
+  "upstream_adapter_modified": false,
+  "decoder_algorithm_or_scientific_protocol_modified": false,
+  "tests": [
+    {
+      "suite": "NS-2D integration plus NS-2B/NS-2C regression",
+      "command": ".venv/Scripts/python.exe -m unittest dashboard.tests.test_beliefmatching_ns2c_integration dashboard.tests.test_decoder_runtime_v2 dashboard.tests.test_sampling_model_identity_v2 dashboard.tests.test_circuit_identity_v1 dashboard.tests.test_core_system_v1 -q",
+      "passed": 84,
+      "failed": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "Published NS-3B adapter deterministic tests",
+      "command": "from research worktree ns3b_beliefmatching directory: .venv/Scripts/python.exe -m unittest -q test_beliefmatching_adapter",
+      "passed": 14,
+      "failed": 0,
+      "status": "PASS"
+    }
+  ],
+  "failure_injection": {
+    "construction_failure": "Injected before adapter creation; bank names and baseline identity remained unchanged.",
+    "binding_failure": "Injected after actual adapter construction; adapter was closed and disabled; bank remained unchanged.",
+    "registration_failure": "Injected before bank mutation; adapter was closed and disabled; bank remained unchanged.",
+    "actual_duplicate_registration_rejection": "Existing same-name registration remained intact; newly constructed adapter was closed and disabled; bank and registry continued to reference only the original decoder."
+  },
+  "provenance": {
+    "expected_imported_adapter_sha256": "702dc36ef4dedd38347b0e78541d1d2d2ff063c2462dbab29aa2095f583c2106",
+    "published_repository_commit": "4458c278bbec273c8c1a26411dadccc49222f8ef",
+    "upstream_pin_changed": false,
+    "whole_upstream_repository_digest_claimed": false
+  },
+  "manifest_verification": {
+    "status": "PASS",
+    "checked_after_review_files_and_results_were_frozen": true
+  },
+  "limitations": [
+    "Registration failure injection covers pre-mutation failure and the real duplicate-name rejection path; it does not simulate process-level memory exhaustion during Python dictionary insertion.",
+    "The imported-file SHA-256 is not a digest of the complete upstream repository. The dependency lock pins the repository commit; the individual digest checks the copied adapter file."
+  ]
+}
