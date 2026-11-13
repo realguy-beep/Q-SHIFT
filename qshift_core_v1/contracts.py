@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import math
+from numbers import Real
 from typing import Any, Protocol, runtime_checkable
 
 import numpy as np
@@ -63,14 +64,17 @@ class DecoderPrediction:
     elapsed_seconds: float | None = None
 
     def __post_init__(self) -> None:
+        if not isinstance(self.metadata, DecoderMetadata):
+            raise TypeError("metadata must be DecoderMetadata.")
         bits = binary_matrix(
             self.bits, name="decoder prediction", columns=self.metadata.observable_count
         )
         object.__setattr__(self, "bits", bits)
-        if self.elapsed_seconds is not None and (
-            not math.isfinite(self.elapsed_seconds) or self.elapsed_seconds < 0
-        ):
-            raise ValueError("elapsed_seconds must be finite and nonnegative when provided.")
+        if self.elapsed_seconds is not None:
+            value = self.elapsed_seconds
+            if (isinstance(value, bool) or not isinstance(value, Real)
+                    or not math.isfinite(value) or value < 0):
+                raise ValueError("elapsed_seconds must be a finite nonnegative real number, not bool.")
 
 
 @runtime_checkable

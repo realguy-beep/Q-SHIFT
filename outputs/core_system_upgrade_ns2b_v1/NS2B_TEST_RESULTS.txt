@@ -1,0 +1,30 @@
+C:\Users\LENOVO\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+..........................................................................E.................
+======================================================================
+ERROR: test_structured_api_uses_frozen_multiregime_allocation_and_keeps_test_reserved (dashboard.tests.test_dashboard.ControlAndApiTests.test_structured_api_uses_frozen_multiregime_allocation_and_keeps_test_reserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Documents\Codex\2026-11-12\qshift-ns2b-sampling-model-identity\dashboard\app.py", line 414, in start_run
+    _, structured_inventory = load_prepared_freeze()
+                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\Documents\Codex\2026-11-12\qshift-ns2b-sampling-model-identity\dashboard\structured_training.py", line 342, in load_prepared_freeze
+    raise RuntimeError(f"Prepared protocol integrity check failed: {path.name}")
+RuntimeError: Prepared protocol integrity check failed: structured_diagnostic_config.json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Documents\Codex\2026-11-12\qshift-ns2b-sampling-model-identity\dashboard\tests\test_dashboard.py", line 494, in test_structured_api_uses_frozen_multiregime_allocation_and_keeps_test_reserved
+    created = run_sync(dashboard_app.start_run(request))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\Documents\Codex\2026-11-12\qshift-ns2b-sampling-model-identity\dashboard\tests\test_dashboard.py", line 485, in run_sync
+    coroutine.send(None)
+  File "C:\Users\LENOVO\Documents\Codex\2026-11-12\qshift-ns2b-sampling-model-identity\dashboard\app.py", line 474, in start_run
+    raise HTTPException(status_code=409, detail=str(exc)) from exc
+fastapi.exceptions.HTTPException: 409: Prepared protocol integrity check failed: structured_diagnostic_config.json
+
+----------------------------------------------------------------------
+Ran 92 tests in 16.945s
+
+FAILED (errors=1)

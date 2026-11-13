@@ -1,0 +1,48 @@
+{
+  "schema": "qshift-ns2c-validation-v1",
+  "scope": "deterministic engineering integration only",
+  "sampling_performed": false,
+  "training_performed": false,
+  "protected_outcome_accessed": false,
+  "commit_created": false,
+  "base_commit": "e015a18e22de653b479cc206026d520e7dc71b5d",
+  "branch": "codex/ns2b-sampling-model-identity",
+  "environment": {
+    "python": "3.12.10",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "numpy": "2.5.3",
+    "fastapi": "0.162.0",
+    "starlette": "1.10.0"
+  },
+  "command": "python -m unittest dashboard.tests.test_decoder_runtime_v2 dashboard.tests.test_sampling_model_identity_v2 dashboard.tests.test_circuit_identity_v1 dashboard.tests.test_core_system_v1 -v",
+  "test_result": {
+    "passed": 70,
+    "failed": 0,
+    "errors": 0,
+    "ns2c_test_methods": 8
+  },
+  "compile_command": "python -m compileall -q qshift_core_v1\\decoder_runtime_v2.py dashboard\\tests\\test_decoder_runtime_v2.py",
+  "compile_result": "PASS",
+  "demonstration_fixture": {
+    "type": "manually constructed detector matrix; no sampler",
+    "shape": [4, 40],
+    "reference_predictions": [0, 1, 0, 1],
+    "candidate_predictions": [0, 0, 1, 1],
+    "labels": [0, 1, 1, 0],
+    "reference_errors": 2,
+    "candidate_errors": 2,
+    "prediction_disagreements": 2,
+    "candidate_only_failures": 1,
+    "baseline_only_failures": 1,
+    "interpretation": "engineering contract fixture only; not scientific performance evidence"
+  },
+  "pymatching_fixture": {
+    "version": "2.4.0",
+    "correlation_mode": false,
+    "prediction_shape": [4, 1],
+    "adapter_matches_direct_decoder": true,
+    "sampler_used": false
+  },
+  "historical_issue": "The structured-training freeze-integrity failure remains baseline-preexisting on accepted NS-1 base; see NS2B_FAILURE_INVESTIGATION.md. No historical freeze was changed."
+}

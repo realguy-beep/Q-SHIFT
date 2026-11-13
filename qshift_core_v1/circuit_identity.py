@@ -10,6 +10,7 @@ from dataclasses import asdict, dataclass
 import hashlib
 import json
 import math
+from numbers import Real
 from typing import Any, Mapping
 
 import numpy as np
@@ -381,13 +382,32 @@ def decode_checked(
     """Run an already selected decoder only after compatibility validation."""
     assert_decoder_compatible(spec, identity)
     detectors = validate_detector_batch(batch, identity)
-    if getattr(decoder, "metadata", None) != spec.metadata or not callable(getattr(decoder, "decode", None)):
+    registered = getattr(decoder, "metadata", None)
+    if (not isinstance(registered, DecoderMetadata) or registered != spec.metadata
+            or not callable(getattr(decoder, "decode", None))):
         raise TypeError("Decoder implementation does not conform to its registered metadata/protocol.")
-    result = decoder.decode(detectors.copy())
+    registered_fields = asdict(registered)
+    result = decoder.decode(np.array(detectors, dtype=np.uint8, order="C", copy=True))
+    current_metadata = getattr(decoder, "metadata", None)
+    if not isinstance(current_metadata, DecoderMetadata) or asdict(current_metadata) != registered_fields:
+        raise ValueError("Decoder metadata mutated during checked inference.")
     if not isinstance(result, DecoderPrediction):
         raise TypeError("Decoder must return DecoderPrediction.")
-    if result.metadata != spec.metadata:
+    if not isinstance(result.metadata, DecoderMetadata) or asdict(result.metadata) != registered_fields:
         raise ValueError("Returned prediction metadata differs from the decoder compatibility spec.")
-    if result.bits.shape != (len(detectors), len(identity.observable_ids)):
+    prediction_bits = binary_matrix(
+        result.bits, name="checked decoder predictions", columns=len(identity.observable_ids)
+    )
+    if prediction_bits.shape != (len(detectors), len(identity.observable_ids)):
         raise ValueError("Decoder prediction dimensions do not match detector shots and observables.")
-    return result
+    elapsed = result.elapsed_seconds
+    if elapsed is not None and (
+        isinstance(elapsed, bool) or not isinstance(elapsed, Real)
+        or not math.isfinite(elapsed) or elapsed < 0
+    ):
+        raise ValueError("Decoder elapsed_seconds must be finite and nonnegative, not bool.")
+    stable_metadata = DecoderMetadata(**registered_fields)
+    return DecoderPrediction(
+        np.array(prediction_bits, dtype=np.uint8, order="C", copy=True), stable_metadata,
+        float(elapsed) if elapsed is not None else None,
+    )

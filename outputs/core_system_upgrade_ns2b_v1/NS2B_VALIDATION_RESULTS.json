@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "base_commit": "e015a18e22de653b479cc206026d520e7dc71b5d",
+  "observed_head_before_commit": "e015a18e22de653b479cc206026d520e7dc71b5d",
+  "branch": "codex/ns2b-sampling-model-identity",
+  "environment": {
+    "python": "3.12.10",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "numpy": "2.5.3",
+    "fastapi": "0.162.0",
+    "starlette": "1.10.0"
+  },
+  "focused_regression": {
+    "command": "python -m unittest dashboard.tests.test_sampling_model_identity_v2 dashboard.tests.test_circuit_identity_v1 dashboard.tests.test_core_system_v1",
+    "tests_run": 62,
+    "passed": 62,
+    "failed": 0,
+    "errors": 0,
+    "result": "PASS",
+    "log": "NS2B_FOCUSED_REGRESSION_RESULTS.txt"
+  },
+  "dashboard_smoke_regression": {
+    "command": "python -m unittest dashboard.tests.test_dashboard.ControlAndApiTests.test_loopback_ipv4_dashboard_health_and_control_routes dashboard.tests.test_dashboard.ControlAndApiTests.test_loopback_ipv6_websocket_and_health",
+    "tests_run": 2,
+    "passed": 2,
+    "failed": 0,
+    "errors": 0,
+    "result": "PASS",
+    "log": "NS2B_DASHBOARD_COMPATIBILITY_RESULTS.txt",
+    "warning": "Starlette emitted a deprecation warning about its httpx TestClient integration."
+  },
+  "broader_dashboard_suite": {
+    "command": "python -m unittest dashboard.tests.test_sampling_model_identity_v2 dashboard.tests.test_circuit_identity_v1 dashboard.tests.test_core_system_v1 dashboard.tests.test_dashboard",
+    "tests_run": 92,
+    "passed_before_failure": 91,
+    "failed": 0,
+    "errors": 1,
+    "result": "FAIL_BASELINE_PREEXISTING_FIXTURE_INTEGRITY_ERROR",
+    "error": "test_structured_api_uses_frozen_multiregime_allocation_and_keeps_test_reserved raised HTTPException 409 because dashboard.structured_training.load_prepared_freeze rejected structured_diagnostic_config.json integrity.",
+    "log": "NS2B_TEST_RESULTS.txt",
+    "assessment": "The same test was run on a clean detached worktree at the accepted NS-1 base commit and failed at the same integrity check. Classified baseline-preexisting. No structured-training source, configuration, or freeze was changed or rebaselined."
+  },
+  "accepted_base_reproduction": {
+    "base_commit": "e015a18e22de653b479cc206026d520e7dc71b5d",
+    "worktree": "temporary clean detached worktree; removed after confirming clean status",
+    "command": "python -m unittest dashboard.tests.test_dashboard.ControlAndApiTests.test_structured_api_uses_frozen_multiregime_allocation_and_keeps_test_reserved -v",
+    "tests_run": 1,
+    "passed": 0,
+    "errors": 1,
+    "same_exception": "Prepared protocol integrity check failed: structured_diagnostic_config.json",
+    "integrity_details_observed_in_clean_ns2b_checkout": {
+      "structured_diagnostic_config.json": {
+        "expected_sha256": "1ef0e84b7a2ede6968e6e09f3f8095dd1413b52d7a5142d410afff1d0e975799",
+        "actual_sha256": "35ea9d9b9c5031f624f4fee5c5796afa4ce1c2c322f7694854d59f3ad2d7d7b0",
+        "matches": false
+      },
+      "structured_seed_inventory.json": {
+        "expected_sha256": "ce044c465f9dea959f4b5c34f92fc256433b224d2bfc3f76f9a2e040a7eaec7d",
+        "actual_sha256": "559cca69f74a847aa6c4096e2935b39a519575f53118cfe9080ce5d22025db58",
+        "matches": false
+      }
+    },
+    "check_order": "load_prepared_freeze checks structured_diagnostic_config.json first, so the test exits before reaching the inventory comparison",
+    "runtime_seconds_reported_by_unittest": 0.126,
+    "log": "NS2B_BASE_COMPARISON_TEST_RESULTS.txt",
+    "result": "BASELINE_PREEXISTING"
+  },
+  "compileall": {
+    "command": "python -m compileall -q qshift_core_v1 dashboard/tests/test_sampling_model_identity_v2.py",
+    "result": "PASS"
+  },
+  "sampling_or_training": "NOT PERFORMED",
+  "protected_outcomes_accessed": false,
+  "historical_files_modified": false,
+  "dashboard_source_modified": false,
+  "commits_or_pushes": 0
+}
