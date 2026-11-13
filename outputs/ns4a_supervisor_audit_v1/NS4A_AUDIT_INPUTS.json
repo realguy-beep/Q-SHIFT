@@ -1,0 +1,64 @@
+{
+  "schema": "qshift-ns4a-controlled-source-audit-inputs-v1",
+  "purpose": "non-outcome source provenance for supervisor audit",
+  "base_checkpoint": "001026ab694eb57c8ba39c2fa1480cc0ff719e87",
+  "audit_branch": "codex/ns4a-supervisor-audit",
+  "hash_algorithm": "SHA-256",
+  "workspace_isolation": {
+    "clone_mode": "shallow partial clone",
+    "partial_clone_filter": "blob:none",
+    "promisor_remote": true,
+    "sparse_checkout_mode": "non-cone",
+    "pre_read_non_git_file_count": 5,
+    "pre_read_file_list_exactly_matched_allowlist": true,
+    "allowed_paths": [
+      "outputs/phase4b_replication/PHASE4B_PROTOCOL.md",
+      "outputs/phase4c_strong_baselines/PHASE4C_STAGE1_PROTOCOL.md",
+      "outputs/phase4c_strong_baselines/run_stage1.py",
+      "outputs/phase2b_pauli_bias/noise_model.py",
+      "outputs/phase3a_correlated_noise_preflight/simulator.py"
+    ],
+    "post_read_additions": [
+      "outputs/ns4a_supervisor_audit_v1/NS4A_CONTROLLED_SOURCE_AUDIT.md",
+      "outputs/ns4a_supervisor_audit_v1/NS4A_AUDIT_INPUTS.json"
+    ],
+    "previous_full_tree_audit_worktree_inspected": false
+  },
+  "incident_boundary": {
+    "previously_exposed_outcome_file_names": [
+      "outputs/phase4a_integrity_reaudit/SCIENTIFIC_RECOMPUTATION.md",
+      "outputs/phase4b_replication/PHASE4A_VALIDATION.md"
+    ],
+    "those_files_opened_or_hashed_during_this_recovery": false,
+    "historical_stage5_outcomes_accessed_during_this_recovery": false,
+    "sampling_or_training_during_this_recovery": false
+  },
+  "inputs": [
+    {
+      "path": "outputs/phase4b_replication/PHASE4B_PROTOCOL.md",
+      "sha256": "eacf1ec11b1416e53f67e129c9d81db798e076bd9c040370657c80771652bfdf",
+      "bytes": 986
+    },
+    {
+      "path": "outputs/phase4c_strong_baselines/PHASE4C_STAGE1_PROTOCOL.md",
+      "sha256": "dee1b8bd1ef99ed7ad4b6a32cc5e2c250231fc1cb944106dd3b46ad5542f806f",
+      "bytes": 1746
+    },
+    {
+      "path": "outputs/phase4c_strong_baselines/run_stage1.py",
+      "sha256": "f96f95f8a2af894359b642e36292c7d0947695df3a14b43ff9ea1c9dbf3a2542",
+      "bytes": 5789
+    },
+    {
+      "path": "outputs/phase2b_pauli_bias/noise_model.py",
+      "sha256": "256826516353c5d3effb6a0b85969934ac2b61edc2848148d935087e54dffcbd",
+      "bytes": 6176
+    },
+    {
+      "path": "outputs/phase3a_correlated_noise_preflight/simulator.py",
+      "sha256": "c938ffc9f4169a9d0c7c92bf5c66e48a03a64f45d3d06f160a31d11b188da239",
+      "bytes": 3955
+    }
+  ],
+  "manifest_self_hash": "excluded"
+}
