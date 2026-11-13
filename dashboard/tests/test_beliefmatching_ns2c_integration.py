@@ -6,6 +6,7 @@ import importlib.util
 import sys
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 
 import numpy as np
 import stim
@@ -24,6 +25,7 @@ from qshift_core_v1.pymatching_adapter import PyMatchingDecoder
 from qshift_core_v1.research_adapters.beliefmatching_adapter_ns3b import (
     BeliefMatchingAdapter,
     BeliefMatchingContractError,
+    BeliefMatchingDisabledError,
 )
 from qshift_core_v1.research_adapters.beliefmatching_integration_ns2d import (
     register_beliefmatching,
@@ -161,6 +163,25 @@ class BeliefMatchingNS2CIntegrationTests(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         cls.bm_registration.adapter.close()
+
+    def _bank_with_reference(self):
+        bank = CompatibilityAwareDecoderBank(self.sampling)
+        baseline = self.bank.adapter("pymatching_ordinary")
+        bank.register(baseline)
+        return bank, baseline
+
+    def _registration_kwargs(self, bank):
+        return {
+            "bank": bank,
+            "sampling_circuit": self.circuit,
+            "sampling_identity": self.sampling,
+            "dem_artifact": self.artifact,
+            "assumed_noise_model_id": NOISE_ID,
+            "assumed_noise_provenance": NOISE_PROVENANCE,
+            "information_reference_decoder": "pymatching_ordinary",
+            "experimental_opt_in": True,
+            "max_bp_iters": 20,
+        }
 
     def test_dem_identity_and_information_access_match_across_decoder_arms(self):
         ids = self.report["sample_identity"]["decoder_model_identity_sha256"]
@@ -316,7 +337,6 @@ class BeliefMatchingNS2CIntegrationTests(unittest.TestCase):
                 information_reference_decoder="pymatching_ordinary",
                 experimental_opt_in=True,
             )
-
         reference = self.bank.adapter("pymatching_ordinary")
         bank.register(reference)
         with self.assertRaisesRegex(ValueError, "noise provenance differ"):
@@ -327,6 +347,116 @@ class BeliefMatchingNS2CIntegrationTests(unittest.TestCase):
                 information_reference_decoder="pymatching_ordinary",
                 experimental_opt_in=True,
             )
+
+    def test_construction_failure_does_not_register_candidate(self):
+        bank, baseline = self._bank_with_reference()
+        before = bank.names()
+        with patch.object(
+            BeliefMatchingAdapter, "from_dem",
+            side_effect=RuntimeError("injected construction failure"),
+        ):
+            with self.assertRaisesRegex(RuntimeError, "injected construction failure"):
+                register_beliefmatching(**self._registration_kwargs(bank))
+        self.assertEqual(bank.names(), before)
+        self.assertIs(bank.adapter("pymatching_ordinary"), baseline)
+        self.assertNotIn("beliefmatching", bank.names())
+
+    def test_binding_failure_closes_constructed_adapter_without_registration(self):
+        bank, baseline = self._bank_with_reference()
+        before = bank.names()
+        constructed = []
+        original_factory = BeliefMatchingAdapter.from_dem
+
+        def track_construction(**kwargs):
+            adapter = original_factory(**kwargs)
+            constructed.append(adapter)
+            return adapter
+
+        def fail_binding(self, **kwargs):
+            raise RuntimeError("injected binding failure")
+
+        with patch.object(BeliefMatchingAdapter, "from_dem", side_effect=track_construction):
+            with patch.object(BeliefMatchingAdapter, "bind_ns2c", new=fail_binding):
+                with self.assertRaisesRegex(RuntimeError, "injected binding failure"):
+                    register_beliefmatching(**self._registration_kwargs(bank))
+
+        self.assertEqual(len(constructed), 1)
+        self.assertFalse(constructed[0].enabled)
+        with self.assertRaises(BeliefMatchingDisabledError):
+            constructed[0].decode_batch(np.zeros((1, len(self.sampling.detector_ids)), dtype=np.uint8))
+        self.assertEqual(bank.names(), before)
+        self.assertIs(bank.adapter("pymatching_ordinary"), baseline)
+
+    def test_registration_failure_closes_candidate_and_preserves_bank(self):
+        bank, baseline = self._bank_with_reference()
+        before = bank.names()
+        constructed = []
+        original_factory = BeliefMatchingAdapter.from_dem
+
+        def track_construction(**kwargs):
+            adapter = original_factory(**kwargs)
+            constructed.append(adapter)
+            return adapter
+
+        def fail_registration(*args, **kwargs):
+            # Inject failure before the bank mutates either registry.
+            raise RuntimeError("injected registration failure")
+
+        with patch.object(BeliefMatchingAdapter, "from_dem", side_effect=track_construction):
+            with patch.object(bank, "register", side_effect=fail_registration):
+                with self.assertRaisesRegex(RuntimeError, "injected registration failure"):
+                    register_beliefmatching(**self._registration_kwargs(bank))
+
+        self.assertEqual(len(constructed), 1)
+        self.assertFalse(constructed[0].enabled)
+        with self.assertRaises(BeliefMatchingDisabledError):
+            constructed[0].decode_batch(np.zeros((1, len(self.sampling.detector_ids)), dtype=np.uint8))
+        self.assertEqual(bank.names(), before)
+        self.assertIs(bank.adapter("pymatching_ordinary"), baseline)
+        with self.assertRaises(KeyError):
+            bank.adapter("beliefmatching")
+
+    def test_actual_duplicate_registration_failure_keeps_original_and_closes_new_candidate(self):
+        bank, baseline = self._bank_with_reference()
+        duplicate_metadata = DecoderMetadata(
+            name="beliefmatching", implementation="duplicate registration fixture", version="1",
+            detector_count=self.artifact.record.detector_count, observable_count=1,
+            noise_model_id=NOISE_ID, construction_provenance="deterministic duplicate-name test",
+            experimental=True,
+        )
+        duplicate_implementation = _FailingDecoder(duplicate_metadata)
+        duplicate_identity = DecoderModelIdentity.create(
+            self.sampling, duplicate_metadata, dem_record=self.artifact.record,
+            decoder_assumed_noise_model_id=NOISE_ID,
+            decoder_assumed_noise_provenance=NOISE_PROVENANCE,
+            correlation_semantics=None,
+        )
+        duplicate_adapter = CheckedDecoderAdapter(
+            duplicate_implementation, model_identity=duplicate_identity,
+            sampling_identity=self.sampling,
+        )
+        bank.register(duplicate_adapter, experimental_opt_in=True)
+        before = bank.names()
+        constructed = []
+        original_factory = BeliefMatchingAdapter.from_dem
+
+        def track_construction(**kwargs):
+            adapter = original_factory(**kwargs)
+            constructed.append(adapter)
+            return adapter
+
+        with patch.object(BeliefMatchingAdapter, "from_dem", side_effect=track_construction):
+            with self.assertRaisesRegex(ValueError, "already registered"):
+                register_beliefmatching(**self._registration_kwargs(bank))
+
+        self.assertEqual(len(constructed), 1)
+        self.assertFalse(constructed[0].enabled)
+        with self.assertRaises(BeliefMatchingDisabledError):
+            constructed[0].decode_batch(np.zeros((1, len(self.sampling.detector_ids)), dtype=np.uint8))
+        self.assertEqual(bank.names(), before)
+        self.assertIs(bank.adapter("pymatching_ordinary"), baseline)
+        self.assertIs(bank.adapter("beliefmatching"), duplicate_adapter)
+        self.assertIs(bank._registry.get("beliefmatching"), duplicate_implementation)
 
     def test_construction_and_inference_timing_are_reported_separately(self):
         self.assertGreaterEqual(self.bm_registration.construction_seconds, 0.0)

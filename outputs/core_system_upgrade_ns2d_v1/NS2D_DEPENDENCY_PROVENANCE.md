@@ -11,6 +11,8 @@
 - Published strong-baseline protocol SHA-256: `8b815dd402cbeff448f409fee6ea4d997b8405fcc360ada61dda9e2c3b2fdfaf`
 - Local pinned lock SHA-256: `2434af4afd1b5a7d501f80f8cfb2c9f20257107411603a30be17b8923c208c3d`
 
+The lockfile's editable Git requirement pins the upstream **repository commit** `4458c278bbec273c8c1a26411dadccc49222f8ef`. The `702dc…c2106` source digest validates the specific `beliefmatching_adapter.py` file imported from the published NS-3B package. That single-file digest does not independently verify the complete upstream repository or every file at that commit; the repository commit pin and the imported-file digest provide distinct provenance checks. The Q-SHIFT source manifest separately inventories the published NS-3B package files. The upstream pin has not been changed.
+
 The source manifest records 36 published file entries. Their published hashes and byte sizes were recomputed successfully. Its five “unchanged base dependency” hashes match the engineering-base checkout. All 16 documented copy transformations match their recorded published hashes; those transformations are identified as Markdown whitespace normalization and removal of a machine-specific absolute path. The two publication-authored files are Markdown. No code transformation is recorded in those publication-scope categories. The imported adapter hash matches the specified expected SHA exactly.
 
 ## Isolated environment

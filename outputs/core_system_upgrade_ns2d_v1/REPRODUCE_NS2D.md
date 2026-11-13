@@ -11,6 +11,8 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r outputs\core_system_upgrade_ns2d_v1\requirements-ns3b.lock.txt
 ```
 
+The lockfile pins the upstream Git repository commit. The recorded adapter SHA checks the exact imported adapter file only; it is not a whole-repository digest. See `NS2D_DEPENDENCY_PROVENANCE.md`. Do not change the pin without separate authorization.
+
 ## NS-2D plus NS-2B/NS-2C regressions
 
 ```powershell

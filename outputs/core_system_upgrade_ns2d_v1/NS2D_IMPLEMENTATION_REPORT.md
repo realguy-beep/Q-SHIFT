@@ -2,7 +2,7 @@
 
 ## Status
 
-The deterministic engineering integration is complete on the isolated branch `codex/ns2d-beliefmatching-integration`, based directly on engineering commit `d66346d8c7ad54b9567ecdd190e0d54ee7b93f0f`. The branch has not been committed or pushed. This report does not authorize scientific sampling.
+The deterministic engineering integration was committed and pushed as `ee096304fa72d6668101fbe0f54475b663e2c273` on `codex/ns2d-beliefmatching-integration`. Draft PR [#2](https://github.com/realguy-beep/Q-SHIFT/pull/2) targets `codex/ns2b-sampling-model-identity`, whose base commit is `d66346d8c7ad54b9567ecdd190e0d54ee7b93f0f`. It remains unmerged. The initial validation counts below record that checkpoint; supervisor-correction tests are recorded separately in `NS2D_REVIEW1_VALIDATION.json`. Neither record authorizes scientific sampling.
 
 ## Integration
 
