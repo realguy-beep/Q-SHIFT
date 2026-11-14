@@ -1,0 +1,350 @@
+{
+  "classification": "DETERMINISTIC_MIXTURE_TO_STATIC_POPULATION_MANIFOLD_AUDIT",
+  "configuration": {
+    "burst_grid": [
+      0.002,
+      0.01,
+      0.015,
+      0.018
+    ],
+    "measurement_grid": [
+      0.001,
+      0.003,
+      0.005
+    ],
+    "feature_count": 45,
+    "scale": "pooled feature marginal Bernoulli SD; diagonal score only"
+  },
+  "method": "Compare deterministic convex mixtures of population means to a small static grid, separately for exact categorical circuit and approximate DEM.",
+  "results": [
+    {
+      "scenario": "measurement_only_at_nominal_burst",
+      "mean_parameters": [
+        0.01,
+        0.003
+      ],
+      "components": [
+        [
+          0.01,
+          0.001,
+          0.5
+        ],
+        [
+          0.01,
+          0.005,
+          0.5
+        ]
+      ],
+      "exact_categorical_circuit": {
+        "nearest_static_grid_parameters": [
+          0.01,
+          0.003
+        ],
+        "nearest_static_standardized_rms_feature_residual": 0.00013969729573659693,
+        "nearest_static_max_abs_marginal_sd_residual": 0.0005456057411298947,
+        "nearest_static_max_abs_feature_mean_residual": 7.609094008687034e-05,
+        "at_arithmetic_mean_profile_standardized_rms_residual": 0.00013969729573659693,
+        "arithmetic_mean_parameters_present_in_grid": true
+      },
+      "approximate_dem": {
+        "nearest_static_grid_parameters": [
+          0.01,
+          0.003
+        ],
+        "nearest_static_standardized_rms_feature_residual": 0.00013972210442498217,
+        "nearest_static_max_abs_marginal_sd_residual": 0.0005456468726001222,
+        "nearest_static_max_abs_feature_mean_residual": 7.609357710058884e-05,
+        "at_arithmetic_mean_profile_standardized_rms_residual": 0.00013972210442498217,
+        "arithmetic_mean_parameters_present_in_grid": true
+      }
+    },
+    {
+      "scenario": "measurement_only_at_low_burst",
+      "mean_parameters": [
+        0.002,
+        0.003
+      ],
+      "components": [
+        [
+          0.002,
+          0.001,
+          0.5
+        ],
+        [
+          0.002,
+          0.005,
+          0.5
+        ]
+      ],
+      "exact_categorical_circuit": {
+        "nearest_static_grid_parameters": [
+          0.002,
+          0.003
+        ],
+        "nearest_static_standardized_rms_feature_residual": 0.00021472179315349098,
+        "nearest_static_max_abs_marginal_sd_residual": 0.0010899662639242934,
+        "nearest_static_max_abs_feature_mean_residual": 7.65188087400448e-05,
+        "at_arithmetic_mean_profile_standardized_rms_residual": 0.00021472179315349098,
+        "arithmetic_mean_parameters_present_in_grid": true
+      },
+      "approximate_dem": {
+        "nearest_static_grid_parameters": [
+          0.002,
+          0.003
+        ],
+        "nearest_static_standardized_rms_feature_residual": 0.00021476589790878057,
+        "nearest_static_max_abs_marginal_sd_residual": 0.0010901282215400815,
+        "nearest_static_max_abs_feature_mean_residual": 7.652047867851008e-05,
+        "at_arithmetic_mean_profile_standardized_rms_residual": 0.00021476589790878057,
+        "arithmetic_mean_parameters_present_in_grid": true
+      }
+    },
+    {
+      "scenario": "measurement_only_at_high_burst",
+      "mean_parameters": [
+        0.018,
+        0.003
+      ],
+      "components": [
+        [
+          0.018,
+          0.001,
+          0.5
+        ],
+        [
+          0.018,
+          0.005,
+          0.5
+        ]
+      ],
+      "exact_categorical_circuit": {
+        "nearest_static_grid_parameters": [
+          0.018,
+          0.003
+        ],
+        "nearest_static_standardized_rms_feature_residual": 0.00012302678284488623,
+        "nearest_static_max_abs_marginal_sd_residual": 0.0004457001432701746,
+        "nearest_static_max_abs_feature_mean_residual": 7.609094008687034e-05,
+        "at_arithmetic_mean_profile_standardized_rms_residual": 0.00012302678284488623,
+        "arithmetic_mean_parameters_present_in_grid": true
+      },
+      "approximate_dem": {
+        "nearest_static_grid_parameters": [
+          0.018,
+          0.003
+        ],
+        "nearest_static_standardized_rms_feature_residual": 0.00012304956610176976,
+        "nearest_static_max_abs_marginal_sd_residual": 0.0004458326851080773,
+        "nearest_static_max_abs_feature_mean_residual": 7.609357710058884e-05,
+        "at_arithmetic_mean_profile_standardized_rms_residual": 0.00012304956610176976,
+        "arithmetic_mean_parameters_present_in_grid": true
+      }
+    },
+    {
+      "scenario": "burst_only_at_nominal_measurement",
+      "mean_parameters": [
+        0.009999999999999998,
+        0.003
+      ],
+      "components": [
+        [
+          0.002,
+          0.003,
+          0.5
+        ],
+        [
+          0.018,
+          0.003,
+          0.5
+        ]
+      ],
+      "exact_categorical_circuit": {
+        "nearest_static_grid_parameters": [
+          0.01,
+          0.003
+        ],
+        "nearest_static_standardized_rms_feature_residual": 2.228468226840567e-16,
+        "nearest_static_max_abs_marginal_sd_residual": 5.554868984900203e-16,
+        "nearest_static_max_abs_feature_mean_residual": 8.326672684688674e-17,
+        "at_arithmetic_mean_profile_standardized_rms_residual": 2.228468226840567e-16,
+        "arithmetic_mean_parameters_present_in_grid": true
+      },
+      "approximate_dem": {
+        "nearest_static_grid_parameters": [
+          0.01,
+          0.003
+        ],
+        "nearest_static_standardized_rms_feature_residual": 1.8161850417043883e-16,
+        "nearest_static_max_abs_marginal_sd_residual": 5.555021408333615e-16,
+        "nearest_static_max_abs_feature_mean_residual": 8.326672684688674e-17,
+        "at_arithmetic_mean_profile_standardized_rms_residual": 1.8161850417043883e-16,
+        "arithmetic_mean_parameters_present_in_grid": true
+      }
+    },
+    {
+      "scenario": "positively_correlated_burst_measurement_steps",
+      "mean_parameters": [
+        0.009999999999999998,
+        0.003
+      ],
+      "components": [
+        [
+          0.002,
+          0.001,
+          0.5
+        ],
+        [
+          0.018,
+          0.005,
+          0.5
+        ]
+      ],
+      "exact_categorical_circuit": {
+        "nearest_static_grid_parameters": [
+          0.01,
+          0.003
+        ],
+        "nearest_static_standardized_rms_feature_residual": 0.00032886947935105546,
+        "nearest_static_max_abs_marginal_sd_residual": 0.001243390639012659,
+        "nearest_static_max_abs_feature_mean_residual": 0.00022802361384707814,
+        "at_arithmetic_mean_profile_standardized_rms_residual": 0.00032886947935105546,
+        "arithmetic_mean_parameters_present_in_grid": true
+      },
+      "approximate_dem": {
+        "nearest_static_grid_parameters": [
+          0.01,
+          0.003
+        ],
+        "nearest_static_standardized_rms_feature_residual": 0.00032892947834533274,
+        "nearest_static_max_abs_marginal_sd_residual": 0.0012435923952162737,
+        "nearest_static_max_abs_feature_mean_residual": 0.00022802859021070487,
+        "at_arithmetic_mean_profile_standardized_rms_residual": 0.00032892947834533274,
+        "arithmetic_mean_parameters_present_in_grid": true
+      }
+    },
+    {
+      "scenario": "negatively_correlated_burst_measurement_steps",
+      "mean_parameters": [
+        0.009999999999999998,
+        0.003
+      ],
+      "components": [
+        [
+          0.002,
+          0.005,
+          0.5
+        ],
+        [
+          0.018,
+          0.001,
+          0.5
+        ]
+      ],
+      "exact_categorical_circuit": {
+        "nearest_static_grid_parameters": [
+          0.01,
+          0.003
+        ],
+        "nearest_static_standardized_rms_feature_residual": 0.0003871901572720901,
+        "nearest_static_max_abs_marginal_sd_residual": 0.0017649872751040324,
+        "nearest_static_max_abs_feature_mean_residual": 0.0001774015924836947,
+        "at_arithmetic_mean_profile_standardized_rms_residual": 0.0003871901572720901,
+        "arithmetic_mean_parameters_present_in_grid": true
+      },
+      "approximate_dem": {
+        "nearest_static_grid_parameters": [
+          0.01,
+          0.003
+        ],
+        "nearest_static_standardized_rms_feature_residual": 0.00038723309378376565,
+        "nearest_static_max_abs_marginal_sd_residual": 0.0017650691255408995,
+        "nearest_static_max_abs_feature_mean_residual": 0.00017740772502504443,
+        "at_arithmetic_mean_profile_standardized_rms_residual": 0.00038723309378376565,
+        "arithmetic_mean_parameters_present_in_grid": true
+      }
+    },
+    {
+      "scenario": "balanced_nine_condition_mixture",
+      "mean_parameters": [
+        0.009999999999999998,
+        0.003
+      ],
+      "components": [
+        [
+          0.002,
+          0.001,
+          0.1111111111111111
+        ],
+        [
+          0.002,
+          0.003,
+          0.1111111111111111
+        ],
+        [
+          0.002,
+          0.005,
+          0.1111111111111111
+        ],
+        [
+          0.01,
+          0.001,
+          0.1111111111111111
+        ],
+        [
+          0.01,
+          0.003,
+          0.1111111111111111
+        ],
+        [
+          0.01,
+          0.005,
+          0.1111111111111111
+        ],
+        [
+          0.018,
+          0.001,
+          0.1111111111111111
+        ],
+        [
+          0.018,
+          0.003,
+          0.1111111111111111
+        ],
+        [
+          0.018,
+          0.005,
+          0.1111111111111111
+        ]
+      ],
+      "exact_categorical_circuit": {
+        "nearest_static_grid_parameters": [
+          0.01,
+          0.003
+        ],
+        "nearest_static_standardized_rms_feature_residual": 9.314482369579599e-05,
+        "nearest_static_max_abs_marginal_sd_residual": 0.0003640619816996694,
+        "nearest_static_max_abs_feature_mean_residual": 5.0727293391249206e-05,
+        "at_arithmetic_mean_profile_standardized_rms_residual": 9.314482369579599e-05,
+        "arithmetic_mean_parameters_present_in_grid": true
+      },
+      "approximate_dem": {
+        "nearest_static_grid_parameters": [
+          0.01,
+          0.003
+        ],
+        "nearest_static_standardized_rms_feature_residual": 9.316135260011784e-05,
+        "nearest_static_max_abs_marginal_sd_residual": 0.0003640894557833247,
+        "nearest_static_max_abs_feature_mean_residual": 5.0729051400397185e-05,
+        "at_arithmetic_mean_profile_standardized_rms_residual": 9.316135260011784e-05,
+        "arithmetic_mean_parameters_present_in_grid": true
+      }
+    }
+  ],
+  "limitations": [
+    "A coarse deterministic grid only; not the existing estimator's fine p grid and not policy tuning.",
+    "Diagonal marginal-SD residual is a descriptive compatibility score, not a calibrated statistical test or full-covariance likelihood.",
+    "No finite-history data, sampling, logical outcomes, or decoder calls."
+  ],
+  "sampling_calls": 0,
+  "decoder_calls": 0
+}

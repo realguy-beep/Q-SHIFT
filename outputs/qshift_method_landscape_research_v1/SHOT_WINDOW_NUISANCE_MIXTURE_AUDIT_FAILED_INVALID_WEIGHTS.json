@@ -1,0 +1,355 @@
+{
+  "classification": "DETERMINISTIC_POPULATION_MIXTURE_UNDER_MEASUREMENT_DRIFT",
+  "configuration": {
+    "circuit": "Q-SHIFT distance-3 five-round balanced Z-memory",
+    "gate_p": 0.003,
+    "burst_p_grid": [
+      0.002,
+      0.01,
+      0.018
+    ],
+    "measurement_p_grid": [
+      0.001,
+      0.003,
+      0.005
+    ],
+    "features": 45,
+    "models_separate": [
+      "exact categorical circuit",
+      "approximate DEM"
+    ]
+  },
+  "method": "Take convex mixtures of per-shot deterministic population means; invert pooled pair moments. No samples or outcomes.",
+  "scenarios": [
+    {
+      "scenario": "measurement_only_at_nominal_burst",
+      "components": [
+        [
+          0.01,
+          0.001,
+          0.5
+        ],
+        [
+          0.01,
+          0.005,
+          0.5
+        ]
+      ],
+      "arithmetic_window_mean_burst_p": 0.01,
+      "arithmetic_window_mean_measurement_p": 0.003,
+      "exact_categorical_circuit": {
+        "edge_estimates": [
+          0.010015868582231247,
+          0.010015868582231247,
+          0.010015868582231247,
+          0.010015868582231247,
+          0.010059490887582012
+        ],
+        "equal_edge_mean_estimate": 0.010024593043301399,
+        "bias_vs_mean_burst_p": 2.4593043301398762e-05,
+        "edge_spread": 4.362230535076561e-05
+      },
+      "approximate_dem": {
+        "edge_estimates": [
+          0.010015868582231302,
+          0.010015868582231302,
+          0.010015868582231302,
+          0.010015868582231358,
+          0.010059490887581957
+        ],
+        "equal_edge_mean_estimate": 0.010024593043301444,
+        "bias_vs_mean_burst_p": 2.4593043301443865e-05,
+        "edge_spread": 4.362230535065459e-05
+      }
+    },
+    {
+      "scenario": "measurement_only_at_low_burst",
+      "components": [
+        [
+          0.002,
+          0.001,
+          0.5
+        ],
+        [
+          0.002,
+          0.005,
+          0.5
+        ]
+      ],
+      "arithmetic_window_mean_burst_p": 0.002,
+      "arithmetic_window_mean_measurement_p": 0.003,
+      "exact_categorical_circuit": {
+        "edge_estimates": [
+          0.0020161276611248558,
+          0.0020161276611248558,
+          0.0020161276611248558,
+          0.0020161276611248558,
+          0.0020604621673792622
+        ],
+        "equal_edge_mean_estimate": 0.002024994562375737,
+        "bias_vs_mean_burst_p": 2.4994562375737096e-05,
+        "edge_spread": 4.433450625440649e-05
+      },
+      "approximate_dem": {
+        "edge_estimates": [
+          0.0020161276611247447,
+          0.0020161276611249113,
+          0.0020161276611249113,
+          0.0020161276611248558,
+          0.0020604621673792067
+        ],
+        "equal_edge_mean_estimate": 0.002024994562375726,
+        "bias_vs_mean_burst_p": 2.499456237572582e-05,
+        "edge_spread": 4.4334506254462e-05
+      }
+    },
+    {
+      "scenario": "measurement_only_at_high_burst",
+      "components": [
+        [
+          0.018,
+          0.001,
+          0.5
+        ],
+        [
+          0.018,
+          0.005,
+          0.5
+        ]
+      ],
+      "arithmetic_window_mean_burst_p": 0.018,
+      "arithmetic_window_mean_measurement_p": 0.003,
+      "exact_categorical_circuit": {
+        "edge_estimates": [
+          0.018015609503337693,
+          0.018015609503337693,
+          0.018015609503337693,
+          0.018015609503337693,
+          0.018058519607784707
+        ],
+        "equal_edge_mean_estimate": 0.018024191524227094,
+        "bias_vs_mean_burst_p": 2.4191524227095557e-05,
+        "edge_spread": 4.291010444701371e-05
+      },
+      "approximate_dem": {
+        "edge_estimates": [
+          0.018015609503337637,
+          0.01801560950333775,
+          0.01801560950333775,
+          0.018015609503337693,
+          0.018058519607784707
+        ],
+        "equal_edge_mean_estimate": 0.018024191524227108,
+        "bias_vs_mean_burst_p": 2.4191524227109434e-05,
+        "edge_spread": 4.291010444706922e-05
+      }
+    },
+    {
+      "scenario": "burst_only_at_nominal_measurement",
+      "components": [
+        [
+          0.002,
+          0.003,
+          0.5
+        ],
+        [
+          0.018,
+          0.003,
+          0.5
+        ]
+      ],
+      "arithmetic_window_mean_burst_p": 0.009999999999999998,
+      "arithmetic_window_mean_measurement_p": 0.003,
+      "exact_categorical_circuit": {
+        "edge_estimates": [
+          0.010000000000000009,
+          0.010000000000000009,
+          0.010000000000000009,
+          0.010000000000000009,
+          0.010000000000000009
+        ],
+        "equal_edge_mean_estimate": 0.010000000000000009,
+        "bias_vs_mean_burst_p": 1.0408340855860843e-17,
+        "edge_spread": 0.0
+      },
+      "approximate_dem": {
+        "edge_estimates": [
+          0.010000000000000009,
+          0.010000000000000064,
+          0.010000000000000064,
+          0.010000000000000009,
+          0.009999999999999953
+        ],
+        "equal_edge_mean_estimate": 0.01000000000000002,
+        "bias_vs_mean_burst_p": 2.0816681711721685e-17,
+        "edge_spread": 1.1102230246251565e-16
+      }
+    },
+    {
+      "scenario": "positively_correlated_burst_measurement_steps",
+      "components": [
+        [
+          0.002,
+          0.001,
+          0.5
+        ],
+        [
+          0.018,
+          0.005,
+          0.5
+        ]
+      ],
+      "arithmetic_window_mean_burst_p": 0.009999999999999998,
+      "arithmetic_window_mean_measurement_p": 0.003,
+      "exact_categorical_circuit": {
+        "edge_estimates": [
+          0.00995148539207058,
+          0.00995148539207058,
+          0.00995148539207058,
+          0.00995148539207058,
+          0.009930747451304123
+        ],
+        "equal_edge_mean_estimate": 0.00994733780391729,
+        "bias_vs_mean_burst_p": -5.266219608270929e-05,
+        "edge_spread": 2.073794076645763e-05
+      },
+      "approximate_dem": {
+        "edge_estimates": [
+          0.009951485392070525,
+          0.009951485392070636,
+          0.009951485392070636,
+          0.009951485392070636,
+          0.009930747451304123
+        ],
+        "equal_edge_mean_estimate": 0.009947337803917312,
+        "bias_vs_mean_burst_p": -5.266219608268674e-05,
+        "edge_spread": 2.073794076651314e-05
+      }
+    },
+    {
+      "scenario": "negatively_correlated_burst_measurement_steps",
+      "components": [
+        [
+          0.002,
+          0.005,
+          0.5
+        ],
+        [
+          0.018,
+          0.001,
+          0.5
+        ]
+      ],
+      "arithmetic_window_mean_burst_p": 0.009999999999999998,
+      "arithmetic_window_mean_measurement_p": 0.003,
+      "exact_categorical_circuit": {
+        "edge_estimates": [
+          0.010080251772391913,
+          0.010080251772391913,
+          0.010080251772391913,
+          0.010080251772391913,
+          0.010188236437608578
+        ],
+        "equal_edge_mean_estimate": 0.010101848705435245,
+        "bias_vs_mean_burst_p": 0.00010184870543524654,
+        "edge_spread": 0.00010798466521666494
+      },
+      "approximate_dem": {
+        "edge_estimates": [
+          0.010080251772391857,
+          0.010080251772391968,
+          0.010080251772391968,
+          0.010080251772391913,
+          0.010188236437608578
+        ],
+        "equal_edge_mean_estimate": 0.010101848705435257,
+        "bias_vs_mean_burst_p": 0.00010184870543525869,
+        "edge_spread": 0.00010798466521672045
+      }
+    },
+    {
+      "scenario": "balanced_six_condition_mixture",
+      "components": [
+        [
+          0.002,
+          0.001,
+          0.16666666666666666
+        ],
+        [
+          0.002,
+          0.003,
+          0.16666666666666666
+        ],
+        [
+          0.002,
+          0.005,
+          0.16666666666666666
+        ],
+        [
+          0.01,
+          0.001,
+          0.16666666666666666
+        ],
+        [
+          0.01,
+          0.003,
+          0.16666666666666666
+        ],
+        [
+          0.01,
+          0.005,
+          0.16666666666666666
+        ],
+        [
+          0.018,
+          0.001,
+          0.16666666666666666
+        ],
+        [
+          0.018,
+          0.003,
+          0.16666666666666666
+        ],
+        [
+          0.018,
+          0.005,
+          0.16666666666666666
+        ]
+      ],
+      "arithmetic_window_mean_burst_p": 0.014999999999999998,
+      "arithmetic_window_mean_measurement_p": 0.0045,
+      "exact_categorical_circuit": {
+        "edge_estimates": [
+          0.014923164433246427,
+          0.014923164433246427,
+          0.014923164433246427,
+          0.014923164433246427,
+          0.015024928112033764
+        ],
+        "equal_edge_mean_estimate": 0.014943517169003894,
+        "bias_vs_mean_burst_p": -5.6482830996103586e-05,
+        "edge_spread": 0.00010176367878733661
+      },
+      "approximate_dem": {
+        "edge_estimates": [
+          0.014923696500872385,
+          0.014923759808963766,
+          0.014923759808963766,
+          0.014923740044387235,
+          0.015025155247513522
+        ],
+        "equal_edge_mean_estimate": 0.014944022282140135,
+        "bias_vs_mean_burst_p": -5.597771785986229e-05,
+        "edge_spread": 0.00010145874664113652
+      }
+    }
+  ],
+  "limitations": [
+    "Population mixtures only; no finite-history estimator distribution, alarm behavior, or decoder utility.",
+    "Components are deterministic scenario weights, not generated shot sequences.",
+    "Exact categorical-circuit means and approximate-DEM means are reported separately.",
+    "Measurement probabilities are stationary within each shot; the script does not model within-shot boundary-specific readout drift."
+  ],
+  "sampling_calls": 0,
+  "decoder_calls": 0
+}

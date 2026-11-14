@@ -1,0 +1,430 @@
+{
+  "classification": "DETERMINISTIC_LOCAL_GATE_NUISANCE_SENSITIVITY",
+  "nominal_parameters": {
+    "burst_p": 0.01,
+    "measurement_p": 0.003,
+    "gate_p": 0.003,
+    "finite_difference_step": 1e-05
+  },
+  "fault_map": {
+    "physical_sites": 214,
+    "fault_alternatives_mapped": 1974,
+    "burst_detector_supports": [
+      [
+        8,
+        10
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        32,
+        34
+      ],
+      [
+        36,
+        38
+      ]
+    ],
+    "baseline_reference_detector_weight": 0,
+    "baseline_reference_observable_weight": 0
+  },
+  "results": {
+    "exact_categorical_circuit": {
+      "rank": 3,
+      "singular_values_nominal_variance_standardized": [
+        265.84871595311193,
+        45.486987304772946,
+        25.46609899241829
+      ],
+      "condition_ratio": 10.439318406492484,
+      "column_cosines_burst_measurement_gate": [
+        [
+          1.0000000000000002,
+          0.31398678058515334,
+          0.23367517377756022
+        ],
+        [
+          0.31398678058515334,
+          1.0000000000000002,
+          0.8254516434966217
+        ],
+        [
+          0.23367517377756022,
+          0.8254516434966217,
+          0.9999999999999996
+        ]
+      ],
+      "gate_projection_fraction_onto_burst_measurement_span": 0.8258886777329736,
+      "gate_residual_fraction_after_projection": 0.5638332129207011,
+      "standardized_column_norms": [
+        27.157710727841074,
+        82.55276608319919,
+        256.5942858793043
+      ],
+      "top_absolute_feature_derivatives": {
+        "burst_p": [
+          {
+            "feature": "D36",
+            "derivative": 0.963401524214924
+          },
+          {
+            "feature": "D32",
+            "derivative": 0.9630237622598735
+          },
+          {
+            "feature": "D8",
+            "derivative": 0.9630237622598735
+          },
+          {
+            "feature": "D16",
+            "derivative": 0.9630237622598735
+          },
+          {
+            "feature": "D24",
+            "derivative": 0.9630237622598735
+          },
+          {
+            "feature": "D36&D38",
+            "derivative": 0.956115455676143
+          },
+          {
+            "feature": "D8&D10",
+            "derivative": 0.9493324056017437
+          },
+          {
+            "feature": "D32&D34",
+            "derivative": 0.9493324056017437
+          }
+        ],
+        "measurement_p": [
+          {
+            "feature": "D37",
+            "derivative": 4.7271113819163935
+          },
+          {
+            "feature": "D38",
+            "derivative": 4.677327968524714
+          },
+          {
+            "feature": "D39",
+            "derivative": 2.945168061666003
+          },
+          {
+            "feature": "D36",
+            "derivative": 2.8494974663645363
+          },
+          {
+            "feature": "D31",
+            "derivative": 1.9376735659215603
+          },
+          {
+            "feature": "D15",
+            "derivative": 1.9376735659215603
+          },
+          {
+            "feature": "D7",
+            "derivative": 1.9376735659215603
+          },
+          {
+            "feature": "D23",
+            "derivative": 1.9376735659215603
+          }
+        ],
+        "gate_p": [
+          {
+            "feature": "D30",
+            "derivative": 10.840249454910355
+          },
+          {
+            "feature": "D14",
+            "derivative": 10.840249454910355
+          },
+          {
+            "feature": "D6",
+            "derivative": 10.840249454910355
+          },
+          {
+            "feature": "D22",
+            "derivative": 10.840249454910355
+          },
+          {
+            "feature": "D33",
+            "derivative": 10.840249454904804
+          },
+          {
+            "feature": "D9",
+            "derivative": 10.840249454904804
+          },
+          {
+            "feature": "D25",
+            "derivative": 10.840249454904804
+          },
+          {
+            "feature": "D17",
+            "derivative": 10.840249454904804
+          }
+        ]
+      },
+      "asymptotic_iid_shot_moment_covariance_sensitivity": {
+        "2": {
+          "parameters": [
+            "burst_p",
+            "measurement_p"
+          ],
+          "diagonal_standardized_profile_sandwich_covariance_per_iid_shot": [
+            [
+              0.0025860093404740407,
+              -8.746482382583938e-05
+            ],
+            [
+              -8.746482382583928e-05,
+              0.00027638368397049276
+            ]
+          ],
+          "diagonal_standardized_profile_sd_per_sqrt_shots": [
+            0.050852820378756186,
+            0.01662479124592224
+          ],
+          "oracle_full_covariance_gmm_covariance_per_iid_shot": [
+            [
+              0.0022164168065064603,
+              -1.6694145780640638e-05
+            ],
+            [
+              -1.6694145780640644e-05,
+              0.00023365203519782148
+            ]
+          ],
+          "oracle_full_covariance_gmm_sd_per_sqrt_shots": [
+            0.04707883607850199,
+            0.01528568072405745
+          ]
+        },
+        "3": {
+          "parameters": [
+            "burst_p",
+            "measurement_p",
+            "gate_p"
+          ],
+          "diagonal_standardized_profile_sandwich_covariance_per_iid_shot": [
+            [
+              0.002587336806320904,
+              -0.00011043799932539011,
+              1.2557382826968705e-05
+            ],
+            [
+              -0.00011043799932538988,
+              0.000597169465019226,
+              -0.00015957652303150705
+            ],
+            [
+              1.2557382826969717e-05,
+              -0.00015957652303150678,
+              7.536904699168443e-05
+            ]
+          ],
+          "diagonal_standardized_profile_sd_per_sqrt_shots": [
+            0.05086587074179409,
+            0.024437051070438632,
+            0.008681534829261726
+          ],
+          "oracle_full_covariance_gmm_covariance_per_iid_shot": [
+            [
+              0.002216435138057262,
+              -1.8887757308934686e-05,
+              1.1099869030955976e-06
+            ],
+            [
+              -1.8887757308934713e-05,
+              0.000496146550207625,
+              -0.00013282455441046375
+            ],
+            [
+              1.1099869030956097e-06,
+              -0.0001328245544104638,
+              6.7210403439018e-05
+            ]
+          ],
+          "oracle_full_covariance_gmm_sd_per_sqrt_shots": [
+            0.047079030768031556,
+            0.022274347357613532,
+            0.008198195133016657
+          ]
+        }
+      },
+      "nominal_direct_xor_max_error": 3.8441472227646045e-15,
+      "largest_burst_sensitivity_pair_features": [
+        0.9493324056017437,
+        0.9493324056017437,
+        0.9493324056017437,
+        0.9493324056017437,
+        0.956115455676143
+      ],
+      "largest_measurement_sensitivity_pair_features": [
+        0.05895612484180245,
+        0.05895612484180245,
+        0.05895612484180245,
+        0.05895612484180245,
+        0.08492708214319354
+      ],
+      "largest_gate_sensitivity_pair_features": [
+        0.1636629038848092,
+        0.1636629038848092,
+        0.1636629038848092,
+        0.1636629038848092,
+        0.07769468242796451
+      ]
+    },
+    "approximate_dem": {
+      "rank": 3,
+      "singular_values_nominal_variance_standardized": [
+        265.35699762580725,
+        45.483029431917686,
+        25.46680594658329
+      ],
+      "condition_ratio": 10.419720407121115,
+      "column_cosines_burst_measurement_gate": [
+        [
+          1.0000000000000002,
+          0.3139674362026768,
+          0.23357089824455485
+        ],
+        [
+          0.3139674362026768,
+          0.9999999999999999,
+          0.8254487933420511
+        ],
+        [
+          0.23357089824455485,
+          0.8254487933420511,
+          1.0
+        ]
+      ],
+      "gate_projection_fraction_onto_burst_measurement_span": 0.8258888230958447,
+      "gate_residual_fraction_after_projection": 0.5638329999967718,
+      "standardized_column_norms": [
+        27.158866953241652,
+        82.55562033516954,
+        256.0831229450699
+      ],
+      "top_absolute_feature_derivatives": {
+        "burst_p": [
+          {
+            "feature": "D36",
+            "derivative": 0.9634225454219213
+          },
+          {
+            "feature": "D32",
+            "derivative": 0.963055276445579
+          },
+          {
+            "feature": "D24",
+            "derivative": 0.963055276445579
+          },
+          {
+            "feature": "D16",
+            "derivative": 0.963055276445579
+          },
+          {
+            "feature": "D8",
+            "derivative": 0.9630503386981458
+          },
+          {
+            "feature": "D36&D38",
+            "derivative": 0.9561363198518079
+          },
+          {
+            "feature": "D24&D26",
+            "derivative": 0.9493808823216042
+          },
+          {
+            "feature": "D16&D18",
+            "derivative": 0.9493808823216042
+          }
+        ],
+        "measurement_p": [
+          {
+            "feature": "D37",
+            "derivative": 4.727275205063108
+          },
+          {
+            "feature": "D38",
+            "derivative": 4.677430046054476
+          },
+          {
+            "feature": "D39",
+            "derivative": 2.94518318935677
+          },
+          {
+            "feature": "D36",
+            "derivative": 2.8495596417821285
+          },
+          {
+            "feature": "D23",
+            "derivative": 1.9377369747414217
+          },
+          {
+            "feature": "D15",
+            "derivative": 1.9377369747414217
+          },
+          {
+            "feature": "D7",
+            "derivative": 1.9377369747414217
+          },
+          {
+            "feature": "D31",
+            "derivative": 1.9377270396414568
+          }
+        ],
+        "gate_p": [
+          {
+            "feature": "D30",
+            "derivative": 10.820273234871113
+          },
+          {
+            "feature": "D9",
+            "derivative": 10.820273234851685
+          },
+          {
+            "feature": "D6",
+            "derivative": 10.820272773157113
+          },
+          {
+            "feature": "D33",
+            "derivative": 10.820272773154338
+          },
+          {
+            "feature": "D22",
+            "derivative": 10.819323571020778
+          },
+          {
+            "feature": "D14",
+            "derivative": 10.819323571020778
+          },
+          {
+            "feature": "D17",
+            "derivative": 10.819323571018002
+          },
+          {
+            "feature": "D25",
+            "derivative": 10.819323571018002
+          }
+        ]
+      }
+    }
+  },
+  "interpretation_limits": [
+    "Local derivatives do not establish global identifiability or finite-history estimation accuracy.",
+    "Gate p is a single scalar multiplying the existing fixed categorical gate-noise family; this does not introduce a new physical noise mechanism.",
+    "Correlated readout, drift in gate-channel composition, coherent errors, leakage and decoder utility are not tested.",
+    "Approximate DEM values use decompose_errors=True and approximate_disjoint_errors=True."
+  ],
+  "sampling_calls": 0,
+  "decoder_calls": 0
+}

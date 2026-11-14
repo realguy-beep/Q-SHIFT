@@ -1,0 +1,182 @@
+{
+  "classification": "DETERMINISTIC_APPROXIMATE_DEM_COARSE_GRID_SCREEN",
+  "model": {
+    "gate_p": 0.003,
+    "bias_ratio": 10.0,
+    "burst_pair": [
+      8,
+      10
+    ],
+    "distance": 3,
+    "rounds": 5,
+    "dem_options": {
+      "decompose_errors": true,
+      "approximate_disjoint_errors": true
+    },
+    "feature_count": 45
+  },
+  "parameter_grids": {
+    "burst_probability": [
+      0.002,
+      0.004,
+      0.006,
+      0.008,
+      0.01,
+      0.012,
+      0.014,
+      0.016,
+      0.018
+    ],
+    "measurement_probability": [
+      0.001,
+      0.0015,
+      0.002,
+      0.0025,
+      0.003,
+      0.0035,
+      0.004,
+      0.0045000000000000005,
+      0.005
+    ],
+    "note": "Measurement range is exploratory around nominal 0.003, not a frozen protocol condition."
+  },
+  "profile_count": 81,
+  "distance_definition": "RMS Euclidean distance between 45 population mean vectors standardized by nominal approximate-DEM single-shot feature standard deviations.",
+  "nearest_distinct_grid_profiles": {
+    "distance": 0.006091220732596533,
+    "left": [
+      0.018,
+      0.0045000000000000005
+    ],
+    "right": [
+      0.018,
+      0.005
+    ]
+  },
+  "minimum_distance_burst_differs": 0.00802017998089491,
+  "minimum_distance_measurement_differs": 0.006091220732596533,
+  "minimum_distance_both_parameters_differ": 0.008360678793236551,
+  "local_jacobian_probes": [
+    {
+      "burst_p": 0.002,
+      "measurement_p": 0.001,
+      "rank": 2,
+      "singular_values_raw": [
+        13.645854143807414,
+        3.2985501430471422
+      ],
+      "condition_ratio_raw": 4.136924876697983,
+      "singular_values_nominal_variance_standardized": [
+        84.03499898239599,
+        25.818212846554975
+      ],
+      "condition_ratio_nominal_variance_standardized": 3.254872809432629,
+      "column_cosine": 0.44757097649368577
+    },
+    {
+      "burst_p": 0.018,
+      "measurement_p": 0.001,
+      "rank": 2,
+      "singular_values_raw": [
+        13.494905555107051,
+        3.329838475259338
+      ],
+      "condition_ratio_raw": 4.052720771705308,
+      "singular_values_nominal_variance_standardized": [
+        83.22732048729532,
+        26.038301974444746
+      ],
+      "condition_ratio_nominal_variance_standardized": 3.1963420874747768,
+      "column_cosine": 0.4309582903761688
+    },
+    {
+      "burst_p": 0.002,
+      "measurement_p": 0.005,
+      "rank": 2,
+      "singular_values_raw": [
+        13.449877003746181,
+        3.229216491705786
+      ],
+      "condition_ratio_raw": 4.165058935593842,
+      "singular_values_nominal_variance_standardized": [
+        82.92993391220004,
+        25.237452733467457
+      ],
+      "condition_ratio_nominal_variance_standardized": 3.2859866955679893,
+      "column_cosine": 0.4509064697074945
+    },
+    {
+      "burst_p": 0.018,
+      "measurement_p": 0.005,
+      "rank": 2,
+      "singular_values_raw": [
+        13.300696561162283,
+        3.2599869398344037
+      ],
+      "condition_ratio_raw": 4.07998461547147,
+      "singular_values_nominal_variance_standardized": [
+        82.11443552715616,
+        25.457344937398926
+      ],
+      "condition_ratio_nominal_variance_standardized": 3.225569505739121,
+      "column_cosine": 0.43439232601559624
+    },
+    {
+      "burst_p": 0.01,
+      "measurement_p": 0.003,
+      "rank": 2,
+      "singular_values_raw": [
+        13.471538927699525,
+        3.279247282969411
+      ],
+      "condition_ratio_raw": 4.108119261899893,
+      "singular_values_nominal_variance_standardized": [
+        83.06494297304269,
+        25.637538719834957
+      ],
+      "condition_ratio_nominal_variance_standardized": 3.239973379690226,
+      "column_cosine": 0.4410417107969697
+    },
+    {
+      "burst_p": 0.006,
+      "measurement_p": 0.004,
+      "rank": 2,
+      "singular_values_raw": [
+        13.460502349372891,
+        3.2541609401416016
+      ],
+      "condition_ratio_raw": 4.136397245548394,
+      "singular_values_nominal_variance_standardized": [
+        82.99413901541568,
+        25.437374197705292
+      ],
+      "condition_ratio_nominal_variance_standardized": 3.2626849913975238,
+      "column_cosine": 0.4460012623477888
+    },
+    {
+      "burst_p": 0.014,
+      "measurement_p": 0.002,
+      "rank": 2,
+      "singular_values_raw": [
+        13.483001591082402,
+        3.304473759114875
+      ],
+      "condition_ratio_raw": 4.080226557675529,
+      "singular_values_nominal_variance_standardized": [
+        83.14258779749561,
+        25.837873224604582
+      ],
+      "condition_ratio_nominal_variance_standardized": 3.2178572545329147,
+      "column_cosine": 0.436027489092486
+    }
+  ],
+  "limitations": [
+    "Finite coarse grid cannot prove global injectivity or exclude off-grid collisions.",
+    "Distances are population mean separation, not sample-size-adjusted estimator accuracy.",
+    "Expectations are exact only for converted approximate independent-event DEM, not original categorical circuit distribution.",
+    "Gate noise, temporal drift, correlated readout, and finite-history estimator covariance are not varied.",
+    "Measurement range is exploratory, not owner-approved."
+  ],
+  "sampling_calls": 0,
+  "decoder_calls": 0
+}

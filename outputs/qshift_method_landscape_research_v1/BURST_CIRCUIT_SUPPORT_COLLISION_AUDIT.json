@@ -1,0 +1,73 @@
+{
+  "classification": "DETERMINISTIC_EXACT_CATEGORICAL_SINGLE_FAULT_SUPPORT_AUDIT",
+  "configuration": {
+    "distance": 3,
+    "rounds": 5,
+    "gate_p": 0.003,
+    "measurement_p": 0.003,
+    "burst_p": 0.01,
+    "stim_version": "1.16.0"
+  },
+  "mapping_statistics": {
+    "physical_sites": 214,
+    "fault_alternatives_mapped": 1974,
+    "burst_detector_supports": [
+      [
+        8,
+        10
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        32,
+        34
+      ],
+      [
+        36,
+        38
+      ]
+    ],
+    "baseline_reference_detector_weight": 0,
+    "baseline_reference_observable_weight": 0
+  },
+  "support_collision_counts": {
+    "D8&D10": {
+      "burst_site_count": 1,
+      "nonburst_matching_alternative_count": 0,
+      "nonburst_physical_site_count": 0
+    },
+    "D16&D18": {
+      "burst_site_count": 1,
+      "nonburst_matching_alternative_count": 0,
+      "nonburst_physical_site_count": 0
+    },
+    "D24&D26": {
+      "burst_site_count": 1,
+      "nonburst_matching_alternative_count": 0,
+      "nonburst_physical_site_count": 0
+    },
+    "D32&D34": {
+      "burst_site_count": 1,
+      "nonburst_matching_alternative_count": 0,
+      "nonburst_physical_site_count": 0
+    },
+    "D36&D38": {
+      "burst_site_count": 1,
+      "nonburst_matching_alternative_count": 0,
+      "nonburst_physical_site_count": 0
+    }
+  },
+  "interpretation_limits": [
+    "No baseline categorical single-fault alternative maps to any of the five exact burst detector supports if all nonburst counts are zero.",
+    "This is single-fault support uniqueness only; multi-fault combinations, finite-history mean-profile aliases, and gate/readout nuisance remain separate.",
+    "No stochastic sampling, decoder call, logical outcome, or protected data."
+  ],
+  "sampling_calls": 0,
+  "decoder_calls": 0
+}

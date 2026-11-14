@@ -1,0 +1,103 @@
+{
+  "classification": "EXACT_CATEGORICAL_CIRCUIT_DERIVATIVE_CERTIFICATE",
+  "configuration": {
+    "burst_p": 0.002,
+    "gate_p": 0.003,
+    "measurement_p_interval": [
+      0.001,
+      0.005
+    ],
+    "pair_supports": [
+      [
+        8,
+        10
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        32,
+        34
+      ],
+      [
+        36,
+        38
+      ]
+    ]
+  },
+  "formula": "g(u)=E[X]=(1/20) sum_pairs [1-chi_a(u)-chi_b(u)+chi_ab(u)], u=1-2pm; each chi_S=C_S*u^k_S, where C and k are derived from exact categorical sites and odd-support parity.",
+  "polynomial_degree": 8,
+  "derivative_bernstein_degree": 7,
+  "derivative_bernstein_signs": {
+    "all_negative": true,
+    "all_positive": false
+  },
+  "derivative_bernstein_min_max": [
+    -0.06137328706145037,
+    -0.03924555606063457
+  ],
+  "monotonicity_certificate": "strictly_decreasing_in_u_and_increasing_in_pm",
+  "certified_interval_maximum": {
+    "measurement_p": 0.005,
+    "mean": 0.00269469102575917
+  },
+  "polynomial_vs_independent_feature_expectation": [
+    {
+      "measurement_p": 0.001,
+      "polynomial_mean": 0.002291496243742122,
+      "independent_feature_mean": 0.0022914962437420973,
+      "difference": 2.47198095326695e-17
+    },
+    {
+      "measurement_p": 0.003,
+      "polynomial_mean": 0.0024709667280546133,
+      "independent_feature_mean": 0.002470966728054519,
+      "difference": 9.454242944073599e-17
+    },
+    {
+      "measurement_p": 0.005,
+      "polynomial_mean": 0.00269469102575917,
+      "independent_feature_mean": 0.002694691025759072,
+      "difference": 9.80118763926896e-17
+    }
+  ],
+  "mapping_metadata": {
+    "physical_sites": 214,
+    "fault_alternatives_mapped": 1974,
+    "burst_detector_supports": [
+      [
+        8,
+        10
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        32,
+        34
+      ],
+      [
+        36,
+        38
+      ]
+    ],
+    "baseline_reference_detector_weight": 0,
+    "baseline_reference_observable_weight": 0
+  },
+  "limitations": [
+    "Certificate covers the exact categorical circuit at fixed gate p=.003 and fixed burst p=.002 only.",
+    "It does not cover the approximate DEM; DEM probabilities require a separate analysis.",
+    "It certifies a conditional mean envelope only under the stated fixed physical model and measurement interval; calibration uncertainty and other nuisance mechanisms are excluded.",
+    "It does not itself construct or validate a sequential e-detector, ARL, finite-horizon false-alarm probability, delay, or decoder-switch policy."
+  ]
+}

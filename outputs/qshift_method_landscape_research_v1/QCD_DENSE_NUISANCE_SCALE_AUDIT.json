@@ -1,0 +1,102 @@
+{
+  "classification": "ASYMPTOTIC_KL_SCALE_USING_DENSE_FINITE_NUISANCE_GRID_NOT_ROBUST_CONTINUOUS_BOUND",
+  "method": "Apply log(gamma)/D(P1||P0) to each dense-grid minimum from the 101x101 independent old/new measurement-p grid.",
+  "illustrative_arl_targets_shots": [
+    100,
+    1000,
+    10000
+  ],
+  "rows": [
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "dense_grid_min_D_nats_per_shot": 0.03365902758491558,
+      "old_measurement_p": 0.005,
+      "new_measurement_p": 0.004920000000000001,
+      "grid_spacing": 4.0000000000000105e-05,
+      "illustrative_log_ARL_over_D_scales_shots": {
+        "100": 136.81827778209242,
+        "1000": 205.2274166731386,
+        "10000": 273.63655556418485
+      }
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "dense_grid_min_D_nats_per_shot": 0.011714010074659626,
+      "old_measurement_p": 0.005,
+      "new_measurement_p": 0.004920000000000001,
+      "grid_spacing": 4.0000000000000105e-05,
+      "illustrative_log_ARL_over_D_scales_shots": {
+        "100": 393.13353468512395,
+        "1000": 589.7003020276859,
+        "10000": 786.2670693702479
+      }
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "dense_grid_min_D_nats_per_shot": 0.09909096683736018,
+      "old_measurement_p": 0.005,
+      "new_measurement_p": 0.005,
+      "grid_spacing": 4.0000000000000105e-05,
+      "illustrative_log_ARL_over_D_scales_shots": {
+        "100": 46.474167454099444,
+        "1000": 69.71125118114915,
+        "10000": 92.94833490819889
+      }
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "dense_grid_min_D_nats_per_shot": 0.033666495118789073,
+      "old_measurement_p": 0.005,
+      "new_measurement_p": 0.004920000000000001,
+      "grid_spacing": 4.0000000000000105e-05,
+      "illustrative_log_ARL_over_D_scales_shots": {
+        "100": 136.78793024754077,
+        "1000": 205.18189537131113,
+        "10000": 273.57586049508154
+      }
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "dense_grid_min_D_nats_per_shot": 0.01171541148735592,
+      "old_measurement_p": 0.005,
+      "new_measurement_p": 0.004920000000000001,
+      "grid_spacing": 4.0000000000000105e-05,
+      "illustrative_log_ARL_over_D_scales_shots": {
+        "100": 393.0865075425058,
+        "1000": 589.6297613137586,
+        "10000": 786.1730150850116
+      }
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "dense_grid_min_D_nats_per_shot": 0.09911061017883031,
+      "old_measurement_p": 0.005,
+      "new_measurement_p": 0.005,
+      "grid_spacing": 4.0000000000000105e-05,
+      "illustrative_log_ARL_over_D_scales_shots": {
+        "100": 46.464956452984694,
+        "1000": 69.69743467947703,
+        "10000": 92.92991290596939
+      }
+    }
+  ],
+  "limits": [
+    "The 101-point grid is not continuous optimization; no continuous-nuisance lower bound is established.",
+    "The formula is a first-order asymptotic scale under known IID simple hypotheses, not finite-history delay or CUSUM operating characteristics.",
+    "Only the ten burst-pair detectors are used; no logical outcomes, alarm thresholds or detector histories are evaluated."
+  ],
+  "sampling_calls": 0,
+  "decoder_calls": 0
+}

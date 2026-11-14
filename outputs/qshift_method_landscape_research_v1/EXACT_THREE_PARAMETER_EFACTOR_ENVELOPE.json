@@ -1,0 +1,792 @@
+{
+  "classification": "EXACT_CATEGORICAL_CIRCUIT_CONTINUOUS_THREE_PARAMETER_BERNSTEIN_ENVELOPES",
+  "feature": "X = mean of the five declared pair-cofire indicators",
+  "ideal_rational_noise_law": {
+    "balanced_one_qubit_alternative_probability": "gate_p/3",
+    "balanced_two_qubit_alternative_probability": "gate_p/15",
+    "measurement_flip_probability": "measurement_p",
+    "each_correlated_burst_probability": "burst_p",
+    "source": "outputs/phase2b_pauli_bias/noise_model.py; independent per-site categorical mechanisms"
+  },
+  "stim_float_probe_check_max_abs_probability_difference": 8.673617379884035e-19,
+  "null_rectangle": {
+    "burst_p": [
+      0.0,
+      0.002
+    ],
+    "measurement_p": [
+      0.001,
+      0.005
+    ],
+    "gate_p": [
+      0.002,
+      0.004
+    ]
+  },
+  "high_alternative_rectangle": {
+    "burst_p": [
+      0.01,
+      0.018
+    ],
+    "measurement_p": [
+      0.001,
+      0.005
+    ],
+    "gate_p": [
+      0.002,
+      0.004
+    ]
+  },
+  "parameter_intervals_exact": {
+    "null": {
+      "burst_p": [
+        {
+          "numerator": "0",
+          "denominator": "1",
+          "float": 0.0
+        },
+        {
+          "numerator": "1",
+          "denominator": "500",
+          "float": 0.002
+        }
+      ],
+      "measurement_p": [
+        {
+          "numerator": "1",
+          "denominator": "1000",
+          "float": 0.001
+        },
+        {
+          "numerator": "1",
+          "denominator": "200",
+          "float": 0.005
+        }
+      ],
+      "gate_p": [
+        {
+          "numerator": "1",
+          "denominator": "500",
+          "float": 0.002
+        },
+        {
+          "numerator": "1",
+          "denominator": "250",
+          "float": 0.004
+        }
+      ]
+    },
+    "high_alternative": {
+      "burst_p": [
+        {
+          "numerator": "1",
+          "denominator": "100",
+          "float": 0.01
+        },
+        {
+          "numerator": "9",
+          "denominator": "500",
+          "float": 0.018
+        }
+      ],
+      "measurement_p": [
+        {
+          "numerator": "1",
+          "denominator": "1000",
+          "float": 0.001
+        },
+        {
+          "numerator": "1",
+          "denominator": "200",
+          "float": 0.005
+        }
+      ],
+      "gate_p": [
+        {
+          "numerator": "1",
+          "denominator": "500",
+          "float": 0.002
+        },
+        {
+          "numerator": "1",
+          "denominator": "250",
+          "float": 0.004
+        }
+      ]
+    }
+  },
+  "tensor_bernstein": {
+    "null_box": {
+      "degrees": [
+        1,
+        8,
+        25
+      ],
+      "coefficient_count": 468,
+      "exact_mean_lower_bound": {
+        "numerator": "401825237863384026966232695578391745843791712101437477490836437522047734698377457949679464399",
+        "denominator": "2138857150171703395816929274116522849934207695099530610605143010616302490234375000000000000000000",
+        "float": 0.00018786913274274828
+      },
+      "exact_mean_upper_bound": {
+        "numerator": "1568154967317772699278943656088974966461864349614414653573299148622692339427816554866763",
+        "denominator": "521592964528993359748069934245760792546064976704656146466732025146484375000000000000000000",
+        "float": 0.003006472621297416
+      },
+      "mean_lower_bound": 0.00018786913274274828,
+      "mean_upper_bound": 0.003006472621297416
+    },
+    "high_box": {
+      "degrees": [
+        1,
+        8,
+        25
+      ],
+      "coefficient_count": 468,
+      "exact_mean_lower_bound": {
+        "numerator": "21181255336348643922795806647318092374040623570811812086796439094795925146779142228457491964399",
+        "denominator": "2138857150171703395816929274116522849934207695099530610605143010616302490234375000000000000000000",
+        "float": 0.00990307152333584
+      },
+      "exact_mean_upper_bound": {
+        "numerator": "9331777013806892163346255593286927839137165001483325829699592599216640703685629054866763",
+        "denominator": "521592964528993359748069934245760792546064976704656146466732025146484375000000000000000000",
+        "float": 0.01789091810744348
+      },
+      "mean_lower_bound": 0.00990307152333584,
+      "mean_upper_bound": 0.01789091810744348
+    },
+    "separation_certified_by_global_coefficient_ranges": true,
+    "exact_conservative_gap_lower_bound": {
+      "numerator": "3687709968372800561953772079392059850548235268043550749496857318368749343103237992039242984381",
+      "denominator": "534714287542925848954232318529130712483551923774882652651285752654075622558593750000000000000000",
+      "float": 0.006896598902038424
+    },
+    "conservative_gap_lower_bound": 0.006896598902038424
+  },
+  "robust_mean_e_factor_population_analysis": {
+    "upward": {
+      "exact_null_mean_upper": {
+        "numerator": "1568154967317772699278943656088974966461864349614414653573299148622692339427816554866763",
+        "denominator": "521592964528993359748069934245760792546064976704656146466732025146484375000000000000000000",
+        "float": 0.003006472621297416
+      },
+      "exact_alternative_mean_lower": {
+        "numerator": "21181255336348643922795806647318092374040623570811812086796439094795925146779142228457491964399",
+        "denominator": "2138857150171703395816929274116522849934207695099530610605143010616302490234375000000000000000000",
+        "float": 0.00990307152333584
+      },
+      "null_mean_upper": 0.003006472621297416,
+      "alternative_mean_lower": 0.00990307152333584
+    },
+    "downward_on_complement_1_minus_X": {
+      "exact_null_mean_upper": {
+        "numerator": "2117675894835354751894133467469204757560167071528718798518346571521506565087595857771542508035601",
+        "denominator": "2138857150171703395816929274116522849934207695099530610605143010616302490234375000000000000000000",
+        "float": 0.9900969284766642
+      },
+      "exact_alternative_mean_lower": {
+        "numerator": "520024809561675587048790990589671817579603112355041731813158725997861682660572183445133237",
+        "denominator": "521592964528993359748069934245760792546064976704656146466732025146484375000000000000000000",
+        "float": 0.9969935273787026
+      },
+      "null_mean_upper": 0.9900969284766642,
+      "alternative_mean_lower": 0.9969935273787026
+    },
+    "log_growth_method": "For Z in [0,1], log(1+lambda*(Z/m0-1)) is concave and lies above its endpoint chord. The expected chord increases with E[Z]; use continuous Bernstein m0 upper and alternative-mean lower, and rational atanh log intervals.",
+    "lambda_candidates": [
+      {
+        "lambda": 0.001,
+        "upward": {
+          "lambda": 0.001,
+          "endpoint_factors": [
+            0.999,
+            1.331615701508853
+          ],
+          "log_interval_zero": [
+            -0.0010005003335835335,
+            -0.0010005003335835335
+          ],
+          "log_interval_one": [
+            0.28639301810975254,
+            0.28639301810975254
+          ],
+          "exact_log_interval_zero": [
+            {
+              "sign": -1,
+              "numerator_bits": 621,
+              "denominator_bits": 631,
+              "canonical_fraction_sha256": "ADC64431CCA40E9AABDD5D7406AD5DE1EA8A67BE9D6EBF6A4EE1B3DC3065F7E3",
+              "decimal_35_digits": "-0.0010005003335835335001431619912822407"
+            },
+            {
+              "sign": -1,
+              "numerator_bits": 628,
+              "denominator_bits": 638,
+              "canonical_fraction_sha256": "A59051F219D50C557806B506E3E8EF7BBDAA5D54C8F5C0C9D31997D569BAE88D",
+              "decimal_35_digits": "-0.0010005003335835335001427904292271629"
+            }
+          ],
+          "exact_log_interval_one": [
+            {
+              "sign": 1,
+              "numerator_bits": 14202,
+              "denominator_bits": 14204,
+              "canonical_fraction_sha256": "CE45619F84EC483685763C6A41D9B411205B5A0622C007472ECCFBB92344FDEE",
+              "decimal_35_digits": "0.28639301810975252456767440986945810"
+            },
+            {
+              "sign": 1,
+              "numerator_bits": 14796,
+              "denominator_bits": 14798,
+              "canonical_fraction_sha256": "92591A72C1C734C79F717FC14558B18E98311E146BF3FA52C866BA711FEBAEFA",
+              "decimal_35_digits": "0.28639301810975252456767440986945810"
+            }
+          ],
+          "exact_uniform_expected_log_lower_bound": {
+            "sign": 1,
+            "numerator_bits": 15084,
+            "denominator_bits": 15093,
+            "canonical_fraction_sha256": "75C274F0912CD5F70E3574F22F495618F309CBEF2CB6A7507E08734B5D64FFD7",
+            "decimal_35_digits": "0.0018455782349039613015905767769865296"
+          },
+          "uniform_expected_log_lower_bound_nats_per_shot": 0.0018455782349039614,
+          "strictly_positive": true
+        },
+        "downward_on_complement": {
+          "lambda": 0.001,
+          "endpoint_factors": [
+            0.999,
+            1.0000100021232654
+          ],
+          "log_interval_zero": [
+            -0.0010005003335835335,
+            -0.0010005003335835335
+          ],
+          "log_interval_one": [
+            1.0002073244517136e-05,
+            1.0002073244517136e-05
+          ],
+          "exact_log_interval_zero": [
+            {
+              "sign": -1,
+              "numerator_bits": 621,
+              "denominator_bits": 631,
+              "canonical_fraction_sha256": "ADC64431CCA40E9AABDD5D7406AD5DE1EA8A67BE9D6EBF6A4EE1B3DC3065F7E3",
+              "decimal_35_digits": "-0.0010005003335835335001431619912822407"
+            },
+            {
+              "sign": -1,
+              "numerator_bits": 628,
+              "denominator_bits": 638,
+              "canonical_fraction_sha256": "A59051F219D50C557806B506E3E8EF7BBDAA5D54C8F5C0C9D31997D569BAE88D",
+              "decimal_35_digits": "-0.0010005003335835335001427904292271629"
+            }
+          ],
+          "exact_log_interval_one": [
+            {
+              "sign": 1,
+              "numerator_bits": 15596,
+              "denominator_bits": 15612,
+              "canonical_fraction_sha256": "2ABE8F936827A031C156BD97A50C8836E4283279D458516513EAD1122E282760",
+              "decimal_35_digits": "0.000010002073244517135575658119657100124"
+            },
+            {
+              "sign": 1,
+              "numerator_bits": 16253,
+              "denominator_bits": 16270,
+              "canonical_fraction_sha256": "884F71BFC89425FA0B9C9238AECF3B377CDEFA1040D76599AD735A09B4AD8A9E",
+              "decimal_35_digits": "0.000010002073244517135575658119657100124"
+            }
+          ],
+          "exact_uniform_expected_log_lower_bound": {
+            "sign": 1,
+            "numerator_bits": 16468,
+            "denominator_bits": 16485,
+            "canonical_fraction_sha256": "EB2367292ED0431124BCA5A32788940C8709CC08E20CF0C1D1754182AFEC6463",
+            "decimal_35_digits": "0.0000069640254246334584763262236658186426"
+          },
+          "uniform_expected_log_lower_bound_nats_per_shot": 6.964025424633458e-06,
+          "strictly_positive": true
+        }
+      },
+      {
+        "lambda": 0.003,
+        "upward": {
+          "lambda": 0.003,
+          "endpoint_factors": [
+            0.997,
+            1.994847104526559
+          ],
+          "log_interval_zero": [
+            -0.0030045090202987217,
+            -0.0030045090202987217
+          ],
+          "log_interval_one": [
+            0.6905674080698246,
+            0.6905674080698246
+          ],
+          "exact_log_interval_zero": [
+            {
+              "sign": -1,
+              "numerator_bits": 552,
+              "denominator_bits": 560,
+              "canonical_fraction_sha256": "764C931D3CDD7CAC4E65A2A8EE16F41E1DBC7C8CD8A5A3C6BB7FEF299DC14047",
+              "decimal_35_digits": "-0.0030045090202987218132510469753019470"
+            },
+            {
+              "sign": -1,
+              "numerator_bits": 562,
+              "denominator_bits": 570,
+              "canonical_fraction_sha256": "6203224638D921132F7F0450FE5347D9CCE666C6E741453F1A051ED311260B38",
+              "decimal_35_digits": "-0.0030045090202987218132506976369236085"
+            }
+          ],
+          "exact_log_interval_one": [
+            {
+              "sign": 1,
+              "numerator_bits": 14215,
+              "denominator_bits": 14216,
+              "canonical_fraction_sha256": "40D6ABB1F65F44A538B766CF28CF8BC5843FEE896338B4CB12C72806E4262994",
+              "decimal_35_digits": "0.69056740806982468303398219170148485"
+            },
+            {
+              "sign": 1,
+              "numerator_bits": 14815,
+              "denominator_bits": 14815,
+              "canonical_fraction_sha256": "C0D10F8CBAAE24A0B3E89B67B12C16DE5AF8EF38CE166CE33FB40AD965B25219",
+              "decimal_35_digits": "0.69056740806982468303398235362733403"
+            }
+          ],
+          "exact_uniform_expected_log_lower_bound": {
+            "sign": 1,
+            "numerator_bits": 15036,
+            "denominator_bits": 15044,
+            "canonical_fraction_sha256": "B0719D07DA75BA2D928776F6EB29528292D9516562609AE5919874E3C0BE0BB8",
+            "decimal_35_digits": "0.0038639832812219253900563195137617517"
+          },
+          "uniform_expected_log_lower_bound_nats_per_shot": 0.003863983281221925,
+          "strictly_positive": true
+        },
+        "downward_on_complement": {
+          "lambda": 0.003,
+          "endpoint_factors": [
+            0.997,
+            1.0000300063697962
+          ],
+          "log_interval_zero": [
+            -0.0030045090202987217,
+            -0.0030045090202987217
+          ],
+          "log_interval_one": [
+            3.0005919614146858e-05,
+            3.0005919614146858e-05
+          ],
+          "exact_log_interval_zero": [
+            {
+              "sign": -1,
+              "numerator_bits": 552,
+              "denominator_bits": 560,
+              "canonical_fraction_sha256": "764C931D3CDD7CAC4E65A2A8EE16F41E1DBC7C8CD8A5A3C6BB7FEF299DC14047",
+              "decimal_35_digits": "-0.0030045090202987218132510469753019470"
+            },
+            {
+              "sign": -1,
+              "numerator_bits": 562,
+              "denominator_bits": 570,
+              "canonical_fraction_sha256": "6203224638D921132F7F0450FE5347D9CCE666C6E741453F1A051ED311260B38",
+              "decimal_35_digits": "-0.0030045090202987218132506976369236085"
+            }
+          ],
+          "exact_log_interval_one": [
+            {
+              "sign": 1,
+              "numerator_bits": 15599,
+              "denominator_bits": 15614,
+              "canonical_fraction_sha256": "AFC2048B027525D6C022F85BFBF115B982153C9E06F4EDD5A6CA1ACCB9E4AD18",
+              "decimal_35_digits": "0.000030005919614146858607020955254081649"
+            },
+            {
+              "sign": 1,
+              "numerator_bits": 16258,
+              "denominator_bits": 16273,
+              "canonical_fraction_sha256": "C337A6AE337E4B1FDAD0F4369B7BE48E0184174A3A8F63FF39484ACC4AC749B4",
+              "decimal_35_digits": "0.000030005919614146858607020955254081649"
+            }
+          ],
+          "exact_uniform_expected_log_lower_bound": {
+            "sign": 1,
+            "numerator_bits": 16402,
+            "denominator_bits": 16418,
+            "canonical_fraction_sha256": "76A5E6FA65711F75C98F973298079E6E41B94520BC8AA99F56602C44F4479345",
+            "decimal_35_digits": "0.000020882733528380846051424898484833083"
+          },
+          "uniform_expected_log_lower_bound_nats_per_shot": 2.0882733528380846e-05,
+          "strictly_positive": true
+        }
+      },
+      {
+        "lambda": 0.005,
+        "upward": {
+          "lambda": 0.005,
+          "endpoint_factors": [
+            0.995,
+            2.658078507544265
+          ],
+          "log_interval_zero": [
+            -0.005012541823544282,
+            -0.005012541823544282
+          ],
+          "log_interval_one": [
+            0.9776034961770113,
+            0.9776034961770113
+          ],
+          "exact_log_interval_zero": [
+            {
+              "sign": -1,
+              "numerator_bits": 506,
+              "denominator_bits": 514,
+              "canonical_fraction_sha256": "3CD56B3D99289C402B5BEEE25680D26A89FF3AFBE07BFF069FA1442051C246D7",
+              "decimal_35_digits": "-0.0050125418235442820430938771100274398"
+            },
+            {
+              "sign": -1,
+              "numerator_bits": 516,
+              "denominator_bits": 523,
+              "canonical_fraction_sha256": "854AE863055B0462D95F1EBD4173AB32815235A8C9864A32F22B9021E63B5296",
+              "decimal_35_digits": "-0.0050125418235442820430935473438441861"
+            }
+          ],
+          "exact_log_interval_one": [
+            {
+              "sign": 1,
+              "numerator_bits": 14206,
+              "denominator_bits": 14206,
+              "canonical_fraction_sha256": "B0812B8B82392B332DB05B3B0E0CF715BE01DAD37BA59148E0DF804A7E332CB1",
+              "decimal_35_digits": "0.97760349617701129630094765633547897"
+            },
+            {
+              "sign": 1,
+              "numerator_bits": 14799,
+              "denominator_bits": 14799,
+              "canonical_fraction_sha256": "751897BE787D9FFCFA1D03D14200334FA5A860600A5E2931B1CF2B1A847A500E",
+              "decimal_35_digits": "0.97760349617701129630094784822221552"
+            }
+          ],
+          "exact_uniform_expected_log_lower_bound": {
+            "sign": 1,
+            "numerator_bits": 14905,
+            "denominator_bits": 14912,
+            "canonical_fraction_sha256": "4C9981FCC27110DA85B9ADC0EE0902B4DDD627A0975161D12C74EFCB81262F47",
+            "decimal_35_digits": "0.0047183750807521073852396280927900996"
+          },
+          "uniform_expected_log_lower_bound_nats_per_shot": 0.004718375080752108,
+          "strictly_positive": true
+        },
+        "downward_on_complement": {
+          "lambda": 0.005,
+          "endpoint_factors": [
+            0.995,
+            1.000050010616327
+          ],
+          "log_interval_zero": [
+            -0.005012541823544282,
+            -0.005012541823544282
+          ],
+          "log_interval_one": [
+            5.0009365837911446e-05,
+            5.0009365837911446e-05
+          ],
+          "exact_log_interval_zero": [
+            {
+              "sign": -1,
+              "numerator_bits": 506,
+              "denominator_bits": 514,
+              "canonical_fraction_sha256": "3CD56B3D99289C402B5BEEE25680D26A89FF3AFBE07BFF069FA1442051C246D7",
+              "decimal_35_digits": "-0.0050125418235442820430938771100274398"
+            },
+            {
+              "sign": -1,
+              "numerator_bits": 516,
+              "denominator_bits": 523,
+              "canonical_fraction_sha256": "854AE863055B0462D95F1EBD4173AB32815235A8C9864A32F22B9021E63B5296",
+              "decimal_35_digits": "-0.0050125418235442820430935473438441861"
+            }
+          ],
+          "exact_log_interval_one": [
+            {
+              "sign": 1,
+              "numerator_bits": 15486,
+              "denominator_bits": 15500,
+              "canonical_fraction_sha256": "9D330831049378B5512469BA0D1FF9ADC05DFD9C99059EAFBBDA88963C7B7A10",
+              "decimal_35_digits": "0.000050009365837911444958711346949831969"
+            },
+            {
+              "sign": 1,
+              "numerator_bits": 16130,
+              "denominator_bits": 16145,
+              "canonical_fraction_sha256": "304FE0D4FE7FEF92B26AAD876B98355DA7AF8BD98C5776C6DAA03D33842F6C8A",
+              "decimal_35_digits": "0.000050009365837911444958711346949831969"
+            }
+          ],
+          "exact_uniform_expected_log_lower_bound": {
+            "sign": 1,
+            "numerator_bits": 15957,
+            "denominator_bits": 15972,
+            "canonical_fraction_sha256": "1955D8BD9F7D56232D22182410824DA795959AB9667E7C8F1EE2A2ED3636EAE8",
+            "decimal_35_digits": "0.000034788944293117211487093043727299573"
+          },
+          "uniform_expected_log_lower_bound_nats_per_shot": 3.478894429311721e-05,
+          "strictly_positive": true
+        }
+      }
+    ],
+    "endpoint_chord_optimum": {
+      "upward": {
+        "lambda": 0.006917395863312148,
+        "endpoint_factors": [
+          0.9930826041366878,
+          3.2939170818266956
+        ],
+        "log_interval_zero": [
+          -0.006941431954984323,
+          -0.006941431954984323
+        ],
+        "log_interval_one": [
+          1.1920774589512741,
+          1.1920774589512741
+        ],
+        "exact_log_interval_zero": [
+          {
+            "sign": -1,
+            "numerator_bits": 15242,
+            "denominator_bits": 15250,
+            "canonical_fraction_sha256": "B0234E5276CDED5CD5FAF8DE53DE778171A95579F14B7F91A1A18DD27501618D",
+            "decimal_35_digits": "-0.0069414319549843227264084980474937298"
+          },
+          {
+            "sign": -1,
+            "numerator_bits": 15868,
+            "denominator_bits": 15875,
+            "canonical_fraction_sha256": "328BD1DB5461C34613AE8D305966A85389E1AA280E264B2C132CB4ACB43194AD",
+            "decimal_35_digits": "-0.0069414319549843227264081848378962706"
+          }
+        ],
+        "exact_log_interval_one": [
+          {
+            "sign": 1,
+            "numerator_bits": 14891,
+            "denominator_bits": 14890,
+            "canonical_fraction_sha256": "0238A7437053717716FECE4CC9DBC056A44D5AB6AE31B821AE2C0B63ADBA7FAD",
+            "decimal_35_digits": "1.1920774589512742276196597329576465"
+          },
+          {
+            "sign": 1,
+            "numerator_bits": 15498,
+            "denominator_bits": 15498,
+            "canonical_fraction_sha256": "600CD051AE4B86130668138F075B4C9B7A3B9340081C988A6888916F66E6693E",
+            "decimal_35_digits": "1.1920774589512742276196599248444283"
+          }
+        ],
+        "exact_uniform_expected_log_lower_bound": {
+          "sign": 1,
+          "numerator_bits": 30627,
+          "denominator_bits": 30635,
+          "canonical_fraction_sha256": "030E07F6A612880556CE67FD0BB99DB16FE7F04533FFB9D7E96EB5AF51272690",
+          "decimal_35_digits": "0.0049325378794911683097920998031046003"
+        },
+        "uniform_expected_log_lower_bound_nats_per_shot": 0.004932537879491168,
+        "strictly_positive": true,
+        "exact_optimal_lambda": {
+          "numerator": "14750839873491202247815088317568239402192941072174202997987429273474997372412951968156971937524",
+          "denominator": "2132426734708845954141948555786772996962360012600893001516334000794981562460008809739699479973125",
+          "float": 0.006917395863312148
+        },
+        "optimization_target": "worst-case endpoint-chord expected-log lower bound; not realized delay"
+      },
+      "downward_on_complement": {
+        "lambda": 0.6964100870913746,
+        "endpoint_factors": [
+          0.3035899129086254,
+          1.0069655795343688
+        ],
+        "log_interval_zero": [
+          -1.1920774589512741,
+          -1.1920774589512741
+        ],
+        "log_interval_one": [
+          0.006941431954984323,
+          0.006941431954984323
+        ],
+        "exact_log_interval_zero": [
+          {
+            "sign": -1,
+            "numerator_bits": 14913,
+            "denominator_bits": 14913,
+            "canonical_fraction_sha256": "6CA4621927F6CFD11AAA1D68FAD257353A8F8DBBF531D9FD9AA2F5BA8CB4C359",
+            "decimal_35_digits": "-1.1920774589512742276196599257762946"
+          },
+          {
+            "sign": -1,
+            "numerator_bits": 15529,
+            "denominator_bits": 15528,
+            "canonical_fraction_sha256": "924C6C303BC6F2CB97E1C67BF98D3802D48032FE924213C65888BC6B54DB6985",
+            "decimal_35_digits": "-1.1920774589512742276196595420028215"
+          }
+        ],
+        "exact_log_interval_one": [
+          {
+            "sign": 1,
+            "numerator_bits": 15094,
+            "denominator_bits": 15101,
+            "canonical_fraction_sha256": "455B6FB4C661EC83D54865110737F5E5B2417C765B0D9783BF47C5591164FF48",
+            "decimal_35_digits": "0.0069414319549843227264083763698632499"
+          },
+          {
+            "sign": 1,
+            "numerator_bits": 15724,
+            "denominator_bits": 15732,
+            "canonical_fraction_sha256": "1B4693325D42BFB6B036AC3413FC3BEC1B589BDB5316BC2C91EF184DB7F3DE3E",
+            "decimal_35_digits": "0.0069414319549843227264083763698632499"
+          }
+        ],
+        "exact_uniform_expected_log_lower_bound": {
+          "sign": 1,
+          "numerator_bits": 30565,
+          "denominator_bits": 30573,
+          "canonical_fraction_sha256": "ABB153A82C963DFEE110BED3419D83D536926D770AD5836200DB935824577CAA",
+          "decimal_35_digits": "0.0033366144870562633231313441599196607"
+        },
+        "uniform_expected_log_lower_bound_nats_per_shot": 0.0033366144870562633,
+        "strictly_positive": true,
+        "exact_optimal_lambda": {
+          "numerator": "14750839873491202247815088317568239402192941072174202997987429273474997372412951968156971937524",
+          "denominator": "21181255336348643922795806647318092374040623570811812086796439094795925146779142228457491964399",
+          "float": 0.6964100870913746
+        },
+        "optimization_target": "worst-case endpoint-chord expected-log lower bound; not realized delay"
+      }
+    },
+    "scope": "Population e-factor validity and positive alternative expected-log lower bounds for fixed per-shot parameter rectangles; not an implemented detector, alarm, delay, or repeated-switch policy."
+  },
+  "polynomial_vs_exact_feature_validation": {
+    "probes": [
+      {
+        "parameters": [
+          0.001,
+          0.001,
+          0.002
+        ],
+        "polynomial_mean_X": 0.0011593893718020575,
+        "exact_categorical_feature_mean_X": 0.0011593893718020109,
+        "absolute_error": 4.662069341687669e-17
+      },
+      {
+        "parameters": [
+          0.002,
+          0.005,
+          0.004
+        ],
+        "polynomial_mean_X": 0.003006472621297416,
+        "exact_categorical_feature_mean_X": 0.003006472621297518,
+        "absolute_error": 1.0191500421363742e-16
+      },
+      {
+        "parameters": [
+          0.001,
+          0.003,
+          0.003
+        ],
+        "polynomial_mean_X": 0.0015202777124408615,
+        "exact_categorical_feature_mean_X": 0.0015202777124407763,
+        "absolute_error": 8.521829075736065e-17
+      },
+      {
+        "parameters": [
+          0.01,
+          0.001,
+          0.002
+        ],
+        "polynomial_mean_X": 0.00990307152333584,
+        "exact_categorical_feature_mean_X": 0.009903071523335838,
+        "absolute_error": 1.734723475976807e-18
+      },
+      {
+        "parameters": [
+          0.018,
+          0.005,
+          0.004
+        ],
+        "polynomial_mean_X": 0.01789091810744348,
+        "exact_categorical_feature_mean_X": 0.01789091810744356,
+        "absolute_error": 7.979727989493313e-17
+      },
+      {
+        "parameters": [
+          0.014,
+          0.003,
+          0.003
+        ],
+        "polynomial_mean_X": 0.013879234915419637,
+        "exact_categorical_feature_mean_X": 0.013879234915419602,
+        "absolute_error": 3.469446951953614e-17
+      },
+      {
+        "parameters": [
+          0.018,
+          0.001,
+          0.002
+        ],
+        "polynomial_mean_X": 0.017675233435810313,
+        "exact_categorical_feature_mean_X": 0.017675233435810324,
+        "absolute_error": 1.0408340855860843e-17
+      },
+      {
+        "parameters": [
+          0.01,
+          0.005,
+          0.004
+        ],
+        "polynomial_mean_X": 0.010448695364370448,
+        "exact_categorical_feature_mean_X": 0.010448695364370531,
+        "absolute_error": 8.326672684688674e-17
+      }
+    ],
+    "max_abs_error": 1.0191500421363742e-16
+  },
+  "mapping": {
+    "physical_sites": 214,
+    "fault_alternatives_mapped": 1974,
+    "burst_detector_supports": [
+      [
+        8,
+        10
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        32,
+        34
+      ],
+      [
+        36,
+        38
+      ]
+    ],
+    "baseline_reference_detector_weight": 0,
+    "baseline_reference_observable_weight": 0
+  },
+  "elapsed_wall_seconds": 9.875557300001674,
+  "limitations": [
+    "Circuit support map is deterministic and exact for the existing categorical fault model; per-site probabilities are required to be affine in their assigned physical parameter and are midpoint-checked.",
+    "Tensor Bernstein coefficient extrema are valid continuous bounds, but global-degree coefficients may be loose; no subdivision is included in this first certificate.",
+    "This bounds population means and supports a robust mean e-factor only if the supplied gate/measurement/burst rectangles are the actual null and alternative sets. It does not implement a sequential process or establish finite-horizon alarm performance.",
+    "No detector histories, sampling, decoders, or protected data were accessed."
+  ]
+}

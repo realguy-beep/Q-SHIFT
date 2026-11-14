@@ -1,0 +1,87 @@
+{
+  "classification": "DETERMINISTIC_FIXEDPOINT_PRIOR_WEIGHT_REPRESENTABILITY_AUDIT",
+  "q_bits": 96,
+  "scale_exact": "79228162514264337593543950336",
+  "max_start_with_nonzero_floor_weight": 281474976710655,
+  "first_start_with_zero_floor_weight": 281474976710656,
+  "max_start_approximately": 281474976710655.0,
+  "rows": [
+    {
+      "start_s": 1,
+      "exact_prior_weight": "1/2",
+      "rounded_weight_integer": 39614081257132168796771975168,
+      "rounded_weight_over_Q": "1/2",
+      "relative_weight_loss": 0.0,
+      "additional_log_threshold_nats": "0",
+      "candidate_component_available": true
+    },
+    {
+      "start_s": 1000,
+      "exact_prior_weight": "1/1001000",
+      "rounded_weight_integer": 79149013500763574019524,
+      "rounded_weight_over_Q": "19787253375190893504881/19807040628566084398385987584",
+      "relative_weight_loss": 5.3811168462128846e-24,
+      "additional_log_threshold_nats": "5.381116846212884625152249831943687498274198903147213068803298532061069E-24",
+      "candidate_component_available": true
+    },
+    {
+      "start_s": 1000000,
+      "exact_prior_weight": "1/1000001000000",
+      "rounded_weight_integer": 79228083286181051,
+      "rounded_weight_over_Q": "79228083286181051/79228162514264337593543950336",
+      "relative_weight_loss": 5.206392995189485e-18,
+      "additional_log_threshold_nats": "5.206392995189485225607181563956747524770684878212732671775537849821991E-18",
+      "candidate_component_available": true
+    },
+    {
+      "start_s": 1000000000,
+      "exact_prior_weight": "1/1000000001000000000",
+      "rounded_weight_integer": 79228162435,
+      "rounded_weight_over_Q": "79228162435/79228162514264337593543950336",
+      "relative_weight_loss": 4.565946930479085e-13,
+      "additional_log_threshold_nats": "4.565946930480127422827487760770897635422528346235867568830313181297783E-13",
+      "candidate_component_available": true
+    },
+    {
+      "start_s": 1000000000000,
+      "exact_prior_weight": "1/1000000000001000000000000",
+      "rounded_weight_integer": 79228,
+      "rounded_weight_over_Q": "19807/19807040628566084398385987584",
+      "relative_weight_loss": 2.0512173948289447e-06,
+      "additional_log_threshold_nats": "0.000002051219498578221907823471882856809402055950555531690847371443547450707",
+      "candidate_component_available": true
+    },
+    {
+      "start_s": 1099511627776,
+      "exact_prior_weight": "1/1208925819615728686333952",
+      "rounded_weight_integer": 65535,
+      "rounded_weight_over_Q": "65535/79228162514264337593543950336",
+      "relative_weight_loss": 1.5258788153019176e-05,
+      "additional_log_threshold_nats": "0.00001525890456951137660792590012099503254770362922302383272246037621992048",
+      "candidate_component_available": true
+    },
+    {
+      "start_s": 281474976710655,
+      "exact_prior_weight": "1/79228162514264056118567239680",
+      "rounded_weight_integer": 1,
+      "rounded_weight_over_Q": "1/79228162514264337593543950336",
+      "relative_weight_loss": 3.552713678800501e-15,
+      "additional_log_threshold_nats": "3.552713678800507240242863106000015477447987017540321612637294022562013E-15",
+      "candidate_component_available": true
+    },
+    {
+      "start_s": 281474976710656,
+      "exact_prior_weight": "1/79228162514264619068520660992",
+      "rounded_weight_integer": 0,
+      "rounded_weight_over_Q": "0",
+      "relative_weight_loss": null,
+      "additional_log_threshold_nats": null,
+      "candidate_component_available": false
+    }
+  ],
+  "interpretation": "Downward-rounded weights preserve false-alarm conservatism by pointwise domination, but a zero-rounded candidate weight supplies no detection-delay guarantee for that change start. For nonzero weights the extra threshold is log(exact_weight/rounded_weight).",
+  "limitations": [
+    "Python arbitrary integers only; no fixed-width counter or state overflow validation.",
+    "No streams or decoder behavior evaluated."
+  ]
+}

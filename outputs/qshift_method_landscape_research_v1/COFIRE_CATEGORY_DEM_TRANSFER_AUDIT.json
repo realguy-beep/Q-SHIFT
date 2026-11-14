@@ -1,0 +1,59 @@
+{
+  "classification": "APPROXIMATE_DEM_FINITE_GRID_TRANSFER_STRESS_ONLY",
+  "source_exact_circuit_certificate": "COFIRE_CATEGORY_CONTINUOUS_ENVELOPE_CERTIFICATE.json",
+  "grid": {
+    "null_burst_p": [
+      0.0001,
+      0.0005,
+      0.001,
+      0.0015,
+      0.002
+    ],
+    "alternative_burst_p": [
+      0.01,
+      0.014,
+      0.018
+    ],
+    "measurement_p": [
+      0.001,
+      0.005,
+      101
+    ]
+  },
+  "per_category_max_DEM_probability_minus_exact_certified_upper": [
+    -0.00047548776276984395,
+    -4.692110980629785e-06,
+    -2.3439268542210052e-07,
+    -2.378014967147984e-09,
+    -2.401930435592346e-11,
+    -6.71732663338261e-14
+  ],
+  "any_category_envelope_exceeded_on_grid": false,
+  "proposal_null_expected_e_ranges_on_grid": {
+    "reference_pb010_pm003": [
+      0.9588063663585132,
+      0.9891505371207062
+    ],
+    "uniform_grid_alt_mixture": [
+      0.9438684428159589,
+      0.9893494544338388
+    ]
+  },
+  "proposal_alternative_expected_log_growth_ranges_on_grid": {
+    "reference_pb010_pm003": [
+      0.018030001624441076,
+      0.06824107862352691
+    ],
+    "uniform_grid_alt_mixture": [
+      0.014940005873906547,
+      0.07773951463981367
+    ]
+  },
+  "normalization_max_error": 9.103828801926284e-15,
+  "limitations": [
+    "Finite parameter grid only; the DEM has no continuous category-envelope certificate.",
+    "An exact-circuit e-factor guarantee does not automatically transfer to the approximate DEM or to physical model error.",
+    "Expected log growth is not alarm delay, false-alarm probability, decoder utility, or logical error.",
+    "No detector histories, e-process recursion, or decoder action was evaluated."
+  ]
+}

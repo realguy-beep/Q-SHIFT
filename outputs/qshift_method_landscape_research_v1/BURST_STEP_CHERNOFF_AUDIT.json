@@ -1,0 +1,323 @@
+{
+  "classification": "DETERMINISTIC_SIMPLE_HYPOTHESIS_CHERNOFF_INFORMATION_NOT_ONLINE_DETECTOR_EVALUATION",
+  "configuration": {
+    "circuit": "Q-SHIFT d=3 five-round balanced Z memory",
+    "selected_detectors": [
+      8,
+      10,
+      16,
+      18,
+      24,
+      26,
+      32,
+      34,
+      36,
+      38
+    ],
+    "state_count": 1024,
+    "gate_p": 0.003,
+    "measurement_p_grid": [
+      0.001,
+      0.003,
+      0.005
+    ],
+    "transitions": [
+      [
+        0.002,
+        0.01
+      ],
+      [
+        0.01,
+        0.018
+      ],
+      [
+        0.002,
+        0.018
+      ]
+    ]
+  },
+  "method": "Exact 2^10 categorical-circuit and approximate-DEM detector laws; bounded golden-section maximization of -log sum_x P_new(x)^s P_old(x)^(1-s), with endpoints and s=1/2 checks; independent 10001-point grid validation.",
+  "rows": [
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "old_measurement_p": 0.001,
+      "new_measurement_p": 0.001,
+      "chernoff_information_nats_per_shot": 0.007044247135157421,
+      "optimizing_exponent_s": 0.5611171753100126,
+      "hellinger_squared_at_s_half": 0.006914912057357281
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "old_measurement_p": 0.003,
+      "new_measurement_p": 0.003,
+      "chernoff_information_nats_per_shot": 0.006844327294592948,
+      "optimizing_exponent_s": 0.5600233137394408,
+      "hellinger_squared_at_s_half": 0.0067229355358051635
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "old_measurement_p": 0.005,
+      "new_measurement_p": 0.005,
+      "chernoff_information_nats_per_shot": 0.006648827818253298,
+      "optimizing_exponent_s": 0.5589912386391576,
+      "hellinger_squared_at_s_half": 0.006534790578762384
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "old_measurement_p": 0.001,
+      "new_measurement_p": 0.001,
+      "chernoff_information_nats_per_shot": 0.0027826870958378505,
+      "optimizing_exponent_s": 0.5233549974008331,
+      "hellinger_squared_at_s_half": 0.0027727630643430423
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "old_measurement_p": 0.003,
+      "new_measurement_p": 0.003,
+      "chernoff_information_nats_per_shot": 0.0027305917051301826,
+      "optimizing_exponent_s": 0.5229696002791251,
+      "hellinger_squared_at_s_half": 0.0027211183582517284
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "old_measurement_p": 0.005,
+      "new_measurement_p": 0.005,
+      "chernoff_information_nats_per_shot": 0.0026774431269322215,
+      "optimizing_exponent_s": 0.5225758986976732,
+      "hellinger_squared_at_s_half": 0.0026684162096396458
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "old_measurement_p": 0.001,
+      "new_measurement_p": 0.001,
+      "chernoff_information_nats_per_shot": 0.019010587604415433,
+      "optimizing_exponent_s": 0.5824266390931725,
+      "hellinger_squared_at_s_half": 0.018323209898470583
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "old_measurement_p": 0.003,
+      "new_measurement_p": 0.003,
+      "chernoff_information_nats_per_shot": 0.018520286721197536,
+      "optimizing_exponent_s": 0.5808920403241402,
+      "hellinger_squared_at_s_half": 0.017873094160146707
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "old_measurement_p": 0.005,
+      "new_measurement_p": 0.005,
+      "chernoff_information_nats_per_shot": 0.01804112708836152,
+      "optimizing_exponent_s": 0.5795116649225747,
+      "hellinger_squared_at_s_half": 0.017430523065380288
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "old_measurement_p": 0.001,
+      "new_measurement_p": 0.001,
+      "chernoff_information_nats_per_shot": 0.007045434233086087,
+      "optimizing_exponent_s": 0.5611241926398134,
+      "hellinger_squared_at_s_half": 0.006916049102842492
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "old_measurement_p": 0.003,
+      "new_measurement_p": 0.003,
+      "chernoff_information_nats_per_shot": 0.006845561029803365,
+      "optimizing_exponent_s": 0.5600305151457361,
+      "hellinger_squared_at_s_half": 0.006724119819119578
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "old_measurement_p": 0.005,
+      "new_measurement_p": 0.005,
+      "chernoff_information_nats_per_shot": 0.006650102844515786,
+      "optimizing_exponent_s": 0.5589985574660121,
+      "hellinger_squared_at_s_half": 0.006536016383018373
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "old_measurement_p": 0.001,
+      "new_measurement_p": 0.001,
+      "chernoff_information_nats_per_shot": 0.0027829515763057506,
+      "optimizing_exponent_s": 0.5233563117784235,
+      "hellinger_squared_at_s_half": 0.0027730255453765063
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "old_measurement_p": 0.003,
+      "new_measurement_p": 0.003,
+      "chernoff_information_nats_per_shot": 0.002730876633520695,
+      "optimizing_exponent_s": 0.5229710037162054,
+      "hellinger_squared_at_s_half": 0.0027214011793964543
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "old_measurement_p": 0.005,
+      "new_measurement_p": 0.005,
+      "chernoff_information_nats_per_shot": 0.002677744493963863,
+      "optimizing_exponent_s": 0.5225773799155298,
+      "hellinger_squared_at_s_half": 0.0026687154307002414
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "old_measurement_p": 0.001,
+      "new_measurement_p": 0.001,
+      "chernoff_information_nats_per_shot": 0.01901333651529241,
+      "optimizing_exponent_s": 0.5824349057113092,
+      "hellinger_squared_at_s_half": 0.01832573300375384
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "old_measurement_p": 0.003,
+      "new_measurement_p": 0.003,
+      "chernoff_information_nats_per_shot": 0.018523156374568694,
+      "optimizing_exponent_s": 0.5809003379380593,
+      "hellinger_squared_at_s_half": 0.01787574034842998
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "old_measurement_p": 0.005,
+      "new_measurement_p": 0.005,
+      "chernoff_information_nats_per_shot": 0.01804410057841114,
+      "optimizing_exponent_s": 0.579520227768908,
+      "hellinger_squared_at_s_half": 0.017433274388877984
+    }
+  ],
+  "independent_measurement_nuisance_grid_minima": [
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "minimum_chernoff_information_over_independent_measurement_grid_nats_per_shot": 0.006648827818253298,
+      "old_measurement_p_at_minimum": 0.005,
+      "new_measurement_p_at_minimum": 0.005,
+      "optimizing_exponent_s": 0.5589912386391576,
+      "measurement_grid": [
+        0.001,
+        0.003,
+        0.005
+      ]
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "minimum_chernoff_information_over_independent_measurement_grid_nats_per_shot": 0.0026774431269322215,
+      "old_measurement_p_at_minimum": 0.005,
+      "new_measurement_p_at_minimum": 0.005,
+      "optimizing_exponent_s": 0.5225758986976732,
+      "measurement_grid": [
+        0.001,
+        0.003,
+        0.005
+      ]
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "minimum_chernoff_information_over_independent_measurement_grid_nats_per_shot": 0.01804112708836152,
+      "old_measurement_p_at_minimum": 0.005,
+      "new_measurement_p_at_minimum": 0.005,
+      "optimizing_exponent_s": 0.5795116649225747,
+      "measurement_grid": [
+        0.001,
+        0.003,
+        0.005
+      ]
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "minimum_chernoff_information_over_independent_measurement_grid_nats_per_shot": 0.006650102844515786,
+      "old_measurement_p_at_minimum": 0.005,
+      "new_measurement_p_at_minimum": 0.005,
+      "optimizing_exponent_s": 0.5589985574660121,
+      "measurement_grid": [
+        0.001,
+        0.003,
+        0.005
+      ]
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "minimum_chernoff_information_over_independent_measurement_grid_nats_per_shot": 0.002677744493963863,
+      "old_measurement_p_at_minimum": 0.005,
+      "new_measurement_p_at_minimum": 0.005,
+      "optimizing_exponent_s": 0.5225773799155298,
+      "measurement_grid": [
+        0.001,
+        0.003,
+        0.005
+      ]
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "minimum_chernoff_information_over_independent_measurement_grid_nats_per_shot": 0.01804410057841114,
+      "old_measurement_p_at_minimum": 0.005,
+      "new_measurement_p_at_minimum": 0.005,
+      "optimizing_exponent_s": 0.579520227768908,
+      "measurement_grid": [
+        0.001,
+        0.003,
+        0.005
+      ]
+    }
+  ],
+  "validation": {
+    "normalization_error_max": 9.103828801926284e-15,
+    "chernoff_nonnegative": true,
+    "chernoff_below_bidirectional_kl": true,
+    "golden_section_vs_10001_grid_max_abs": 9.80839715003512e-11,
+    "hellinger_coefficient_identity_max_abs": 2.220446049250313e-16
+  },
+  "interpretation": [
+    "Chernoff information is the asymptotic symmetric simple-hypothesis error exponent for IID observations under the two fully specified laws; it is not a realized test statistic, threshold, alarm delay, or finite-history error rate.",
+    "The nuisance rows permit old and new measurement probabilities to differ on a coarse grid. They do not establish robustness to arbitrary drift, unknown nuisance estimation, dependent shots, or detector-model mismatch.",
+    "Ten detectors are a subset of the 40 detector bits. Their Chernoff information cannot exceed that of the full observation, but the omitted bits could improve nuisance estimation.",
+    "No alarm policy, decoder, logical outcome, sampling, or model selection was evaluated. Exact circuit and approximate DEM results remain separate."
+  ],
+  "sampling_calls": 0,
+  "decoder_calls": 0
+}

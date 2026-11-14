@@ -1,0 +1,110 @@
+{
+  "classification": "CONTINUOUS_EXACT_CIRCUIT_ONE_SIDED_FREEDMAN_CROSSING_BOUNDS_ANALYTIC_NOT_SIMULATED",
+  "input_certificate": "EXACT_THREE_PARAMETER_EFACTOR_ENVELOPE.json",
+  "method": "For W=log L in [a,b], use certified E[W|past]>=mu and Jensen upper E[W|past]<=u. Bhatia-Davis bounds conditional variance by max over m in [mu,u] of (b-m)(m-a); |W-E[W|past]|<=C=max(u-a,b-mu). Freedman lower tail gives P(T>n)<=exp(-(n*mu-A)^2/(2*(n*v+C*(n*mu-A)/3))) for A=log(1/alpha) and n*mu>A.",
+  "rounding_slack_decimal": "1E-30",
+  "arms": [
+    {
+      "direction": "upward",
+      "lambda": 0.006917395863312148,
+      "null_mean_upper_m0": 0.003006472621297416,
+      "alternative_mean_lower_log_mu": "0.004932537879491168309792099802",
+      "alternative_mean_upper_log_by_jensen": "0.03367328280161905438755031907669457284261610218635354294453795956640112",
+      "log_increment_support": [
+        "-0.006941431954984322726408498048",
+        "1.192077458951274227619659925"
+      ],
+      "conditional_variance_upper_v": "0.04704825518717637779718491838148292095790221773034701999809089376054646",
+      "centered_increment_absolute_bound_c": "1.187144921071783059309867825199",
+      "variance_argument": "Bhatia-Davis with conditional mean in [mu,u], where u follows Jensen and the continuous alternative mean upper bound.",
+      "alternative_rectangle": "burst p in [.010,.018], measurement p in [.001,.005], gate p in [.002,.004]",
+      "rows": [
+        {
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_n": 10433,
+          "freedman_bound_at_n": "0.09998922488785541221554048065540864315681601376401778945179556015515097",
+          "bound_at_n_minus_1": "0.1000139737434712481713977227673353778113867237318387971124186817092862"
+        },
+        {
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_n": 13232,
+          "freedman_bound_at_n": "0.04999338069192105493848246061145023471651555648341454956242264504305408",
+          "bound_at_n_minus_1": "0.05000576958227355480888582499087099108750383221489468850630217708285708"
+        },
+        {
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_n": 11032,
+          "freedman_bound_at_n": "0.09999328560562944534466213494081963787368354945313502216078964491341384",
+          "bound_at_n_minus_1": "0.1000179483298434543235664026146729742038962365621301282714231762662446"
+        },
+        {
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_n": 13839,
+          "freedman_bound_at_n": "0.04999468290126004803532068473106102876079458147202546032022864735224414",
+          "bound_at_n_minus_1": "0.05000704393977308251038806073596436223414861220952535080902578299200884"
+        }
+      ]
+    },
+    {
+      "direction": "downward_on_complement",
+      "lambda": 0.6964100870913746,
+      "null_mean_upper_m0": 0.9900969284766642,
+      "alternative_mean_lower_log_mu": "0.003336614487056263323131344159",
+      "alternative_mean_upper_log_by_jensen": "0.006810194849802730671988681149521515973195546006030520450944967797722322",
+      "log_increment_support": [
+        "-1.192077458951274227619659926",
+        "0.006941431954984322726408376371"
+      ],
+      "conditional_variance_upper_v": "0.004309249533337529772733402627165893982083300686103437361708",
+      "centered_increment_absolute_bound_c": "1.198887653801076958291648607150521515973195546006030520450944967797722",
+      "variance_argument": "Bhatia-Davis with conditional mean in [mu,u], where u follows Jensen and the continuous alternative mean upper bound.",
+      "alternative_rectangle": "burst p in [0,.002], measurement p in [.001,.005], gate p in [.002,.004]",
+      "rows": [
+        {
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_n": 3787,
+          "freedman_bound_at_n": "0.09990924570703214274050862400789095166056589209696942255828486147563140",
+          "bound_at_n_minus_1": "0.1000042246088683856697268761324185955544797253408142994097342898667815"
+        },
+        {
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_n": 4511,
+          "freedman_bound_at_n": "0.04999308209649982397218941614822763848342156739211204991116159370247889",
+          "bound_at_n_minus_1": "0.05004116854101986065269071356810206142221870882280041587328284215680759"
+        },
+        {
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_n": 4503,
+          "freedman_bound_at_n": "0.09993409211513525645431596601056040029277803173712047727422172576007174",
+          "bound_at_n_minus_1": "0.1000264403966196678391240760938239455316667524710532176500549725339089"
+        },
+        {
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_n": 5246,
+          "freedman_bound_at_n": "0.04995723151939177119726034002950281370622423081302198894184994392360964",
+          "bound_at_n_minus_1": "0.05000427406179927542185490916273610782836312320038897333984613282980747"
+        }
+      ]
+    }
+  ],
+  "assumptions": [
+    "Exact categorical circuit data law and same continuous burst/measurement/gate rectangles as source certificate.",
+    "Every sustained-alternative shot has conditional detector law in the declared rectangle given the full previous history.",
+    "The process is one fixed directional e-process, with no reset, reversal, state switching, or alpha recycling.",
+    "The same m0 and fixed lambda are used throughout; deployment arithmetic must maintain outward-safe probability and log bounds."
+  ],
+  "limitations": [
+    "The n values are sufficient distribution-free quantiles, not means or observed delays.",
+    "Ville false-alarm control is only for one fixed one-sided process under its certified null.",
+    "No repeated-switch control, indifference-band action, approximate-DEM source-law transfer, or decoder benefit is established.",
+    "No trajectories, stochastic detector histories, alarms, or decoder evaluations were generated."
+  ]
+}

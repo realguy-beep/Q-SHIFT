@@ -1,0 +1,244 @@
+{
+  "classification": "EXACT_CATEGORICAL_CIRCUIT_CONTINUOUS_RECTANGLE_CERTIFICATE",
+  "configuration": {
+    "gate_p": 0.003,
+    "burst_null_interval": [
+      0.0,
+      0.002
+    ],
+    "alternative_burst_interval": [
+      0.01,
+      0.018
+    ],
+    "measurement_interval": [
+      0.001,
+      0.005
+    ]
+  },
+  "derivation": "Each pair's five-round selected detector support intersects exactly one burst site, and that burst site flips both pair detectors; its simultaneous two-bit flip has even parity in that pair. The pair-cofire mean is therefore affine in the common burst probability. The certified positive gap g(.010,pm)-g(.002,pm) establishes positive slope, extending the null maximum at .002 to the whole interval [0,.002], including the analytic pb=0 limit even though the circuit builder omits a zero-probability instruction. Measurement-error X_ERROR sites contribute powers of u=1-2pm; the resulting degree-8 polynomial and Bernstein sign checks are computed with Fraction arithmetic.",
+  "burst_endpoint_monotonicity_and_cross_validation": [
+    {
+      "burst_p": 0.002,
+      "degree": 8,
+      "measurement_derivative_bernstein_all_negative": true,
+      "measurement_derivative_bernstein_all_positive": false,
+      "measurement_derivative_bernstein_min_max": [
+        -0.06137328706145037,
+        -0.03924555606063457
+      ],
+      "monotonicity": "increasing in pm",
+      "validation": [
+        {
+          "measurement_p": 0.001,
+          "polynomial_mean": 0.002291496243742122,
+          "feature_mean": 0.0022914962437420973,
+          "difference": 2.47198095326695e-17
+        },
+        {
+          "measurement_p": 0.003,
+          "polynomial_mean": 0.0024709667280546133,
+          "feature_mean": 0.002470966728054519,
+          "difference": 9.454242944073599e-17
+        },
+        {
+          "measurement_p": 0.005,
+          "polynomial_mean": 0.00269469102575917,
+          "feature_mean": 0.002694691025759072,
+          "difference": 9.80118763926896e-17
+        }
+      ],
+      "burst_mapping_metadata": {
+        "physical_sites": 214,
+        "fault_alternatives_mapped": 1974,
+        "burst_detector_supports": [
+          [
+            8,
+            10
+          ],
+          [
+            16,
+            18
+          ],
+          [
+            24,
+            26
+          ],
+          [
+            32,
+            34
+          ],
+          [
+            36,
+            38
+          ]
+        ],
+        "baseline_reference_detector_weight": 0,
+        "baseline_reference_observable_weight": 0
+      }
+    },
+    {
+      "burst_p": 0.01,
+      "degree": 8,
+      "measurement_derivative_bernstein_all_negative": true,
+      "measurement_derivative_bernstein_all_positive": false,
+      "measurement_derivative_bernstein_min_max": [
+        -0.04313310455955491,
+        -0.020746619439305534
+      ],
+      "monotonicity": "increasing in pm",
+      "validation": [
+        {
+          "measurement_p": 0.001,
+          "polynomial_mean": 0.00997074427026786,
+          "feature_mean": 0.009970744270267834,
+          "difference": 2.6020852139652106e-17
+        },
+        {
+          "measurement_p": 0.003,
+          "polynomial_mean": 0.010076478852964628,
+          "feature_mean": 0.010076478852964527,
+          "difference": 1.0061396160665481e-16
+        },
+        {
+          "measurement_p": 0.005,
+          "polynomial_mean": 0.010226984755301781,
+          "feature_mean": 0.01022698475530176,
+          "difference": 2.0816681711721685e-17
+        }
+      ],
+      "burst_mapping_metadata": {
+        "physical_sites": 214,
+        "fault_alternatives_mapped": 1974,
+        "burst_detector_supports": [
+          [
+            8,
+            10
+          ],
+          [
+            16,
+            18
+          ],
+          [
+            24,
+            26
+          ],
+          [
+            32,
+            34
+          ],
+          [
+            36,
+            38
+          ]
+        ],
+        "baseline_reference_detector_weight": 0,
+        "baseline_reference_observable_weight": 0
+      }
+    },
+    {
+      "burst_p": 0.018,
+      "degree": 8,
+      "measurement_derivative_bernstein_all_negative": true,
+      "measurement_derivative_bernstein_all_positive": false,
+      "measurement_derivative_bernstein_min_max": [
+        -0.024892922057659445,
+        -0.002247682817976506
+      ],
+      "monotonicity": "increasing in pm",
+      "validation": [
+        {
+          "measurement_p": 0.001,
+          "polynomial_mean": 0.017649992296793596,
+          "feature_mean": 0.017649992296793576,
+          "difference": 2.0816681711721685e-17
+        },
+        {
+          "measurement_p": 0.003,
+          "polynomial_mean": 0.01768199097787464,
+          "feature_mean": 0.017681990977874634,
+          "difference": 6.938893903907228e-18
+        },
+        {
+          "measurement_p": 0.005,
+          "polynomial_mean": 0.01775927848484439,
+          "feature_mean": 0.017759278484844387,
+          "difference": 3.469446951953614e-18
+        }
+      ],
+      "burst_mapping_metadata": {
+        "physical_sites": 214,
+        "fault_alternatives_mapped": 1974,
+        "burst_detector_supports": [
+          [
+            8,
+            10
+          ],
+          [
+            16,
+            18
+          ],
+          [
+            24,
+            26
+          ],
+          [
+            32,
+            34
+          ],
+          [
+            36,
+            38
+          ]
+        ],
+        "baseline_reference_detector_weight": 0,
+        "baseline_reference_observable_weight": 0
+      }
+    }
+  ],
+  "alternative_minus_null_gap_certificates": {
+    "alternative_010_minus_null_002": {
+      "all_bernstein_coefficients_positive": true,
+      "coefficient_min_max": [
+        0.007532293729542611,
+        0.007679248026525739
+      ]
+    },
+    "alternative_018_minus_010": {
+      "all_bernstein_coefficients_positive": true,
+      "coefficient_min_max": [
+        0.007532293729542609,
+        0.007679248026525737
+      ]
+    }
+  },
+  "certified_continuous_bounds": {
+    "null_mean_maximum": {
+      "burst_p_interval": [
+        0.0,
+        0.002
+      ],
+      "maximizer_burst_p": 0.002,
+      "measurement_p": 0.005,
+      "mean": 0.00269469102575917,
+      "exact_fraction": {
+        "numerator": "619415976152411562809868407130772367211796163201771978209980665229592195118672813044961382017566282940165391841041487622221731742739532508024271392805202982141007017466615208367811978488858186068024994835134724864186750255498166825281540679616272937578908318191066143631587138087557863657821065243388047210294523175099853625801982312560032329038108484128433571545156361011115583810671841629468640642120931738470399559886988448436310472500907196156039849062779155576897539",
+        "denominator": "229865305606940516336452160456496630946358990473336119781463149935270060691051788393887045298323254553170086505974579314028016755942817528244935320653035607476731618822252771832540710250633382766422800363291532521972403131285152350374354088029814526080876888403158252489993415382539503899745384594706141507183930312082442468934462739139819951065118750367250537272919872615494406812812334423529946821428347229670795240278813458683571178856013582883549190553600000000000000000"
+      }
+    },
+    "alternative_mean_minimum": {
+      "burst_p": 0.01,
+      "measurement_p": 0.001,
+      "mean": 0.00997074427026786,
+      "exact_fraction": {
+        "numerator": "895284444849130062674800219779326765081787509205364651252611325475986446113580325050785265918861369557077610890525580379881981133703324171952429592540757291077934241468902219620245677800181541112075992462261742931528882726048861265077331173755979511151934783888894674551730261858532687238868466193557121735662932636838533680154617198844764857642317965493281017958932620620101668625824036385417981613659202522746536922249231755430752279357945650920961066754416907006144285262739",
+        "denominator": "89791135002711139193926625178318996463421480653646921789634042943464867457442104841362127069657521309832065041396320044542194045290163096970677859630092034170598288602442488997086214941653665143133906391910754891395469973158262636864982065636646299250342534532483692378903677883804493710838040857307086526243722778157204089427524507476492168384812011862207241122234325240427502661254818134191385477120448136590154390733911507298269991740630305813886402560000000000000000000000000"
+      }
+    },
+    "gap": 0.00727605324450869
+  },
+  "scope_limits": [
+    "Exact categorical circuit only; the approximate DEM has not received a continuous interval certificate.",
+    "Gate p is fixed at .003; the burst null is covered only on [0,.002]; other physical or calibration uncertainty is outside this certificate.",
+    "This certifies a population conditional-mean envelope and separation, not an implemented e-detector, its delay/ARL, finite-horizon false-switch risk, or decoder benefit."
+  ]
+}

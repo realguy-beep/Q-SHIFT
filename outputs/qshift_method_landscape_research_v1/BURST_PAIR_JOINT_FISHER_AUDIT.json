@@ -1,0 +1,460 @@
+{
+  "classification": "DETERMINISTIC_LOCAL_FISHER_INFORMATION_NOT_FINITE_SAMPLE_ACCURACY",
+  "configuration": {
+    "selected_detectors": [
+      8,
+      10,
+      16,
+      18,
+      24,
+      26,
+      32,
+      34,
+      36,
+      38
+    ],
+    "outcome_states": 1024,
+    "moment_features": "10 detector bits plus five within-pair cofire bits",
+    "burst_values": [
+      0.002,
+      0.01,
+      0.018
+    ],
+    "measurement_p": 0.003,
+    "finite_difference_steps": [
+      1e-05,
+      5e-06,
+      2.5e-06
+    ]
+  },
+  "method": "Compute per-shot Fisher information from the full 2^10 joint likelihood and optimal-covariance GMM information from the same 15 feature means; profile out measurement p by the Schur complement; check central-difference step halving.",
+  "rows": [
+    {
+      "model": "exact_categorical_circuit",
+      "burst_p": 0.002,
+      "measurement_p": 0.003,
+      "finite_difference_results_by_step": [
+        {
+          "step": 1e-05,
+          "feature_covariance_eigenvalues_min_max": [
+            0.0017573620130994685,
+            0.042939017634278126
+          ],
+          "profile_burst_information_full": 2053.3565640266424,
+          "profile_burst_information_15_feature_gmm": 1786.3423347044002,
+          "burst_sd_coefficient_full_unknown_measurement": 0.022068245901774,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.023660158771303553,
+          "burst_sd_coefficient_full_known_measurement": 0.02205424494321542,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.02356508794546456,
+          "full_fisher_eigenvalues": [
+            2042.6734770947103,
+            2554.6192578579803
+          ],
+          "full_fisher_condition_number": 1.2506253625476207,
+          "burst_measurement_score_correlation_full": 0.0356156669376683,
+          "burst_measurement_score_correlation_15_feature": 0.08955567184995039
+        },
+        {
+          "step": 5e-06,
+          "feature_covariance_eigenvalues_min_max": [
+            0.0017573620130994685,
+            0.042939017634278126
+          ],
+          "profile_burst_information_full": 2053.3565636611097,
+          "profile_burst_information_15_feature_gmm": 1786.3423341212506,
+          "burst_sd_coefficient_full_unknown_measurement": 0.02206824590373826,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.02366015877516547,
+          "burst_sd_coefficient_full_known_measurement": 0.022054244944661145,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.023565087945460566,
+          "full_fisher_eigenvalues": [
+            2042.6734762759668,
+            2554.6192545864365
+          ],
+          "full_fisher_condition_number": 1.250625361447296,
+          "burst_measurement_score_correlation_full": 0.035615667595399754,
+          "burst_measurement_score_correlation_15_feature": 0.08955567365981283
+        },
+        {
+          "step": 2.5e-06,
+          "feature_covariance_eigenvalues_min_max": [
+            0.0017573620130994685,
+            0.042939017634278126
+          ],
+          "profile_burst_information_full": 2053.3565635733385,
+          "profile_burst_information_15_feature_gmm": 1786.3423339702003,
+          "burst_sd_coefficient_full_unknown_measurement": 0.022068245904209915,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.023660158776165806,
+          "burst_sd_coefficient_full_known_measurement": 0.022054244944999444,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.023565087945504614,
+          "full_fisher_eigenvalues": [
+            2042.6734760717634,
+            2554.6192537609472
+          ],
+          "full_fisher_condition_number": 1.250625361168198,
+          "burst_measurement_score_correlation_full": 0.03561566776458358,
+          "burst_measurement_score_correlation_15_feature": 0.08955567410742174
+        }
+      ],
+      "reported_primary_step": 2.5e-06
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "burst_p": 0.01,
+      "measurement_p": 0.003,
+      "finite_difference_results_by_step": [
+        {
+          "step": 1e-05,
+          "feature_covariance_eigenvalues_min_max": [
+            0.0032708812987641165,
+            0.05770669536486946
+          ],
+          "profile_burst_information_full": 459.92767698085817,
+          "profile_burst_information_15_feature_gmm": 450.34907079445924,
+          "burst_sd_coefficient_full_unknown_measurement": 0.046628906146619506,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.04712217898158131,
+          "burst_sd_coefficient_full_known_measurement": 0.046615569551637676,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.04707416468329373,
+          "full_fisher_eigenvalues": [
+            459.8681131158,
+            2492.295463125978
+          ],
+          "full_fisher_condition_number": 5.419587468762787,
+          "burst_measurement_score_correlation_full": 0.02391546388394244,
+          "burst_measurement_score_correlation_15_feature": 0.04513120728976723
+        },
+        {
+          "step": 5e-06,
+          "feature_covariance_eigenvalues_min_max": [
+            0.0032708812987641165,
+            0.05770669536486946
+          ],
+          "profile_burst_information_full": 459.9276769661425,
+          "profile_burst_information_15_feature_gmm": 450.34907076036393,
+          "burst_sd_coefficient_full_unknown_measurement": 0.046628906147365465,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.047122178983365084,
+          "burst_sd_coefficient_full_known_measurement": 0.04661556955190326,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.04707416468321721,
+          "full_fisher_eigenvalues": [
+            459.8681130987926,
+            2492.2954579884176
+          ],
+          "full_fisher_condition_number": 5.41958745779141,
+          "burst_measurement_score_correlation_full": 0.0239154643144006,
+          "burst_measurement_score_correlation_15_feature": 0.04513120816276427
+        },
+        {
+          "step": 2.5e-06,
+          "feature_covariance_eigenvalues_min_max": [
+            0.0032708812987641165,
+            0.05770669536486946
+          ],
+          "profile_burst_information_full": 459.92767695775063,
+          "profile_burst_information_15_feature_gmm": 450.34907076517317,
+          "burst_sd_coefficient_full_unknown_measurement": 0.04662890614779086,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.04712217898311348,
+          "burst_sd_coefficient_full_known_measurement": 0.04661556955220869,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.047074164682437206,
+          "full_fisher_eigenvalues": [
+            459.86811308983044,
+            2492.295456719697
+          ],
+          "full_fisher_condition_number": 5.41958745513815,
+          "burst_measurement_score_correlation_full": 0.02391546442184055,
+          "burst_measurement_score_correlation_15_feature": 0.045131208411089155
+        }
+      ],
+      "reported_primary_step": 2.5e-06
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "burst_p": 0.018,
+      "measurement_p": 0.003,
+      "finite_difference_results_by_step": [
+        {
+          "step": 1e-05,
+          "feature_covariance_eigenvalues_min_max": [
+            0.00364828790997378,
+            0.07625960006780563
+          ],
+          "profile_burst_information_full": 262.6426806450926,
+          "profile_burst_information_15_feature_gmm": 259.4834854457367,
+          "burst_sd_coefficient_full_unknown_measurement": 0.06170457264730207,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.06207906090848857,
+          "burst_sd_coefficient_full_known_measurement": 0.061694311871390205,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.062041981525966974,
+          "full_fisher_eigenvalues": [
+            262.6322686418606,
+            2466.571166631049
+          ],
+          "full_fisher_condition_number": 9.391729277542044,
+          "burst_measurement_score_correlation_full": 0.0182359490276247,
+          "burst_measurement_score_correlation_15_feature": 0.03455761924243282
+        },
+        {
+          "step": 5e-06,
+          "feature_covariance_eigenvalues_min_max": [
+            0.00364828790997378,
+            0.07625960006780563
+          ],
+          "profile_burst_information_full": 262.6426806402122,
+          "profile_burst_information_15_feature_gmm": 259.4834854374207,
+          "burst_sd_coefficient_full_unknown_measurement": 0.061704572647875364,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.062079060909483334,
+          "burst_sd_coefficient_full_known_measurement": 0.061694311871583384,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.062041981525528915,
+          "full_fisher_eigenvalues": [
+            262.63226863656854,
+            2466.571161051239
+          ],
+          "full_fisher_condition_number": 9.39172925648557,
+          "burst_measurement_score_correlation_full": 0.0182359493652875,
+          "burst_measurement_score_correlation_15_feature": 0.03455761990964027
+        },
+        {
+          "step": 2.5e-06,
+          "feature_covariance_eigenvalues_min_max": [
+            0.00364828790997378,
+            0.07625960006780563
+          ],
+          "profile_burst_information_full": 262.64268065454945,
+          "profile_burst_information_15_feature_gmm": 259.4834854225442,
+          "burst_sd_coefficient_full_unknown_measurement": 0.06170457264619118,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.062079060911262855,
+          "burst_sd_coefficient_full_known_measurement": 0.061694311869779604,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.06204198152702061,
+          "full_fisher_eigenvalues": [
+            262.6322686507764,
+            2466.571159668674
+          ],
+          "full_fisher_condition_number": 9.39172925071324,
+          "burst_measurement_score_correlation_full": 0.018235949471802224,
+          "burst_measurement_score_correlation_15_feature": 0.03455762004323378
+        }
+      ],
+      "reported_primary_step": 2.5e-06
+    },
+    {
+      "model": "approximate_dem",
+      "burst_p": 0.002,
+      "measurement_p": 0.003,
+      "finite_difference_results_by_step": [
+        {
+          "step": 1e-05,
+          "feature_covariance_eigenvalues_min_max": [
+            0.0017563671574604453,
+            0.04290488285287356
+          ],
+          "profile_burst_information_full": 2053.9595684721185,
+          "profile_burst_information_15_feature_gmm": 1787.1691352143687,
+          "burst_sd_coefficient_full_unknown_measurement": 0.022065006250073738,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.02365468517230233,
+          "burst_sd_coefficient_full_known_measurement": 0.022051035455570397,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.023559818110406323,
+          "full_fisher_eigenvalues": [
+            2043.3086602039054,
+            2556.020935966315
+          ],
+          "full_fisher_condition_number": 1.2509225775567578,
+          "burst_measurement_score_correlation_full": 0.035579903580379164,
+          "burst_measurement_score_correlation_15_feature": 0.08947017060245041
+        },
+        {
+          "step": 5e-06,
+          "feature_covariance_eigenvalues_min_max": [
+            0.0017563671574604453,
+            0.04290488285287356
+          ],
+          "profile_burst_information_full": 2053.95956810167,
+          "profile_burst_information_15_feature_gmm": 1787.1691346306504,
+          "burst_sd_coefficient_full_unknown_measurement": 0.022065006252063542,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.023654685176165334,
+          "burst_sd_coefficient_full_known_measurement": 0.02205103545704474,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.02355981811040507,
+          "full_fisher_eigenvalues": [
+            2043.308659383275,
+            2556.020932690152
+          ],
+          "full_fisher_condition_number": 1.25092257645579,
+          "burst_measurement_score_correlation_full": 0.035579904234934685,
+          "burst_measurement_score_correlation_15_feature": 0.08947017241370851
+        },
+        {
+          "step": 2.5e-06,
+          "feature_covariance_eigenvalues_min_max": [
+            0.0017563671574604453,
+            0.04290488285287356
+          ],
+          "profile_burst_information_full": 2053.95956801384,
+          "profile_burst_information_15_feature_gmm": 1787.1691344856647,
+          "burst_sd_coefficient_full_unknown_measurement": 0.022065006252535307,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.023654685177124837,
+          "burst_sd_coefficient_full_known_measurement": 0.02205103545738571,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.023559818110403887,
+          "full_fisher_eigenvalues": [
+            2043.3086591814877,
+            2556.0209318818042
+          ],
+          "full_fisher_condition_number": 1.250922576183718,
+          "burst_measurement_score_correlation_full": 0.035579904401055545,
+          "burst_measurement_score_correlation_15_feature": 0.08947017286400347
+        }
+      ],
+      "reported_primary_step": 2.5e-06
+    },
+    {
+      "model": "approximate_dem",
+      "burst_p": 0.01,
+      "measurement_p": 0.003,
+      "finite_difference_results_by_step": [
+        {
+          "step": 1e-05,
+          "feature_covariance_eigenvalues_min_max": [
+            0.003268186906814492,
+            0.05767884514805112
+          ],
+          "profile_burst_information_full": 459.9832719416561,
+          "profile_burst_information_15_feature_gmm": 450.4160267374072,
+          "burst_sd_coefficient_full_unknown_measurement": 0.04662608820659711,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.04711867641173092,
+          "burst_sd_coefficient_full_known_measurement": 0.0466127838509746,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.047070770578036596,
+          "full_fisher_eigenvalues": [
+            459.92387464174186,
+            2493.735992803617
+          ],
+          "full_fisher_condition_number": 5.422062498377835,
+          "burst_measurement_score_correlation_full": 0.02388726607434395,
+          "burst_measurement_score_correlation_15_feature": 0.045081903223860284
+        },
+        {
+          "step": 5e-06,
+          "feature_covariance_eigenvalues_min_max": [
+            0.003268186906814492,
+            0.05767884514805112
+          ],
+          "profile_burst_information_full": 459.9832719256738,
+          "profile_burst_information_15_feature_gmm": 450.416026701187,
+          "burst_sd_coefficient_full_unknown_measurement": 0.04662608820740713,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.047118676413625445,
+          "burst_sd_coefficient_full_known_measurement": 0.046612783851290494,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.04707077057805268,
+          "full_fisher_eigenvalues": [
+            459.92387462340866,
+            2493.7359876812316
+          ],
+          "full_fisher_condition_number": 5.422062487456501,
+          "burst_measurement_score_correlation_full": 0.02388726651765331,
+          "burst_measurement_score_correlation_15_feature": 0.045081904106361745
+        },
+        {
+          "step": 2.5e-06,
+          "feature_covariance_eigenvalues_min_max": [
+            0.003268186906814492,
+            0.05767884514805112
+          ],
+          "profile_burst_information_full": 459.98327192209945,
+          "profile_burst_information_15_feature_gmm": 450.4160266908704,
+          "burst_sd_coefficient_full_unknown_measurement": 0.0466260882075883,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.04711867641416506,
+          "burst_sd_coefficient_full_known_measurement": 0.04661278385135047,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.047070770578128494,
+          "full_fisher_eigenvalues": [
+            459.9238746192567,
+            2493.735986395376
+          ],
+          "full_fisher_condition_number": 5.42206248470965,
+          "burst_measurement_score_correlation_full": 0.023887266626385854,
+          "burst_measurement_score_correlation_15_feature": 0.04508190432422646
+        }
+      ],
+      "reported_primary_step": 2.5e-06
+    },
+    {
+      "model": "approximate_dem",
+      "burst_p": 0.018,
+      "measurement_p": 0.003,
+      "finite_difference_results_by_step": [
+        {
+          "step": 1e-05,
+          "feature_covariance_eigenvalues_min_max": [
+            0.003644962703922967,
+            0.07623695768547606
+          ],
+          "profile_burst_information_full": 262.66689989507375,
+          "profile_burst_information_15_feature_gmm": 259.5102772019494,
+          "burst_sd_coefficient_full_unknown_measurement": 0.06170172784096969,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.06207585631479547,
+          "burst_sd_coefficient_full_known_measurement": 0.061691495192347665,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.06203886164707714,
+          "full_fisher_eigenvalues": [
+            262.65652073635067,
+            2468.015865646546
+          ],
+          "full_fisher_condition_number": 9.396362438394938,
+          "burst_measurement_score_correlation_full": 0.018211359133232404,
+          "burst_measurement_score_correlation_15_feature": 0.03451902246930115
+        },
+        {
+          "step": 5e-06,
+          "feature_covariance_eigenvalues_min_max": [
+            0.003644962703922967,
+            0.07623695768547606
+          ],
+          "profile_burst_information_full": 262.6668998915697,
+          "profile_burst_information_15_feature_gmm": 259.5102771895714,
+          "burst_sd_coefficient_full_unknown_measurement": 0.061701727841381254,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.06207585631627591,
+          "burst_sd_coefficient_full_known_measurement": 0.061691495192375816,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.06203886164714885,
+          "full_fisher_eigenvalues": [
+            262.65652073243183,
+            2468.0158600806312
+          ],
+          "full_fisher_condition_number": 9.396362417344278,
+          "burst_measurement_score_correlation_full": 0.018211359474314695,
+          "burst_measurement_score_correlation_15_feature": 0.034519023125921214
+        },
+        {
+          "step": 2.5e-06,
+          "feature_covariance_eigenvalues_min_max": [
+            0.003644962703922967,
+            0.07623695768547606
+          ],
+          "profile_burst_information_full": 262.66689989269537,
+          "profile_burst_information_15_feature_gmm": 259.51027718454293,
+          "burst_sd_coefficient_full_unknown_measurement": 0.06170172784124904,
+          "burst_sd_coefficient_15_feature_unknown_measurement": 0.06207585631687732,
+          "burst_sd_coefficient_full_known_measurement": 0.06169149519214294,
+          "burst_sd_coefficient_15_feature_known_measurement": 0.06203886164740025,
+          "full_fisher_eigenvalues": [
+            262.6565207334487,
+            2468.0158586900006
+          ],
+          "full_fisher_condition_number": 9.396362412013424,
+          "burst_measurement_score_correlation_full": 0.018211359563914405,
+          "burst_measurement_score_correlation_15_feature": 0.034519023289001236
+        }
+      ],
+      "reported_primary_step": 2.5e-06
+    }
+  ],
+  "validation": {
+    "maximum_distribution_normalization_error": 7.327471962526033e-15,
+    "maximum_derivative_mass_error_by_step": {
+      "1e-05": 3.1100867145427804e-10,
+      "5e-06": 7.73062554540893e-10,
+      "2.5e-06": 2.024331558472726e-09
+    },
+    "fisher_psd": true,
+    "moment_information_not_above_joint_fisher": true,
+    "maximum_step_halving_relative_change": 3.26616119180018e-10
+  },
+  "interpretation": [
+    "The full multinomial Fisher calculation uses the complete selected 10-bit outcome, while the 15-feature GMM uses only its ten first moments and five pair cofires. The comparison isolates information discarded by these moments on this detector subset.",
+    "Reported SD coefficients are local asymptotic Cramer-Rao/GMM coefficients per square root of independent shot count under the exactly specified static model. They are not observed or finite-history estimator RMSEs, interval coverage, change-detection delay, or logical decoder utility.",
+    "Unknown measurement probability is profiled locally; this does not cover gate uncertainty, arbitrary readout correlations, burst support changes, or time-dependent within-shot noise.",
+    "Exact categorical circuit and approximate DEM are separate calculations; no sampling, fitting to generated outcomes, or decoder evaluation occurs."
+  ],
+  "sampling_calls": 0,
+  "decoder_calls": 0
+}

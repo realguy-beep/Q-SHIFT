@@ -1,0 +1,296 @@
+{
+  "classification": "DETERMINISTIC_EXACT_CATEGORICAL_POPULATION_MIXTURE_AUDIT",
+  "model": {
+    "circuit": "Q-SHIFT distance-3, five-round Z-memory categorical circuit",
+    "gate_p": 0.003,
+    "measurement_p": 0.003,
+    "burst_probability_constant_within_each_shot": true,
+    "burst_probability_may_change_between_independently_reset_shots": true,
+    "feature_dimension": 45,
+    "edge_pairs": [
+      [
+        8,
+        10
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        32,
+        34
+      ],
+      [
+        36,
+        38
+      ]
+    ]
+  },
+  "method": "Convexly mix exact per-shot population feature means, then apply the published edge-moment inverse to the pooled moments.",
+  "population_profile_burst_probabilities": [
+    0.002,
+    0.01,
+    0.018
+  ],
+  "mixture_rows": [
+    {
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "fraction_old_population_in_window": 0.1,
+      "pooled_window_target_mean_burst_p": 0.016399999999999998,
+      "five_edge_population_inversion_estimates": [
+        0.016400000000000026,
+        0.016400000000000026,
+        0.016400000000000026,
+        0.016400000000000026,
+        0.01639999999999997
+      ],
+      "equal_weight_edge_estimate": 0.016400000000000015,
+      "bias_vs_window_mean": 1.734723475976807e-17,
+      "between_edge_spread": 5.551115123125783e-17
+    },
+    {
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "fraction_old_population_in_window": 0.25,
+      "pooled_window_target_mean_burst_p": 0.013999999999999999,
+      "five_edge_population_inversion_estimates": [
+        0.014000000000000012,
+        0.014000000000000012,
+        0.014000000000000012,
+        0.014000000000000012,
+        0.013999999999999957
+      ],
+      "equal_weight_edge_estimate": 0.014000000000000002,
+      "bias_vs_window_mean": 3.469446951953614e-18,
+      "between_edge_spread": 5.551115123125783e-17
+    },
+    {
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "fraction_old_population_in_window": 0.5,
+      "pooled_window_target_mean_burst_p": 0.009999999999999998,
+      "five_edge_population_inversion_estimates": [
+        0.010000000000000009,
+        0.010000000000000009,
+        0.010000000000000009,
+        0.010000000000000009,
+        0.010000000000000009
+      ],
+      "equal_weight_edge_estimate": 0.010000000000000009,
+      "bias_vs_window_mean": 1.0408340855860843e-17,
+      "between_edge_spread": 0.0
+    },
+    {
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "fraction_old_population_in_window": 0.75,
+      "pooled_window_target_mean_burst_p": 0.006,
+      "five_edge_population_inversion_estimates": [
+        0.006000000000000005,
+        0.006000000000000005,
+        0.006000000000000005,
+        0.006000000000000005,
+        0.006000000000000005
+      ],
+      "equal_weight_edge_estimate": 0.006000000000000005,
+      "bias_vs_window_mean": 5.204170427930421e-18,
+      "between_edge_spread": 0.0
+    },
+    {
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "fraction_old_population_in_window": 0.9,
+      "pooled_window_target_mean_burst_p": 0.0036,
+      "five_edge_population_inversion_estimates": [
+        0.003599999999999992,
+        0.003599999999999992,
+        0.003599999999999992,
+        0.003599999999999992,
+        0.003599999999999992
+      ],
+      "equal_weight_edge_estimate": 0.003599999999999992,
+      "bias_vs_window_mean": -7.806255641895632e-18,
+      "between_edge_spread": 0.0
+    },
+    {
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "fraction_old_population_in_window": 0.1,
+      "pooled_window_target_mean_burst_p": 0.009200000000000002,
+      "five_edge_population_inversion_estimates": [
+        0.00919999999999993,
+        0.00919999999999993,
+        0.00919999999999993,
+        0.00919999999999993,
+        0.009199999999999986
+      ],
+      "equal_weight_edge_estimate": 0.00919999999999994,
+      "bias_vs_window_mean": -6.071532165918825e-17,
+      "between_edge_spread": 5.551115123125783e-17
+    },
+    {
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "fraction_old_population_in_window": 0.25,
+      "pooled_window_target_mean_burst_p": 0.008,
+      "five_edge_population_inversion_estimates": [
+        0.007999999999999952,
+        0.007999999999999952,
+        0.007999999999999952,
+        0.007999999999999952,
+        0.007999999999999952
+      ],
+      "equal_weight_edge_estimate": 0.007999999999999952,
+      "bias_vs_window_mean": -4.85722573273506e-17,
+      "between_edge_spread": 0.0
+    },
+    {
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "fraction_old_population_in_window": 0.5,
+      "pooled_window_target_mean_burst_p": 0.006,
+      "five_edge_population_inversion_estimates": [
+        0.00599999999999995,
+        0.00599999999999995,
+        0.00599999999999995,
+        0.00599999999999995,
+        0.006000000000000005
+      ],
+      "equal_weight_edge_estimate": 0.005999999999999961,
+      "bias_vs_window_mean": -3.903127820947816e-17,
+      "between_edge_spread": 5.551115123125783e-17
+    },
+    {
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "fraction_old_population_in_window": 0.75,
+      "pooled_window_target_mean_burst_p": 0.004,
+      "five_edge_population_inversion_estimates": [
+        0.003999999999999948,
+        0.003999999999999948,
+        0.003999999999999948,
+        0.003999999999999948,
+        0.0040000000000000036
+      ],
+      "equal_weight_edge_estimate": 0.003999999999999959,
+      "bias_vs_window_mean": -4.0766001685454967e-17,
+      "between_edge_spread": 5.551115123125783e-17
+    },
+    {
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "fraction_old_population_in_window": 0.9,
+      "pooled_window_target_mean_burst_p": 0.0028,
+      "five_edge_population_inversion_estimates": [
+        0.002799999999999969,
+        0.002799999999999969,
+        0.002799999999999969,
+        0.002799999999999969,
+        0.0028000000000000247
+      ],
+      "equal_weight_edge_estimate": 0.0027999999999999805,
+      "bias_vs_window_mean": -1.951563910473908e-17,
+      "between_edge_spread": 5.551115123125783e-17
+    },
+    {
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "fraction_old_population_in_window": 0.1,
+      "pooled_window_target_mean_burst_p": 0.0172,
+      "five_edge_population_inversion_estimates": [
+        0.017199999999999993,
+        0.017199999999999993,
+        0.017199999999999993,
+        0.017199999999999993,
+        0.017199999999999993
+      ],
+      "equal_weight_edge_estimate": 0.017199999999999993,
+      "bias_vs_window_mean": -6.938893903907228e-18,
+      "between_edge_spread": 0.0
+    },
+    {
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "fraction_old_population_in_window": 0.25,
+      "pooled_window_target_mean_burst_p": 0.015999999999999997,
+      "five_edge_population_inversion_estimates": [
+        0.016000000000000014,
+        0.016000000000000014,
+        0.016000000000000014,
+        0.016000000000000014,
+        0.01599999999999996
+      ],
+      "equal_weight_edge_estimate": 0.016000000000000004,
+      "bias_vs_window_mean": 6.938893903907228e-18,
+      "between_edge_spread": 5.551115123125783e-17
+    },
+    {
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "fraction_old_population_in_window": 0.5,
+      "pooled_window_target_mean_burst_p": 0.013999999999999999,
+      "five_edge_population_inversion_estimates": [
+        0.013999999999999957,
+        0.013999999999999957,
+        0.013999999999999957,
+        0.013999999999999957,
+        0.013999999999999957
+      ],
+      "equal_weight_edge_estimate": 0.013999999999999957,
+      "bias_vs_window_mean": -4.163336342344337e-17,
+      "between_edge_spread": 0.0
+    },
+    {
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "fraction_old_population_in_window": 0.75,
+      "pooled_window_target_mean_burst_p": 0.012,
+      "five_edge_population_inversion_estimates": [
+        0.011999999999999955,
+        0.011999999999999955,
+        0.011999999999999955,
+        0.011999999999999955,
+        0.011999999999999955
+      ],
+      "equal_weight_edge_estimate": 0.011999999999999955,
+      "bias_vs_window_mean": -4.5102810375396984e-17,
+      "between_edge_spread": 0.0
+    },
+    {
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "fraction_old_population_in_window": 0.9,
+      "pooled_window_target_mean_burst_p": 0.0108,
+      "five_edge_population_inversion_estimates": [
+        0.01079999999999992,
+        0.01079999999999992,
+        0.01079999999999992,
+        0.01079999999999992,
+        0.010799999999999976
+      ],
+      "equal_weight_edge_estimate": 0.010799999999999931,
+      "bias_vs_window_mean": -6.938893903907228e-17,
+      "between_edge_spread": 5.551115123125783e-17
+    }
+  ],
+  "summary": {
+    "mixture_cases": 15,
+    "edge_estimates": 75,
+    "max_abs_bias_vs_arithmetic_window_mean": 6.938893903907228e-17,
+    "max_within_case_spread_across_five_edges": 5.551115123125783e-17,
+    "tolerance": 2e-12
+  },
+  "interpretation_limits": [
+    "This is a population identity for a static background model and a shotwise changing burst rate; it is not finite-history estimator accuracy.",
+    "No detector histories, random draws, shots, decoder outputs, logical outcomes, or seeds are generated.",
+    "The published relative-window difference can isolate one new population time point algebraically, but with one Q-SHIFT detector vector per completed shot its empirical differencing removes the averaging and leaves single-shot noise; practical usefulness is undetermined.",
+    "The result does not cover within-shot changes across the five syndrome rounds, temporal dependence between shots, or changing gate/readout nuisance parameters."
+  ],
+  "sampling_calls": 0,
+  "decoder_calls": 0
+}

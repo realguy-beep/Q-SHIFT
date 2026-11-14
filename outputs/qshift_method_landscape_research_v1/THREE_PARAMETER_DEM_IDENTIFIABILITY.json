@@ -1,0 +1,131 @@
+{
+  "classification": "DETERMINISTIC_APPROXIMATE_DEM_LOCAL_AND_GRID_MEAN_IDENTIFIABILITY",
+  "dem_conversion": {
+    "decompose_errors": true,
+    "approximate_disjoint_errors": true,
+    "stim_version": "1.16.0"
+  },
+  "nominal": [
+    0.01,
+    0.003,
+    0.003
+  ],
+  "declared_scales": [
+    0.008,
+    0.004,
+    0.001
+  ],
+  "feature_count": 45,
+  "dem_mechanisms_at_nominal": 591,
+  "independent_xor_crosscheck": {
+    "distinct_subsets": 1020,
+    "max_abs_mean_error": 7.147060721024445e-16,
+    "max_abs_covariance_error": 6.591949208711867e-16
+  },
+  "local_sensitivity": {
+    "jacobian_shape": [
+      45,
+      3
+    ],
+    "relative_finite_difference_step_changes": [
+      {
+        "parameter": "burst_p",
+        "steps": [
+          0.0001,
+          5e-05,
+          2.5e-05
+        ],
+        "relative_change_h_to_h2": 8.100478459754304e-13,
+        "relative_change_h2_to_h4": 2.2206470744587365e-12
+      },
+      {
+        "parameter": "measurement_p",
+        "steps": [
+          0.0001,
+          5e-05,
+          2.5e-05
+        ],
+        "relative_change_h_to_h2": 5.6386920079274086e-08,
+        "relative_change_h2_to_h4": 1.40965515840151e-08
+      },
+      {
+        "parameter": "gate_p",
+        "steps": [
+          0.0001,
+          5e-05,
+          2.5e-05
+        ],
+        "relative_change_h_to_h2": 5.127213904411421e-07,
+        "relative_change_h2_to_h4": 1.281813831936574e-07
+      }
+    ],
+    "covariance_eigenvalue_min_max": [
+      0.0029250063794340783,
+      0.07823440492857095
+    ],
+    "covariance_whitened_scaled_singular_values": [
+      0.29766153435129145,
+      0.16992756303319123,
+      0.10713116054961204
+    ],
+    "numerical_rank_relative_1e-8": 3
+  },
+  "profile_grid": {
+    "shape": [
+      5,
+      5,
+      3
+    ],
+    "burst_p": [
+      0.002,
+      0.006,
+      0.01,
+      0.014,
+      0.018
+    ],
+    "measurement_p": [
+      0.001,
+      0.002,
+      0.003,
+      0.004,
+      0.005
+    ],
+    "gate_p": [
+      0.002,
+      0.003,
+      0.004
+    ],
+    "nearest_distinct_profile": {
+      "distance": 0.012056622735131094,
+      "left": [
+        0.018,
+        0.004,
+        0.004
+      ],
+      "right": [
+        0.018,
+        0.005,
+        0.004
+      ]
+    },
+    "nearest_profile_changing_burst_and_gate": {
+      "distance": 0.02560907978575784,
+      "left": [
+        0.014,
+        0.005,
+        0.003
+      ],
+      "right": [
+        0.018,
+        0.002,
+        0.004
+      ]
+    }
+  },
+  "limitations": [
+    "All moments are exact for the resulting independent-event approximate DEM, not for the categorical circuit distribution.",
+    "Stim decomposed the model and approximated disjoint circuit errors; this transformation can change feature means and covariance.",
+    "Local rank/profile distances do not establish global identifiability or finite-history estimator accuracy.",
+    "No detector histories, decoder outputs, sampling, or protected data were used."
+  ]
+}
