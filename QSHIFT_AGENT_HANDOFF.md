@@ -49,6 +49,22 @@ Original allowlist: **48 approved paths**; eight separate `REFERENCE_ONLY` paths
 - **Gate 3 is NOT authorized**. Obtain explicit authorization after reviewing closure evidence and dependency on the missing file. Do not restart 47 successful downloads just because the 48th is absent.
 - Ask the user for the final Gate 2C closure report/addendum (and Gate 3 protocol, if moving forward). The user-provided retrieval report has a complete 47-file per-path manifest; this handoff intentionally does not duplicate all 47 hashes.
 
+## 2026-11-14 update — Gate 2C closure addendum verified
+
+The user supplied the actual local document `QSHIFT_GATE2C_CLOSURE_ADDENDUM.md` (2,937 bytes). ChatGPT read the document and independently computed SHA-256:
+`84ef27c15eeebbd704ce73afcf1164342f505e6d5474a5fb6ce09bdeee53fec9`, matching the user-reported hash.
+
+The addendum explicitly records:
+- `GATE_2C_CLOSED_WITH_DOCUMENTED_EXCEPTION` (administrative closure).
+- `ORIGINAL_48_FILE_RETRIEVAL_COMPLETE = FALSE`.
+- 47 of 48 REQUIRED paths saved, reread, and verified against GitHub connector responses; 402,771 bytes total. `AGENTS.md` also matched independently preapproved Git blob SHA-1 and SHA-256.
+- `outputs/phase3a_correlated_noise_preflight/prototype.py` returned HTTP 404 and was absent from the pinned parent-directory Contents API listing. No substitution, change to the original allowlist, or change to the 47 saved files.
+- No independent cryptographic commit-tree membership verification; the other 46 saved files lack separately preapproved expected SHA-256 comparisons.
+- **The 47-file snapshot is NOT sufficient for the originally proposed complete Gate 3 audit** because `prototype.py` was REQUIRED. A narrower Gate 3 requires a separately approved scope amendment. **Gate 3 remains unauthorized.**
+- No source execution, tests, experiments, excluded-material access, or Gate 3 inspection.
+
+**Local addendum path:** `C:\Users\LENOVO\Documents\Codex\2026-11-14\QSHIFT_GATE2C_CLOSURE_ADDENDUM.md`. This file was uploaded into the conversation for review; **it was not committed to GitHub**. The verified hash authenticates the uploaded addendum bytes, not the underlying local snapshot or its provenance. To continue, obtain the actual addendum and original Gate 3 protocol/required-path rationale before proposing a narrower audit.
+
 ## How to resume in a fresh conversation
 
 1. Read this file and `AGENTS.md`, `RESEARCH_STATUS.md`, `EXPERIMENT_INDEX.md` at the *relevant branch and revision*.
@@ -57,4 +73,4 @@ Original allowlist: **48 approved paths**; eight separate `REFERENCE_ONLY` paths
 4. Preserve scientific distinctions: development vs held-out, fixed vs calibrated vs adaptive, synthetic vs hardware-calibrated, and provenance limitations.
 5. After each material milestone, append a dated update here rather than rewriting history.
 
-**Status as of 2026-11-14:** GitHub API missing-path investigation completed; 47 local snapshot files saved; administrative closure addendum proposed but not confirmed; Gate 3 unauthorized.
+**Status as of 2026-11-14:** Gate 2C administratively CLOSED WITH DOCUMENTED EXCEPTION (uploaded addendum SHA-256 verified); 47 local snapshot files saved, 1 REQUIRED file absent; original Gate 3 audit blocked and Gate 3 unauthorized.
