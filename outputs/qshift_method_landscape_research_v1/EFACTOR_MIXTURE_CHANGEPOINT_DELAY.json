@@ -1,0 +1,474 @@
+{
+  "classification": "ANALYTIC_ANYTIME_ONE_CHANGE_E_MIXTURE_WITH_FREEDMAN_DELAY_BOUNDS",
+  "prior": "w_s=1/(s(s+1)), s=1,2,...; exact sum equals one by telescoping",
+  "mixture_definition": "At time t, E_t=sum_{s>=1} w_s M_t^(s), where M_t^(s)=1 before candidate start s and product of one-step null-valid factors from s through t afterward.",
+  "constant_memory_recurrence": "A_0=0; A_t=L_t*(A_(t-1)+1/(t*(t+1))); E_t=A_t+1/(t+1). This equals the infinite component mixture exactly because future prior mass sums to 1/(t+1).",
+  "null_guarantee": "If the single sustained no-change null rectangle holds conditionally each shot, every component is a nonnegative supermartingale; their fixed convex mixture is a nonnegative supermartingale. Ville gives P(sup_t E_t>=1/alpha)<=alpha.",
+  "change_guarantee": "If an abrupt transition occurs at candidate start s and the alternative rectangle holds conditionally thereafter, E_t>=w_s*M_t^(s). Thus the single-process Freedman quantile applies with threshold A_s=log(1/(alpha*w_s)); it is a sufficient post-change detection-delay bound.",
+  "inheritance": "The exact-circuit conditional mean/log bounds and Freedman parameters are inherited unchanged from EFACTOR_FREEDMAN_MEAN_RANGE_BOUNDS.json.",
+  "prior_normalization_partial_sum_10000": "10000/10001",
+  "arms": [
+    {
+      "direction": "upward",
+      "conditional_log_drift_mu": "0.004932537879491168309792099802",
+      "variance_upper_v": "0.04704825518717637779718491838148292095790221773034701999809089376054646",
+      "centered_increment_bound_c": "1.187144921071783059309867825199",
+      "rows": [
+        {
+          "candidate_change_start_shot": 1,
+          "prior_weight_exact": "1/2",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 10693,
+          "freedman_bound_at_n": "0.09998345434369062096608382385",
+          "bound_at_n_minus_1": "0.1000081671043356209726654182"
+        },
+        {
+          "candidate_change_start_shot": 1,
+          "prior_weight_exact": "1/2",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 13495,
+          "freedman_bound_at_n": "0.04999222050709192702702926670",
+          "bound_at_n_minus_1": "0.05000459800425551575695545225"
+        },
+        {
+          "candidate_change_start_shot": 1,
+          "prior_weight_exact": "1/2",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 11286,
+          "freedman_bound_at_n": "0.09999161584816075377373598650",
+          "bound_at_n_minus_1": "0.1000162342762266950641033787"
+        },
+        {
+          "candidate_change_start_shot": 1,
+          "prior_weight_exact": "1/2",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 14097,
+          "freedman_bound_at_n": "0.04999457014674669300944322992",
+          "bound_at_n_minus_1": "0.05000691667153034250908203985"
+        },
+        {
+          "candidate_change_start_shot": 100,
+          "prior_weight_exact": "1/10100",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 13715,
+          "freedman_bound_at_n": "0.09997628242658441255310384410",
+          "bound_at_n_minus_1": "0.1000003487615185244499431779"
+        },
+        {
+          "candidate_change_start_shot": 100,
+          "prior_weight_exact": "1/10100",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 16579,
+          "freedman_bound_at_n": "0.04998996965771280296745169381",
+          "bound_at_n_minus_1": "0.05000212343493093152575790630"
+        },
+        {
+          "candidate_change_start_shot": 100,
+          "prior_weight_exact": "1/10100",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 14257,
+          "freedman_bound_at_n": "0.09999712690386539885181963189",
+          "bound_at_n_minus_1": "0.1000210567431068432090804282"
+        },
+        {
+          "candidate_change_start_shot": 100,
+          "prior_weight_exact": "1/10100",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 17136,
+          "freedman_bound_at_n": "0.04999319319509033001364653602",
+          "bound_at_n_minus_1": "0.05000529598114633740830835243"
+        },
+        {
+          "candidate_change_start_shot": 1000,
+          "prior_weight_exact": "1/1001000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 15248,
+          "freedman_bound_at_n": "0.09997837397331507291918874212",
+          "bound_at_n_minus_1": "0.1000020336836321300764683822"
+        },
+        {
+          "candidate_change_start_shot": 1000,
+          "prior_weight_exact": "1/1001000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 18154,
+          "freedman_bound_at_n": "0.04999266576045195620419776596",
+          "bound_at_n_minus_1": "0.05000466910530260933516287716"
+        },
+        {
+          "candidate_change_start_shot": 1000,
+          "prior_weight_exact": "1/1001000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 15773,
+          "freedman_bound_at_n": "0.09998532559555044468333963561",
+          "bound_at_n_minus_1": "0.1000088434619458466606547690"
+        },
+        {
+          "candidate_change_start_shot": 1000,
+          "prior_weight_exact": "1/1001000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 18695,
+          "freedman_bound_at_n": "0.04998827155748118050668131001",
+          "bound_at_n_minus_1": "0.05000021928384209749231559229"
+        },
+        {
+          "candidate_change_start_shot": 10000,
+          "prior_weight_exact": "1/100010000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 16737,
+          "freedman_bound_at_n": "0.09998270571466735366479361812",
+          "bound_at_n_minus_1": "0.1000059580502675400557272718"
+        },
+        {
+          "candidate_change_start_shot": 10000,
+          "prior_weight_exact": "1/100010000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 19687,
+          "freedman_bound_at_n": "0.04999876335433672789961785852",
+          "bound_at_n_minus_1": "0.05001061108142842698665587576"
+        },
+        {
+          "candidate_change_start_shot": 10000,
+          "prior_weight_exact": "1/100010000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 17248,
+          "freedman_bound_at_n": "0.09999154271345363230495231821",
+          "bound_at_n_minus_1": "0.1000146564018817239876595208"
+        },
+        {
+          "candidate_change_start_shot": 10000,
+          "prior_weight_exact": "1/100010000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 20215,
+          "freedman_bound_at_n": "0.04998837287349585590261266690",
+          "bound_at_n_minus_1": "0.05000016303060490781343565453"
+        },
+        {
+          "candidate_change_start_shot": 100000,
+          "prior_weight_exact": "1/10000100000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 18189,
+          "freedman_bound_at_n": "0.09998730266522848011257712584",
+          "bound_at_n_minus_1": "0.1000101580089086166675177274"
+        },
+        {
+          "candidate_change_start_shot": 100000,
+          "prior_weight_exact": "1/10000100000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 21185,
+          "freedman_bound_at_n": "0.04999144563826819177819697120",
+          "bound_at_n_minus_1": "0.05000313422149603922070140730"
+        },
+        {
+          "candidate_change_start_shot": 100000,
+          "prior_weight_exact": "1/10000100000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 18689,
+          "freedman_bound_at_n": "0.09998796276632207011827432810",
+          "bound_at_n_minus_1": "0.1000106825882072457946894002"
+        },
+        {
+          "candidate_change_start_shot": 100000,
+          "prior_weight_exact": "1/10000100000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 21701,
+          "freedman_bound_at_n": "0.04999003984018265607705045287",
+          "bound_at_n_minus_1": "0.05000167355520646387510969539"
+        },
+        {
+          "candidate_change_start_shot": 1000000,
+          "prior_weight_exact": "1/1000001000000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 19611,
+          "freedman_bound_at_n": "0.09997808135150521540033209891",
+          "bound_at_n_minus_1": "0.1000005518399394995018335396"
+        },
+        {
+          "candidate_change_start_shot": 1000000,
+          "prior_weight_exact": "1/1000001000000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 22652,
+          "freedman_bound_at_n": "0.04999049926859580223864410595",
+          "bound_at_n_minus_1": "0.05000203262130165423412964461"
+        },
+        {
+          "candidate_change_start_shot": 1000000,
+          "prior_weight_exact": "1/1000001000000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 20101,
+          "freedman_bound_at_n": "0.09999016380268004097991913717",
+          "bound_at_n_minus_1": "0.1000125070040683009004307379"
+        },
+        {
+          "candidate_change_start_shot": 1000000,
+          "prior_weight_exact": "1/1000001000000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 23158,
+          "freedman_bound_at_n": "0.04999435353744087883623789230",
+          "bound_at_n_minus_1": "0.05000583444694640043607796700"
+        }
+      ]
+    },
+    {
+      "direction": "downward_on_complement",
+      "conditional_log_drift_mu": "0.003336614487056263323131344159",
+      "variance_upper_v": "0.004309249533337529772733402627165893982083300686103437361708",
+      "centered_increment_bound_c": "1.198887653801076958291648607150521515973195546006030520450944967797722",
+      "rows": [
+        {
+          "candidate_change_start_shot": 1,
+          "prior_weight_exact": "1/2",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 4099,
+          "freedman_bound_at_n": "0.09992401501605696647378868432",
+          "bound_at_n_minus_1": "0.1000178619196054074753599240"
+        },
+        {
+          "candidate_change_start_shot": 1,
+          "prior_weight_exact": "1/2",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 4831,
+          "freedman_bound_at_n": "0.04998100949139474432859255316",
+          "bound_at_n_minus_1": "0.05002865503688128810771103245"
+        },
+        {
+          "candidate_change_start_shot": 1,
+          "prior_weight_exact": "1/2",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 4803,
+          "freedman_bound_at_n": "0.09995809324958476837885886531",
+          "bound_at_n_minus_1": "0.1000493452709369934018313734"
+        },
+        {
+          "candidate_change_start_shot": 1,
+          "prior_weight_exact": "1/2",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 5554,
+          "freedman_bound_at_n": "0.04996896804507688235631263164",
+          "bound_at_n_minus_1": "0.05001558077076912261578621657"
+        },
+        {
+          "candidate_change_start_shot": 100,
+          "prior_weight_exact": "1/10100",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 7637,
+          "freedman_bound_at_n": "0.09998662266008462003015461239",
+          "bound_at_n_minus_1": "0.1000684751586833622242444734"
+        },
+        {
+          "candidate_change_start_shot": 100,
+          "prior_weight_exact": "1/10100",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 8466,
+          "freedman_bound_at_n": "0.04997082452399450131344832398",
+          "bound_at_n_minus_1": "0.05001346740873695304817160744"
+        },
+        {
+          "candidate_change_start_shot": 100,
+          "prior_weight_exact": "1/10100",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 8269,
+          "freedman_bound_at_n": "0.09994422959406039659232786928",
+          "bound_at_n_minus_1": "0.1000242761782279304369398415"
+        },
+        {
+          "candidate_change_start_shot": 100,
+          "prior_weight_exact": "1/10100",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 9114,
+          "freedman_bound_at_n": "0.04998758790837110827996115475",
+          "bound_at_n_minus_1": "0.05002945558085790818532169080"
+        },
+        {
+          "candidate_change_start_shot": 1000,
+          "prior_weight_exact": "1/1001000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 9422,
+          "freedman_bound_at_n": "0.09999279913389419814654240952",
+          "bound_at_n_minus_1": "0.1000699116178075661144736626"
+        },
+        {
+          "candidate_change_start_shot": 1000,
+          "prior_weight_exact": "1/1001000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 10298,
+          "freedman_bound_at_n": "0.04997964440693033827040941279",
+          "bound_at_n_minus_1": "0.05002016281329507338636391935"
+        },
+        {
+          "candidate_change_start_shot": 1000,
+          "prior_weight_exact": "1/1001000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 10036,
+          "freedman_bound_at_n": "0.09994450165944138658737397252",
+          "bound_at_n_minus_1": "0.1000201310247317744886535530"
+        },
+        {
+          "candidate_change_start_shot": 1000,
+          "prior_weight_exact": "1/1001000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 10927,
+          "freedman_bound_at_n": "0.04998058987996135688094672168",
+          "bound_at_n_minus_1": "0.05002044355955799140456943538"
+        },
+        {
+          "candidate_change_start_shot": 10000,
+          "prior_weight_exact": "1/100010000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 11164,
+          "freedman_bound_at_n": "0.09998965673034564430891707062",
+          "bound_at_n_minus_1": "0.1000628543917334040086425872"
+        },
+        {
+          "candidate_change_start_shot": 10000,
+          "prior_weight_exact": "1/100010000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 12084,
+          "freedman_bound_at_n": "0.04996889513986752058813871510",
+          "bound_at_n_minus_1": "0.05000759644447078890660985439"
+        },
+        {
+          "candidate_change_start_shot": 10000,
+          "prior_weight_exact": "1/100010000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 11765,
+          "freedman_bound_at_n": "0.09995752642888989003413070394",
+          "bound_at_n_minus_1": "0.1000294900559617294784934881"
+        },
+        {
+          "candidate_change_start_shot": 10000,
+          "prior_weight_exact": "1/100010000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 12699,
+          "freedman_bound_at_n": "0.04997431573146325418345395239",
+          "bound_at_n_minus_1": "0.05001245150182013622635722458"
+        },
+        {
+          "candidate_change_start_shot": 100000,
+          "prior_weight_exact": "1/10000100000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 12873,
+          "freedman_bound_at_n": "0.09997928557517151226952035015",
+          "bound_at_n_minus_1": "0.1000491802827654579242586931"
+        },
+        {
+          "candidate_change_start_shot": 100000,
+          "prior_weight_exact": "1/10000100000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 13833,
+          "freedman_bound_at_n": "0.04999565265845838603951789835",
+          "bound_at_n_minus_1": "0.05003281664823690691697679879"
+        },
+        {
+          "candidate_change_start_shot": 100000,
+          "prior_weight_exact": "1/10000100000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 13464,
+          "freedman_bound_at_n": "0.09997187494299692017117740769",
+          "bound_at_n_minus_1": "0.1000407291057280394870352039"
+        },
+        {
+          "candidate_change_start_shot": 100000,
+          "prior_weight_exact": "1/10000100000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 14438,
+          "freedman_bound_at_n": "0.04997971810025283873214341850",
+          "bound_at_n_minus_1": "0.05001637649388628334803493434"
+        },
+        {
+          "candidate_change_start_shot": 1000000,
+          "prior_weight_exact": "1/1000001000000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 14556,
+          "freedman_bound_at_n": "0.09999966336541616681506228495",
+          "bound_at_n_minus_1": "0.1000667399122525444496085763"
+        },
+        {
+          "candidate_change_start_shot": 1000000,
+          "prior_weight_exact": "1/1000001000000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 15555,
+          "freedman_bound_at_n": "0.04998456270517669012320583044",
+          "bound_at_n_minus_1": "0.05002036172933767202804668575"
+        },
+        {
+          "candidate_change_start_shot": 1000000,
+          "prior_weight_exact": "1/1000001000000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots": 15140,
+          "freedman_bound_at_n": "0.09995096486746341690015486131",
+          "bound_at_n_minus_1": "0.1000171132138286875342335239"
+        },
+        {
+          "candidate_change_start_shot": 1000000,
+          "prior_weight_exact": "1/1000001000000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots": 16151,
+          "freedman_bound_at_n": "0.04999095366952678337903164889",
+          "bound_at_n_minus_1": "0.05002632165404122491412358498"
+        }
+      ]
+    }
+  ],
+  "assumptions": [
+    "One direction is selected in advance from a trusted initial-regime designation; the corresponding single null rectangle must hold when no change occurs.",
+    "No automatic reverse transition, reset, or restarted process after a switch.",
+    "The change is abrupt and the true change shot is represented by a prior component.",
+    "The exact categorical circuit and conditional parameter rectangles remain valid."
+  ],
+  "limitations": [
+    "This is a regime detector only; it does not estimate p_b or select the matching graph.",
+    "No repeated-change or bidirectional state-machine guarantee is established.",
+    "Running multiple directions is not justified merely by splitting alpha; each arm needs a valid null premise or a common-null construction.",
+    "Prior weights trade later change times for larger thresholds.",
+    "Delay bounds are sufficient analytic quantiles, not expected/observed delays or decoder utility.",
+    "No simulations or detector histories were generated."
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "classification": "DETERMINISTIC_EXACT_JOINT_SCORE_COVARIANCE_ASYMPTOTIC_AUDIT",
+  "model": {
+    "categorical_circuit": "distance-3, five-round balanced Z-memory",
+    "gate_p": 0.003,
+    "measurement_p": 0.003,
+    "burst_rate_constant_within_shot": true,
+    "detector_bits_jointly_enumerated": [
+      8,
+      10,
+      16,
+      18,
+      24,
+      26,
+      32,
+      34,
+      36,
+      38
+    ],
+    "edge_pairs": [
+      [
+        8,
+        10
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        32,
+        34
+      ],
+      [
+        36,
+        38
+      ]
+    ],
+    "probability_supports": "exact categorical model; independent burst Bernoulli event on each specified detector pair"
+  },
+  "estimator": "Sum of five marginal multinomial log-likelihood scores (composite likelihood); exact joint-score sandwich variance J/H^2, compared with a false edge-score independence assumption.",
+  "probes": [
+    {
+      "burst_p": 0.002,
+      "joint_states": 1024,
+      "joint_probability_mass_sum": 1.0000000000000004,
+      "pair_marginals_max_abs_error_vs_exact_45_feature_means": 2.851885394505871e-15,
+      "probability_no_cofire_on_any_of_five_pairs_one_shot": 0.9878222330037124,
+      "probability_no_cofire_on_any_pair_in_iid_windows": {
+        "25": 0.7361561014998874,
+        "50": 0.5419258057755125,
+        "100": 0.2936835789654385,
+        "200": 0.08625004455394897
+      },
+      "composite_score_mean": 6.705747068735946e-13,
+      "sensitivity_hessian_H": 1834.5326434741937,
+      "score_variance_J_exact_joint": 1870.5600208290195,
+      "score_variance_J_if_pair_scores_were_independent": 1834.5326434741942,
+      "sum_pair_score_cross_covariance": 36.027377354825376,
+      "dependence_correction_ratio_J_over_naive": 1.0196384498705882,
+      "godambe_asymptotic_sd_coefficient_per_sqrt_shots": 0.02357547111134995,
+      "naive_independent_pair_sd_coefficient_per_sqrt_shots": 0.023347333020631144,
+      "pair_cell_marginals": [
+        [
+          0.0024936027799757894,
+          0.01792056361372966,
+          0.031557154849569655,
+          0.948028678756725
+        ],
+        [
+          0.0024936027799757894,
+          0.017920563613729804,
+          0.03155715484956963,
+          0.9480286787567258
+        ],
+        [
+          0.002493602779975792,
+          0.01792056361372968,
+          0.03155715484956969,
+          0.9480286787567249
+        ],
+        [
+          0.002493602779975785,
+          0.017920563613729682,
+          0.03155715484956975,
+          0.9480286787567255
+        ],
+        [
+          0.002380422520369917,
+          0.01784561842234747,
+          0.025102542687424418,
+          0.954671416369859
+        ]
+      ]
+    },
+    {
+      "burst_p": 0.01,
+      "joint_states": 1024,
+      "joint_probability_mass_sum": 1.0000000000000073,
+      "pair_marginals_max_abs_error_vs_exact_45_feature_means": 3.219646771412954e-15,
+      "probability_no_cofire_on_any_of_five_pairs_one_shot": 0.950724524765919,
+      "probability_no_cofire_on_any_pair_in_iid_windows": {
+        "25": 0.28272709213183056,
+        "50": 0.0799346086253206,
+        "100": 0.006389541656083179,
+        "200": 4.082624257482218e-05
+      },
+      "composite_score_mean": 6.725731083179198e-13,
+      "sensitivity_hessian_H": 453.356123322234,
+      "score_variance_J_exact_joint": 455.56863092925755,
+      "score_variance_J_if_pair_scores_were_independent": 453.35612332223405,
+      "sum_pair_score_cross_covariance": 2.212507607023497,
+      "dependence_correction_ratio_J_over_naive": 1.0048802861441686,
+      "godambe_asymptotic_sd_coefficient_per_sqrt_shots": 0.047080104717777675,
+      "naive_independent_pair_sd_coefficient_per_sqrt_shots": 0.0469656413170562,
+      "pair_cell_marginals": [
+        [
+          0.010088262024769014,
+          0.01803009446702962,
+          0.03144762399626999,
+          0.940434019511939
+        ],
+        [
+          0.010088262024768936,
+          0.018030094467029672,
+          0.031447623996269755,
+          0.9404340195119391
+        ],
+        [
+          0.010088262024769088,
+          0.018030094467029596,
+          0.03144762399626997,
+          0.9404340195119385
+        ],
+        [
+          0.010088262024769033,
+          0.018030094467029696,
+          0.0314476239962701,
+          0.9404340195119383
+        ],
+        [
+          0.01002934616574739,
+          0.017903906970661493,
+          0.025044254139110697,
+          0.9470224927244869
+        ]
+      ]
+    },
+    {
+      "burst_p": 0.018,
+      "joint_states": 1024,
+      "joint_probability_mass_sum": 1.0000000000000029,
+      "pair_marginals_max_abs_error_vs_exact_45_feature_means": 2.831068712794149e-15,
+      "probability_no_cofire_on_any_of_five_pairs_one_shot": 0.9147551418738813,
+      "probability_no_cofire_on_any_pair_in_iid_windows": {
+        "25": 0.10780067588596215,
+        "50": 0.01162098572147026,
+        "100": 0.00013504730913861568,
+        "200": 1.8237775705580833e-08
+      },
+      "composite_score_mean": 6.712408406883696e-13,
+      "sensitivity_hessian_H": 260.4836877111136,
+      "score_variance_J_exact_joint": 261.2197686491831,
+      "score_variance_J_if_pair_scores_were_independent": 260.48368771111365,
+      "sum_pair_score_cross_covariance": 0.7360809380694491,
+      "dependence_correction_ratio_J_over_naive": 1.0028258235459482,
+      "godambe_asymptotic_sd_coefficient_per_sqrt_shots": 0.06204724296238632,
+      "naive_independent_pair_sd_coefficient_per_sqrt_shots": 0.061959761045071636,
+      "pair_cell_marginals": [
+        [
+          0.01768292126956227,
+          0.018139625320329623,
+          0.03133809314296988,
+          0.9328393602671408
+        ],
+        [
+          0.01768292126956217,
+          0.018139625320329596,
+          0.03133809314296994,
+          0.9328393602671415
+        ],
+        [
+          0.01768292126956221,
+          0.01813962532032952,
+          0.03133809314296993,
+          0.9328393602671403
+        ],
+        [
+          0.017682921269562137,
+          0.018139625320329568,
+          0.03133809314296996,
+          0.9328393602671411
+        ],
+        [
+          0.017678269811124792,
+          0.01796219551897526,
+          0.024985965590796723,
+          0.9393735690791062
+        ]
+      ]
+    }
+  ],
+  "limitations": [
+    "Asymptotic variance only; no finite-history bias, boundary mass, interval coverage, or alarm characteristics are calculated.",
+    "The composite likelihood uses exact categorical pair marginals; it is not the approximate-DEM estimator and assumes fixed gate/readout nuisance parameters.",
+    "The result does not show that composite likelihood beats the 45-feature profile, the five-edge moment average, or any decoder.",
+    "No optimization over policy/window or model-generated training grid is performed."
+  ],
+  "sampling_calls": 0,
+  "decoder_calls": 0
+}

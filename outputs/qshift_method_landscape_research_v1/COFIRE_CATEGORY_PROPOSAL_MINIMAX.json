@@ -1,0 +1,83 @@
+{
+  "classification": "FINITE_MODEL_GRID_SOFTMIN_PROXY_FOR_MAXIMIN_Q_SELECTION_NOT_DATA_TUNING",
+  "optimizer": {
+    "method": "SciPy SLSQP on smooth soft-min of all 303 alternative rows",
+    "success": true,
+    "message": "Optimization terminated successfully",
+    "iterations": 25,
+    "softmin_beta": 2500.0,
+    "softmin_approximation_gap_bound": 0.0022854931222037475,
+    "finite_grid_objective": 0.018035717773622832
+  },
+  "alternative_grid": {
+    "burst_p": [
+      0.01,
+      0.014,
+      0.018
+    ],
+    "tuning_measurement_p": [
+      0.001,
+      0.005,
+      101
+    ],
+    "dense_measurement_sensitivity_grid": [
+      0.001,
+      0.005,
+      1001
+    ]
+  },
+  "rational_q": [
+    {
+      "numerator": "19018927244131",
+      "denominator": "20000000000000"
+    },
+    {
+      "numerator": "1200008485363",
+      "denominator": "25000000000000"
+    },
+    {
+      "numerator": "104125652377",
+      "denominator": "100000000000000"
+    },
+    {
+      "numerator": "239380043",
+      "denominator": "20000000000000"
+    },
+    {
+      "numerator": "7266587",
+      "denominator": "100000000000000"
+    },
+    {
+      "numerator": "9357",
+      "denominator": "50000000000000"
+    }
+  ],
+  "q_float": [
+    0.95094636220655,
+    0.04800033941452,
+    0.00104125652377,
+    1.196900215e-05,
+    7.266587e-08,
+    1.8714e-10
+  ],
+  "q_sums_exactly_to_one": true,
+  "e_factor": [
+    0.9526691941420433,
+    3.72130871243307,
+    3.660675028597049,
+    6.264531958869249,
+    5.165573815004933,
+    6.139972540758119
+  ],
+  "minimum_expected_log_tuning_grid": 0.018035717773622832,
+  "minimum_expected_log_dense_sensitivity_grid": 0.018035717773622832,
+  "maximum_expected_log_dense_sensitivity_grid": 0.06802396987930921,
+  "scalar_mean_fixed_lambda_minimum_on_prior_dense_grid": 0.028720994926488008,
+  "comparison": "The proposal maximizes a smooth soft-min surrogate on a model-generated finite alternative grid, not the exact minimum objective. The pointwise soft-min approximation gap is bounded by log(N)/beta, while numerical optimizer convergence does not independently certify a global optimum. Dense-grid checking reduces but does not remove grid-selection risk; alternative continuous drift is not certified. Any fixed normalized q remains null-valid analytically under the exact category envelope, subject to exact constant implementation.",
+  "limitations": [
+    "The proposal selection uses only deterministic model laws, not observations or outcomes.",
+    "The optimizer is numerical and the stated objective is a finite-grid maximin criterion.",
+    "The continuous alternative expected-log lower bound is not established.",
+    "No stream, alarm, decoder action, or logical outcome was evaluated."
+  ]
+}

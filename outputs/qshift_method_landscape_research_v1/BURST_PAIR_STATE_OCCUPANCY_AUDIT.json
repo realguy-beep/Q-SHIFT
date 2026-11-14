@@ -1,0 +1,375 @@
+{
+  "classification": "DETERMINISTIC_EXPECTED_OCCUPANCY_NOT_HISTORY_GENERATION",
+  "configuration": {
+    "detector_bits": [
+      8,
+      10,
+      16,
+      18,
+      24,
+      26,
+      32,
+      34,
+      36,
+      38
+    ],
+    "state_count": 1024,
+    "measurement_p": 0.003,
+    "burst_values": [
+      0.002,
+      0.01,
+      0.018
+    ],
+    "windows": [
+      25,
+      50,
+      100,
+      200,
+      500
+    ]
+  },
+  "method": "For IID draws from each exact outcome distribution q_s, compute E[occupied]=sum_s[1-(1-q_s)^W] and E[singletons]=sum_s W q_s(1-q_s)^(W-1). No draws are made.",
+  "rows": [
+    {
+      "model": "exact_categorical_circuit",
+      "burst_p": 0.002,
+      "measurement_p": 0.003,
+      "positive_probability_states": 1024,
+      "effective_support_entropy_exp": 3.0985982715445406,
+      "effective_support_inverse_collision": 1.5237117476470385,
+      "windows": [
+        {
+          "window_shots": 25,
+          "expected_occupied_states": 5.236655638348866,
+          "expected_unoccupied_states": 1018.7633443616511,
+          "expected_singleton_states": 3.751874856056494,
+          "states_with_expected_count_below_1": 1023,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1023
+        },
+        {
+          "window_shots": 50,
+          "expected_occupied_states": 8.573268019672744,
+          "expected_unoccupied_states": 1015.4267319803273,
+          "expected_singleton_states": 5.989639653348391,
+          "states_with_expected_count_below_1": 1022,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1022
+        },
+        {
+          "window_shots": 100,
+          "expected_occupied_states": 13.508972301586283,
+          "expected_unoccupied_states": 1010.4910276984137,
+          "expected_singleton_states": 8.229637311226897,
+          "states_with_expected_count_below_1": 1016,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1016
+        },
+        {
+          "window_shots": 200,
+          "expected_occupied_states": 19.782205159175366,
+          "expected_unoccupied_states": 1004.2177948408246,
+          "expected_singleton_states": 9.8125576451772,
+          "states_with_expected_count_below_1": 1009,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1009
+        },
+        {
+          "window_shots": 500,
+          "expected_occupied_states": 29.614580929688415,
+          "expected_unoccupied_states": 994.3854190703116,
+          "expected_singleton_states": 11.832791375903952,
+          "states_with_expected_count_below_1": 1005,
+          "states_with_expected_count_below_5": 1016,
+          "states_with_probability_below_1_over_window": 1005
+        }
+      ]
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "burst_p": 0.01,
+      "measurement_p": 0.003,
+      "positive_probability_states": 1024,
+      "effective_support_entropy_exp": 3.7693491650991415,
+      "effective_support_inverse_collision": 1.650479512486654,
+      "windows": [
+        {
+          "window_shots": 25,
+          "expected_occupied_states": 5.9808292918831345,
+          "expected_unoccupied_states": 1018.0191707081169,
+          "expected_singleton_states": 4.442892493288716,
+          "states_with_expected_count_below_1": 1023,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1023
+        },
+        {
+          "window_shots": 50,
+          "expected_occupied_states": 9.952782451348304,
+          "expected_unoccupied_states": 1014.0472175486517,
+          "expected_singleton_states": 7.160435188113968,
+          "states_with_expected_count_below_1": 1023,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1023
+        },
+        {
+          "window_shots": 100,
+          "expected_occupied_states": 15.870942865215422,
+          "expected_unoccupied_states": 1008.1290571347846,
+          "expected_singleton_states": 9.866441521049385,
+          "states_with_expected_count_below_1": 1017,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1017
+        },
+        {
+          "window_shots": 200,
+          "expected_occupied_states": 23.301633937084006,
+          "expected_unoccupied_states": 1000.698366062916,
+          "expected_singleton_states": 11.406271795402498,
+          "states_with_expected_count_below_1": 1004,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1004
+        },
+        {
+          "window_shots": 500,
+          "expected_occupied_states": 34.38963083940269,
+          "expected_unoccupied_states": 989.6103691605973,
+          "expected_singleton_states": 13.263079029068983,
+          "states_with_expected_count_below_1": 1000,
+          "states_with_expected_count_below_5": 1017,
+          "states_with_probability_below_1_over_window": 1000
+        }
+      ]
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "burst_p": 0.018,
+      "measurement_p": 0.003,
+      "positive_probability_states": 1024,
+      "effective_support_entropy_exp": 4.433646239645909,
+      "effective_support_inverse_collision": 1.7877439363024816,
+      "windows": [
+        {
+          "window_shots": 25,
+          "expected_occupied_states": 6.615221208042536,
+          "expected_unoccupied_states": 1017.3847787919575,
+          "expected_singleton_states": 4.955600771179408,
+          "states_with_expected_count_below_1": 1023,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1023
+        },
+        {
+          "window_shots": 50,
+          "expected_occupied_states": 10.999912873014338,
+          "expected_unoccupied_states": 1013.0000871269857,
+          "expected_singleton_states": 7.825991194630707,
+          "states_with_expected_count_below_1": 1023,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1023
+        },
+        {
+          "window_shots": 100,
+          "expected_occupied_states": 17.364105112611036,
+          "expected_unoccupied_states": 1006.635894887389,
+          "expected_singleton_states": 10.453022023276642,
+          "states_with_expected_count_below_1": 1012,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1012
+        },
+        {
+          "window_shots": 200,
+          "expected_occupied_states": 25.166509963613088,
+          "expected_unoccupied_states": 998.8334900363869,
+          "expected_singleton_states": 12.01128126445745,
+          "states_with_expected_count_below_1": 1007,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1007
+        },
+        {
+          "window_shots": 500,
+          "expected_occupied_states": 37.5756354275935,
+          "expected_unoccupied_states": 986.4243645724065,
+          "expected_singleton_states": 15.957990263702976,
+          "states_with_expected_count_below_1": 1000,
+          "states_with_expected_count_below_5": 1012,
+          "states_with_probability_below_1_over_window": 1000
+        }
+      ]
+    },
+    {
+      "model": "approximate_dem",
+      "burst_p": 0.002,
+      "measurement_p": 0.003,
+      "positive_probability_states": 1024,
+      "effective_support_entropy_exp": 3.096272964254315,
+      "effective_support_inverse_collision": 1.5231568354675664,
+      "windows": [
+        {
+          "window_shots": 25,
+          "expected_occupied_states": 5.233717734897604,
+          "expected_unoccupied_states": 1018.7662822651024,
+          "expected_singleton_states": 3.749612611160592,
+          "states_with_expected_count_below_1": 1023,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1023
+        },
+        {
+          "window_shots": 50,
+          "expected_occupied_states": 8.56856525994708,
+          "expected_unoccupied_states": 1015.431434740053,
+          "expected_singleton_states": 5.9868652736536205,
+          "states_with_expected_count_below_1": 1022,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1022
+        },
+        {
+          "window_shots": 100,
+          "expected_occupied_states": 13.502406844085925,
+          "expected_unoccupied_states": 1010.497593155914,
+          "expected_singleton_states": 8.227085684009227,
+          "states_with_expected_count_below_1": 1016,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1016
+        },
+        {
+          "window_shots": 200,
+          "expected_occupied_states": 19.77385392477335,
+          "expected_unoccupied_states": 1004.2261460752267,
+          "expected_singleton_states": 9.809617151881895,
+          "states_with_expected_count_below_1": 1009,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1009
+        },
+        {
+          "window_shots": 500,
+          "expected_occupied_states": 29.60186058056951,
+          "expected_unoccupied_states": 994.3981394194304,
+          "expected_singleton_states": 11.825374092314362,
+          "states_with_expected_count_below_1": 1005,
+          "states_with_expected_count_below_5": 1016,
+          "states_with_probability_below_1_over_window": 1005
+        }
+      ]
+    },
+    {
+      "model": "approximate_dem",
+      "burst_p": 0.01,
+      "measurement_p": 0.003,
+      "positive_probability_states": 1024,
+      "effective_support_entropy_exp": 3.7665714314029155,
+      "effective_support_inverse_collision": 1.6498786824105498,
+      "windows": [
+        {
+          "window_shots": 25,
+          "expected_occupied_states": 5.97796670718177,
+          "expected_unoccupied_states": 1018.0220332928183,
+          "expected_singleton_states": 4.440647118404945,
+          "states_with_expected_count_below_1": 1023,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1023
+        },
+        {
+          "window_shots": 50,
+          "expected_occupied_states": 9.948132710357354,
+          "expected_unoccupied_states": 1014.0518672896427,
+          "expected_singleton_states": 7.157559528186779,
+          "states_with_expected_count_below_1": 1023,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1023
+        },
+        {
+          "window_shots": 100,
+          "expected_occupied_states": 15.864269373797331,
+          "expected_unoccupied_states": 1008.1357306262026,
+          "expected_singleton_states": 9.86349826774921,
+          "states_with_expected_count_below_1": 1017,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1017
+        },
+        {
+          "window_shots": 200,
+          "expected_occupied_states": 23.292750967839815,
+          "expected_unoccupied_states": 1000.7072490321602,
+          "expected_singleton_states": 11.402471123933575,
+          "states_with_expected_count_below_1": 1004,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1004
+        },
+        {
+          "window_shots": 500,
+          "expected_occupied_states": 34.37522725867174,
+          "expected_unoccupied_states": 989.6247727413282,
+          "expected_singleton_states": 13.254001220057829,
+          "states_with_expected_count_below_1": 1000,
+          "states_with_expected_count_below_5": 1017,
+          "states_with_probability_below_1_over_window": 1000
+        }
+      ]
+    },
+    {
+      "model": "approximate_dem",
+      "burst_p": 0.018,
+      "measurement_p": 0.003,
+      "positive_probability_states": 1024,
+      "effective_support_entropy_exp": 4.430419154141832,
+      "effective_support_inverse_collision": 1.7870934119715496,
+      "windows": [
+        {
+          "window_shots": 25,
+          "expected_occupied_states": 6.6124029194604885,
+          "expected_unoccupied_states": 1017.3875970805395,
+          "expected_singleton_states": 4.95332148186544,
+          "states_with_expected_count_below_1": 1023,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1023
+        },
+        {
+          "window_shots": 50,
+          "expected_occupied_states": 10.995224858999876,
+          "expected_unoccupied_states": 1013.0047751410001,
+          "expected_singleton_states": 7.822884444905995,
+          "states_with_expected_count_below_1": 1023,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1023
+        },
+        {
+          "window_shots": 100,
+          "expected_occupied_states": 17.357115727668262,
+          "expected_unoccupied_states": 1006.6428842723317,
+          "expected_singleton_states": 10.449503134874982,
+          "states_with_expected_count_below_1": 1012,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1012
+        },
+        {
+          "window_shots": 200,
+          "expected_occupied_states": 25.156832649921093,
+          "expected_unoccupied_states": 998.8431673500789,
+          "expected_singleton_states": 12.006726986306727,
+          "states_with_expected_count_below_1": 1007,
+          "states_with_expected_count_below_5": 1023,
+          "states_with_probability_below_1_over_window": 1007
+        },
+        {
+          "window_shots": 500,
+          "expected_occupied_states": 37.55967795541389,
+          "expected_unoccupied_states": 986.4403220445861,
+          "expected_singleton_states": 15.947886384836696,
+          "states_with_expected_count_below_1": 1000,
+          "states_with_expected_count_below_5": 1012,
+          "states_with_probability_below_1_over_window": 1000
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "maximum_normalization_error": 7.327471962526033e-15,
+    "occupied_expectation_in_bounds": true
+  },
+  "interpretation": [
+    "A full 1024-cell multinomial table may be sparsely observed at short W, particularly in rare cells. However, the proposed full likelihood has only the declared low-dimensional model parameters; it is not an unconstrained 1024-parameter fit.",
+    "Expected occupancy does not characterize the finite-history estimator bias/RMSE, numerical likelihood conditioning, boundary mass, or robustness. Those require exact count-distribution analysis or an authorized study.",
+    "Results assume stationary independent shots at a fixed point. Across-shot drift invalidates the IID occupancy formula for a pooled window unless the mixture is modeled."
+  ],
+  "sampling_calls": 0,
+  "decoder_calls": 0
+}

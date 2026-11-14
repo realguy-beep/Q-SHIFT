@@ -1,0 +1,245 @@
+{
+  "classification": "EXACT_FINITE_N_MULTINOMIAL_LIKELIHOOD_ENUMERATION_ONE_EDGE",
+  "model": {
+    "circuit": "Q-SHIFT distance-3, five-round balanced Z-memory categorical circuit",
+    "gate_p": 0.003,
+    "measurement_p": 0.003,
+    "pair": [
+      8,
+      10
+    ],
+    "feature_input": "four detector-pair category counts only; no labels or logical observables",
+    "likelihood": "multinomial with q(p)=(1-p)q0+p*q1; q0 is extrapolated from two exact positive-p categorical profiles, q1 is the exact both-bit complement under a forced pair burst, and p=.018 validates the affine relation",
+    "parameter_bounds": [
+      0.0,
+      0.5
+    ]
+  },
+  "endpoint_affine_model_max_abs_error": 1.1102230246251565e-16,
+  "deterministic_hand_fixture_validation": {
+    "hand_count_fixtures": [
+      [
+        0,
+        2,
+        3,
+        20
+      ],
+      [
+        1,
+        3,
+        4,
+        92
+      ],
+      [
+        4,
+        10,
+        12,
+        174
+      ]
+    ],
+    "vectorized_score_root_estimates": [
+      0.0,
+      0.010201295282581846,
+      0.022157935462923994
+    ],
+    "dense_grid_oracle_points": 100001,
+    "max_log_likelihood_shortfall_vs_dense_grid": 0.0,
+    "status": "passed"
+  },
+  "cases": [
+    {
+      "burst_p": 0.002,
+      "measurement_p": 0.003,
+      "pair": [
+        8,
+        10
+      ],
+      "pair_cell_probabilities": [
+        0.002493602779975679,
+        0.017920563613728402,
+        0.031557154849567004,
+        0.9480286787567289
+      ],
+      "bounded_likelihood_results": [
+        {
+          "window_shots": 25,
+          "count_tables": 3276,
+          "probability_mass_sum": 0.9999999999999983,
+          "enumerated_sample_moment_max_abs_error": 1.0408340855860843e-16,
+          "mle_mean": 0.002588565177166089,
+          "mle_bias": 0.0005885651771660888,
+          "mle_rmse": 0.010390422647987885,
+          "probability_mle_at_zero_boundary": 0.9394901686447291,
+          "probability_mle_at_upper_half_boundary": 1.179630701408279e-22
+        },
+        {
+          "window_shots": 50,
+          "count_tables": 23426,
+          "probability_mass_sum": 1.0000000000000162,
+          "enumerated_sample_moment_max_abs_error": 6.036837696399289e-16,
+          "mle_mean": 0.002553094609311668,
+          "mle_bias": 0.000553094609311668,
+          "mle_rmse": 0.007260001571957507,
+          "probability_mle_at_zero_boundary": 0.8826417769801193,
+          "probability_mle_at_upper_half_boundary": 3.0785306871135523e-43
+        },
+        {
+          "window_shots": 100,
+          "count_tables": 176851,
+          "probability_mass_sum": 0.9999999999999749,
+          "enumerated_sample_moment_max_abs_error": 8.743006318923108e-16,
+          "mle_mean": 0.002488215655452146,
+          "mle_bias": 0.00048821565545214586,
+          "mle_rmse": 0.005035412102755305,
+          "probability_mle_at_zero_boundary": 0.7790565064705777,
+          "probability_mle_at_upper_half_boundary": 2.0887728060063922e-84
+        },
+        {
+          "window_shots": 200,
+          "count_tables": 1373701,
+          "probability_mass_sum": 0.9999999999999131,
+          "enumerated_sample_moment_max_abs_error": 2.886579864025407e-15,
+          "mle_mean": 0.0023803539444972573,
+          "mle_bias": 0.00038035394449725726,
+          "mle_rmse": 0.0034702334794819495,
+          "probability_mle_at_zero_boundary": 0.6069290402741166,
+          "probability_mle_at_upper_half_boundary": 1.5737466737294264e-166
+        }
+      ]
+    },
+    {
+      "burst_p": 0.01,
+      "measurement_p": 0.003,
+      "pair": [
+        8,
+        10
+      ],
+      "pair_cell_probabilities": [
+        0.01008826202476884,
+        0.01803009446702833,
+        0.03144762399626708,
+        0.9404340195119358
+      ],
+      "bounded_likelihood_results": [
+        {
+          "window_shots": 25,
+          "count_tables": 3276,
+          "probability_mass_sum": 1.0000000000000002,
+          "enumerated_sample_moment_max_abs_error": 3.469446951953614e-17,
+          "mle_mean": 0.010485569533309346,
+          "mle_bias": 0.00048556953330934627,
+          "mle_rmse": 0.020835085124602828,
+          "probability_mle_at_zero_boundary": 0.7760895742645709,
+          "probability_mle_at_upper_half_boundary": 2.4071324145644335e-17
+        },
+        {
+          "window_shots": 50,
+          "count_tables": 23426,
+          "probability_mass_sum": 1.0000000000000213,
+          "enumerated_sample_moment_max_abs_error": 8.743006318923108e-16,
+          "mle_mean": 0.010377274532644238,
+          "mle_bias": 0.0003772745326442381,
+          "mle_rmse": 0.014628043939935284,
+          "probability_mle_at_zero_boundary": 0.6023150272821755,
+          "probability_mle_at_upper_half_boundary": 9.224938377426175e-33
+        },
+        {
+          "window_shots": 100,
+          "count_tables": 176851,
+          "probability_mass_sum": 0.999999999999983,
+          "enumerated_sample_moment_max_abs_error": 7.91033905045424e-16,
+          "mle_mean": 0.010227306445165582,
+          "mle_bias": 0.00022730644516558152,
+          "mle_rmse": 0.010301319873250841,
+          "probability_mle_at_zero_boundary": 0.3627833920899066,
+          "probability_mle_at_upper_half_boundary": 2.0915751355250633e-63
+        },
+        {
+          "window_shots": 200,
+          "count_tables": 1373701,
+          "probability_mass_sum": 0.9999999999999425,
+          "enumerated_sample_moment_max_abs_error": 2.338407245616736e-15,
+          "mle_mean": 0.010082468395684007,
+          "mle_bias": 8.246839568400686e-05,
+          "mle_rmse": 0.007326869660491666,
+          "probability_mle_at_zero_boundary": 0.13161178957625355,
+          "probability_mle_at_upper_half_boundary": 1.3190913671398075e-124
+        }
+      ]
+    },
+    {
+      "burst_p": 0.018,
+      "measurement_p": 0.003,
+      "pair": [
+        8,
+        10
+      ],
+      "pair_cell_probabilities": [
+        0.017682921269562113,
+        0.0181396253203282,
+        0.031338093142967205,
+        0.9328393602671425
+      ],
+      "bounded_likelihood_results": [
+        {
+          "window_shots": 25,
+          "count_tables": 3276,
+          "probability_mass_sum": 0.9999999999999983,
+          "enumerated_sample_moment_max_abs_error": 9.71445146547012e-17,
+          "mle_mean": 0.01839983620136668,
+          "mle_bias": 0.0003998362013666809,
+          "mle_rmse": 0.027520544180319968,
+          "probability_mle_at_zero_boundary": 0.6401656554136187,
+          "probability_mle_at_upper_half_boundary": 6.558891655460995e-15
+        },
+        {
+          "window_shots": 50,
+          "count_tables": 23426,
+          "probability_mass_sum": 1.0000000000000184,
+          "enumerated_sample_moment_max_abs_error": 8.187894806610529e-16,
+          "mle_mean": 0.018256503280665023,
+          "mle_bias": 0.00025650328066502415,
+          "mle_rmse": 0.019393600156818933,
+          "probability_mle_at_zero_boundary": 0.40981206637115647,
+          "probability_mle_at_upper_half_boundary": 7.206019085745307e-28
+        },
+        {
+          "window_shots": 100,
+          "count_tables": 176851,
+          "probability_mass_sum": 0.9999999999999738,
+          "enumerated_sample_moment_max_abs_error": 1.429412144204889e-15,
+          "mle_mean": 0.018105171513444554,
+          "mle_bias": 0.00010517151344455536,
+          "mle_rmse": 0.013739489369390472,
+          "probability_mle_at_zero_boundary": 0.1679459297433872,
+          "probability_mle_at_upper_half_boundary": 1.0142923870842805e-53
+        },
+        {
+          "window_shots": 200,
+          "count_tables": 1373701,
+          "probability_mass_sum": 0.9999999999999174,
+          "enumerated_sample_moment_max_abs_error": 3.9968028886505635e-15,
+          "mle_mean": 0.018017656905472346,
+          "mle_bias": 1.7656905472347717e-05,
+          "mle_rmse": 0.009779270590478074,
+          "probability_mle_at_zero_boundary": 0.028205835317369594,
+          "probability_mle_at_upper_half_boundary": 3.0163647340088375e-105
+        }
+      ]
+    }
+  ],
+  "enumeration": {
+    "method": "Exhaustive multinomial count-table probability summation; vectorized bisection maximizes the concave bounded likelihood.",
+    "maximum_count_tables": 1373701,
+    "elapsed_wall_seconds": 32.69864890000099
+  },
+  "limitations": [
+    "One pair only. Multiplying five pair likelihoods would be a composite likelihood because the pair data share one shot; dependence must be included in uncertainty and checked for estimator behavior.",
+    "The estimator assumes exact known detector-pair endpoint distributions, including gate and measurement noise; it is not model-robust.",
+    "The [0,.5] interval is the conventional probability range tested here; it is not an owner-approved online guard or model-validity range.",
+    "The comparison does not establish superiority over the five-edge average or existing 45-feature profile; no boundary rule is owner-approved.",
+    "Exact categorical circuit only; no DEM approximation, detector-history sampling, decoder evaluation, or logical outcome is used."
+  ],
+  "sampling_calls": 0,
+  "decoder_calls": 0
+}

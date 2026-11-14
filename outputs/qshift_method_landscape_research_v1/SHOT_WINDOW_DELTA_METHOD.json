@@ -1,0 +1,51 @@
+{
+  "classification": "INDEPENDENT_NONIDENTICAL_SHOT_DELTA_METHOD_ASYMPTOTIC_ONLY",
+  "model": {
+    "features": "45 exact categorical-circuit detector means/cofires",
+    "gate_p": 0.003,
+    "measurement_p": 0.003,
+    "burst_rate_constant_within_shot": true,
+    "shots_independent_conditional_on_deterministic_burst_rate_schedule": true,
+    "sampling_calls": 0
+  },
+  "method": "For a window with fixed fractions of independent shot strata, Cov(mean feature)=average single-shot covariance/window size; delta method evaluates the edge-inversion gradient at pooled population means.",
+  "scenarios": [
+    {
+      "low_burst_p": 0.002,
+      "high_burst_p": 0.018,
+      "fraction_low_shots_in_window": 0.25,
+      "arithmetic_window_mean_p": 0.013999999999999999,
+      "pooled_population_estimate": 0.014000000000000002,
+      "asymptotic_sd_coefficient_over_sqrt_window_shots": 0.055077696497403364,
+      "stationary_at_mean_p_coefficient_if_profile_available": 0.05516302946410788,
+      "pooled_vs_stationary_mean_feature_max_abs_gap_if_available": 8.326672684688674e-17
+    },
+    {
+      "low_burst_p": 0.002,
+      "high_burst_p": 0.018,
+      "fraction_low_shots_in_window": 0.5,
+      "arithmetic_window_mean_p": 0.009999999999999998,
+      "pooled_population_estimate": 0.010000000000000009,
+      "asymptotic_sd_coefficient_over_sqrt_window_shots": 0.047011138864063134,
+      "stationary_at_mean_p_coefficient_if_profile_available": 0.04714435351372196,
+      "pooled_vs_stationary_mean_feature_max_abs_gap_if_available": 8.326672684688674e-17
+    },
+    {
+      "low_burst_p": 0.002,
+      "high_burst_p": 0.018,
+      "fraction_low_shots_in_window": 0.75,
+      "arithmetic_window_mean_p": 0.006,
+      "pooled_population_estimate": 0.006000000000000005,
+      "asymptotic_sd_coefficient_over_sqrt_window_shots": 0.03723021362244408,
+      "stationary_at_mean_p_coefficient_if_profile_available": 0.03735633780994559,
+      "pooled_vs_stationary_mean_feature_max_abs_gap_if_available": 5.551115123125783e-17
+    }
+  ],
+  "limitations": [
+    "This is an asymptotic covariance calculation, not finite-sample estimator bias, domain-failure probability, interval coverage, or alarm behavior.",
+    "The deterministic schedules are two-regime mixtures, not sampled trajectories or a recommendation for window length.",
+    "The calculation assumes independent shots, known unchanged gate/readout background, and the exact categorical model.",
+    "It does not analyze the approximate DEM estimator, temporal dependence, clipping, or decoder utility."
+  ],
+  "decoder_calls": 0
+}

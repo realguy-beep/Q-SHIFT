@@ -1,0 +1,271 @@
+{
+  "classification": "ANALYTIC_ALPHA_SPENDING_FOR_EXTERNALLY_VERIFIED_EPOCHS",
+  "global_false_switch_budget_total": "1/20",
+  "episode_allocation": "alpha_j=alpha_total/[j(j+1)], j=1,2,...; exact total is alpha_total by telescoping.",
+  "validity_requirements": [
+    "At each episode start, the baseline regime and corresponding directional null are trusted independently of the prior e-alarm.",
+    "Each episode uses one fixed direction and at most one change mixture; after an alarm, freeze/hold pending external re-baselining.",
+    "Conditional e-process null validity holds within each episode.",
+    "Union bound requires no independence across episodes."
+  ],
+  "partial_sum_first_1000": "50/1001",
+  "delta": 0.1,
+  "arms": [
+    {
+      "direction": "upward",
+      "rows": [
+        {
+          "epoch_index_j": 1,
+          "alpha_j_exact": "1/40",
+          "candidate_start_s": 1,
+          "start_weight_exact": "1/2",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 10950,
+          "freedman_bound_at_n": "0.09998705761542095314925209304",
+          "bound_at_n_minus_1": "0.1000117322084442067646200174"
+        },
+        {
+          "epoch_index_j": 1,
+          "alpha_j_exact": "1/40",
+          "candidate_start_s": 1000,
+          "start_weight_exact": "1/1001000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 15474,
+          "freedman_bound_at_n": "0.09999958188000375809226791477",
+          "bound_at_n_minus_1": "0.1000231846374478622374203961"
+        },
+        {
+          "epoch_index_j": 1,
+          "alpha_j_exact": "1/40",
+          "candidate_start_s": 1000000,
+          "start_weight_exact": "1/1000001000000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 19822,
+          "freedman_bound_at_n": "0.09999239922041591049723661414",
+          "bound_at_n_minus_1": "0.1000148165814887992670983190"
+        },
+        {
+          "epoch_index_j": 2,
+          "alpha_j_exact": "1/120",
+          "candidate_start_s": 1,
+          "start_weight_exact": "1/2",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 11353,
+          "freedman_bound_at_n": "0.09997714279225139928898942120",
+          "bound_at_n_minus_1": "0.1000017456137149450741635206"
+        },
+        {
+          "epoch_index_j": 2,
+          "alpha_j_exact": "1/120",
+          "candidate_start_s": 1000,
+          "start_weight_exact": "1/1001000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 15832,
+          "freedman_bound_at_n": "0.09998932779742231150693375384",
+          "bound_at_n_minus_1": "0.1000128303560178810180520419"
+        },
+        {
+          "epoch_index_j": 2,
+          "alpha_j_exact": "1/120",
+          "candidate_start_s": 1000000,
+          "start_weight_exact": "1/1000001000000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 20156,
+          "freedman_bound_at_n": "0.09999863293366209647558177067",
+          "bound_at_n_minus_1": "0.1000209633507258453887764447"
+        },
+        {
+          "epoch_index_j": 10,
+          "alpha_j_exact": "1/2200",
+          "candidate_start_s": 1,
+          "start_weight_exact": "1/2",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 12393,
+          "freedman_bound_at_n": "0.09998160172567920137980575058",
+          "bound_at_n_minus_1": "0.1000059907237505601025492469"
+        },
+        {
+          "epoch_index_j": 10,
+          "alpha_j_exact": "1/2200",
+          "candidate_start_s": 1000,
+          "start_weight_exact": "1/1001000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 16767,
+          "freedman_bound_at_n": "0.09999882648363640077155267666",
+          "bound_at_n_minus_1": "0.1000220739889934000654630668"
+        },
+        {
+          "epoch_index_j": 10,
+          "alpha_j_exact": "1/2200",
+          "candidate_start_s": 1000000,
+          "start_weight_exact": "1/1000001000000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 21035,
+          "freedman_bound_at_n": "0.09998849457380767368520495702",
+          "bound_at_n_minus_1": "0.1000105938861459080088928063"
+        },
+        {
+          "epoch_index_j": 100,
+          "alpha_j_exact": "1/202000",
+          "candidate_start_s": 1,
+          "start_weight_exact": "1/2",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 13949,
+          "freedman_bound_at_n": "0.09999214908038723333109505157",
+          "bound_at_n_minus_1": "0.1000161585254347886169495628"
+        },
+        {
+          "epoch_index_j": 100,
+          "alpha_j_exact": "1/202000",
+          "candidate_start_s": 1000,
+          "start_weight_exact": "1/1001000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 18192,
+          "freedman_bound_at_n": "0.09999669881937387726177942784",
+          "bound_at_n_minus_1": "0.1000195552919589265228472035"
+        },
+        {
+          "epoch_index_j": 100,
+          "alpha_j_exact": "1/202000",
+          "candidate_start_s": 1000000,
+          "start_weight_exact": "1/1000001000000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 22383,
+          "freedman_bound_at_n": "0.09998952548243631936494368888",
+          "bound_at_n_minus_1": "0.1000112828067570382700612499"
+        }
+      ]
+    },
+    {
+      "direction": "downward_on_complement",
+      "rows": [
+        {
+          "epoch_index_j": 1,
+          "alpha_j_exact": "1/40",
+          "candidate_start_s": 1,
+          "start_weight_exact": "1/2",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 4405,
+          "freedman_bound_at_n": "0.09997030290992567625823456758",
+          "bound_at_n_minus_1": "0.1000630483418197087877856960"
+        },
+        {
+          "epoch_index_j": 1,
+          "alpha_j_exact": "1/40",
+          "candidate_start_s": 1000,
+          "start_weight_exact": "1/1001000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 9687,
+          "freedman_bound_at_n": "0.09997775469060898802181208499",
+          "bound_at_n_minus_1": "0.1000542204289143331847027832"
+        },
+        {
+          "epoch_index_j": 1,
+          "alpha_j_exact": "1/40",
+          "candidate_start_s": 1000000,
+          "start_weight_exact": "1/1000001000000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 14808,
+          "freedman_bound_at_n": "0.09996576941952190264739937825",
+          "bound_at_n_minus_1": "0.1000324332943803266773556124"
+        },
+        {
+          "epoch_index_j": 2,
+          "alpha_j_exact": "1/120",
+          "candidate_start_s": 1,
+          "start_weight_exact": "1/2",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 4881,
+          "freedman_bound_at_n": "0.09998468173685555849557774363",
+          "bound_at_n_minus_1": "0.1000756674771769048843995417"
+        },
+        {
+          "epoch_index_j": 2,
+          "alpha_j_exact": "1/120",
+          "candidate_start_s": 1000,
+          "start_weight_exact": "1/1001000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 10105,
+          "freedman_bound_at_n": "0.09995677653735792757461091348",
+          "bound_at_n_minus_1": "0.1000322560735250129110585659"
+        },
+        {
+          "epoch_index_j": 2,
+          "alpha_j_exact": "1/120",
+          "candidate_start_s": 1000000,
+          "start_weight_exact": "1/1000001000000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 15206,
+          "freedman_bound_at_n": "0.09994609706738097090303027131",
+          "bound_at_n_minus_1": "0.1000121433134131899519955519"
+        },
+        {
+          "epoch_index_j": 10,
+          "alpha_j_exact": "1/2200",
+          "candidate_start_s": 1,
+          "start_weight_exact": "1/2",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 6099,
+          "freedman_bound_at_n": "0.09998120080700215002810449085",
+          "bound_at_n_minus_1": "0.1000678671514820095101143510"
+        },
+        {
+          "epoch_index_j": 10,
+          "alpha_j_exact": "1/2200",
+          "candidate_start_s": 1000,
+          "start_weight_exact": "1/1001000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 11200,
+          "freedman_bound_at_n": "0.09999036202766521713464652466",
+          "bound_at_n_minus_1": "0.1000634856040975125535676278"
+        },
+        {
+          "epoch_index_j": 10,
+          "alpha_j_exact": "1/2200",
+          "candidate_start_s": 1000000,
+          "start_weight_exact": "1/1000001000000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 16254,
+          "freedman_bound_at_n": "0.09994289693159757076148140018",
+          "bound_at_n_minus_1": "0.1000074244785521765240902865"
+        },
+        {
+          "epoch_index_j": 100,
+          "alpha_j_exact": "1/202000",
+          "candidate_start_s": 1,
+          "start_weight_exact": "1/2",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 7910,
+          "freedman_bound_at_n": "0.09997917870816963214540267877",
+          "bound_at_n_minus_1": "0.1000602449056433036556299248"
+        },
+        {
+          "epoch_index_j": 100,
+          "alpha_j_exact": "1/202000",
+          "candidate_start_s": 1000,
+          "start_weight_exact": "1/1001000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 12877,
+          "freedman_bound_at_n": "0.09998114734940561079763429578",
+          "bound_at_n_minus_1": "0.1000510359925646893925768856"
+        },
+        {
+          "epoch_index_j": 100,
+          "alpha_j_exact": "1/202000",
+          "candidate_start_s": 1000000,
+          "start_weight_exact": "1/1000001000000",
+          "delta": 0.1,
+          "sufficient_postchange_shots": 17869,
+          "freedman_bound_at_n": "0.09997219326102957378232744071",
+          "bound_at_n_minus_1": "0.1000346006633708281325694230"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "An alarm does not prove the new regime and cannot authorize an automatic opposite-direction test.",
+    "If the baseline is reset from the alarm itself, the new episode null may be false and the global guarantee fails.",
+    "This is a protocol option, not a tested controller or decoder-utility result.",
+    "No sampling or histories were generated."
+  ]
+}

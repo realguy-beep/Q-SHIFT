@@ -1,0 +1,143 @@
+{
+  "classification": "DETERMINISTIC_POPULATION_MEAN_GRID_NOT_A_VALIDATED_SEQUENTIAL_TEST",
+  "source_model": "Q-SHIFT distance-3, five-round Z-memory, balanced-regime circuit implementation; gate p=0.003; burst pair supports audited by exact single-fault mapping",
+  "exact_categorical_circuit": {
+    "model": "exact_categorical_circuit",
+    "bounded_statistic": "mean of five within-pair detector cofire indicators; X in [0,1]",
+    "null_grid": {
+      "burst_p_values": [
+        0.002
+      ],
+      "measurement_p": [
+        0.001,
+        0.005,
+        101
+      ]
+    },
+    "alternative_grid": {
+      "burst_p_interval_endpoint_evaluations": [
+        0.01,
+        0.018
+      ],
+      "measurement_p": [
+        0.001,
+        0.005,
+        101
+      ]
+    },
+    "null_grid_maximum": {
+      "burst_p": 0.002,
+      "measurement_p": 0.005,
+      "mean": 0.002694691025759072
+    },
+    "alternative_grid_minimum": {
+      "burst_p": 0.01,
+      "measurement_p": 0.001,
+      "mean": 0.009970744270267834
+    },
+    "grid_gap_alt_min_minus_null_max": 0.007276053244508762,
+    "burst_p_affinity_midpoint_check": {
+      "measurement_p": 0.003,
+      "burst_p_endpoints": [
+        0.01,
+        0.018
+      ],
+      "endpoint_means": [
+        0.010076478852964527,
+        0.017681990977874634
+      ],
+      "midpoint_burst_p": 0.013999999999999999,
+      "midpoint_mean": 0.013879234915419602,
+      "midpoint_minus_endpoint_average": 2.0816681711721685e-17,
+      "tolerance": 1e-12
+    },
+    "interpretation": "Burst-p endpoint evaluation is exact for each fixed measurement p because the independent burst Bernoulli parameter enters affine in the parity-character moment formulas. The measurement-p optimization is only a finite grid. Positive grid gap suggests this bounded statistic could support a one-sided mean e-process for these tested conditions. A valid null bound requires a proved continuum supremum and a defensible conditional-mean null; this finite grid does not supply either. Detection of pair-cofire change would not identify its physical cause or establish decoder benefit."
+  },
+  "approximate_dem": {
+    "model": "approximate_dem",
+    "bounded_statistic": "mean of five within-pair detector cofire indicators; X in [0,1]",
+    "null_grid": {
+      "burst_p_values": [
+        0.002
+      ],
+      "measurement_p": [
+        0.001,
+        0.005,
+        101
+      ]
+    },
+    "alternative_grid": {
+      "burst_p_interval_endpoint_evaluations": [
+        0.01,
+        0.018
+      ],
+      "measurement_p": [
+        0.001,
+        0.005,
+        101
+      ]
+    },
+    "null_grid_maximum": {
+      "burst_p": 0.002,
+      "measurement_p": 0.005,
+      "mean": 0.0026936574003972647
+    },
+    "alternative_grid_minimum": {
+      "burst_p": 0.01,
+      "measurement_p": 0.001,
+      "mean": 0.00997038416889599
+    },
+    "grid_gap_alt_min_minus_null_max": 0.0072767267684987254,
+    "burst_p_affinity_midpoint_check": {
+      "measurement_p": 0.003,
+      "burst_p_endpoints": [
+        0.01,
+        0.018
+      ],
+      "endpoint_means": [
+        0.010075945110510926,
+        0.01768179068279816
+      ],
+      "midpoint_burst_p": 0.013999999999999999,
+      "midpoint_mean": 0.013878867896654629,
+      "midpoint_minus_endpoint_average": 8.500145032286355e-17,
+      "tolerance": 1e-12
+    },
+    "interpretation": "Burst-p endpoint evaluation is exact for each fixed measurement p because the independent burst Bernoulli parameter enters affine in the parity-character moment formulas. The measurement-p optimization is only a finite grid. Positive grid gap suggests this bounded statistic could support a one-sided mean e-process for these tested conditions. A valid null bound requires a proved continuum supremum and a defensible conditional-mean null; this finite grid does not supply either. Detection of pair-cofire change would not identify its physical cause or establish decoder benefit."
+  },
+  "circuit_template_metadata": {
+    "physical_sites": 214,
+    "fault_alternatives_mapped": 1974,
+    "burst_detector_supports": [
+      [
+        8,
+        10
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        32,
+        34
+      ],
+      [
+        36,
+        38
+      ]
+    ],
+    "baseline_reference_detector_weight": 0,
+    "baseline_reference_observable_weight": 0
+  },
+  "limitations": [
+    "The deterministic circuit builder omits zero-probability burst sites; the attempted broader null interval [0,0.002] failed template reweighting with a noise-site-count mismatch, so this audit uses the documented p=0.002 null only.",
+    "No continuous maximization or interval certificate was performed.",
+    "No sequential boundary, false-alarm rate, detection delay, parameter estimate, or graph-switch decision was evaluated.",
+    "The bounded-statistic e-detector analogy requires its null conditional expectation bound to hold at every shot.",
+    "The DEM result describes its approximate independent-event model, not the original circuit law."
+  ]
+}

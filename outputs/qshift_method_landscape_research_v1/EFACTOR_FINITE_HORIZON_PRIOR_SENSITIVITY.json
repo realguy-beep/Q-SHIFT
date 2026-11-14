@@ -1,0 +1,320 @@
+{
+  "classification": "ANALYTIC_FINITE_HORIZON_UNIFORM_CHANGEPOINT_PRIOR_SENSITIVITY",
+  "prior": "For selected horizon H, w_s=1/H for s=1,...,H; no component is added after H.",
+  "constant_memory_recurrence": "A_0=0; for t<=H, A_t=L_t*(A_(t-1)+1/H), E_t=A_t+(H-t)/H. For t>H, A_t=L_t*A_(t-1), E_t=A_t.",
+  "null_guarantee": "For one fixed directional null, the finite mixture is a nonnegative supermartingale and Ville controls the ever-crossing probability over all t, including t>H.",
+  "change_guarantee": "A transition beginning at any s<=H has prior component weight 1/H; use component threshold log(H/alpha) and the continuous Freedman postchange bound. Changes starting after H receive no guaranteed prior component.",
+  "horizons": [
+    1000,
+    10000,
+    100000,
+    1000000
+  ],
+  "arms": [
+    {
+      "direction": "upward",
+      "rows": [
+        {
+          "horizon_shots_H": 1000,
+          "uniform_start_prior_exact": "1/1000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 12921,
+          "freedman_bound_at_n": "0.09999811232150436467062479032",
+          "bound_at_n_minus_1": "0.1000223816009672671146857767"
+        },
+        {
+          "horizon_shots_H": 1000,
+          "uniform_start_prior_exact": "1/1000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 15766,
+          "freedman_bound_at_n": "0.04999247500678286307709258248",
+          "bound_at_n_minus_1": "0.05000470035158979228769646762"
+        },
+        {
+          "horizon_shots_H": 1000,
+          "uniform_start_prior_exact": "1/1000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 13475,
+          "freedman_bound_at_n": "0.09999023986090415139172372351",
+          "bound_at_n_minus_1": "0.1000143704614842184263668053"
+        },
+        {
+          "horizon_shots_H": 1000,
+          "uniform_start_prior_exact": "1/1000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 16333,
+          "freedman_bound_at_n": "0.04999546512289300504975175965",
+          "bound_at_n_minus_1": "0.05000764228991483804041463846"
+        },
+        {
+          "horizon_shots_H": 10000,
+          "uniform_start_prior_exact": "1/10000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 13711,
+          "freedman_bound_at_n": "0.09999124184054810210479042440",
+          "bound_at_n_minus_1": "0.1000153125742767176707661131"
+        },
+        {
+          "horizon_shots_H": 10000,
+          "uniform_start_prior_exact": "1/10000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 16575,
+          "freedman_bound_at_n": "0.04999646125227744780822451764",
+          "bound_at_n_minus_1": "0.05000861690589389859253272906"
+        },
+        {
+          "horizon_shots_H": 10000,
+          "uniform_start_prior_exact": "1/10000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 14254,
+          "freedman_bound_at_n": "0.09998910849090768386939260586",
+          "bound_at_n_minus_1": "0.1000130373340083129422038371"
+        },
+        {
+          "horizon_shots_H": 10000,
+          "uniform_start_prior_exact": "1/10000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 17133,
+          "freedman_bound_at_n": "0.04998804378093649024003395426",
+          "bound_at_n_minus_1": "0.05000014566048075540042633323"
+        },
+        {
+          "horizon_shots_H": 100000,
+          "uniform_start_prior_exact": "1/100000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 14486,
+          "freedman_bound_at_n": "0.09998257922888023014644031136",
+          "bound_at_n_minus_1": "0.1000064451147217821861570488"
+        },
+        {
+          "horizon_shots_H": 100000,
+          "uniform_start_prior_exact": "1/100000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 17371,
+          "freedman_bound_at_n": "0.04998878181433127403315777595",
+          "bound_at_n_minus_1": "0.05000086114211128067149420957"
+        },
+        {
+          "horizon_shots_H": 100000,
+          "uniform_start_prior_exact": "1/100000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 15019,
+          "freedman_bound_at_n": "0.09999552988643734619846617608",
+          "bound_at_n_minus_1": "0.1000192554755955742777655842"
+        },
+        {
+          "horizon_shots_H": 100000,
+          "uniform_start_prior_exact": "1/100000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 17919,
+          "freedman_bound_at_n": "0.04999484614280369697092908720",
+          "bound_at_n_minus_1": "0.05000687336296373537689498695"
+        },
+        {
+          "horizon_shots_H": 1000000,
+          "uniform_start_prior_exact": "1/1000000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 15247,
+          "freedman_bound_at_n": "0.09999427441303076473384762306",
+          "bound_at_n_minus_1": "0.1000179378717437518242689885"
+        },
+        {
+          "horizon_shots_H": 1000000,
+          "uniform_start_prior_exact": "1/1000000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 18154,
+          "freedman_bound_at_n": "0.04998861664809038171105146657",
+          "bound_at_n_minus_1": "0.05000061906980044730237407075"
+        },
+        {
+          "horizon_shots_H": 1000000,
+          "uniform_start_prior_exact": "1/1000000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 15773,
+          "freedman_bound_at_n": "0.09997769376774970090286220125",
+          "bound_at_n_minus_1": "0.1000012099823058537274739947"
+        },
+        {
+          "horizon_shots_H": 1000000,
+          "uniform_start_prior_exact": "1/1000000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 18694,
+          "freedman_bound_at_n": "0.04999622666574023475792519877",
+          "bound_at_n_minus_1": "0.05000817629417226572639685299"
+        }
+      ]
+    },
+    {
+      "direction": "downward_on_complement",
+      "rows": [
+        {
+          "horizon_shots_H": 1000,
+          "uniform_start_prior_exact": "1/1000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 6715,
+          "freedman_bound_at_n": "0.09995434551020842952953823294",
+          "bound_at_n_minus_1": "0.1000389744903003084953149643"
+        },
+        {
+          "horizon_shots_H": 1000,
+          "uniform_start_prior_exact": "1/1000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 7518,
+          "freedman_bound_at_n": "0.04999099883719455381301246851",
+          "bound_at_n_minus_1": "0.05003488031677015898069407578"
+        },
+        {
+          "horizon_shots_H": 1000,
+          "uniform_start_prior_exact": "1/1000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 7359,
+          "freedman_bound_at_n": "0.09995288656895536523121739256",
+          "bound_at_n_minus_1": "0.1000355319304002314608712215"
+        },
+        {
+          "horizon_shots_H": 1000,
+          "uniform_start_prior_exact": "1/1000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 8180,
+          "freedman_bound_at_n": "0.04997282546513609692227674534",
+          "bound_at_n_minus_1": "0.05001583002269974544242507817"
+        },
+        {
+          "horizon_shots_H": 10000,
+          "uniform_start_prior_exact": "1/10000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 7633,
+          "freedman_bound_at_n": "0.09999245840650356688652994232",
+          "bound_at_n_minus_1": "0.1000743267242223734727894688"
+        },
+        {
+          "horizon_shots_H": 10000,
+          "uniform_start_prior_exact": "1/10000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 8462,
+          "freedman_bound_at_n": "0.04996933958644067331893649855",
+          "bound_at_n_minus_1": "0.05001198629268440280742577550"
+        },
+        {
+          "horizon_shots_H": 10000,
+          "uniform_start_prior_exact": "1/10000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 8265,
+          "freedman_bound_at_n": "0.09995375121806899674046602738",
+          "bound_at_n_minus_1": "0.1000338153862340117782525525"
+        },
+        {
+          "horizon_shots_H": 10000,
+          "uniform_start_prior_exact": "1/10000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 9110,
+          "freedman_bound_at_n": "0.04998825169036918489966493993",
+          "bound_at_n_minus_1": "0.05003012461956927083447640915"
+        },
+        {
+          "horizon_shots_H": 100000,
+          "uniform_start_prior_exact": "1/100000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 8535,
+          "freedman_bound_at_n": "0.09993107582845449218633929039",
+          "bound_at_n_minus_1": "0.1000103988161947989281214564"
+        },
+        {
+          "horizon_shots_H": 100000,
+          "uniform_start_prior_exact": "1/100000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 9387,
+          "freedman_bound_at_n": "0.04998227188699259475006577397",
+          "bound_at_n_minus_1": "0.05002381484155741721746604690"
+        },
+        {
+          "horizon_shots_H": 100000,
+          "uniform_start_prior_exact": "1/100000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 9156,
+          "freedman_bound_at_n": "0.09997583731955831418760969844",
+          "bound_at_n_minus_1": "0.1000535938492751621946350898"
+        },
+        {
+          "horizon_shots_H": 100000,
+          "uniform_start_prior_exact": "1/100000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 10025,
+          "freedman_bound_at_n": "0.04997546868911544762914640070",
+          "bound_at_n_minus_1": "0.05001628293777749884188338563"
+        },
+        {
+          "horizon_shots_H": 1000000,
+          "uniform_start_prior_exact": "1/1000000",
+          "alpha": 0.05,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 9422,
+          "freedman_bound_at_n": "0.09996331215637385563943124068",
+          "bound_at_n_minus_1": "0.1000404048361981799246878669"
+        },
+        {
+          "horizon_shots_H": 1000000,
+          "uniform_start_prior_exact": "1/1000000",
+          "alpha": 0.05,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 10298,
+          "freedman_bound_at_n": "0.04996375220866156919162016960",
+          "bound_at_n_minus_1": "0.05000425891533501197440206446"
+        },
+        {
+          "horizon_shots_H": 1000000,
+          "uniform_start_prior_exact": "1/1000000",
+          "alpha": 0.01,
+          "delta": 0.1,
+          "sufficient_postchange_shots_any_start_within_H": 10035,
+          "freedman_bound_at_n": "0.09999143707017459339490640257",
+          "bound_at_n_minus_1": "0.1000670995494916206819311734"
+        },
+        {
+          "horizon_shots_H": 1000000,
+          "uniform_start_prior_exact": "1/1000000",
+          "alpha": 0.01,
+          "delta": 0.05,
+          "sufficient_postchange_shots_any_start_within_H": 10927,
+          "freedman_bound_at_n": "0.04996509781064362336282193180",
+          "bound_at_n_minus_1": "0.05000494030439036613833154072"
+        }
+      ]
+    }
+  ],
+  "owner_decision": "Choose a justified deployment horizon; the infinite prior remains available if no finite horizon is prespecified.",
+  "limitations": [
+    "One change and one preselected direction only.",
+    "No resets, reverse transitions, repeated-change guarantees, or decoder utility.",
+    "The horizon is an index range for candidate change starts, not a learned or observed time.",
+    "No detector sequences or sampling were generated."
+  ]
+}

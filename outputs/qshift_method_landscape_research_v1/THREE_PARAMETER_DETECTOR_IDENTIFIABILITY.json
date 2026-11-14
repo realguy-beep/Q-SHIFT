@@ -1,0 +1,299 @@
+{
+  "classification": "DETERMINISTIC_EXACT_CIRCUIT_LOCAL_AND_GRID_MEAN_IDENTIFIABILITY",
+  "configuration": {
+    "distance": 3,
+    "rounds": 5,
+    "memory_basis": "z",
+    "regime": "balanced",
+    "bias_ratio": 10.0
+  },
+  "parameters": [
+    "burst_p",
+    "measurement_p",
+    "gate_p"
+  ],
+  "nominal": [
+    0.01,
+    0.003,
+    0.003
+  ],
+  "declared_scales": [
+    0.008,
+    0.004,
+    0.001
+  ],
+  "features": 45,
+  "burst_pair_supports": [
+    [
+      8,
+      10
+    ],
+    [
+      16,
+      18
+    ],
+    [
+      24,
+      26
+    ],
+    [
+      32,
+      34
+    ],
+    [
+      36,
+      38
+    ]
+  ],
+  "local_sensitivity": {
+    "jacobian_shape": [
+      45,
+      3
+    ],
+    "relative_finite_difference_step_changes": [
+      {
+        "parameter": "burst_p",
+        "steps": [
+          0.0001,
+          5e-05,
+          2.5e-05
+        ],
+        "relative_change_h_to_h2": 1.133164251521483e-12,
+        "relative_change_h2_to_h4": 1.1774258293655408e-12
+      },
+      {
+        "parameter": "measurement_p",
+        "steps": [
+          0.0001,
+          5e-05,
+          2.5e-05
+        ],
+        "relative_change_h_to_h2": 5.638654204809188e-08,
+        "relative_change_h2_to_h4": 1.4096766972936371e-08
+      },
+      {
+        "parameter": "gate_p",
+        "steps": [
+          0.0001,
+          5e-05,
+          2.5e-05
+        ],
+        "relative_change_h_to_h2": 4.672077576428626e-07,
+        "relative_change_h2_to_h4": 1.1680692102214178e-07
+      }
+    ],
+    "whitened_scaled_singular_values": [
+      0.2977118122387003,
+      0.16991530019936427,
+      0.10725312003075534
+    ],
+    "numerical_rank_relative_1e-8": 3,
+    "column_cosines_scaled_parameters": [
+      [
+        1.0,
+        0.4410518318565957,
+        0.31915183741758585
+      ],
+      [
+        0.4410518318565957,
+        0.9999999999999999,
+        0.8416402182480907
+      ],
+      [
+        0.31915183741758585,
+        0.8416402182480907,
+        1.0
+      ]
+    ],
+    "feature_covariance_eigenvalue_min_max": [
+      0.002927650301742304,
+      0.0782972461453834
+    ],
+    "top_marginally_standardized_features": {
+      "burst_p": [
+        {
+          "feature_index": 44,
+          "feature": "D[36]D[38]",
+          "scaled_derivative_over_nominal_sd": 0.07676316179328671
+        },
+        {
+          "feature_index": 42,
+          "feature": "D[24]D[26]",
+          "scaled_derivative_over_nominal_sd": 0.07599795023889136
+        },
+        {
+          "feature_index": 41,
+          "feature": "D[16]D[18]",
+          "scaled_derivative_over_nominal_sd": 0.07599795023889136
+        },
+        {
+          "feature_index": 40,
+          "feature": "D[8]D[10]",
+          "scaled_derivative_over_nominal_sd": 0.07599795023889136
+        },
+        {
+          "feature_index": 43,
+          "feature": "D[32]D[34]",
+          "scaled_derivative_over_nominal_sd": 0.07599795023889136
+        },
+        {
+          "feature_index": 36,
+          "feature": "D[36]",
+          "scaled_derivative_over_nominal_sd": 0.046772277122749874
+        },
+        {
+          "feature_index": 8,
+          "feature": "D[8]",
+          "scaled_derivative_over_nominal_sd": 0.046604229712098426
+        },
+        {
+          "feature_index": 16,
+          "feature": "D[16]",
+          "scaled_derivative_over_nominal_sd": 0.046604229712098426
+        }
+      ],
+      "measurement_p": [
+        {
+          "feature_index": 37,
+          "feature": "D[37]",
+          "scaled_derivative_over_nominal_sd": 0.110619973536795
+        },
+        {
+          "feature_index": 39,
+          "feature": "D[39]",
+          "scaled_derivative_over_nominal_sd": 0.10782210997070535
+        },
+        {
+          "feature_index": 38,
+          "feature": "D[38]",
+          "scaled_derivative_over_nominal_sd": 0.10169991285719775
+        },
+        {
+          "feature_index": 36,
+          "feature": "D[36]",
+          "scaled_derivative_over_nominal_sd": 0.06917026991778605
+        },
+        {
+          "feature_index": 7,
+          "feature": "D[7]",
+          "scaled_derivative_over_nominal_sd": 0.05753690051995786
+        },
+        {
+          "feature_index": 15,
+          "feature": "D[15]",
+          "scaled_derivative_over_nominal_sd": 0.05753690051995786
+        },
+        {
+          "feature_index": 31,
+          "feature": "D[31]",
+          "scaled_derivative_over_nominal_sd": 0.05753690051995786
+        },
+        {
+          "feature_index": 23,
+          "feature": "D[23]",
+          "scaled_derivative_over_nominal_sd": 0.05753690051995786
+        }
+      ],
+      "gate_p": [
+        {
+          "feature_index": 6,
+          "feature": "D[6]",
+          "scaled_derivative_over_nominal_sd": 0.05557274032279007
+        },
+        {
+          "feature_index": 14,
+          "feature": "D[14]",
+          "scaled_derivative_over_nominal_sd": 0.05557274032279007
+        },
+        {
+          "feature_index": 30,
+          "feature": "D[30]",
+          "scaled_derivative_over_nominal_sd": 0.05557274032279007
+        },
+        {
+          "feature_index": 22,
+          "feature": "D[22]",
+          "scaled_derivative_over_nominal_sd": 0.05557274032279007
+        },
+        {
+          "feature_index": 17,
+          "feature": "D[17]",
+          "scaled_derivative_over_nominal_sd": 0.055572740322788604
+        },
+        {
+          "feature_index": 25,
+          "feature": "D[25]",
+          "scaled_derivative_over_nominal_sd": 0.055572740322788604
+        },
+        {
+          "feature_index": 9,
+          "feature": "D[9]",
+          "scaled_derivative_over_nominal_sd": 0.055572740322788604
+        },
+        {
+          "feature_index": 33,
+          "feature": "D[33]",
+          "scaled_derivative_over_nominal_sd": 0.055572740322788604
+        }
+      ]
+    }
+  },
+  "mean_profile_grid": {
+    "shape": [
+      5,
+      5,
+      3
+    ],
+    "burst_p": [
+      0.002,
+      0.006,
+      0.01,
+      0.014,
+      0.018
+    ],
+    "measurement_p": [
+      0.001,
+      0.002,
+      0.003,
+      0.004,
+      0.005
+    ],
+    "gate_p": [
+      0.002,
+      0.003,
+      0.004
+    ],
+    "nearest_distinct_profile": {
+      "distance": 0.01205247467578842,
+      "left": [
+        0.018,
+        0.004,
+        0.004
+      ],
+      "right": [
+        0.018,
+        0.005,
+        0.004
+      ]
+    },
+    "nearest_profile_changing_burst_and_gate": {
+      "distance": 0.025643530640848768,
+      "left": [
+        0.014,
+        0.005,
+        0.003
+      ],
+      "right": [
+        0.018,
+        0.002,
+        0.004
+      ]
+    }
+  },
+  "limitations": [
+    "Local rank and finite mean-grid distances are not finite-history estimation accuracy or global identifiability.",
+    "The declared parameter scales are design scales, not policy margins.",
+    "No joint estimator, gate-noise guard, e-process, detector history, or decoder action was implemented or run.",
+    "Exact categorical circuit only; the approximate DEM has not received this three-parameter audit."
+  ]
+}

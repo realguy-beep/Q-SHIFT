@@ -1,0 +1,122 @@
+{
+  "classification": "DETERMINISTIC_DENSE_GRID_NUISANCE_SENSITIVITY_NOT_CONTINUOUS_ROBUSTNESS_GUARANTEE",
+  "configuration": {
+    "selected_detectors": [
+      8,
+      10,
+      16,
+      18,
+      24,
+      26,
+      32,
+      34,
+      36,
+      38
+    ],
+    "states": 1024,
+    "burst_transitions": [
+      [
+        0.002,
+        0.01
+      ],
+      [
+        0.01,
+        0.018
+      ],
+      [
+        0.002,
+        0.018
+      ]
+    ],
+    "independent_old_new_measurement_p_grid": [
+      0.001,
+      0.005,
+      101
+    ],
+    "grid_spacing": 4.0000000000000105e-05,
+    "memory_chunk_old_rates": 8
+  },
+  "method": "Compute 101 exact categorical-circuit and approximate-DEM joint distributions per distinct burst p; evaluate all 101x101 old/new measurement-rate pairs using chunked vectorized KL, then compare the minimum with the prior 3x3 coarse grid.",
+  "rows": [
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "minimum_KL_new_given_old_nats_per_shot": 0.03365902758491558,
+      "old_measurement_p_at_minimum_grid": 0.005,
+      "new_measurement_p_at_minimum_grid": 0.004920000000000001,
+      "grid_spacing": 4.0000000000000105e-05,
+      "coarse_3point_minimum": 0.03366729491356131,
+      "dense_minus_coarse": -8.26732864572799e-06
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "minimum_KL_new_given_old_nats_per_shot": 0.011714010074659626,
+      "old_measurement_p_at_minimum_grid": 0.005,
+      "new_measurement_p_at_minimum_grid": 0.004920000000000001,
+      "grid_spacing": 4.0000000000000105e-05,
+      "coarse_3point_minimum": 0.01171794581005925,
+      "dense_minus_coarse": -3.935735399623191e-06
+    },
+    {
+      "model": "exact_categorical_circuit",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "minimum_KL_new_given_old_nats_per_shot": 0.09909096683736018,
+      "old_measurement_p_at_minimum_grid": 0.005,
+      "new_measurement_p_at_minimum_grid": 0.005,
+      "grid_spacing": 4.0000000000000105e-05,
+      "coarse_3point_minimum": 0.0990909668373602,
+      "dense_minus_coarse": -1.3877787807814457e-17
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.01,
+      "minimum_KL_new_given_old_nats_per_shot": 0.033666495118789073,
+      "old_measurement_p_at_minimum_grid": 0.005,
+      "new_measurement_p_at_minimum_grid": 0.004920000000000001,
+      "grid_spacing": 4.0000000000000105e-05,
+      "coarse_3point_minimum": 0.033674743664031045,
+      "dense_minus_coarse": -8.248545241971994e-06
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.01,
+      "new_burst_p": 0.018,
+      "minimum_KL_new_given_old_nats_per_shot": 0.01171541148735592,
+      "old_measurement_p_at_minimum_grid": 0.005,
+      "new_measurement_p_at_minimum_grid": 0.004920000000000001,
+      "grid_spacing": 4.0000000000000105e-05,
+      "coarse_3point_minimum": 0.011719335407718957,
+      "dense_minus_coarse": -3.923920363036945e-06
+    },
+    {
+      "model": "approximate_dem",
+      "old_burst_p": 0.002,
+      "new_burst_p": 0.018,
+      "minimum_KL_new_given_old_nats_per_shot": 0.09911061017883031,
+      "old_measurement_p_at_minimum_grid": 0.005,
+      "new_measurement_p_at_minimum_grid": 0.005,
+      "grid_spacing": 4.0000000000000105e-05,
+      "coarse_3point_minimum": 0.09911061017883027,
+      "dense_minus_coarse": 4.163336342344337e-17
+    }
+  ],
+  "validation": {
+    "max_normalization_error": 1.7985612998927536e-14,
+    "selected_minima_recomputed_directly": true,
+    "all_grid_minima_nonnegative": true,
+    "stochastic_sampling": false,
+    "continuous_optimization": false
+  },
+  "interpretation": [
+    "The dense grid tests a wider range of independent old/new measurement nuisance values than the prior three-point check. It is not an infimum over the continuous interval and not a calibrated composite change detector.",
+    "KL is directional expected log-likelihood evidence under fully specified IID simple laws. No finite-history stopping rule, alarm probability, or decoder utility is evaluated.",
+    "The ten detector subset and exact categorical circuit / approximate DEM remain distinct representations."
+  ],
+  "sampling_calls": 0,
+  "decoder_calls": 0
+}
