@@ -53,13 +53,23 @@ def git_head() -> str:
     return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
 
 
+def base_is_ancestor() -> bool:
+    return subprocess.run(["git", "merge-base", "--is-ancestor", BASE, "HEAD"], cwd=ROOT).returncode == 0
+
+
 def file_record(path: Path, relative: str) -> dict:
     return {"path": relative.replace("\\", "/"), "bytes": path.stat().st_size, "sha256": sha256(path)}
 
 
 def main() -> None:
-    if git_head() != BASE:
-        raise SystemExit(f"base HEAD changed: expected {BASE}, found {git_head()}")
+    if not base_is_ancestor():
+        raise SystemExit(f"required source base {BASE} is not an ancestor of {git_head()}")
+    historical_diff = subprocess.run(
+        ["git", "diff", "--quiet", BASE, "HEAD", "--", "outputs/qshift_method_landscape_research_v1"],
+        cwd=ROOT,
+    )
+    if historical_diff.returncode != 0:
+        raise SystemExit("historical research package differs from the approved base commit")
     research_files = sorted(p for p in RESEARCH.rglob("*") if p.is_file())
     if len(research_files) != 139:
         raise SystemExit(f"research package inventory drift: expected 139 files, found {len(research_files)}")
@@ -90,6 +100,7 @@ def main() -> None:
         "new_versioned_outputs_excluding_this_manifest": new_outputs,
         "self_hash_excluded": True,
         "scope": "Read-only historical evidence plus deterministic mathematical audit; no scientific experiment.",
+        "workspace_metadata_scope_deviation": "A final read-only status query in the separate main development checkout exposed pre-existing Stage 5-related untracked pathnames only; no listed contents were inspected or changed. Run/live-marker status is unknown.",
         "sampling_calls": 0,
         "new_detector_shots": 0,
         "decoder_evaluations": 0,

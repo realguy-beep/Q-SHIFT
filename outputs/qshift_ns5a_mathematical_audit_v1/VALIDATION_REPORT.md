@@ -35,6 +35,10 @@ An earlier invocation before the final test suite had 12 passing tests and one A
 
 The pre-existing research package was only read. The correction source and generated JSON are in the new NS-5A directory. The original `EFACTOR_FIXEDPOINT_MIXTURE_AUDIT_PRE_THRESHOLD_FIX.json`, checkpoint-133 source, and original log remain unchanged. A source hash manifest records the input certificate, original source, original artifact, test, corrected source, reports, and corrected audit JSON.
 
+## Workspace metadata scope note
+
+After the NS-5A commit was pushed, a read-only `git -C <main-development-checkout> status --short --branch` check listed pre-existing untracked pathnames under Stage 5 safety/benchmark directories, including marker, lock, and commit-record filenames. This exposed path metadata outside the intended NS-5A source package. No listed file was opened, hashed, summarized, or changed; no outcome values or arrays were observed, and this metadata did not inform any mathematical conclusion. The names alone do not establish whether a sampler was active or whether markers were stale. This is a limited evidence-scope deviation, not proof of complete non-access.
+
 ## Decision
 
 Mathematical package: **CORRECTIONS_REQUIRED** (checkpoint-133 historical result corrected in a new version; other numeric certificates retain listed limitations). Controller: **HOLD**. No sampling or further experiment is authorized.
