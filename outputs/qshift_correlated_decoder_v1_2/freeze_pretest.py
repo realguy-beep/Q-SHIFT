@@ -11,7 +11,7 @@ FREEZE_PATH = ROOT / "PRETEST_FREEZE.json"
 PKG = "outputs/qshift_correlated_decoder_v1_2"
 V11 = "outputs/qshift_correlated_decoder_feasibility_v1_1"
 FILES = [f"{PKG}/{name}" for name in (
-    ".gitignore", "config.json", "EXPERIMENT_PROTOCOL.md", "DESIGN_PLAN_DRAFT.md", "README.md",
+    ".gitattributes", ".gitignore", "config.json", "EXPERIMENT_PROTOCOL.md", "DESIGN_PLAN_DRAFT.md", "README.md",
     "contract.py", "common.py", "multi_prior.py", "select_static.py", "STATIC_SELECTION.json",
     "prepare_seeds.py", "seed_inventory.json", "run_eval.py", "run_watchdog.py", "analyze_saved.py",
     "rehearsal.py", "preflight.py", "PREFLIGHT.json", "freeze_pretest.py",
