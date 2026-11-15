@@ -1,0 +1,58 @@
+{
+  "schema": "qshift-correlated-decoder-v1.3-config-v1",
+  "classification": "single bounded development-only paired evaluation: cost-consistent five-factor decoder versus the strongest static and mode-switching matching baselines; exploratory, not confirmatory",
+  "source_branch": "codex/qshift-correlated-decoder-v1-3",
+  "lineage": {
+    "v1_2_branch": "codex/qshift-correlated-decoder-v1-2",
+    "v1_2_frozen_commit": "b95687ccb451896dcb9963e4e2b261de97572204",
+    "v1_2_results_commit": "e20ac9e71",
+    "v1_2_decision": "GO_DEVELOPMENT_ONLY"
+  },
+  "circuit": {
+    "family": "surface_code:rotated_memory_z",
+    "distance": 3,
+    "rounds": 5,
+    "gate_probability": 0.003,
+    "measurement_probability": 0.003,
+    "burst": "CORRELATED_ERROR(q) X8 X12 X15 after each of five MR boundaries",
+    "probabilities": [0.0, 0.01, 0.02],
+    "source": "outputs/qshift_correlated_decoder_feasibility_v1_1/model.py (imported unchanged)"
+  },
+  "estimator": {
+    "method": "frozen V1.1 affine five-triple-cofire estimator, deterministically refit from the same 3,000 V1 training detector rows",
+    "required_slope": 0.8800000000000001,
+    "required_intercept": 0.000666666666666673,
+    "tolerance": 1e-12,
+    "training_observables_read": false
+  },
+  "selection": {
+    "selection_set": "V1.2 pilot_runs/attempt_001 evaluation archives (72 x 4,000 shots); already-exposed development data; read-only",
+    "q_grid": "0 to 0.02 step 0.00125",
+    "tau_grid": [0.0, 0.0005, 0.001, 0.002, 0.003, 0.004, 0.005, 0.0075, 0.01],
+    "criterion": "minimum equal-weight mean LER over q in {0, 0.01, 0.02}; ties to the smaller value, ON before OFF"
+  },
+  "allocation": {
+    "roots_per_q": 24,
+    "eval_shots_per_root": 4000,
+    "calibration_shots_per_root": 500,
+    "new_evaluation_shots": 288000,
+    "new_calibration_shots": 36000,
+    "new_shots_total": 324000,
+    "sampler_calls": 144,
+    "calibration_observables_persisted": false
+  },
+  "resource_limits": {
+    "wall_seconds": 3000,
+    "preflight_projection_max_fraction_of_cap": 0.6,
+    "sampled_peak_rss_bytes": 2147483648,
+    "minimum_free_disk_bytes": 1073741824,
+    "maximum_run_artifact_bytes": 268435456
+  },
+  "environment": {
+    "python": "3.12.10",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "numpy": "2.5.3",
+    "psutil": "7.2.2"
+  }
+}
