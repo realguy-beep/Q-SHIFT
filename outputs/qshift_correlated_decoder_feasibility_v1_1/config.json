@@ -1,0 +1,88 @@
+{
+  "schema": "qshift-correlated-decoder-feasibility-v1.1",
+  "classification": "single bounded development-only paired evaluation; exploratory, not confirmatory",
+  "source_branch": "codex/qshift-correlated-decoder-feasibility-v1-1",
+  "v1_base_commit": "0da212941ce4cce43cc4d27821e3a59c0acb6cd2",
+  "v1_execution_source_commit": "bfd971d06d0deadaac965086c3a6cbdca58eeb4b",
+  "circuit": {
+    "family": "surface_code:rotated_memory_z",
+    "distance": 3,
+    "rounds": 5,
+    "memory_basis": "z",
+    "pauli_regime": "balanced",
+    "gate_probability": 0.003,
+    "measurement_probability": 0.003,
+    "bias_ratio": 10.0,
+    "detectors": 40,
+    "observables": 1
+  },
+  "candidate_noise": {
+    "name": "per-round three-data-qubit common-cause X burst",
+    "data_qubits": [8, 12, 15],
+    "injection_point": "immediately after each MR boundary",
+    "probabilities": [0.0, 0.01, 0.02],
+    "round_events_independent": true,
+    "dem": {
+      "decompose_errors": true,
+      "approximate_disjoint_errors": true,
+      "pymatching_enable_correlations": true
+    }
+  },
+  "reuse": {
+    "source_attempt": "outputs/qshift_correlated_decoder_feasibility_v1/pilot_runs/attempt_001",
+    "v1_archives_verified": 33,
+    "training_shots_reused": 3000,
+    "calibration_shots_reused": 15000,
+    "training_and_calibration_observables_read": false,
+    "training_and_calibration_arrays_copied": false,
+    "v1_evaluation_shots": 0
+  },
+  "allocation": {
+    "new_evaluation_roots_per_probability": 10,
+    "evaluation_shots_per_root": 2000,
+    "new_evaluation_shots": 60000,
+    "new_sampler_calls": 30,
+    "reused_v1_shots": 18000,
+    "cumulative_unique_development_shots": 78000,
+    "maximum_new_shots": 60000,
+    "maximum_new_sampler_calls": 30
+  },
+  "decoders": {
+    "A": "one globally fixed correlation-aware PyMatching model using a single pooled detector-only calibration estimate",
+    "A2": "per-root calibrated correlation-aware PyMatching using the matched root's calibration detector batch",
+    "B": "per-root calibrated five-factor enumeration with background PyMatching; not exact whole-circuit maximum likelihood",
+    "C": "privileged true-q five-factor enumeration reference; unavailable at deployment"
+  },
+  "estimator": {
+    "method": "training-only affine fit from mean five-triple-cofire detector feature to burst probability",
+    "coefficient_order": "numpy.polyfit returns slope, intercept; V1.1 stores in that order",
+    "training_labels": "known generating q values paired to training partition only",
+    "calibration_inputs": "detector bits only",
+    "clip": [0.0, 0.02]
+  },
+  "statistics": {
+    "primary_estimand": "equal-weight mean over q=0.01 and q=0.02 of root-paired LER(B)-LER(A)",
+    "primary_interval": "two-sided 95% root-stratified paired percentile bootstrap",
+    "bootstrap_replicates": 20000,
+    "bootstrap_quantile_method": "linear",
+    "zero_burst_safety": "one-sided 95th root-bootstrap percentile for LER(B)-LER(A) at q=0; tolerance +0.0005",
+    "minimum_A_nonzero_errors": 100,
+    "no_evaluation_model_selection": true,
+    "decision_criteria": "unchanged from frozen V1 protocol",
+    "interpretation": "development feasibility only; ten roots per condition are insufficient for confirmation"
+  },
+  "resource_limits": {
+    "wall_seconds": 600,
+    "sampled_peak_rss_bytes": 2147483648,
+    "minimum_free_disk_bytes": 1073741824,
+    "maximum_run_artifact_bytes": 268435456,
+    "memory_metric_note": "sampled current process RSS high-water; not a hard OS process-tree limit"
+  },
+  "environment": {
+    "python": "3.12.10",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "numpy": "2.5.3",
+    "psutil": "7.2.2"
+  }
+}
