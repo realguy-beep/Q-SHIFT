@@ -2,6 +2,14 @@
 
 A local, single-laptop demonstration of quantum error correction using **real Stim circuit sampling** and **real PyMatching decoding**. The dark cyan/violet page is designed for a school science exhibition and does not need a cloud service or login.
 
+The page opens in **Mode A** and does not sample a shot on startup. Choose among:
+
+- **Mode A — Explain QEC:** load a deterministic, single-mechanism fixture from a decomposed approximate detector error model (DEM). PyMatching decodes that fixed syndrome. It is labeled as a DEM fixture, not a sampled history. The 3×3 data-qubit picture is a teaching schematic and is not a coordinate map for Stim.
+- **Mode B — Stage 5 result:** explain the frozen aggregate comparison and its scope. It is a report, not a new run; it explicitly says the 21.86% relative reduction was versus nominal burst-blind p=0 matching and not a strong static burst-aware baseline.
+- **Mode C — Changing noise:** run a small local Stim/PyMatching demonstration. The fixed, detector-profile adaptive, and privileged true-p reference arms decode the same evaluation detector rows. The privileged arm receives the simulated true burst probability and is oracle-only. This demo uses a simplified estimator and is not Stage 5 replication.
+
+The mode selector also has simulated Next/Mode/Reset button controls and a nine-position LED preview. A COM port preference can be saved locally; there is no active serial connection yet. See [`HARDWARE_INTERFACE.md`](HARDWARE_INTERFACE.md) for the draft JSON Lines message, logical LED indices, and button behavior. No GPIO or power wiring is assumed.
+
 ## Start on Windows
 
 1. Install Python 3.10 or newer and enable **Add Python to PATH**.
@@ -25,13 +33,21 @@ To run the automated checks, install test-only packages once and run:
 .\.venv\Scripts\python.exe -m pytest -q
 ```
 
-## What a live run does
+The complete legacy suite includes live Stim sampling tests. For a no-shot
+deterministic check, run only:
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest -q tests/test_deterministic_exhibition.py
+```
+
+## What a Mode C live run does
 
 - Supports 1,000, 5,000, or 10,000 **evaluation** shots and five listed burst probabilities (0, 0.4%, 0.8%, 1.2%, 1.6%).
 - Builds a distance-3, five-round rotated Z-memory Stim circuit with 40 detectors and one logical observable.
 - Uses 2,000 separate detector-only calibration shots. It also generates 17 independent detector-profile reference batches of 1,200 shots each (20,400 reference shots). The page reports these streams separately from evaluation.
 - Estimates burst probability from calibration detector frequencies only. It does not pass logical-observable labels or the generating probability into the estimator.
 - Builds a burst-blind fixed PyMatching decoder and a decoder using the estimated burst probability. Both decode the **same evaluation detector rows**; errors are scored against those rows’ simulated observable labels.
+- Builds a third privileged reference decoder using the selected simulation burst probability. It receives information unavailable to the adaptive arm, is labeled oracle-only, and must not be presented as a deployable method.
 - Updates progress only after sampling and decoding each batch. `generated_shots` and `completed_shots` are separate backend fields. The two error counts, paired decoder disagreements, selected estimate, and measured elapsed time come from the run.
 - Stores the active run ID in the browser tab’s session storage so refresh or a short connection interruption can reconnect while the same server process remains alive. The server keeps run status in memory; restarting the server loses that status and the page will say so rather than reconstructing results.
 
@@ -43,6 +59,8 @@ The lattice in the hero is decorative. The interactive 40-cell view is an **ordi
 
 The published **21.9% relative reduction** is a separate Stage 5 aggregate comparing detector-profile adaptation with a nominal burst-blind fixed decoder under the frozen synthetic conditions. It is not a live-run result, a claim over every strong static decoder, or a hardware result. The live demo uses a simpler circuit insertion and estimator and may produce different outcomes.
 
+Mode A's fixed DEM mechanism may use Stim's approximate disjoint-error conversion. Its predicted observable correction and fixture agreement are properties of that selected DEM mechanism and matching graph. They do not establish exact circuit-level probabilities or decoder performance.
+
 ## Implementation and compatibility
 
 The tested Windows environment uses Python 3.12.10, Stim 1.16.0, PyMatching 2.4.0, NumPy 2.5.3, FastAPI 0.162.0, and Uvicorn 0.54.0. PyMatching graphs are constructed with correlation decoding disabled, and the code calls `decode_batch(detectors)` without `enable_correlations=True`. This directly avoids the prior configuration error instead of suppressing it.
@@ -53,7 +71,9 @@ The server binds to `127.0.0.1` only. A single-worker pool and a lock reject ove
 
 - `server.py` — local FastAPI backend and Stim/PyMatching experiment.
 - `index.html` — responsive exhibition interface.
+- `HARDWARE_INTERFACE.md` — provisional serial, LED, and button interface contract.
 - `tests/` — regression and real-run API tests.
+- `tests/test_deterministic_exhibition.py` — deterministic, no-shot DEM fixture checks.
 - `requirements.txt` — pinned runtime packages.
 - `requirements-test.txt` — test-only packages.
 - `START_WINDOWS.bat` — isolated one-click launcher.

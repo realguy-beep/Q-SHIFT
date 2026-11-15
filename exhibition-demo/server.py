@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import logging
+import re
 import secrets
 import threading
 import time
@@ -120,6 +121,7 @@ def decode_paired(
     observables: np.ndarray,
     fixed_decoder: pymatching.Matching,
     adaptive_decoder: pymatching.Matching,
+    privileged_decoder: pymatching.Matching | None = None,
 ) -> dict[str, int]:
     """Decode the same detector rows with both models and score against one label array."""
     detectors = np.asarray(detectors, dtype=np.uint8)
@@ -138,10 +140,70 @@ def decode_paired(
 
     fixed_failures = fixed_predictions ^ observables
     adaptive_failures = adaptive_predictions ^ observables
-    return {
+    result = {
         "fixed_errors": int(np.count_nonzero(fixed_failures)),
         "adaptive_errors": int(np.count_nonzero(adaptive_failures)),
         "prediction_disagreements": int(np.count_nonzero(fixed_predictions ^ adaptive_predictions)),
+    }
+    if privileged_decoder is not None:
+        privileged_predictions = np.asarray(
+            privileged_decoder.decode_batch(detectors), dtype=np.uint8
+        ).reshape(-1)
+        if privileged_predictions.shape != (len(observables),) or not np.isin(
+            privileged_predictions, (0, 1)
+        ).all():
+            raise RuntimeError("Privileged reference returned invalid predictions")
+        result["privileged_errors"] = int(
+            np.count_nonzero(privileged_predictions ^ observables)
+        )
+    return result
+
+
+def deterministic_dem_fixture() -> dict[str, Any]:
+    """Decode one fixed DEM mechanism without sampling a circuit shot.
+
+    The selected event is illustrative and DEM-level. It is not represented as
+    a draw from the circuit distribution or as a Stage 5 observation.
+    """
+    circuit = make_circuit(0.008)
+    dem = circuit.detector_error_model(
+        decompose_errors=True,
+        approximate_disjoint_errors=True,
+    )
+    selected = None
+    for instruction in dem:
+        if instruction.type != "error":
+            continue
+        rendered = str(instruction)
+        if "^" in rendered:
+            continue
+        detector_ids = [int(x) for x in re.findall(r"\bD(\d+)\b", rendered)]
+        if detector_ids:
+            observable_ids = [int(x) for x in re.findall(r"\bL(\d+)\b", rendered)]
+            selected = (detector_ids, observable_ids)
+            break
+    if selected is None:
+        raise RuntimeError("No unsplit detector-bearing DEM mechanism is available for the fixture")
+
+    detector_ids, observable_ids = selected
+    syndrome = np.zeros(circuit.num_detectors, dtype=np.uint8)
+    for detector_id in detector_ids:
+        if not 0 <= detector_id < circuit.num_detectors:
+            raise RuntimeError(f"DEM fixture detector index is out of range: {detector_id}")
+        syndrome[detector_id] ^= 1
+    true_observable_parity = len(observable_ids) % 2
+    decoder = pymatching.Matching.from_detector_error_model(dem)
+    prediction = int(np.asarray(decoder.decode(syndrome)).reshape(-1)[0])
+    return {
+        "fixture_kind": "single DEM mechanism; deterministic, no sampled shot",
+        "representation": "decomposed approximate DEM from the exhibition circuit at burst p=0.008",
+        "detector_indices": detector_ids,
+        "syndrome": syndrome.astype(int).tolist(),
+        "observable_parity_for_mechanism": true_observable_parity,
+        "predicted_observable_correction": prediction,
+        "logical_success_for_fixture": prediction == true_observable_parity,
+        "decoder": "PyMatching ordinary matching; correlation mode disabled",
+        "limitation": "DEM mechanism fixture, not an exact circuit-level sampled history or Stage 5 result",
     }
 
 
@@ -213,11 +275,13 @@ def _worker(job_id: str, req: RunRequest) -> None:
         decoder_start = time.perf_counter()
         fixed_decoder = build_decoder(0.0)
         adaptive_decoder = build_decoder(p_hat)
+        privileged_decoder = build_decoder(req.burst)
         _update_job(job_id, decoder_build_seconds=round(time.perf_counter() - decoder_start, 4))
 
         evaluation_sampler = circuit.compile_detector_sampler(seed=seed + 10_000)
         fixed_errors = 0
         adaptive_errors = 0
+        privileged_errors = 0
         disagreements = 0
         generated_shots = 0
         completed_shots = 0
@@ -237,10 +301,14 @@ def _worker(job_id: str, req: RunRequest) -> None:
             _update_job(job_id, generated_shots=generated_shots)
             # Generated and completed are separate: a row only counts as
             # completed once both decoders and residual scoring finish.
-            batch = decode_paired(detectors, observables, fixed_decoder, adaptive_decoder)
+            batch = decode_paired(
+                detectors, observables, fixed_decoder, adaptive_decoder,
+                privileged_decoder=privileged_decoder,
+            )
             detector_events += int(np.count_nonzero(detectors))
             fixed_errors += batch["fixed_errors"]
             adaptive_errors += batch["adaptive_errors"]
+            privileged_errors += batch["privileged_errors"]
             disagreements += batch["prediction_disagreements"]
             completed_shots += len(detectors)
             last_detector_indices = np.flatnonzero(detectors[-1]).astype(int).tolist()
@@ -250,6 +318,7 @@ def _worker(job_id: str, req: RunRequest) -> None:
                 completed_shots=completed_shots,
                 fixed_errors=fixed_errors,
                 adaptive_errors=adaptive_errors,
+                privileged_errors=privileged_errors,
                 prediction_disagreements=disagreements,
                 detector_events=detector_events,
                 last_detector_indices=last_detector_indices,
@@ -267,6 +336,8 @@ def _worker(job_id: str, req: RunRequest) -> None:
             evaluation_seconds=round(time.perf_counter() - eval_started, 4),
             fixed_ler=fixed_errors / completed_shots,
             adaptive_ler=adaptive_errors / completed_shots,
+            privileged_errors=privileged_errors,
+            privileged_ler=privileged_errors / completed_shots,
             adaptive_minus_fixed_ler=(adaptive_errors - fixed_errors) / completed_shots,
         )
         logger.info(
@@ -315,6 +386,16 @@ def health() -> dict[str, str]:
         raise HTTPException(status_code=503, detail=f"Simulation dependencies unavailable: {exc}") from exc
 
 
+@app.get("/api/fixture")
+def fixture() -> dict[str, Any]:
+    """Return a deterministic model-mechanism walkthrough; this endpoint does not sample."""
+    try:
+        return deterministic_dem_fixture()
+    except Exception as exc:
+        logger.exception("deterministic fixture failed")
+        raise HTTPException(status_code=500, detail=f"Deterministic DEM fixture unavailable: {exc}") from exc
+
+
 @app.post("/api/run", status_code=202)
 def run(req: RunRequest) -> dict[str, str]:
     if req.shots not in EVALUATION_SHOT_CHOICES:
@@ -342,6 +423,7 @@ def run(req: RunRequest) -> dict[str, str]:
             "completed_shots": 0,
             "fixed_errors": 0,
             "adaptive_errors": 0,
+            "privileged_errors": 0,
             "prediction_disagreements": 0,
             "started_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             "_started_monotonic": now,
