@@ -1,0 +1,75 @@
+{
+  "schema": "qshift-performance-sprint-v1",
+  "classification": "isolated-development-only",
+  "source_base_commit": "924746ee3851f7662365e7834f998159d1b286a7",
+  "circuit": {
+    "memory_basis": "z",
+    "distance": 3,
+    "rounds": 5,
+    "pauli_regime": "balanced",
+    "gate_probability": 0.003,
+    "measurement_probability": 0.003,
+    "bias_ratio": 10.0,
+    "burst_pair": [
+      8,
+      10
+    ],
+    "burst_probabilities": [
+      0.0,
+      0.004,
+      0.008,
+      0.012,
+      0.016
+    ],
+    "expected_detectors": 40,
+    "expected_observables": 1,
+    "dem": {
+      "decompose_errors": true,
+      "approximate_disjoint_errors": true,
+      "pymatching_enable_correlations": true
+    }
+  },
+  "allocation": {
+    "training_shots_per_probability": 1000,
+    "calibration_shots_per_root": 500,
+    "roots_per_probability": 10,
+    "evaluation_shots_per_root": 2000,
+    "total_unique_shots": 130000,
+    "sampler_calls": 105,
+    "max_unique_shots": 130000,
+    "max_sampler_calls": 105
+  },
+  "estimator": {
+    "method": "ridge-regression-on-standardized-detector-bits",
+    "features": "40 detector bits only",
+    "alpha": 10.0,
+    "training_targets": "known simulator burst probability for the independent training partition; no observable labels",
+    "clip": [
+      0.0,
+      0.016
+    ]
+  },
+  "statistics": {
+    "primary": "equal-weight mean over p=0.004,0.008,0.012,0.016 of root-paired B-minus-A LER",
+    "bootstrap_replicates": 100000,
+    "bootstrap_ci": "two-sided 95% percentile, independently resampling roots within each probability condition",
+    "zero_burst_gate": "one-sided 95% bootstrap upper bound for B-minus-A at p=0 below +0.0005",
+    "minimum_nonzero_baseline_errors": 100,
+    "meaningful_relative_reduction_target": 0.5,
+    "per_condition_maximum_harm": 0.0005,
+    "statistics_seed_label": "statistics:bootstrap",
+    "statistics_seed_labels": [
+      "statistics:primary-bootstrap",
+      "statistics:condition-bootstrap",
+      "statistics:zero-gate"
+    ]
+  },
+  "resource_limits": {
+    "wall_seconds": 600,
+    "peak_process_working_set_bytes": 1073741824,
+    "artifact_bytes": 134217728,
+    "minimum_free_disk_bytes": 1073741824,
+    "memory_enforcement": "measured peak working set checked between operations; not a hard OS/job-object limit"
+  },
+  "seed_namespace": "qshift-performance-sprint-v1-seed-domain-2026-11-15"
+}
