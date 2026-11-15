@@ -4,6 +4,7 @@ This index points to preserved local evidence; it does not replace the per-study
 
 ## Major milestones
 
+| Strong fixed-baseline burst comparison | `outputs/strong_fixed_baselines_v1/`; 3.66M unique development shots, including 1.5M paired evaluation shots on 600 roots. Completed with a disclosed pooled-estimator implementation deviation; a protocol-consistent reconstruction independently re-decoded saved samples. Not confirmatory. | `PRETEST_FREEZE_V14.json` SHA-256 `2fd6fa631a452c9a00002b8b3365f4ae2b26ad910e7f08ff3e5a92a679a6c5a8`; reconstruction freeze SHA-256 `7d8b50218118ec0c56f3930efe3804d6cf1fb1669f720353620d06e910fe9aaf`; `seed_inventory.json`; verifier status `PASS` with deviation retained. | `python -m unittest outputs.strong_fixed_baselines_v1.test_experiment -v`; `python outputs/strong_fixed_baselines_v1/verify_reconstruction_outputs_v1.py` verifies saved arrays and does not generate shots. Read `FINAL_RESULTS_AND_INTERPRETATION.md` before quoting results. |
 | Study | Evidence path / status | Seeds and integrity evidence | Reproduction / audit command |
 |---|---|---|---|
 | Starter / Phase 1 lookup and repetition-code work | `outputs/` root scripts and `outputs/noise_composition_phase/`; exploratory; early single-seed gains did not persist in multi-seed comparisons. | See the local seed inventories/manifests in each subdirectory; conversation-only starter metrics lack a preserved local raw artifact. | Follow the phase-local reproduction notes where present; do not rerun into the existing outputs. |
