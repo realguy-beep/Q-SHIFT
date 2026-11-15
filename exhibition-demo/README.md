@@ -1,5 +1,7 @@
 # Q-SHIFT Science Exhibition Demo
 
+See [`V1_1_VALIDATION.md`](V1_1_VALIDATION.md) for V1.1 Windows smoke-test results and screenshots.
+
 A local, single-laptop demonstration of quantum error correction using **real Stim circuit sampling** and **real PyMatching decoding**. The dark cyan/violet page is designed for a school science exhibition and does not need a cloud service or login.
 
 The page opens in **Mode A** and does not sample a shot on startup. Choose among:
