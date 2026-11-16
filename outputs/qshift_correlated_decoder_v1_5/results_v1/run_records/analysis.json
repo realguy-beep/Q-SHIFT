@@ -1,0 +1,374 @@
+{
+  "Bexact_point_ler_lower_than_BoffStatic_at_both_nonzero_q": true,
+  "BoffStatic_nonzero_error_count": 1418,
+  "allocation": {
+    "calibration_shots_per_root": 500,
+    "eval_shots_per_root": 4000,
+    "roots_per_q": 24
+  },
+  "arm_errors_by_condition": {
+    "A2sw": {
+      "0.0": 479,
+      "0.01": 1387,
+      "0.02": 1607
+    },
+    "Astar": {
+      "0.0": 795,
+      "0.01": 1216,
+      "0.02": 1472
+    },
+    "Bexact": {
+      "0.0": 374,
+      "0.01": 514,
+      "0.02": 527
+    },
+    "Boff": {
+      "0.0": 466,
+      "0.01": 704,
+      "0.02": 735
+    },
+    "BoffStatic": {
+      "0.0": 556,
+      "0.01": 685,
+      "0.02": 733
+    }
+  },
+  "bootstrap_quantile_method": "linear",
+  "bootstrap_replicates": 20000,
+  "calibration_estimation_diagnostics": {
+    "0.0": {
+      "bias": 3.1565656565655956e-05,
+      "mae": 3.1565656565655956e-05,
+      "mean_qhat": 3.1565656565655956e-05
+    },
+    "0.01": {
+      "bias": 0.00013257575757574976,
+      "mae": 0.001470959595959595,
+      "mean_qhat": 0.01013257575757575
+    },
+    "0.02": {
+      "bias": -0.0013320707070707122,
+      "mae": 0.0013320707070707115,
+      "mean_qhat": 0.018667929292929288
+    }
+  },
+  "co_primary": {
+    "Bexact_minus_Astar": {
+      "by_condition": {
+        "0.0": {
+          "estimate": -0.004385416666666667,
+          "two_sided_95_ci": [
+            -0.005,
+            -0.0038125
+          ]
+        },
+        "0.01": {
+          "estimate": -0.0073124999999999996,
+          "two_sided_95_ci": [
+            -0.007927083333333333,
+            -0.006687499999999999
+          ]
+        },
+        "0.02": {
+          "estimate": -0.00984375,
+          "two_sided_95_ci": [
+            -0.01028125,
+            -0.009437500000000001
+          ]
+        }
+      },
+      "nonzero_equal_weight_estimate": -0.008578124999999999,
+      "nonzero_two_sided_95_ci": [
+        -0.008953125,
+        -0.008203125
+      ]
+    },
+    "Bexact_minus_BoffStatic": {
+      "by_condition": {
+        "0.0": {
+          "estimate": -0.0018958333333333334,
+          "two_sided_95_ci": [
+            -0.0022083333333333334,
+            -0.0015937500000000003
+          ]
+        },
+        "0.01": {
+          "estimate": -0.00178125,
+          "two_sided_95_ci": [
+            -0.002197916666666667,
+            -0.0014166666666666668
+          ]
+        },
+        "0.02": {
+          "estimate": -0.0021458333333333334,
+          "two_sided_95_ci": [
+            -0.0024791666666666664,
+            -0.001822916666666667
+          ]
+        }
+      },
+      "nonzero_equal_weight_estimate": -0.001963541666666667,
+      "nonzero_two_sided_95_ci": [
+        -0.0022291666666666666,
+        -0.0017187499999999998
+      ]
+    }
+  },
+  "decision": "GO_DEVELOPMENT_ONLY",
+  "equal_weight_nonzero_condition_ler": {
+    "A2sw": 0.01559375,
+    "Astar": 0.013999999999999999,
+    "Bexact": 0.005421875,
+    "Boff": 0.007494791666666667,
+    "BoffStatic": 0.007385416666666667
+  },
+  "evaluation_roots": 72,
+  "evaluation_shots": 288000,
+  "frozen_model_settings": {
+    "A2sw_tau": 0.0005,
+    "Astar_static": {
+      "correlations": true,
+      "q": 0.00375
+    },
+    "Bexact_max_elimination_width": 11,
+    "BoffStatic_static_q": 0.01125
+  },
+  "interpretation": "development evidence for one synthetic three-qubit mechanism at d=3; five-factor and exact arms know the burst support; Bexact is exact only for the DEM (approximate_disjoint_errors); not hardware, scaling or independent-test evidence",
+  "paired_archive_sha256": {
+    "eval_q0_r00.npz": "d5c41c696207d1d2bad31ebc727a8959704e1422fd8a161776beafdb51c9f0ee",
+    "eval_q0_r01.npz": "699bbd8c7c7f7928693eaaa57c280a228e6abd1417dfd806cb75526da8392136",
+    "eval_q0_r02.npz": "5d4f44a73f805ce04cf12eb288af9f1a5deec984fb3dc61efefedb178bdc434a",
+    "eval_q0_r03.npz": "b4312b3cdaf13dc06707fef348808bc0b19e7ec61c7583f1360da173b460210a",
+    "eval_q0_r04.npz": "3c637a16514c6a520dca773929ae05c7b0e26bfd6223a7fdf3784a78294e3944",
+    "eval_q0_r05.npz": "4a383e2a2d81d6849c48f45bc41fa60d52c5f91371ee66c277392740c3502356",
+    "eval_q0_r06.npz": "5da810a7038c4074920a38ad7e64eb0bd6773d268097f50c3dda95bbc0e583ee",
+    "eval_q0_r07.npz": "f226e722e19746845a781fbd6d92715babfa6b692f8403dff06f551e77f5cce9",
+    "eval_q0_r08.npz": "47c0bb19727a6001ec22b6f1828ae6ba65e8d2f90ee03b2b0e0a277a0b4570eb",
+    "eval_q0_r09.npz": "be1b4bc7f3251da3a9ea445ac6be108e7adb9ec794abb5f8f99bef2f00a58560",
+    "eval_q0_r10.npz": "d6c5054ffa8c0957becddbc947e9831dafe49555127c67907e95ad0e0c4ed7cc",
+    "eval_q0_r11.npz": "b5ef44eba8d57e7de210215df4a633e4272fb50bffe4ce3ea966ca1a03e9bd31",
+    "eval_q0_r12.npz": "2735d7d932d3391f66e15982991ca068fe2a92891d70af47fe09bd72a82a04e5",
+    "eval_q0_r13.npz": "27dc8ebbde4434dade0edd3bac498173d016f80d76a027cf3cdec1bfa6295fe6",
+    "eval_q0_r14.npz": "f43583601822c5f2ab20b26ff2fd34ff7be2a099f1014c80e10636205ed9fb5b",
+    "eval_q0_r15.npz": "076899b5ecc1612a10d4343e51e0d0c90ce5c33bae1142b0f5530d69bc9cd434",
+    "eval_q0_r16.npz": "bc9cc87e37c8985a9b0c610bcfd2e2edcec8b3bd13d7960c03292dfa09e67b2d",
+    "eval_q0_r17.npz": "159a27753c4aaad6e75c7c2bc188befe52985e21dd81b7ab34da41da33ab0148",
+    "eval_q0_r18.npz": "e9fc33d401a24b541ceaa66d04436b25c6ae5238ecb45d4a594f312ce80d99bb",
+    "eval_q0_r19.npz": "2ee1462feca28ed50f8e16ede24d80d924994b02299b1eeff6c699149a5b12e0",
+    "eval_q0_r20.npz": "9df393f65bc593b9292a2e8db98a2f27bdfe6a8aad1db467c8cc2d0d1848a8b5",
+    "eval_q0_r21.npz": "7731f196083d6e2bc033cec36b47a8922e2819c662635990e2c964e757a23cd0",
+    "eval_q0_r22.npz": "11976db2501aad3567978a372b50474f6b7df13207bf0c1c0e7c5df45fc723fe",
+    "eval_q0_r23.npz": "541ce76b4d9d422ff02cd6900971aa7124d8908064784573d875ca2fc819fb0e",
+    "eval_q1_r00.npz": "77a3e32aeb78ed0608883d22ff3eab9cf329a3028615e7b27bb2327f06b8b4dd",
+    "eval_q1_r01.npz": "4135ee37d87bebc8d38459553bc15ffa525d4d9da20c0eb54359a69bfec41315",
+    "eval_q1_r02.npz": "14d82dabb9cd46029e84d17d28abe8d75da760778efc45b1bc56598a0dae3104",
+    "eval_q1_r03.npz": "a0553452bdf8befb15d37ef61144ced57cd8600875c954baf5096e1111564d3d",
+    "eval_q1_r04.npz": "371f733cca476fcd23536f9b546ae6ba765fb148ca0ca7a6ae414f0b20666bf5",
+    "eval_q1_r05.npz": "ec93a3c8eadd7c80d16e056d0fc3e9830fbc3c5aa392e5d7281780b107c7eb7c",
+    "eval_q1_r06.npz": "1311e712e493566c2dc5283eacf6024e5dc176e7f3960a69d4e034c9170dccac",
+    "eval_q1_r07.npz": "56a5e4f4523692f7c139f6372a21b693234febd26c0fa2d0e1b4a2af110f4381",
+    "eval_q1_r08.npz": "9be55fee95ca9c9b8d91ed05ade334147bd87c332e16852154de5fcb3351319f",
+    "eval_q1_r09.npz": "b8edbf23072e1ae62bb78d3f3a536b262d9315fd39e84fc75ed8cad1ddbe5167",
+    "eval_q1_r10.npz": "1d0f1909b763ea93f87281fd9e19b6d61a28954fa6688851de8b6b92495e1e23",
+    "eval_q1_r11.npz": "7e36d2fdde1da59e1574ec4520ee5606472ad57deb2d4d982d829f36fcb797c8",
+    "eval_q1_r12.npz": "98b377493c88ca29360bb6be4f6562bc6417443e9671f4b315a9d7d76d0616d0",
+    "eval_q1_r13.npz": "2e87de96a8eb61659f4dc2facb1359998ffbda0c08c8552beab0a34a3758f8fc",
+    "eval_q1_r14.npz": "f4655ae2e33152014ee83cb9f2bc42223cf7061b7134ad1affdb6ed7177a2b78",
+    "eval_q1_r15.npz": "8de6de2eb89cdad0d0f3a6fef517304e99e58f3192dc4ec3d5e989cb2996c303",
+    "eval_q1_r16.npz": "2ddc42a528e9b5d48d214f9dda7acd0380058336b81bccbc170a39bc99aad2e4",
+    "eval_q1_r17.npz": "7981eeb2b98cea409ebaa2af4730c1ea28899ba6702e8df3be411e6064ed7aa0",
+    "eval_q1_r18.npz": "beb4f031c87579fb3349b362b05eab337350536271c21e3b88cf773f068f935b",
+    "eval_q1_r19.npz": "60a04af73a51622769c0bc99bbc4487619075b4ad495527312dc581a6e4c124c",
+    "eval_q1_r20.npz": "770a26d077da375f765b8030a2121bb661e5549d21938a14b4799aaf4b4c48bc",
+    "eval_q1_r21.npz": "94b72bae09c2228cd4114b4d3a82dcaad7c84a23029477c241e36288941bc519",
+    "eval_q1_r22.npz": "1ef729c14aae5225261adde2d3c769e717f808b2c99b17ac750d043745d63803",
+    "eval_q1_r23.npz": "52841f1ed5cec621f0d53dfd5ff51f5f453c4bce13b69536390b20d75502177d",
+    "eval_q2_r00.npz": "ccadaa883dadead3f2d16b6905aa8ce6cfbe937bfe592ff11d146fda7082eca3",
+    "eval_q2_r01.npz": "bcb09316e55d341c88105225a6d1b9ba4ab16461d72e99827b9ace8c7750ed37",
+    "eval_q2_r02.npz": "8f41850499eb32a464d9a770642d44ba22bcd7f9c1b6e6c00bb16e60ab67d7c5",
+    "eval_q2_r03.npz": "2cbc099b9a729c23a05a4e0c16782f5028a0fdd4214fec77f082255c6e38e5c0",
+    "eval_q2_r04.npz": "957d38004e336d30dc4ab8a93f296c2a14ca37af827f3f41265c356b54242268",
+    "eval_q2_r05.npz": "fe52059ecf14aa229b5fa19358349a57798937f2a5ba046a6fb1980372649e25",
+    "eval_q2_r06.npz": "3236ed56579f48d36bea8fe24e41a20ca2aa6444dcc7f9d59b58a49d844dfbcc",
+    "eval_q2_r07.npz": "9b96913837ada0a22db0964b56ea0cec139a6bfe9e8501414a05873bc89a0b32",
+    "eval_q2_r08.npz": "3c7c34a27c01e7f3465be8c644cb2d17223ff0fdc2962a8225737d9d4aab8e54",
+    "eval_q2_r09.npz": "03e192b2c05f6420bd1c9720daab2d9e1d8e6bcc0acdb9f714f3f3d85cca52b9",
+    "eval_q2_r10.npz": "2133d173daf516bbbcf9d606a08e3905181e9e6a2a48e3a9877552fdc280b4d6",
+    "eval_q2_r11.npz": "45f703ce0b28ebd25d5324fdaeaa602407e430864c1780c3ddde90e3dfd73d2a",
+    "eval_q2_r12.npz": "abd150fab49e80886c0f8457e35ebead75884019b40508ebfe4772db69f567b2",
+    "eval_q2_r13.npz": "56abf45fe3a1ff6396232327860ccb1d61ea63eabe5b0d49dc7e4db40057718c",
+    "eval_q2_r14.npz": "09867ea4f1b6067d99b6350de1c1dcece4c8ce9e5bdf4e2a70b0e9ca14b29652",
+    "eval_q2_r15.npz": "06d1b54968a755891b821c239c11b5889a1c14c2e7b2ebc8b2250e318e211455",
+    "eval_q2_r16.npz": "5b627e83243b1fbdcb3018b3818f7c53c30b8a39ada29a66c3670f35aaaa1d38",
+    "eval_q2_r17.npz": "eb7d3e6d7fa7f72d48690d628c6ad1cb7c9380f9bcf8eaf21a8e922ba83ae0a1",
+    "eval_q2_r18.npz": "ac4744ae41cb6dd4f08a62c159f7e66b423caa68ae97c37d303e2de1233748bf",
+    "eval_q2_r19.npz": "0014641ce6bb2b2f86da6ff3e348caf7170c9f96313fb789c1920069f51a8813",
+    "eval_q2_r20.npz": "851ee574cc87f83cf8bd78d463cd1ad3b273f89eec6f9da1c9da95257abc692f",
+    "eval_q2_r21.npz": "a8d9001e4927d3c16e3065de0e2a0e432bbf864a2b4bfba4d16552e7740e01d2",
+    "eval_q2_r22.npz": "64fbcacb087e0da0f24f1911caeb086ef5c0ad2fefb08ba4743eeb6a73bd9302",
+    "eval_q2_r23.npz": "9917485ee349b60ceaf8cbe8ac6b4877be48b7d71220afc69de5ccac33289de2"
+  },
+  "paired_results_csv_sha256": "d1926f37664dd5b97989fba7bfde6d021d19f60d8dcff5719f05d8cfb03dad9b",
+  "q0_Bexact_minus_BoffStatic_bootstrap_5th_95th_percentiles": [
+    -0.0021458333333333334,
+    -0.001635416666666667
+  ],
+  "q0_harm_tolerance": 0.0005,
+  "relative_nonzero_reduction": {
+    "Bexact_vs_A2sw": {
+      "estimate": 0.6523046092184369,
+      "two_sided_95_ci": [
+        0.6331079228530624,
+        0.6717432585122349
+      ]
+    },
+    "Bexact_vs_Astar": {
+      "estimate": 0.6127232142857142,
+      "two_sided_95_ci": [
+        0.593543592429251,
+        0.6323262903345003
+      ]
+    },
+    "Bexact_vs_BoffStatic": {
+      "estimate": 0.265867418899859,
+      "two_sided_95_ci": [
+        0.23645320197044328,
+        0.29715604169020454
+      ]
+    },
+    "BoffStatic_vs_Astar": {
+      "estimate": 0.472470238095238,
+      "two_sided_95_ci": [
+        0.4503566160780967,
+        0.49443630489009327
+      ]
+    }
+  },
+  "schema": "qshift-correlated-decoder-v1.5-independent-analysis-v1",
+  "secondary_descriptive": {
+    "Bexact_minus_A2sw": {
+      "by_condition": {
+        "0.0": {
+          "estimate": -0.00109375,
+          "two_sided_95_ci": [
+            -0.0015000000000000002,
+            -0.0007395833333333334
+          ]
+        },
+        "0.01": {
+          "estimate": -0.00909375,
+          "two_sided_95_ci": [
+            -0.009864583333333333,
+            -0.008322916666666668
+          ]
+        },
+        "0.02": {
+          "estimate": -0.011250000000000001,
+          "two_sided_95_ci": [
+            -0.011729166666666667,
+            -0.010791666666666666
+          ]
+        }
+      },
+      "nonzero_equal_weight_estimate": -0.010171875,
+      "nonzero_two_sided_95_ci": [
+        -0.010619791666666666,
+        -0.009729166666666667
+      ]
+    },
+    "Bexact_minus_Boff": {
+      "by_condition": {
+        "0.0": {
+          "estimate": -0.0009583333333333333,
+          "two_sided_95_ci": [
+            -0.0012708333333333332,
+            -0.0006875000000000001
+          ]
+        },
+        "0.01": {
+          "estimate": -0.001979166666666667,
+          "two_sided_95_ci": [
+            -0.002416666666666667,
+            -0.0015833333333333335
+          ]
+        },
+        "0.02": {
+          "estimate": -0.0021666666666666666,
+          "two_sided_95_ci": [
+            -0.0025,
+            -0.00184375
+          ]
+        }
+      },
+      "nonzero_equal_weight_estimate": -0.0020729166666666665,
+      "nonzero_two_sided_95_ci": [
+        -0.002348958333333333,
+        -0.0018125000000000003
+      ]
+    },
+    "BoffStatic_minus_Astar": {
+      "by_condition": {
+        "0.0": {
+          "estimate": -0.0024895833333333332,
+          "two_sided_95_ci": [
+            -0.0030729166666666665,
+            -0.0019479166666666666
+          ]
+        },
+        "0.01": {
+          "estimate": -0.005531250000000001,
+          "two_sided_95_ci": [
+            -0.006156249999999999,
+            -0.004927083333333333
+          ]
+        },
+        "0.02": {
+          "estimate": -0.007697916666666666,
+          "two_sided_95_ci": [
+            -0.00815625,
+            -0.007229166666666666
+          ]
+        }
+      },
+      "nonzero_equal_weight_estimate": -0.006614583333333333,
+      "nonzero_two_sided_95_ci": [
+        -0.007000000000000001,
+        -0.006229036458333344
+      ]
+    },
+    "Boff_minus_Astar": {
+      "by_condition": {
+        "0.0": {
+          "estimate": -0.0034270833333333336,
+          "two_sided_95_ci": [
+            -0.004020833333333334,
+            -0.0028750000000000004
+          ]
+        },
+        "0.01": {
+          "estimate": -0.005333333333333333,
+          "two_sided_95_ci": [
+            -0.005958333333333334,
+            -0.004729166666666667
+          ]
+        },
+        "0.02": {
+          "estimate": -0.0076770833333333335,
+          "two_sided_95_ci": [
+            -0.008125,
+            -0.007208333333333333
+          ]
+        }
+      },
+      "nonzero_equal_weight_estimate": -0.006505208333333333,
+      "nonzero_two_sided_95_ci": [
+        -0.006890625,
+        -0.006119791666666666
+      ]
+    }
+  },
+  "target_endpoint": {
+    "definition": "95% lower bound of 1 - LER(Bexact)/LER(BoffStatic) >= 0.1",
+    "status": "TARGET_MET"
+  }
+}
