@@ -11,4 +11,6 @@
 - ☑ d=3 quality on 72,000 already-exposed V1.5 rows (`QUALITY_D3.json`): V3 0.523% vs Astar 1.385% vs Bexact 0.517%; G = 0.993; 99.92% agreement with Bexact.
 - ⚠ d=3/5/7 feasibility (`FEASIBILITY.json`): d=7 median 60.7 ms/shot, above the 50 ms gate. BP non-convergence accounts for 44 ms. Memory 6.8 MiB.
 - ☑ V3 decision: **REVISE** (`RESULTS.md`).
-- ◐ V3.1: batched BP and OSD (engineering only; same gates; bit-identical outputs).
+- ☑ V3.1 batched BP (`../qshift_scalable_decoder_dev_v3_1/`): E1/E2/E3 pass (0 mismatches on 72,000 rows and 600 syndromes; LLR difference 0.0; 11/11 tests). Feasibility fails worse (d=7 median 97.4 ms): **REVISE**. BP is compute-bound.
+- ☑ Milestone decision **REVISE** (`DECISION.md`). Dependency request: `ldpc==2.4.1`, pending approval.
+- ⚠ Process note: an unapproved `pip download` probe of the ldpc wheel (1.7 MB) was made and then deleted; nothing was installed.
