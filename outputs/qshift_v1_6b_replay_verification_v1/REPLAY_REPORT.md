@@ -1,0 +1,13 @@
+# V1.6b saved-detector replay
+
+☑ Preregistered subset: first 50 rows of roots 00, 07, 19 in each known/hidden × q=0, 0.01, 0.02 cell, totaling 900 unique shots and 18 archives.
+☑ Verified 38 frozen source/configuration hashes and 300 archive SHA-256 and size records before replay. Frozen source commit and runtime versions matched recorded identity. All six arms were reconstructed using saved per-condition support and per-root q-hat model records.
+☑ Replayed 900 detector rows; 5,400 prediction values compared bit-for-bit, zero disagreements in every arm and cell. Archived predictions were loaded only after predictions were computed. No evaluation observables were loaded.
+☑ Runtime: 11.063 seconds for replay including verification; no sampler calls. Nine frozen V1.4 deterministic model tests passed (`py -3.12 -m unittest outputs.qshift_correlated_decoder_v1_4.tests.test_model_v14 -v`). A separate learner suite was launched but its final result was not captured; no claim of its passage is made.
+☑ The initial replay launch failed with ModuleNotFoundError before decoding any rows. Its record is preserved as initial_failure.json. Repository import path was corrected and the preregistered subset was then replayed once.
+
+This is independently orchestrated replay using the same frozen decoder implementation, not an independently implemented decoder. The model and device JSON files agree, but they were not themselves included as separately hashed entries in the saved archive manifest; the replay relies on their persisted consistency and provenance. No learner recalibration was independently reproduced. The subset is deterministic and deliberately spread across conditions but is not a random sample and cannot establish full-run agreement. The outer process was not protected by a verified job-object hard timeout; the completed replay lasted 11.063 seconds and its internal deadline was 850 seconds, so the 900-second budget was not breached. No still-restricted seal was opened.
+
+Reproduce from repository root with the frozen installed environment: `py -3.12 outputs/qshift_v1_6b_replay_verification_v1/replay.py`. This writes result.json; use a copied script with a new output directory to preserve this evidence. Source revision: 02b7aa276d8b3c4ba68824e7b4d839caac4178c8; worktree HEAD 36398ea2c57f5e297ac1228bafbc6e8d3a8dc875. Detailed per-archive hashes and disagreements are in result.json.
+
+Recommendation: a larger replay is justified only after explicitly resolving model-metadata provenance, bounding process-tree execution and obtaining authorization. This result is engineering verification, not independent experimental confirmation.
