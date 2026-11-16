@@ -16,3 +16,7 @@
 5. Owner approved V1.6b (device-level support). Pre-registered its development gate (`PREREGISTRATION_DEV_V1_6B.md`, `dev_gate_v1_6b.py`) before computing anything. G2' was adjusted to 8 disjoint q=0 pools per study (24 in total), because only 96,000 q=0 rows exist per study.
 6. Ran the V1.6b development gate once (915 s): **PASS**. G1' 100% (72/72); G2' 95.8% (23/24); G3' 100% (72/72). Learning curve: 98.6% at N=1,500, 100% for N>=3,000. Per-root q-hat with the true class: mean 0.0084 at q=0.01 and 0.0172 at q=0.02 (MAE about 0.0028). The hidden burst is still sealed. Next: build the frozen V1.6b package, which needs separate sign-off to run.
 7. Built the frozen V1.6b package (`outputs/qshift_correlated_decoder_v1_6b/`): 15 tests pass, preflight PASS (projected 4,990 s; every class has width 11). The hidden burst was never opened.
+8. Ran the frozen V1.6b evaluation once (8,711 s, 1.75x the preflight projection, within the cap): **GO_DEVELOPMENT_ONLY, TARGET_MET**.
+   - The hidden burst opened as X3 X5 X8 (class 9, flip 0). The learner got both bursts exactly right, so Blearn equals Bexact_oracle on all 576,000 evaluation shots.
+   - Relative reduction vs Astar_oracle: known 61.5% [59.1, 63.8]; hidden 52.4% [49.4, 55.4].
+   - Verified by hash checks, an identical re-analysis and the frozen recount. See `outputs/qshift_correlated_decoder_v1_6b/results_v1/RESULTS.md`.
