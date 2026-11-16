@@ -12,3 +12,4 @@
      - both logical effects are recovered.
    - One fixture bug (a tiny DEM declared no observable) was fixed before the tests passed.
 3. Pre-registered the development gate (`PREREGISTRATION_DEV.md`, `dev_gate.py`) before any statistic was computed on real data.
+4. Ran the development gate once (300 s). **FAIL on G1** (76.4% vs 95%); G2 98.6% and G3 100% pass. Cause: 500 detector-only rows per root are too few at q=0.01 (22 below threshold, 12 wrong class). The pooled learner was correct in 3/3 studies. Stopped per the pre-registration; see `DEV_GATE_RESULT.md`. The hidden burst is unused and still sealed.
