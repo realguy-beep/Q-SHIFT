@@ -35,3 +35,12 @@ The strongest recurring conventional baseline is fixed PyMatching. Existing adap
 - If the supervisor requests a stop for another review, stop after pushing the reviewed corrections and handoff. Do not continue to the next phase while waiting.
 - Never merge, enable auto-merge, or close a research PR unless the project owner explicitly authorizes that action. A request to open/update a PR is not merge authorization.
 - Do not represent source review or unit tests as an independent raw-data replay. State which checks were actually rerun and which are prior local evidence.
+
+
+## Autonomous workflow (additive guidance)
+
+Preserve every instruction above. Start with a short plan; prefer minimal diffs and explain changes plainly. Follow `docs/autonomous_workflow_v1/WORKFLOW.md` for planning, checkpoints, review and completion. This workflow grants no experiment or publication authorization and never overrides project safeguards or a task's STOP conditions.
+
+Use native planning/progress tools when exposed, mirrored in a persistent task checklist with ☐ pending, ◐ running, ☑ verified and ⚠ blocked. Work autonomously within approved milestones; verify before marking completion. Use independent subagents for bounded read-only review or disjoint parallel tasks when beneficial, with explicit evidence/file boundaries. Never run conflicting experiments or edit the same files concurrently.
+
+Keep hidden burst seals and independent evaluations closed unless explicitly authorized. Obtain separate approval for expensive sampling, blind evaluation, new dependencies and publication claims. Do not push or merge without authorization. Workflow setup is not permission to execute research.
