@@ -31,8 +31,16 @@ class HeadroomGateTests(unittest.TestCase):
         self.assertEqual(committed, g.prepare_seeds())
         self.assertEqual(len(committed["seeds"]), len(g.cells()) * len(g.QS))
 
-    def test_gate_has_not_been_executed_in_phase_a(self) -> None:
-        self.assertFalse((PKG / "HEADROOM_GATE.json").exists())
+    def test_recorded_gate_is_complete_and_consistent(self) -> None:
+        # Phase A asserted the gate had not run; after the authorized run, check its record.
+        record = json.loads((PKG / "HEADROOM_GATE.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(record["results"]), len(g.cells()))
+        for r in record["results"]:
+            errors = {(e["correlations"], e["q"]): e["errors_q0_q001_q002"] for e in r["errors_by_static_decoder"]}
+            s = g.summarize(errors, r["shots_per_q"])
+            self.assertEqual(s["qualifies"], r["qualifies"])
+            self.assertEqual(s["floor_errors"], r["floor_errors"])
+        self.assertFalse(any(r["qualifies"] for r in record["results"]))
 
 
 if __name__ == "__main__":
