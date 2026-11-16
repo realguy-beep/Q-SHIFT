@@ -27,3 +27,9 @@ Branch `codex/qshift-v1-4b-decoder-optimality`, from `e2ffab43f` (the V1.4 gate 
    - Each mask's background cost and prediction come from one `Matching.decode(residual, return_weight=True, enable_correlations=True)`. The weight is PyMatching's correlation-reweighted solution weight, so edge selection and cost agree under the correlated model. A check on 300 S1 rows found it below the uncorrelated minimum in 11% of rows and never above it.
    - The q̂=0 path uses the same correlated decode.
    - Motivation: the residual is background-dominated and hyperedge-related, and correlation reweighting is PyMatching's scalable hyperedge approximation. C is evaluated against the same pre-registered thresholds.
+10. C on S1: 1.089% nonzero (+0.364 pp vs BoffStatic, CI [+0.324, +0.404]); q=0: 675 vs 481. **C fails criterion 1** (a negative result).
+11. S2 screen. Boff and BoffStatic were recomputed with the V1.3 definitions. S2 Astar counts reproduce V1.2 exactly (835/1,186/1,543).
+    - B: 0.533% vs BoffStatic 0.705% (−24.3%, CI [−0.203, −0.141] pp); q=0 333 vs 552. **Criterion 5 met.**
+    - A: within 1 shot of Boff.
+12. Stopped C's S2 decode after 53 of 72 roots. It could not change the decision because C already failed on S1. Those partial files are not analyzed.
+13. Decision **GO**, written up in `DECISION.md`. Screen summaries are copied to `results/S1_summary.json` and `results/S2_summary.json`. Per-shot files stay in git-ignored `work/`.
