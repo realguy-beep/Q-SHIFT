@@ -41,3 +41,12 @@ q=0 uses the same N_d. Phase 2 totals are Σ_d [3·N_d + 72·500] evaluation plu
 - **Run:** 6 independent jobs (one per (d, q)) in parallel processes. Each writes its own output once and refuses to overwrite. No retry or seed substitution.
 - **Wall-time budget:** 3 h for Phase 1, enforced by a monitored background run. Failed jobs are preserved and reported.
 - **Raw shot arrays are not saved.** Only per-arm error counts, discordance counts and timings are saved, as lightweight JSON.
+
+## Addendum A (committed after the rehearsal, before any Phase 1 sample)
+
+The rehearsal (2,000 shots per job on rehearsal seeds; not Phase 1 data) measured real-shot costs. V3.2 is about 2.4 ms/shot at d=5 and about 20 ms/shot at d=7. The five-factor 16-prior grid is about 0.9–1.8 ms/shot, a matching arm about 2–5 µs/shot, and V3 NumPy at d=5 about 14–21 ms/shot. The protocol's "10 h projected wall time" did not say whether Phase 2 runs on one process or several. The following is fixed now, using cost information only and no outcome data:
+
+- **Phase 2 runs as 8 parallel worker processes**, each owning disjoint roots. The machine has 16 logical cores.
+- **Projected wall time** = (Σ over arms of measured per-shot cost × Phase 2 shots) ÷ 8 × 1.25 contention allowance, plus 10 min for setup and analysis. This projection must be ≤ 10 h.
+- **The 6,000,000-shot cap is unchanged.** If either cap binds, N_d is scaled down proportionally across distances, and any distance below its sizing target is labelled projected under-powered.
+- **V3 NumPy (d=5) enters Phase 2 only if** the projection still fits with it included.
