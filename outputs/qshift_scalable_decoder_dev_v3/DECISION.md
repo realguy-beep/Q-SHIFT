@@ -40,3 +40,14 @@ Proposed plan, pending approval:
 ## Next experiment requiring approval
 
 Only after a feasibility GO: a pre-registered, fresh-seed **d=5/d=7 development evaluation**. BP+OSD would be compared with the strongest static matcher (and BoffStatic) on the known-burst family, with paired roots, the bootstrap, and a sampling budget set in the protocol. No exact reference exists at d≥5, so the claims would be relative to matching only.
+
+## Update: V3.2 with `ldpc` (after owner approval)
+
+**Milestone decision is now GO** (`../qshift_scalable_decoder_dev_v3_2/RESULTS.md`, `V3_2_GATES.json`).
+- K1 correctness: 2/2 pass.
+- K3 feasibility: d=7 median 10.0 ms/shot, p95 89.5 ms, RSS 99 MiB.
+- K2 d=3 quality: 0.579% vs Astar 1.385%; gap recovery 0.928.
+
+V3.2 is significantly less accurate than the NumPy V3 at d=3 (+0.056 pp, CI [+0.031, +0.081]; q=0 132 vs 95 errors). The cause is ldpc's lack of damping and its different OSD-CS. **V3 remains the most accurate scalable variant, and V3.2 is the feasible one.** The exact d=3 decoder remains the reference.
+
+The dependency install brought in four transitive packages beyond those named in the request (see `ENVIRONMENT_DELTA.txt`). The ldpc 2.4.1 teardown crash at osd_order > n − rank is worked around and recorded.

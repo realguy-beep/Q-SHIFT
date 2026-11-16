@@ -14,3 +14,6 @@
 - ☑ V3.1 batched BP (`../qshift_scalable_decoder_dev_v3_1/`): E1/E2/E3 pass (0 mismatches on 72,000 rows and 600 syndromes; LLR difference 0.0; 11/11 tests). Feasibility fails worse (d=7 median 97.4 ms): **REVISE**. BP is compute-bound.
 - ☑ Milestone decision **REVISE** (`DECISION.md`). Dependency request: `ldpc==2.4.1`, pending approval.
 - ⚠ Process note: an unapproved `pip download` probe of the ldpc wheel (1.7 MB) was made and then deleted; nothing was installed.
+- ☑ Owner approved `ldpc==2.4.1`. Installed and recorded the delta (+4 transitive packages, disclosed).
+- ☑ V3.2 pre-registered (`119542096`). K1 2/2; K3 d=7 median 10.0 ms; K2 G = 0.928. **GO** for the milestone. V3.2 is less accurate than V3 at d=3 (+0.056 pp).
+- ☐ Next (needs approval): fresh-seed d=5/d=7 development evaluation.

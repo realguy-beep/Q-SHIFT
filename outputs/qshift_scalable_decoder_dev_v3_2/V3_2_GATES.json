@@ -1,0 +1,130 @@
+{
+  "schema": "qshift-scalable-v3-2-gates-v1",
+  "K1": "tests/test_ldpc_bposd.py (2/2 pass)",
+  "K2_quality_d3": {
+    "rows": 72000,
+    "errors_q0_q001_q002": {
+      "Astar": [
+        200,
+        284,
+        381
+      ],
+      "BoffStatic": [
+        143,
+        167,
+        165
+      ],
+      "Bexact": [
+        91,
+        125,
+        123
+      ],
+      "V3_min": [
+        95,
+        124,
+        127
+      ],
+      "V3_2": [
+        132,
+        137,
+        141
+      ]
+    },
+    "nonzero_ler": {
+      "Astar": 0.013854166666666667,
+      "BoffStatic": 0.0069166666666666664,
+      "Bexact": 0.005166666666666667,
+      "V3_min": 0.005229166666666667,
+      "V3_2": 0.005791666666666667
+    },
+    "q0_ler": {
+      "Astar": 0.008333333333333333,
+      "BoffStatic": 0.005958333333333334,
+      "Bexact": 0.0037916666666666667,
+      "V3_min": 0.003958333333333334,
+      "V3_2": 0.0055
+    },
+    "contrasts": {
+      "V3_2_minus_Astar": {
+        "nonzero_estimate": -0.0080625,
+        "nonzero_95ci": [
+          -0.008854166666666666,
+          -0.007270833333333332
+        ],
+        "q0_estimate": -0.002833333333333333
+      },
+      "V3_2_minus_BoffStatic": {
+        "nonzero_estimate": -0.001125,
+        "nonzero_95ci": [
+          -0.0016666666666666666,
+          -0.0006249999999999999
+        ],
+        "q0_estimate": -0.0004583333333333332
+      },
+      "V3_2_minus_Bexact": {
+        "nonzero_estimate": 0.0006250000000000001,
+        "nonzero_95ci": [
+          0.00031249999999999995,
+          0.0009583333333333334
+        ],
+        "q0_estimate": 0.0017083333333333332
+      },
+      "V3_2_minus_V3_min": {
+        "nonzero_estimate": 0.0005625000000000001,
+        "nonzero_95ci": [
+          0.00031250000000000006,
+          0.0008125000000000001
+        ],
+        "q0_estimate": 0.0015416666666666669
+      }
+    },
+    "gap_recovery": 0.9280575539568344,
+    "agreement_with_V3_min": 0.9985555555555555,
+    "agreement_with_Bexact": 0.9980972222222222,
+    "mean_ms_per_shot_real_d3": 0.22373133472238904,
+    "pass": true,
+    "beats_Astar_ci": true,
+    "q0_not_worse": true
+  },
+  "K3_feasibility": [
+    {
+      "distance": 3,
+      "construction_seconds": 0.03336190000118222,
+      "median_ms_per_shot": 2.9264000040711835,
+      "p95_ms_per_shot": 3.3885050062963273,
+      "max_ms_per_shot": 4.5897000018158,
+      "peak_traced_memory_mib": 0.07341480255126953,
+      "rss_mib_after": 81.29296875,
+      "rss_growth_mib": 0.44140625,
+      "osd_order_used": 10,
+      "agreement_with_V3_first50": 0.88
+    },
+    {
+      "distance": 5,
+      "construction_seconds": 0.2481913999945391,
+      "median_ms_per_shot": 25.27294999890728,
+      "p95_ms_per_shot": 27.37593000019842,
+      "max_ms_per_shot": 28.712800005450845,
+      "peak_traced_memory_mib": 0.5957355499267578,
+      "rss_mib_after": 86.0703125,
+      "rss_growth_mib": 3.16796875,
+      "osd_order_used": 10,
+      "agreement_with_V3_first50": 0.94
+    },
+    {
+      "distance": 7,
+      "construction_seconds": 0.6497304999938933,
+      "median_ms_per_shot": 9.979399997973815,
+      "p95_ms_per_shot": 89.53898999970988,
+      "max_ms_per_shot": 108.99390000122366,
+      "peak_traced_memory_mib": 2.576282501220703,
+      "rss_mib_after": 98.8046875,
+      "rss_growth_mib": 11.4453125,
+      "osd_order_used": 10,
+      "agreement_with_V3_first50": 1.0
+    }
+  ],
+  "K3_pass": true,
+  "decision": "GO",
+  "label": "DEVELOPMENT ONLY: d=3 quality on already-exposed V1.5 arrays; feasibility on deterministic syndromes"
+}
