@@ -13,7 +13,7 @@ Protocol commit: `4948bc43b442f651a4d845dd249980a68cbf0bce`
 - ☑ Ran 12 V2 tests and 6 selected no-random-generator V1.4 regressions.
 - ☑ Replayed all six predeclared d=3/5/7, q=0/0.01 deterministic fixture cases; separate final result file preserved.
 - ☑ Recorded residual traces, graph structure, exact d=3 comparisons, alternative dependency availability, and V1.6b evidence gaps.
-- ◐ Finalize source manifest and local implementation/evidence commits.
+- ☑ Final source/dependency manifest and reproduction instructions prepared and verified; the explicit local evidence commit is the final action in this task.
 
 ## Verified findings
 
@@ -24,5 +24,5 @@ Protocol commit: `4948bc43b442f651a4d845dd249980a68cbf0bce`
 
 ## Remaining
 
-- Verify final source/evidence hashes, complete manifest, commit only new V2 files, and leave the branch unpushed/unmerged.
+- Final action: review and commit only the explicit V2 package files. Keep the branch local, unpushed, and unmerged; stochastic sampling and held-out evaluation remain unauthorized.
 
