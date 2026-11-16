@@ -1,0 +1,125 @@
+{
+  "schema": "qshift-scalable-v3-quality-d3-v1",
+  "rows_per_root": 1000,
+  "errors_q0_q001_q002": {
+    "Astar": [
+      200,
+      284,
+      381
+    ],
+    "BoffStatic": [
+      143,
+      167,
+      165
+    ],
+    "Bexact": [
+      91,
+      125,
+      123
+    ],
+    "V3_min": [
+      95,
+      124,
+      127
+    ],
+    "V3_lc": [
+      92,
+      125,
+      123
+    ]
+  },
+  "nonzero_ler": {
+    "Astar": 0.013854166666666667,
+    "BoffStatic": 0.0069166666666666664,
+    "Bexact": 0.005166666666666667,
+    "V3_min": 0.005229166666666667,
+    "V3_lc": 0.005166666666666667
+  },
+  "q0_ler": {
+    "Astar": 0.008333333333333333,
+    "BoffStatic": 0.005958333333333334,
+    "Bexact": 0.0037916666666666667,
+    "V3_min": 0.003958333333333334,
+    "V3_lc": 0.003833333333333333
+  },
+  "contrasts": {
+    "V3_min_minus_Astar": {
+      "nonzero_estimate": -0.008625,
+      "nonzero_95ci": [
+        -0.009416666666666667,
+        -0.007833333333333333
+      ],
+      "q0_estimate": -0.004375
+    },
+    "V3_min_minus_BoffStatic": {
+      "nonzero_estimate": -0.0016875,
+      "nonzero_95ci": [
+        -0.002208333333333333,
+        -0.0012083333333333332
+      ],
+      "q0_estimate": -0.002
+    },
+    "V3_min_minus_Bexact": {
+      "nonzero_estimate": 6.249999999999997e-05,
+      "nonzero_95ci": [
+        -0.00016666666666666672,
+        0.00031249999999999995
+      ],
+      "q0_estimate": 0.00016666666666666666
+    },
+    "V3_lc_minus_Astar": {
+      "nonzero_estimate": -0.0086875,
+      "nonzero_95ci": [
+        -0.009458333333333334,
+        -0.007895833333333335
+      ],
+      "q0_estimate": -0.0045
+    },
+    "V3_lc_minus_BoffStatic": {
+      "nonzero_estimate": -0.0017499999999999998,
+      "nonzero_95ci": [
+        -0.00225,
+        -0.0012703125000000453
+      ],
+      "q0_estimate": -0.002125
+    },
+    "V3_lc_minus_Bexact": {
+      "nonzero_estimate": -1.807003620809174e-20,
+      "nonzero_95ci": [
+        -8.333333333333333e-05,
+        8.33333333333333e-05
+      ],
+      "q0_estimate": 4.1666666666666665e-05
+    }
+  },
+  "gap_recovery": {
+    "V3_min": 0.9928057553956835,
+    "V3_lc": 1.0,
+    "BoffStatic": 0.7985611510791367
+  },
+  "agreement_with_Bexact": {
+    "V3_min": 0.9992361111111111,
+    "V3_lc": 0.999875,
+    "Astar": 0.9900555555555556
+  },
+  "mean_ms_per_shot_8proc": {
+    "min": 9.974691049999869,
+    "lc": 14.059366223610901
+  },
+  "osd_fraction_min": 0.05470833333333334,
+  "criteria": {
+    "V3_min": {
+      "beats_Astar_ci": true,
+      "gap_recovery_ge_0_50": true,
+      "q0_not_worse_by_0_05pp": true,
+      "d3_quality_criteria_met": true
+    },
+    "V3_lc": {
+      "beats_Astar_ci": true,
+      "gap_recovery_ge_0_50": true,
+      "q0_not_worse_by_0_05pp": true,
+      "d3_quality_criteria_met": true
+    }
+  },
+  "label": "DEVELOPMENT ONLY: already-exposed V1.5 d=3 arrays; not independent evidence"
+}
