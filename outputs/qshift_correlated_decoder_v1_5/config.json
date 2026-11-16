@@ -1,0 +1,58 @@
+{
+  "schema": "qshift-correlated-decoder-v1.5-config-v1",
+  "classification": "single bounded development-only paired evaluation of the exact DEM logical-class decoder (V1.4B candidate B) against the best V1.3 decoder and the strongest static matcher; exploratory, not confirmatory",
+  "source_branch": "codex/qshift-correlated-decoder-v1-5",
+  "lineage": {
+    "v1_3_frozen_commit": "bd43689e169726c4be70115b4e761a13887e28d9",
+    "v1_3_decision": "GO_DEVELOPMENT_ONLY",
+    "v1_4b_decision_commit": "1eff83c35",
+    "v1_4b_decision": "GO (development screen on already-exposed V1.3/V1.2 arrays)"
+  },
+  "circuit": {
+    "family": "surface_code:rotated_memory_z",
+    "distance": 3,
+    "rounds": 5,
+    "gate_probability": 0.003,
+    "measurement_probability": 0.003,
+    "burst": "CORRELATED_ERROR(q) X8 X12 X15 after each of five MR boundaries",
+    "probabilities": [0.0, 0.01, 0.02],
+    "source": "outputs/qshift_correlated_decoder_feasibility_v1_1/model.py (imported unchanged)"
+  },
+  "estimator": {
+    "method": "frozen V1.1 affine five-triple-cofire estimator, deterministically refit from the same 3,000 V1 training detector rows",
+    "required_slope": 0.8800000000000001,
+    "required_intercept": 0.000666666666666673,
+    "tolerance": 1e-12,
+    "training_observables_read": false
+  },
+  "frozen_settings_source": "outputs/qshift_correlated_decoder_v1_3/STATIC_SELECTION.json (read-only; hash-frozen); no new selection in V1.5",
+  "exact_decoder": {
+    "source": "outputs/qshift_v1_4b_decoder_optimality/mld.py",
+    "dem": "non-decomposed, approximate_disjoint_errors=True, at per-root q-hat (base DEM when q-hat = 0)",
+    "batch": 256
+  },
+  "allocation": {
+    "roots_per_q": 24,
+    "eval_shots_per_root": 4000,
+    "calibration_shots_per_root": 500,
+    "new_evaluation_shots": 288000,
+    "new_calibration_shots": 36000,
+    "new_shots_total": 324000,
+    "sampler_calls": 144,
+    "calibration_observables_persisted": false
+  },
+  "resource_limits": {
+    "wall_seconds": 9000,
+    "preflight_projection_max_fraction_of_cap": 0.6,
+    "sampled_peak_rss_bytes": 2147483648,
+    "minimum_free_disk_bytes": 1073741824,
+    "maximum_run_artifact_bytes": 268435456
+  },
+  "environment": {
+    "python": "3.12.10",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "numpy": "2.5.3",
+    "psutil": "7.2.2"
+  }
+}
