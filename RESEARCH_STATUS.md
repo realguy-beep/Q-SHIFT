@@ -1,7 +1,16 @@
 # Q-SHIFT research status
 
-**Last reviewed:** 2026-11-12
-**Project status:** simulation-based research prototype; no demonstrated adaptive or neural-decoder advantage over strong fixed PyMatching; no quantum-hardware integration.
+**Last reviewed:** 2026-11-17
+**Project status:** simulation-based research prototype; no demonstrated adaptive or neural-decoder advantage over strong fixed PyMatching; no quantum-hardware integration. Correlated-noise-aware decoders (exact DEM decoding at d=3, hypergraph BP+OSD at d=5) show a pre-registered development-evidence advantage over the strongest static matcher for one synthetic burst family; none beats it at d=7 (see below).
+
+## Correlated-noise decoder line V1.1–d=5 Phase 2 (2026-11-15 to 2026-11-17)
+
+Full summary, deviations and links: `outputs/qshift_correlated_decoder_synthesis_v1/REPORT.md`. All results are simulation-only development evidence (rotated Z-memory, 5 rounds, p=0.003, synthetic `CORRELATED_ERROR(q)` X-burst, q ∈ {0, 0.01, 0.02}); comparators are the strongest static matcher (correlated PyMatching, selected on development data), not nominal matching.
+
+- d=3: exact DEM decoding is ~61% below the strongest matcher (V1.5, frozen), also with burst support learned from calibration data (V1.6b, frozen: 61.5% known burst, 52.4% sealed hidden burst).
+- d=5: serial hypergraph BP+OSD (`ldpc` 2.4.1) with one static prior is 64.8% below correlated PyMatching (95% CI 61.2–68.4%), and 46% below at q=0 (frozen Phase 2, 600,048 fresh shots, GO_d5).
+- d=7: BP+OSD (four configurations) and parallel belief-matching all failed pre-registered development screens (STOP); serial belief-matching untested for cost reasons.
+- The owner's 90–95% reduction target is not reached; the V1.4 headroom gate found no regime of this noise family where it is attainable with margin.
 
 ## Core software integration v1 (engineering-only; 2026-11-12)
 
