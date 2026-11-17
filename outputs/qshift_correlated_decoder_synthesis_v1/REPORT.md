@@ -1,16 +1,16 @@
-# Q-SHIFT correlated-noise decoding: consolidated report (V1.1 → d=5 Phase 2 → belief-matching)
+# Q-SHIFT correlated-noise decoding: consolidated report (V1.1 → d=5 Phase 2 → belief-matching → d=5 robustness)
 
 **Date:** 2026-11-17
 **Branch:** `codex/qshift-correlated-decoder-v1-6`
 
-**Scope:** simulation only. A rotated surface-code Z-memory (5 rounds, p = 0.003) with one synthetic correlated X-burst (`CORRELATED_ERROR(q)` on three data qubits after every measurement round), at q ∈ {0, 0.01, 0.02}. There is no hardware data. Every frozen result is labelled *development evidence* by its own protocol.
+**Scope:** simulation only. A rotated surface-code Z-memory (5 rounds, p = 0.003 unless noted) with one synthetic correlated X-burst (`CORRELATED_ERROR(q)` on three data qubits after every measurement round), at q ∈ {0, 0.01, 0.02}. There is no hardware data. Every frozen result is labelled *development evidence* by its own protocol.
 
 This report summarizes and links. It does not change or re-derive any frozen result. Each number below is quoted from the study's own results file.
 
 ## 1. Bottom line
 
 1. **At d=3, correlated-noise-aware decoding reaches the DEM's exact ceiling and roughly halves the strongest matcher's error rate.** The exact (maximum-likelihood) decoder is 61% below the best static matcher (V1.5), and that holds when the burst's location is *learned* from calibration data (V1.6b: 61.5% for the known burst, 52.4% for a sealed hidden burst).
-2. **At d=5, a scalable decoder keeps most of that gain on fresh seeds.** Hypergraph BP+OSD, with a serial schedule and one static prior, is **64.8% below** correlated PyMatching (95% CI 61.2–68.4%; frozen Phase 2, GO_d5).
+2. **At d=5, a scalable decoder keeps most of that gain on fresh seeds.** Hypergraph BP+OSD, with a serial schedule and one static prior, is **64.8% below** correlated PyMatching (95% CI 61.2–68.4%; frozen Phase 2, GO_d5). **The gain is robust to three single-factor changes** (frozen robustness study, ROBUST): it was 20.9% for a 2-detector centre_row burst, 78.1% at p = 0.002 and 56.8% at p = 0.004. The comparator and prior were re-selected per condition.
 3. **At d=7, nothing tried beats correlated matching.** That covers BP+OSD (parallel or serial) and belief-matching (parallel BP), all on development screens. Both pre-registered d=7 screens returned STOP.
 4. **Most of the gain does not come from handling the burst.** At d=3, about 80% of the recoverable gap was background inference: degeneracy and hyperedges (V1.4B). At d=5, BP+OSD is 46% better than matching even with **no bursts** (q=0). The gain comes from decoding the full hypergraph DEM, which matching has to decompose.
 5. **The owner's 90–95% target was not reached, and it is not reachable in this noise family.** At d=3 the burst-oracle ceiling is about 64% (V1.4 gate). No (d, p) cell qualified for 90% with margin. At d=5 the background errors that BP+OSD only halves cap the reduction well below 90%.
@@ -38,6 +38,7 @@ The outcome column gives each study's own pre-registered result. LER figures are
 | **d=5 Phase 2** (frozen) | Fresh-seed confirmation at d=5 | **GO_d5** | **L2s −64.8%** [61.2, 68.4] vs Astar. q=0: −46%. Static prior = oracle prior. 600,048 shots |
 | **Belief-matching Phase A** | Build and verify BP-reweighted matching | Built. Gate fails for serial | d=3: 76% (parallel) and 87% (serial) of the exact decoder's gain. Serial BP about 200 ms/shot at d=7 |
 | **Belief-matching screen** (BM0) | Does parallel belief-matching beat Astar at d=7? | **STOP** | d=7: **76 vs 55**. d=5: 109 vs 217 (−50%, behind BP+OSD's 80) |
+| **d=5 robustness** (frozen) | Does the d=5 gain survive a different burst family (F2), p = 0.002 (P2) and p = 0.004 (P4)? | **ROBUST** (all GO; Bonferroni and q=0 safety pass) | L2s vs re-selected Astar: **F2 −20.9%** [13.3, 28.0], **P2 −78.1%** [71.8, 83.8], **P4 −56.8%** [53.0, 60.3]. Static prior ≈ oracle prior. 1,800,144 shots |
 
 ## 3. Baselines and fairness
 
@@ -61,13 +62,14 @@ The d=7 negative therefore covers: BP+OSD (L0–L3, development screen) and **pa
 **Claimed (as development evidence, for this simulated noise family):**
 - Exact decoding at d=3 reaches the DEM ceiling and is about 61% below the strongest matcher. This holds with learned support (V1.5, V1.6b).
 - Serial hypergraph BP+OSD with a static prior is about 65% below the strongest matcher at d=5, p = 0.003 (frozen Phase 2).
+- At d=5 that advantage holds under a second burst family and at p = 0.002 and 0.004 (frozen robustness study, ROBUST). Its size is regime-dependent: 21–78%.
 
 **Not claimed:**
 - any hardware result or real-device noise;
 - any advantage at d=7;
 - that the method scales;
-- generality beyond one burst shape at p = 0.003 (V1.6b's hidden burst is the one exception, at d=3);
-- real-time feasibility. BP+OSD at d=5 is about 15 ms/shot, roughly 3,000× slower than matching;
+- generality beyond the tested settings: the d=5 burst families scaled_v1 and centre_row, weight 3, at p ∈ {0.002, 0.003, 0.004}, plus V1.6b's hidden burst at d=3. Other burst weights, rates and shapes are untested;
+- real-time feasibility. BP+OSD at d=5 takes about 13–31 ms/shot, three to four orders of magnitude slower than matching;
 - novelty of the algorithms. BP+OSD and belief-matching are established methods. The contribution is careful, pre-registered measurement against strong baselines.
 
 ## 6. Deviations and disclosures (all recorded in their study folders)
@@ -85,13 +87,17 @@ The d=7 negative therefore covers: BP+OSD (L0–L3, development screen) and **pa
 - **Belief-matching:**
   - the edge-probability rule is the exact independent-merge rule rather than the plan's sum rule;
   - the screened variant set was cut to BM0 after the serial variants failed the cost gate (owner-approved).
+- **d=5 robustness:**
+  - the plan misstated Astar's selection rule. The protocol uses the actual Phase 1 rule, and the correction is recorded;
+  - an overall INCONCLUSIVE verdict case, missing from the plan, was added before the freeze.
 - **Reuse of development data:** the d57 screen arrays were reused for Step 0 and for the belief-matching screen. That is development selection only, and all frozen evaluations used fresh, collision-screened seeds.
 
 ## 7. Open directions (none authorized)
 
-1. **d=5 robustness.** Run the frozen Phase 2 design on a second burst shape and at other base noise levels (p = 0.002, 0.004). This shows whether the 65% is specific to one setup. It is cheap: about 45 min per condition.
-2. **Serial belief-matching at d=7.** This needs a faster serial BP: an in-house batched layered schedule, verified bit-equal to `ldpc`. Given the V3.1 result, the speed-up is uncertain.
-3. **The 90% target.** This needs a different noise family in which bursts dominate the error budget, such as stronger or more frequent bursts, or lower p with more shots for power. That would be a new study design, not a continuation.
+1. **Learned support at d=5.** Replace the known burst support in the BP+OSD DEM with support learned from calibration data, as in V1.6b. This removes the remaining oracle caveat at d=5.
+2. **Burst weight at d=5.** Test weight 2 and weight 4 bursts. This is the remaining single-factor robustness axis, and the existing robustness package can be reused.
+3. **Serial belief-matching at d=7.** This needs a faster serial BP: an in-house batched layered schedule, verified bit-equal to `ldpc`. Given the V3.1 result, the speed-up is uncertain.
+4. **The 90% target.** This needs a different noise family in which bursts dominate the error budget, such as stronger or more frequent bursts, or lower p with more shots for power. That would be a new study design, not a continuation.
 
 ## 8. Where things are
 
@@ -108,5 +114,6 @@ The d=7 negative therefore covers: BP+OSD (L0–L3, development screen) and **pa
 | d57 Phase 1, screen, Step 0 | `qshift_scalable_decoder_eval_d57_v1/` | protocols at `2c79f6ac2`, `5659e20f1`, `f81be21a7` |
 | d=5 Phase 2 | `qshift_scalable_decoder_eval_d5_phase2_v1/results_v1/RESULTS.md` | `d22fccf70` |
 | Belief-matching | `qshift_belief_matching_d7_v1/{PHASE_A_RESULTS,SCREEN_RESULTS}.md` | screen protocol `1fd226506` |
+| d=5 robustness | `qshift_d5_robustness_v1/results_v1/RESULTS.md` (Step D: `DEV_RESULTS.md`) | `4d77c2d9e` |
 
 Raw arrays live in each study's git-ignored `work/` or `pilot_runs/` folder on the local machine. Committed results carry the counts, hashes and analyses needed to audit them.
