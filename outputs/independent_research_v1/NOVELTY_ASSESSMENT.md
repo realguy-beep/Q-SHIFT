@@ -65,3 +65,8 @@ The flagged-subset logistic selector is an established supervised meta-decoder/s
 ### Measurement-shift result does not change novelty assessment
 
 The learned disagreement-subset selector has now passed one prespecified twofold measurement-flip shift on two fresh streams. This strengthens its development evidence but does not make the method novel: supervised selective/meta-decoding remains an established approach, and the finding is limited to six fixed d3 simulator conditions and one shift axis. Novelty would require a distinct algorithmic contribution and comparison beyond this bounded robustness result.
+
+
+### Distance-transfer screen narrows scope
+
+The method-specific d5 test did not show benefit (macro LER worsened 1.35%); this further limits the learned-selector development result to d3 and the tested measurement shift. It does not alter the novelty assessment: the d3 method remains an established supervised selective-decoding pattern, and the d5 screen supplies no positive algorithmic contribution.

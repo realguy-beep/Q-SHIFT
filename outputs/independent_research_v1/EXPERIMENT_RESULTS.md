@@ -442,3 +442,8 @@ A per-condition L2 logistic classifier trained only on detector bits plus the ou
 ## Frozen logistic selector under doubled measurement noise
 
 With model coefficients frozen from nominal p_measure=.003 training, the six-condition d3 selector retained a 13.03% macro LER reduction when measurement p increased to .006 (gate noise remained .003), at 1.351x total inference cost. On a fresh independent seed stream the reduction was 13.11% at 1.349x. Paired macro difference 95% intervals were [-.000915,-.000820] and [-.000919,-.000824], respectively; each of the six per-condition intervals favored the selector on both streams. No shift samples entered training or calibration. An actual-profile matcher was included as a profile-matched diagnostic, not an optimality bound. This is evidence for this specific twofold measurement-flip shift across the six fixed d3 simulator conditions only. Full counts, per-cell results, and reproduction: `../independent_research_v2/fast_flagged_logistic_measurement_shift_report.md`.
+
+
+## Distance-5 transfer of flagged logistic selector failed
+
+The d5-specific, 218-feature logistic policy was fit on independent six-condition training streams and evaluated on separate 1M-shot/cell validation streams. Macro LER rose from .001959 to .0019855 (+1.35% relative); only two of six cells improved. Paired macro difference was +.0000265 (approximate 95% CI [.0000133,.0000397]). Runtime was 1.379x and passed, but the frozen >=10% accuracy gate failed; no replication or tuning was performed. Thus the d3 method's benefit did not transfer to this d5 setup. Details: `../independent_research_v2/fast_flagged_logistic_d5_transfer_report.md`.

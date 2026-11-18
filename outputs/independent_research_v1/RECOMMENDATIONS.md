@@ -199,3 +199,8 @@ This is the strongest current low-cost decoder lead: fixed correlated/ordinary m
 ### Fast learned selector after measurement-shift replication
 
 Retain as the strongest current low-cost decoder development lead. Two independent fresh streams show the frozen nominal selector continues to improve macro LER by ~13% when measurement p doubles from .003 to .006, at ~1.35x inference cost. This supports a narrow robustness statement for the tested six d3 simulator conditions. The next useful extension is a prospective distance-transfer feasibility screen that checks feature/model geometry and runtime before sampling; do not assume d3 coefficients transfer, and do not claim broad robustness or deployment readiness. No confirmatory evaluation is authorized. See `../independent_research_v2/fast_flagged_logistic_measurement_shift_report.md`.
+
+
+### Selector distance-scaling recommendation
+
+The distance-specific d5 fit failed: held-out macro LER worsened 1.35%, and only two of six cells improved, although cost was 1.38x. Do not invest in a replication or describe the d3 selector as scalable to d5. Retain only the bounded d3 simulator lead and its one tested measurement shift. A new d5 algorithm would require a new prospective method and gate, not tuning this failed validation result.

@@ -618,3 +618,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - The matcher built with the actual shifted profile is reported only as a profile-matched diagnostic, not an optimality bound. The result is specific to this twofold measurement-flip shift and six known d3 simulator conditions; other shifts, hardware, and distance transfer remain untested.
 - Added 6,120,000 unique Q-SHIFT development samples (two streams, each 60k preflight +3M main); cumulative unique Q-SHIFT development samples: 124,728,200. No confirmatory or sealed data accessed.
 - Reproduction and detailed condition results: `outputs/independent_research_v2/fast_flagged_logistic_measurement_shift_report.md`.
+
+
+## Fast flagged logistic selector — distance-5 transfer screen failed — 2026-11-18
+
+- Fitted d5-specific models (no d3 coefficient transfer) on six CSS basis/profile conditions, 1M training and 1M held-out validation shots per cell; 10k preflight each. All fits converged; circuits were 64 qubits/216 detectors/one observable, and noiseless, scalar/batch, and feature-shape checks passed.
+- Validation macro LER was .001959 for correlated matching and .0019855 for the selector, a 1.35% relative worsening; paired macro difference selector-minus-baseline +.0000265 (approximate 95% CI [.0000133,.0000397]). Only two of six point estimates improved. Full inference time was 1.379x, but the fixed >=10% accuracy gate failed. No d5 replication or tuning followed.
+- Projected sample/decode time was 101.7s; total run including setup and fitting 180.7s. Added 12,060,000 unique samples (60k preflight +6M training +6M validation); cumulative unique Q-SHIFT development samples: 136,788,200. No confirmatory/sealed data.
+- Interpretation: the d3 learned selector's benefit did not transfer to this d5 method/configuration. Do not generalize or keep this as a positive distance-scaling claim. Full report: `outputs/independent_research_v2/fast_flagged_logistic_d5_transfer_report.md`.

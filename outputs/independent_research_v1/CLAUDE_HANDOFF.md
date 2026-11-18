@@ -237,3 +237,8 @@ A per-condition L2 logistic selector trained only on matching-disagreement syndr
 ### Measurement-shift robustness update — 2026-11-18
 
 The frozen per-condition logistic selector, trained at measurement p=.003, passed the same six-condition d3 gate at p=.006 on two independent streams: macro reductions 13.03% and 13.11%, full inference costs 1.351x and 1.349x, all six per-cell paired intervals favoring the candidate. This supports only the tested twofold measurement-flip shift in simulation. It is not broad domain robustness or hardware evidence. Next extension should begin with a bounded distance-transfer geometry/runtime preflight; do not assume feature coefficients transfer. Reproduction and paired results: `../independent_research_v2/fast_flagged_logistic_measurement_shift_report.md`.
+
+
+### Distance-transfer boundary — 2026-11-18
+
+The d3 flagged logistic method did not transfer to a distance-specific d5 fit in a frozen six-cell train/validation screen: macro LER worsened 1.35%, only two cells improved, and the >=10% accuracy gate failed (runtime 1.38x passed). No replication or tuning was launched. Keep positive claims limited to d3; report and reproducibility are in `../independent_research_v2/fast_flagged_logistic_d5_transfer_report.md`.

@@ -466,3 +466,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - The per-condition logistic selector trained at measurement p=.003 was frozen and evaluated at measurement p=.006 on six d3 conditions. On the first fresh stream, macro LER fell 13.03% at 1.351x full inference cost; a second independent stream gave 13.11% at 1.349x. Paired macro difference CIs excluded zero on both streams and all six per-cell intervals favored the selector.
 - This tests one fixed, known-profile simulator shift. It is not broad distributional robustness, unknown-profile adaptation, hardware evidence, or a novelty claim. The shifted-profile matcher is only a diagnostic.
 - Added 6.12M unique Q-SHIFT samples; cumulative development count 124,728,200. No confirmatory/sealed data. Next: assess distance transfer only through a bounded geometry/feature preflight, with the selector's detector feature dimensions handled prospectively; do not extrapolate d3 coefficients blindly.
+
+
+## Distance-5 method-transfer screen is negative — 2026-11-18
+
+- A d5-specific version of the flagged L2 logistic selector, trained on six 1M-shot streams and assessed on separate 1M-shot streams, increased equal-cell macro LER from .001959 to .0019855 (+1.35%) at 1.379x cost. Only two of six cells improved. Approximate paired macro delta CI was [.0000133,.0000397]. Accuracy advancement gate failed; no replication or tuning launched.
+- This is a negative transfer result for this fixed method/configuration, not proof no d5 selective decoder can work. It weakens scalability claims for the d3 lead. Cumulative unique development samples: 136,788,200; no confirmatory/sealed data. See `outputs/independent_research_v2/fast_flagged_logistic_d5_transfer_report.md`.

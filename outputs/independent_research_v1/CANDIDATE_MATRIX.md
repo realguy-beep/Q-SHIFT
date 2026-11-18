@@ -130,3 +130,8 @@ A per-condition L2 logistic model trained on flagged detector syndromes reduced 
 ### Fast disagreement-subset selector: one frozen measurement-shift replication passed
 
 The nominal selector was applied without retraining at measurement p=.006 after training at p=.003. Two independent d3 six-condition streams gave 13.03% and 13.11% macro LER reduction at 1.35x cost; all per-cell paired intervals favored the selector on both streams. This upgrades the lead beyond nominal-profile evidence for this particular known shift. It remains a per-condition supervised simulator method, with bias/gate shifts, other distances, and hardware untested. Do not generalize this one-dimensional shift to arbitrary noise robustness. Detailed report: `../independent_research_v2/fast_flagged_logistic_measurement_shift_report.md`.
+
+
+### Flagged logistic method at d5: no useful transfer observed
+
+Six distance-specific d5 fits on 1M training shots each, tested on 1M independent shots/cell, gave macro LER .001959→.0019855 (+1.35%); only two cells improved. The 1.379x inference cost passed, but the fixed accuracy gate failed. No replication or tuning. Limit the positive selector result to d3 and its tested measurement shift; do not claim distance scaling. A distinct d5 algorithm remains possible but is not supported by this screen. Report: `../independent_research_v2/fast_flagged_logistic_d5_transfer_report.md`.

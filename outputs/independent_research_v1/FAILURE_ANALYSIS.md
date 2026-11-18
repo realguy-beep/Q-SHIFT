@@ -261,3 +261,8 @@ A low-cost supervised selector trained on the matching-disagreement subset indep
 ### Frozen selector shift challenge: specific positive result, broader risk remains
 
 The nominally trained logistic policy did not fail under the prespecified measurement-flip increase from .003 to .006: it reduced macro LER by 13.0% and 13.1% on two independent streams at ~1.35x total inference cost, with all six per-condition paired intervals favoring it. This narrows the model-mismatch concern for that one shift. It does not establish robustness to bias changes, gate-noise shifts, simultaneous changes, unmodeled correlations, distance transfer, or hardware noise. Preserve the two streams as development evidence; do not claim general domain adaptation. Details: `../independent_research_v2/fast_flagged_logistic_measurement_shift_report.md`.
+
+
+### Distance transfer exposed a boundary for the learned selector
+
+The method was re-fit with d5-specific 218-dimensional features rather than blindly applying d3 coefficients. Despite adequate training data and converged fits, held-out macro LER was 1.35% worse than correlated matching; only two of six cells improved. Full inference cost was acceptable (1.38x), so this is an accuracy/transfer failure, not a runtime rejection. The fixed gate failed and no replication or tuning followed. The current d3 result must not be described as a scalable d5 advantage. This does not rule out a different d5 model or selective decoder, but those would be new candidates. See `../independent_research_v2/fast_flagged_logistic_d5_transfer_report.md`.

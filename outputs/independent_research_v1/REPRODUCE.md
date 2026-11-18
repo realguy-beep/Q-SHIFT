@@ -417,3 +417,8 @@ Initial held-out screen: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/
 ### Frozen logistic selector measurement-shift challenge and replication
 
 Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_measurement_shift.py` and then `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_measurement_shift_replication.py`. Both use the fixed nominal replication coefficients with measurement p=.006, no retraining, 10k preflight and 500k main samples per condition, and separate seed streams/results. The protocols and consolidated analysis are `fast_flagged_logistic_measurement_shift_protocol.md`, `fast_flagged_logistic_measurement_shift_replication_protocol.md`, and `fast_flagged_logistic_measurement_shift_report.md` in `outputs/independent_research_v2/`.
+
+
+### Distance-5 transfer screen of the learned selector
+
+Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_d5_transfer.py`. It uses d5-specific training (does not transfer d3 coefficients), separate held-out streams, and writes `fast_flagged_logistic_d5_transfer_results.json`. The fixed protocol and interpretation are in `fast_flagged_logistic_d5_transfer_protocol.md` and `fast_flagged_logistic_d5_transfer_report.md`.
