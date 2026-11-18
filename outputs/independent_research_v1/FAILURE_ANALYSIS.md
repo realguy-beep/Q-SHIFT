@@ -241,3 +241,8 @@ The aligned Z-memory d5 extension did not show an advantage for five active roun
 ### Distance-5 intermediate schedule was inconclusive
 
 The seven-active-plus-two-idle d5 point estimate favored it over nine active rounds, but uncertainty included parity (RR=.843, 95% .674–1.056). It failed the predeclared gate. Combined with the five-plus-idle result, there is no supported d5 schedule gain. Do not treat the lower point estimate as evidence of benefit or run post-hoc extra shots.
+
+
+## Selective escalation accuracy-cost tradeoff
+
+Routing only 0.261% of samples to BP+LSD on matching disagreement produced 14.3% lower macro LER on one development stream, but total runtime was 8.44x after accounting for both matching passes needed to compute the flag and the slow BP+LSD calls. The policy fails its 2x runtime gate. Per-condition gains were heterogeneous and the X-memory/Z-biased condition improved only 4.1%. Any continuation must independently verify the accuracy signal and would need a materially faster escalator; do not claim deployable utility.

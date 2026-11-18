@@ -115,3 +115,8 @@ One shortest graphlike path per d3 aligned X-memory circuit yielded exact circui
 ### Equal-duration syndrome schedule follow-up (independent research v2)
 
 A d3 screen and fresh-seed replication favored three active rounds plus two matched-duration biased data-idle cycles over five active rounds on aligned tasks (mean cell RR .762 and .773). A 2x idle-rate stress retained the Z-aligned benefit (RR .753) but made X alignment near-neutral (RR 1.016), failing the across-cell robustness gate. At d5, five-plus-idle versus nine active rounds showed no gain (RR 1.05, 95% .83–1.33); a single seven-plus-idle point was inconclusive (RR .843, .674–1.056). This is not a general or distance-scaling candidate. Retain only as a workload-specific d3 simulator result; require calibrated idle noise and a concrete application before further work.
+
+
+### Selective escalation update (independent research v2)
+
+Correlation-vs-ordinary matching disagreement flagged .261% of fresh d3 samples. Routing flagged cases to BP+LSD reduced macro LER by 14.3% in the initial stream, but full decode time was 8.44x baseline; this fails the 2x runtime gate. Keep only as evidence that the flag population is informative. A fresh efficacy replication is pending, but no BP+LSD integration is recommended.

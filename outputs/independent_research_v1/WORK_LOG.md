@@ -582,3 +582,12 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Candidate 140 errors, baseline 166, RR=.843 (95% .674–1.056). It fails the frozen gate (requires point RR<=.90 and upper interval <1). No replicate or further round-count sweep launched.
 - Resources: both 64 qubits and same final readout; candidate 168 detectors/560 pair sites/218 1Q targets, baseline 216/720/216.
 - Added 2,000,000 main +20,000 preflight shots; cumulative unique development samples: 93,264,200. No sealed/confirmatory evidence.
+
+
+## Selective BP+LSD disagreement escalation — initial screen — 2026-11-18
+
+- Tested a fixed syndrome-only flag: correlation-enabled versus ordinary PyMatching prediction disagreement; only flagged syndromes routed to `LSD_CS` (LDPC 2.4.1, min-sum .9, max_iter200). Six d3 conditions, 100k main shots each.
+- 1,567/600,000 samples flagged (0.261%); zero invalid syndrome estimates. Equal-weight macro LER .005253→.004503 (14.28% reduction), all six point estimates improved.
+- Corrected end-to-end timing includes both matching passes and flagged-only LSD: 8.44x fixed correlated matching, fails 2x runtime gate. One initial timing summary omitted the plain matching flag pass; corrected before checkpoint, no samples were regenerated.
+- Added 612,000 unique samples (12k preflight +600k main); cumulative Q-SHIFT development count: 93,876,200. No sealed/confirmatory data.
+- Next: independent fresh-stream efficacy replication for this accuracy signal only; the existing implementation remains rejected on runtime.

@@ -397,3 +397,8 @@ Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_
 ### D5 intermediate equal-duration schedule
 
 Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/equal_duration_d5_intermediate.py`. This is a single fixed seven-active-plus-two-idle comparison against nine active rounds. It writes a separate result file and stops at the declared advancement gate; no tuning is performed.
+
+
+### Selective BP+LSD escalation feasibility screen
+
+Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/selective_bplsd_escalation.py`. It computes a syndrome-only flag from disagreement between correlated and ordinary matching, runs the fixed LSD_CS decoder only on flagged cases, and reports full two-matcher plus escalation runtime. The initial result fails the runtime gate; the script contains frozen development seeds.

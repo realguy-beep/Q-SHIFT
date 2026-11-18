@@ -422,3 +422,8 @@ For Z memory/Z bias at d5, five active rounds plus four p=.003 biased data-idle 
 ## Distance-5 intermediate schedule challenge
 
 At d5 Z alignment, seven active rounds plus two p=.003 biased data-idle cycles yielded 140/1M errors vs 166/1M for nine active rounds, RR=.843 (95% .674–1.056). The point estimate favored seven-plus-idle, but the frozen advancement gate required upper CI <1 and failed. No sample expansion or additional round count followed. See `../independent_research_v2/equal_duration_d5_intermediate_report.md`.
+
+
+## Selective BP+LSD escalation on matching disagreement syndromes
+
+On six fresh d3 conditions (100k each), a fixed policy flagged only syndromes where correlation-enabled and ordinary PyMatching differed, then used `LSD_CS` on flagged cases and correlated matching otherwise. It flagged 1,567/600,000 samples (0.261%); all flagged BP+LSD fault estimates reproduced the syndrome. Equal-weight macro LER fell from .005253 to .004503 (14.28% reduction); all six point estimates improved, with per-cell reductions 4.1%–39.5%. However, corrected end-to-end decode time includes correlated matching, the ordinary-matching flag pass, and BP+LSD on flags: mean 8.44x correlated matching, above the 2x gate. Thus it fails practical advancement despite an accuracy signal. See `../independent_research_v2/selective_bplsd_escalation_report.md`.

@@ -179,3 +179,8 @@ Do not scale the d3 three-plus-idle result into a general schedule recommendatio
 ### D5 schedule branch stop
 
 The targeted seven-round d5 screen was inconclusive and failed its frozen gate (RR=.843, 95% .674–1.056). Stop round-count exploration at d5; no tested shorter-active schedule passes a robust evidence gate. The d3 result remains model- and distance-specific.
+
+
+## Selective escalation lead
+
+A fixed disagreement-triggered BP+LSD hybrid reduced macro LER by 14.3% on one 600k-shot d3 stream, with zero invalid escalated syndromes, but took 8.44x the correlation-enabled matcher even though only 0.26% of cases escalated. It fails the frozen runtime gate. Preserve as a possible ambiguity signal for a faster local solver; do not integrate this BP+LSD implementation. Fresh efficacy replication is pending, but it cannot change the current cost rejection.

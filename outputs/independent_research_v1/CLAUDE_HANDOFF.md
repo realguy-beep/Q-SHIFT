@@ -217,3 +217,8 @@ At d5 Z memory/Z bias, five active rounds plus four p=.003 biased data-idle cycl
 ### D5 intermediate schedule stop
 
 A targeted d5 Z-aligned seven-active-plus-two-idle screen had 140/1M errors versus 166/1M for nine active rounds, RR=.843 (95% .674–1.056). It failed the predeclared confidence gate; no extra samples were run. Combined with the five-plus-idle d5 result, do not recommend a reduced-round d5 schedule.
+
+
+### Selective escalation: promising accuracy, impractical implementation
+
+A fixed syndrome-only disagreement flag (correlated vs ordinary PyMatching) routed 0.261% of six-condition d3 samples to BP+LSD. Macro LER fell 14.3% and all escalated syndromes were valid, but corrected end-to-end decode time was 8.44x the fixed correlated matcher. It fails the 2x runtime gate and should not be integrated. Independent efficacy replication is pending; any practical follow-up needs a faster local search on flagged cases.

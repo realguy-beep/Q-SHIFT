@@ -434,3 +434,11 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - No post-hoc sampling or round sweep. Together with the five-plus-idle result, current evidence does not support d5 schedule improvement.
 - Cumulative unique development samples: 93,264,200. No confirmatory/sealed evidence.
 - Move to a distinct research family; retain schedule evidence as finite-distance negative/inconclusive results.
+
+
+## Checkpoint — selective disagreement-triggered BP+LSD (2026-11-18)
+
+- At branch `dd21de6`, tested a fixed hybrid: correlate-vs-ordinary matching disagreement is the only syndrome-level routing input; `LSD_CS` is invoked only on those samples.
+- Fresh d3 development screen flagged .261% of samples; macro LER reduced 14.3%, all per-cell point estimates improved, no invalid escalated syndrome. But true end-to-end cost was 8.44x baseline, above the frozen 2x limit. Do not advance this implementation.
+- A first report omitted the ordinary matcher pass used by the flag; timing was corrected before checkpoint and the runtime gate still fails.
+- Cumulative unique development shots: 93,876,200. Next: independent efficacy replication to check whether the signal is reproducible, while preserving the cost rejection.

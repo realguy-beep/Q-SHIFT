@@ -54,3 +54,6 @@ Stim shortest-graphlike-error analysis and the identity-paired lower-bound argum
 
 
 The equal-duration round-count experiments use standard syndrome scheduling and biased surface-code circuits. They make no algorithmic novelty claim. Their local evidence is a d3 simulator tradeoff under an assumed idle Pauli model, a failed across-profile idle robustness gate, and no supported d5 improvement. Neither publication novelty nor hardware relevance is established.
+
+
+The correlation-disagreement selective escalation experiment combines established correlated matching, ordinary matching, and BP+LSD methods; it is not a novel decoder. Its local result is an accuracy-cost tradeoff on d3 development data (14.3% macro LER reduction at 8.44x cost), pending independent replication and below any practical advancement gate.
