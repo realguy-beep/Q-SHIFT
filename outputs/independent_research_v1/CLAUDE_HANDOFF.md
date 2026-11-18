@@ -145,3 +145,6 @@ Independent d5 replication (500k/cell) reproduced the equal-weight separate-memo
 
 
 A fresh d3/d7 extension found equal-weight separate X/Z memory XZZX/CSS ratios 1.18 (1.13–1.23) and .279 (.239–.325), respectively; the independently replicated d5 ratio was .66. XZZX-Z/CSS-Z improved from .72 at d3 to .17 at d7, while XZZX-X/CSS-X remained worse (3.78 at d3; 12.57 at d7, with only 7 CSS-X failures). This motivates a d9 finite-size check if useful, but does not support asymptotic extrapolation. Keep CSS-X for known X memory; XZZX may suit a balanced separate-basis workload.
+
+
+The d9 XZZX/CSS factorial produced CSS-X/Z 1/260 failures and XZZX-X/Z 10/18 (500k/cell). Equal-weight separate X/Z task ratio was .107 (95% interval .070–.159); XZZX-Z/CSS-Z=.069, but XZZX-X/CSS-X=10 with a wide interval. This is an 89% aggregate reduction at d9, far from 99.99%, and not an arbitrary-state channel. Recommend only as a workload-specific code-design candidate; require device gate characterization before hardware claims.

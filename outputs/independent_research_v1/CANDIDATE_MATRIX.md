@@ -75,3 +75,6 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 
 
 **Distance interaction:** in equal-weight separate X/Z memory tasks, XZZX/CSS rate ratio was 1.18 at d3, .66 at d5 on replicated streams, and .279 at d7. The XZZX gain appears at the larger tested distances; keep this finite-size and gate-assumption qualified. For known X memory, CSS-X remained better.
+
+
+**d9 extension:** equal-weight separate-basis XZZX/CSS ratio .107 (.070–.159), with Z-memory ratio .069 and X-memory ratio 10 (sparse). The balanced workload gain persists at d9 but is not an arbitrary-state or 99.99% result; retain the basis-specific tradeoff.

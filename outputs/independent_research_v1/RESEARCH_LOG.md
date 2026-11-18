@@ -325,3 +325,6 @@ Fresh d5 streams replicated the equal-weight separate X/Z task average in favor 
 
 
 The XZZX/CSS equal-weight separate-memory tradeoff is distance-sensitive in new independent screens: CSS led at d3, XZZX led at d5/d7, with the ratio falling to .279 at d7. XZZX consistently lost to aligned CSS-X for the known X-memory task. This is not an arbitrary-state or threshold claim. Continue to d9 as a bounded falsification/scaling challenge.
+
+
+The d9 challenge extends the balanced separate-memory XZZX/CSS benefit to a rate ratio .107, dominated by Z-memory suppression. CSS-X remains lower than XZZX-X. This is 89%, not 99.99%, and does not measure arbitrary logical states or account for actual native-gate calibration. A d11 preflight is the next falsification step if it remains within the declared runtime cap.

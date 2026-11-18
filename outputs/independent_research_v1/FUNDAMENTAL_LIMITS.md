@@ -127,3 +127,6 @@ A fresh d5 replication found pooled equal-weight X/Z task rate ratio XZZX/CSS=.6
 
 
 The balanced-memory XZZX/CSS rate ratio was 1.18 at d3, about .66 at d5 on two streams, and .279 at d7. This shows strong distance dependence in the sampled simulator family, but aligned CSS-X has very sparse failures at d7 and XZZX uses an unverified native-gate equivalence assumption. It is not a threshold or scaling exponent; d9 is the next discriminating finite-size point.
+
+
+The d9 equal-weight separate X/Z memory rate ratio XZZX/CSS is .107 (.070–.159), an 89% reduction, not 99.99%. The known-X basis comparison is sparse and reversed (1 CSS-X vs 10 XZZX-X failures). This bounds the balanced-workload claim at one finite size; it establishes no threshold or full logical-channel behavior.

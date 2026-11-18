@@ -168,3 +168,6 @@ The independent d5 replication confirms the equal-weight X/Z task average but al
 
 
 Across d3/d5/d7, the XZZX/CSS ratio for an equal-weight separate X/Z task mix moved from 1.18 at d3 to about .66 at d5 and .279 at d7. XZZX improved increasingly over CSS-Z, but lost badly to CSS-X; its d7 CSS-X ratio is imprecise because CSS-X had only 7 failures. These finite-size tradeoffs do not justify extrapolation. The d3/d7 preflight first encountered a zero-denominator reporting bug; it was fixed and the unchanged seed stream passed all actual circuit gates before main sampling.
+
+
+At d9 the balanced-task XZZX gain is driven by Z-memory: 18 XZZX-Z errors vs 260 CSS-Z, while CSS-X had 1 failure vs 10 XZZX-X. The equal-weight aggregate .107 therefore masks a severe known-X-memory tradeoff and sparse X-memory counts. The result is not an arbitrary-state channel and relies on equal native gate noise/duration. Do not report only the aggregate.

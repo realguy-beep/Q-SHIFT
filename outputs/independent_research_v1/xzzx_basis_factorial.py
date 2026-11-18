@@ -1,6 +1,6 @@
 """Fresh d5 2x2 CSS/XZZX and logical-memory-basis screen."""
 from __future__ import annotations
-import json,time,sys
+import json,time,sys,resource
 from pathlib import Path
 import numpy as np
 import pymatching,stim
@@ -32,10 +32,13 @@ def full_resources(c):
 
 
 def rr(a,na,b,nb):
+    if a==0 and b==0:return {'point':None,'conditional_exact_95_ci':[0.0,None],
+                             'conditional_failures':0,'upper_unbounded':True}
     lo=0. if a==0 else beta.ppf(.025,a,b+1)
     hi=1. if b==0 else beta.ppf(.975,a+1,b)
-    return {'point':(a/na)/(b/nb),
-            'conditional_exact_95_ci':[float(lo/(1-lo)*nb/na),float(hi/(1-hi)*nb/na)]}
+    return {'point':None if b==0 else (a/na)/(b/nb),
+            'conditional_exact_95_ci':[float(lo/(1-lo)*nb/na),None if b==0 else float(hi/(1-hi)*nb/na)],
+            'conditional_failures':a+b,'upper_unbounded':b==0}
 
 
 def one(code,basis,seed,shots,preflight=False,distance=5,rounds=None):
@@ -60,7 +63,8 @@ def one(code,basis,seed,shots,preflight=False,distance=5,rounds=None):
     return {'code':code,'basis':basis,'seed':seed,'shots':shots,'failures':fails,'ler':fails/shots,
             'wilson_95':wilson(fails,shots),'sample_seconds':sample_seconds,'decode_seconds':decode_seconds,
             'resources':full_resources(c),'detectors':c.num_detectors,'observables':c.num_observables,
-            'scalar_batch_checks':check,'noiseless_checks':128}
+            'scalar_batch_checks':check,'noiseless_checks':128,
+            'process_max_rss_kib':int(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)}
 
 
 def wilson(k,n):

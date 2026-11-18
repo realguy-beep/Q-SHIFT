@@ -189,3 +189,8 @@ Completed predeclared fresh-seed development replication of the four-cell basis 
 ## d3/d7 distance extension of the XZZX/CSS basis factorial
 
 Completed fresh-seed 2x2 screens at d3 and d7. Fixed protocol: `xzzx_basis_factorial_scale_protocol.md`. One preflight result-serialization bug was preserved in `xzzx_basis_factorial_scale_preflight_failed_attempt.json`; the same fixed-seed preflight then passed before the main run.
+
+
+## d9 challenge of the XZZX/CSS memory-basis tradeoff
+
+Completed predeclared four-cell d9 screen; protocol, preflight, and results are recorded in `xzzx_basis_factorial_d9_protocol.md`, `xzzx_basis_factorial_d9_preflight.json`, and `xzzx_basis_factorial_d9_results.json`.

@@ -119,3 +119,6 @@ The d5 equal-weight X/Z memory-task tradeoff is now reproduced on an independent
 
 
 The equal-weight X/Z memory-task tradeoff merits one larger finite-size check: d3 favored CSS, d5/d7 favored XZZX increasingly. Continue to label this as separate memory tasks. Use aligned CSS-X for a known X-memory workload. Do not extrapolate the d7 result or drop the gate-equivalence caveat.
+
+
+A fresh d9 screen supports a balanced separate-basis XZZX/CSS tradeoff through d9 (aggregate ratio .107), but the improvement is driven by Z memory and CSS-X remains better for known X memory. Treat this as a task-mix design option under an unverified gate assumption; do not claim it approaches the 10,000-fold target.

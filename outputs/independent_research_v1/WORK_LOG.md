@@ -419,7 +419,7 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 
 - Preflight passed; projected 18.54s, measured 18.19s for the 2,000,000-shot main run. Preflight added 40k source-equivalent samples.
 - Fresh counts (500k/cell): CSS-X/Z 93/1,866; XZZX-X/Z 575/721.
-- Primary equal-weight X/Z separate-memory rate ratio XZZX/CSS=.662 (95% conditional interval .616–.710), replicating the discovery stream. XZZX-X/CSS-X=6.18 (.4.96–7.78); CSS X/Z=.0498.
+- Primary equal-weight X/Z separate-memory rate ratio XZZX/CSS=.662 (95% conditional interval .616–.710), replicating the discovery stream. XZZX-X/CSS-X=6.18 (4.96–7.78); CSS X/Z=.0498.
 - Total unique Q-SHIFT development samples: 54,300,000. No confirmatory or sealed data accessed.
 - Pinned official implementation hashes and paper-API access limits are recorded in `implementation_source_audit.json`.
 - Active next step: assess literature and decide whether the balanced-workload XZZX result merits a third finite distance; do not claim arbitrary-state performance from separate basis tests.
@@ -432,3 +432,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Equal-weight X/Z task RR XZZX/CSS: 1.179 at d3 (CI 1.133–1.228), .279 at d7 (.239–.325); d5 discovery/replication were .661/.662.
 - Total unique Q-SHIFT development samples now 58,380,000. No confirmatory/sealed data.
 - Next: test d9 using an unchanged equal-weight protocol, because the d3/d5/d7 workload interaction is substantial and still far from an asymptotic claim.
+
+
+## d9 XZZX/CSS basis-workload checkpoint — 2026-11-18
+
+- Preflight passed all resource/noiseless/decoder checks; projected 155.56s. Main 2,000,000 shots completed in 163.02s, peak RSS 1,486,736 KiB.
+- CSS-X/Z 1/260; XZZX-X/Z 10/18. Equal-weight separate-basis rate ratio .1073 (95% conditional interval .0699–.1587); XZZX-Z/CSS-Z .0692; XZZX-X/CSS-X 10.0 with broad interval.
+- Total unique Q-SHIFT development shots: 60,420,000. No sealed or confirmatory data accessed.
+- Active question: can the balanced-workload finite-size benefit be challenged at d11 within the same 300s bound, or does the preflight stop rule prevent it? Keep basis-specific outcomes prominent.
