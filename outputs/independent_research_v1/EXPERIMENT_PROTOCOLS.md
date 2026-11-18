@@ -133,3 +133,5 @@ The five-layer sparse protocol and explicit stop are documented in `categorical_
 A separate vectorized implementation of the fifth-layer signature convolution is specified in `categorical_five_layer_vectorized_protocol.md`; it has its own fixed state, operation, memory, and runtime caps and passed with Walsh-Hadamard cross-validation. This does not erase the earlier Python sparse-DP preflight stop.
 
 The six-layer exact result uses the separate algebraic coalescing protocol `categorical_six_layer_coalesced_protocol.md`, which groups only identical detector/logical signatures and sums their probabilities. It is distinct from the raw 16-outcome preflight stop.
+
+The seventh-layer preflight uses the unchanged six-layer state/operation caps and stopped at 20 touched detectors; see `categorical_seven_layer_preflight_protocol.md` and its artifact.

@@ -277,3 +277,9 @@
 - The raw six-layer vector-update estimate was 301,989,888, just over the 300M cap. A separate exact coalescing protocol merged only outcomes with identical detector and logical signatures, summing their original probabilities. Across 36 locations, raw labels fell from576 to296 (48.6%).
 - Coalesced vectorized DP and independent Walsh convolution agreed over 524,288 states to2.32e-16; 512 forced-fault checks passed; normalization passed; 262,144 syndromes reachable. Work:155.2M DP updates,368.6M Walsh ops,~23MiB estimate,6.10s. Isolated MAP risk.000866, not full-circuit LER.
 - No stochastic samples generated. This is exact coalescing, not truncation. Next: preflight a seventh layer under the same 1M-state/300M-update/400M-Walsh caps.
+
+## Seventh-layer coalesced-signature preflight stop — 2026-11-18
+
+- Mapped the final seven channel layers (42 categorical locations); compact support grew to 20 detector bits. Joint detector/logical state bound 2,097,152 exceeds the fixed 1M cap; raw transition bound 1.409B also exceeds budget.
+- Stopped before mass expansion as predeclared. No stochastic samples. Exact coalesced DP/Walsh is demonstrated through six final layers only; this does not bound other structured exact representations.
+- Next: stop extending the same signature DP/Walsh method. Investigate a distinct tensor/temporal contraction strategy or another research family under its own feasibility protocol.

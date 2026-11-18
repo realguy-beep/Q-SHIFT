@@ -209,3 +209,8 @@
 
 - Exact per-location signature coalescing reduced 576 raw outcome branches to 296 distinct XOR signatures across 36 fault locations. Vectorized DP and Walsh-Hadamard convolution agreed to2.32e-16 across524,288 states; 512 forced combined errors matched Stim; runtime6.10s.
 - Six-layer slice MAP risk .000866 is not full-circuit LER; no samples. The algebraic reduction preserves all probability mass. Next: fixed-cap seventh-layer support preflight.
+
+## Checkpoint — seventh-layer state-cap stop
+
+- Final seven layers map to 42 locations/20 touched detectors; joint signature bound 2,097,152 exceeds fixed1M states, and raw transition estimate is1.409B. No probability expansion or stochastic sampling ran.
+- This bounds current coalesced dense-signature implementation at six final layers, not all exact methods. Artifact `categorical_seven_layer_preflight.json` preserves the signature map and cap result.
