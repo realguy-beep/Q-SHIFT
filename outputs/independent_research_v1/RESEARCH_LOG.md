@@ -383,3 +383,13 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - The first exact circuit-pattern lower bound validated physically, but was many orders below observed LER. It does not prove or disprove 10,000-fold potential. The single-path approach is not useful without counting an enormous family of degenerate logical mechanisms.
 - Current branch before this deterministic analysis: `0af694c`; no samples or tree modifications to protected work.
 - Next productive option: inspect whether the existing exact categorical and MPS tools support tractable error-family multiplicity estimates on a bounded circuit fragment; if not, move to a different candidate and record the gap rather than expanding distance blindly.
+
+
+## Checkpoint — temporally heterogeneous gate-rate map (2026-11-18)
+
+- Branch: `codex/qshift-independent-research-v1`; prior verified checkpoint `c889c92`. New versioned experiment directory: `outputs/independent_research_v2/`.
+- Hypothesis tested: if a known per-round two-qubit rate map helps beyond its stationary average, round-aware decoding could merit later causal calibration.
+- Exact profile matching gave modest, statistically supported gains on two reversed profiles: 2.84% equal-weight macro LER reduction for 200k paired shots/profile, at 1.02–1.04x decode time. It failed the fixed 10% advancement gate and supplies no online adaptation evidence.
+- Main/preflight samples: 400,000/400; cumulative unique development samples: 83,223,400. No sealed/confirmatory data.
+- Current active direction: identify a materially different, evidence-backed decoder or code-design mechanism; do not expand the tested temporal rate factors.
+- Resume command: `cd /workspace/qshift-independent-research-v1 && MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/temporal_rate_hotspot.py`.

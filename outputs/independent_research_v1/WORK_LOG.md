@@ -532,3 +532,12 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Stim's shortest graphlike logical error mapped to three mutually exclusive PAULI_CHANNEL_2 outcomes in both aligned CSS-X and XZZX-X circuits. Their combined DEM parity was zero detectors and L0=1; all other noise locations were assigned identity.
 - Exact pattern probabilities were 3.07e-15 (CSS-X) and 3.07e-13 (XZZX-X), versus observed development LER .001312 and .004958. These are valid but extremely weak lower bounds: 2.3e-12 and 6.2e-11 of observed LER. A single shortest pattern does not explain the observed error rate or constrain the 1e-4 relative target.
 - No stochastic samples generated. This closes the single-pattern d3 feasibility question; a useful floor would require multiplicity / logical-class mass, not another representative path.
+
+
+## Round-wise temporal rate-map challenge — 2026-11-18
+
+- Continued from `c889c92` on `codex/qshift-independent-research-v1`; new artifacts are isolated in `outputs/independent_research_v2/`.
+- Tested paired oracle-known, reverse five-round gate-rate profiles with factors [0.25, 1.75, 1, 0.25, 1.75] and its reverse. The average two-qubit rate and Pauli composition match the pooled p=.003 circuit. Checks preserved 26 qubits, 40 detectors, one observable, 120 pair sites, five rounds, scalar/batch agreement, and noiseless determinism.
+- Main sample: 200,000 shots/profile. Profile-specific matching reduced errors 1,709→1,655 and 1,512→1,474; paired deltas -0.000270 (95% CI [-0.000450,-0.000090], McNemar p=.0039) and -0.000190 ([-0.000349,-0.000031], p=.0226). Macro relative reduction 2.84%; decode overhead 1.02–1.04x. Fails the fixed 10% advancement gate.
+- 400 preflight samples plus 400,000 main samples generated; cumulative unique Q-SHIFT development samples are 83,223,400. No sealed or confirmatory evidence accessed. Exact reproduction: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/temporal_rate_hotspot.py`.
+- Decision: characterize as a small oracle-map gain; no online controller or follow-up sweep. Next research cycle should move to a substantially different remaining decoder/code candidate with a concrete mechanism and fresh predeclared stop rule.

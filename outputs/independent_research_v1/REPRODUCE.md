@@ -367,3 +367,8 @@ Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_
 `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/graphlike_fault_floor.py`
 
 This deterministic Stim analysis generates no random samples and reports one pattern per d3 circuit only.
+
+
+### Round-wise gate-rate heterogeneity challenge
+
+Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/temporal_rate_hotspot.py` from the repository root. The script repeats 400 preflight samples, checks the resource/noiseless/scalar-batch invariants, then generates 200,000 fresh shots for each of two reverse profiles with frozen seeds. It compares exact-map and same-average pooled correlation-enabled PyMatching. The saved result is a development-only simulator stress test.

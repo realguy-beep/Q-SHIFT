@@ -149,3 +149,8 @@ The sequential calibration lead is fragile to noise composition. Doubling measur
 Reject the tested Gaussian CUSUM for profile switching: it detects changes quickly but false-switches too often even under nominal stable noise. Robust adaptation remains unresolved; retain static or periodically calibrated baselines until a detector passes independent false-switch and cost tests under both nominal and shifted profiles.
 
 Do not use the single shortest graphlike pattern as a practical error-floor estimate: its lower bound is 10–12 orders below measured development LER. A meaningful floor calculation needs degenerate mechanism multiplicity or logical-class posterior mass. Avoid repeating this representative-path analysis across larger distances without a multiplicity method.
+
+
+## Round-wise rate heterogeneity follow-up
+
+The exact temporal-map decoder reduced LER by 2.84% on two reversed synthetic round-rate profiles, below the 10% advancement gate. Although compute overhead was only 2–4%, any causal estimator and switching policy would add cost. Keep the result as a robustness characterization; do not build an online selector for this pattern unless a realistic measured profile or a concrete mechanism predicts materially larger gains.

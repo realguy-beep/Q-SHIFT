@@ -211,3 +211,8 @@ Fast transition detection did not compensate for frequent false switching. With 
 ## Single shortest-path floor bound is too weak
 
 The selected shortest graphlike physical patterns are real, mutually exclusive circuit events with zero detector parity and logical parity one, so their probabilities paired with the no-error event lower-bound optimal-decoder risk. However, their probabilities are 1e-12–1e-11 of observed LER. The method finds existence, not the multiplicity of comparable logical mechanisms; it cannot explain the observed floor or certify useful decoder headroom.
+
+
+## Temporal-rate calibration has small oracle headroom
+
+Under the frozen alternating 0.25x/1.75x per-round gate-rate maps, exact profile-specific matching improved both phases, with paired statistical evidence, but the equal-weight LER reduction was only 2.84%. Decode cost was small (1.02–1.04x), yet the effect fails the 10% utility gate before charging any profile-estimation or change-detection cost. Do not promote online temporal rate adaptation from this oracle-map screen. This is a single synthetic d3 pattern and does not rule out stronger or different temporal correlations.

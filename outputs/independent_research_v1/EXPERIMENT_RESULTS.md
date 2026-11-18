@@ -392,3 +392,8 @@ Both Gaussian LLR CUSUM variants detected all 100 profile transitions in each al
 ## Single-pattern circuit-level logical lower bound
 
 For d3/five-round ratio10 X-biased aligned memory, Stim's shortest graphlike paths used three physical two-qubit Pauli outcomes in both CSS-X and native-XCX XZZX-X. The selected undetectable pattern plus the all-identity pattern establish exact decoder-independent LER lower bounds 3.07e-15 and 3.07e-13, respectively. Observed development LERs were .001312 and .004958, so the bounds are only 2.3e-12 and 6.2e-11 of those rates. This single-pattern bound is valid but too weak to constrain decoder headroom or the aspirational relative target. No stochastic samples were generated. Artifact: `graphlike_fault_floor_results.json`.
+
+
+## Round-wise gate-rate heterogeneity
+
+For two reverse five-round profiles with factors [0.25, 1.75, 1, 0.25, 1.75] and [1.75, 0.25, 1, 1.75, 0.25], the exact-map decoder reduced failures from 1,709 to 1,655 and 1,512 to 1,474 on paired 200k streams. Paired deltas were -0.000270 (95% CI [-0.000450, -0.000090], McNemar p=.0039) and -0.000190 ([-0.000349, -0.000031], p=.0226). Equal-weight macro relative reduction was 2.84%, below the preregistered 10% gate; decode time was 1.02–1.04x pooled. This is an oracle-known synthetic d3 rate-map result, not online adaptation. Full details: `../independent_research_v2/temporal_rate_hotspot_report.md`.

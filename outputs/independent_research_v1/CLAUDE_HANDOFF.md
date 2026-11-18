@@ -187,3 +187,8 @@ The two tested Gaussian LLR CUSUMs detected all simulated profile changes with ~
 ### Error-floor lower-bound result
 
 A physically mapped, zero-syndrome logical Pauli pattern exists at three two-qubit fault locations in both d3 aligned arms. Pattern-plus-identity bounds are 3.07e-15 CSS-X and 3.07e-13 XZZX-X, 10–12 orders below observed LER. The single-path method is not a useful decoder-floor estimate without multiplicity. Artifact/protocol: `graphlike_fault_floor_results.json`, `graphlike_fault_floor_protocol.md`.
+
+
+### Temporal rate-map characterization (independent research v2)
+
+On paired d3 circuit streams with a known alternating two-qubit error-rate map across five rounds (mean p=.003), profile-specific correlation-enabled PyMatching reduced LER by 2.84% macro versus the same-mean stationary model. Per-profile paired CIs excluded zero, but the result missed the preregistered 10% advancement gate; decode overhead was only 2–4%. This is an oracle-map stress test, not a causal adaptation result. It does not justify building an online temporal selector. Reproduction and scope are in `outputs/independent_research_v2/temporal_rate_hotspot_report.md`.

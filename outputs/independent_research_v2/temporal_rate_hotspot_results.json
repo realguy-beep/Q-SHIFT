@@ -1,0 +1,103 @@
+{
+  "status": "temporal_rate_hotspot_development",
+  "profiles": {
+    "phase_a": {
+      "profile": "phase_a",
+      "round_factors": [
+        0.25,
+        1.75,
+        1.0,
+        0.25,
+        1.75
+      ],
+      "round_count": 5,
+      "two_qubit_pair_sites": 120,
+      "mean_two_qubit_instruction_rate": 0.0030000000000000014,
+      "round_instruction_rates": [
+        0.00075,
+        0.00525,
+        0.003,
+        0.00075,
+        0.00525
+      ],
+      "factor_mean": 1.0
+    },
+    "phase_b": {
+      "profile": "phase_b",
+      "round_factors": [
+        1.75,
+        0.25,
+        1.0,
+        1.75,
+        0.25
+      ],
+      "round_count": 5,
+      "two_qubit_pair_sites": 120,
+      "mean_two_qubit_instruction_rate": 0.0030000000000000005,
+      "round_instruction_rates": [
+        0.00525,
+        0.00075,
+        0.003,
+        0.00525,
+        0.00075
+      ],
+      "factor_mean": 1.0
+    }
+  },
+  "profile_results": [
+    {
+      "profile_specific_ler": 0.008275,
+      "pooled_ler": 0.008545,
+      "paired_delta_profile_specific_minus_pooled": -0.00027,
+      "paired_normal_95_ci": [
+        -0.0004501640616731568,
+        -8.983593832684325e-05
+      ],
+      "profile_specific_only_failures": 142,
+      "pooled_only_failures": 196,
+      "discordant": 338,
+      "mcnemar_exact_two_sided": 0.003876240258924728,
+      "profile": "phase_a",
+      "seed": 2026113621,
+      "shots": 200000,
+      "local_decode_seconds": 0.10086725300061516,
+      "pooled_decode_seconds": 0.09659604800253874,
+      "local_to_pooled_decode_time_ratio": 1.0442171816176598
+    },
+    {
+      "profile_specific_ler": 0.00737,
+      "pooled_ler": 0.00756,
+      "paired_delta_profile_specific_minus_pooled": -0.00019,
+      "paired_normal_95_ci": [
+        -0.00034922644754741813,
+        -3.077355245258189e-05
+      ],
+      "profile_specific_only_failures": 113,
+      "pooled_only_failures": 151,
+      "discordant": 264,
+      "mcnemar_exact_two_sided": 0.022594616417307766,
+      "profile": "phase_b",
+      "seed": 2026113622,
+      "shots": 200000,
+      "local_decode_seconds": 0.1005220119986916,
+      "pooled_decode_seconds": 0.09870577200126718,
+      "local_to_pooled_decode_time_ratio": 1.0184005449792854
+    }
+  ],
+  "per_profile_relative_reduction": [
+    0.031597425394967904,
+    0.025132275132275117
+  ],
+  "equal_weight_macro_relative_reduction": 0.02836485026362151,
+  "no_profile_harmed_by_more_than_5pct": false,
+  "decode_time_gate_passed": true,
+  "advancement_gate_passed": false,
+  "shots_per_profile": 200000,
+  "stochastic_qshift_shots": 400000,
+  "approximate_dem_threshold": 0.01,
+  "projected_preflight_seconds": 1.2166140004410408,
+  "elapsed_seconds": 0.5549722889991244,
+  "scope": "known round-wise two-qubit rate map versus same-mean pooled model; simulator development only; not online adaptation",
+  "preflight_stochastic_samples": 400,
+  "total_stochastic_samples_generated": 400400
+}
