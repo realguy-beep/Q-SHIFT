@@ -73,3 +73,5 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the checkerboard XZZX code/circuit preflight and 500,000-shot-per-cell screen with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_codesign.py --preflight`, then run without the flag.
 
 - Recompute the plug-in calibration-throughput horizon with `python outputs/independent_research_v1/calibration_amortization.py`; this reads saved LER estimates and generates no shots.
+
+- Recompute the exploratory alternating-profile resource replay with `.venv/bin/python outputs/independent_research_v1/temporal_basis_replay.py`. It reads the saved classifier-confusion and logical-window summaries and generates no new circuit samples.

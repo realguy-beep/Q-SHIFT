@@ -136,6 +136,12 @@ This is a small d=3, ratio-10 development result with one pooled-model construct
 
 The conjugate memory tests show the tradeoff directly: at 10:1 X bias, X-memory LER was .001275 and Z-memory LER .006575; at 10:1 Z bias, Z-memory was .000700 and X-memory .007800. Choosing the low-error observable does not remove errors in its conjugate channel. These marginal LERs are not a complete logical process characterization.
 
+## Alternating-profile resource replay
+
+To extend the calibration-cost analysis to direction changes without drawing another circuit stream, replayed the saved independent classifier confusion counts (25/100/500-shot prefixes) and basis-specific logical failure batches under deterministic equal-dwell X↔Z profile alternation. Across 144 combinations of bias ratio, calibration budget, update interval, and dwell, the controller could improve LER per logical attempt but generally lost throughput after charging calibration shots as unusable circuit resources.
+
+For dwell periods up to 10,000 logical shots, none of the tested schedules exceeded the best fixed X/Z basis on correct outputs per total circuit shot. At 100,000-shot dwell, the best tested ratio-5 schedule (100 calibration shots per 100,000-shot update) had a projected 0.104% throughput gain; ratio 10 (25 calibration shots per update) had 0.205%; ratio 2 remained 0.014% below static. These are deterministic plug-in projections over one synthetic profile family. They omit uncertainty propagation, classifier retraining, within-window change detection, device drift, and any possibility that calibration shots produce useful logical output. The result suggests that adaptation can have operational value only when profile persistence is long relative to calibration cost; it is not a measured change-point result. Reproduce with `temporal_basis_replay.py`; full schedules are in `temporal_basis_replay_results.json`.
+
 ## Checkerboard XZZX circuit co-design screen
 
 Applied a fixed local-H transform to the checkerboard data qubits of the CSS rotated-memory circuit, converting resets/measurements and conjugating the CX schedule exactly. CNOT conjugates requiring H-CX-H received the same one-qubit Pauli noise after each added H. Qubit, detector, round, and two-qubit-pair counts matched; single-qubit H/noise targets increased from 40 to 100 at d=3 and from 216 to 576 at d=5 (150% and 167% overhead).

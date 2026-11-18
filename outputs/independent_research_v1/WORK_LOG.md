@@ -14,11 +14,10 @@
 
 ## Next actions
 
-1. Complete the local source inventory, including BP+OSD, tensor-network, neural, and Stage S specifics, avoiding sealed files.
-2. Finish the candidate matrix using documented previous-work evidence to distinguish genuinely open paths from repeats.
-3. Check whether a bounded native categorical factor graph can be formed from a small Phase 2B circuit fragment, then validate it exhaustively before considering an algorithm prototype.
-4. Continue primary literature review using accessible primary/repository sources. Mark inaccessible sources explicitly and avoid citation details that cannot be supported.
-5. Maintain checkpoints on the isolated branch. No final confirmation study is authorized.
+1. Quantify whether exact variable elimination on a native-categorical Phase 2B fragment can fit a useful bounded width; require exact toy agreement and report state-width growth before any decoder prototype.
+2. Revisit neural/hybrid and rare-event approaches for a distinct mechanism not already rejected by current development screens.
+3. Continue primary literature review using accessible primary/repository sources. Mark inaccessible sources explicitly and avoid citation details that cannot be supported.
+4. Maintain checkpoints on the isolated branch. No confirmatory/sealed evaluation is authorized.
 - Retrieved source-tagged official documentation from Stim v1.16.0 and PyMatching v2.4.0. Stim explicitly requires approximate disjoint-error conversion for non-independent custom channels; PyMatching documents its correlation feature as a two-pass sparse-blossom procedure. Retrieved the official LDPC project README, which points BP+OSD users to Roffe et al. 2020 and notes BP+LSD as a newer alternative. Direct arXiv/DOI article endpoints remain unavailable.
 - Added exact environment pins, reproduction steps, a runnable DEM-conversion preflight, literature/novelty review, candidate recommendations, interim Claude handoff, and `RESULTS.json`.
 
@@ -148,3 +147,11 @@
 - Core resources matched (qubits, detectors, rounds, two-qubit pairs), but one-qubit H/noise targets increased 40→100 at d3 and 216→576 at d5. Fixed 500k/cell run completed in 11.9s.
 - XZZX-transformed LER was worse than CSS in all conditions: d3 X-bias .009594 vs .007216 (1.33x), d3 Z-bias .006532 vs .000982 (6.65x), d5 X-bias .006752 vs .004534 (1.49x), d5 Z-bias .003332 vs .000168 (19.8x). This rejects this local-H transpilation under its explicit noisy-H cost model; it does not reject native-compiled XZZX generally.
 - Cumulative unique Q-SHIFT development circuit samples now 32,589,800 including preflights; failed deterministic gate preflight had no shots. No confirmatory data accessed.
+
+## Alternating-profile resource replay — 2026-11-18
+
+- Current branch before this checkpoint: `codex/qshift-independent-research-v1`, commit `a380d86`. This was a reanalysis of saved direct calibration and logical windows; no new circuit samples were generated.
+- Replayed 144 combinations of ratio 2/5/10, detector-only calibration budgets 25/100/500, update periods 100/1,000/10,000/100,000 logical shots, and equal profile dwell periods in the same grid. Frozen classifier confusion rates and basis-specific logical failure rates were applied to deterministic alternating X/Z-bias profiles over 10M logical attempts.
+- Charged every calibration shot as a circuit resource with no useful output and compared correct outputs per total circuit shot to the best static X/Z basis. No tested schedule beat static at dwell <=10k shots. At 100k dwell, best plug-in throughput ratios were 0.999857 (ratio2), 1.001041 (ratio5), and 1.002052 (ratio10). This is a temporal scenario projection, not an empirical change-point or device test; no uncertainty propagation was performed.
+- Source and stable-policy reconstruction checks passed; 144 schedule rows saved in `temporal_basis_replay_results.json`. Cumulative unique Q-SHIFT circuit samples remain 32,589,800; no confirmatory data accessed.
+- Next: assess the native categorical exact-inference route with an explicit width-bounded variable-elimination analysis before implementing a larger decoder.

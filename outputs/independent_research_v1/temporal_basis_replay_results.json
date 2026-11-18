@@ -1,0 +1,2774 @@
+{
+  "status": "exploratory_model_based_temporal_replay",
+  "source_streams": "existing adaptive_basis_end_to_end_results.json and adaptive_basis_cost_frontier.json; no new stochastic circuit samples",
+  "classifier": "frozen d3 binary LDA; observed confusion rates applied at each scheduled update",
+  "profile_process": "deterministic equal-dwell alternation between X- and Z-biased profiles",
+  "distance": 3,
+  "rounds": 5,
+  "gate_and_measurement_p": 0.003,
+  "bias_ratios": [
+    2,
+    5,
+    10
+  ],
+  "logical_block_shots": 100,
+  "horizon_logical_shots": 10000000,
+  "update_intervals_logical_blocks": [
+    1,
+    10,
+    100,
+    1000
+  ],
+  "dwell_logical_blocks": [
+    1,
+    10,
+    100,
+    1000
+  ],
+  "calibration_shot_budgets": [
+    25,
+    100,
+    500
+  ],
+  "calibration_outputs_assumed_useful": false,
+  "stable_profile_replay_checks": "all ratios within 0.0004 LER of saved 500-shot policy result",
+  "results": [
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 2500000,
+      "adaptive_ler_per_logical_attempt": 0.004748095000007432,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.022019567454699795,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.7962015239999941,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.8000859412447373,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 2500000,
+      "adaptive_ler_per_logical_attempt": 0.004748095000007432,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.022019567454699795,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.7962015239999941,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.8000859412447373,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 2500000,
+      "adaptive_ler_per_logical_attempt": 0.004748095000007433,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.022019567454699684,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.7962015239999941,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.8000859412447373,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 2500000,
+      "adaptive_ler_per_logical_attempt": 0.004748095000007426,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.022019567454701017,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.7962015239999941,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.8000859412447373,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 250000,
+      "adaptive_ler_per_logical_attempt": 0.00517267500000105,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.06543254376952623,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.970563243902438,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9752983172326023,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 250000,
+      "adaptive_ler_per_logical_attempt": 0.004748095000000457,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.022019567456136535,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9709774682926825,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9757145624935889,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 250000,
+      "adaptive_ler_per_logical_attempt": 0.004748095000000457,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.022019567456136535,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9709774682926825,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9757145624935889,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 250000,
+      "adaptive_ler_per_logical_attempt": 0.0047480950000004605,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.02201956745613587,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9709774682926825,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9757145624935889,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 25000,
+      "adaptive_ler_per_logical_attempt": 0.0051726750000001065,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.06543254376933194,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9923464588528677,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.997187805649295,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 25000,
+      "adaptive_ler_per_logical_attempt": 0.0051726750000001065,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.06543254376933194,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9923464588528677,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.997187805649295,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 25000,
+      "adaptive_ler_per_logical_attempt": 0.004748094999999955,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.022019567456240008,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9927699800498754,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.997613393073246,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 25000,
+      "adaptive_ler_per_logical_attempt": 0.004748094999999955,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.022019567456240008,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9927699800498754,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.997613393073246,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 2500,
+      "adaptive_ler_per_logical_attempt": 0.005172675000000012,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.0654325437693124,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9945786803299175,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9994309174340599,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 2500,
+      "adaptive_ler_per_logical_attempt": 0.005172675000000012,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.0654325437693124,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9945786803299175,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9994309174340599,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 2500,
+      "adaptive_ler_per_logical_attempt": 0.005172675000000012,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.0654325437693124,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9945786803299175,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9994309174340599,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 2500,
+      "adaptive_ler_per_logical_attempt": 0.004748094999999996,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.02201956745623157,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9950031542114472,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9998574621903816,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.655,
+        "z_biased": 0.356
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 10000000,
+      "adaptive_ler_per_logical_attempt": 0.0044717300000022475,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.07894335736307978,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.49776413499999883,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.5001925699269945,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 10000000,
+      "adaptive_ler_per_logical_attempt": 0.0044717300000022475,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.07894335736307978,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.49776413499999883,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.5001925699269945,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 10000000,
+      "adaptive_ler_per_logical_attempt": 0.004471730000002225,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.07894335736308444,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.49776413499999883,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.5001925699269945,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 10000000,
+      "adaptive_ler_per_logical_attempt": 0.004471730000002026,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.07894335736312541,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.49776413499999905,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.5001925699269947,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 1000000,
+      "adaptive_ler_per_logical_attempt": 0.005234270000000692,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.07811946446976159,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9043324818181812,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9087444360552294,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 1000000,
+      "adaptive_ler_per_logical_attempt": 0.004471730000000057,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.07894335736353086,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9050256999999999,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.909441036230901,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 1000000,
+      "adaptive_ler_per_logical_attempt": 0.004471730000000056,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.07894335736353131,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9050256999999999,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.909441036230901,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 1000000,
+      "adaptive_ler_per_logical_attempt": 0.00447173000000005,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.07894335736353253,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9050256999999999,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.909441036230901,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 100000,
+      "adaptive_ler_per_logical_attempt": 0.0052342700000000625,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.07811946446963192,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9849165643564355,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9897216630304484,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 100000,
+      "adaptive_ler_per_logical_attempt": 0.0052342700000000625,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.07811946446963192,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9849165643564355,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9897216630304484,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 100000,
+      "adaptive_ler_per_logical_attempt": 0.004471730000000018,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.07894335736353897,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9856715544554455,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9904803364891002,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 100000,
+      "adaptive_ler_per_logical_attempt": 0.0044717300000000175,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.07894335736353908,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9856715544554455,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9904803364891002,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 10000,
+      "adaptive_ler_per_logical_attempt": 0.0052342700000000105,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.07811946446962104,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9937719580419582,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9986202594013518,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 10000,
+      "adaptive_ler_per_logical_attempt": 0.0052342700000000105,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.07811946446962104,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9937719580419582,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9986202594013518,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 10000,
+      "adaptive_ler_per_logical_attempt": 0.0052342700000000105,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.07811946446962104,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9937719580419582,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9986202594013518,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 10000,
+      "adaptive_ler_per_logical_attempt": 0.004471730000000008,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.07894335736354108,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9945337362637362,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9993857540998913,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.782,
+        "z_biased": 0.245
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 50000000,
+      "adaptive_ler_per_logical_attempt": 0.004042529999995876,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.1673470648824149,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.16599291166666738,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.16680273896433925,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 50000000,
+      "adaptive_ler_per_logical_attempt": 0.004042529999995875,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.16734706488241513,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.16599291166666738,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.16680273896433925,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 50000000,
+      "adaptive_ler_per_logical_attempt": 0.004042529999995882,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.1673470648824137,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.16599291166666738,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.16680273896433925,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 50000000,
+      "adaptive_ler_per_logical_attempt": 0.004042529999996004,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.16734706488238849,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.16599291166666733,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.1668027389643392,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 5000000,
+      "adaptive_ler_per_logical_attempt": 0.00531769000000126,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.09530175077265923,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.6631215399999991,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.6663567017871759,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 5000000,
+      "adaptive_ler_per_logical_attempt": 0.0040425300000001664,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.16734706488153106,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.6639716466666666,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.6672109558573541,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 5000000,
+      "adaptive_ler_per_logical_attempt": 0.004042530000000165,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.1673470648815315,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.6639716466666666,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.6672109558573541,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 5000000,
+      "adaptive_ler_per_logical_attempt": 0.004042530000000149,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.16734706488153472,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.6639716466666666,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.6672109558573541,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 500000,
+      "adaptive_ler_per_logical_attempt": 0.00531768999999991,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.09530175077238101,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9473164857142858,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9519381454102527,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 500000,
+      "adaptive_ler_per_logical_attempt": 0.00531768999999991,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.09530175077238101,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9473164857142858,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9519381454102527,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 500000,
+      "adaptive_ler_per_logical_attempt": 0.0040425300000000094,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.16734706488156348,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9485309238095238,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9531585083676487,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 500000,
+      "adaptive_ler_per_logical_attempt": 0.004042530000000011,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.16734706488156303,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9485309238095238,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9531585083676487,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 50000,
+      "adaptive_ler_per_logical_attempt": 0.005317690000000002,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.09530175077239988,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9897336417910447,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9945622414733981,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 50000,
+      "adaptive_ler_per_logical_attempt": 0.005317690000000002,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.09530175077239988,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9897336417910447,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9945622414733981,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 50000,
+      "adaptive_ler_per_logical_attempt": 0.005317690000000002,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": -0.09530175077239988,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9897336417910447,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9945622414733981,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 2.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 50000,
+      "adaptive_ler_per_logical_attempt": 0.004042529999999997,
+      "best_static_ler_per_logical_attempt": 0.004855,
+      "relative_ler_reduction_vs_static": 0.16734706488156592,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9910024577114427,
+      "best_static_correct_outputs_per_circuit_shot": 0.995145,
+      "adaptive_to_static_throughput_ratio": 0.9958372475482897,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.954,
+        "z_biased": 0.056
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 2500000,
+      "adaptive_ler_per_logical_attempt": 0.002946404999993864,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.2917295673091673,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.7976428760000048,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.8009749317159433,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 2500000,
+      "adaptive_ler_per_logical_attempt": 0.0029464049999938643,
+      "best_static_ler_per_logical_attempt": 0.0041600000000000005,
+      "relative_ler_reduction_vs_static": 0.2917295673091673,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.7976428760000048,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.8009749317159433,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 2500000,
+      "adaptive_ler_per_logical_attempt": 0.002946404999993864,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.2917295673091673,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.7976428760000048,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.8009749317159433,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 2500000,
+      "adaptive_ler_per_logical_attempt": 0.0029464049999938687,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.2917295673091661,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.7976428760000048,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.8009749317159433,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 250000,
+      "adaptive_ler_per_logical_attempt": 0.00478664999999996,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": -0.15063701923075978,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9709398536585366,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9749958363377015,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 250000,
+      "adaptive_ler_per_logical_attempt": 0.002946404999999586,
+      "best_static_ler_per_logical_attempt": 0.0041600000000000005,
+      "relative_ler_reduction_vs_static": 0.291729567307792,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9727352146341468,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9767986972145595,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 250000,
+      "adaptive_ler_per_logical_attempt": 0.002946404999999586,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.29172956730779176,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9727352146341468,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9767986972145595,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 250000,
+      "adaptive_ler_per_logical_attempt": 0.0029464049999995863,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.29172956730779165,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9727352146341468,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9767986972145595,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 25000,
+      "adaptive_ler_per_logical_attempt": 0.004786649999999894,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": -0.1506370192307438,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9927315211970077,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9968785359063783,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 25000,
+      "adaptive_ler_per_logical_attempt": 0.004786649999999894,
+      "best_static_ler_per_logical_attempt": 0.0041600000000000005,
+      "relative_ler_reduction_vs_static": -0.15063701923074357,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9927315211970077,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9968785359063783,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 25000,
+      "adaptive_ler_per_logical_attempt": 0.002946404999999956,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.29172956730770283,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9945671770573568,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9987218599949358,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 25000,
+      "adaptive_ler_per_logical_attempt": 0.002946404999999956,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.29172956730770283,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9945671770573568,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9987218599949358,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 2500,
+      "adaptive_ler_per_logical_attempt": 0.004786650000000007,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": -0.15063701923077089,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.994964608847788,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.999120952008142,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 2500,
+      "adaptive_ler_per_logical_attempt": 0.004786650000000007,
+      "best_static_ler_per_logical_attempt": 0.0041600000000000005,
+      "relative_ler_reduction_vs_static": -0.15063701923077066,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.994964608847788,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.999120952008142,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 2500,
+      "adaptive_ler_per_logical_attempt": 0.004786650000000007,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": -0.15063701923077089,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.994964608847788,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.999120952008142,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 2500,
+      "adaptive_ler_per_logical_attempt": 0.0029464049999999987,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.2917295673076925,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9968043939015245,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 1.000968422539288,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.83,
+        "z_biased": 0.203
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 10000000,
+      "adaptive_ler_per_logical_attempt": 0.0021262399999982134,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.4888846153850448,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.4989368800000009,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.5010211278920318,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 10000000,
+      "adaptive_ler_per_logical_attempt": 0.002126239999998213,
+      "best_static_ler_per_logical_attempt": 0.0041600000000000005,
+      "relative_ler_reduction_vs_static": 0.488884615385045,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.4989368800000009,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.5010211278920318,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 10000000,
+      "adaptive_ler_per_logical_attempt": 0.002126239999998212,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.48888461538504513,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.4989368800000009,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.5010211278920318,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 10000000,
+      "adaptive_ler_per_logical_attempt": 0.002126239999998198,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.48888461538504857,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.4989368800000009,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.5010211278920318,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 1000000,
+      "adaptive_ler_per_logical_attempt": 0.004896880000000208,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": -0.17713461538466557,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9046391999999998,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9084182197943442,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 1000000,
+      "adaptive_ler_per_logical_attempt": 0.0021262399999997486,
+      "best_static_ler_per_logical_attempt": 0.0041600000000000005,
+      "relative_ler_reduction_vs_static": 0.48888461538467587,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9071579636363639,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9109475052582382,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 1000000,
+      "adaptive_ler_per_logical_attempt": 0.002126239999999748,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.48888461538467587,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9071579636363639,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9109475052582382,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 1000000,
+      "adaptive_ler_per_logical_attempt": 0.002126239999999748,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.48888461538467587,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9071579636363639,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9109475052582382,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 100000,
+      "adaptive_ler_per_logical_attempt": 0.0048968800000000435,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": -0.17713461538462605,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.985250613861386,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9893663779938404,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 100000,
+      "adaptive_ler_per_logical_attempt": 0.0048968800000000435,
+      "best_static_ler_per_logical_attempt": 0.0041600000000000005,
+      "relative_ler_reduction_vs_static": -0.1771346153846256,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.985250613861386,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9893663779938404,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 100000,
+      "adaptive_ler_per_logical_attempt": 0.002126240000000012,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.4888846153846125,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9879938217821782,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9921210453307542,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 100000,
+      "adaptive_ler_per_logical_attempt": 0.002126240000000012,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.4888846153846125,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9879938217821782,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9921210453307542,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 10000,
+      "adaptive_ler_per_logical_attempt": 0.004896880000000001,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": -0.17713461538461583,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9941090109890109,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9982617799937852,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 10000,
+      "adaptive_ler_per_logical_attempt": 0.004896880000000001,
+      "best_static_ler_per_logical_attempt": 0.0041600000000000005,
+      "relative_ler_reduction_vs_static": -0.1771346153846154,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9941090109890109,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9982617799937852,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 10000,
+      "adaptive_ler_per_logical_attempt": 0.004896880000000001,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": -0.17713461538461583,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9941090109890109,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9982617799937852,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 10000,
+      "adaptive_ler_per_logical_attempt": 0.0021262399999999984,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.4888846153846157,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.996876883116883,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 1.0010412145694922,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.976,
+        "z_biased": 0.032
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 50000000,
+      "adaptive_ler_per_logical_attempt": 0.0019799999999979305,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.524038461538959,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.16633666666666702,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.16703151778063446,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 50000000,
+      "adaptive_ler_per_logical_attempt": 0.0019799999999979296,
+      "best_static_ler_per_logical_attempt": 0.0041600000000000005,
+      "relative_ler_reduction_vs_static": 0.5240384615389593,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.16633666666666702,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.16703151778063446,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 50000000,
+      "adaptive_ler_per_logical_attempt": 0.0019799999999979253,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.5240384615389602,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.16633666666666702,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.16703151778063446,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 50000000,
+      "adaptive_ler_per_logical_attempt": 0.0019799999999978767,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.5240384615389719,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.16633666666666702,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.16703151778063446,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 5000000,
+      "adaptive_ler_per_logical_attempt": 0.004915000000000722,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": -0.18149038461555822,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.6633899999999995,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.6661612307197938,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 5000000,
+      "adaptive_ler_per_logical_attempt": 0.0019800000000001275,
+      "best_static_ler_per_logical_attempt": 0.0041600000000000005,
+      "relative_ler_reduction_vs_static": 0.5240384615384309,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.6653466666666665,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.6681260711225363,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 5000000,
+      "adaptive_ler_per_logical_attempt": 0.0019800000000001275,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.5240384615384308,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.6653466666666665,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.6681260711225363,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 5000000,
+      "adaptive_ler_per_logical_attempt": 0.001980000000000136,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.5240384615384288,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.6653466666666665,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.6681260711225363,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 500000,
+      "adaptive_ler_per_logical_attempt": 0.004915000000000088,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": -0.1814903846154059,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9477,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9516589010282777,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 500000,
+      "adaptive_ler_per_logical_attempt": 0.004915000000000088,
+      "best_static_ler_per_logical_attempt": 0.0041600000000000005,
+      "relative_ler_reduction_vs_static": -0.18149038461540545,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9477,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9516589010282777,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 500000,
+      "adaptive_ler_per_logical_attempt": 0.001979999999999998,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.524038461538462,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9504952380952381,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9544658158893378,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 500000,
+      "adaptive_ler_per_logical_attempt": 0.0019799999999999987,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.5240384615384618,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9504952380952381,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9544658158893378,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 50000,
+      "adaptive_ler_per_logical_attempt": 0.004915,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": -0.1814903846153848,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9901343283582089,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9942704936116333,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 50000,
+      "adaptive_ler_per_logical_attempt": 0.004915,
+      "best_static_ler_per_logical_attempt": 0.0041600000000000005,
+      "relative_ler_reduction_vs_static": -0.18149038461538458,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9901343283582089,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9942704936116333,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 50000,
+      "adaptive_ler_per_logical_attempt": 0.004915,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": -0.1814903846153848,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9901343283582089,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9942704936116333,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 5.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 50000,
+      "adaptive_ler_per_logical_attempt": 0.00198,
+      "best_static_ler_per_logical_attempt": 0.00416,
+      "relative_ler_reduction_vs_static": 0.5240384615384615,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9930547263681592,
+      "best_static_correct_outputs_per_circuit_shot": 0.99584,
+      "adaptive_to_static_throughput_ratio": 0.9972030912276663,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 2500000,
+      "adaptive_ler_per_logical_attempt": 0.0018269699999973786,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.5565606796122868,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.7985384240000022,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.8018420130939493,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 2500000,
+      "adaptive_ler_per_logical_attempt": 0.0018269699999973786,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.5565606796122868,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.7985384240000022,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.8018420130939493,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 2500000,
+      "adaptive_ler_per_logical_attempt": 0.0018269699999973862,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.556560679612285,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.7985384240000022,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.8018420130939493,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 2500000,
+      "adaptive_ler_per_logical_attempt": 0.001826969999997408,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.5565606796122797,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.7985384240000022,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.8018420130939493,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 250000,
+      "adaptive_ler_per_logical_attempt": 0.004696550000000444,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.13993932038845713,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9710277560975606,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9750449412555334,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 250000,
+      "adaptive_ler_per_logical_attempt": 0.0018269700000000638,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.556560679611635,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9738273463414633,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9778561135292037,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 250000,
+      "adaptive_ler_per_logical_attempt": 0.0018269700000000649,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.5565606796116348,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9738273463414633,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9778561135292037,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 250000,
+      "adaptive_ler_per_logical_attempt": 0.0018269700000000623,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.5565606796116354,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9738273463414633,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9778561135292037,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 25000,
+      "adaptive_ler_per_logical_attempt": 0.004696549999999904,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.1399393203883259,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9928213965087284,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9969287429295983,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 25000,
+      "adaptive_ler_per_logical_attempt": 0.004696549999999904,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.1399393203883259,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9928213965087284,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9969287429295983,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 25000,
+      "adaptive_ler_per_logical_attempt": 0.0018269699999999963,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.5565606796116513,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9956838204488779,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9998030088453207,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 25000,
+      "adaptive_ler_per_logical_attempt": 0.0018269699999999961,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.5565606796116515,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9956838204488779,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9998030088453207,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 2500,
+      "adaptive_ler_per_logical_attempt": 0.004696549999999994,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.1399393203883479,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9950546863284179,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9991712719689299,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 2500,
+      "adaptive_ler_per_logical_attempt": 0.004696549999999994,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.1399393203883479,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9950546863284179,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9991712719689299,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 2500,
+      "adaptive_ler_per_logical_attempt": 0.004696549999999994,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.1399393203883479,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9950546863284179,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9991712719689299,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 25,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 2500,
+      "adaptive_ler_per_logical_attempt": 0.001826970000000001,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.5565606796116502,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9979235491127219,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 1.0020520033665923,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.887,
+        "z_biased": 0.091
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 10000000,
+      "adaptive_ler_per_logical_attempt": 0.0011971500000013669,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7094296116501537,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.49940142499999934,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.5014674709804388,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 10000000,
+      "adaptive_ler_per_logical_attempt": 0.0011971500000013669,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7094296116501537,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.49940142499999934,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.5014674709804388,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 10000000,
+      "adaptive_ler_per_logical_attempt": 0.0011971500000013669,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7094296116501537,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.49940142499999934,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.5014674709804388,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 10000000,
+      "adaptive_ler_per_logical_attempt": 0.0011971500000013693,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7094296116501531,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.49940142499999934,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.5014674709804388,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 1000000,
+      "adaptive_ler_per_logical_attempt": 0.004766100000000586,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.15682038834965661,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9047580909090904,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9085011155049709,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 1000000,
+      "adaptive_ler_per_logical_attempt": 0.0011971500000000055,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7094296116504841,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9080025909090909,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9117590381462535,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 1000000,
+      "adaptive_ler_per_logical_attempt": 0.0011971500000000055,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7094296116504841,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9080025909090909,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9117590381462535,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 1000000,
+      "adaptive_ler_per_logical_attempt": 0.001197150000000006,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.709429611650484,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9080025909090909,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9117590381462535,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 100000,
+      "adaptive_ler_per_logical_attempt": 0.004766100000000005,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.15682038834951562,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.985380099009901,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9894566604509589,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 100000,
+      "adaptive_ler_per_logical_attempt": 0.004766100000000005,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.15682038834951562,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.985380099009901,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9894566604509589,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 100000,
+      "adaptive_ler_per_logical_attempt": 0.0011971499999999943,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7094296116504868,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9889137128712872,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9930048930305732,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 100000,
+      "adaptive_ler_per_logical_attempt": 0.0011971499999999945,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7094296116504868,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9889137128712872,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9930048930305732,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 10000,
+      "adaptive_ler_per_logical_attempt": 0.004766100000000004,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.1568203883495154,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9942396603396604,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9983528741812873,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 10000,
+      "adaptive_ler_per_logical_attempt": 0.004766100000000004,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.1568203883495154,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9942396603396604,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9983528741812873,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 10000,
+      "adaptive_ler_per_logical_attempt": 0.004766100000000004,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.1568203883495154,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9942396603396604,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9983528741812873,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 100,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 10000,
+      "adaptive_ler_per_logical_attempt": 0.0011971500000000008,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7094296116504852,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.997805044955045,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 1.001933008951927,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 0.994,
+        "z_biased": 0.004
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 50000000,
+      "adaptive_ler_per_logical_attempt": 0.0011650000000003858,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7172330097086442,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.16647249999999994,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.16716120416114386,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 50000000,
+      "adaptive_ler_per_logical_attempt": 0.0011650000000003856,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7172330097086443,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.16647249999999994,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.16716120416114386,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 50000000,
+      "adaptive_ler_per_logical_attempt": 0.0011650000000003797,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7172330097086457,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.16647249999999994,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.16716120416114386,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100000,
+      "calibration_overhead_shots": 50000000,
+      "adaptive_ler_per_logical_attempt": 0.001165000000000373,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7172330097086473,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.16647249999999994,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.16716120416114386,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 5000000,
+      "adaptive_ler_per_logical_attempt": 0.004769999999999258,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.1577669902910821,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.6634866666666671,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.6662315406139968,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 5000000,
+      "adaptive_ler_per_logical_attempt": 0.0011649999999999681,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7172330097087456,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.66589,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.6686448166445756,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 5000000,
+      "adaptive_ler_per_logical_attempt": 0.0011649999999999677,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7172330097087457,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.66589,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.6686448166445756,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 1000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 10000,
+      "calibration_overhead_shots": 5000000,
+      "adaptive_ler_per_logical_attempt": 0.0011649999999999684,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7172330097087456,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.66589,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.6686448166445756,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 500000,
+      "adaptive_ler_per_logical_attempt": 0.0047699999999999436,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.1577669902912484,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9478380952380953,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9517593437342805,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 500000,
+      "adaptive_ler_per_logical_attempt": 0.0047699999999999436,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.1577669902912484,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9478380952380953,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9517593437342805,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 500000,
+      "adaptive_ler_per_logical_attempt": 0.001165000000000017,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7172330097087338,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9512714285714285,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9552068809208224,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 10000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 1000,
+      "calibration_overhead_shots": 500000,
+      "adaptive_ler_per_logical_attempt": 0.001165000000000017,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7172330097087338,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9512714285714285,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9552068809208224,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 50000,
+      "adaptive_ler_per_logical_attempt": 0.00477,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.15776699029126195,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9902786069651741,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9943754337522334,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 1000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 50000,
+      "adaptive_ler_per_logical_attempt": 0.00477,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.15776699029126195,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9902786069651741,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9943754337522334,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 10000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 50000,
+      "adaptive_ler_per_logical_attempt": 0.00477,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": -0.15776699029126195,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9902786069651741,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9943754337522334,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    },
+    {
+      "ratio": 10.0,
+      "calibration_shots": 500,
+      "update_interval_logical_shots": 100000,
+      "profile_dwell_logical_shots": 100000,
+      "logical_attempts": 10000000,
+      "calibration_updates": 100,
+      "calibration_overhead_shots": 50000,
+      "adaptive_ler_per_logical_attempt": 0.001165,
+      "best_static_ler_per_logical_attempt": 0.00412,
+      "relative_ler_reduction_vs_static": 0.7172330097087378,
+      "adaptive_correct_outputs_per_total_circuit_shot": 0.9938656716417911,
+      "best_static_correct_outputs_per_circuit_shot": 0.99588,
+      "adaptive_to_static_throughput_ratio": 0.9979773382754861,
+      "confusion_x_choice_probability_by_current_profile": {
+        "x_biased": 1.0,
+        "z_biased": 0.0
+      }
+    }
+  ],
+  "scope": "plug-in scenario projection only; not a causal change-point or device-drift test; classifier/error-rate uncertainty and nonstationarity are not modeled"
+}

@@ -95,3 +95,9 @@
 - Fixed checkerboard H transform of the CSS source circuit was tested at d=3,5, p=.003, bias ratio10, both X/Z bias. Correct H-CX-H conjugation and transformed resets/readout passed deterministic DEM checks. A first invalid CNOT rewrite was stopped before sampling and not counted.
 - Added single-qubit H gates/noise to realize the compiled transform: H/noise targets rose 1.5x at d3 and 1.67x at d5; two-qubit pairs and core geometry stayed matched. On 500k samples/cell, transformed LER was worse in all four settings (ratios 1.33, 6.65, 1.49, 19.83 vs CSS). Negative result applies to this gate-level implementation/noise model, not to an optimized hardware-native schedule.
 - Unique development samples total 32,589,800 including preflights. No confirmatory evaluation accessed. Next: only pursue XZZX with a concrete native-gate schedule that controls the one-qubit overhead; otherwise move to another unresolved family.
+
+## Checkpoint — alternating-profile resource replay
+
+- Reused only previously saved classifier-confusion and independent per-window logical-failure summaries; no new stochastic samples. Tested deterministic equal-duration X↔Z profile alternation at dwell periods 100, 1,000, 10,000, and 100,000 logical shots, 25/100/500 calibration shots, and four re-estimation intervals (144 schedules, d=3, ratios 2/5/10).
+- With calibration shots charged as unusable circuit resources, no tested schedule beat the best static basis through 10k-shot dwell. At 100k dwell, the best plug-in throughput ratio to static was 0.999857, 1.001041, and 1.002052 at ratios 2, 5, and 10. This is a scenario projection with point estimates, not an empirical change-point detector or uncertainty-bounded result.
+- No Q-SHIFT circuit-shot increase; cumulative unique development samples remain 32,589,800. No confirmatory data accessed. Next: examine exact native-categorical inference via width-bounded elimination and stop before scaling if width grows too quickly.
