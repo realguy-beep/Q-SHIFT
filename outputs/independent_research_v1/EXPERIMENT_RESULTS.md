@@ -76,6 +76,12 @@ Under X-biased noise, X-memory had 51/40,000 logical failures (LER 0.001275) ver
 
 This supports a simple known-profile code/circuit choice: align the stored logical basis with the calibrated stable bias. It is not an adaptive-policy result, a decoder gain, or a new code family. It cuts LER by roughly 5×–11× in these two biased distance-3 settings, far short of the 10,000× aspirational target. The evidence does not test bias drift, estimation overhead, or larger-distance scaling. See `basis_orientation_results.json`.
 
+## Distance-5 basis-alignment scaling check
+
+Built distance-5 rotated-memory circuits with nine rounds and the same 0.003 gate/measurement rates and 10:1 X/Z bias ratio. The research builder reproduced the source d=3 circuits byte-for-byte in all six configurations. At d=5 the X and Z memory circuits had matched resources: 64 physical qubits, 216 detectors, 720 two-qubit channel pairs, and nine rounds. The screen used 50,000 exact source-circuit samples per biased condition/basis, with correlation-enabled PyMatching from each matching approximate DEM.
+
+For X-biased noise, X-memory had 6 failures (LER 0.00012) versus 217 for Z-memory (0.00434): aligned/mismatched rate ratio 0.0276 (conditional exact 95% CI 0.0100–0.0543). For Z-biased noise, Z-memory had 6 failures (0.00012) versus 270 for X-memory (0.00540): ratio 0.0222 (95% CI 0.00808–0.0436). These samples support the same bias-alignment direction at d=5, with larger relative gains than at d=3. Each aligned estimate is based on only six failures, so absolute-rate precision is limited. This two-distance comparison is not a threshold estimate, does not test higher distances or bias drift, and still falls short of a 10,000× reduction. Data are in `code_distance_results.json`.
+
 ## Empirical two-decoder selector ceiling
 
 From the prior pilot's independently audited counts, uncorrelated and correlated modes disagree on 1,343/720,000 samples. Correlation-only errors are 580, and uncorrelated-only errors are 763. An oracle choosing the correct output on every discordant shot would reduce baseline errors from 3,532 to 2,769, a 21.6% relative reduction ceiling on this observed sample. The actual correlated mode improves by 183 errors, or 5.18% relative. Both modes are wrong on 2,769 same-prediction cases. A selector between these two outputs has no route to fix those cases. This is descriptive development evidence, not a generalization bound; a genuinely new decoder could add complementary corrections.

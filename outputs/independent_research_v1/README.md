@@ -33,3 +33,5 @@ The remaining requested reports and any prototype are pending. Treat all conclus
 - A cross-entropy proposal learned from failure-conditioned categorical marginals was tested with independent validation and failed its predeclared variance-reduction gate in all conditions. See `categorical_cross_entropy_results.json`.
 
 - Added a same-resource memory-basis analysis: known-bias alignment improved LER in the two biased distance-3 profiles; the balanced profile showed no difference. This is static-profile co-design evidence only.
+
+- Added a d=5/9-round scaling check: the bias-aligned memory basis again had lower LER in both biased profiles at matched distance-5 resources; only six aligned failures per cell, so absolute-rate precision is limited.

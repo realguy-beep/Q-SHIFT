@@ -40,3 +40,5 @@
 - Screened a forward-KL cross-entropy proposal formed from exact weighted failure-conditioned categorical marginals. On fresh validation trajectories it passed the predeclared efficiency gate in 0/6 conditions; variance was worse than or similar to global tilt, and some failure ESS values were very low. The likelihood ratios remained numerically consistent, so the negative result is proposal efficiency rather than an apparent bias.
 
 - Analyzed same-resource X/Z memory orientation under known Pauli bias using 40k exact circuit samples per cell across two independent direct sets. Matching logical basis to the stable dominant axis yielded 5.2x (X bias) and 11.1x (Z bias) lower LER; balanced noise showed no difference. This is a code/circuit configuration result, not a decoder improvement or adaptive policy.
+
+- Extended known-profile memory-basis alignment to d=5/9 rounds under the two biased regimes. Matched resource circuits (64 qubits/216 detectors) showed 36×–45× lower observed LER for the aligned basis, with six aligned failures per 50k cell. This supports the d3 direction but is low precision in absolute terms and is not a threshold estimate.

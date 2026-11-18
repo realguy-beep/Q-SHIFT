@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 2312400,
+  "stochastic_qshift_shots_generated": 2512800,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -920,5 +920,116 @@
       }
     ],
     "interpretation": "same-resource bias-aligned memory basis improves LER in biased regimes; this is known-profile code/circuit co-design, not decoder superiority or an adaptive-policy result"
+  },
+  "known_profile_memory_basis_distance5": {
+    "status": "distance_5_development_screen",
+    "stim_version": "1.16.0",
+    "pymatching_version": "2.4.0",
+    "distance": 5,
+    "rounds": 9,
+    "gate_error_probability": 0.003,
+    "measurement_error_probability": 0.003,
+    "bias_ratio": 10.0,
+    "d3_builder_byte_identical_to_source": {
+      "z_x_biased": true,
+      "z_balanced": true,
+      "z_z_biased": true,
+      "x_x_biased": true,
+      "x_balanced": true,
+      "x_z_biased": true
+    },
+    "matched_resources_at_d5": true,
+    "shots_per_condition": 50000,
+    "conditions": [
+      {
+        "memory_basis": "z",
+        "regime": "x_biased",
+        "seed": 2026111111,
+        "shots": 50000,
+        "physical_qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_channel_pairs": 720,
+        "failures": 217,
+        "ler": 0.00434,
+        "wilson_95": [
+          0.0038006564124946104,
+          0.004955500035630811
+        ],
+        "decode_seconds": 0.3259496559994659,
+        "seconds_per_decode": 6.518993119989318e-06,
+        "max_rss_kib": 92832
+      },
+      {
+        "memory_basis": "x",
+        "regime": "x_biased",
+        "seed": 2026111112,
+        "shots": 50000,
+        "physical_qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_channel_pairs": 720,
+        "failures": 6,
+        "ler": 0.00012,
+        "wilson_95": [
+          5.4998199932506644e-05,
+          0.00026180663662669906
+        ],
+        "decode_seconds": 0.3322504081115767,
+        "seconds_per_decode": 6.6450081622315336e-06,
+        "max_rss_kib": 95496
+      },
+      {
+        "memory_basis": "z",
+        "regime": "z_biased",
+        "seed": 2026111113,
+        "shots": 50000,
+        "physical_qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_channel_pairs": 720,
+        "failures": 6,
+        "ler": 0.00012,
+        "wilson_95": [
+          5.4998199932506644e-05,
+          0.00026180663662669906
+        ],
+        "decode_seconds": 0.3365794239243769,
+        "seconds_per_decode": 6.731588478487538e-06,
+        "max_rss_kib": 95624
+      },
+      {
+        "memory_basis": "x",
+        "regime": "z_biased",
+        "seed": 2026111114,
+        "shots": 50000,
+        "physical_qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_channel_pairs": 720,
+        "failures": 270,
+        "ler": 0.0054,
+        "wilson_95": [
+          0.004794530187856991,
+          0.006081463394927243
+        ],
+        "decode_seconds": 0.3363288969549103,
+        "seconds_per_decode": 6.7265779390982065e-06,
+        "max_rss_kib": 95752
+      }
+    ],
+    "lera_by_regime_and_basis": {
+      "x_biased": {
+        "z": 0.00434,
+        "x": 0.00012
+      },
+      "z_biased": {
+        "z": 0.00012,
+        "x": 0.0054
+      }
+    },
+    "elapsed_seconds": 2.3456775200002085,
+    "stochastic_circuit_shots": 200000,
+    "scope": "distance-5 scaling check only; not a threshold estimate"
   }
 }
