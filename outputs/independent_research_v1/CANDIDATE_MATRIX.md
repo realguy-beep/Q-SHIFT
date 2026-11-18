@@ -103,3 +103,7 @@ A frozen Gaussian SPRT over the existing detector-only LDA score achieved 4.08%/
 ### Measurement-composition robustness challenge
 
 The nominal Gaussian SPRT failed under a fixed-direction measurement-noise shift (17.6% Z-profile selection errors). A fresh equal-variance SPRT lowered this to 12.0% but still missed the 5% upper-bound gate. This materially downgrades the profile-inference lead: score likelihoods need uncertainty/model-shift handling before long-dwell utility projections can be interpreted operationally.
+
+### CUSUM change detector screen
+
+Class-specific and common-variance likelihood CUSUMs detected all simulated transitions with ~30-shot median delay, but triggered 25–50 false switches/100k nominal shots and up to 271/100k under measurement shift. Periodic 100-shot LDA was less noisy in nominal controls. Reject the tested Gaussian CUSUM; the likelihood model's ideal false-alarm guarantee did not hold empirically.

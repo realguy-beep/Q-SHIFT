@@ -203,3 +203,7 @@ The SPRT improved detector profile decisions over fixed 25-shot baselines at a s
 ## Gaussian profile model under composition shift
 
 The nominal class-specific SPRT was not robust when measurement noise doubled with gate noise fixed. The Z-biased score mean moved toward the decision boundary and both score variances increased; nominal likelihood increments underweighted evidence for that shifted profile. A pooled-variance SPRT reduced Z-profile error from 17.6% to 12.0% but remained above the 5% gate. Fixed 100-shot LDA performed better on this stream, suggesting the variance-sensitive likelihood model caused part of the failure, but its 51/1,000 point error still has uncertainty and was not independently replicated. Do not use nominal Gaussian SPRT as a general adaptive policy.
+
+## Gaussian CUSUM false-switch failure
+
+Fast transition detection did not compensate for frequent false switching. With h=log(200), stable nominal controls produced dozens of false switches per 100k shots, far above the intended per-segment likelihood-ratio bound; shifted Z-biased controls were worse. The score increments are not distributed according to the fitted Gaussian likelihood closely enough for the martingale false-alarm guarantee, and resetting after switches can produce chatter. Do not deploy this CUSUM or claim the nominal threshold controls false alarms. An empirical threshold would require a new independent calibration/validation design and may increase detection delay materially.

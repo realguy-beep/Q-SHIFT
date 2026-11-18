@@ -179,3 +179,7 @@ The frozen-feature Gaussian SPRT was independently validated at ~4% X/Z profile-
 ### Robustness caveat for the sequential profile lead
 
 At measurement p=.006 with gate p=.003, the frozen nominal SPRT made 17.6% Z-profile errors. A fresh pooled-variance SPRT still made 12.0%, failing the preregistered gate; fixed 100-shot LDA scored better in one stream but is not independently verified. This rejects general robustness and prevents treating the 100k stable-profile utility projection as deployable guidance. Artifacts: `adaptive_basis_sprt_measurement_shift_*` and `adaptive_basis_sprt_common_variance_*`.
+
+### Change detector rejection
+
+The two tested Gaussian LLR CUSUMs detected all simulated profile changes with ~30-shot median delay, but false-switched 25–50 times/100k shots in nominal stable controls and up to 271/100k under shifted Z-bias noise. The threshold's nominal likelihood guarantee did not transfer. Do not use this controller. Artifact/protocol: `adaptive_basis_change_detection_results.json`, `adaptive_basis_change_detection_protocol.md`.

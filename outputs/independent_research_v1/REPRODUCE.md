@@ -357,3 +357,7 @@ The reuse and utility scripts add no unique stochastic samples. Their stable-pro
 ### Measurement-noise composition robustness
 
 Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/adaptive_basis_sprt_measurement_shift.py --preflight` and then without the flag. For the independent common-variance SPRT challenge, run `adaptive_basis_sprt_common_variance.py --preflight` and then without the flag. Both main runs use fixed seeds stored in their scripts; neither uses observables or accesses confirmatory data.
+
+### Detector-only change detection challenge
+
+Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/adaptive_basis_change_detection.py --preflight`, then without `--preflight`. The main test measures false switches and detection delay under fixed simulator streams; it produces no logical LER data.

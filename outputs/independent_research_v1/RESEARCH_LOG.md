@@ -371,3 +371,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - Fixed 100-shot LDA was better in the shifted Z-profile sample, but its exact upper interval still exceeds the 5% target. No logical LER claim from the shifted stream.
 - Current committed checkpoint before this challenge: `2b7c9f6` on `codex/qshift-independent-research-v1`; uncommitted robustness artifacts will be saved in the next checkpoint.
 - Next: investigate actual piecewise profile changes with a frozen change-detection rule, using no oracle labels and explicit false-switch/detection-delay metrics. Do not reuse stable-profile utility as evidence of drift robustness.
+
+## Checkpoint — CUSUM change-detection failure (2026-11-18)
+
+- At branch checkpoint `05ca401`, started a detector-only change-point challenge. The CUSUM found all simulated switches quickly but false-switched frequently under stable controls. This failure is now committed with exact seeds and protocols.
+- This rules out the nominal Gaussian likelihood CUSUM at its fixed threshold. No evidence supports mid-run profile adaptation from this prototype.
+- Next open direction: evaluate minimum-fault-weight logical failure mechanisms / error-floor structure from the current Stim circuits and decoders, using deterministic development-only analysis, or return to a distinct decoding family if the existing tools cannot make this measurable.

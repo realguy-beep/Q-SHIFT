@@ -239,3 +239,7 @@ Primary protocol: `adaptive_basis_sprt_protocol.md`; 10k/profile preflight follo
 ## Profile calibration under measurement-noise composition shift
 
 The measurement-only shift protocol is `adaptive_basis_sprt_measurement_shift_protocol.md`; it freezes nominal p=.003 model parameters and raises measurement p to .006 at fixed gate p. The follow-up common-variance comparison is `adaptive_basis_sprt_common_variance_protocol.md`; it compares the class-specific and pooled-variance Gaussian SPRTs on independent nominal and shifted streams. The latter has a fixed advancement gate and a negative result does not authorize end-to-end logical testing.
+
+## Online change detection challenge
+
+`adaptive_basis_change_detection_protocol.md` freezes two Gaussian LLR CUSUM variants at h=log(200), a 100-shot LDA initialization, periodic 100-shot LDA baseline, stable controls, and alternating profiles at 1k/10k dwell. The result reports false switches and transition delay only; it does not authorize a logical LER claim.

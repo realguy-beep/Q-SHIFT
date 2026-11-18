@@ -517,3 +517,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - A predeclared common-variance Gaussian SPRT on fresh nominal and shifted streams improved shifted Z-profile error to 120/1,000 (12.0%, exact interval 10.1%–14.2%), but did not meet the <=5% upper-bound gate. Nominal conditions remained under 5%. No end-to-end logical test was run after the failure gate.
 - A first preflight code attempt failed after sampling 50,000 shots because it expected the LDA model under the wrong JSON key. Fixed before continuing and replayed the same seed stream; unique sample count includes it once.
 - Added 3,300,000 unique Q-SHIFT development samples; cumulative total 75,321,000. No sealed or confirmatory data accessed.
+
+
+## Detector-only CUSUM profile-change challenge — 2026-11-18
+
+- Compared class-specific and common-variance Gaussian LLR CUSUM with h=log(200) against periodic 100-shot LDA updates. Initial state used 100 detector-only features; no labels entered online decisions.
+- Both CUSUMs detected all 100 transitions in every alternating condition, with median delay about 27–33 shots and p90 about 65–74. However, stable-control false switching was much higher than the nominal likelihood-ratio bound: approximately 25–50 false switches per 100k nominal calibration shots, and 147–271/100k for shifted Z-biased controls. Periodic LDA was substantially quieter in nominal controls, though also noisier under the shifted regime.
+- This rejects the Gaussian LLR CUSUM for deployment. The likelihood model does not satisfy its ideal false-alarm assumptions on the simulator score stream; fast response alone is insufficient.
+- Added 7,502,000 unique detector calibration samples (preflight 880k plus main 6.622M); cumulative Q-SHIFT development samples 82,823,000. No logical failures, confirmatory or sealed evidence accessed.
