@@ -449,4 +449,4 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - At `ede117d`, ran the frozen independent replication of disagreement-triggered BP+LSD. Macro LER reduction replicated at 13.0%; flag fraction 0.255%; no invalid syndrome estimates.
 - Runtime remained 8.24x fixed correlated matching. Decision: informative flag, failed practical escalator. No further BP+LSD tuning. A faster replacement would be a distinct method/protocol.
 - Cumulative unique development samples: 94,488,200; no sealed or confirmatory data accessed.
-- Resume from current checkpoint `TODO_COMMIT_HASH` on branch `codex/qshift-independent-research-v1`.
+- Resume from current checkpoint `71404c8` on branch `codex/qshift-independent-research-v1`.
