@@ -43,3 +43,5 @@ The strongest new adaptive candidate is a very small detector-only classifier th
 
 Next, challenge this policy under profile drift and misspecified calibration, include calibration shot/round cost, and compare with a periodically recalibrated fixed basis using the same total shot budget. Keep the classifier and threshold frozen before any such evaluation. Do not integrate based on the current development results alone.
 
+One limited robustness check now doubles gate and measurement p after nominal-rate calibration while preserving X/Z bias direction. The frozen selector retained 12.2%, 50.6%, and 71.0% LER reduction versus static Z at ratios 2, 5, and 10. This supports robustness to total-rate change for a stable direction in the simulator. It leaves direction changes, spatially varying noise, device calibration, and resource amortization unresolved.
+

@@ -49,3 +49,5 @@ The high accuracy of the frozen two-class X-vs-Z classifier is conditional on a 
 
 The first end-to-end policy script used the correct trained coefficient vector but reversed its sign-to-basis mapping. Its output is preserved as an invalid first pass and excluded from all findings. Before rerun, the selector was corrected and an assertion now checks that the training-class means land on the declared X/Z sides of the decision boundary. The corrected result uses the predeclared same seeds. This was a software polarity error, not evidence against the estimator.
 
+The doubled-total-rate robustness screen initially attempted to reuse the .0018 approximate-DEM threshold, which failed because a p=.006 categorical fault probability exceeded it. No logical samples were generated under that failed setup. A deterministic probability calculation established a maximum event probability of .003571; the prospectively updated screen used .004 for all arms. This changes the approximation threshold from the nominal-rate tests, so the rate-shift comparison is internally matched but not a direct absolute comparison against the p=.003 sample.
+

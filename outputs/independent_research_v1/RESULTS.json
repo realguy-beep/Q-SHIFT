@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 23159800,
+  "stochastic_qshift_shots_generated": 27377800,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -2890,5 +2890,94 @@
     "status": "invalid_first_pass_selector_sign_reversed",
     "valid_for_inference": false,
     "failure_reason": "Classifier score polarity was reversed; same deterministic samples were reused by the corrected run."
+  },
+  "adaptive_basis_total_rate_shift": {
+    "artifact": "adaptive_basis_rate_shift_results.json",
+    "preflight": "adaptive_basis_rate_shift_preflight.json",
+    "status": "development_rate_shift_validation",
+    "dem_approximate_disjoint_errors_threshold": 0.004,
+    "threshold_reason": ".0018 conversion failed before sampling; maximum p=.006 categorical event probability was .003571, so .004 was chosen by deterministic channel-probability inspection.",
+    "summary": [
+      {
+        "bias_ratio": 2.0,
+        "calibration_gate_meas_p": 0.003,
+        "logical_gate_meas_p": 0.006,
+        "policy_ler": 0.014785,
+        "fixed_x_ler": 0.01986,
+        "fixed_z_ler": 0.016845,
+        "oracle_ler": 0.01434,
+        "policy_minus_fixed_z": -0.0020599999999999993,
+        "cluster_bootstrap_95_ci": [
+          -0.0026300000000000004,
+          -0.0014949999999999998
+        ],
+        "relative_reduction_vs_fixed_z": 0.12229148115167698,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected": 956,
+            "z_selected": 44
+          },
+          "z_biased": {
+            "x_selected": 54,
+            "z_selected": 946
+          }
+        }
+      },
+      {
+        "bias_ratio": 5.0,
+        "calibration_gate_meas_p": 0.003,
+        "logical_gate_meas_p": 0.006,
+        "policy_ler": 0.00776,
+        "fixed_x_ler": 0.0187,
+        "fixed_z_ler": 0.015715,
+        "oracle_ler": 0.00775,
+        "policy_minus_fixed_z": -0.007955,
+        "cluster_bootstrap_95_ci": [
+          -0.008495125000000001,
+          -0.0074199999999999995
+        ],
+        "relative_reduction_vs_fixed_z": 0.5062042634425707,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected": 999,
+            "z_selected": 1
+          },
+          "z_biased": {
+            "x_selected": 0,
+            "z_selected": 1000
+          }
+        }
+      },
+      {
+        "bias_ratio": 10.0,
+        "calibration_gate_meas_p": 0.003,
+        "logical_gate_meas_p": 0.006,
+        "policy_ler": 0.004325,
+        "fixed_x_ler": 0.017115,
+        "fixed_z_ler": 0.01493,
+        "oracle_ler": 0.004325,
+        "policy_minus_fixed_z": -0.010605,
+        "cluster_bootstrap_95_ci": [
+          -0.011165,
+          -0.010055
+        ],
+        "relative_reduction_vs_fixed_z": 0.7103148024112526,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected": 1000,
+            "z_selected": 0
+          },
+          "z_biased": {
+            "x_selected": 0,
+            "z_selected": 1000
+          }
+        }
+      }
+    ]
+  },
+  "adaptive_basis_total_rate_shift_preflight": {
+    "artifact": "adaptive_basis_rate_shift_preflight.json",
+    "status": "preflight",
+    "projected_main_seconds": 2.3089318989150343
   }
 }
