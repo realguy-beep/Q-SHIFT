@@ -402,3 +402,8 @@ Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_
 ### Selective BP+LSD escalation feasibility screen
 
 Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/selective_bplsd_escalation.py`. It computes a syndrome-only flag from disagreement between correlated and ordinary matching, runs the fixed LSD_CS decoder only on flagged cases, and reports full two-matcher plus escalation runtime. The initial result fails the runtime gate; the script contains frozen development seeds.
+
+
+### Selective BP+LSD efficacy replication
+
+Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/selective_bplsd_escalation_replication.py`. The independent fresh-seed report writes separately from the initial screen and includes the flag, paired outcomes, syndrome validity, and full two-matcher plus escalation runtime.

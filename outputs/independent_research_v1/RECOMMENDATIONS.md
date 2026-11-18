@@ -184,3 +184,8 @@ The targeted seven-round d5 screen was inconclusive and failed its frozen gate (
 ## Selective escalation lead
 
 A fixed disagreement-triggered BP+LSD hybrid reduced macro LER by 14.3% on one 600k-shot d3 stream, with zero invalid escalated syndromes, but took 8.44x the correlation-enabled matcher even though only 0.26% of cases escalated. It fails the frozen runtime gate. Preserve as a possible ambiguity signal for a faster local solver; do not integrate this BP+LSD implementation. Fresh efficacy replication is pending, but it cannot change the current cost rejection.
+
+
+### Selective escalation replication decision
+
+Two independent streams show 13%–14% macro LER reduction when disagreements between correlated and ordinary matching are routed to BP+LSD. Both streams also show 8.2–8.4x decode cost. Keep the flag as a potentially useful ambiguity signal; reject the present BP+LSD escalation for practical integration. Any faster replacement is a distinct algorithm requiring fresh validation.

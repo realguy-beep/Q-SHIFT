@@ -222,3 +222,8 @@ A targeted d5 Z-aligned seven-active-plus-two-idle screen had 140/1M errors vers
 ### Selective escalation: promising accuracy, impractical implementation
 
 A fixed syndrome-only disagreement flag (correlated vs ordinary PyMatching) routed 0.261% of six-condition d3 samples to BP+LSD. Macro LER fell 14.3% and all escalated syndromes were valid, but corrected end-to-end decode time was 8.44x the fixed correlated matcher. It fails the 2x runtime gate and should not be integrated. Independent efficacy replication is pending; any practical follow-up needs a faster local search on flagged cases.
+
+
+### Selective escalation independent replication
+
+Two fresh d3 streams show 13%–14% macro LER reduction when the fixed syndrome-only correlated/ordinary matching disagreement flag triggers BP+LSD. About 0.26% of samples are escalated and all estimates are syndrome-valid. The full policy still takes 8.2–8.4x fixed correlated matching, failing the 2x cost gate. The flag is informative; this BP+LSD implementation is not practical. A faster local escalator would need a separate prospective protocol.

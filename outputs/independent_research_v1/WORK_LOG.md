@@ -591,3 +591,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Corrected end-to-end timing includes both matching passes and flagged-only LSD: 8.44x fixed correlated matching, fails 2x runtime gate. One initial timing summary omitted the plain matching flag pass; corrected before checkpoint, no samples were regenerated.
 - Added 612,000 unique samples (12k preflight +600k main); cumulative Q-SHIFT development count: 93,876,200. No sealed/confirmatory data.
 - Next: independent fresh-stream efficacy replication for this accuracy signal only; the existing implementation remains rejected on runtime.
+
+
+## Selective BP+LSD escalation — independent efficacy replication — 2026-11-18
+
+- Fresh six-condition streams, same fixed flag and decoder settings, 100k main shots/condition. The routing flag was correlated-vs-ordinary PyMatching logical-output disagreement.
+- Replicated macro LER reduction: .005213→.004533 (13.04%); 1,530/600k cases flagged; zero invalid escalated syndromes. One cell (X-memory/X-bias) was effectively tied, 131 vs132 errors; no >5% harm elsewhere.
+- Full runtime 8.24x fixed correlated matching, so implementation remains below the 2x speed gate. Accuracy signal verified, deployment candidate rejected. No tuning or confirmatory data.
+- Added 600,000 main +12,000 preflight samples; cumulative unique Q-SHIFT development samples: 94,488,200.

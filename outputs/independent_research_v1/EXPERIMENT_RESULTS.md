@@ -427,3 +427,8 @@ At d5 Z alignment, seven active rounds plus two p=.003 biased data-idle cycles y
 ## Selective BP+LSD escalation on matching disagreement syndromes
 
 On six fresh d3 conditions (100k each), a fixed policy flagged only syndromes where correlation-enabled and ordinary PyMatching differed, then used `LSD_CS` on flagged cases and correlated matching otherwise. It flagged 1,567/600,000 samples (0.261%); all flagged BP+LSD fault estimates reproduced the syndrome. Equal-weight macro LER fell from .005253 to .004503 (14.28% reduction); all six point estimates improved, with per-cell reductions 4.1%–39.5%. However, corrected end-to-end decode time includes correlated matching, the ordinary-matching flag pass, and BP+LSD on flags: mean 8.44x correlated matching, above the 2x gate. Thus it fails practical advancement despite an accuracy signal. See `../independent_research_v2/selective_bplsd_escalation_report.md`.
+
+
+### Independent replication of selective BP+LSD escalation
+
+A fresh 600k-shot stream reproduced the accuracy result: macro LER .005213→.004533, a 13.0% reduction. The disagreement rule flagged 1,530 cases (0.255%); all escalated syndromes were valid and no condition was harmed by >5% (X-memory/X-bias was 131 vs 132 errors). Full runtime remained 8.24x baseline, so the practical gate fails independently as well. This verifies the syndrome ambiguity signal but rejects the current escalator. Details: `../independent_research_v2/selective_bplsd_escalation_replication_report.md`.

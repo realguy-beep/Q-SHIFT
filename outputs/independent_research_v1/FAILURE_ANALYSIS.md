@@ -246,3 +246,8 @@ The seven-active-plus-two-idle d5 point estimate favored it over nine active rou
 ## Selective escalation accuracy-cost tradeoff
 
 Routing only 0.261% of samples to BP+LSD on matching disagreement produced 14.3% lower macro LER on one development stream, but total runtime was 8.44x after accounting for both matching passes needed to compute the flag and the slow BP+LSD calls. The policy fails its 2x runtime gate. Per-condition gains were heterogeneous and the X-memory/Z-biased condition improved only 4.1%. Any continuation must independently verify the accuracy signal and would need a materially faster escalator; do not claim deployable utility.
+
+
+### Selective escalation independent replication
+
+Fresh seeds reproduced about 13% macro LER reduction with the fixed syndrome-only flag and zero invalid escalated syndromes, but full decode time was still 8.24x correlated matching. This supports the ambiguity flag as informative and independently confirms the cost failure. The current BP+LSD implementation should remain rejected; an optimized local search would be a new candidate and needs a separate protocol.
