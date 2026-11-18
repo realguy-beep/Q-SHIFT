@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 2512800,
+  "stochastic_qshift_shots_generated": 2914400,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -1031,5 +1031,329 @@
     "elapsed_seconds": 2.3456775200002085,
     "stochastic_circuit_shots": 200000,
     "scope": "distance-5 scaling check only; not a threshold estimate"
+  },
+  "known_profile_bias_crossover": {
+    "status": "bias_crossover_development_screen",
+    "stim_version": "1.16.0",
+    "pymatching_version": "2.4.0",
+    "bias_ratios": [
+      2.0,
+      5.0
+    ],
+    "distance": 3,
+    "rounds": 5,
+    "shots_per_condition": 50000,
+    "matched_resources_by_regime_and_ratio": true,
+    "conditions": [
+      {
+        "bias_ratio": 2.0,
+        "memory_basis": "z",
+        "regime": "x_biased",
+        "seed": 2026111211,
+        "shots": 50000,
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "noise_target_counts": {
+          "one_qubit_channel_targets": 40,
+          "two_qubit_channel_pairs": 120,
+          "measurement_flip_targets": 49
+        },
+        "noise_channel_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 6,
+          "Z_ERROR": 0
+        },
+        "failures": 284,
+        "ler": 0.00568,
+        "wilson_95": [
+          0.005058187575699373,
+          0.006377762986051339
+        ],
+        "decode_seconds": 0.26121849399805797,
+        "seconds_per_decode": 5.22436987996116e-06
+      },
+      {
+        "bias_ratio": 2.0,
+        "memory_basis": "x",
+        "regime": "x_biased",
+        "seed": 2026111212,
+        "shots": 50000,
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "noise_target_counts": {
+          "one_qubit_channel_targets": 40,
+          "two_qubit_channel_pairs": 120,
+          "measurement_flip_targets": 49
+        },
+        "noise_channel_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 5,
+          "Z_ERROR": 1
+        },
+        "failures": 209,
+        "ler": 0.00418,
+        "wilson_95": [
+          0.003651319057133425,
+          0.004784861974439723
+        ],
+        "decode_seconds": 0.26318772102058574,
+        "seconds_per_decode": 5.2637544204117145e-06
+      },
+      {
+        "bias_ratio": 2.0,
+        "memory_basis": "z",
+        "regime": "z_biased",
+        "seed": 2026111213,
+        "shots": 50000,
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "noise_target_counts": {
+          "one_qubit_channel_targets": 40,
+          "two_qubit_channel_pairs": 120,
+          "measurement_flip_targets": 49
+        },
+        "noise_channel_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 6,
+          "Z_ERROR": 0
+        },
+        "failures": 199,
+        "ler": 0.00398,
+        "wilson_95": [
+          0.0034649406448837533,
+          0.004571271115999052
+        ],
+        "decode_seconds": 0.2875916640032301,
+        "seconds_per_decode": 5.7518332800646025e-06
+      },
+      {
+        "bias_ratio": 2.0,
+        "memory_basis": "x",
+        "regime": "z_biased",
+        "seed": 2026111214,
+        "shots": 50000,
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "noise_target_counts": {
+          "one_qubit_channel_targets": 40,
+          "two_qubit_channel_pairs": 120,
+          "measurement_flip_targets": 49
+        },
+        "noise_channel_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 5,
+          "Z_ERROR": 1
+        },
+        "failures": 308,
+        "ler": 0.00616,
+        "wilson_95": [
+          0.005511093746316253,
+          0.006884783065091281
+        ],
+        "decode_seconds": 0.2537627599313055,
+        "seconds_per_decode": 5.07525519862611e-06
+      },
+      {
+        "bias_ratio": 5.0,
+        "memory_basis": "z",
+        "regime": "x_biased",
+        "seed": 2026111215,
+        "shots": 50000,
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "noise_target_counts": {
+          "one_qubit_channel_targets": 40,
+          "two_qubit_channel_pairs": 120,
+          "measurement_flip_targets": 49
+        },
+        "noise_channel_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 6,
+          "Z_ERROR": 0
+        },
+        "failures": 311,
+        "ler": 0.00622,
+        "wilson_95": [
+          0.0055677834007233145,
+          0.006948084191891322
+        ],
+        "decode_seconds": 0.25256609696225496,
+        "seconds_per_decode": 5.0513219392450995e-06
+      },
+      {
+        "bias_ratio": 5.0,
+        "memory_basis": "x",
+        "regime": "x_biased",
+        "seed": 2026111216,
+        "shots": 50000,
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "noise_target_counts": {
+          "one_qubit_channel_targets": 40,
+          "two_qubit_channel_pairs": 120,
+          "measurement_flip_targets": 49
+        },
+        "noise_channel_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 5,
+          "Z_ERROR": 1
+        },
+        "failures": 101,
+        "ler": 0.00202,
+        "wilson_95": [
+          0.001662866645942449,
+          0.0024536462621750055
+        ],
+        "decode_seconds": 0.26978753397543187,
+        "seconds_per_decode": 5.395750679508638e-06
+      },
+      {
+        "bias_ratio": 5.0,
+        "memory_basis": "z",
+        "regime": "z_biased",
+        "seed": 2026111217,
+        "shots": 50000,
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "noise_target_counts": {
+          "one_qubit_channel_targets": 40,
+          "two_qubit_channel_pairs": 120,
+          "measurement_flip_targets": 49
+        },
+        "noise_channel_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 6,
+          "Z_ERROR": 0
+        },
+        "failures": 90,
+        "ler": 0.0018,
+        "wilson_95": [
+          0.0014647792645036551,
+          0.002211767445854423
+        ],
+        "decode_seconds": 0.25218380400474416,
+        "seconds_per_decode": 5.043676080094883e-06
+      },
+      {
+        "bias_ratio": 5.0,
+        "memory_basis": "x",
+        "regime": "z_biased",
+        "seed": 2026111218,
+        "shots": 50000,
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "noise_target_counts": {
+          "one_qubit_channel_targets": 40,
+          "two_qubit_channel_pairs": 120,
+          "measurement_flip_targets": 49
+        },
+        "noise_channel_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 5,
+          "Z_ERROR": 1
+        },
+        "failures": 376,
+        "ler": 0.00752,
+        "wilson_95": [
+          0.006799679561393822,
+          0.008315988290708037
+        ],
+        "decode_seconds": 0.2481737119887839,
+        "seconds_per_decode": 4.963474239775678e-06
+      }
+    ],
+    "aligned_vs_mismatched": [
+      {
+        "bias_ratio": 2.0,
+        "regime": "x_biased",
+        "aligned_basis": "x",
+        "mismatched_basis": "z",
+        "aligned_failures": 209,
+        "mismatched_failures": 284,
+        "aligned_ler": 0.00418,
+        "mismatched_ler": 0.00568,
+        "aligned_over_mismatched_rate_ratio": {
+          "ratio": 0.7359154929577466,
+          "conditional_exact_95_ci": [
+            0.6125618874733901,
+            0.8757330132622403
+          ],
+          "equal_rate_exact_p": 0.0008422204982071734
+        }
+      },
+      {
+        "bias_ratio": 2.0,
+        "regime": "z_biased",
+        "aligned_basis": "z",
+        "mismatched_basis": "x",
+        "aligned_failures": 199,
+        "mismatched_failures": 308,
+        "aligned_ler": 0.00398,
+        "mismatched_ler": 0.00616,
+        "aligned_over_mismatched_rate_ratio": {
+          "ratio": 0.6461038961038961,
+          "conditional_exact_95_ci": [
+            0.5378670486927309,
+            0.7684196264739852
+          ],
+          "equal_rate_exact_p": 1.4787338152091645e-06
+        }
+      },
+      {
+        "bias_ratio": 5.0,
+        "regime": "x_biased",
+        "aligned_basis": "x",
+        "mismatched_basis": "z",
+        "aligned_failures": 101,
+        "mismatched_failures": 311,
+        "aligned_ler": 0.00202,
+        "mismatched_ler": 0.00622,
+        "aligned_over_mismatched_rate_ratio": {
+          "ratio": 0.32475884244372993,
+          "conditional_exact_95_ci": [
+            0.25683999074253366,
+            0.40270831320380074
+          ],
+          "equal_rate_exact_p": 5.720274276493374e-26
+        }
+      },
+      {
+        "bias_ratio": 5.0,
+        "regime": "z_biased",
+        "aligned_basis": "z",
+        "mismatched_basis": "x",
+        "aligned_failures": 90,
+        "mismatched_failures": 376,
+        "aligned_ler": 0.0018,
+        "mismatched_ler": 0.00752,
+        "aligned_over_mismatched_rate_ratio": {
+          "ratio": 0.23936170212765956,
+          "conditional_exact_95_ci": [
+            0.1880187731912607,
+            0.2981428240618579
+          ],
+          "equal_rate_exact_p": 1.3313179285266884e-42
+        }
+      }
+    ],
+    "elapsed_seconds": 3.0447601710002345,
+    "stochastic_circuit_shots": 400000,
+    "scope": "fixed known-profile basis comparison; no adaptive inference or threshold claim"
   }
 }

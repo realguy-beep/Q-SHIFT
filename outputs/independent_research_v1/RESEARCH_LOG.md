@@ -42,3 +42,5 @@
 - Analyzed same-resource X/Z memory orientation under known Pauli bias using 40k exact circuit samples per cell across two independent direct sets. Matching logical basis to the stable dominant axis yielded 5.2x (X bias) and 11.1x (Z bias) lower LER; balanced noise showed no difference. This is a code/circuit configuration result, not a decoder improvement or adaptive policy.
 
 - Extended known-profile memory-basis alignment to d=5/9 rounds under the two biased regimes. Matched resource circuits (64 qubits/216 detectors) showed 36×–45× lower observed LER for the aligned basis, with six aligned failures per 50k cell. This supports the d3 direction but is low precision in absolute terms and is not a threshold estimate.
+
+- Mapped the static known-bias memory-basis effect at 2:1 and 5:1 profiles using 50k exact source-circuit shots per cell. Alignment already reduced LER at 2:1 and the reduction grew at 5:1; this gives a bounded baseline for known-profile configuration, not an adaptive detector.

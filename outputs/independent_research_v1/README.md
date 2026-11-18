@@ -35,3 +35,5 @@ The remaining requested reports and any prototype are pending. Treat all conclus
 - Added a same-resource memory-basis analysis: known-bias alignment improved LER in the two biased distance-3 profiles; the balanced profile showed no difference. This is static-profile co-design evidence only.
 
 - Added a d=5/9-round scaling check: the bias-aligned memory basis again had lower LER in both biased profiles at matched distance-5 resources; only six aligned failures per cell, so absolute-rate precision is limited.
+
+- Added a bias-strength check at 2:1 and 5:1: basis alignment already helped at 2:1 and the measured benefit grew at 5:1, with equal resources.

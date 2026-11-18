@@ -51,3 +51,5 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the memory-basis analysis from the saved independent direct-arm aggregates with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/basis_orientation_analysis.py`. It samples no new shots.
 
 - Reproduce the distance-5 timing/shape preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/code_distance_scaling.py --preflight`; the fixed development screen runs without `--preflight`.
+
+- Reproduce the bias-strength preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_crossover.py --preflight`; rerun the fixed development screen without `--preflight`.

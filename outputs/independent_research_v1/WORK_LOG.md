@@ -86,3 +86,9 @@
 - Added a scalable circuit builder and verified byte-identical reproduction of the six d=3 source circuits. At d=5/9 rounds, X/Z memory used matched 64 physical qubits, 216 detectors, and 720 two-qubit channel pairs.
 - Preflight projected the declared 50,000 shots/cell below the five-minute cap. Main run used 50,000 direct exact-circuit shots in each of four biased distance-5 conditions. Under X bias, aligned X-memory had 6 failures vs 217 for Z-memory (LER .00012 vs .00434, rate ratio .0276, conditional exact CI .0100–.0543). Under Z bias, aligned Z-memory had 6 vs 270 (ratio .0222, CI .00808–.0436).
 - Same alignment direction persists from d=3 to d=5, but each aligned d5 cell has only six failures. This is not a threshold estimate or evidence at larger distances. Total new Phase2B development shots: 2,512,800. No confirmatory/sealed data accessed.
+
+## Bias-strength crossover checkpoint — 2026-11-18 16:28 UTC
+
+- Added a small, theory-motivated known-profile comparison at bias ratios 2 and 5, between previously sampled ratios 1 and 10. Same distance-3/5-round circuit and 0.003 gate/measurement rates; X and Z memory resource counts matched.
+- 50,000 fresh exact-circuit shots per condition. At ratio 2, aligned/mismatched LER ratios were 0.736 (95% CI .613–.876) under X bias and 0.646 (.538–.768) under Z bias. At ratio 5, ratios were 0.325 (.257–.403) and 0.239 (.188–.298). Directional benefit is visible by 2:1 and grows in these sampled ratios. No exact crossover interpolation is justified.
+- New circuit samples: 401,600 including preflight; cumulative Phase2B development shots 2,914,400. No confirmatory/sealed data accessed.

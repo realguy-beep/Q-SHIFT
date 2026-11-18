@@ -17,6 +17,7 @@ The proposed correlation-mechanism follow-up requiring a non-approximated DEM ca
 - A forward-KL cross-entropy proposal built from weighted failure-conditioned categorical marginals also failed its predeclared variance gate in all six fresh validation conditions; several strata had very low failure-weight ESS. Do not tune it on those validation outcomes. A future rare-event proposal likely needs joint fault structure/progress, with a new independent validation split.
 - Same-resource memory-basis analysis of two independent exact circuit sample sets supports matching the stored logical basis to known bias: 80.6% fewer failures for X-memory under X bias and 91.0% fewer for Z-memory under Z bias; balanced noise showed no meaningful difference. This is a static known-profile configuration baseline only and does not establish adaptive tracking or scalability.
 - A d=5/9-round extension showed the same alignment direction under X/Z bias with 36×–45× lower observed LER, using matched 64-qubit/216-detector resources. Each aligned cell had six failures in 50k shots, so absolute rates remain coarse; this is not a threshold result.
+- Intermediate d=3 bias ratios add a static configuration baseline: at 2:1, the matched memory basis had 26–35% fewer errors; at 5:1, it had 68–76% fewer. The data do not pinpoint a crossover or validate runtime adaptation.
 
 ## Suggested next implementation
 
