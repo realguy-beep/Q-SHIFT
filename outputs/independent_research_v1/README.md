@@ -12,3 +12,7 @@ The expedition is in progress. The available checkpoint records repository revis
 - `CANDIDATE_MATRIX.md` compares decoder, inference, learning, adaptation, and code-design directions for the next research phase.
 
 The remaining requested reports and any prototype are pending. Treat all conclusions as preliminary until the literature references, the named Stage E and Stage S material, decoder implementations, and additional historical audits have been reviewed. No results in this package support a superiority claim.
+- `EXPERIMENT_RESULTS.md` reports the deterministic DEM-conversion blocker and the negative categorical sum-product toy screen.
+- `FAILURE_ANALYSIS.md` records why both paths stopped before circuit-scale evaluation.
+- `EXPERIMENT_PROTOCOLS.md` contains the unrun native categorical inference feasibility plan.
+- `WORK_LOG.md` records resumed execution and active hypotheses.
