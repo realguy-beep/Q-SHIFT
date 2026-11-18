@@ -173,3 +173,7 @@
 
 - Added predeclared detector-click bins to the existing exact-seed replay without changing seeds. At d3, 1,022/1,105 model disagreements had 3–8 clicks and ratio10 was right on 678/1,022; only 29 disagreements had 9+ clicks and ratio10 lost 18 vs fixed 11. At d5, 363/452 disagreements were 9+ and ratio10 won only 168 vs 195. This is consistent with a changed disagreement population, not a causal finding; d3/d5 detector counts differ and bins are unnormalized.
 - No new unique Q-SHIFT samples; aggregate/condition/bin data all in `bias_strength_decision_replay_results.json`.
+
+### Sample-specific two-output selector ceiling
+
+- From the same archived-seed replay, an oracle selecting the correct output for every ratio5/ratio10 disagreement still leaves 7,629 d3 and 2,851 d5 both-wrong events. Relative to the better fixed decoder on each sample, the observed maximum error reduction is 4.69% at d3 and 6.86% at d5. This finite-sample ceiling is not a population bound, but it deprioritizes ratio-only selection as a route to orders-of-magnitude improvement.

@@ -235,3 +235,7 @@
 
 - On d3, ratio10 changed decisions were concentrated in syndrome weights3–8 (1,022/1,105), where 678/1,022 favored ratio10; weight9+ changes were sparse (29) and favored ratio5 (18 vs11). At d5, 363/452 changes were weight9+ and ratio10 was correct on 168/363. These are raw counts across 40 versus216 detectors and cannot be compared as normalized distance coordinates.
 - This gives a descriptive lead that ratio10's changed-decision mix varies by distance, but it does not identify fault geometry or causality. The full bin table is saved in the replay artifact; all archived error counts still reproduce.
+
+### Two-output selector ceiling (same replay)
+
+- The sample-specific oracle that selects the correct ratio5 or ratio10 answer on each disagreement still fails on all both-wrong cases. Against the best fixed model observed, this oracle could reduce failures by at most 4.69% at d3 and 6.86% at d5. This is a development-sample ceiling, not a population bound; it shows that selecting between these two decoders alone cannot approach the 99.99% relative reduction objective.

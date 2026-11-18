@@ -174,6 +174,16 @@ def main() -> None:
             "ratio10_success_given_disagreement": fixes / disagreements,
             "ratio10_conditional_success_wilson_95": wilson(fixes, disagreements),
             "net_error_rate_change_ratio10_minus_ratio5": (breaks - fixes) / counts["shots"],
+            "errors_ratio5": counts["both_wrong"] + fixes,
+            "errors_ratio10": counts["both_wrong"] + breaks,
+            "oracle_selector_errors_on_observed_samples": counts["both_wrong"],
+            "oracle_relative_reduction_vs_ratio5_on_observed_samples": fixes / (counts["both_wrong"] + fixes),
+            "oracle_relative_reduction_vs_ratio10_on_observed_samples": breaks / (counts["both_wrong"] + breaks),
+            "best_fixed_model_on_observed_samples": (
+                "ratio5" if counts["both_wrong"] + fixes
+                <= counts["both_wrong"] + breaks else "ratio10"),
+            "oracle_relative_reduction_vs_best_fixed_on_observed_samples": (
+                min(fixes, breaks) / (counts["both_wrong"] + min(fixes, breaks))),
         })
     output = {
         "status": "paired_seed_replay_decomposition",
