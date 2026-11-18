@@ -114,3 +114,10 @@
 - A deterministic fragment of the source d=3 five-round Z-memory / X-biased ratio10 circuit now maps the first three pairs of the final PAULI_CHANNEL_2 layer into three 16-state categorical variables. All other stochastic locations were suppressed to identity.
 - The initial map was invalid: Stim's detector sampler subtracts each forced circuit's own deterministic reference. This produced false zero effects. The corrected raw-measurement extraction shares the noiseless circuit's detector/observable reference, then passed 256 combined-fault XOR cases and exact enumeration of all 4,096 assignments. Variable elimination matched all 64 reachable syndrome/logical masses to 2.22e-16; width2 and max factor512.
 - No stochastic circuit data were generated. This is an exact local slice only, not a decoder result. Next: width-only preflight on all six pair locations in the same final layer.
+
+## Checkpoint — exact six-location Phase 2B layer
+
+- The scope-only preflight for the whole final PAULI_CHANNEL_2 layer predicted induced width4/max factor131,072, under the fixed 1M cap.
+- Exact XOR-convolution of all 16^6 probability assignments produced 1,024 reachable syndromes. Variable elimination agreed with the independent reference to max joint mass error1.11e-16 and posterior error2.47e-15; 512 forced combined Pauli circuits verified XOR signatures. All six native categorical events and source probabilities were retained.
+- One isolated-layer MAP LER was 1.0572e-5, not a full-circuit error estimate because every other fault was suppressed. Runtime 95s; no stochastic Q-SHIFT data generated.
+- Next: preflight two adjacent final-round channel layers (12 categorical locations) using factor scopes only.

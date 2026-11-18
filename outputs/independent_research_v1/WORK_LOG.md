@@ -14,7 +14,7 @@
 
 ## Next actions
 
-1. Run a saved width-only preflight for all six pair locations in the final `PAULI_CHANNEL_2` layer; only attempt the exact model if every intermediate table stays below one million entries.
+1. Run a saved width-only preflight for the final two adjacent `PAULI_CHANNEL_2` layers (12 locations); if predicted width exceeds the one-million-entry cap, stop before inference.
 2. Revisit neural/hybrid and rare-event approaches for a distinct mechanism not already rejected by current development screens.
 3. Continue primary literature review using accessible primary/repository sources. Mark inaccessible sources explicitly and avoid citation details that cannot be supported.
 4. Maintain checkpoints on the isolated branch. No confirmatory/sealed evaluation is authorized.
@@ -170,4 +170,12 @@
 - Initial mapper used per-circuit `compile_detector_sampler` results and falsely reported zero effects because that API subtracts each deterministic circuit's own reference. Preserved the artifact as invalid; fixed mapping reads raw record bits and explicitly evaluates detector/observable rec parity relative to one shared noiseless source circuit.
 - Corrected map touches six detectors. All 256 combined-fault verification cases matched XOR composition. Exhaustive 4,096 categorical assignments and VE agree on all 64 reachable syndromes/logical classes with max joint-mass error 2.22e-16. Width=2, max factor=512 entries, ~1.96 seconds. No stochastic shots generated.
 - Current branch before this checkpoint: `codex/qshift-independent-research-v1`, commit `d4f24ef`. This is a deterministic three-location final-layer slice only, not a full-circuit decoder or LER result.
-- Next: preflight induced width for all six pair locations in the same channel layer; stop before inference if any factor exceeds one million entries.
+- Next: width-only preflight across two adjacent final-round channel layers (12 categorical locations); stop before inference if any factor exceeds one million entries.
+
+## Exact six-location Phase 2B layer — 2026-11-18
+
+- Separate scope-only preflight for all six pair locations in the final channel layer predicted 10 touched detectors, induced width4, and a largest dense intermediate of 131,072 entries; under the fixed one-million cap.
+- Expanded only after that preflight. A sparse XOR-convolution reference aggregated the exact 16^6 source categorical probability mass. VE agreed on all 1,024 reachable syndromes; max joint mass error 1.11e-16, max posterior error 2.47e-15. 512 deterministic combined-fault cases matched XOR-composed Stim signatures. Full all-syndrome VE took 95.2 sec; width4/131,072 entries matched the preflight.
+- Isolated-layer MAP LER was 1.0572e-5, but all other circuit faults were identity; do not compare it with the full Phase 2B LER. No stochastic circuit samples generated.
+- Current branch before this checkpoint: `codex/qshift-independent-research-v1`, commit `11f5fce`.
+- Next: structural width-only preflight on two adjacent final-round channel layers (12 locations), with same fixed cap.

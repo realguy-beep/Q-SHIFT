@@ -59,6 +59,44 @@ def _weighted_min_fill(scopes: list[tuple[int, ...]], domains: dict[int, int]) -
     return tuple(order)
 
 
+def estimate_factor_growth(model: CategoricalModel) -> dict:
+    """Estimate min-fill factor sizes from scopes only; allocate no dense tables."""
+    n = len(model.locations)
+    domains = {i: len(loc.outcomes) for i, loc in enumerate(model.locations)}
+    domains.update({n + i: 2 for i in range(n)})
+    scopes = [(i,) for i in range(n)]
+    for detector in range(model.detector_count):
+        scope = tuple(i for i, loc in enumerate(model.locations)
+                      if any((outcome.detector_mask >> detector) & 1 for outcome in loc.outcomes))
+        if scope:
+            scopes.append(scope)
+    for i in range(n):
+        carry = n + i
+        previous = None if i == 0 else n + i - 1
+        scopes.append(tuple(sorted((i, carry) if previous is None else (previous, i, carry))))
+    scopes.append((2 * n - 1,))
+    order = _weighted_min_fill(scopes, domains)
+    scopes = list(scopes)
+    induced_width = 0
+    max_entries = 1
+    records = []
+    for variable in order:
+        bucket = [scope for scope in scopes if variable in scope]
+        scopes = [scope for scope in scopes if variable not in scope]
+        union = tuple(sorted({v for scope in bucket for v in scope}))
+        entries = math.prod(domains[v] for v in union)
+        width = len(union) - 1
+        induced_width = max(induced_width, width)
+        max_entries = max(max_entries, entries)
+        records.append({"variable": variable, "induced_width_at_step": width,
+                        "intermediate_factor_entries": entries})
+        reduced = tuple(v for v in union if v != variable)
+        if reduced:
+            scopes.append(reduced)
+    return {"elimination_order": order, "induced_width": induced_width,
+            "max_intermediate_factor_entries": max_entries, "steps": records}
+
+
 def _multiply_bucket(bucket: list[Factor], domains: dict[int, int], stats: Stats) -> Factor:
     union = tuple(sorted({v for f in bucket for v in f.scope}))
     shape = tuple(domains[v] for v in union)
