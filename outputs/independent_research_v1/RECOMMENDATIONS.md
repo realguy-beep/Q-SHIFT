@@ -110,3 +110,12 @@ Revise the X-bias code-design baseline: use X-aligned CSS as the static comparat
 
 
 The fresh d5 factorial confirms the strongest tested X-bias memory choice is CSS-X among these cells. Keep XZZX as a possible Z-memory improvement over CSS-Z under the stated native-gate model, but do not recommend it over aligned CSS for X-biased memory.
+
+
+Workload matters: choose CSS-X for a known X-memory workload. If X- and Z-memory tasks are separately requested with equal weight, this d5 screen's post-hoc average favors XZZX by 34%; that is worth a fresh prospectively weighted replication only if such a workload is operationally relevant. Do not call this arbitrary-state logical-qubit performance.
+
+
+The d5 equal-weight X/Z memory-task tradeoff is now reproduced on an independent development stream: XZZX/CSS=.662. This justifies keeping XZZX for a prospectively specified balanced-basis workload study, while preserving CSS-X as the baseline for known X-memory workloads. Hardware gate equivalence and arbitrary-state performance remain open.
+
+
+The equal-weight X/Z memory-task tradeoff merits one larger finite-size check: d3 favored CSS, d5/d7 favored XZZX increasingly. Continue to label this as separate memory tasks. Use aligned CSS-X for a known X-memory workload. Do not extrapolate the d7 result or drop the gate-equivalence caveat.

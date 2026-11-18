@@ -121,3 +121,9 @@ The d3/d5 native-XCX XZZX gain under X bias is relative to CSS Z-memory. Against
 
 
 Fresh d5 2x2 code/basis evidence: CSS-X 79/500k, CSS-Z 1,848/500k, XZZX-X 604/500k, XZZX-Z 670/500k. Under the tested model XZZX improves on CSS-Z but not aligned CSS-X (7.65x higher XZZX-X rate). This bounds one code-selection claim, not the asymptotic XZZX threshold.
+
+
+A fresh d5 replication found pooled equal-weight X/Z task rate ratio XZZX/CSS=.662 (.616–.710), but XZZX-X/CSS-X=6.18 (4.96–7.78). The tradeoff reproduced on a second independent development stream; still one distance, a synthetic model, and no arbitrary-state logical-channel measurement.
+
+
+The balanced-memory XZZX/CSS rate ratio was 1.18 at d3, about .66 at d5 on two streams, and .279 at d7. This shows strong distance dependence in the sampled simulator family, but aligned CSS-X has very sparse failures at d7 and XZZX uses an unverified native-gate equivalence assumption. It is not a threshold or scaling exponent; d9 is the next discriminating finite-size point.

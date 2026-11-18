@@ -1,0 +1,63 @@
+{
+  "status": "pinned_official_source_retrieval_passed",
+  "retrieval_date_utc": "2026-11-18",
+  "sources": {
+    "stim_cli": {
+      "url": "https://raw.githubusercontent.com/quantumlib/Stim/v1.16.0/doc/usage_command_line.md",
+      "http_status": 200,
+      "sha256": "aa865261850c4bf5e11c5577efecd0078fff661599f4bca24e53a811ee008d95",
+      "etag": "\"c600749eb051cc8720a5716d6b3ec9871ff0aae8fc20afad60566dbd7cb1f531\"",
+      "bytes": 73464,
+      "matches": {
+        "PAULI_CHANNEL_2": "        - PAULI_CHANNEL_1\n        - PAULI_CHANNEL_2\n        - ELSE_CORRELATED_ERROR\n",
+        "attempts to do this": "        In principle some custom Pauli channels can be converted exactly,\n        but Stim does not currently contain logic that attempts to do this.\n\n"
+      }
+    },
+    "stim_dem_format": {
+      "url": "https://raw.githubusercontent.com/quantumlib/Stim/v1.16.0/doc/file_format_dem_detector_error_model.md",
+      "http_status": 200,
+      "sha256": "93cfa56a80a2066d4dc93b4f71f3b2abbda433f73cc153ce5ce687f0be53472e",
+      "etag": "\"fa70db9ee10a8b862a5a5bc91cb13f05ff553bb1f77eb71bfe966220ece7b629\"",
+      "bytes": 27153,
+      "matches": {
+        "independent": "\nA *detector error model* is a list of independent error mechanisms.\nEach error mechanism has a *probability*,\n*symptoms* (the detectors that the error flips),",
+        "correlated errors": null
+      }
+    },
+    "pymatching_readme": {
+      "url": "https://raw.githubusercontent.com/oscarhiggott/PyMatching/v2.4.0/README.md",
+      "http_status": 200,
+      "sha256": "1b61b585c437d062b5cdef04bc076b046b1db835d376490b80ec453e4617df6a",
+      "etag": "\"b06c577613a44fd535f35e6102ad94123ba4593790715cf7aa27f27c265fda85\"",
+      "bytes": 17307,
+      "matches": {
+        "correlation": "\nCorrelated matching has better accuracy than standard (uncorrelated) matching for many decoding problems where hyperedge errors are present. When these hyperedge errors are decomposed into edges (graphlike errors), they amount to correlations between these edges in the matching graph. A common example of such a hyperedge error is a $Y$ error in the surface code.\n\nThe \"two-pass\" correlated matching decoder implemented in pymatching works by running sparse blossom twice. The first pass is a standard (uncorrelated) run of sparse blossom, to predict a set of edges in the matching graph. Correlated matching then assumes these errors (edges) occurred and reweights edges that are correlated with it based on this assumption. Matching is then run for the second time on this reweighted graph.",
+        "enable_correlations": "\nTo decode instead with correlated matching, set `enable_correlations=True` both when configuiing the `pymatching.Matching` object:\n```python\nmatching_corr = pymatching.Matching.from_detector_error_model(model, enable_correlations=True)"
+      }
+    },
+    "qecsim_mps_source": {
+      "url": "https://raw.githubusercontent.com/qecsim/qecsim/1.0b9/src/qecsim/models/planar/_planarmpsdecoder.py",
+      "http_status": 200,
+      "sha256": "720ede49e989756af85643b3aef990291b2a2213cf6ab811cddbd9be17d7ccbe",
+      "etag": "\"28222c2482fc0bca229fb84fd82cdf8490de33aaf7fc9973b7cc9bd4deefefeb\"",
+      "bytes": 19186,
+      "matches": {
+        "chi=None": "\n    * Specifying chi=None gives an exact contract (up to rounding errors) but is exponentially slow in the size of\n      the lattice.\n    * Modes:",
+        "exponentially slow": "\n    * Specifying chi=None gives an exact contract (up to rounding errors) but is exponentially slow in the size of\n      the lattice.\n    * Modes:",
+        "most probable": "      of both contractions.\n    * A sample recovery operation from the most probable coset is returned.\n\n    Notes:"
+      }
+    },
+    "qecsim_local_comparison": {
+      "installed_version": "1.0b9",
+      "local_source_path": "/workspace/qshift-independent-research-v1/.venv/lib/python3.12/site-packages/qecsim/models/planar/_planarmpsdecoder.py",
+      "local_sha256": "720ede49e989756af85643b3aef990291b2a2213cf6ab811cddbd9be17d7ccbe",
+      "tag_source_sha256": "720ede49e989756af85643b3aef990291b2a2213cf6ab811cddbd9be17d7ccbe",
+      "byte_identical": true
+    }
+  },
+  "paper_record_access": {
+    "arxiv_api": "proxy 403",
+    "crossref_api": "proxy 403"
+  },
+  "scope": "official pinned source/docs; verifies implementation claims, not a systematic literature search or novelty claim"
+}

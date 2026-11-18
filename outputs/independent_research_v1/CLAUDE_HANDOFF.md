@@ -136,3 +136,12 @@ For X-biased workloads, the native-XCX XZZX comparison must include CSS with X-m
 
 
 A fresh d5 2x2 development screen passed equal-resource gates (500k per cell): CSS-X 79 errors, CSS-Z 1,848, native XZZX-X 604, XZZX-Z 670. XZZX-X/CSS-X=7.65 (95% conditional interval 6.04–9.79); XZZX-Z/CSS-Z=.363 (.331–.396). Practical takeaway: keep CSS-X as the X-bias baseline; XZZX only improves the mismatched CSS-Z task in this model. Native CX/XCX/CZ noise/duration equivalence is assumed, not measured.
+
+
+For an explicitly equal mix of separate X/Z memory tests, post-hoc pooled failures were 1,274/1,000,000 for XZZX and 1,927/1,000,000 for CSS (rate ratio .661, conditional 95% interval .615–.710). This gives a concrete code-design tradeoff: CSS-X is much better for known X memory; XZZX is more balanced and wins the post-hoc equal-basis mix. The weighting was not predeclared, the streams are simulated, and it is not a full arbitrary-state logical channel.
+
+
+Independent d5 replication (500k/cell) reproduced the equal-weight separate-memory workload result: XZZX/CSS=.662 (95% conditional interval .616–.710). XZZX-X/CSS-X remained 6.18 (4.96–7.78); CSS X/Z=.0498. If a workload needs equally many separate X and Z memories, evaluate XZZX under an explicitly fixed weighting; if the logical basis is known X, use CSS-X as the current strong configuration. These are simulated development findings, not arbitrary-state or device claims.
+
+
+A fresh d3/d7 extension found equal-weight separate X/Z memory XZZX/CSS ratios 1.18 (1.13–1.23) and .279 (.239–.325), respectively; the independently replicated d5 ratio was .66. XZZX-Z/CSS-Z improved from .72 at d3 to .17 at d7, while XZZX-X/CSS-X remained worse (3.78 at d3; 12.57 at d7, with only 7 CSS-X failures). This motivates a d9 finite-size check if useful, but does not support asymptotic extrapolation. Keep CSS-X for known X memory; XZZX may suit a balanced separate-basis workload.

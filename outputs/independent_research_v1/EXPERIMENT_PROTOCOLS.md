@@ -179,3 +179,13 @@ Descriptive reanalysis of existing independent d3/d5/d7/d9 X-biased ratio-10 str
 ## Comparator audit: native-XCX XZZX vs X-aligned CSS
 
 Exploratory analysis of fixed independent d3/d5 development streams; no resampling. The original XZZX comparator was CSS Z-memory. The existing X-aligned CSS streams permit a stronger baseline check. See `basis_matched_xzzx_comparison_results.json`.
+
+
+## Independent d5 XZZX/CSS memory-basis replication
+
+Completed predeclared fresh-seed development replication of the four-cell basis factorial. Protocol, preflight, and results are in `xzzx_basis_factorial_replication_protocol.md`, `xzzx_basis_factorial_replication_preflight.json`, and `xzzx_basis_factorial_replication_results.json`.
+
+
+## d3/d7 distance extension of the XZZX/CSS basis factorial
+
+Completed fresh-seed 2x2 screens at d3 and d7. Fixed protocol: `xzzx_basis_factorial_scale_protocol.md`. One preflight result-serialization bug was preserved in `xzzx_basis_factorial_scale_preflight_failed_attempt.json`; the same fixed-seed preflight then passed before the main run.

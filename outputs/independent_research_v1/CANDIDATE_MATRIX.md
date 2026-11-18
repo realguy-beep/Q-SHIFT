@@ -72,3 +72,6 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 
 
 **Fresh d5 factorial:** CSS-X/Z had 79/1,848 failures; native XZZX-X/Z 604/670 on 500k streams each. XZZX helps against CSS-Z but loses to X-aligned CSS-X by 7.65x. Keep code-design conclusions workload- and basis-specific.
+
+
+**Distance interaction:** in equal-weight separate X/Z memory tasks, XZZX/CSS rate ratio was 1.18 at d3, .66 at d5 on replicated streams, and .279 at d7. The XZZX gain appears at the larger tested distances; keep this finite-size and gate-assumption qualified. For known X memory, CSS-X remained better.

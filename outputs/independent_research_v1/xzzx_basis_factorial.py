@@ -17,8 +17,9 @@ MAIN_SEEDS=(2026114111,2026114112,2026114113,2026114114)
 PREFLIGHT_SHOTS=10000;MAIN_SHOTS=500000;MAX_SECONDS=300
 
 
-def make_circuit(code,basis):
-    c=build(basis,'x_biased',distance=5,rounds=9,bias_ratio=10.,gate_p=.003,measurement_p=.003)
+def make_circuit(code,basis,distance=5,rounds=None):
+    if rounds is None:rounds=2*distance-1
+    c=build(basis,'x_biased',distance=distance,rounds=rounds,bias_ratio=10.,gate_p=.003,measurement_p=.003)
     if code=='xzzx':c,_,_,_=native_transform(c)
     return c
 
@@ -37,8 +38,8 @@ def rr(a,na,b,nb):
             'conditional_exact_95_ci':[float(lo/(1-lo)*nb/na),float(hi/(1-hi)*nb/na)]}
 
 
-def one(code,basis,seed,shots,preflight=False):
-    c=make_circuit(code,basis)
+def one(code,basis,seed,shots,preflight=False,distance=5,rounds=None):
+    c=make_circuit(code,basis,distance,rounds)
     dem=c.detector_error_model(decompose_errors=True,approximate_disjoint_errors=.0018)
     matching=pymatching.Matching.from_detector_error_model(dem,enable_correlations=True)
     clean=stim.Circuit()
@@ -71,9 +72,11 @@ def wilson(k,n):
 
 def main():
     import argparse
-    ap=argparse.ArgumentParser();ap.add_argument('--preflight',action='store_true');a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--preflight',action='store_true');ap.add_argument('--replication',action='store_true');a=ap.parse_args()
     shots=PREFLIGHT_SHOTS if a.preflight else MAIN_SHOTS
-    seeds=PREFLIGHT_SEEDS if a.preflight else MAIN_SEEDS
+    replicate_pre=(2026114201,2026114202,2026114203,2026114204)
+    replicate_main=(2026114211,2026114212,2026114213,2026114214)
+    seeds=(replicate_pre if a.preflight else replicate_main) if a.replication else (PREFLIGHT_SEEDS if a.preflight else MAIN_SEEDS)
     circuits=[make_circuit(*condition) for condition in CONDITIONS]
     counts=[full_resources(c) for c in circuits]
     keys=('qubits','detectors','observables','two_qubit_interactions','one_qubit_noise_targets','ticks','measurement_flip_targets')
@@ -86,7 +89,8 @@ def main():
     elapsed=time.perf_counter()-start
     projection=sum((r['sample_seconds']+r['decode_seconds'])*MAIN_SHOTS/shots for r in rows) if a.preflight else None
     passed=projection is None or projection<=MAX_SECONDS
-    out={'status':('xzzx_basis_factorial_preflight_passed' if passed else 'xzzx_basis_factorial_preflight_stopped') if a.preflight else 'development_xzzx_basis_factorial',
+    label='xzzx_basis_factorial_replication' if a.replication else 'xzzx_basis_factorial'
+    out={'status':(label+'_preflight_passed' if passed else label+'_preflight_stopped') if a.preflight else ('development_xzzx_basis_factorial_replication' if a.replication else 'development_xzzx_basis_factorial'),
          'conditions':rows,'resources_equal':True,'equal_resource_fields':list(keys),
          'shots_per_condition':shots,'projected_main_seconds':projection,'max_main_seconds':MAX_SECONDS,
          'elapsed_seconds':elapsed,'new_source_equivalent_samples':shots*len(rows),
@@ -94,12 +98,19 @@ def main():
          'comparisons':{},'scope':'development-only finite-size code and memory-basis comparison; independent streams'}
     by={(r['code'],r['basis']):r for r in rows}
     if all(r['failures']>0 for r in rows):
+        css_total=sum(by[('css',basis)]['failures'] for basis in ('x','z'))
+        xzzx_total=sum(by[('xzzx',basis)]['failures'] for basis in ('x','z'))
         out['comparisons']={
           'xzzx_x_over_css_x':rr(by[('xzzx','x')]['failures'],shots,by[('css','x')]['failures'],shots),
           'xzzx_z_over_css_z':rr(by[('xzzx','z')]['failures'],shots,by[('css','z')]['failures'],shots),
           'css_x_over_css_z':rr(by[('css','x')]['failures'],shots,by[('css','z')]['failures'],shots),
-          'xzzx_x_over_xzzx_z':rr(by[('xzzx','x')]['failures'],shots,by[('xzzx','z')]['failures'],shots)}
-    target=HERE/('xzzx_basis_factorial_preflight.json' if a.preflight else 'xzzx_basis_factorial_results.json')
+          'xzzx_x_over_xzzx_z':rr(by[('xzzx','x')]['failures'],shots,by[('xzzx','z')]['failures'],shots),
+          'exploratory_equal_weight_memory_basis_mix_xzzx_over_css':rr(xzzx_total,2*shots,css_total,2*shots),
+          'exploratory_best_basis_per_code':{'css':min(by[('css',b)]['ler'] for b in ('x','z')),
+                                             'xzzx':min(by[('xzzx',b)]['ler'] for b in ('x','z')),
+                                             'selection':'post hoc; do not interpret as a predeclared adaptive result'}}
+    suffix='_replication' if a.replication else ''
+    target=HERE/(f'xzzx_basis_factorial{suffix}_preflight.json' if a.preflight else f'xzzx_basis_factorial{suffix}_results.json')
     target.write_text(json.dumps(out,indent=2)+'\n')
     print(json.dumps({'status':out['status'],'projected_main_seconds':projection,'elapsed_seconds':elapsed,'output':str(target)},indent=2))
     return int(a.preflight and not passed)

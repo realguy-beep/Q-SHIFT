@@ -401,3 +401,34 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Resource equality verified across all four cells; independent streams; native gate equivalence remains assumed.
 - Total Q-SHIFT development samples now 52,260,000. No sealed or confirmatory data.
 - Continue with source-verifiable literature and implementation audit; network requests to arXiv and Crossref currently return proxy 403.
+
+
+## Pinned implementation and literature-source audit — 2026-11-18
+
+- Fresh direct retrieval succeeded for Stim v1.16.0 CLI/DEM docs, PyMatching v2.4.0 README, and qecsim 1.0b9 MPS source; each content hash is saved in `implementation_source_audit.json`. Installed qecsim source matched its pinned tag byte-for-byte.
+- Verified implementation distinctions: Stim DEM independent-mechanism semantics and current inability to exactly convert every custom Pauli channel; PyMatching correlated mode is two-pass sparse blossom; qecsim exact chi=None is exponentially slow and finite chi returns a most-probable coset approximation.
+- Direct arXiv and Crossref API requests returned proxy 403; article-level novelty review remains limited to local source-reviewed inventories. No samples generated.
+- Current research checkpoint: branch `codex/qshift-independent-research-v1`, prior commit `73721c5`; active next question is whether any already-researched candidate can beat the basis-aligned CSS operating point without assuming native gate equivalence or oracle noise knowledge.
+
+
+- Secondary post-hoc summary of the factorial: equal-weight separate X/Z memory average LER .001274 XZZX vs .001927 CSS (RR .661, 95% conditional interval .615–.710). XZZX is a possible balanced-workload tradeoff; this weighting was not predeclared and is not arbitrary-state performance.
+- Deterministic same-seed reproduction of the factorial completed in 15.54s; it generated no new unique samples. The original first run took 17.89s.
+
+
+## Independent XZZX/CSS factorial replication — 2026-11-18
+
+- Preflight passed; projected 18.54s, measured 18.19s for the 2,000,000-shot main run. Preflight added 40k source-equivalent samples.
+- Fresh counts (500k/cell): CSS-X/Z 93/1,866; XZZX-X/Z 575/721.
+- Primary equal-weight X/Z separate-memory rate ratio XZZX/CSS=.662 (95% conditional interval .616–.710), replicating the discovery stream. XZZX-X/CSS-X=6.18 (.4.96–7.78); CSS X/Z=.0498.
+- Total unique Q-SHIFT development samples: 54,300,000. No confirmatory or sealed data accessed.
+- Pinned official implementation hashes and paper-API access limits are recorded in `implementation_source_audit.json`.
+- Active next step: assess literature and decide whether the balanced-workload XZZX result merits a third finite distance; do not claim arbitrary-state performance from separate basis tests.
+
+
+## d3/d7 XZZX/CSS basis factorial checkpoint — 2026-11-18
+
+- The first preflight completed all 8 circuits but failed while summarizing a zero-failure d7 CSS-X cell (undefined rate ratio). Preserved the failure record; changed preflight to omit comparisons, reran the identical seeds, and all gates passed. Unique preflight samples counted once: 80,000.
+- Corrected preflight projected 46.25s; main completed in 66.95s. Four cells x 500k at d3 and d7; 4,000,000 unique main shots.
+- Equal-weight X/Z task RR XZZX/CSS: 1.179 at d3 (CI 1.133–1.228), .279 at d7 (.239–.325); d5 discovery/replication were .661/.662.
+- Total unique Q-SHIFT development samples now 58,380,000. No confirmatory/sealed data.
+- Next: test d9 using an unchanged equal-weight protocol, because the d3/d5/d7 workload interaction is substantial and still far from an asymptotic claim.

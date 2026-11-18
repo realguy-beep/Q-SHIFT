@@ -237,3 +237,35 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xz
 ```
 
 Protocol, seeds, gates, and resource assumptions: `xzzx_basis_factorial_protocol.md`.
+
+
+### Pinned source audit
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/implementation_source_audit.py
+```
+
+The script fetches only public, version-pinned GitHub raw source/docs and records hashes; it also compares installed qecsim MPS source to its tag. Paper-record APIs remain proxy-blocked.
+
+
+The factorial result also includes a post-hoc equal-weight mix summary; this is computed from the same fixed samples and adds no shots. Treat the mix as workload-specific descriptive analysis.
+
+
+### Independent d5 XZZX/CSS factorial replication
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_basis_factorial.py --replication --preflight
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_basis_factorial.py --replication
+```
+
+Fixed fresh seeds and endpoint definitions are in `xzzx_basis_factorial_replication_protocol.md`.
+
+
+### Fresh d3/d7 XZZX/CSS basis-factorial extension
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_basis_factorial_scale.py --preflight
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_basis_factorial_scale.py
+```
+
+The first failed preflight reporting attempt is retained separately; the successful identical-seed rerun generated the same unique preflight streams.

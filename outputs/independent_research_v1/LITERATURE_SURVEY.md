@@ -44,3 +44,13 @@ For a target LER p and zero observed failures in N IID trials, the one-sided exa
 4. New 2026 literature sources were described in local reviews, but current network restrictions prevented direct retrieval. No novelty claim should be based on this partial retrieval.
 
 **Tensor-network decoding update.** The installed qecsim 1.0b9 `PlanarMPSDecoder` source describes the decoder as contracting stabilizer coset probabilities and cites Bravyi, Suchara, and Vargo's exact/approximate surface-code maximum-likelihood work (arXiv:1405.4883) and later tensor-network decoder studies (arXiv:1708.08474, arXiv:1812.08186). Its documentation explicitly says `chi=None` is exact up to rounding but exponentially slow in lattice size, while finite χ truncates each contraction and returns the most probable logical coset. This confirms bounded-χ planar MPS is established prior art. This execution could inspect qecsim's pinned local source but could not independently retrieve the cited papers because arXiv/DOI access was blocked; no novelty claim is made. The new χ=16 experiment is a model-specific feasibility result, not a novel decoding algorithm.
+
+
+## Pinned implementation-source audit (2026-11-18)
+
+The official Stim v1.16.0 command-line guide and DEM format, PyMatching v2.4.0 README, and qecsim 1.0b9 planar MPS implementation were fetched from tag-pinned GitHub raw URLs and SHA-256 recorded in `implementation_source_audit.json`. The installed qecsim MPS file is byte-identical to the official 1.0b9 tag source. Stim documents that a DEM is a list of independent mechanisms and says it does not currently attempt exact conversion of all custom Pauli channels. PyMatching describes correlated matching as a two-pass sparse-blossom method, which is a strong practical baseline but does not itself implement full categorical ML. qecsim documents `chi=None` as exact up to rounding error but exponentially slow, and finite-chi output as a most-probable coset estimate.
+
+These checks verify pinned implementation behavior; they do not replace paper-level literature review. Direct arXiv API and Crossref requests still fail through the environment proxy (HTTP 403), so the literature assessment remains bounded by official documentation and previously reviewed local publisher/source inventories. No novelty claim is made from this audit.
+
+
+The current pinned source audit confirms the Stim, PyMatching, and qecsim implementation facts above; exact retrieved content hashes and excerpts are in `implementation_source_audit.json`. Public paper metadata APIs remain proxy-blocked even though tag-pinned GitHub source hosts work.

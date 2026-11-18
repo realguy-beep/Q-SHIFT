@@ -314,3 +314,14 @@ The XZZX generator explicitly builds both CSS and XZZX as Z-memory. Reused X-ali
 ## XZZX by memory-basis factorial — 2026-11-18
 
 A fresh d5 2x2 screen found that native XZZX lowered LER versus mismatched CSS-Z (XZZX-Z/CSS-Z .363) but was worse than CSS-X in either XZZX memory basis (XZZX-X/CSS-X 7.65). The CSS X/Z ratio was .0427. Equal counted resources were verified; result remains conditional on identical CX/XCX/CZ physical errors and durations.
+
+
+A post-hoc equal-weight X/Z memory-task average in the d5 factorial favors XZZX by 33.9% (rate ratio .661, interval .615–.710), while CSS-X is the strongest basis-specific cell. This might be useful only for a workload needing both separate memory tests; it is not arbitrary-state performance and requires prospective weighting before replication.
+
+
+## Independent replication of basis-mix tradeoff — 2026-11-18
+
+Fresh d5 streams replicated the equal-weight separate X/Z task average in favor of XZZX (.662 rate ratio), while CSS-X remained much stronger for known X-memory tasks. This supports a conditional code-selection tradeoff, not an arbitrary logical-qubit or hardware claim. A third distance should be pursued only if the balanced-basis workload is a real research target and can be protocolized without fitting to d5.
+
+
+The XZZX/CSS equal-weight separate-memory tradeoff is distance-sensitive in new independent screens: CSS led at d3, XZZX led at d5/d7, with the ratio falling to .279 at d7. XZZX consistently lost to aligned CSS-X for the known X-memory task. This is not an arbitrary-state or threshold claim. Continue to d9 as a bounded falsification/scaling challenge.

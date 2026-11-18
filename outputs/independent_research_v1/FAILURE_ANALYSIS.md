@@ -159,3 +159,12 @@ The XZZX X-bias result used CSS Z-memory as its reference. Same-resource X-align
 
 
 The fresh d5 factorial clarifies the code/basis interaction. XZZX-X and XZZX-Z were similar, but both had about eight times the CSS-X failure rate. XZZX-Z still beat CSS-Z by about 2.8x. Thus the initial XZZX gain reflects the choice of comparator memory basis; it does not outperform the best known-bias CSS configuration. The 2x2 comparison is one finite-size simulator screen under an unverified native-gate assumption.
+
+
+An equal-weight post-hoc average across X- and Z-memory tasks favors XZZX (.001274 vs CSS .001927), even though CSS-X is the best individual cell. This is a workload weighting tradeoff, not arbitrary-state performance. Do not generalize it without a workload definition and an independent confirmatory design.
+
+
+The independent d5 replication confirms the equal-weight X/Z task average but also confirms that CSS-X is much better than either XZZX basis for a known X-memory task. Thus the code-selection rule is workload-specific: XZZX is a candidate for balanced separate basis tasks, while CSS-X remains the selected baseline for X memory under known X bias. The equal weighting and simulator noise do not establish arbitrary-state or hardware performance.
+
+
+Across d3/d5/d7, the XZZX/CSS ratio for an equal-weight separate X/Z task mix moved from 1.18 at d3 to about .66 at d5 and .279 at d7. XZZX improved increasingly over CSS-Z, but lost badly to CSS-X; its d7 CSS-X ratio is imprecise because CSS-X had only 7 failures. These finite-size tradeoffs do not justify extrapolation. The d3/d7 preflight first encountered a zero-denominator reporting bug; it was fixed and the unchanged seed stream passed all actual circuit gates before main sampling.
