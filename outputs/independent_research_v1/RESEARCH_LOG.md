@@ -459,3 +459,10 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - The selector is supervised per condition on an independent training stream and uses observable labels only during offline fit. No validation labels enter model selection.
 - Total new unique samples for both train/validation experiments: 24.12M; cumulative 118,608,200. No confirmatory/sealed data.
 - Active challenge: apply the frozen nominal model and nominal matching graphs to fresh samples with measurement p doubled to .006. No shifted-data retraining.
+
+
+## Frozen learned selector withstands one measurement-composition shift — 2026-11-18
+
+- The per-condition logistic selector trained at measurement p=.003 was frozen and evaluated at measurement p=.006 on six d3 conditions. On the first fresh stream, macro LER fell 13.03% at 1.351x full inference cost; a second independent stream gave 13.11% at 1.349x. Paired macro difference CIs excluded zero on both streams and all six per-cell intervals favored the selector.
+- This tests one fixed, known-profile simulator shift. It is not broad distributional robustness, unknown-profile adaptation, hardware evidence, or a novelty claim. The shifted-profile matcher is only a diagnostic.
+- Added 6.12M unique Q-SHIFT samples; cumulative development count 124,728,200. No confirmatory/sealed data. Next: assess distance transfer only through a bounded geometry/feature preflight, with the selector's detector feature dimensions handled prospectively; do not extrapolate d3 coefficients blindly.

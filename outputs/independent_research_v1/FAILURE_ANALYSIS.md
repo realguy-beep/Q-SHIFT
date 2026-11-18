@@ -256,3 +256,8 @@ Fresh seeds reproduced about 13% macro LER reduction with the fixed syndrome-onl
 ## Fast learned selector: positive but model-specific
 
 A low-cost supervised selector trained on the matching-disagreement subset independently reduced macro LER by 17.2% and 16.2% in separate held-out train/validation splits, with 1.35x/1.36x total inference cost. It used true observables only as offline training labels. Per-condition gains were positive in all cells, but asymmetric (about 4% to 36%) and noise profiles were fixed and known. Same-stream BP+LSD comparison favored logistic in five of six cells at much lower cost. Main unresolved risk is distribution shift: measurement-noise mismatch, changing bias, and distance transfer remain untested. Do not interpret as an online noise-adaptation result or hardware decoder.
+
+
+### Frozen selector shift challenge: specific positive result, broader risk remains
+
+The nominally trained logistic policy did not fail under the prespecified measurement-flip increase from .003 to .006: it reduced macro LER by 13.0% and 13.1% on two independent streams at ~1.35x total inference cost, with all six per-condition paired intervals favoring it. This narrows the model-mismatch concern for that one shift. It does not establish robustness to bias changes, gate-noise shifts, simultaneous changes, unmodeled correlations, distance transfer, or hardware noise. Preserve the two streams as development evidence; do not claim general domain adaptation. Details: `../independent_research_v2/fast_flagged_logistic_measurement_shift_report.md`.

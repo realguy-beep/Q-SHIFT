@@ -609,3 +609,12 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Training labels use simulator observables offline; inference uses syndrome and matching outputs only. Scope is known fixed d3 simulated profiles; no drift/model shift or device result yet.
 - Added 24,120,000 unique train/validation/preflight samples; cumulative unique Q-SHIFT development samples: 118,608,200. Same-stream comparator reanalysis added zero. No confirmatory/sealed data.
 - Next: frozen measurement-noise composition-shift challenge using the trained nominal models; no retraining on shifted validation data.
+
+
+## Fast flagged logistic selector — doubled measurement-noise shift and fresh-seed replication — 2026-11-18
+
+- Applied the nominal independent-replication coefficients without retraining to six d3 conditions with measurement p=.006 (training gate p=.003), 500k main plus 10k preflight per condition. First stream macro LER .006657→.005789, 13.03% reduction; paired macro delta (selector minus nominal correlated matcher) -.000868, 95% CI [-.000915,-.000820]. Full inference cost 1.351x; all six cells improved and the frozen gate passed.
+- A wholly fresh stream with identical coefficients and design replicated the result: .006649→.005778, 13.11% reduction; paired macro delta -.000872, 95% CI [-.000919,-.000824], all six paired intervals below zero, and 1.349x cost. No shifted samples were used to fit or calibrate the model.
+- The matcher built with the actual shifted profile is reported only as a profile-matched diagnostic, not an optimality bound. The result is specific to this twofold measurement-flip shift and six known d3 simulator conditions; other shifts, hardware, and distance transfer remain untested.
+- Added 6,120,000 unique Q-SHIFT development samples (two streams, each 60k preflight +3M main); cumulative unique Q-SHIFT development samples: 124,728,200. No confirmatory or sealed data accessed.
+- Reproduction and detailed condition results: `outputs/independent_research_v2/fast_flagged_logistic_measurement_shift_report.md`.

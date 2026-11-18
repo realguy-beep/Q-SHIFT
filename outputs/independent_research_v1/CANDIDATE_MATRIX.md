@@ -125,3 +125,8 @@ Correlation-vs-ordinary matching disagreement flagged .261% of fresh d3 samples.
 ### Fast disagreement-subset supervised selector (independent research v2)
 
 A per-condition L2 logistic model trained on flagged detector syndromes reduced held-out macro d3 LER by 17.2% initially and 16.2% in a fresh train/validation replication, at 1.35x/1.36x inference cost. Same-stream BP+LSD was weaker on five of six replication cells and ~8.3x slower. This is supervised selective decoding, an established family; it is not novel. Main remaining gap is noise-composition robustness; model was trained per known profile and uses simulator labels offline.
+
+
+### Fast disagreement-subset selector: one frozen measurement-shift replication passed
+
+The nominal selector was applied without retraining at measurement p=.006 after training at p=.003. Two independent d3 six-condition streams gave 13.03% and 13.11% macro LER reduction at 1.35x cost; all per-cell paired intervals favored the selector on both streams. This upgrades the lead beyond nominal-profile evidence for this particular known shift. It remains a per-condition supervised simulator method, with bias/gate shifts, other distances, and hardware untested. Do not generalize this one-dimensional shift to arbitrary noise robustness. Detailed report: `../independent_research_v2/fast_flagged_logistic_measurement_shift_report.md`.

@@ -60,3 +60,8 @@ The correlation-disagreement selective escalation experiment combines establishe
 
 
 The flagged-subset logistic selector is an established supervised meta-decoder/selective-decoding pattern and is not claimed as a novel algorithm. Q-SHIFT-specific evidence is a replicated d3 held-out LER gain at modest inference overhead, against correlation-enabled matching and a stronger BP+LSD escalation comparator. Robustness, distance scaling, and hardware transfer are open.
+
+
+### Measurement-shift result does not change novelty assessment
+
+The learned disagreement-subset selector has now passed one prespecified twofold measurement-flip shift on two fresh streams. This strengthens its development evidence but does not make the method novel: supervised selective/meta-decoding remains an established approach, and the finding is limited to six fixed d3 simulator conditions and one shift axis. Novelty would require a distinct algorithmic contribution and comparison beyond this bounded robustness result.

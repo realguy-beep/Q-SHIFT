@@ -232,3 +232,8 @@ Two fresh d3 streams show 13%–14% macro LER reduction when the fixed syndrome-
 ### Replicated fast learned selector lead
 
 A per-condition L2 logistic selector trained only on matching-disagreement syndromes reduced macro d3 LER by 17.2% on the first held-out split and 16.2% on a fresh train/validation replication. Total inference cost was 1.35x/1.36x correlation-enabled PyMatching, including the ordinary-matching pass to form the flag. It used detector bits and two matcher outputs; true observables were offline training labels only. On the replication validation stream it beat flagged BP+LSD on five of six cells while running 6x faster (1.36x vs 8.28x baseline). This is the strongest current decoder lead, but known-profile simulator evidence only. Measurement-noise mismatch robustness is the immediate pending challenge; see `outputs/independent_research_v2/fast_flagged_logistic_replication_report.md`.
+
+
+### Measurement-shift robustness update — 2026-11-18
+
+The frozen per-condition logistic selector, trained at measurement p=.003, passed the same six-condition d3 gate at p=.006 on two independent streams: macro reductions 13.03% and 13.11%, full inference costs 1.351x and 1.349x, all six per-cell paired intervals favoring the candidate. This supports only the tested twofold measurement-flip shift in simulation. It is not broad domain robustness or hardware evidence. Next extension should begin with a bounded distance-transfer geometry/runtime preflight; do not assume feature coefficients transfer. Reproduction and paired results: `../independent_research_v2/fast_flagged_logistic_measurement_shift_report.md`.

@@ -412,3 +412,8 @@ Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_
 ### Fast flagged logistic selector and independent replication
 
 Initial held-out screen: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic.py`. Fresh independent train/validation split plus same-stream BP+LSD comparator: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_replication.py`. The learned models train on simulator logical labels only for the flagged training examples; each validation stream is separate. Outputs preserve coefficient vectors, fit status, flags, paired metrics, and full inference time.
+
+
+### Frozen logistic selector measurement-shift challenge and replication
+
+Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_measurement_shift.py` and then `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_measurement_shift_replication.py`. Both use the fixed nominal replication coefficients with measurement p=.006, no retraining, 10k preflight and 500k main samples per condition, and separate seed streams/results. The protocols and consolidated analysis are `fast_flagged_logistic_measurement_shift_protocol.md`, `fast_flagged_logistic_measurement_shift_replication_protocol.md`, and `fast_flagged_logistic_measurement_shift_report.md` in `outputs/independent_research_v2/`.

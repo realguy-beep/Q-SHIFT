@@ -194,3 +194,8 @@ Two independent streams show 13%–14% macro LER reduction when disagreements be
 ## Replicated fast disagreement-subset selector
 
 This is the strongest current low-cost decoder lead: fixed correlated/ordinary matching disagreement flags under 0.6% of samples; a per-condition L2 logistic model trained on those flagged detector syndromes lowered macro LER 16%–17% on two independent held-out streams at 1.35x–1.36x decode time. It beats the same-stream BP+LSD escalator on five of six cells while avoiding its ~8.3x cost. Advance only to a predeclared model-shift robustness challenge and then distance transfer if robust. It is established supervised meta-decoding methodology, not a novelty claim, and no confirmatory evaluation is authorized.
+
+
+### Fast learned selector after measurement-shift replication
+
+Retain as the strongest current low-cost decoder development lead. Two independent fresh streams show the frozen nominal selector continues to improve macro LER by ~13% when measurement p doubles from .003 to .006, at ~1.35x inference cost. This supports a narrow robustness statement for the tested six d3 simulator conditions. The next useful extension is a prospective distance-transfer feasibility screen that checks feature/model geometry and runtime before sampling; do not assume d3 coefficients transfer, and do not claim broad robustness or deployment readiness. No confirmatory evaluation is authorized. See `../independent_research_v2/fast_flagged_logistic_measurement_shift_report.md`.
