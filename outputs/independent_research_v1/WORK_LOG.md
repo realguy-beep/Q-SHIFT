@@ -187,3 +187,10 @@
 - This demonstrates a sharp scaling break from the single-layer pass and stops this dense factorization at one layer. It is not a lower bound for tensor contraction or other exact representations. No stochastic shots generated.
 - Current branch before this checkpoint: `codex/qshift-independent-research-v1`, commit `c0acddd`.
 - Next: return to another research family; consider a resource-matched d3 round-count/code design screen or circuit-compatible tensor decoder audit rather than more dense VE ordering work.
+
+## Distance-3 syndrome-round resource frontier — 2026-11-18
+
+- Continued in the isolated branch `codex/qshift-independent-research-v1` from commit `37e0800`. Tested 3/5/7/9 extraction rounds at d3, p=.003, bias10, across both profiles and memory bases. The initial source-builder preflight stopped on a hard-coded 5-round detector-count assertion before samples; the documented scaled Stim builder fixed this, and its 5-round circuits matched all four source circuits byte-for-byte.
+- Preflight passed and the 3.2M-shot main screen completed in 3.6s. Per-attempt LER increased monotonically with rounds in all four profile/basis cells. Pair-channel opportunities were 72/120/168/216 for rounds 3/5/7/9; each round count was resource-matched across cells. Cumulative unique Q-SHIFT development samples: 35,791,400 including the 1,600-shot preflight. No confirmatory data accessed.
+- Interpretation is limited: fewer rounds shorten the memory duration, so the 3-round lower per-attempt LER is not an equal-time gain. Exact intervals, cell results, and reproduction command are recorded in the round-count artifacts and required reports.
+- Next hypothesis: quantify the resource frontier under an explicitly matched elapsed-time model. First inspect whether source circuit timing/noise semantics support a defensible idle-padding control; do not append ad hoc idle noise or claim duration matching unless every added interval has a defined physical noise model. If the source cannot justify that model, move to a separate bounded research family.

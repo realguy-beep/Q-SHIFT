@@ -32,6 +32,10 @@ The first attempt to extract detector effects from a bounded Phase 2B layer used
 
 The next two adjacent final-round channel layers were checked without inference-table allocation. Weighted min-fill predicted a 17.2-billion-entry factor. Seven alternative orderings were no better (the best was tied; natural/reverse/interleaved orders were larger). This exceeds the fixed 1,000,000-entry cap by over four orders of magnitude, so dense exact elimination stopped before inference. The one-layer result should not be extrapolated to temporal scaling. This is a limitation of the tested dense factorization/orderings, not a lower bound against tensor networks, custom finite-state contraction, or approximate inference.
 
+## Round-count screen builder repair
+
+The first round-count preflight called the source `noise_model.build_circuit` at rounds=3; that helper has an assertion for the standard five-round detector count and stopped before sampling. The preflight then used the existing scaled Stim builder from `code_distance_scaling.py`, which replaces Stim's depolarizing instructions with the source X/Z Pauli-channel probabilities and was byte-identical to the source builder at rounds=5 for all four profile/basis cells. No data from the failed call were generated. The resulting comparison remains per-attempt with different physical memory durations; it cannot be interpreted as a fixed-time optimum.
+
 ## Thresholded DEM sensitivity route
 
 The official Stim CLI permits a maximum probability threshold for approximating disjoint errors. A fixed threshold of 0.001 cannot convert any of the biased conditions because one two-qubit Pauli-pair event has probability 0.00178571. Thresholds 0.0018, 0.003, and 1.0 all convert, but produce identical DEM and matching graph hashes within every condition. This threshold family therefore provides no alternate matching model at the tested probabilities. Changing the gate probabilities or threshold after observing decoder outcomes would be a different study and is not supported by this static check.

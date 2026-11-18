@@ -83,3 +83,5 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the six-location layer width preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_phase2b_six_location_preflight.py`, then the all-syndrome exact XOR-convolution/VE comparison with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_phase2b_six_location.py`. The second run takes about 95 seconds here; neither generates stochastic circuit shots.
 
 - Reproduce the two-layer scope-only ordering audit with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_phase2b_two_layer_preflight.py`. It allocates no inference tables; all eight tested orders exceeded the one-million-entry cap.
+
+- Reproduce the distance-3 round-count frontier preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/round_count_frontier.py --preflight`, then the 200,000-shot-per-cell screen with the same command without `--preflight`.

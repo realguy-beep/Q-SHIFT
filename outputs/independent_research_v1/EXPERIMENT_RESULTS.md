@@ -162,6 +162,14 @@ Expanded to all six target pairs in that same final-round channel instruction on
 
 A width-only preflight mapped the final two adjacent `PAULI_CHANNEL_2` layers in that same circuit (12 locations, each 16 states; all other faults identity). It touches 10 detectors. The fixed weighted-min-fill order predicts width9 and a 17,179,869,184-entry intermediate. Seven alternate scope-only orders (weighted min-product, unweighted min-fill, min-degree, natural, reverse, and two carry/location interleavings) were all worse or tied; the best remains 17.2 billion entries. No dense inference table was allocated. This stops the current dense variable-elimination approach at one layer under the one-million cap. It does not rule out specialized tensor contraction or methods that exploit further algebraic structure. Full ordering diagnostics are in `categorical_phase2b_two_layer_preflight.json`.
 
+## Distance-3 syndrome-round resource frontier
+
+Compared 3, 5, 7, and 9 extraction rounds at fixed d=3, gate/measurement p=.003, 10:1 bias, both X/Z profiles and memory bases. Each cell used 200,000 new circuit shots with correlation-enabled PyMatching built from its matching approximate DEM; all basis/profile resources matched within each round count. The source five-round builder and the scaled Stim builder were byte-identical for all four round-5 cells. Two-qubit channel-pair opportunities were 72/120/168/216 at 3/5/7/9 rounds (26 qubits throughout).
+
+LER per attempt rose monotonically with rounds in all four profile/basis cells: X-memory under X bias .000915/.001415/.001785/.002050; Z-memory under X bias .004225/.007700/.010845/.015115; X-memory under Z bias .005060/.008300/.011480/.014375; Z-memory under Z bias .000775/.001505/.002100/.002865. Compared with the five-round standard, the 3-round rate ratios ranged 0.515–0.647, the 7-round ratios 1.26–1.41, and the 9-round ratios 1.45–1.96; the corresponding exact conditional intervals are in `round_count_frontier_results.json`.
+
+This is a per-attempt comparison with different storage durations. Three rounds mean a shorter memory job, so the lower LER cannot be called an improvement at equal elapsed time. It also used 40% fewer two-qubit channel pairs than five rounds, while 7/9 rounds used 40%/80% more. The results show this simulator's finite-size resource/error tradeoff and do not establish an optimum for a fixed-duration workload, an asymptotic law, or a decoder gain.
+
 ## Checkerboard XZZX circuit co-design screen
 
 Applied a fixed local-H transform to the checkerboard data qubits of the CSS rotated-memory circuit, converting resets/measurements and conjugating the CX schedule exactly. CNOT conjugates requiring H-CX-H received the same one-qubit Pauli noise after each added H. Qubit, detector, round, and two-qubit-pair counts matched; single-qubit H/noise targets increased from 40 to 100 at d=3 and from 216 to 576 at d=5 (150% and 167% overhead).

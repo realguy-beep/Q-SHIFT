@@ -127,3 +127,10 @@
 - Scope-only mapping of the last two adjacent channel instructions built 12 native 16-state locations over 10 touched detectors. Weighted min-fill predicted width9 and max table 17,179,869,184 entries.
 - Seven alternate orderings (weighted min-product, min-fill, min-degree, natural/reverse, and two location/carry interleavings) were tied or worse; best remained 17.2B. The 1M-entry cap failed before inference or any dense allocation. This stops the current dense VE route at one isolated layer; it does not bound specialized tensor contractions.
 - No stochastic circuit samples generated. Next: move to another family rather than continue order tuning.
+
+## Checkpoint — distance-3 syndrome-round resource frontier (2026-11-18)
+
+- Compared 3/5/7/9 extraction rounds at d3, p=.003, 10:1 bias, across both profiles and X/Z memory bases. The first preflight exposed a hard-coded 5-round detector-count assertion in the source helper and stopped before sampling. The scaled Stim builder was used after inspection; all four 5-round circuits were byte-identical to the source versions.
+- The corrected preflight passed; 3.2M main circuit shots completed. Per-attempt LER rose monotonically with round count in every cell, while two-qubit channel opportunities rose 72→120→168→216. Source five-round configuration remains one point on this fixed-distance resource frontier; this does not imply fewer rounds improve equal-duration storage because duration shrinks with round count.
+- Full preflight/results/protocol, code, and report references are saved under `outputs/independent_research_v1/round_count_frontier*`. Cumulative Q-SHIFT development shots now 35,791,400; no confirmatory data accessed.
+- Next: examine circuit time and idle-noise semantics before defining any equal-duration comparison. If the source lacks an evidence-backed schedule/noise model, reject this comparison design and choose another question rather than inventing padding semantics.
