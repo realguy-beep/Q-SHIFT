@@ -1355,5 +1355,118 @@
     "elapsed_seconds": 3.0447601710002345,
     "stochastic_circuit_shots": 400000,
     "scope": "fixed known-profile basis comparison; no adaptive inference or threshold claim"
+  },
+  "tensor_mps_chi16": {
+    "status": "development_feasibility",
+    "qecsim_version": "1.0b9",
+    "python": "3.12",
+    "mps_chi": 16,
+    "mps_mode": "c",
+    "shots_per_distance": 5000,
+    "distance_results": [
+      {
+        "distance": 3,
+        "code_shape": [
+          13,
+          1,
+          3
+        ],
+        "error_model": "IID depolarizing code-capacity noise, P(X)=P(Y)=P(Z)=p/3",
+        "p": 0.05,
+        "shots": 5000,
+        "seed": 2026111311,
+        "mps_chi": 16,
+        "mps_mode": "c",
+        "failures": {
+          "mwpm": 206,
+          "mps_chi16": 123
+        },
+        "ler": {
+          "mwpm": 0.0412,
+          "mps_chi16": 0.0246
+        },
+        "wilson_95": {
+          "mwpm": [
+            0.03603404693250978,
+            0.047070396372274656
+          ],
+          "mps_chi16": [
+            0.02065752018768066,
+            0.02927241082167966
+          ]
+        },
+        "paired_mps_minus_mwpm_ler": -0.0166,
+        "paired_normal_95": [
+          -0.020629992977142565,
+          -0.012570007022857436
+        ],
+        "mwpm_only_failures": 95,
+        "mps_only_failures": 12,
+        "discordant_shots": 107,
+        "mcnemar_two_sided_p": 3.4854173062242376e-17,
+        "decode_seconds": {
+          "mwpm": 0.9054557509753067,
+          "mps_chi16": 4.9399466649756505
+        },
+        "seconds_per_decode": {
+          "mwpm": 0.00018109115019506134,
+          "mps_chi16": 0.00098798933299513
+        },
+        "max_rss_kib": 115008
+      },
+      {
+        "distance": 5,
+        "code_shape": [
+          41,
+          1,
+          5
+        ],
+        "error_model": "IID depolarizing code-capacity noise, P(X)=P(Y)=P(Z)=p/3",
+        "p": 0.05,
+        "shots": 5000,
+        "seed": 2026111312,
+        "mps_chi": 16,
+        "mps_mode": "c",
+        "failures": {
+          "mwpm": 92,
+          "mps_chi16": 30
+        },
+        "ler": {
+          "mwpm": 0.0184,
+          "mps_chi16": 0.006
+        },
+        "wilson_95": {
+          "mwpm": [
+            0.01502773389063461,
+            0.022511716622844416
+          ],
+          "mps_chi16": [
+            0.004206136160498105,
+            0.008552353361218335
+          ]
+        },
+        "paired_mps_minus_mwpm_ler": -0.0124,
+        "paired_normal_95": [
+          -0.016062373291730613,
+          -0.008737626708269386
+        ],
+        "mwpm_only_failures": 75,
+        "mps_only_failures": 13,
+        "discordant_shots": 88,
+        "mcnemar_two_sided_p": 9.326266045667502e-12,
+        "decode_seconds": {
+          "mwpm": 2.537490274983611,
+          "mps_chi16": 68.70670531602082
+        },
+        "seconds_per_decode": {
+          "mwpm": 0.0005074980549967222,
+          "mps_chi16": 0.013741341063204163
+        },
+        "max_rss_kib": 118636
+      }
+    ],
+    "elapsed_seconds": 80.37809856500007,
+    "stochastic_qshift_circuit_shots": 0,
+    "scope": "ideal-syndrome code-capacity depolarizing model; not Q-SHIFT circuit-level validation"
   }
 }

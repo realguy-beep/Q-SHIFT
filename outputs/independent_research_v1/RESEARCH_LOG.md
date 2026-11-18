@@ -44,3 +44,10 @@
 - Extended known-profile memory-basis alignment to d=5/9 rounds under the two biased regimes. Matched resource circuits (64 qubits/216 detectors) showed 36×–45× lower observed LER for the aligned basis, with six aligned failures per 50k cell. This supports the d3 direction but is low precision in absolute terms and is not a threshold estimate.
 
 - Mapped the static known-bias memory-basis effect at 2:1 and 5:1 profiles using 50k exact source-circuit shots per cell. Alignment already reduced LER at 2:1 and the reduction grew at 5:1; this gives a bounded baseline for known-profile configuration, not an adaptive detector.
+
+## Checkpoint — fixed-bond MPS screen — 2026-11-18
+
+- Branch/worktree remain `codex/qshift-independent-research-v1` / `/workspace/qshift-independent-research-v1`. Current pending research files include `tensor_mps_truncated.py`, its preflight and full result JSON, and report updates. No publication or merge performed.
+- Completed fixed chi=16 qecsim MPS vs qecsim MWPM on 5,000 paired ideal-syndrome IID depolarizing samples at p=.05 for d=3,5. MPS recorded 123 vs 206 logical failures at d3 and 30 vs 92 at d5; all recoveries valid. McNemar p values 3.49e−17 and 9.33e−12.
+- Result supports a model-specific code-capacity advantage with significant latency cost (13.74 ms/sample at d5 vs 0.507 ms for Python MWPM). It is not Q-SHIFT circuit-level evidence, a threshold estimate, or a scaling law.
+- Earlier candidate findings and limitations are retained. Next: establish circuit compatibility and a strong circuit-level baseline before further MPS work; if infeasible, prioritize another distinct candidate. Reproduce with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/tensor_mps_truncated.py` from the worktree.

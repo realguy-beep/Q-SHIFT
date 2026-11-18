@@ -92,3 +92,10 @@
 - Added a small, theory-motivated known-profile comparison at bias ratios 2 and 5, between previously sampled ratios 1 and 10. Same distance-3/5-round circuit and 0.003 gate/measurement rates; X and Z memory resource counts matched.
 - 50,000 fresh exact-circuit shots per condition. At ratio 2, aligned/mismatched LER ratios were 0.736 (95% CI .613–.876) under X bias and 0.646 (.538–.768) under Z bias. At ratio 5, ratios were 0.325 (.257–.403) and 0.239 (.188–.298). Directional benefit is visible by 2:1 and grows in these sampled ratios. No exact crossover interpolation is justified.
 - New circuit samples: 401,600 including preflight; cumulative Phase2B development shots 2,914,400. No confirmatory/sealed data accessed.
+
+## Fixed-bond MPS follow-up checkpoint — 2026-11-18 15:42 UTC
+
+- Continued from the untruncated-MPS runtime stop with a separate fixed-chi=16 qecsim protocol, fresh predeclared seeds, and 100-shot preflight. Worktree `/workspace/qshift-independent-research-v1`, branch `codex/qshift-independent-research-v1`; no other branch or evaluation data accessed.
+- Completed 5,000 paired IID depolarizing code-capacity samples per distance at p=.05, d=3 and d=5. All MPS and MWPM recoveries passed codespace checks. Fixed chi16 MPS had 123/5,000 vs MWPM 206/5,000 failures at d3 (paired delta −.0166; McNemar p=3.49e−17), and 30 vs 92 at d5 (delta −.0124; p=9.33e−12).
+- Runtime: 0.988 ms/MPS decode at d3 and 13.74 ms at d5; MWPM Python path 0.181 and 0.507 ms. Whole run 80.4 s, peak RSS 118,636 KiB. This is promising at the tested model, but not evidence on Q-SHIFT's noisy repeated-measurement circuit, not a threshold result, and not a real-time deployment candidate at d5 latency.
+- Reports and `RESULTS.json` now include the bounded-bond run. Next question: identify whether a scientifically fair circuit-level MPS comparator can be built with the current dependencies/noise model; otherwise move on to a different research family rather than tuning chi.
