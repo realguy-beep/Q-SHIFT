@@ -90,3 +90,8 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 
 
 At d7, the 5:1 bias check gave equal-mix XZZX/CSS=.608 (.529–.697); XZZX-X/CSS-X=5.85 and XZZX-Z/CSS-Z=.338. Alongside 2:1=.853 and 10:1=.279, this is workload- and bias-strength dependent.
+
+
+### Additional decoder feasibility result
+
+Fusion Blossom 0.2.13 serial custom-graph MWPM was added as a classical-decoder candidate. Its custom graph reproduced ordinary PyMatching MWPM predictions on 1,000 d3 development samples after even-integer weight quantization, but achieved only 6.5%–15.3% of PyMatching throughput. Reject this serial path as a d13 acceleration hypothesis; parallel Fusion Blossom remains unassessed and would need a distinct preflight. Correlation-enabled behavior was not tested.

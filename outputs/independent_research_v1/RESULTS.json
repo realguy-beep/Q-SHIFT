@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 66580000,
+  "stochastic_qshift_shots_generated": 66781000,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -239,7 +239,7 @@
     },
     "interpretation": "all three BP+LSD variants worse in every tested condition; one distance/configuration/approximate model only; not an integration or superiority claim"
   },
-  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples; includes 20,000 all-fault instrumentation preflight and 200,000 all-fault composition development samples; excludes 50,000 synthetic instrumentation checks; includes fresh 40,000-shot preflight and 2,000,000-shot main d5 CSS/XZZX by memory-basis factorial screen; includes independent 40,000-shot preflight and 2,000,000-shot d5 XZZX/CSS basis-factorial development replication; includes d3/d7 CSS/XZZX basis-scale preflight 80,000 and main 4,000,000 development samples; an identical-seed replay after a preflight reporting bug is counted once; includes d9 CSS/XZZX four-cell basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d11 CSS/XZZX basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d13 runtime-gate preflight 40,000 samples; deterministic rerun after output typo is counted once; no d13 main samples; includes d7 ratio-2:1 XZZX/CSS basis-robustness preflight 40,000 and main 2,000,000 development samples; includes d7 ratio-5:1 XZZX/CSS basis-robustness preflight 40,000 and main 2,000,000 development samples",
+  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples; includes 20,000 all-fault instrumentation preflight and 200,000 all-fault composition development samples; excludes 50,000 synthetic instrumentation checks; includes fresh 40,000-shot preflight and 2,000,000-shot main d5 CSS/XZZX by memory-basis factorial screen; includes independent 40,000-shot preflight and 2,000,000-shot d5 XZZX/CSS basis-factorial development replication; includes d3/d7 CSS/XZZX basis-scale preflight 80,000 and main 4,000,000 development samples; an identical-seed replay after a preflight reporting bug is counted once; includes d9 CSS/XZZX four-cell basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d11 CSS/XZZX basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d13 runtime-gate preflight 40,000 samples; deterministic rerun after output typo is counted once; no d13 main samples; includes d7 ratio-2:1 XZZX/CSS basis-robustness preflight 40,000 and main 2,000,000 development samples; includes d7 ratio-5:1 XZZX/CSS basis-robustness preflight 40,000 and main 2,000,000 development samples; includes the 200,000 unique d13 bit-packed throughput preflight samples (no main run); includes the 1,000 unique d3 Fusion Blossom interface feasibility samples",
   "stochastic_dem_samples_generated": 780000,
   "rare_event_importance_sampling": {
     "status": "positive_development_method_result_limited_to_approximate_dem",
@@ -23177,5 +23177,76 @@
       "Separate memory task rates, not arbitrary-state performance.",
       "Native gate equivalence remains unverified."
     ]
+  },
+  "xzzx_d13_bitpacked_preflight_summary": {
+    "status": "xzzx_d13_bitpacked_preflight_stopped",
+    "distance": 13,
+    "shots_per_condition": 50000,
+    "new_unique_samples": 200000,
+    "projected_main_seconds": 358.125330010007,
+    "main_cap_seconds": 300,
+    "all_sampler_mismatches_zero": true,
+    "all_prediction_mismatches_zero": true,
+    "decoder_speedups": [
+      {
+        "code": "css",
+        "basis": "x",
+        "decoder_speedup": 0.7539061546915319
+      },
+      {
+        "code": "css",
+        "basis": "z",
+        "decoder_speedup": 1.0756224558835934
+      },
+      {
+        "code": "xzzx",
+        "basis": "x",
+        "decoder_speedup": 1.204497502270622
+      },
+      {
+        "code": "xzzx",
+        "basis": "z",
+        "decoder_speedup": 1.391285387553013
+      }
+    ],
+    "artifact": "xzzx_d13_bitpacked_preflight.json"
+  },
+  "fusion_blossom_d3_screen_summary": {
+    "status": "feasibility_screen_passed",
+    "new_unique_samples": 1000,
+    "prediction_mismatches": 0,
+    "elapsed_seconds": 0.07326122900121845,
+    "throughput_ratios": [
+      {
+        "code": "css",
+        "basis": "x",
+        "fusion_over_pymatching_speed_ratio": 0.1527757545753658
+      },
+      {
+        "code": "css",
+        "basis": "z",
+        "fusion_over_pymatching_speed_ratio": 0.09807826501630526
+      },
+      {
+        "code": "xzzx",
+        "basis": "x",
+        "fusion_over_pymatching_speed_ratio": 0.08774845067907261
+      },
+      {
+        "code": "xzzx",
+        "basis": "z",
+        "fusion_over_pymatching_speed_ratio": 0.06525922862129975
+      }
+    ],
+    "artifact": "fusion_blossom_d3_screen_results.json"
+  },
+  "categorical_seven_layer_minfill_summary": {
+    "P_max_rank_rel_frob_1e-10": 151,
+    "Z_max_rank_rel_frob_1e-10": 150,
+    "natural_order_rank_comparison": 91,
+    "advances_rank64_gate": false,
+    "elapsed_seconds": 6.345655701999931,
+    "stochastic_samples_generated": 0,
+    "artifact": "categorical_seven_layer_minfill_results.json"
   }
 }

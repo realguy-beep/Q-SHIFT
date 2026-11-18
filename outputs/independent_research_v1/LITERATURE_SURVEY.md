@@ -54,3 +54,8 @@ These checks verify pinned implementation behavior; they do not replace paper-le
 
 
 The current pinned source audit confirms the Stim, PyMatching, and qecsim implementation facts above; exact retrieved content hashes and excerpts are in `implementation_source_audit.json`. Public paper metadata APIs remain proxy-blocked even though tag-pinned GitHub source hosts work.
+
+
+### Fusion Blossom implementation note (pinned source audit, 2026-11-18)
+
+The official Fusion Blossom Python demo at tag `v0.2.13` (commit `3b66cb07052631947ee78667d1d48e753cc7d707`) constructs a `SolverInitializer` and supports user-defined weighted graphs; the package exposes serial and partitioned parallel solvers. This establishes API capability, not performance on Q-SHIFT. The local d3 screen below the literature section tests only serial custom-graph wiring. Upstream: `https://github.com/yuewuo/fusion-blossom/tree/v0.2.13`.

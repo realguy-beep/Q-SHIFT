@@ -219,3 +219,15 @@ Completed a predeclared d7 four-cell screen at an already used 2:1 X-bias ratio.
 ## d7 XZZX/CSS robustness at 5:1 bias
 
 Completed the fixed d7 four-cell screen at an already used 5:1 X-bias point. Protocol and result artifacts: `xzzx_bias_ratio5_protocol.md`, `xzzx_bias_ratio5_preflight.json`, `xzzx_bias_ratio5_results.json`.
+
+## d13 bit-packed throughput stop
+
+Protocol and executable: `xzzx_d13_bitpacked_protocol.md`, `xzzx_d13_bitpacked.py`. It uses 50,000 fresh samples in each of four d13 cells, exact unpacked/packed detector and observable comparisons, exact ordinary/bit-packed PyMatching comparisons, scalar/batch agreement, and a 300s projected-main gate. The projection failed; no main run is authorized by that protocol.
+
+## Fusion Blossom d3 interface feasibility
+
+Protocol and executable: `fusion_blossom_d3_screen_protocol.md`, `fusion_blossom_d3_screen.py`. It fixes 250 samples across four d3 cells, uses ordinary PyMatching MWPM as comparator, even integer weights at scale 1e6, and a zero-mismatch gate. It is an interface feasibility screen only; no scaling inference follows.
+
+## Min-fill tensor-train ordering challenge
+
+The deterministic ordering rule, exact posterior source, SVD measurements, and advancement gate are fixed in `categorical_seven_layer_minfill_protocol.md`. It generates no new circuit samples and does not authorize testing additional orderings after observing the result.

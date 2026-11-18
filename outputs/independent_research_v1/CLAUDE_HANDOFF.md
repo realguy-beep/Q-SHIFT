@@ -163,3 +163,11 @@ At d7/13 rounds/p=.003 the equal-weight separate X/Z XZZX/CSS ratios were .853 a
 
 
 At d7, the 5:1 robustness screen gave CSS-X/Z 27/526 and XZZX-X/Z 158/178 failures (500k/cell). Equal-mix XZZX/CSS=.608 (95% interval .529–.697); XZZX-X/CSS-X=5.85 and XZZX-Z/CSS-Z=.338. Combined with 2:1=.853 and 10:1=.279, this supports a bias-strength interaction. It remains simulator-only with unverified gate equivalence.
+
+## Latest independent throughput checks
+
+The d13 bit-packed sampler and PyMatching batch API matched ordinary samples and predictions exactly, but projected 358s for the fixed four-cell main vs the 300s gate; no main was run. A separate Fusion Blossom 0.2.13 custom graph screen had zero mismatch vs ordinary PyMatching MWPM on 1,000 d3 samples, but serial decoding throughput was only 6.5–15.3% of PyMatching. Artifacts and reproduction commands are in `outputs/independent_research_v1/` (`xzzx_d13_bitpacked*`, `fusion_blossom_d3_screen*`). These are development-only, do not address correlated matching, and make no hardware gate-equivalence claim.
+
+## Exact-tail ordering challenge
+
+A hash-verified min-fill order on the 20-detector seven-layer exact posterior increased max P/Z ranks at 1e-10 from 91 to 151/150. No alternative ordering was tested. Artifact/protocol: `categorical_seven_layer_minfill_results.json` and `categorical_seven_layer_minfill_protocol.md`.

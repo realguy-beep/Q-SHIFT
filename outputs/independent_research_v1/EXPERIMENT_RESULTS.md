@@ -358,3 +358,15 @@ At 2:1 X bias, 500k shots/cell gave CSS-X/Z 120/281 failures and XZZX-X/Z 173/16
 ## d7 XZZX/CSS robustness at 5:1 bias
 
 At ratio5:1, 500k shots/cell gave CSS-X/Z 27/526 failures and XZZX-X/Z 158/178. The equal-weight separate-memory XZZX/CSS ratio was .608 (95% interval .529–.697); XZZX-X/CSS-X=5.85 (3.87–9.16), XZZX-Z/CSS-Z=.338 (.284–.402). Preflight projected 53.82s and the main took 66.76s. Together with 2:1 (.853) and 10:1 (.279) at d7, the advantage is bias-strength dependent.
+
+## d13 bit-packed sampling and decoding throughput
+
+A fresh 50,000-shot-per-cell preflight (200,000 total) matched Stim detector/observable samples exactly after packing and matched PyMatching predictions exactly in all four d13 conditions. One hundred scalar-versus-batch checks per cell also agreed. Packed main-screen projection was 358.13s, above the 300s limit, so no main samples were run. Packed decoder speed ratios varied from 0.75x to 1.39x; the exact output artifact is `xzzx_d13_bitpacked_preflight.json`.
+
+## Fusion Blossom custom-graph feasibility
+
+On 1,000 fresh d3 samples, a custom graph exported from PyMatching and quantized to even integer weights gave zero prediction mismatches against ordinary PyMatching MWPM. Fusion Blossom serial Python decoding throughput was 6.5%–15.3% of PyMatching over the four cells. This validates graph/API wiring but rejects the serial path as a throughput solution on the measured workload. See `fusion_blossom_d3_screen_results.json`.
+
+## Min-fill ordering of the exact seven-layer posterior
+
+A deterministic min-fill ordering derived from the detector event primal graph produced maximum ranks 151 for P and 150 for Z at 1e-10 relative Frobenius tolerance, compared with 91 for both in natural order. The predeclared rank-64 gate fails; no alternate order was tried. This rejects the selected min-fill heuristic for this exact tail without establishing a general lower bound. See `categorical_seven_layer_minfill_results.json`.

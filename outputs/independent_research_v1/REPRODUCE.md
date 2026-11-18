@@ -323,3 +323,23 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xz
 MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_bias_ratio5.py --preflight
 MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_bias_ratio5.py
 ```
+
+### d13 bit-packed throughput preflight
+
+`MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_d13_bitpacked.py --preflight`
+
+The saved preflight stops before the main run because projected runtime is above the protocol cap.
+
+### Fusion Blossom d3 graph interface screen
+
+Install Fusion Blossom 0.2.13 in the isolated `.venv`, then run:
+
+`MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/fusion_blossom_d3_screen.py`
+
+The script runs a fixed 1,000-sample development screen and writes `fusion_blossom_d3_screen_results.json`.
+
+### Min-fill exact tensor ordering challenge
+
+`MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_seven_layer_minfill.py`
+
+This deterministic analysis uses the saved seven-layer event map and adds no stochastic samples.

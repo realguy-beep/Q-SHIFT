@@ -481,3 +481,19 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - CSS-X/Z 27/526; XZZX-X/Z 158/178. Equal-weight RR .608 (95% interval .529–.697); XZZX-X/CSS-X 5.85; XZZX-Z/CSS-Z .338.
 - d7 equal-mix ratios at bias2/5/10 are .853/.608/.279; effect grows with bias, but basis-specific gains differ.
 - Total unique Q-SHIFT development samples now 66,580,000, including ratio2 and ratio5 screens. No confirmatory/sealed data.
+
+
+## d13 bit-packed sampler/decoder throughput stop — 2026-11-18
+
+- Fresh 50,000-shot/cell four-condition preflight (200,000 unique samples) had zero detector-sample or observable-prediction mismatches between ordinary and bit-packed Stim/PyMatching paths; 100 scalar/batch checks per cell also agreed.
+- Packed end-to-end projection was 358.13s for 500,000 shots/cell, above the 300s cap. Packed decoding was slower in CSS-X (0.75x), modestly faster in CSS-Z (1.08x), XZZX-X (1.20x), and XZZX-Z (1.39x); no d13 main run.
+- Updated cumulative unique Q-SHIFT development samples to 66,780,000. No sealed or confirmatory data accessed.
+
+
+## Fusion Blossom d3 custom-graph feasibility — 2026-11-18
+
+- Installed Fusion Blossom 0.2.13 into the isolated `.venv`; no repository dependency or lockfile changed. Its serial solver accepted graphs exported from PyMatching after converting log-odds to even integer weights at scale 1e6 and mapping boundary nodes to virtual vertices.
+- A 1,000-sample d3/5-round CSS/XZZX by X/Z screen produced zero logical-prediction mismatches against ordinary PyMatching MWPM with correlations disabled. Fusion Blossom serial decoding took 0.0016–0.0025s per 250 shots versus PyMatching's 0.00015–0.00030s, about 6.5–15.3% of PyMatching throughput on this small screen.
+- This confirms interface feasibility but gives no speed case for a d13 run; quantization, correlation handling, and scale remain limitations. Added 1,000 unique Q-SHIFT development samples; cumulative total 66,781,000. No sealed/confirmatory data.
+
+- Ordering implementation check: re-evaluating the new axis transform with the original natural order reproduced both saved rank-91 maxima exactly. Cumulative stochastic Q-SHIFT count remains 66,781,000; deterministic rank audit added zero.

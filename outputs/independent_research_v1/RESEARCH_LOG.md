@@ -343,3 +343,17 @@ The 2:1 d7 robustness point adds a mild-bias endpoint. Equal-weight separate-mem
 
 
 The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.608. At 2:1 the gain is only .853, and XZZX-X is worse than CSS-X at every tested bias. Do not claim XZZX as a uniform biased-noise replacement.
+
+## Checkpoint — d13 packed-path stop and Fusion Blossom feasibility (2026-11-18)
+
+- Verified requested checkpoint `507611c` exists; resumed branch remains `codex/qshift-independent-research-v1`. Latest pre-checkpoint head was `0778d5f`.
+- Bit-packed d13 preflight: 200,000 unique samples, exact Stim sampler/decoder output agreement, 358.13s projected main vs 300s cap; stopped without main data.
+- Fusion Blossom 0.2.13 custom graph interface: 1,000 fresh d3 samples, zero output mismatches vs ordinary PyMatching MWPM, but serial Python throughput only 6.5–15.3% of PyMatching on these cases. It is not a justified route to the d13 runtime goal.
+- New cumulative unique Q-SHIFT development samples: 66,781,000. No confirmatory/sealed data accessed. Exact artifact commands are in `REPRODUCE.md`; no external push or publish.
+- Active next question: can a graph-informed detector-bit ordering lower the exact seven-layer P/Z tensor-train ranks below the failed natural-order rank-64 gate? This uses the already validated exact posterior and creates no new stochastic samples. Stop if the fixed ordering heuristic is not clearly specified before rank analysis.
+
+## Checkpoint — exact-tail min-fill ordering challenge (2026-11-18)
+
+- Reconstructed the hash-verified exact 20-detector P/Z posterior and applied the predeclared deterministic min-fill detector order; no stochastic samples were generated.
+- The min-fill ordering reached maximum relative-Frobenius ranks 151 (P) and 150 (Z) at 1e-10, worse than natural order's rank 91. It fails the fixed rank-64 gate; no MPS prototype or alternative ordering was selected post hoc.
+- Runtime 6.35s. Finding is specific to this graph and seven-layer tail. Next: switch away from ordering optimization and investigate a distinct robustness/adaptation candidate using existing methods and data, with a new prospective protocol.

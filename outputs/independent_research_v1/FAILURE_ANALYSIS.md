@@ -183,3 +183,15 @@ At d7 and 2:1 bias, XZZX improves the equal-weight memory-task average only mode
 
 
 The d7 5:1 condition shows the equal-mix XZZX benefit is not confined to 10:1, but XZZX-X still loses to CSS-X by 5.85x. The aggregate .608 is therefore a basis-mix outcome; use the separate basis rates whenever the workload axis is known.
+
+## d13 bit-packed throughput path
+
+The packed sampler reduced sampling time, and packed PyMatching outputs exactly matched ordinary outputs, but total projected time remained 358.13s against the fixed 300s cap. Decode speed was inconsistent and slower for CSS-X. The API substitution preserves decisions but does not supply enough end-to-end throughput under this protocol; the predeclared stop rule correctly prevented a main run.
+
+## Fusion Blossom serial integration
+
+Custom graph conversion was feasible after even-integer weight quantization, with no prediction mismatches on 1,000 d3 samples. The Python serial solver was slower than PyMatching by roughly 6.5–15.3x in these cells. This small screen does not rule out Fusion Blossom's parallel partitioned solver at larger scales, but provides no reason to spend the current d13 budget on the serial path. Correlation-enabled equivalence was not tested.
+
+## Min-fill TT ordering
+
+The fixed min-fill detector order was structurally motivated by event co-occurrence but increased the high-accuracy maximum TT ranks from 91 to 151/150 for P/Z. Event-graph fill is not a reliable proxy for singular-value compressibility on this posterior. The single preregistered order failed; no post-hoc search of orderings was conducted.

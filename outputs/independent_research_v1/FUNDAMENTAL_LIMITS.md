@@ -142,3 +142,5 @@ At d7 the equal-weight XZZX/CSS ratios at bias 2:1, 5:1, and 10:1 are .853, .608
 
 
 At d7, XZZX/CSS equal-mix rate ratios are .853 (2:1), .608 (5:1), and .279 (10:1). This is a finite set of synthetic bias strengths, not a fit or operational crossover; XZZX-X loses to CSS-X at all tested strengths.
+
+A deterministic min-fill order derived from the detector-event primal graph gave max P/Z TT ranks 151/150 at 1e-10, worse than 91 in the natural compact order. This weakens the specific hypothesis that generic event-graph min-fill improves compressibility; it is not a lower bound across orderings or a full-circuit information-theoretic limit.

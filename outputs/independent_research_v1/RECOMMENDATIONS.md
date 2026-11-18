@@ -137,3 +137,7 @@ The d7 two-basis screen supports a bias-dependent configuration choice: at 2:1, 
 
 
 At d7 and 5:1 bias, XZZX's equal-mix point gain is 39%, but XZZX-X remains 5.85x worse than CSS-X. Preserve an axis-specific decision rule and require the actual workload mix before considering an XZZX deployment.
+
+The d13 bit-packed Stim/PyMatching route preserved predictions but still projected above the fixed runtime cap. Fusion Blossom's serial custom-graph route was successfully wired, then rejected as a runtime candidate after measuring 6.5–15.3% of PyMatching throughput on d3. Keep both as documented negative scalability evidence; do not elevate either to a deployment recommendation.
+
+The graph-derived min-fill detector ordering worsened exact-tail TT ranks (151/150 vs 91 natural-order). Do not spend effort implementing an exact MPS for this ordering; any new ordering strategy needs independent structural justification and a prospective protocol that reports all evaluated orders.
