@@ -140,3 +140,13 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xz
 ```
 
 The first command performs exact conjugation/resource checks and the 100-shot/cell timing gate; the second is the fixed 500k-shot/cell development run. Hardware/noise assumptions and interpretation limits are in `xzzx_native_xcx_protocol.md`.
+
+
+### Complementary native-XCX orientation
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_native_orientation.py --preflight
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_native_orientation.py
+```
+
+The run is limited to CSS, original, and complementary patterns at d3/d5 under Z-biased noise. See `xzzx_native_orientation_protocol.md`.

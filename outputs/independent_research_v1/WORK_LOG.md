@@ -312,3 +312,11 @@
 - Passed three Stim tableau conjugation checks, noiseless detector/observable checks, DEM construction, source p2 target/probability equality, scalar/batch decoder agreement, and matched resources. XCX interactions: d3=30; d5=180. Added H targets: zero.
 - Main development screen: 500,000 shots x 8 cells, 11.79s. XZZX/CSS LER ratios: d3/d5 X-bias 0.662/0.376 (95% conditional exact CI 0.627–0.697 / 0.347–0.407); Z-bias 3.86/11.24 (3.50–4.26 / 8.50–14.80). Total unique Q-SHIFT samples +4,000,800 including preflight.
 - Limitation: finite d3/d5; no threshold inference; native entangler noise equivalence is an assumption. Next: assess one complementary checkerboard orientation under a new fixed protocol, no broad pattern search.
+
+
+## Complementary native-XCX orientation checkpoint — 2026-11-18
+
+- Parent `3cb8dd1`; branch remains the isolated research branch.
+- Hypothesis: the original native-XCX checkerboard's Z-bias loss might be partly reversed by its single complementary data sublattice `(x+y) mod 4 = 0`. Fixed three-arm comparison (CSS/original/complement) at d3/d5, Z-biased ratio10; 500k/cell.
+- Preflight passed; projected main runtime 46.5s. Completed in 8.28s. Complement/original conditional rate ratios: 0.863 (95% exact interval 0.806–0.922) at d3, 0.785 (0.701–0.876) at d5. Complement/CSS: 3.04 (2.75–3.35), 6.16 (4.91–7.68).
+- Decision: stop this checkerboard family; complement helps but remains worse than CSS. No other patterns tested. Added 3,000,600 Q-SHIFT shots incl. preflight. Native-gate equivalence remains an assumption.

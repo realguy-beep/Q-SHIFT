@@ -30,3 +30,6 @@ The P(s), Z(s) representation is a standard parity/Fourier identity and is not c
 
 
 The native-XCX XZZX experiment is not a new code or decoder. It supplies Q-SHIFT-specific finite-size evidence that a checkerboard XZZX orientation interacts strongly with physical bias under an explicit native entangler noise model. No hardware novelty claim is made because equal CX/XCX/CZ error channels and durations have not been measured.
+
+
+The complementary-orientation screen is not a new code family or algorithm. It adds local finite-size evidence that the native XZZX checkerboard's bias orientation changes performance, while showing that one complement does not beat CSS under the tested Z-biased condition.

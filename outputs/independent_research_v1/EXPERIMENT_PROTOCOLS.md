@@ -146,3 +146,6 @@ A fresh cluster-proposal protocol is in `categorical_cluster_importance_protocol
 
 
 A follow-up native-gate code/circuit protocol is in `xzzx_native_xcx_protocol.md`. It compiles marked-control H-CX-H conjugates into Stim XCX and marked-target conjugates into CZ, under an explicit equal-duration/equal-PAULI_CHANNEL_2 hardware assumption. It compares CSS and XZZX with matched resources at d3/d5 for both bias orientations.
+
+
+The one complementary checkerboard follow-up is fixed in `xzzx_native_orientation_protocol.md`. It tests only `(x+y) mod 4 = 0` on Z-biased d3/d5 circuits against CSS and the already tested orientation, with fresh streams and the same native CX/XCX/CZ noise assumption. No broader pattern search is planned.

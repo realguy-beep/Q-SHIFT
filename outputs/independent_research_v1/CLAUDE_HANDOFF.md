@@ -81,3 +81,8 @@ A development-only proposal grouped adjacent two-qubit channel pairs within each
 ## Native-XCX XZZX result
 
 A new finite-distance screen compiled marked-control H-CX-H into native XCX, avoiding the prior extra H targets. Exact tableau conjugations, noiseless detectors, DEMs, fixed noise targets, and equal qubit/detector/round/two-qubit resources passed. Under a stated hypothetical equal-duration/equal-noise CX/XCX/CZ model, 500k shots/cell gave XZZX/CSS LER ratios at d3/d5 of 0.662/0.376 for X-biased noise but 3.86/11.24 for Z-biased noise. This indicates a strong bias-orientation interaction; it is not a universal gain and depends on native-gate noise equivalence. Artifacts: `xzzx_native_xcx.py`, protocol, preflight, and result JSON.
+
+
+## Complementary XZZX orientation result and decision
+
+A fresh Z-biased d3/d5 screen compared CSS, the original native-XCX checkerboard, and one complementary checkerboard. The complement was 14%/21% better than the original but still had 3.04x/6.16x CSS LER at matched physical resources. Combined with the original orientation helping X-bias but hurting Z-bias, the evidence shows orientation-by-noise dependence but no universal XZZX benefit. Stop this fixed checkerboard family unless a different schedule/noise model or decoder is proposed. This remains conditional on equal CX/XCX/CZ noise/duration. Artifacts: `xzzx_native_orientation.py`, protocol, preflight, results.

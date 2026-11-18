@@ -120,3 +120,8 @@ The pair-cluster proposal is correctly instrumented and likelihood weighted: a s
 ## Native-gate XZZX orientation interaction
 
 Removing explicit H-gate overhead did not produce a uniform XZZX benefit. At the same d3/d5 finite resources and under matched native entangler noise, XZZX improved the X-biased cells (rate ratios 0.662/0.376) but was substantially worse in Z-biased cells (3.86/11.24). Thus the prior XZZX degradation cannot be attributed solely to added H noise: the fixed checkerboard orientation is aligned with one bias orientation and misaligned with the other under this circuit/decoder. This is development evidence under a hypothetical equal-noise XCX/CZ native gate model; it does not justify switching codes at runtime or extrapolating to hardware. A single complementary orientation test could discriminate an orientation effect, but no pattern sweep should follow.
+
+
+## Complementary XZZX orientation on Z-biased noise
+
+The single complementary checkerboard reduced Z-biased LER relative to the original XZZX orientation by about 14% at d3 and 21% at d5, which supports a real orientation effect. It nevertheless remained 3.04x/6.16x worse than CSS. The orientation adjustment therefore did not rescue this XZZX family for the tested Z-memory Z-biased task. Do not continue searching checkerboard variants on these same conditions; a useful new direction would require a different code schedule or decoder mechanism and a fresh protocol. The equal native CX/XCX/CZ noise assumption remains unverified for hardware.

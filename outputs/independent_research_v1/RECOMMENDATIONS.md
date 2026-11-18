@@ -71,3 +71,6 @@ Do not advance the fixed adjacent-pair cluster proposal: it passed its estimator
 # Native-gate XZZX
 
 The native-XCX follow-up removes the extra H-noise cost of the earlier transpilation and passes exact Clifford/resource checks. Keep this as conditional code-design evidence: under equal native entangler noise, the fixed checkerboard orientation helped X-biased noise at d3/d5 (0.66/0.38 of CSS LER) and hurt Z-biased noise (3.86/11.24 times CSS). Do not recommend XZZX as a universal replacement. A narrowly scoped complementary-orientation test may resolve whether this is primarily orientation matching; hardware claims require measured XCX/CZ error rates and durations.
+
+
+The only preregistered complementary checkerboard test improved the original XZZX orientation for Z-biased noise but still lost to CSS by factors 3.04 at d3 and 6.16 at d5. Stop this checkerboard family at these fixed schedules. Do not run more pattern sweeps on these conditions; any future XZZX work should start from a different native schedule/noise model or decoder mechanism. Native CX/XCX/CZ equal-noise assumptions must be replaced with measured hardware characterization before deployment claims.

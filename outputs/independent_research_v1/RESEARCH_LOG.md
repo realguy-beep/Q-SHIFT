@@ -239,3 +239,11 @@
 - Preflight passed three tableau identities, noiseless determinism, DEM generation, unchanged p2 targets/probabilities, unchanged qubit/detector/round/interaction resources and added H targets=0. Projected 50.4s; main run took 11.8s.
 - With 500k shots/cell, XZZX/CSS rate ratios for X-bias were 0.662 (d3) and 0.376 (d5); for Z-bias they were 3.86 and 11.24. Strong orientation-by-bias interaction, not a uniform code gain.
 - No hardware claim because native-gate noise equivalence is assumed. Q-SHIFT samples +4,000,800 including preflight. Next: a single complementary checkerboard orientation test is the discriminating follow-up.
+
+
+## Checkpoint — one complementary XZZX orientation (2026-11-18)
+
+- After native-XCX results showed an X/Z bias interaction, tested exactly one complementary checkerboard, on Z-biased ratio10 d3/d5 only, with CSS and the original orientation as references. Predeclared fresh streams; no pattern sweep.
+- 500k shots/arm/distance; preflight passed resource, noise, tableau, DEM, and noiseless-determinism checks. Complement improved over original by 13.7%/21.5% but remained 3.04x/6.16x worse than CSS.
+- Decision: the tested checkerboard family is not a competitive universal code option under this model. Stop this family here. Native entangler equal-noise remains assumed.
+- Q-SHIFT shot count +3,000,600.

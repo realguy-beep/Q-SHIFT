@@ -73,3 +73,8 @@ For a binary logical observable, the joint posterior over syndrome and logical b
 ## Native-gate XZZX finite-size observation
 
 A direct Stim `XCX` implementation removes extra one-qubit H targets while preserving qubits, detectors, rounds, two-qubit interaction count, and source PAULI_CHANNEL_2 targets. At d3/d5, 500k shots/cell under the explicit equal-duration/equal-noise CX/XCX/CZ assumption gave XZZX/CSS ratios 0.662/0.376 for X-biased noise and 3.86/11.24 for Z-biased noise. This shows that the code orientation and bias direction interact in the tested decoder/circuit. It is not an information-theoretic bound, threshold, or evidence that XZZX is inherently inferior; native XCX/CZ hardware noise equivalence remains unverified.
+
+
+## Complementary XZZX orientation result
+
+One fixed complementary checkerboard orientation improved over the original orientation for Z-biased d3/d5 simulation, but its LER remained 3.04x/6.16x that of CSS at matched resources. This is not a general code limit: it is evidence about two fixed orientations with correlation-enabled matching and a specific native-gate noise assumption.

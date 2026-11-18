@@ -1,0 +1,411 @@
+{
+  "status": "native_xzzx_orientation_development",
+  "hardware_assumption": "native CX/XCX/CZ equal duration and same source PAULI_CHANNEL_2 noise",
+  "bias": "z_biased, ratio 10, p=.003, Z-memory",
+  "tableau_conjugation_checks": 3,
+  "resource_checks": {
+    "d3_xzzx_original": {
+      "resources": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_interactions": 120,
+        "one_qubit_noise_targets": 40,
+        "ticks": 35,
+        "hadamard_targets": 40,
+        "gate_counts": {
+          "CX": 20,
+          "XCX": 10,
+          "CZ": 10,
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20
+        }
+      },
+      "transform": {
+        "native_xcx_interactions": 30,
+        "removed_added_pauli_channel_1_targets": 60,
+        "data_qubits": 9,
+        "marked_data_qubits": 5
+      },
+      "noiseless_determinism": true,
+      "p2_targets_and_probabilities_unchanged": true
+    },
+    "d3_xzzx_complement": {
+      "resources": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_interactions": 120,
+        "one_qubit_noise_targets": 40,
+        "ticks": 35,
+        "hadamard_targets": 40,
+        "gate_counts": {
+          "CX": 20,
+          "XCX": 10,
+          "CZ": 10,
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20
+        }
+      },
+      "transform": {
+        "native_xcx_interactions": 30,
+        "removed_added_pauli_channel_1_targets": 60,
+        "data_qubits": 9,
+        "marked_data_qubits": 4
+      },
+      "noiseless_determinism": true,
+      "p2_targets_and_probabilities_unchanged": true
+    },
+    "d5_xzzx_original": {
+      "resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_interactions": 720,
+        "one_qubit_noise_targets": 216,
+        "ticks": 63,
+        "hadamard_targets": 216,
+        "gate_counts": {
+          "CX": 36,
+          "XCX": 18,
+          "CZ": 18,
+          "PAULI_CHANNEL_1": 18,
+          "PAULI_CHANNEL_2": 36
+        }
+      },
+      "transform": {
+        "native_xcx_interactions": 180,
+        "removed_added_pauli_channel_1_targets": 360,
+        "data_qubits": 25,
+        "marked_data_qubits": 13
+      },
+      "noiseless_determinism": true,
+      "p2_targets_and_probabilities_unchanged": true
+    },
+    "d5_xzzx_complement": {
+      "resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_interactions": 720,
+        "one_qubit_noise_targets": 216,
+        "ticks": 63,
+        "hadamard_targets": 216,
+        "gate_counts": {
+          "CX": 36,
+          "XCX": 18,
+          "CZ": 18,
+          "PAULI_CHANNEL_1": 18,
+          "PAULI_CHANNEL_2": 36
+        }
+      },
+      "transform": {
+        "native_xcx_interactions": 180,
+        "removed_added_pauli_channel_1_targets": 360,
+        "data_qubits": 25,
+        "marked_data_qubits": 12
+      },
+      "noiseless_determinism": true,
+      "p2_targets_and_probabilities_unchanged": true
+    }
+  },
+  "distance_rounds": {
+    "3": 5,
+    "5": 9
+  },
+  "shots_per_cell": 500000,
+  "conditions": [
+    {
+      "distance": 3,
+      "variant": "css",
+      "shots": 500000,
+      "seed": 2026112811,
+      "failures": 523,
+      "ler": 0.001046,
+      "wilson_95": [
+        0.0009601530770557503,
+        0.0011395137090186463
+      ],
+      "sampling_seconds": 0.23024895399794332,
+      "decode_seconds": 0.08254967299944838,
+      "resources": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_interactions": 120,
+        "one_qubit_noise_targets": 40,
+        "ticks": 35,
+        "hadamard_targets": 40,
+        "gate_counts": {
+          "CX": 20,
+          "XCX": 0,
+          "CZ": 0,
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20
+        }
+      },
+      "transform": {
+        "marked_data_qubits": 0,
+        "native_xcx_interactions": 0
+      }
+    },
+    {
+      "distance": 3,
+      "variant": "xzzx_original",
+      "shots": 500000,
+      "seed": 2026112812,
+      "failures": 1841,
+      "ler": 0.003682,
+      "wilson_95": [
+        0.0035178885508137716,
+        0.0038537377312300083
+      ],
+      "sampling_seconds": 0.10415967899825773,
+      "decode_seconds": 0.08816800099884858,
+      "resources": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_interactions": 120,
+        "one_qubit_noise_targets": 40,
+        "ticks": 35,
+        "hadamard_targets": 40,
+        "gate_counts": {
+          "CX": 20,
+          "XCX": 10,
+          "CZ": 10,
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20
+        }
+      },
+      "transform": {
+        "native_xcx_interactions": 30,
+        "removed_added_pauli_channel_1_targets": 60,
+        "data_qubits": 9,
+        "marked_data_qubits": 5
+      }
+    },
+    {
+      "distance": 3,
+      "variant": "xzzx_complement",
+      "shots": 500000,
+      "seed": 2026112813,
+      "failures": 1588,
+      "ler": 0.003176,
+      "wilson_95": [
+        0.003023811157323868,
+        0.0033358228997728305
+      ],
+      "sampling_seconds": 0.1076201409996429,
+      "decode_seconds": 0.09401434499886818,
+      "resources": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_interactions": 120,
+        "one_qubit_noise_targets": 40,
+        "ticks": 35,
+        "hadamard_targets": 40,
+        "gate_counts": {
+          "CX": 20,
+          "XCX": 10,
+          "CZ": 10,
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20
+        }
+      },
+      "transform": {
+        "native_xcx_interactions": 30,
+        "removed_added_pauli_channel_1_targets": 60,
+        "data_qubits": 9,
+        "marked_data_qubits": 4
+      }
+    },
+    {
+      "distance": 5,
+      "variant": "css",
+      "shots": 500000,
+      "seed": 2026112814,
+      "failures": 89,
+      "ler": 0.000178,
+      "wilson_95": [
+        0.0001446641087240394,
+        0.000219016014792912
+      ],
+      "sampling_seconds": 1.5748747020006704,
+      "decode_seconds": 0.8384448609976971,
+      "resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_interactions": 720,
+        "one_qubit_noise_targets": 216,
+        "ticks": 63,
+        "hadamard_targets": 216,
+        "gate_counts": {
+          "CX": 36,
+          "XCX": 0,
+          "CZ": 0,
+          "PAULI_CHANNEL_1": 18,
+          "PAULI_CHANNEL_2": 36
+        }
+      },
+      "transform": {
+        "marked_data_qubits": 0,
+        "native_xcx_interactions": 0
+      }
+    },
+    {
+      "distance": 5,
+      "variant": "xzzx_original",
+      "shots": 500000,
+      "seed": 2026112815,
+      "failures": 698,
+      "ler": 0.001396,
+      "wilson_95": [
+        0.0012962692612037937,
+        0.0015033921468695728
+      ],
+      "sampling_seconds": 1.4549514350001118,
+      "decode_seconds": 0.9584082370020042,
+      "resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_interactions": 720,
+        "one_qubit_noise_targets": 216,
+        "ticks": 63,
+        "hadamard_targets": 216,
+        "gate_counts": {
+          "CX": 36,
+          "XCX": 18,
+          "CZ": 18,
+          "PAULI_CHANNEL_1": 18,
+          "PAULI_CHANNEL_2": 36
+        }
+      },
+      "transform": {
+        "native_xcx_interactions": 180,
+        "removed_added_pauli_channel_1_targets": 360,
+        "data_qubits": 25,
+        "marked_data_qubits": 13
+      }
+    },
+    {
+      "distance": 5,
+      "variant": "xzzx_complement",
+      "shots": 500000,
+      "seed": 2026112816,
+      "failures": 548,
+      "ler": 0.001096,
+      "wilson_95": [
+        0.0010080404371571627,
+        0.0011916255806313722
+      ],
+      "sampling_seconds": 1.4610385970008792,
+      "decode_seconds": 0.952471812001022,
+      "resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_interactions": 720,
+        "one_qubit_noise_targets": 216,
+        "ticks": 63,
+        "hadamard_targets": 216,
+        "gate_counts": {
+          "CX": 36,
+          "XCX": 18,
+          "CZ": 18,
+          "PAULI_CHANNEL_1": 18,
+          "PAULI_CHANNEL_2": 36
+        }
+      },
+      "transform": {
+        "native_xcx_interactions": 180,
+        "removed_added_pauli_channel_1_targets": 360,
+        "data_qubits": 25,
+        "marked_data_qubits": 12
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "distance": 3,
+      "primary_complement_vs_css": {
+        "ratio": 3.0363288718929256,
+        "conditional_exact_95_ci": [
+          2.7488972018839193,
+          3.34936043168142
+        ],
+        "equal_rate_exact_p": 3.72306886627718e-124
+      },
+      "secondary_original_vs_css": {
+        "ratio": 3.520076481835564,
+        "conditional_exact_95_ci": [
+          3.1925384602664266,
+          3.876716372515725
+        ],
+        "equal_rate_exact_p": 4.667636236056335e-171
+      },
+      "secondary_complement_vs_original": {
+        "ratio": 0.8625746876697447,
+        "conditional_exact_95_ci": [
+          0.8060671302792723,
+          0.9218857048775239
+        ],
+        "equal_rate_exact_p": 1.6676995875924214e-05
+      },
+      "failures": {
+        "css": 523,
+        "original": 1841,
+        "complement": 1588
+      },
+      "ler": {
+        "css": 0.001046,
+        "original": 0.003682,
+        "complement": 0.003176
+      }
+    },
+    {
+      "distance": 5,
+      "primary_complement_vs_css": {
+        "ratio": 6.157303370786517,
+        "conditional_exact_95_ci": [
+          4.913814628453627,
+          7.683067416413235
+        ],
+        "equal_rate_exact_p": 1.4769548596362638e-81
+      },
+      "secondary_original_vs_css": {
+        "ratio": 7.842696629213483,
+        "conditional_exact_95_ci": [
+          6.282600790699408,
+          9.756532231123963
+        ],
+        "equal_rate_exact_p": 5.328872939944914e-118
+      },
+      "secondary_complement_vs_original": {
+        "ratio": 0.7851002865329513,
+        "conditional_exact_95_ci": [
+          0.7007244919920078,
+          0.8764473848878648
+        ],
+        "equal_rate_exact_p": 2.3800018352861225e-05
+      },
+      "failures": {
+        "css": 89,
+        "original": 698,
+        "complement": 548
+      },
+      "ler": {
+        "css": 0.000178,
+        "original": 0.001396,
+        "complement": 0.001096
+      }
+    }
+  ],
+  "elapsed_seconds": 8.280239620002249,
+  "projected_main_seconds": null,
+  "stochastic_circuit_shots": 3000000,
+  "scope": "one complementary checkerboard orientation at d3/d5; finite-size, simulator-specific, not a pattern sweep or hardware result"
+}
