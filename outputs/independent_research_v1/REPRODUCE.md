@@ -89,3 +89,5 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the bias-strength robustness preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_strength_robustness.py --preflight`, then the 100,000-shot-per-cell paired screen with the same command without `--preflight`.
 
 - Reproduce the fresh frozen ratio10-vs-ratio5 validation preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_strength_frozen_validation.py --preflight`, then the 100,000-shot-per-cell validation with the same command without `--preflight`.
+
+- Reproduce the d5 ratio10-vs-ratio5 preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_strength_distance5_validation.py --preflight`, then the 100,000-shot-per-cell run with the same command without `--preflight`.

@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 38594200,
+  "stochastic_qshift_shots_generated": 40195800,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -4754,5 +4754,138 @@
         }
       }
     }
+  },
+  "bias_strength_distance5_validation": {
+    "status": "development_d5_frozen_bias_strength_validation",
+    "preflight_status": "preflight_passed",
+    "artifact": "bias_strength_distance5_validation_results.json",
+    "preflight_artifact": "bias_strength_distance5_validation_preflight.json",
+    "distance": 5,
+    "rounds": 9,
+    "actual_ratios": [
+      2,
+      3.5,
+      5,
+      10
+    ],
+    "assumed_ratios": [
+      5,
+      10
+    ],
+    "conditions": 16,
+    "shots_per_condition": 100000,
+    "macro_ler_equal_weight_all_16_conditions": {
+      "5": 0.001913125,
+      "10": 0.001933125
+    },
+    "macro_pairwise_paired_ler_differences": {
+      "5_vs_5": {
+        "mean_paired_ler_difference": 0.0,
+        "conditional_mc_se": 0.0,
+        "normal_95_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "5_vs_10": {
+        "mean_paired_ler_difference": -2e-05,
+        "conditional_mc_se": 1.3287602891564227e-05,
+        "normal_95_ci": [
+          -4.604322310833617e-05,
+          6.043223108336164e-06
+        ]
+      },
+      "10_vs_5": {
+        "mean_paired_ler_difference": 2e-05,
+        "conditional_mc_se": 1.3287602891564227e-05,
+        "normal_95_ci": [
+          -6.043223108336164e-06,
+          4.604322310833617e-05
+        ]
+      },
+      "10_vs_10": {
+        "mean_paired_ler_difference": 0.0,
+        "conditional_mc_se": 0.0,
+        "normal_95_ci": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "macro_summary_by_actual_ratio": {
+      "2": {
+        "macro_ler_by_assumed_ratio": {
+          "5": 0.00173,
+          "10": 0.00175
+        },
+        "paired_ratio10_minus_ratio5": {
+          "mean_paired_ler_difference": 1.9999999999999998e-05,
+          "conditional_mc_se": 2.806219208946886e-05,
+          "normal_95_ci": [
+            -3.5000885822603776e-05,
+            7.500088582260378e-05
+          ],
+          "cells_favoring_ratio10": 2,
+          "cells": 4
+        }
+      },
+      "3.5": {
+        "macro_ler_by_assumed_ratio": {
+          "5": 0.0018575000000000002,
+          "10": 0.001875
+        },
+        "paired_ratio10_minus_ratio5": {
+          "mean_paired_ler_difference": 1.75e-05,
+          "conditional_mc_se": 2.5617335438697556e-05,
+          "normal_95_ci": [
+            -3.2709054839728795e-05,
+            6.770905483972879e-05
+          ],
+          "cells_favoring_ratio10": 2,
+          "cells": 4
+        }
+      },
+      "5": {
+        "macro_ler_by_assumed_ratio": {
+          "5": 0.0019225,
+          "10": 0.0019775
+        },
+        "paired_ratio10_minus_ratio5": {
+          "mean_paired_ler_difference": 5.5e-05,
+          "conditional_mc_se": 2.7156527756139916e-05,
+          "normal_95_ci": [
+            1.7741836528034415e-06,
+            0.00010822581634719656
+          ],
+          "cells_favoring_ratio10": 1,
+          "cells": 4
+        }
+      },
+      "10": {
+        "macro_ler_by_assumed_ratio": {
+          "5": 0.0021425000000000003,
+          "10": 0.00213
+        },
+        "paired_ratio10_minus_ratio5": {
+          "mean_paired_ler_difference": -1.25e-05,
+          "conditional_mc_se": 2.537232251977537e-05,
+          "normal_95_ci": [
+            -6.222883834289428e-05,
+            3.722883834289428e-05
+          ],
+          "cells_favoring_ratio10": 2,
+          "cells": 4
+        }
+      }
+    },
+    "geometry_matched_within_actual_ratio": {
+      "2": true,
+      "3.5": true,
+      "5": true,
+      "10": true
+    },
+    "projected_main_seconds": 92.02095225299854,
+    "elapsed_seconds": 22.99974095899961,
+    "scope": "fresh-seed d5 validation of frozen ratio10 versus ratio5; actual ratio 3.5 adds an interpolation point; no selection or adaptation"
   }
 }

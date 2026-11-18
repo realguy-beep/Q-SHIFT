@@ -148,3 +148,10 @@
 - Macro LER .0052244 vs .0050025; paired ratio10-minus-ratio5 contrast -.0002219, conditional MC interval [-.0002626,-.0001812]. Contrast was negative within each actual strength on the equal-weight average; at actual ratio2 only 2/4 profile/basis cells favored10, while all cells at ratios5 and10 favored10.
 - This independently verifies the fixed-grid development signal and includes a new interpolation strength, with finite d3/stationary-channel scope. No confirmatory data accessed; cumulative Q-SHIFT development samples 38,594,200.
 - Reproduce with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_strength_frozen_validation.py --preflight` then without `--preflight`.
+
+## Checkpoint — distance-5 frozen bias-strength comparison (2026-11-18)
+
+- Compared assumed-ratio5/10 matching on 16 fresh d5 conditions (actual ratios2/3.5/5/10, both profiles/bases), 100k shots/cell. The explicit custom ratio10 circuits matched the existing scaled builder; 216 detectors/one observable; preflight passed and projected 92s; main completed in 23s.
+- Macro LER .0019131 for ratio5 and .0019331 for ratio10; paired ratio10-minus-ratio5 +.0000200 (conditional MC 95% interval [-.0000060,+.0000460]). No clear d5 difference; do not claim equivalence. The d3 ranking did not reproduce as a clear size-independent effect.
+- No confirmatory data accessed; cumulative Q-SHIFT development samples 40,195,800. Full report and per-cell output are saved in the d5 validation files.
+- Next: analyze graph/edge-weight shifts across assumed ratio and distance before considering more sampling.

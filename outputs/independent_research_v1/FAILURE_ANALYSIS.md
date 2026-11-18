@@ -81,3 +81,5 @@ On 12 paired d3 conditions, the correlation-enabled matching model built at assu
 
 A fresh-seed ratio10-vs-ratio5 run retained the macro ratio10 advantage and added an actual ratio3.5 condition, so the original ranking was not solely a same-sample fluctuation. Still, the actual-ratio2 conditions had mixed cell-level results, and only one distance, channel family, DEM conversion, and decoder were studied. The strongest defensible reading is a reproducible finite-grid sensitivity of matching weights to bias assumptions; causal mechanism and broader robustness remain unisolated.
 
+At d5, the same frozen ratio10-vs-ratio5 contrast was near zero (+.000020, conditional MC 95% interval [-.000006,+.000046]) and did not reproduce the d3 ranking. Thus the earlier effect is not shown to scale with distance. The d5 aligned-rate cells are sparse, so this does not establish equivalence; it is a no-clear-difference result under this sample size and condition grid.
+
