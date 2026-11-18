@@ -150,6 +150,12 @@ To inspect topology-driven state growth, evaluated one consistent syndrome on sy
 
 The grid is not a mapped repeated-measurement Q-SHIFT circuit: it uses binary faults, simple pairwise edge checks, and only one target syndrome for sizes above 2×2. It therefore does not establish an exact-decoding result or cost bound for Phase 2B. The next gate is a noiseless semantic mapping of a bounded native-categorical circuit fragment to local factors and its induced-width estimate; do not scale this prototype to full circuits before that mapping and a circuit-fragment reference pass. Full toy/grid diagnostics are in `categorical_elimination_results.json`.
 
+### Three-location native Phase 2B fragment
+
+Mapped the first three target pairs of the final-round `PAULI_CHANNEL_2` instruction in the source d=3, five-round Z-memory / X-biased ratio-10 circuit. Each is a full 16-state categorical variable with source probabilities. A shared noiseless circuit reference and raw record-parity extraction produced exact fault effects on six touched detectors and the logical observable. Across 256 deterministic combined-fault cases, Stim's observed effects matched XOR composition. Exhaustive enumeration of all 4,096 assignments agreed with variable elimination on all 64 reachable syndromes and both logical classes to max joint-mass error 2.2×10⁻¹⁶. Induced width was 2; the largest intermediate table had 512 entries. No stochastic Q-SHIFT shots were generated.
+
+This is a small final-layer slice with all other noise set to identity. The initial mapping attempt is invalid because Stim's detector sampler uses each deterministic circuit's own reference and hides injected fault deltas; it is preserved in `categorical_phase2b_fragment_first_layer_results.json`. The corrected raw-record method is in `categorical_phase2b_fragment.py`. This does not test interactions across rounds, the complete categorical channel set, or a decoder's LER/runtime. Next, run a separate width-only preflight before expanding to all six pair locations in this same layer.
+
 ## Checkerboard XZZX circuit co-design screen
 
 Applied a fixed local-H transform to the checkerboard data qubits of the CSS rotated-memory circuit, converting resets/measurements and conjugating the CX schedule exactly. CNOT conjugates requiring H-CX-H received the same one-qubit Pauli noise after each added H. Qubit, detector, round, and two-qubit-pair counts matched; single-qubit H/noise targets increased from 40 to 100 at d=3 and from 216 to 576 at d=5 (150% and 167% overhead).

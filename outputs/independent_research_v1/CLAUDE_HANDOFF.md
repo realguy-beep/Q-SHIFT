@@ -32,7 +32,7 @@ The proposed correlation-mechanism follow-up requiring a non-approximated DEM ca
 
 ## Suggested next implementation
 
-The independent branch now has a log-domain exact variable-elimination prototype that keeps local Pauli outcomes categorical. It matches exhaustive joint masses, posteriors, MAP decisions, and risk on one tree and two cyclic repetition toys; forced Stim outcomes independently verify the two circuit-backed toys. Synthetic pairwise grid tables grow from 128 entries at 5x5 to 524,288 at 11x11. This is not a Phase 2B decoder result. Next, map a bounded native-categorical circuit fragment into these factors, verify the detector/observable effects against forced circuit faults, and estimate width before attempting inference. Stop if the one-million-entry factor cap is exceeded. See `categorical_elimination_protocol.md`, `categorical_elimination.py`, and `categorical_elimination_results.json`.
+The independent branch now has a log-domain exact variable-elimination prototype that keeps local Pauli outcomes categorical. It matches exhaustive joint masses, posteriors, MAP decisions, and risk on one tree and two cyclic repetition toys. A three-location final-round slice from the actual d=3 Phase 2B circuit also passed raw forced-Stim effects, 256 combined-fault XOR checks, and exhaustive 16^3 joint-mass comparison (max error 2.2e-16, width 2, 512 table entries). Sparse binary grids grew to 524,288 entries at 11x11. This is still a fragment, not a decoder/LER result. Next run a width-only preflight for all six pair locations in this same layer, then stop if the 1,000,000-entry cap is exceeded. See `categorical_elimination_protocol.md`, `categorical_elimination.py`, and `categorical_phase2b_fragment_results.json`.
 
 ## Avoid
 

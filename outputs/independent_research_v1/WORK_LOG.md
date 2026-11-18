@@ -14,7 +14,7 @@
 
 ## Next actions
 
-1. Map a bounded native-categorical circuit fragment into local factors; verify the detector/observable effects with forced Stim faults and estimate min-fill width before attempting inference. Stop above the one-million-entry factor cap.
+1. Run a saved width-only preflight for all six pair locations in the final `PAULI_CHANNEL_2` layer; only attempt the exact model if every intermediate table stays below one million entries.
 2. Revisit neural/hybrid and rare-event approaches for a distinct mechanism not already rejected by current development screens.
 3. Continue primary literature review using accessible primary/repository sources. Mark inaccessible sources explicitly and avoid citation details that cannot be supported.
 4. Maintain checkpoints on the isolated branch. No confirmatory/sealed evaluation is authorized.
@@ -163,3 +163,11 @@
 - Synthetic pairwise grid stress at one consistent syndrome kept max table size 16/32/128/1,024/65,536/524,288 at 2x2/3x3/5x5/7x7/9x9/11x11, with induced width 3/4/6/9/15/18. The 2x2 result also matched exhaustive enumeration. At 11x11, one target took .38s and remained under the 1M-entry cap. This does not represent the Phase 2B categorical temporal graph.
 - Exact controls caught two implementation defects before final reporting: floating-point MAP tie handling and unsorted variable order in prefix parity factors. Both were corrected; final independent checks pass. No Q-SHIFT stochastic samples generated.
 - Next: map a bounded Phase 2B native categorical fragment to local factors and measure exact width, stopping before any dense intermediate exceeds 1M entries.
+
+## Native-categorical Phase 2B fragment — 2026-11-18
+
+- Mapped the first three target pairs from the final `PAULI_CHANNEL_2` instruction (source d3, five-round Z-memory, X-biased ratio10). Each location keeps its 16 mutually exclusive outcomes and source probabilities. Other stochastic locations were identity for this fragment.
+- Initial mapper used per-circuit `compile_detector_sampler` results and falsely reported zero effects because that API subtracts each deterministic circuit's own reference. Preserved the artifact as invalid; fixed mapping reads raw record bits and explicitly evaluates detector/observable rec parity relative to one shared noiseless source circuit.
+- Corrected map touches six detectors. All 256 combined-fault verification cases matched XOR composition. Exhaustive 4,096 categorical assignments and VE agree on all 64 reachable syndromes/logical classes with max joint-mass error 2.22e-16. Width=2, max factor=512 entries, ~1.96 seconds. No stochastic shots generated.
+- Current branch before this checkpoint: `codex/qshift-independent-research-v1`, commit `d4f24ef`. This is a deterministic three-location final-layer slice only, not a full-circuit decoder or LER result.
+- Next: preflight induced width for all six pair locations in the same channel layer; stop before inference if any factor exceeds one million entries.

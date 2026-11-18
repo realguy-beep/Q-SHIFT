@@ -108,3 +108,9 @@
 - Topology stress on sparse pairwise grids reached 11x11 (121 binary variables, 220 checks) at induced width 18 and 524,288 intermediate table entries under a hard 1,000,000-entry cap; one target took 0.38 s. Growth was sharp between 7x7, 9x9, and 11x11. This is not a Phase 2B factor graph, and only one target per grid was evaluated beyond 2x2.
 - Floating-point tie and factor-axis ordering bugs were found by exact controls and fixed before final metrics. No Q-SHIFT stochastic or confirmatory samples generated.
 - Next: derive exact event-to-detector/observable signatures for a bounded Phase 2B fragment and perform an induced-width-only preflight before any inference run.
+
+## Checkpoint — native-categorical Phase 2B fragment
+
+- A deterministic fragment of the source d=3 five-round Z-memory / X-biased ratio10 circuit now maps the first three pairs of the final PAULI_CHANNEL_2 layer into three 16-state categorical variables. All other stochastic locations were suppressed to identity.
+- The initial map was invalid: Stim's detector sampler subtracts each forced circuit's own deterministic reference. This produced false zero effects. The corrected raw-measurement extraction shares the noiseless circuit's detector/observable reference, then passed 256 combined-fault XOR cases and exact enumeration of all 4,096 assignments. Variable elimination matched all 64 reachable syndrome/logical masses to 2.22e-16; width2 and max factor512.
+- No stochastic circuit data were generated. This is an exact local slice only, not a decoder result. Next: width-only preflight on all six pair locations in the same final layer.
