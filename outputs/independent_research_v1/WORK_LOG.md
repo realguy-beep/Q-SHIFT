@@ -330,3 +330,11 @@
 - Corrected preflight passed: 120 pair sites, 60/zone, mean p=.003, east/west reversal, detectors/resources and graph checks passed. Projected 3.36s.
 - Main 200k/profile paired screen: east-hot local .007565 vs pooled .007530; paired delta +.000035, 95% [-.000143,.000213]. West-hot local .007120 vs pooled .007290; delta -.000170, 95% [-.000336,-.000004]. Macro reduction .93%; advancement gate false.
 - Decision: no spatial selector for this fixed mild two-zone profile. Q-SHIFT shot count +400,200 incl. preflight. Continue to another candidate family.
+
+
+## Distance-9 basis-alignment checkpoint — 2026-11-18
+
+- Parent `713d704`; isolated branch preserved.
+- Hypothesis: extend the fixed known-profile basis-alignment trend to a fourth finite distance (d9, 17 rounds) under X-biased ratio10 noise. No threshold fit or adaptive claim.
+- Preflight passed and projected 268.9s. The 500k/arm development run completed in 47.9s. Aligned X-memory: 1 failure (2e-6); mismatched Z-memory: 408 (8.16e-4); ratio .00245; conditional exact 95% interval [.0000619,.01373].
+- d7 ratio was 5/1009=.00496. d9 point estimate is lower but interval too wide to establish scaling or the aspirational 1e-4 relative ratio. No extra shots after observation. Q-SHIFT samples +1,000,200 including preflight.

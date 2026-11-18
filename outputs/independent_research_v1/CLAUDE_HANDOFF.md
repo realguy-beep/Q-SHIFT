@@ -91,3 +91,8 @@ A fresh Z-biased d3/d5 screen compared CSS, the original native-XCX checkerboard
 ## Spatially heterogeneous noise result
 
 A d3 Z-memory X-biased test used two synthetic two-qubit hotspot maps (1.5x/.5x, equal average p=.003) and compared pooled matching with a graph built from the exact local map on the same 200k syndrome rows/profile. Local-minus-pooled LER was +.000035 east-hot (95% paired interval [-.000143,.000213]) and -.000170 west-hot ([-.000336,-.000004]); equal-weight relative reduction was only 0.93%, so the predeclared 10% gate failed. This provides no support for a detector-only spatial selector for this map. Approximate-DEM threshold .003 was applied identically after a no-shot preflight showed .0018 was below the maximum local categorical component. Synthetic stress test only; not hardware calibration. Artifacts: `spatial_noise_decoder.py`, protocol, preflight, result JSON.
+
+
+## Distance-9 basis-alignment extension
+
+At d9/17 rounds, X-biased ratio10, p=.003, 500k shots/arm yielded one aligned X-memory failure versus 408 mismatched Z-memory failures. Ratio .00245, conditional exact 95% CI [.0000619,.01373]. The point estimate is lower than d7's .00496, but uncertainty is broad and does not support a 10,000-fold claim or scaling law. No extra shots were appended. Artifact/protocol: `basis_alignment_d9_results.json`, `basis_alignment_d9_protocol.md`.

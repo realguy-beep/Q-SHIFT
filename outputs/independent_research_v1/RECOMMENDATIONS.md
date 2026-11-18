@@ -77,3 +77,6 @@ The only preregistered complementary checkerboard test improved the original XZZ
 
 
 Do not advance a detector-only east/west hotspot selector from the tested model: the true-map local graph reduced macro LER by only 0.9%, missed its 10% gate, and slightly harmed the east-hot profile. A stronger or hardware-calibrated spatial mismatch would need independent motivation before new experiments.
+
+
+A d9 basis-alignment extension kept the same matched circuit/resources but observed only one aligned failure in 500k shots. Its ratio interval [.0000619,.01373] cannot certify a 10,000-fold gain or a scaling trend. Treat d3–d9 as finite-size known-profile configuration evidence, not threshold data. Any larger-distance study needs an explicit shot/runtime plan and independent-root replication; do not append shots to this already inspected stream.

@@ -255,3 +255,10 @@
 - A no-shot DEM preflight first exposed the .0018 threshold issue; after predeclaring .003 uniformly across both decoders, preflight passed and the 200k/profile run completed.
 - East-hot paired local-minus-pooled LER +.000035 (95% CI [-.000143,.000213]); west-hot -.000170 ([-.000336,-.000004]); equal-weight macro relative gain .93%, below 10%. No spatial selector follow-up under this model.
 - Synthetic robustness evidence only; not hardware calibrated. +400,200 Q-SHIFT samples; no confirmatory/sealed data touched.
+
+
+## Checkpoint — distance-9 basis alignment (2026-11-18)
+
+- Conducted one fixed d9/17-round extension for X-biased ratio10, Z-memory task: aligned X-memory vs mismatched Z-memory, 500k shots each. Resource, noiseless determinism, DEM, and scalar/batch checks passed. Main runtime 47.9s.
+- Observed 1 vs 408 failures; ratio .00245 with exact conditional 95% interval [.0000619,.01373]. This is compatible with both large and modest gains and does not establish 10,000-fold reduction or a scaling law. The fixed protocol prohibited extending after outcome inspection.
+- Q-SHIFT samples +1,000,200; no confirmatory/sealed data accessed.

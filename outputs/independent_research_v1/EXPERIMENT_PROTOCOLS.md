@@ -152,3 +152,6 @@ The one complementary checkerboard follow-up is fixed in `xzzx_native_orientatio
 
 
 The local-vs-pooled spatial heterogeneity stress test is fixed in `spatial_noise_decoder_protocol.md`. It uses a stable east/west 1.5x/.5x two-qubit fault map with exactly preserved spatial mean and compares local-map and pooled correlation-enabled matching on identical syndrome streams. The fixed DEM conversion threshold is .003 for both models: the original no-shot preflight showed the .0018 threshold rejects the largest hotspot categorical component (.0026786); no shots were generated before this protocol amendment.
+
+
+A fourth distance point at d9/17 rounds is fixed in `basis_alignment_d9_protocol.md`. It compares X-memory (aligned) and Z-memory (mismatched) for X-biased ratio10 at p=.003, with 500k shots/arm and an exact ratio interval. The aim is finite-size trend and uncertainty characterization, not a threshold fit.

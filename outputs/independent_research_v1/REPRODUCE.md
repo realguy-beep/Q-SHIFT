@@ -160,3 +160,13 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/sp
 ```
 
 See the fixed noise map and shared DEM threshold amendment in `spatial_noise_decoder_protocol.md`.
+
+
+### Distance-9 basis-alignment extension
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/basis_alignment_d9.py --preflight
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/basis_alignment_d9.py
+```
+
+The fixed d9 protocol and ratio interval definition are in `basis_alignment_d9_protocol.md`.

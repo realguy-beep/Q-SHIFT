@@ -83,3 +83,8 @@ One fixed complementary checkerboard orientation improved over the original orie
 ## Spatial heterogeneity check
 
 Under a synthetic stable spatial map that doubles/halves rates relative to the .003 mean (actual 1.5x/.5x factors), even the decoder with the exact profile map achieved less than a 1% equal-weight relative reduction over a pooled graph on d3. This is evidence about one approximate-DEM decoder and two hotspot orientations, not a fundamental limit on spatial adaptation. It suggests the present graph representation is relatively insensitive to this mild local rate pattern.
+
+
+## Distance-9 basis-alignment uncertainty
+
+At d9, 500k shots gave 1 aligned failure against 408 mismatched failures for one X-biased profile. The point ratio .00245 is consistent with a broad exact ratio interval [.0000619,.01373], which includes improvements much smaller than the aspirational 10,000-fold reduction. This shows how rapidly evidence becomes sample-limited as the aligned LER falls; it neither proves a floor nor establishes exponential distance scaling.

@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 48999800,
+  "stochastic_qshift_shots_generated": 50000000,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -239,7 +239,7 @@
     },
     "interpretation": "all three BP+LSD variants worse in every tested condition; one distance/configuration/approximate model only; not an integration or superiority claim"
   },
-  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples",
+  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples",
   "stochastic_dem_samples_generated": 780000,
   "rare_event_importance_sampling": {
     "status": "positive_development_method_result_limited_to_approximate_dem",
@@ -19083,5 +19083,189 @@
     "stochastic_qshift_shots": 400000,
     "scope": "synthetic spatial-noise stress test; profile map known to local decoder; not adaptive or hardware-calibrated",
     "elapsed_seconds": 0.3765076859999681
+  },
+  "basis_alignment_d9_preflight": {
+    "status": "distance9_preflight",
+    "distance": 9,
+    "rounds": 17,
+    "regime": "x_biased",
+    "gate_p": 0.003,
+    "measurement_p": 0.003,
+    "bias_ratio": 10.0,
+    "verified_circuit_resources": {
+      "x": {
+        "qubits": 188,
+        "detectors": 1360,
+        "observables": 1,
+        "rounds": 17,
+        "two_qubit_channel_pairs": 4896,
+        "one_qubit_noise_targets": 1360,
+        "measurement_flip_targets": 1441
+      },
+      "z": {
+        "qubits": 188,
+        "detectors": 1360,
+        "observables": 1,
+        "rounds": 17,
+        "two_qubit_channel_pairs": 4896,
+        "one_qubit_noise_targets": 1360,
+        "measurement_flip_targets": 1441
+      }
+    },
+    "shots_per_condition": 100,
+    "conditions": [
+      {
+        "memory_basis": "z",
+        "seed": 2026113001,
+        "shots": 100,
+        "failures": 1,
+        "ler": 0.01,
+        "wilson_95": [
+          0.0017674320641406505,
+          0.054486196178705315
+        ],
+        "sampling_seconds": 0.004766360998473829,
+        "decode_seconds": 0.03020063499934622,
+        "resources": {
+          "qubits": 188,
+          "detectors": 1360,
+          "observables": 1,
+          "rounds": 17,
+          "two_qubit_channel_pairs": 4896,
+          "one_qubit_noise_targets": 1360,
+          "measurement_flip_targets": 1441
+        }
+      },
+      {
+        "memory_basis": "x",
+        "seed": 2026113002,
+        "shots": 100,
+        "failures": 0,
+        "ler": 0.0,
+        "wilson_95": [
+          3.469446951953614e-18,
+          0.03699349820698568
+        ],
+        "sampling_seconds": 0.004885312002443243,
+        "decode_seconds": 0.013921517998824129,
+        "resources": {
+          "qubits": 188,
+          "detectors": 1360,
+          "observables": 1,
+          "rounds": 17,
+          "two_qubit_channel_pairs": 4896,
+          "one_qubit_noise_targets": 1360,
+          "measurement_flip_targets": 1441
+        }
+      }
+    ],
+    "aligned_basis": "x",
+    "mismatched_basis": "z",
+    "comparison": {
+      "aligned_over_mismatched_rate_ratio": 0.0,
+      "conditional_exact_95_ci": [
+        0.0,
+        38.999999999999964
+      ],
+      "upper_ci_at_or_below_1e-4": false
+    },
+    "aligned_zero_failure_one_sided_95_upper": null,
+    "stochastic_samples": 200,
+    "projected_main_seconds": 268.8691299954371,
+    "elapsed_seconds": 0.5138951320004708,
+    "max_rss_kib": 142744,
+    "scope": "fourth finite-distance point for fixed known-profile bias alignment; development only; not threshold or adaptation evidence"
+  },
+  "basis_alignment_d9": {
+    "status": "distance9_development_screen",
+    "distance": 9,
+    "rounds": 17,
+    "regime": "x_biased",
+    "gate_p": 0.003,
+    "measurement_p": 0.003,
+    "bias_ratio": 10.0,
+    "verified_circuit_resources": {
+      "x": {
+        "qubits": 188,
+        "detectors": 1360,
+        "observables": 1,
+        "rounds": 17,
+        "two_qubit_channel_pairs": 4896,
+        "one_qubit_noise_targets": 1360,
+        "measurement_flip_targets": 1441
+      },
+      "z": {
+        "qubits": 188,
+        "detectors": 1360,
+        "observables": 1,
+        "rounds": 17,
+        "two_qubit_channel_pairs": 4896,
+        "one_qubit_noise_targets": 1360,
+        "measurement_flip_targets": 1441
+      }
+    },
+    "shots_per_condition": 500000,
+    "conditions": [
+      {
+        "memory_basis": "z",
+        "seed": 2026113011,
+        "shots": 500000,
+        "failures": 408,
+        "ler": 0.000816,
+        "wilson_95": [
+          0.0007405962466431775,
+          0.0008990740735461817
+        ],
+        "sampling_seconds": 15.45555062999847,
+        "decode_seconds": 12.017841223001597,
+        "resources": {
+          "qubits": 188,
+          "detectors": 1360,
+          "observables": 1,
+          "rounds": 17,
+          "two_qubit_channel_pairs": 4896,
+          "one_qubit_noise_targets": 1360,
+          "measurement_flip_targets": 1441
+        }
+      },
+      {
+        "memory_basis": "x",
+        "seed": 2026113012,
+        "shots": 500000,
+        "failures": 1,
+        "ler": 2e-06,
+        "wilson_95": [
+          3.530491971112022e-07,
+          1.1329778686072605e-05
+        ],
+        "sampling_seconds": 12.665659199999936,
+        "decode_seconds": 7.7163430099972175,
+        "resources": {
+          "qubits": 188,
+          "detectors": 1360,
+          "observables": 1,
+          "rounds": 17,
+          "two_qubit_channel_pairs": 4896,
+          "one_qubit_noise_targets": 1360,
+          "measurement_flip_targets": 1441
+        }
+      }
+    ],
+    "aligned_basis": "x",
+    "mismatched_basis": "z",
+    "comparison": {
+      "aligned_over_mismatched_rate_ratio": 0.0024509803921568627,
+      "conditional_exact_95_ci": [
+        6.190364696461825e-05,
+        0.01373274272696722
+      ],
+      "upper_ci_at_or_below_1e-4": false
+    },
+    "aligned_zero_failure_one_sided_95_upper": null,
+    "stochastic_samples": 1000000,
+    "projected_main_seconds": null,
+    "elapsed_seconds": 48.43563403100052,
+    "max_rss_kib": 1476184,
+    "scope": "fourth finite-distance point for fixed known-profile bias alignment; development only; not threshold or adaptation evidence"
   }
 }

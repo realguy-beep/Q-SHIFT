@@ -1,0 +1,92 @@
+{
+  "status": "distance9_development_screen",
+  "distance": 9,
+  "rounds": 17,
+  "regime": "x_biased",
+  "gate_p": 0.003,
+  "measurement_p": 0.003,
+  "bias_ratio": 10.0,
+  "verified_circuit_resources": {
+    "x": {
+      "qubits": 188,
+      "detectors": 1360,
+      "observables": 1,
+      "rounds": 17,
+      "two_qubit_channel_pairs": 4896,
+      "one_qubit_noise_targets": 1360,
+      "measurement_flip_targets": 1441
+    },
+    "z": {
+      "qubits": 188,
+      "detectors": 1360,
+      "observables": 1,
+      "rounds": 17,
+      "two_qubit_channel_pairs": 4896,
+      "one_qubit_noise_targets": 1360,
+      "measurement_flip_targets": 1441
+    }
+  },
+  "shots_per_condition": 500000,
+  "conditions": [
+    {
+      "memory_basis": "z",
+      "seed": 2026113011,
+      "shots": 500000,
+      "failures": 408,
+      "ler": 0.000816,
+      "wilson_95": [
+        0.0007405962466431775,
+        0.0008990740735461817
+      ],
+      "sampling_seconds": 15.45555062999847,
+      "decode_seconds": 12.017841223001597,
+      "resources": {
+        "qubits": 188,
+        "detectors": 1360,
+        "observables": 1,
+        "rounds": 17,
+        "two_qubit_channel_pairs": 4896,
+        "one_qubit_noise_targets": 1360,
+        "measurement_flip_targets": 1441
+      }
+    },
+    {
+      "memory_basis": "x",
+      "seed": 2026113012,
+      "shots": 500000,
+      "failures": 1,
+      "ler": 2e-06,
+      "wilson_95": [
+        3.530491971112022e-07,
+        1.1329778686072605e-05
+      ],
+      "sampling_seconds": 12.665659199999936,
+      "decode_seconds": 7.7163430099972175,
+      "resources": {
+        "qubits": 188,
+        "detectors": 1360,
+        "observables": 1,
+        "rounds": 17,
+        "two_qubit_channel_pairs": 4896,
+        "one_qubit_noise_targets": 1360,
+        "measurement_flip_targets": 1441
+      }
+    }
+  ],
+  "aligned_basis": "x",
+  "mismatched_basis": "z",
+  "comparison": {
+    "aligned_over_mismatched_rate_ratio": 0.0024509803921568627,
+    "conditional_exact_95_ci": [
+      6.190364696461825e-05,
+      0.01373274272696722
+    ],
+    "upper_ci_at_or_below_1e-4": false
+  },
+  "aligned_zero_failure_one_sided_95_upper": null,
+  "stochastic_samples": 1000000,
+  "projected_main_seconds": null,
+  "elapsed_seconds": 48.43563403100052,
+  "max_rss_kib": 1476184,
+  "scope": "fourth finite-distance point for fixed known-profile bias alignment; development only; not threshold or adaptation evidence"
+}

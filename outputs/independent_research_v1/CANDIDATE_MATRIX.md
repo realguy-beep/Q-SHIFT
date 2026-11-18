@@ -46,3 +46,6 @@ The matrix is therefore a landscape of distinct approaches, not a claim that eve
 
 
 Spatial robustness update: the exact local-map graph and pooled graph were nearly tied on the fixed 1.5x/.5x two-zone d3 stress test; macro gain .93%, below the declared 10% gate. Do not advance a selector for this profile.
+
+
+Distance scaling update: a d9 extension observed 1 aligned vs 408 mismatched failures in 500k shots, ratio .00245 with exact 95% interval [.0000619,.01373]. This extends finite-distance evidence but is too imprecise to support scaling or the 1e-4 ratio target.
