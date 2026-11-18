@@ -81,3 +81,5 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the deterministic three-location Phase 2B fragment mapping with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_phase2b_fragment.py`. It uses raw measurements from forced Pauli circuits, checks XOR composition and exhaustive categorical masses, and generates no stochastic samples.
 
 - Reproduce the six-location layer width preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_phase2b_six_location_preflight.py`, then the all-syndrome exact XOR-convolution/VE comparison with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_phase2b_six_location.py`. The second run takes about 95 seconds here; neither generates stochastic circuit shots.
+
+- Reproduce the two-layer scope-only ordering audit with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_phase2b_two_layer_preflight.py`. It allocates no inference tables; all eight tested orders exceeded the one-million-entry cap.

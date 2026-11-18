@@ -33,7 +33,8 @@ class Stats:
     elimination_order: tuple[int, ...] = ()
 
 
-def _weighted_min_fill(scopes: list[tuple[int, ...]], domains: dict[int, int]) -> tuple[int, ...]:
+def _weighted_min_fill(scopes: list[tuple[int, ...]], domains: dict[int, int],
+                       strategy: str = "weighted_min_fill") -> tuple[int, ...]:
     graph: dict[int, set[int]] = {v: set() for v in domains}
     for scope in scopes:
         for a, b in combinations(scope, 2):
@@ -45,7 +46,15 @@ def _weighted_min_fill(scopes: list[tuple[int, ...]], domains: dict[int, int]) -
             ns = graph[v]
             missing = sum(1 for a, b in combinations(ns, 2) if b not in graph[a])
             entries = domains[v] * math.prod(domains[n] for n in ns)
-            return missing, entries, len(ns), v
+            if strategy == "weighted_min_fill":
+                return missing, entries, len(ns), v
+            if strategy == "weighted_min_product":
+                return entries, missing, len(ns), v
+            if strategy == "min_fill":
+                return missing, len(ns), entries, v
+            if strategy == "min_degree":
+                return len(ns), missing, entries, v
+            raise ValueError(f"unknown ordering strategy {strategy}")
 
         v = min(graph, key=key)
         neighbors = list(graph[v])
@@ -59,8 +68,7 @@ def _weighted_min_fill(scopes: list[tuple[int, ...]], domains: dict[int, int]) -
     return tuple(order)
 
 
-def estimate_factor_growth(model: CategoricalModel) -> dict:
-    """Estimate min-fill factor sizes from scopes only; allocate no dense tables."""
+def _model_scopes(model: CategoricalModel) -> tuple[dict[int, int], list[tuple[int, ...]]]:
     n = len(model.locations)
     domains = {i: len(loc.outcomes) for i, loc in enumerate(model.locations)}
     domains.update({n + i: 2 for i in range(n)})
@@ -75,7 +83,23 @@ def estimate_factor_growth(model: CategoricalModel) -> dict:
         previous = None if i == 0 else n + i - 1
         scopes.append(tuple(sorted((i, carry) if previous is None else (previous, i, carry))))
     scopes.append((2 * n - 1,))
-    order = _weighted_min_fill(scopes, domains)
+    return domains, scopes
+
+
+def estimate_factor_growth(model: CategoricalModel, strategy: str = "weighted_min_fill") -> dict:
+    """Estimate min-fill factor sizes from scopes only; allocate no dense tables."""
+    domains, scopes = _model_scopes(model)
+    n = len(model.locations)
+    if strategy == "natural":
+        order = tuple(range(2 * n))
+    elif strategy == "reverse_natural":
+        order = tuple(reversed(range(2 * n)))
+    elif strategy == "location_carry_interleaved":
+        order = tuple(v for i in range(n) for v in (i, n + i))
+    elif strategy == "carry_location_interleaved":
+        order = tuple(v for i in range(n) for v in (n + i, i))
+    else:
+        order = _weighted_min_fill(scopes, domains, strategy)
     scopes = list(scopes)
     induced_width = 0
     max_entries = 1
@@ -93,7 +117,7 @@ def estimate_factor_growth(model: CategoricalModel) -> dict:
         reduced = tuple(v for v in union if v != variable)
         if reduced:
             scopes.append(reduced)
-    return {"elimination_order": order, "induced_width": induced_width,
+    return {"strategy": strategy, "elimination_order": order, "induced_width": induced_width,
             "max_intermediate_factor_entries": max_entries, "steps": records}
 
 

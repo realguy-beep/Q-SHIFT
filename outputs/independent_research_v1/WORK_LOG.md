@@ -14,8 +14,8 @@
 
 ## Next actions
 
-1. Run a saved width-only preflight for the final two adjacent `PAULI_CHANNEL_2` layers (12 locations); if predicted width exceeds the one-million-entry cap, stop before inference.
-2. Revisit neural/hybrid and rare-event approaches for a distinct mechanism not already rejected by current development screens.
+1. Stop dense variable elimination for the two-layer Phase 2B factorization; move to a separate decoding or code-design family.
+2. Revisit neural/hybrid, rare-event, or code-resource approaches for a distinct mechanism not already rejected by current development screens.
 3. Continue primary literature review using accessible primary/repository sources. Mark inaccessible sources explicitly and avoid citation details that cannot be supported.
 4. Maintain checkpoints on the isolated branch. No confirmatory/sealed evaluation is authorized.
 - Retrieved source-tagged official documentation from Stim v1.16.0 and PyMatching v2.4.0. Stim explicitly requires approximate disjoint-error conversion for non-independent custom channels; PyMatching documents its correlation feature as a two-pass sparse-blossom procedure. Retrieved the official LDPC project README, which points BP+OSD users to Roffe et al. 2020 and notes BP+LSD as a newer alternative. Direct arXiv/DOI article endpoints remain unavailable.
@@ -179,3 +179,11 @@
 - Isolated-layer MAP LER was 1.0572e-5, but all other circuit faults were identity; do not compare it with the full Phase 2B LER. No stochastic circuit samples generated.
 - Current branch before this checkpoint: `codex/qshift-independent-research-v1`, commit `11f5fce`.
 - Next: structural width-only preflight on two adjacent final-round channel layers (12 locations), with same fixed cap.
+
+## Two-layer exact-inference width stop — 2026-11-18
+
+- The final two adjacent `PAULI_CHANNEL_2` instructions in the d3 five-round Z-memory/X-biased-10:1 circuit contribute 12 native 16-state variables and touch 10 detectors. A scope-only weighted min-fill preflight predicted width9 and a largest factor of 17,179,869,184 entries.
+- Compared eight scope orderings: weighted min-fill, weighted min-product, unweighted min-fill, min-degree, natural, reverse, and two location/carry interleavings. None fit the fixed 1,000,000-entry cap. Best remained 17.2B entries; no inference table was allocated and no posterior was attempted.
+- This demonstrates a sharp scaling break from the single-layer pass and stops this dense factorization at one layer. It is not a lower bound for tensor contraction or other exact representations. No stochastic shots generated.
+- Current branch before this checkpoint: `codex/qshift-independent-research-v1`, commit `c0acddd`.
+- Next: return to another research family; consider a resource-matched d3 round-count/code design screen or circuit-compatible tensor decoder audit rather than more dense VE ordering work.

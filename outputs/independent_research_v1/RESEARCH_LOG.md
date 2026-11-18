@@ -121,3 +121,9 @@
 - Exact XOR-convolution of all 16^6 probability assignments produced 1,024 reachable syndromes. Variable elimination agreed with the independent reference to max joint mass error1.11e-16 and posterior error2.47e-15; 512 forced combined Pauli circuits verified XOR signatures. All six native categorical events and source probabilities were retained.
 - One isolated-layer MAP LER was 1.0572e-5, not a full-circuit error estimate because every other fault was suppressed. Runtime 95s; no stochastic Q-SHIFT data generated.
 - Next: preflight two adjacent final-round channel layers (12 categorical locations) using factor scopes only.
+
+## Checkpoint — two-layer dense-elimination stop
+
+- Scope-only mapping of the last two adjacent channel instructions built 12 native 16-state locations over 10 touched detectors. Weighted min-fill predicted width9 and max table 17,179,869,184 entries.
+- Seven alternate orderings (weighted min-product, min-fill, min-degree, natural/reverse, and two location/carry interleavings) were tied or worse; best remained 17.2B. The 1M-entry cap failed before inference or any dense allocation. This stops the current dense VE route at one isolated layer; it does not bound specialized tensor contractions.
+- No stochastic circuit samples generated. Next: move to another family rather than continue order tuning.
