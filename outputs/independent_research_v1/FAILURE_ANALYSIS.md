@@ -135,3 +135,6 @@ A true-map local DEM gave only a small, one-sided benefit over the pooled mean g
 ## Tensor MPS biased-code-capacity replication
 
 The fixed chi=16 MPS improvement replicated directionally across two independent sample roots under the X-biased code-capacity model. At d5 both roots showed fewer errors with MPS; at d3 the second root's paired interval crossed zero. This is a positive small-code-capacity result, not a robust circuit-level decoder result. The principal practical limitation is runtime (about 31x bias-aware MWPM at d5); the principal model limitation is perfect syndrome extraction and a single-qubit code-capacity channel. qecsim's planar MPS decoder expects a planar code and perfect syndrome, whereas Q-SHIFT supplies a repeated noisy spacetime detector history with categorical two-qubit gate faults. Applying it directly to the terminal syndrome would discard information and be an unfair comparison. A spacetime tensor decoder is a separate algorithmic project and requires a new bounded protocol.
+
+
+The documented row/column-averaged qecsim contraction did not change any logical predictions relative to column mode on 5k biased code-capacity samples at either d3 or d5, while roughly doubling d5 runtime. This rejects the fixed mode-a ablation at chi16 for this sampled condition; no further contraction-mode tuning is justified on the same streams.

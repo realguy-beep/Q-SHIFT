@@ -276,3 +276,8 @@ The d9 preflight passed and projected under the 300s cap. At d=9, rounds=17, p=.
 ## Fixed-bond MPS under X-biased code-capacity noise
 
 Using qecsim's `BiasedDepolarizingErrorModel(bias=5, axis='X')` (axis/off-axis probability ratio 10), p=.05, and 5,000 paired errors/distance, chi=16 MPS reduced failures versus bias-aware MWPM from 191 to 175 at d3 (8.4%; paired 95% interval for MPS-minus-MWPM LER [-.00629,-.00011]) and 118 to 76 at d5 (35.6%; interval [-.01177,-.00503]). MPS decode time was about 6x MWPM at d3 and 31x at d5. A fresh-seed replication again favored MPS at both distances: d3 182 vs 197, paired interval [-.00666,+.00066] crossing zero; d5 75 vs 101, interval [-.00843,-.00197]. This supports a directional code-capacity MPS signal, especially at d5, but d3 is uncertain, each root has only 5,000 shots, and this model has perfect syndrome/no repeated measurement faults. No Q-SHIFT circuit shots were generated. See primary and replication artifacts/protocols.
+
+
+## MPS averaged-contraction mode ablation
+
+On a fresh 5,000 paired biased-code-capacity sample per distance, qecsim `PlanarMPSDecoder(chi=16, mode='a')` produced exactly the same logical predictions as mode `c`: 0 discordant shots at d3 and d5, and identical failure counts (176 and 55 respectively). Thus the averaged contraction gave no observed LER change, while decode time was about 1.6x mode c at d3 and 2.0x at d5. It did not pass the predeclared advancement gate. Both modes remained below bias-aware MWPM on this sample, but this does not expand the circuit-level scope. See mode-ablation artifacts.

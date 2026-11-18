@@ -83,3 +83,6 @@ A d9 basis-alignment extension kept the same matched circuit/resources but obser
 
 
 The fixed chi=16 MPS result is worth keeping as a biased code-capacity direction: d5 improved in both 5k independent roots, while d3 was less certain. Do not integrate it into Q-SHIFT based on this evidence. qecsim's decoder consumes perfect planar syndromes and cannot use Q-SHIFT's repeated spacetime detector record; a circuit-compatible tensor decoder would need an explicit temporal contraction model and an equal-information baseline. Its d5 latency is already about 31x bias-aware MWPM.
+
+
+The qecsim averaged row/column MPS mode produced exactly the same predictions as column mode at both distances and cost about twice as much at d5. Do not advance mode a or tune contraction settings for this sample. Any tensor follow-up should address the missing spacetime detector structure directly.

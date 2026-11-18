@@ -182,3 +182,11 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/te
 ```
 
 These are code-capacity experiments only; see their fixed protocols.
+
+
+### Biased MPS averaged-mode ablation
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/tensor_mps_biased_mode.py --preflight
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/tensor_mps_biased_mode.py
+```

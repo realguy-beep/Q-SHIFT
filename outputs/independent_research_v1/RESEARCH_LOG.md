@@ -269,3 +269,9 @@
 - Tested established qecsim chi=16 planar MPS under 10:1:1 X-biased code-capacity noise vs its bias-aware MWPM decoder. 5k paired samples at d3/d5; both recovery-valid.
 - Fresh independent-seed repeat under same protocol. MPS direction favored at both distances in both roots; d5 intervals below zero in both, d3 interval crossed zero in replication. d5 MPS latency ~31x MWPM.
 - Positive result is restricted to perfect-syndrome code capacity. No Q-SHIFT circuit shots, no confirmatory data. A spacetime tensor network is required for an information-fair circuit comparison.
+
+
+## Checkpoint — averaged MPS mode ablation (2026-11-18)
+
+- Tested qecsim's documented average row/column mode against fixed column mode at chi16 on a fresh 5k/d biased code-capacity stream. Preflight projection 179.5s, main 239.9s.
+- Both modes gave exactly identical logical outputs on every sample at d3/d5; mode a doubled d5 latency. No ablation benefit. This does not address Q-SHIFT's missing spacetime support.

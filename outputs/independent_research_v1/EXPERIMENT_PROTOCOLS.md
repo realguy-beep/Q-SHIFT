@@ -158,3 +158,6 @@ A fourth distance point at d9/17 rounds is fixed in `basis_alignment_d9_protocol
 
 
 The biased code-capacity MPS screen is fixed in `tensor_mps_biased_protocol.md`; a separate fresh-seed replication is in `tensor_mps_biased_replication_protocol.md`. Both use bias-aware qecsim MWPM as the comparator and hold chi=16/mode=c fixed. Neither evaluates Q-SHIFT's repeated-measurement circuit.
+
+
+The fixed MPS contraction-mode ablation is specified in `tensor_mps_biased_mode_protocol.md`; it compares qecsim mode `a` (average row/column) against the already tested mode `c`, with same errors and bias-aware MWPM.

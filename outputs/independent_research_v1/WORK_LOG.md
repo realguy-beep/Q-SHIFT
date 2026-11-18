@@ -348,3 +348,10 @@
 - Fresh-seed replication: 182/197 at d3 (CI [-.00666,+.00066]); 75/101 at d5 ([-.00843,-.00197]). Valid recoveries throughout. Direction consistent; d3 uncertain, d5 positive in both roots.
 - No Q-SHIFT circuit shots. qecsim expects perfect planar syndrome, unlike Q-SHIFT spacetime detectors; no direct integration. Total code-capacity shots for this family include preflights/replication separately, not in Q-SHIFT cumulative count.
 - Next: only pursue a spacetime tensor decoder if a bounded, equal-information contraction can be designed; otherwise continue other candidates.
+
+
+## MPS mode-ablation checkpoint — 2026-11-18
+
+- Parent `7621008`; fixed mode-a vs mode-c ablation at chi16 under the same X-biased p=.05 code-capacity model.
+- Preflight projected 179.5s; main finished in 239.9s under the 300s cap. Mode a and c had exactly identical predictions at d3 (176 failures) and d5 (55 failures), zero discordants. Mode a was 1.6x/2.0x slower.
+- Advancement gate failed; no mode search. No Q-SHIFT circuit shots. The key tensor compatibility gap remains noisy spacetime observations.
