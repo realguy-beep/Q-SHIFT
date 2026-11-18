@@ -275,3 +275,10 @@
 
 - Tested qecsim's documented average row/column mode against fixed column mode at chi16 on a fresh 5k/d biased code-capacity stream. Preflight projection 179.5s, main 239.9s.
 - Both modes gave exactly identical logical outputs on every sample at d3/d5; mode a doubled d5 latency. No ablation benefit. This does not address Q-SHIFT's missing spacetime support.
+
+
+## Checkpoint — exact seven-layer tensor-train compressibility (2026-11-18)
+
+- Audited whether the exact P/Z posterior can fit a low-rank MPS in the frozen temporal detector order. SVD across every binary cut completed in 6.44s with no sampling.
+- Maximum TT rank 91 at 1e-10 relative error; rank 30 at 1e-6. Fixed exact-fidelity rank-64 gate failed. Do not implement the predeclared exact-fidelity prototype or adjust tolerances post hoc.
+- This is not a bound for other orderings or a full circuit. Next, switch families/approaches.

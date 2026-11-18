@@ -281,3 +281,8 @@ Using qecsim's `BiasedDepolarizingErrorModel(bias=5, axis='X')` (axis/off-axis p
 ## MPS averaged-contraction mode ablation
 
 On a fresh 5,000 paired biased-code-capacity sample per distance, qecsim `PlanarMPSDecoder(chi=16, mode='a')` produced exactly the same logical predictions as mode `c`: 0 discordant shots at d3 and d5, and identical failure counts (176 and 55 respectively). Thus the averaged contraction gave no observed LER change, while decode time was about 1.6x mode c at d3 and 2.0x at d5. It did not pass the predeclared advancement gate. Both modes remained below bias-aware MWPM on this sample, but this does not expand the circuit-level scope. See mode-ablation artifacts.
+
+
+## Exact seven-layer tensor-train compressibility audit
+
+The exact P(s) and Z(s) arrays were matricized at all 19 cuts in the frozen 20-detector order. Maximum rank was 91 for each array to relative Frobenius error 1e-10, and 30 at 1e-6. The predeclared exact-fidelity prototype gate (rank <=64 at 1e-10) failed; no tensor-train decoder was implemented and no stochastic samples were generated. This is an ordering-specific compressibility result for the seven-layer tail, not a lower bound for other detector orderings or a full-circuit network.

@@ -190,3 +190,12 @@ These are code-capacity experiments only; see their fixed protocols.
 MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/tensor_mps_biased_mode.py --preflight
 MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/tensor_mps_biased_mode.py
 ```
+
+
+### Exact seven-layer tensor-train rank audit
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_seven_layer_tt.py
+```
+
+See `categorical_seven_layer_tt_protocol.md` for rank tolerances and stop gate.

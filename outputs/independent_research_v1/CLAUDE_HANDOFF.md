@@ -106,3 +106,8 @@ With qecsim 1.0b9, `BiasedDepolarizingErrorModel(bias=5, axis='X')` gives a 10:1
 ## MPS contraction-mode ablation
 
 Under the same X-biased code-capacity model, qecsim chi16 mode `a` and mode `c` gave exactly identical logical predictions on 5k paired shots at d3 and d5 (zero discordants). Mode a cost ~1.6x/~2x decoding time. No reason to prefer it. The broader MPS code-capacity gain still lacks a repeated-measurement/spacetime interface.
+
+
+## Exact tail tensor-train audit
+
+Natural detector-order TT-SVD of the exact seven-layer P/Z arrays gave max rank 91 at 1e-10 relative Frobenius error and rank 30 at 1e-6. The preregistered rank<=64 at 1e-10 gate failed, so no MPS prototype followed. This is specific to the stored detector order and tail fragment. Artifact/protocol: `categorical_seven_layer_tt_results.json` and `categorical_seven_layer_tt_protocol.md`.

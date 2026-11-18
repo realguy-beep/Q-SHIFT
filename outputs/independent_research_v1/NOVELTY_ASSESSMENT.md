@@ -36,3 +36,6 @@ The complementary-orientation screen is not a new code family or algorithm. It a
 
 
 The biased-noise planar MPS comparison applies an established tensor decoder to an established biased code-capacity model; it is not a new algorithm. Its local empirical contribution is the paired chi=16 vs bias-aware MWPM screen with independent seeds. No novelty or circuit-level gain is claimed.
+
+
+The tensor-train rank diagnostic uses standard SVD-based ranks and makes no algorithmic novelty claim. Its local value is a reproducible compressibility boundary for one exact Q-SHIFT categorical tail under a fixed detector ordering.

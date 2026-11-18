@@ -86,3 +86,6 @@ The fixed chi=16 MPS result is worth keeping as a biased code-capacity direction
 
 
 The qecsim averaged row/column MPS mode produced exactly the same predictions as column mode at both distances and cost about twice as much at d5. Do not advance mode a or tune contraction settings for this sample. Any tensor follow-up should address the missing spacetime detector structure directly.
+
+
+The natural detector-order exact tensor-train audit missed its rank-64/1e-10 gate (max rank 91). Do not build an exact-fidelity MPS prototype from this tensor ordering. A lower-rank 1e-6 approximation is only a future hypothesis and would need a new protocol with direct risk/error calibration against the exact fragment before any circuit-scale use.

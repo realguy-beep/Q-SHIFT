@@ -93,3 +93,8 @@ At d9, 500k shots gave 1 aligned failure against 408 mismatched failures for one
 ## Biased MPS scope boundary
 
 At p=.05 in perfect-syndrome planar code capacity with X:Y:Z=10:1:1, fixed chi=16 planar MPS outperformed bias-aware MWPM in d5 on two 5k-sample roots and directionally in d3 (one of two roots had a paired interval spanning zero). Its d5 decoding latency was about 31x higher. These results establish neither a Q-SHIFT repeated-circuit gain nor a usable lower LER bound; measurement faults, spacetime correlations, and categorical two-qubit gate channels are absent.
+
+
+## Tensor-train rank of the exact seven-layer tail
+
+For the exact 20-detector P/Z posterior, natural temporal detector order gives maximum tensor-train ranks 91 at relative Frobenius tolerance 1e-10 and 30 at 1e-6. The fixed rank<=64 high-accuracy gate therefore fails. The finding is representation/order specific and cannot be generalized to the full circuit or all tensor-network contractions.

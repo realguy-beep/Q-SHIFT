@@ -355,3 +355,11 @@
 - Parent `7621008`; fixed mode-a vs mode-c ablation at chi16 under the same X-biased p=.05 code-capacity model.
 - Preflight projected 179.5s; main finished in 239.9s under the 300s cap. Mode a and c had exactly identical predictions at d3 (176 failures) and d5 (55 failures), zero discordants. Mode a was 1.6x/2.0x slower.
 - Advancement gate failed; no mode search. No Q-SHIFT circuit shots. The key tensor compatibility gap remains noisy spacetime observations.
+
+
+## Exact tensor-train rank audit checkpoint — 2026-11-18
+
+- Parent `acf03f6`; branch remains isolated.
+- Reconstructed exact seven-layer P/Z arrays and computed all 19 cut spectra in the fixed natural detector order. Runtime 6.44s, no stochastic samples.
+- Max rank at 1e-10 relative Frobenius tolerance: 91 (P and Z); at 1e-6: 30. The predeclared rank<=64 at 1e-10 gate failed. No MPS inference prototype was launched.
+- Scope is the seven-layer tail and chosen ordering only. Continue to another candidate family.

@@ -161,3 +161,6 @@ The biased code-capacity MPS screen is fixed in `tensor_mps_biased_protocol.md`;
 
 
 The fixed MPS contraction-mode ablation is specified in `tensor_mps_biased_mode_protocol.md`; it compares qecsim mode `a` (average row/column) against the already tested mode `c`, with same errors and bias-aware MWPM.
+
+
+A deterministic tensor-train rank audit is fixed in `categorical_seven_layer_tt_protocol.md`. It computes singular spectra of exact P and Z posterior matricizations in the stored detector order, without new samples.

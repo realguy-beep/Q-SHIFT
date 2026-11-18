@@ -138,3 +138,6 @@ The fixed chi=16 MPS improvement replicated directionally across two independent
 
 
 The documented row/column-averaged qecsim contraction did not change any logical predictions relative to column mode on 5k biased code-capacity samples at either d3 or d5, while roughly doubling d5 runtime. This rejects the fixed mode-a ablation at chi16 for this sampled condition; no further contraction-mode tuning is justified on the same streams.
+
+
+The natural-order exact tail posterior is not sufficiently compressible for the predeclared rank-64/1e-10 tensor-train gate: P and Z both require rank 91 at the hardest cut. At looser 1e-6 relative Frobenius tolerance the maximum rank is 30, but the protocol forbids advancing based on that post-result observation. This closes the exact-fidelity MPS prototype at this fixed ordering; it does not rule out approximate decoders or other orderings.

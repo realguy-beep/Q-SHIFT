@@ -49,3 +49,6 @@ Spatial robustness update: the exact local-map graph and pooled graph were nearl
 
 
 Distance scaling update: a d9 extension observed 1 aligned vs 408 mismatched failures in 500k shots, ratio .00245 with exact 95% interval [.0000619,.01373]. This extends finite-distance evidence but is too imprecise to support scaling or the 1e-4 ratio target.
+
+
+Exact-inference update: the natural-order seven-layer P/Z tensor-train arrays need maximum rank 91 at 1e-10 (rank 30 at 1e-6), so the predeclared exact-fidelity MPS gate failed.
