@@ -1,0 +1,1192 @@
+{
+  "status": "development_frozen_bias_strength_validation",
+  "actual_ratios": [
+    2,
+    3.5,
+    5,
+    10
+  ],
+  "assumed_ratios": [
+    5,
+    10
+  ],
+  "profiles": [
+    "x_biased",
+    "z_biased"
+  ],
+  "memory_bases": [
+    "x",
+    "z"
+  ],
+  "shots_per_condition": 100000,
+  "conditions": [
+    {
+      "actual_ratio": 2,
+      "profile": "x_biased",
+      "memory_basis": "x",
+      "seed": 2026112421,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 378,
+        "10": 365
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00378,
+        "10": 0.00365
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.00013,
+            "paired_se": 7.141345810713823e-05,
+            "normal_95_ci": [
+              -9.967805901450874e-06,
+              0.00026996780590145085
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": -0.00013,
+            "paired_se": 7.141345810713823e-05,
+            "normal_95_ci": [
+              -0.00026996780590145085,
+              9.967805901450874e-06
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.05174349500157405,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.06134887600092043,
+        "10": 0.0621876200002589
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 2,
+      "profile": "x_biased",
+      "memory_basis": "z",
+      "seed": 2026112422,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 644,
+        "10": 653
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00644,
+        "10": 0.00653
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": -9e-05,
+            "paired_se": 8.426143839206638e-05,
+            "normal_95_ci": [
+              -0.00025514938453399073,
+              7.51493845339907e-05
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": 9e-05,
+            "paired_se": 8.426143839206638e-05,
+            "normal_95_ci": [
+              -7.51493845339907e-05,
+              0.00025514938453399073
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.03297832899988862,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.058702203999928315,
+        "10": 0.056361138998909155
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 2,
+      "profile": "z_biased",
+      "memory_basis": "x",
+      "seed": 2026112423,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 641,
+        "10": 651
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00641,
+        "10": 0.00651
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": -0.0001,
+            "paired_se": 7.873983743709404e-05,
+            "normal_95_ci": [
+              -0.000254327245525243,
+              5.4327245525242956e-05
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0001,
+            "paired_se": 7.873983743709404e-05,
+            "normal_95_ci": [
+              -5.4327245525242956e-05,
+              0.000254327245525243
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.021086794999064296,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.0582771640001738,
+        "10": 0.05591052499949001
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 2,
+      "profile": "z_biased",
+      "memory_basis": "z",
+      "seed": 2026112424,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 437,
+        "10": 359
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00437,
+        "10": 0.00359
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.00078,
+            "paired_se": 9.794902725458483e-05,
+            "normal_95_ci": [
+              0.0005880234342602816,
+              0.0009719765657397184
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": -0.00078,
+            "paired_se": 9.794902725458483e-05,
+            "normal_95_ci": [
+              -0.0009719765657397184,
+              -0.0005880234342602816
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.016283541999655426,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.05534186499971838,
+        "10": 0.058273594000638695
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 3.5,
+      "profile": "x_biased",
+      "memory_basis": "x",
+      "seed": 2026112425,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 315,
+        "10": 302
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00315,
+        "10": 0.00302
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.00013,
+            "paired_se": 5.74444427132859e-05,
+            "normal_95_ci": [
+              1.741096116998529e-05,
+              0.0002425890388300147
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": -0.00013,
+            "paired_se": 5.74444427132859e-05,
+            "normal_95_ci": [
+              -0.0002425890388300147,
+              -1.741096116998529e-05
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.014196687001458486,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.05528709299869661,
+        "10": 0.055306745000052615
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 3.5,
+      "profile": "x_biased",
+      "memory_basis": "z",
+      "seed": 2026112426,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 738,
+        "10": 723
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00738,
+        "10": 0.00723
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.00015,
+            "paired_se": 8.88811228469802e-05,
+            "normal_95_ci": [
+              -2.420379968556138e-05,
+              0.0003242037996855614
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": -0.00015,
+            "paired_se": 8.88811228469802e-05,
+            "normal_95_ci": [
+              -0.0003242037996855614,
+              2.420379968556138e-05
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.016533743000763934,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.0549344969986123,
+        "10": 0.06119776600098703
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 3.5,
+      "profile": "z_biased",
+      "memory_basis": "x",
+      "seed": 2026112427,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 733,
+        "10": 757
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00733,
+        "10": 0.00757
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": -0.00024,
+            "paired_se": 8.717511109829428e-05,
+            "normal_95_ci": [
+              -0.00041086007810093477,
+              -6.913992189906527e-05
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": 0.00024,
+            "paired_se": 8.717511109829428e-05,
+            "normal_95_ci": [
+              6.913992189906527e-05,
+              0.00041086007810093477
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.02017845699992904,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.05418915699920035,
+        "10": 0.055907260000822134
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 3.5,
+      "profile": "z_biased",
+      "memory_basis": "z",
+      "seed": 2026112428,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 362,
+        "10": 280
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00362,
+        "10": 0.0028
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.00082,
+            "paired_se": 0.00010292415622107055,
+            "normal_95_ci": [
+              0.0006182723606675275,
+              0.0010217276393324724
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": -0.00082,
+            "paired_se": 0.00010292415622107055,
+            "normal_95_ci": [
+              -0.0010217276393324724,
+              -0.0006182723606675275
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.014734419999513193,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.05540877499879571,
+        "10": 0.0509287269997003
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 5,
+      "profile": "x_biased",
+      "memory_basis": "x",
+      "seed": 2026112429,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 225,
+        "10": 214
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00225,
+        "10": 0.00214
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.00011,
+            "paired_se": 4.999903998118353e-05,
+            "normal_95_ci": [
+              1.2003682375302056e-05,
+              0.00020799631762469795
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": -0.00011,
+            "paired_se": 4.999903998118353e-05,
+            "normal_95_ci": [
+              -0.00020799631762469795,
+              -1.2003682375302056e-05
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.014855647001240868,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.05443817200102785,
+        "10": 0.0533404360012355
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 5,
+      "profile": "x_biased",
+      "memory_basis": "z",
+      "seed": 2026112430,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 776,
+        "10": 750
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00776,
+        "10": 0.0075
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.00026,
+            "paired_se": 9.273300380177459e-05,
+            "normal_95_ci": [
+              7.824665237030586e-05,
+              0.0004417533476296941
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": -0.00026,
+            "paired_se": 9.273300380177459e-05,
+            "normal_95_ci": [
+              -0.0004417533476296941,
+              -7.824665237030586e-05
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.016215403000387596,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.0679358659999707,
+        "10": 0.05396919499980868
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 5,
+      "profile": "z_biased",
+      "memory_basis": "x",
+      "seed": 2026112431,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 790,
+        "10": 788
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.0079,
+        "10": 0.00788
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 2e-05,
+            "paired_se": 9.899542414142184e-05,
+            "normal_95_ci": [
+              -0.0001740274659514538,
+              0.0002140274659514538
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": -2e-05,
+            "paired_se": 9.899542414142184e-05,
+            "normal_95_ci": [
+              -0.0002140274659514538,
+              0.0001740274659514538
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.015313588999561034,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.055028812999808,
+        "10": 0.05384174200116831
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 5,
+      "profile": "z_biased",
+      "memory_basis": "z",
+      "seed": 2026112432,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 322,
+        "10": 257
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00322,
+        "10": 0.00257
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.00065,
+            "paired_se": 8.997697460217021e-05,
+            "normal_95_ci": [
+              0.0004736483703418712,
+              0.0008263516296581287
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": -0.00065,
+            "paired_se": 8.997697460217021e-05,
+            "normal_95_ci": [
+              -0.0008263516296581287,
+              -0.0004736483703418712
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.014964141000746167,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.05692336599895498,
+        "10": 0.04822337800032983
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 10,
+      "profile": "x_biased",
+      "memory_basis": "x",
+      "seed": 2026112433,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 124,
+        "10": 116
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00124,
+        "10": 0.00116
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 8e-05,
+            "paired_se": 3.999939998949978e-05,
+            "normal_95_ci": [
+              1.6026166173686179e-06,
+              0.0001583973833826314
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": -8e-05,
+            "paired_se": 3.999939998949978e-05,
+            "normal_95_ci": [
+              -0.0001583973833826314,
+              -1.6026166173686179e-06
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.015120607999051572,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.04786577900085831,
+        "10": 0.04749952100064547
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 10,
+      "profile": "x_biased",
+      "memory_basis": "z",
+      "seed": 2026112434,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 801,
+        "10": 791
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00801,
+        "10": 0.00791
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0001,
+            "paired_se": 7.211069268506575e-05,
+            "normal_95_ci": [
+              -4.1334360562964774e-05,
+              0.0002413343605629648
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": -0.0001,
+            "paired_se": 7.211069268506575e-05,
+            "normal_95_ci": [
+              -0.0002413343605629648,
+              4.1334360562964774e-05
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.015502897000260418,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.04808078200039745,
+        "10": 0.04988706999938586
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 10,
+      "profile": "z_biased",
+      "memory_basis": "x",
+      "seed": 2026112435,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 852,
+        "10": 837
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00852,
+        "10": 0.00837
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.00015,
+            "paired_se": 0.0001034402339460811,
+            "normal_95_ci": [
+              -5.273913308671648e-05,
+              0.0003527391330867165
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": -0.00015,
+            "paired_se": 0.0001034402339460811,
+            "normal_95_ci": [
+              -0.0003527391330867165,
+              5.273913308671648e-05
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.015726878000350553,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.048767289001261815,
+        "10": 0.04594785100016452
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    },
+    {
+      "actual_ratio": 10,
+      "profile": "z_biased",
+      "memory_basis": "z",
+      "seed": 2026112436,
+      "shots": 100000,
+      "resources": {
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_channel_pairs": 120,
+        "one_qubit_pauli_targets": 40
+      },
+      "failures_by_assumed_ratio": {
+        "5": 221,
+        "10": 161
+      },
+      "ler_by_assumed_ratio": {
+        "5": 0.00221,
+        "10": 0.00161
+      },
+      "paired_ler_differences_candidate_vs_reference_ratio": {
+        "5": {
+          "5": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0006,
+            "paired_se": 8.121863064999094e-05,
+            "normal_95_ci": [
+              0.00044081440905235675,
+              0.0007591855909476431
+            ]
+          }
+        },
+        "10": {
+          "5": {
+            "difference_candidate_minus_reference": -0.0006,
+            "paired_se": 8.121863064999094e-05,
+            "normal_95_ci": [
+              -0.0007591855909476431,
+              -0.00044081440905235675
+            ]
+          },
+          "10": {
+            "difference_candidate_minus_reference": 0.0,
+            "paired_se": 0.0,
+            "normal_95_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "sample_seconds": 0.016036749999329913,
+      "decode_seconds_by_assumed_ratio": {
+        "5": 0.04231506200085278,
+        "10": 0.041291502999229124
+      },
+      "scalar_batch_checked_shots_per_decoder": 100
+    }
+  ],
+  "macro_ler_equal_weight_all_16_conditions": {
+    "5": 0.005224375,
+    "10": 0.0050025
+  },
+  "macro_pairwise_paired_ler_differences": {
+    "5_vs_5": {
+      "mean_paired_ler_difference": 0.0,
+      "conditional_mc_se": 0.0,
+      "normal_95_ci": [
+        0.0,
+        0.0
+      ]
+    },
+    "5_vs_10": {
+      "mean_paired_ler_difference": 0.00022187499999999999,
+      "conditional_mc_se": 2.0773890781498588e-05,
+      "normal_95_ci": [
+        0.00018115892224949412,
+        0.00026259107775050586
+      ]
+    },
+    "10_vs_5": {
+      "mean_paired_ler_difference": -0.00022187499999999999,
+      "conditional_mc_se": 2.0773890781498588e-05,
+      "normal_95_ci": [
+        -0.00026259107775050586,
+        -0.00018115892224949412
+      ]
+    },
+    "10_vs_10": {
+      "mean_paired_ler_difference": 0.0,
+      "conditional_mc_se": 0.0,
+      "normal_95_ci": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "macro_summary_by_actual_ratio": {
+    "2": {
+      "macro_ler_by_assumed_ratio": {
+        "5": 0.0052499999999999995,
+        "10": 0.00507
+      },
+      "paired_ratio10_minus_ratio5": {
+        "mean_paired_ler_difference": -0.00017999999999999998,
+        "conditional_mc_se": 4.18284038800635e-05,
+        "normal_95_ci": [
+          -0.0002619821651357199,
+          -9.801783486428006e-05
+        ],
+        "cells_favoring_ratio10": 2,
+        "cells": 4
+      }
+    },
+    "3.5": {
+      "macro_ler_by_assumed_ratio": {
+        "5": 0.00537,
+        "10": 0.005155000000000001
+      },
+      "paired_ratio10_minus_ratio5": {
+        "mean_paired_ler_difference": -0.000215,
+        "conditional_mc_se": 4.286067539569289e-05,
+        "normal_95_ci": [
+          -0.00029900538012862007,
+          -0.0001309946198713799
+        ],
+        "cells_favoring_ratio10": 3,
+        "cells": 4
+      }
+    },
+    "5": {
+      "macro_ler_by_assumed_ratio": {
+        "5": 0.005282500000000001,
+        "10": 0.0050225
+      },
+      "paired_ratio10_minus_ratio5": {
+        "mean_paired_ler_difference": -0.00026,
+        "conditional_mc_se": 4.256998939440753e-05,
+        "normal_95_ci": [
+          -0.0003434356460352908,
+          -0.00017656435396470915
+        ],
+        "cells_favoring_ratio10": 4,
+        "cells": 4
+      }
+    },
+    "10": {
+      "macro_ler_by_assumed_ratio": {
+        "5": 0.004995,
+        "10": 0.0047625
+      },
+      "paired_ratio10_minus_ratio5": {
+        "mean_paired_ler_difference": -0.00023249999999999999,
+        "conditional_mc_se": 3.8807418719330926e-05,
+        "normal_95_ci": [
+          -0.00030856114302285414,
+          -0.00015643885697714586
+        ],
+        "cells_favoring_ratio10": 4,
+        "cells": 4
+      }
+    }
+  },
+  "geometry_matched_within_actual_ratio": {
+    "2": true,
+    "3.5": true,
+    "5": true,
+    "10": true
+  },
+  "elapsed_seconds": 2.112528735999149,
+  "scope": "fresh-seed validation of frozen ratio10 versus ratio5; actual ratio 3.5 adds an interpolation point; no selection or adaptation"
+}

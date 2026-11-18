@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 36992600,
+  "stochastic_qshift_shots_generated": 38594200,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -4623,5 +4623,136 @@
     "projected_main_seconds": 16.704454708162302,
     "elapsed_seconds": 2.790098620000208,
     "scope": "paired development screen of assumed bias-strength mismatch, not decoder selection or adaptation"
+  },
+  "bias_strength_frozen_validation": {
+    "status": "development_frozen_bias_strength_validation",
+    "preflight_status": "preflight_passed",
+    "artifact": "bias_strength_frozen_validation_results.json",
+    "preflight_artifact": "bias_strength_frozen_validation_preflight.json",
+    "actual_ratios": [
+      2,
+      3.5,
+      5,
+      10
+    ],
+    "assumed_ratios": [
+      5,
+      10
+    ],
+    "conditions": 16,
+    "shots_per_condition": 100000,
+    "macro_ler_equal_weight_all_16_conditions": {
+      "5": 0.005224375,
+      "10": 0.0050025
+    },
+    "macro_pairwise_paired_ler_differences": {
+      "5_vs_5": {
+        "mean_paired_ler_difference": 0.0,
+        "conditional_mc_se": 0.0,
+        "normal_95_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "5_vs_10": {
+        "mean_paired_ler_difference": 0.00022187499999999999,
+        "conditional_mc_se": 2.0773890781498588e-05,
+        "normal_95_ci": [
+          0.00018115892224949412,
+          0.00026259107775050586
+        ]
+      },
+      "10_vs_5": {
+        "mean_paired_ler_difference": -0.00022187499999999999,
+        "conditional_mc_se": 2.0773890781498588e-05,
+        "normal_95_ci": [
+          -0.00026259107775050586,
+          -0.00018115892224949412
+        ]
+      },
+      "10_vs_10": {
+        "mean_paired_ler_difference": 0.0,
+        "conditional_mc_se": 0.0,
+        "normal_95_ci": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "geometry_matched_within_actual_ratio": {
+      "2": true,
+      "3.5": true,
+      "5": true,
+      "10": true
+    },
+    "projected_main_seconds": 11.824966209047489,
+    "elapsed_seconds": 2.5360539339999377,
+    "scope": "fresh-seed validation of frozen ratio10 versus ratio5; actual ratio 3.5 adds an interpolation point; no selection or adaptation",
+    "macro_summary_by_actual_ratio": {
+      "2": {
+        "macro_ler_by_assumed_ratio": {
+          "5": 0.0052499999999999995,
+          "10": 0.00507
+        },
+        "paired_ratio10_minus_ratio5": {
+          "mean_paired_ler_difference": -0.00017999999999999998,
+          "conditional_mc_se": 4.18284038800635e-05,
+          "normal_95_ci": [
+            -0.0002619821651357199,
+            -9.801783486428006e-05
+          ],
+          "cells_favoring_ratio10": 2,
+          "cells": 4
+        }
+      },
+      "3.5": {
+        "macro_ler_by_assumed_ratio": {
+          "5": 0.00537,
+          "10": 0.005155000000000001
+        },
+        "paired_ratio10_minus_ratio5": {
+          "mean_paired_ler_difference": -0.000215,
+          "conditional_mc_se": 4.286067539569289e-05,
+          "normal_95_ci": [
+            -0.00029900538012862007,
+            -0.0001309946198713799
+          ],
+          "cells_favoring_ratio10": 3,
+          "cells": 4
+        }
+      },
+      "5": {
+        "macro_ler_by_assumed_ratio": {
+          "5": 0.005282500000000001,
+          "10": 0.0050225
+        },
+        "paired_ratio10_minus_ratio5": {
+          "mean_paired_ler_difference": -0.00026,
+          "conditional_mc_se": 4.256998939440753e-05,
+          "normal_95_ci": [
+            -0.0003434356460352908,
+            -0.00017656435396470915
+          ],
+          "cells_favoring_ratio10": 4,
+          "cells": 4
+        }
+      },
+      "10": {
+        "macro_ler_by_assumed_ratio": {
+          "5": 0.004995,
+          "10": 0.0047625
+        },
+        "paired_ratio10_minus_ratio5": {
+          "mean_paired_ler_difference": -0.00023249999999999999,
+          "conditional_mc_se": 3.8807418719330926e-05,
+          "normal_95_ci": [
+            -0.00030856114302285414,
+            -0.00015643885697714586
+          ],
+          "cells_favoring_ratio10": 4,
+          "cells": 4
+        }
+      }
+    }
   }
 }

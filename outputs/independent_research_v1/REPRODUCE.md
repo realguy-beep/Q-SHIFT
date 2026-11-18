@@ -87,3 +87,5 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the distance-3 round-count frontier preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/round_count_frontier.py --preflight`, then the 200,000-shot-per-cell screen with the same command without `--preflight`.
 
 - Reproduce the bias-strength robustness preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_strength_robustness.py --preflight`, then the 100,000-shot-per-cell paired screen with the same command without `--preflight`.
+
+- Reproduce the fresh frozen ratio10-vs-ratio5 validation preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_strength_frozen_validation.py --preflight`, then the 100,000-shot-per-cell validation with the same command without `--preflight`.

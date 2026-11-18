@@ -141,3 +141,10 @@
 - Preflight and 1.2M-shot development run compared matching models built at assumed X/Z bias ratios 2/5/10 on identical detections from actual ratios 2/5/10 and both bases. Preflight passed; geometry matched within actual ratio. Macro LER was .005522/.005216/.005022 for assumed 2/5/10. Assumed10 beat assumed5 by paired delta -.000194 (conditional 95% interval [-.000242,-.000146]) and the per-condition correctly specified reference by -.000273 ([-.000323,-.000222]).
 - Interpretation is a misspecification-robustness signal specific to this approximate DEM plus correlation-enabled matching implementation. The ratio10 winner is selected on the same finite grid and is exploratory; an independent, frozen ratio10-vs-ratio5 validation is needed before any deployment recommendation. No confirmatory data accessed. Cumulative Q-SHIFT development samples: 36,992,600.
 - Reproduction: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_strength_robustness.py --preflight` followed by the same command without `--preflight`.
+
+## Checkpoint — frozen bias-strength validation (2026-11-18)
+
+- Fresh 100,000-shot/cell test at actual ratios 2/3.5/5/10 compared only the frozen assumed-ratio5 and ratio10 matchers on identical detector shots (16 cells). Preflight passed and the main run took 2.5s.
+- Macro LER .0052244 vs .0050025; paired ratio10-minus-ratio5 contrast -.0002219, conditional MC interval [-.0002626,-.0001812]. Contrast was negative within each actual strength on the equal-weight average; at actual ratio2 only 2/4 profile/basis cells favored10, while all cells at ratios5 and10 favored10.
+- This independently verifies the fixed-grid development signal and includes a new interpolation strength, with finite d3/stationary-channel scope. No confirmatory data accessed; cumulative Q-SHIFT development samples 38,594,200.
+- Reproduce with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_strength_frozen_validation.py --preflight` then without `--preflight`.
