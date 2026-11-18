@@ -129,3 +129,5 @@ The sparse exact categorical extensions are fixed in `categorical_two_layer_spar
 A fourth-layer extension has a fixed protocol in `categorical_four_layer_sparse_protocol.md`; the tested four-layer pass stays within the signature-state and operation caps and is explicitly isolated-fragment evidence.
 
 The five-layer sparse protocol and explicit stop are documented in `categorical_five_layer_sparse_protocol.md`; the preflight exceeded the fixed sparse-operation cap, so no exact expansion was run.
+
+A separate vectorized implementation of the fifth-layer signature convolution is specified in `categorical_five_layer_vectorized_protocol.md`; it has its own fixed state, operation, memory, and runtime caps and passed with Walsh-Hadamard cross-validation. This does not erase the earlier Python sparse-DP preflight stop.

@@ -265,3 +265,9 @@
 - Mapped the final five six-pair channel layers (30 locations) through forced-outcome Stim signatures. Compact detector support rose from 12 at four layers to 18; joint state upper bound 524,288; sparse-DP transition bound 251,658,240.
 - The fixed protocol cap was 1,000,000 states/100,000,000 transitions, so the run stopped before mass expansion. No inference table/mass distribution and no stochastic samples generated. Do not raise the cap post hoc; this is the current bounded sparse-DP boundary, not a lower bound for other exact representations.
 - Next: return to broader candidates or investigate a new representation under a separately predeclared resource design; do not keep extending layer count under changing caps.
+
+## Vectorized five-layer exact categorical inference — 2026-11-18
+
+- The prior dictionary DP preflight stopped at 251.7M Python transitions. A separate fixed vectorized XOR-kernel protocol declared caps of 1M states, 300M array updates, 400M Walsh ops, 1GiB memory, and 300s runtime; its actual bounds were 524,288 states, 251.7M updates, 308.8M Walsh operations, ~23MiB.
+- Vectorized signature DP and independent Walsh-Hadamard convolution agreed over all 524,288 states to 3.55e-15; mass normalized, 262,144 syndromes reachable, and 512 forced combined faults matched Stim. 5.92s runtime. Isolated five-layer MAP risk 6.06e-4 only; other circuit stochastic sites are identity.
+- No stochastic shots generated. This passes five layers under the optimized representation without changing the original Python-dictionary cap. Next: structural preflight at six layers under a fixed 1M-state ceiling.

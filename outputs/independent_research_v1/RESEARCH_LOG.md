@@ -199,3 +199,8 @@
 
 - Forced-outcome mapping of the final five channel layers found 30 locations and 18 touched detectors. Upper bound 524,288 joint states; transition bound 251.66M exceeded the fixed 100M cap. Stopped before inference as planned; no samples generated.
 - This limits the current sparse-DP protocol at four layers; it is not a lower bound on other representations. Artifact `categorical_five_layer_preflight.json` preserves signatures and resource estimates.
+
+## Checkpoint — vectorized five-layer signature inference
+
+- The five-layer Python dictionary route exceeded its declared transition budget, but a different NumPy vectorized XOR-kernel route with separate predeclared caps passed. DP/Walsh mass error3.55e-15 over524,288 states; 512 forced-fault checks passed; ~23MiB estimate and5.92s.
+- This is exact five-layer fragment posterior evidence, not full-circuit decoding. No samples. The earlier stop is specific to the slow dictionary implementation. Next: preflight the six-layer support ceiling at the same 1M state cap.
