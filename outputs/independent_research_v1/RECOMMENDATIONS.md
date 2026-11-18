@@ -66,3 +66,8 @@ The new P/Z syndrome representation extends exact categorical tail inference fro
 # Pair-cluster rare-event estimation
 
 Do not advance the fixed adjacent-pair cluster proposal: it passed its estimator-compatibility checks but its efficiency gate was 0/6. Validation max |log weight| reached 23.7, and biased-condition training failure ESS was near 100. Avoid tuning the proposal against the inspected validation streams. Any future rare-event method should model broader failure progress or use a separate prospectively derived structure, then pass fresh independent validation before any efficiency claim.
+
+
+# Native-gate XZZX
+
+The native-XCX follow-up removes the extra H-noise cost of the earlier transpilation and passes exact Clifford/resource checks. Keep this as conditional code-design evidence: under equal native entangler noise, the fixed checkerboard orientation helped X-biased noise at d3/d5 (0.66/0.38 of CSS LER) and hurt Z-biased noise (3.86/11.24 times CSS). Do not recommend XZZX as a universal replacement. A narrowly scoped complementary-orientation test may resolve whether this is primarily orientation matching; hardware claims require measured XCX/CZ error rates and durations.

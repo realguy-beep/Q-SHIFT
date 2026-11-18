@@ -27,3 +27,6 @@ No publication-level novelty claim is justified by this expedition checkpoint. T
 
 
 The P(s), Z(s) representation is a standard parity/Fourier identity and is not claimed as a novel decoding algorithm. The development contribution is an independently validated implementation on Q-SHIFT's categorical seven-layer circuit tail, extending exact fragment feasibility beyond the prior joint-state cap. It does not establish novelty or full-circuit scalability.
+
+
+The native-XCX XZZX experiment is not a new code or decoder. It supplies Q-SHIFT-specific finite-size evidence that a checkerboard XZZX orientation interacts strongly with physical bias under an explicit native entangler noise model. No hardware novelty claim is made because equal CX/XCX/CZ error channels and durations have not been measured.

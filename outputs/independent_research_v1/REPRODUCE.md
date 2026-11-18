@@ -130,3 +130,13 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/ca
 ```
 
 This reruns the preregistered 100-shot instrumentation/resource preflight and, if the 300-second projection passes, the fixed six-condition development screen. The exact seeds, grouping, estimator, and stop rules are in `categorical_cluster_importance_protocol.md`.
+
+
+### Native-XCX XZZX screen
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_native_xcx.py --preflight
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_native_xcx.py
+```
+
+The first command performs exact conjugation/resource checks and the 100-shot/cell timing gate; the second is the fixed 500k-shot/cell development run. Hardware/noise assumptions and interpretation limits are in `xzzx_native_xcx_protocol.md`.

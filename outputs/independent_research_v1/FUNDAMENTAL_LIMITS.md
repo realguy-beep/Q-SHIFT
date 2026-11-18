@@ -68,3 +68,8 @@ An exploratory replay of the saved calibration and logical windows modeled equal
 ## Exact parity-state extension (development fragment)
 
 For a binary logical observable, the joint posterior over syndrome and logical bit can be represented by two arrays over syndrome alone: P(s)=P(s,L=0)+P(s,L=1), and Z(s)=P(s,L=0)-P(s,L=1). This suffices to recover both logical-class masses and the conditional MAP risk `sum_s (P(s)-|Z(s)|)/2`, halving state count. The seven-layer d3 circuit-tail implementation used 1,048,576 states and exactly matched an independent Walsh calculation, a six-layer joint reference, and 512 forced Stim compositions. Its isolated risk is 0.00104093. This establishes a useful exact representation for the selected tail only; it does not establish full-circuit decoding feasibility or a physical LER floor. Cost remains exponential in touched detector count (20 bits here), and memory/rounding/runtime limits must be assessed at each scope.
+
+
+## Native-gate XZZX finite-size observation
+
+A direct Stim `XCX` implementation removes extra one-qubit H targets while preserving qubits, detectors, rounds, two-qubit interaction count, and source PAULI_CHANNEL_2 targets. At d3/d5, 500k shots/cell under the explicit equal-duration/equal-noise CX/XCX/CZ assumption gave XZZX/CSS ratios 0.662/0.376 for X-biased noise and 3.86/11.24 for Z-biased noise. This shows that the code orientation and bias direction interact in the tested decoder/circuit. It is not an information-theoretic bound, threshold, or evidence that XZZX is inherently inferior; native XCX/CZ hardware noise equivalence remains unverified.

@@ -231,3 +231,11 @@
 - With six separate 100k training streams and independent three-arm 20k validations, the variance advancement gate passed 0/6. Cluster max absolute log weights were 17.84–23.67; biased-condition training failure ESS 113–129; mean weighted failure categories per cluster 20–37. All six estimates remained within 3 combined SE of both direct and global-tilt comparators.
 - Negative finding is specific to this grouping/shrinkage/budget. Do not alter it based on validation or claim that all structured rare-event methods fail. Q-SHIFT samples +962,400; no confirmatory/sealed data.
 - Next: select a different research family, rather than more proposal tuning on the same validation pool.
+
+
+## Checkpoint — native-XCX XZZX transform (2026-11-18)
+
+- Followed up the prior H-overhead XZZX rejection by compiling the exact control-H/CX conjugation as Stim's native XCX and target-H conjugation as CZ. Fixed physical assumption: CX/XCX/CZ equal duration and source two-qubit noise.
+- Preflight passed three tableau identities, noiseless determinism, DEM generation, unchanged p2 targets/probabilities, unchanged qubit/detector/round/interaction resources and added H targets=0. Projected 50.4s; main run took 11.8s.
+- With 500k shots/cell, XZZX/CSS rate ratios for X-bias were 0.662 (d3) and 0.376 (d5); for Z-bias they were 3.86 and 11.24. Strong orientation-by-bias interaction, not a uniform code gain.
+- No hardware claim because native-gate noise equivalence is assumed. Q-SHIFT samples +4,000,800 including preflight. Next: a single complementary checkerboard orientation test is the discriminating follow-up.

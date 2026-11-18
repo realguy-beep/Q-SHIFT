@@ -143,3 +143,6 @@ A separate fixed protocol is in `categorical_seven_layer_parity_protocol.md`. It
 
 
 A fresh cluster-proposal protocol is in `categorical_cluster_importance_protocol.md`. It trains a product of joint category proposals over fixed adjacent pairs of `PAULI_CHANNEL_2` locations, retaining local dependence while preserving exact likelihood weighting. It uses 60 clusters/circuit, a 256-category instrument per cluster, 100k tilted training shots/condition, independent 20k direct/global/cluster validation arms, and a 300s preflight budget. The validation advancement gate requires <=75% of both comparator SEs in at least four of six conditions and 3-SE estimator compatibility.
+
+
+A follow-up native-gate code/circuit protocol is in `xzzx_native_xcx_protocol.md`. It compiles marked-control H-CX-H conjugates into Stim XCX and marked-target conjugates into CZ, under an explicit equal-duration/equal-PAULI_CHANNEL_2 hardware assumption. It compares CSS and XZZX with matched resources at d3/d5 for both bias orientations.

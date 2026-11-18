@@ -76,3 +76,8 @@ A parity-compressed exact method was tested on the final seven channel layers of
 ## Pair-cluster importance-sampling result
 
 A development-only proposal grouped adjacent two-qubit channel pairs within each `PAULI_CHANNEL_2` instruction (60 two-location clusters, 256 joint categories) and trained cluster distributions from likelihood-weighted failures. Synthetic instrumentation and weighted estimates validated; all six validation estimates were within 3 combined SE of direct and global tilt. However, its predeclared variance gate passed 0/6: the proposal never reduced SE by 25% versus both baselines in four conditions. Max |log weight| was 17.8–23.7 and biased-condition training failure ESS was about 113–129. Keep the existing global-tilt estimator as the more stable tested method; do not tune the cluster proposal on its validation data. Details: `categorical_cluster_importance_results.json` and its fixed protocol.
+
+
+## Native-XCX XZZX result
+
+A new finite-distance screen compiled marked-control H-CX-H into native XCX, avoiding the prior extra H targets. Exact tableau conjugations, noiseless detectors, DEMs, fixed noise targets, and equal qubit/detector/round/two-qubit resources passed. Under a stated hypothetical equal-duration/equal-noise CX/XCX/CZ model, 500k shots/cell gave XZZX/CSS LER ratios at d3/d5 of 0.662/0.376 for X-biased noise but 3.86/11.24 for Z-biased noise. This indicates a strong bias-orientation interaction; it is not a universal gain and depends on native-gate noise equivalence. Artifacts: `xzzx_native_xcx.py`, protocol, preflight, and result JSON.

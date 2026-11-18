@@ -303,3 +303,12 @@
 - Completed the 100-shot resource preflight and the fixed 100k train + three 20k validation arms across six conditions. Projected 45.2s; actual 60.3s. Efficiency gate passed 0/6. Validation max |log weight| 17.84–23.67; mean observed weighted failure categories/cluster 20.3–37.3; biased-condition training failure ESS 113–129. All candidate estimates stayed within 3 combined SE of comparators.
 - Q-SHIFT development samples added: 962,400; synthetic channel-validation shots: 50,000 (not Q-SHIFT). Exact reproduction command is in `REPRODUCE.md`. No confirmatory/sealed data touched.
 - Decision: do not advance or tune against validation. Next: shift to another research family; treat this as a negative result for this fixed adjacent-pair proposal and budget.
+
+
+## Native-XCX XZZX checkpoint — 2026-11-18
+
+- Parent commit `82f9c12`; branch remains `codex/qshift-independent-research-v1`.
+- Hypothesis: represent the prior fixed checkerboard local-H transform with native XCX/CZ gates to remove its extra H-noise overhead. Protocol assumes equal duration and identical source PAULI_CHANNEL_2 noise for CX/XCX/CZ.
+- Passed three Stim tableau conjugation checks, noiseless detector/observable checks, DEM construction, source p2 target/probability equality, scalar/batch decoder agreement, and matched resources. XCX interactions: d3=30; d5=180. Added H targets: zero.
+- Main development screen: 500,000 shots x 8 cells, 11.79s. XZZX/CSS LER ratios: d3/d5 X-bias 0.662/0.376 (95% conditional exact CI 0.627–0.697 / 0.347–0.407); Z-bias 3.86/11.24 (3.50–4.26 / 8.50–14.80). Total unique Q-SHIFT samples +4,000,800 including preflight.
+- Limitation: finite d3/d5; no threshold inference; native entangler noise equivalence is an assumption. Next: assess one complementary checkerboard orientation under a new fixed protocol, no broad pattern search.
