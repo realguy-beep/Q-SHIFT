@@ -1,0 +1,174 @@
+{
+  "schema": "qshift-d5-lowp-regime-dev-selection-v1",
+  "conditions": {
+    "L10": {
+      "family": "scaled_v1",
+      "base_p": 0.001,
+      "shots_per_q": 200000,
+      "Astar_selected": "match_on_0.0025",
+      "Astar_errors_by_q": [
+        98,
+        121,
+        134
+      ],
+      "matching_totals": {
+        "match_on_0.0": 750,
+        "match_off_0.0": 768,
+        "match_on_0.0025": 353,
+        "match_off_0.0025": 547,
+        "match_on_0.005": 384,
+        "match_off_0.005": 409,
+        "match_on_0.0075": 400,
+        "match_off_0.0075": 400,
+        "match_on_0.01": 405,
+        "match_off_0.01": 395,
+        "match_on_0.0125": 414,
+        "match_off_0.0125": 397,
+        "match_on_0.015": 480,
+        "match_off_0.015": 397,
+        "match_on_0.0175": 486,
+        "match_off_0.0175": 397,
+        "match_on_0.02": 493,
+        "match_off_0.02": 416
+      },
+      "L2_grid": {
+        "0.0010": {
+          "errors_by_q": [
+            4,
+            4,
+            4
+          ],
+          "nonzero": 8,
+          "ms_per_shot": 4.423586239333335
+        },
+        "0.0025": {
+          "errors_by_q": [
+            3,
+            4,
+            4
+          ],
+          "nonzero": 8,
+          "ms_per_shot": 4.3085136036666665
+        },
+        "0.0100": {
+          "errors_by_q": [
+            4,
+            5,
+            4
+          ],
+          "nonzero": 9,
+          "ms_per_shot": 4.251853499
+        }
+      },
+      "L2_selected_prior": 0.001,
+      "L2_guard_failed": false,
+      "L2_eligible": [
+        0.001,
+        0.0025,
+        0.01
+      ],
+      "discordance_selected_vs_Astar": {
+        "1": {
+          "l2_only": 2,
+          "astar_only": 119
+        },
+        "2": {
+          "l2_only": 2,
+          "astar_only": 132
+        }
+      },
+      "Astar_nonzero_ler": 0.0006375,
+      "R_in_sample": 0.9686274509803922,
+      "floor_ratio_L2q0_over_Astar_nonzero": 0.03137254901960784,
+      "cap_1_minus_floor_ratio": 0.9686274509803922,
+      "phase1_N_required_per_q": 48180,
+      "stage_e_N_per_q": 750000
+    },
+    "L15": {
+      "family": "scaled_v1",
+      "base_p": 0.0015,
+      "shots_per_q": 200000,
+      "Astar_selected": "match_on_0.0025",
+      "Astar_errors_by_q": [
+        182,
+        195,
+        193
+      ],
+      "matching_totals": {
+        "match_on_0.0": 1182,
+        "match_off_0.0": 1209,
+        "match_on_0.0025": 570,
+        "match_off_0.0025": 970,
+        "match_on_0.005": 591,
+        "match_off_0.005": 910,
+        "match_on_0.0075": 636,
+        "match_off_0.0075": 781,
+        "match_on_0.01": 661,
+        "match_off_0.01": 770,
+        "match_on_0.0125": 677,
+        "match_off_0.0125": 770,
+        "match_on_0.015": 691,
+        "match_off_0.015": 766,
+        "match_on_0.0175": 701,
+        "match_off_0.0175": 766,
+        "match_on_0.02": 721,
+        "match_off_0.02": 767
+      },
+      "L2_grid": {
+        "0.0010": {
+          "errors_by_q": [
+            16,
+            12,
+            17
+          ],
+          "nonzero": 29,
+          "ms_per_shot": 7.319984662333333
+        },
+        "0.0025": {
+          "errors_by_q": [
+            16,
+            12,
+            16
+          ],
+          "nonzero": 28,
+          "ms_per_shot": 7.263685481833334
+        },
+        "0.0100": {
+          "errors_by_q": [
+            16,
+            12,
+            17
+          ],
+          "nonzero": 29,
+          "ms_per_shot": 6.944213555166666
+        }
+      },
+      "L2_selected_prior": 0.0025,
+      "L2_guard_failed": false,
+      "L2_eligible": [
+        0.001,
+        0.0025,
+        0.01
+      ],
+      "discordance_selected_vs_Astar": {
+        "1": {
+          "l2_only": 4,
+          "astar_only": 187
+        },
+        "2": {
+          "l2_only": 9,
+          "astar_only": 186
+        }
+      },
+      "Astar_nonzero_ler": 0.00097,
+      "R_in_sample": 0.9278350515463918,
+      "floor_ratio_L2q0_over_Astar_nonzero": 0.08247422680412371,
+      "cap_1_minus_floor_ratio": 0.9175257731958762,
+      "phase1_N_required_per_q": 31494,
+      "stage_e_N_per_q": 214296
+    }
+  },
+  "stop_rule": "R_in_sample(L10) < 0.9",
+  "decision": "PROCEED_TO_STAGE_E_FREEZE",
+  "label": "DEVELOPMENT ONLY: in-sample selection, headroom and sizing on Stage S shots; never reused for evaluation"
+}
