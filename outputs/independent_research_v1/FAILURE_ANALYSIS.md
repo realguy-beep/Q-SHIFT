@@ -89,3 +89,7 @@ An exact-seed replay reproduced every stored error total and decomposed decoder 
 
 On the predeclared detector-weight bins, d3's ratio10 disagreements mostly occurred at weights3–8 and were usually beneficial; high-weight disagreements were mostly harmful but sparse. At d5 most disagreements were weight9+ and close to a coin flip. Raw click counts use different detector totals across distances (40 versus216), so these categories are not comparable normalized coordinates. This is a descriptive lead for a future error-mechanism study, not an established causal explanation.
 
+
+## Shared-failure pair-channel composition
+
+An instrumented actual-ratio10 screen in two high-LER mismatched-basis cells per distance found shared-both-wrong events contained about 1.94 pair-channel faults/shot at d3 and 4.67 at d5, versus .35 and 2.14 in both-correct samples. Bias-aligned XX/ZZ pair events were enriched 5.7–5.8× per shot among d3 shared failures and 2.28× at d5. One-qubit and measurement faults were not individually tracked; this covers only two profile/basis cells. It is descriptive fault composition, not an error-floor or decoder-impossibility result.

@@ -239,3 +239,10 @@
 ### Two-output selector ceiling (same replay)
 
 - The sample-specific oracle that selects the correct ratio5 or ratio10 answer on each disagreement still fails on all both-wrong cases. Against the best fixed model observed, this oracle could reduce failures by at most 4.69% at d3 and 6.86% at d5. This is a development-sample ceiling, not a population bound; it shows that selecting between these two decoders alone cannot approach the 99.99% relative reduction objective.
+
+## Two-qubit fault composition in shared failures — 2026-11-18
+
+- Preflight instrumented 5,000 independent original and 5,000 instrumented samples in four high-LER cells (actual ratio10, both bias directions with mismatched memory basis, d3/d5). The instrumented/direct LER standardized differences were within .86 SD; 120 pair locations at d3 and 720 at d5. Projected main runtime 49.6s, below cap.
+- Main used 100,000 instrumented source-equivalent shots/cell and tracked every categorical PAULI_CHANNEL_2 outcome; one-qubit and measurement channels were left intact but untracked. Shared-both-wrong shots had mean 1.94 pair faults at d3 and 4.67 at d5, versus .35/2.14 among both-correct. XX/ZZ, the pair type aligned to the imposed profile, was enriched about 5.7–5.8× at d3 and 2.28× at d5. Ratio10 fixed/broke 91/67 d3 outcomes and 37/41 d5 outcomes in these four cells.
+- Descriptive only: two cells/distance, fault subset omits one-qubit/measurement tags, and high pair-fault counts do not prove the errors are intrinsically uncorrectable. Main run 16.8s. Cumulative Q-SHIFT simulated shots now 40,635,800 including 40k preflight and 400k main; no confirmatory data accessed.
+- Next: avoid promoting an error-floor claim from this screen. The remaining useful path is a decoder that addresses shared multi-fault failures; an implementation would need to preserve the full categorical channel model and beat correlation-enabled matching under matched information/resources.

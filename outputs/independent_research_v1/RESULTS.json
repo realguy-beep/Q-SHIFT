@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 40195800,
+  "stochastic_qshift_shots_generated": 40635800,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -5076,5 +5076,91 @@
         "both_wrong": 2010
       }
     ]
+  },
+  "shared_failure_fault_mechanism": {
+    "status": "development_two_qubit_fault_composition_screen",
+    "artifact": "shared_failure_fault_mechanism_results.json",
+    "preflight_artifact": "shared_failure_fault_mechanism_preflight.json",
+    "preflight_status": "preflight_passed",
+    "preflight_max_abs_standardized_ler_difference": 0.8506882252362788,
+    "projected_main_seconds": 49.56158998511455,
+    "conditions": [
+      {
+        "distance": 3,
+        "profile": "x_biased",
+        "memory_basis": "z",
+        "shots": 100000,
+        "failures_by_assumed_ratio": {
+          "5": 774,
+          "10": 761
+        },
+        "prediction_disagreements": 61,
+        "pair_locations": 120,
+        "mean_pair_faults_both_correct": 0.3485010382855184,
+        "mean_pair_faults_both_wrong": 1.9484396200814111,
+        "dominant_biased_pair": "XX",
+        "dominant_pair_per_shot_enrichment_both_wrong_vs_both_correct": 5.809799966275348,
+        "fixes": 37,
+        "breaks": 24
+      },
+      {
+        "distance": 3,
+        "profile": "z_biased",
+        "memory_basis": "x",
+        "shots": 100000,
+        "failures_by_assumed_ratio": {
+          "5": 757,
+          "10": 746
+        },
+        "prediction_disagreements": 97,
+        "pair_locations": 120,
+        "mean_pair_faults_both_correct": 0.3485181451612903,
+        "mean_pair_faults_both_wrong": 1.9317211948790896,
+        "dominant_biased_pair": "ZZ",
+        "dominant_pair_per_shot_enrichment_both_wrong_vs_both_correct": 5.676859742095489,
+        "fixes": 54,
+        "breaks": 43
+      },
+      {
+        "distance": 5,
+        "profile": "x_biased",
+        "memory_basis": "z",
+        "shots": 100000,
+        "failures_by_assumed_ratio": {
+          "5": 351,
+          "10": 362
+        },
+        "prediction_disagreements": 29,
+        "pair_locations": 720,
+        "mean_pair_faults_both_correct": 2.1381726204217646,
+        "mean_pair_faults_both_wrong": 4.707602339181286,
+        "dominant_biased_pair": "XX",
+        "dominant_pair_per_shot_enrichment_both_wrong_vs_both_correct": 2.2894488393779038,
+        "fixes": 9,
+        "breaks": 20
+      },
+      {
+        "distance": 5,
+        "profile": "z_biased",
+        "memory_basis": "x",
+        "shots": 100000,
+        "failures_by_assumed_ratio": {
+          "5": 481,
+          "10": 474
+        },
+        "prediction_disagreements": 49,
+        "pair_locations": 720,
+        "mean_pair_faults_both_correct": 2.14903817162154,
+        "mean_pair_faults_both_wrong": 4.626931567328918,
+        "dominant_biased_pair": "ZZ",
+        "dominant_pair_per_shot_enrichment_both_wrong_vs_both_correct": 2.279917171412701,
+        "fixes": 28,
+        "breaks": 21
+      }
+    ],
+    "main_new_source_equivalent_samples": 400000,
+    "preflight_source_equivalent_samples": 40000,
+    "elapsed_seconds": 16.76387758599958,
+    "limitation": "one-qubit channels and measurement flips are preserved but not fault-instrumented"
   }
 }

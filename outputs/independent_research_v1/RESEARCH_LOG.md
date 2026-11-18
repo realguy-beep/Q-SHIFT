@@ -177,3 +177,9 @@
 ### Sample-specific two-output selector ceiling
 
 - From the same archived-seed replay, an oracle selecting the correct output for every ratio5/ratio10 disagreement still leaves 7,629 d3 and 2,851 d5 both-wrong events. Relative to the better fixed decoder on each sample, the observed maximum error reduction is 4.69% at d3 and 6.86% at d5. This finite-sample ceiling is not a population bound, but it deprioritizes ratio-only selection as a route to orders-of-magnitude improvement.
+
+## Checkpoint — two-qubit fault composition screen (2026-11-18)
+
+- Instrumented each PAULI_CHANNEL_2 event into categorical E/ELSE outcomes with private flags, leaving 1Q/measurement channels unchanged. The four-cell 5k-per-arm preflight had max independent LER difference .85 SD; main 100k/cell took 16.8s.
+- For actual ratio10 high-LER mismatched-basis cells, shared wrong outcomes carried mean 1.94 pair faults/shot at d3 and4.67 at d5 versus .35/2.14 among both-correct. XX/ZZ was enriched 5.7–5.8x/2.28x per shot; decoder ratio10 fixed/broke 91/67 events at d3 and37/41 at d5.
+- Limitation: only two cells per distance and pair faults only; this is not a lower bound on correctable LER. Cumulative simulated Q-SHIFT samples 40,635,800. See the shared-failure artifacts and protocol.

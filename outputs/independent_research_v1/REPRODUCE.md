@@ -95,3 +95,5 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the deterministic ratio5/ratio10 matching graph audit with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_graph_mechanism.py`. It generates no stochastic samples.
 
 - Reproduce the archived-seed paired decision decomposition with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_strength_decision_replay.py`. The script verifies all stored counts and creates no new independent samples.
+
+- Reproduce the two-qubit shared-failure fault-composition preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/shared_failure_fault_mechanism.py --preflight`, then the 100,000-shot-per-cell screen with the same command without `--preflight`.

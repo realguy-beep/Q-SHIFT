@@ -121,3 +121,5 @@ The second-distance check is fixed in `bias_strength_distance5_validation_protoc
 The deterministic topology/weight audit is in `bias_graph_mechanism_protocol.md`; it rebuilds both model graphs at d3 and d5, checks their edge signatures, and summarizes weight changes without generating samples.
 
 The paired output decomposition replays archived seeds only and is specified in `bias_strength_decision_replay_protocol.md`; exact agreement with archived per-cell error counts is a required integrity gate.
+
+The bounded two-qubit fault-composition screen is in `shared_failure_fault_mechanism_protocol.md`. It instruments only mutually exclusive pair-channel outcomes at actual ratio10 in four high-LER mismatched-basis d3/d5 conditions, validates source-equivalent LER in independent preflight samples, and reports fault counts within paired decoder outcome groups. One-qubit/measurement faults remain untracked.
