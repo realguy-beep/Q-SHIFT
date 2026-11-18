@@ -189,3 +189,8 @@ A fixed disagreement-triggered BP+LSD hybrid reduced macro LER by 14.3% on one 6
 ### Selective escalation replication decision
 
 Two independent streams show 13%–14% macro LER reduction when disagreements between correlated and ordinary matching are routed to BP+LSD. Both streams also show 8.2–8.4x decode cost. Keep the flag as a potentially useful ambiguity signal; reject the present BP+LSD escalation for practical integration. Any faster replacement is a distinct algorithm requiring fresh validation.
+
+
+## Replicated fast disagreement-subset selector
+
+This is the strongest current low-cost decoder lead: fixed correlated/ordinary matching disagreement flags under 0.6% of samples; a per-condition L2 logistic model trained on those flagged detector syndromes lowered macro LER 16%–17% on two independent held-out streams at 1.35x–1.36x decode time. It beats the same-stream BP+LSD escalator on five of six cells while avoiding its ~8.3x cost. Advance only to a predeclared model-shift robustness challenge and then distance transfer if robust. It is established supervised meta-decoding methodology, not a novelty claim, and no confirmatory evaluation is authorized.

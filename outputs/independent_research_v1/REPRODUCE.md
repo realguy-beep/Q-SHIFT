@@ -407,3 +407,8 @@ Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_
 ### Selective BP+LSD efficacy replication
 
 Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/selective_bplsd_escalation_replication.py`. The independent fresh-seed report writes separately from the initial screen and includes the flag, paired outcomes, syndrome validity, and full two-matcher plus escalation runtime.
+
+
+### Fast flagged logistic selector and independent replication
+
+Initial held-out screen: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic.py`. Fresh independent train/validation split plus same-stream BP+LSD comparator: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_replication.py`. The learned models train on simulator logical labels only for the flagged training examples; each validation stream is separate. Outputs preserve coefficient vectors, fit status, flags, paired metrics, and full inference time.

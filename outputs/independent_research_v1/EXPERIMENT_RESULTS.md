@@ -432,3 +432,8 @@ On six fresh d3 conditions (100k each), a fixed policy flagged only syndromes wh
 ### Independent replication of selective BP+LSD escalation
 
 A fresh 600k-shot stream reproduced the accuracy result: macro LER .005213→.004533, a 13.0% reduction. The disagreement rule flagged 1,530 cases (0.255%); all escalated syndromes were valid and no condition was harmed by >5% (X-memory/X-bias was 131 vs 132 errors). Full runtime remained 8.24x baseline, so the practical gate fails independently as well. This verifies the syndrome ambiguity signal but rejects the current escalator. Details: `../independent_research_v2/selective_bplsd_escalation_replication_report.md`.
+
+
+## Fast supervised selector on matching-disagreement syndromes
+
+A per-condition L2 logistic classifier trained only on detector bits plus the outputs of correlation-enabled and ordinary matching for flagged syndromes passed held-out validation. Across six d3 conditions, macro LER fell .005156→.004271 (17.2%); paired macro delta 95% interval [-.000917,-.000853]. Per-cell reductions ranged 4.2%–35.7%; total inference cost (both matching passes plus classifier) was 1.35x correlated matching. Fresh independent training and validation seeds reproduced the effect: .005155→.004321 (16.18%; macro delta 95% [-.000866,-.000802]), with per-cell reductions 3.9%–34.2% and cost 1.36x. On that replication validation stream, flagged BP+LSD gave .004468 (13.34% reduction) at 8.28x cost; the logistic selector had fewer errors in five of six conditions. The learned selector passes the development gate, but remains synthetic, per-condition supervised, and untested under model shift. See `../independent_research_v2/fast_flagged_logistic_report.md` and its replication report.

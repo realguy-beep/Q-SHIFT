@@ -251,3 +251,8 @@ Routing only 0.261% of samples to BP+LSD on matching disagreement produced 14.3%
 ### Selective escalation independent replication
 
 Fresh seeds reproduced about 13% macro LER reduction with the fixed syndrome-only flag and zero invalid escalated syndromes, but full decode time was still 8.24x correlated matching. This supports the ambiguity flag as informative and independently confirms the cost failure. The current BP+LSD implementation should remain rejected; an optimized local search would be a new candidate and needs a separate protocol.
+
+
+## Fast learned selector: positive but model-specific
+
+A low-cost supervised selector trained on the matching-disagreement subset independently reduced macro LER by 17.2% and 16.2% in separate held-out train/validation splits, with 1.35x/1.36x total inference cost. It used true observables only as offline training labels. Per-condition gains were positive in all cells, but asymmetric (about 4% to 36%) and noise profiles were fixed and known. Same-stream BP+LSD comparison favored logistic in five of six cells at much lower cost. Main unresolved risk is distribution shift: measurement-noise mismatch, changing bias, and distance transfer remain untested. Do not interpret as an online noise-adaptation result or hardware decoder.

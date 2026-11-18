@@ -227,3 +227,8 @@ A fixed syndrome-only disagreement flag (correlated vs ordinary PyMatching) rout
 ### Selective escalation independent replication
 
 Two fresh d3 streams show 13%–14% macro LER reduction when the fixed syndrome-only correlated/ordinary matching disagreement flag triggers BP+LSD. About 0.26% of samples are escalated and all estimates are syndrome-valid. The full policy still takes 8.2–8.4x fixed correlated matching, failing the 2x cost gate. The flag is informative; this BP+LSD implementation is not practical. A faster local escalator would need a separate prospective protocol.
+
+
+### Replicated fast learned selector lead
+
+A per-condition L2 logistic selector trained only on matching-disagreement syndromes reduced macro d3 LER by 17.2% on the first held-out split and 16.2% on a fresh train/validation replication. Total inference cost was 1.35x/1.36x correlation-enabled PyMatching, including the ordinary-matching pass to form the flag. It used detector bits and two matcher outputs; true observables were offline training labels only. On the replication validation stream it beat flagged BP+LSD on five of six cells while running 6x faster (1.36x vs 8.28x baseline). This is the strongest current decoder lead, but known-profile simulator evidence only. Measurement-noise mismatch robustness is the immediate pending challenge; see `outputs/independent_research_v2/fast_flagged_logistic_replication_report.md`.

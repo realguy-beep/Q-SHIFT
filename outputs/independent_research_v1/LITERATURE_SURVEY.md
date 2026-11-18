@@ -67,3 +67,8 @@ Wald's sequential probability ratio test is classical methodology, not a new dec
 ### Syndrome-round scheduling context
 
 Changing the number of repeated syndrome-extraction rounds is a code/circuit resource choice within established spacetime surface-code decoding, not a new decoder. The local round-count work explicitly separates active entangling/measurement cycles from added data-idle time and compares decoder models built from each schedule. Its d3 result does not extend to d5 under the tested model, so no scaling or publication claim follows. The broader threshold and spacetime-memory context remains the established statistical-mechanical framework cited above (Dennis et al.); this update does not add a new literature claim.
+
+
+### Supervised selection on a disagreement subset
+
+Routing or selecting among decoder outputs from syndrome features is established meta-decoding prior art, as discussed above. The latest experiment restricts a fixed L2 logistic selector to the rare subset where correlated and ordinary matching predict different logical bits. Its d3 simulator result is replicated, but no new algorithmic novelty is claimed. The model is per known condition and trained with independent synthetic observable labels; its robustness to distribution shift remains open.

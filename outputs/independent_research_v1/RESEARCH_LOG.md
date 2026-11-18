@@ -450,3 +450,12 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - Runtime remained 8.24x fixed correlated matching. Decision: informative flag, failed practical escalator. No further BP+LSD tuning. A faster replacement would be a distinct method/protocol.
 - Cumulative unique development samples: 94,488,200; no sealed or confirmatory data accessed.
 - Resume from current checkpoint `71404c8` on branch `codex/qshift-independent-research-v1`.
+
+
+## Checkpoint — fast flagged logistic selector replicated (2026-11-18)
+
+- At `71404c8`/`19d27b3`, the learned selector passed a held-out d3 development gate: 17.2% macro LER reduction at 1.35x inference cost. Independent fresh training and validation seeds reproduced 16.18% reduction (paired macro CI [-.000866,-.000802]) at 1.36x cost.
+- Same-validation BP+LSD hybrid yielded 13.34% reduction at 8.28x cost; learned selector beat it in five of six cells. BP+LSD comparison used existing validation samples, so adds no unique shots.
+- The selector is supervised per condition on an independent training stream and uses observable labels only during offline fit. No validation labels enter model selection.
+- Total new unique samples for both train/validation experiments: 24.12M; cumulative 118,608,200. No confirmatory/sealed data.
+- Active challenge: apply the frozen nominal model and nominal matching graphs to fresh samples with measurement p doubled to .006. No shifted-data retraining.

@@ -599,3 +599,13 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Replicated macro LER reduction: .005213→.004533 (13.04%); 1,530/600k cases flagged; zero invalid escalated syndromes. One cell (X-memory/X-bias) was effectively tied, 131 vs132 errors; no >5% harm elsewhere.
 - Full runtime 8.24x fixed correlated matching, so implementation remains below the 2x speed gate. Accuracy signal verified, deployment candidate rejected. No tuning or confirmatory data.
 - Added 600,000 main +12,000 preflight samples; cumulative unique Q-SHIFT development samples: 94,488,200.
+
+
+## Fast flagged logistic selector — independent development replication — 2026-11-18
+
+- Hypothesis: a small detector-only classifier can choose the logical bit on the rare disagreement subset faster than BP+LSD. Separate L2 logistic regression per condition used 40 detector bits plus the two matching logical outputs; training used only independent training-stream observables for flagged cases.
+- Initial train/validation screen: 1M per condition for each split; macro LER reduction 17.17%, no cell harmed >5%, total inference time 1.35x; all six fits converged.
+- Fresh train/validation replication with new seeds: macro LER .005155→.004321 (16.18%), paired macro-difference 95% interval [-.000866,-.000802], no >5% harm, total inference 1.36x. Same-validation BP+LSD hybrid was .004468 (13.34% reduction) at 8.28x cost; logistic beat it on five of six cells.
+- Training labels use simulator observables offline; inference uses syndrome and matching outputs only. Scope is known fixed d3 simulated profiles; no drift/model shift or device result yet.
+- Added 24,120,000 unique train/validation/preflight samples; cumulative unique Q-SHIFT development samples: 118,608,200. Same-stream comparator reanalysis added zero. No confirmatory/sealed data.
+- Next: frozen measurement-noise composition-shift challenge using the trained nominal models; no retraining on shifted validation data.

@@ -120,3 +120,8 @@ A d3 screen and fresh-seed replication favored three active rounds plus two matc
 ### Selective escalation update (independent research v2)
 
 Correlation-vs-ordinary matching disagreement flagged .261% of fresh d3 samples. Routing flagged cases to BP+LSD reduced macro LER by 14.3% in the initial stream, but full decode time was 8.44x baseline; this fails the 2x runtime gate. Keep only as evidence that the flag population is informative. A fresh efficacy replication is pending, but no BP+LSD integration is recommended.
+
+
+### Fast disagreement-subset supervised selector (independent research v2)
+
+A per-condition L2 logistic model trained on flagged detector syndromes reduced held-out macro d3 LER by 17.2% initially and 16.2% in a fresh train/validation replication, at 1.35x/1.36x inference cost. Same-stream BP+LSD was weaker on five of six replication cells and ~8.3x slower. This is supervised selective decoding, an established family; it is not novel. Main remaining gap is noise-composition robustness; model was trained per known profile and uses simulator labels offline.

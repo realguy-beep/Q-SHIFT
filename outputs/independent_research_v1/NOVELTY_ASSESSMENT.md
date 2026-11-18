@@ -57,3 +57,6 @@ The equal-duration round-count experiments use standard syndrome scheduling and 
 
 
 The correlation-disagreement selective escalation experiment combines established correlated matching, ordinary matching, and BP+LSD methods; it is not a novel decoder. Its local result is an accuracy-cost tradeoff on d3 development data (14.3% macro LER reduction at 8.44x cost), pending independent replication and below any practical advancement gate.
+
+
+The flagged-subset logistic selector is an established supervised meta-decoder/selective-decoding pattern and is not claimed as a novel algorithm. Q-SHIFT-specific evidence is a replicated d3 held-out LER gain at modest inference overhead, against correlation-enabled matching and a stronger BP+LSD escalation comparator. Robustness, distance scaling, and hardware transfer are open.
