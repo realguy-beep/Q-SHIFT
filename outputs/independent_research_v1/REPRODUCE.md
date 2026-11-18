@@ -100,3 +100,5 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 
 - Reproduce the exact two-layer sparse categorical inference with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_two_layer_sparse.py`.
 - Reproduce the three-layer sparse preflight and exact DP/Walsh comparison with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_three_layer_preflight.py` followed by `categorical_three_layer_sparse.py`.
+
+- Reproduce the four-layer sparse preflight and exact DP/Walsh result with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_four_layer_preflight.py` followed by `categorical_four_layer_sparse.py`.

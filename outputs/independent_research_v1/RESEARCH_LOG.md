@@ -189,3 +189,8 @@
 - Exact sparse signature aggregation solved the final two layers despite dense VE's 17.2B entry estimate: 12 categorical locations/10 detectors, 2,048 states, direct DP versus six-plus-six convolution max difference1.33e-15, 512 Stim composition checks, 4.85s.
 - Extended the exact slice to 18 locations/12 detectors. Sparse DP and Walsh XOR convolution agreed over 8,192 states at1.22e-15; 512 forced-fault cases passed; runtime4.63s. The isolated fragment MAP risk is not full-circuit LER.
 - An incorrect Walsh normalization was detected by sparse-DP comparison and fixed before final result. No stochastic circuit shots were generated. Sparse complexity scales exponentially with touched detector support; next do only a fourth-layer scope preflight.
+
+### Four-layer sparse exact pass
+
+- Extended preflight to the final four PAULI_CHANNEL_2 layers (24 locations). Support remained 12 detector bits. Sparse DP/Walsh joint masses agreed to2.78e-15 over 8,192 states, normalization passed, and 512 forced-fault tests matched. Runtime3.55s; no samples. Isolated MAP risk is not full-circuit LER.
+- Continue only to a fifth-layer resource preflight next.

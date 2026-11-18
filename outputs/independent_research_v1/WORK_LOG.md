@@ -253,3 +253,9 @@
 - Extended to 18 locations in the last three layers/12 touched detectors. Sparse DP (1.22M transitions) and independent Walsh-Hadamard convolution (2.02M operations) matched all 8,192 states/4,096 syndromes to 1.22e-15; 512 forced-fault checks passed; 4.63s. Isolated-fragment MAP risk 2.23e-4, not full-circuit LER.
 - A first Walsh normalization divided by N^(L-1), causing .95 error; the independent sparse DP caught it before final reporting. Correct inverse uses one factor N. No stochastic samples generated.
 - This is an alternate exact representation to dense VE, with exponential dependence on touched signature bits; full 40-detector circuits remain infeasible by this direct state-space method. Continue with a predeclared fourth-layer resource preflight if output support remains bounded.
+
+### Fourth-layer sparse exact continuation — 2026-11-18
+
+- The preflight passed for 24 categorical locations; all four final channel layers still touch only 12 detectors (8,192 joint states). Exact sparse DP and Walsh convolution agreed over all 4,096 syndromes to 2.78e-15; 512 forced combined-fault checks passed; normalization .9999999999999988; 3.55s.
+- Isolated four-layer MAP risk .000431, not a full-circuit LER. Sparse DP used 1.62M transitions and Walsh 2.66M operations. No stochastic samples generated.
+- Local support stayed at 12 detector bits across this temporal slice; this does not imply support remains bounded for longer/full circuits. Next: preflight a fifth layer against existing state/operation caps.
