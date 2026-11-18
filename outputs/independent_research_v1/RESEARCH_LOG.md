@@ -521,3 +521,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 
 - The ratio-10 frozen selector retained a 16.43% and 16.77% macro LER gain at physical ratio 1 on two independent d3 streams, at 1.345x/1.327x total inference cost. First stream had five significant per-cell paired intervals and one crossing parity; replication intervals all favored candidate.
 - Stationary ratio tests now include 1, 2, and 5, with a separate joint measurement/bias shift. This does not cover temporal drift, graph selection, cross-basis transfer, or distance scaling. Cumulative unique development samples 257,688,200; no sealed/confirmatory evidence. See `outputs/independent_research_v2/fast_flagged_logistic_bias_ratio1_report.md`.
+
+
+## Gate-noise shift is borderline against frozen utility threshold — 2026-11-18
+
+- With physical gate p doubled to .006, the frozen selector improved macro LER by 10.01% initially but 9.95% on independent replication. Both streams show strongly favorable paired differences and all six cells improved, yet the preregistered >=10% utility gate failed on replication. No extension shots or tuning.
+- Record as a borderline gate miss, not replicated advancement. Measurement/bias robustness results remain; gate-rate robustness is weaker. Cumulative development samples: 263,808,200; no sealed/confirmatory data. Full record: `outputs/independent_research_v2/fast_flagged_logistic_gate_shift_report.md`.

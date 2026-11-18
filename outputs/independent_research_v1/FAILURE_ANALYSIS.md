@@ -306,3 +306,8 @@ The frozen d3 selector retained ~17%–18% macro gains when anisotropic profiles
 ### Isotropic ratio-1 shift adds bounded static robustness
 
 The frozen ratio-10 selector retained ~16% macro gain at physical ratio 1 on two fresh d3 streams. One first-stream cell interval crossed parity, but point estimates were positive throughout and the independent replication intervals all favored the selector. This extends stationary bias-strength evidence without changing limitations: no temporal shift, graph selection, cross-basis transfer, hardware, or d5 generalization.
+
+
+### Gate-rate robustness did not clear the strict utility gate twice
+
+Doubling gate p to .006 produced 10.01% macro reduction initially and 9.95% on replication. Paired intervals favored the selector in both streams and all cells improved, but the frozen macro threshold failed by 0.05 percentage point on fresh validation. Do not upgrade the gate-shift result based on its paired significance alone; it is a borderline utility-gate miss. The diagnostic graph threshold preflight failure is retained in v2.

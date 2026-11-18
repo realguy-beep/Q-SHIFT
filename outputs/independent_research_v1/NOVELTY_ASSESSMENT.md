@@ -110,3 +110,8 @@ The frozen selector passed one more stationary bias-strength shift at ratio 2. T
 ### Isotropic shift is a robustness result only
 
 Passing the ratio-1 stationary channel challenge increases empirical scope but does not introduce a new algorithmic contribution or establish broad noise robustness.
+
+
+### Gate-noise robustness is unresolved
+
+The gate-p shift's fresh stream fell just below the fixed utility threshold, despite favorable paired errors. Do not fold it into the positive robustness claims or characterize the selector as robust to arbitrary gate-rate mismatch.

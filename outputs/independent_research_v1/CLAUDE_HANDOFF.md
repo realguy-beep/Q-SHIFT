@@ -282,3 +282,8 @@ The ratio-10 frozen selector passed physical ratio 2 on two independent d3 strea
 ### Isotropic channel challenge — 2026-11-18
 
 At physical ratio 1, the ratio-10 frozen d3 selector retained 16.4%/16.8% macro gains in two streams (~1.33x cost). One initial cell interval crossed parity; replication intervals all favored candidate. Tested stationary bias ratios now include 1, 2, and 5, plus one joint shift. Cross-basis and d5 screens remain negative. See `../independent_research_v2/fast_flagged_logistic_bias_ratio1_report.md`.
+
+
+### Gate-noise challenge was borderline — 2026-11-18
+
+At gate p=.006 the frozen selector reduced macro LER 10.01% initially and 9.95% on replication. Despite all cells improving and paired intervals excluding zero, the strict >=10% gate failed on replication. Treat as borderline/inconclusive, not a robustness pass. Preserved preflight issue and report: `../independent_research_v2/fast_flagged_logistic_gate_shift_report.md`.

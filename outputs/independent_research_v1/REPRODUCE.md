@@ -462,3 +462,8 @@ Run `fast_flagged_logistic_bias_ratio2.py` and its `_replication.py` counterpart
 ### Isotropic ratio-1 shift
 
 Run `fast_flagged_logistic_bias_ratio1.py` and `fast_flagged_logistic_bias_ratio1_replication.py` from the v2 research directory with the project venv. Models/graphs remain trained at ratio 10. The protocol and result report are in the same directory.
+
+
+### Doubled gate-noise challenge
+
+Run `fast_flagged_logistic_gate_shift.py` and its replication counterpart with the project venv. The initial preflight diagnostic-threshold failure is preserved in `fast_flagged_logistic_gate_shift_preflight_failure.md`; the corrected diagnostic-only rerun uses identical preflight seeds. The independent replication narrowly misses the frozen utility gate.

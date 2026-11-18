@@ -244,3 +244,8 @@ The fixed d3 selector has now passed ratio 5, ratio 2, and a ratio-5 plus double
 ### Static isotropic limit
 
 The ratio-10 frozen selector also performed well when physical channels became isotropic at ratio 1. This is a useful stationary composition boundary point, not evidence for time-varying noise or an unknown matcher graph. Preserve the basis and d5 failures in any summary.
+
+
+### Gate-rate shift limitation
+
+Do not include doubled gate noise in the selector's positive robustness envelope: the initial 10.01% gain narrowly passed, but independent replication was 9.95% and failed the fixed utility gate. The effect is real by paired error comparison but misses the practical threshold. No extra shots were taken.

@@ -693,3 +693,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Independent replication: .005706→.004749 (16.77%), paired delta -.000957 (95% CI [-.001011,-.000903]), cost 1.327x; all six cell intervals favored candidate. Both gates passed.
 - This extends only the tested stationary bias-strength range. Cross-basis and d5 transfer remain negative. Added 6,120,000 unique samples; cumulative Q-SHIFT development count: 257,688,200. No confirmatory/sealed data.
 - Details: `outputs/independent_research_v2/fast_flagged_logistic_bias_ratio1_report.md`.
+
+
+## Frozen selector under doubled gate noise — borderline gate miss — 2026-11-18
+
+- Physical gate p=.006 (measurement p=.003, bias ratio 10), nominal models/graphs frozen. Corrected initial stream: .015588→.014028 macro LER (10.01%), paired delta -.001560 (95% CI [-.001635,-.001486]), cost 1.337x; all six cells improved.
+- Fresh replication: .015523→.013978 (9.95%), paired delta -.001545 (95% CI [-.001620,-.001470]), cost 1.351x; all six cells improved, but strict >=10% macro gate failed by .05 percentage point. No more shots or tuning.
+- First preflight attempt sampled 60k then failed constructing only the shifted diagnostic graph because threshold .0018 was below a .003571 PAULI_CHANNEL_2 component. Raised that diagnostic threshold to .004 and replayed identical seeds; unique preflight count is 60k, not 120k. Nominal graph/model unchanged. Failure note preserved.
+- Added 6,120,000 unique samples across initial and replication streams; cumulative Q-SHIFT development samples: 263,808,200. No confirmatory/sealed data. Result is borderline/inconclusive for advancement, not a replicated gate pass. See `outputs/independent_research_v2/fast_flagged_logistic_gate_shift_report.md`.
