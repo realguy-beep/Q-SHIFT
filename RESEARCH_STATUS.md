@@ -1,9 +1,9 @@
 # Q-SHIFT research status
 
-**Last reviewed:** 2026-11-17
-**Project status:** simulation-based research prototype; no demonstrated adaptive or neural-decoder advantage over strong fixed PyMatching; no quantum-hardware integration. Correlated-noise-aware decoders (exact DEM decoding at d=3, hypergraph BP+OSD at d=5) show a pre-registered development-evidence advantage over the strongest static matcher for synthetic weight-3 burst families (at d=5, robust across two families and p = 0.002–0.004, and confirmed with burst support learned from calibration data for a known and a sealed hidden burst); none beats it at d=7 (see below).
+**Last reviewed:** 2026-11-18
+**Project status:** simulation-based research prototype; no demonstrated adaptive or neural-decoder advantage over strong fixed PyMatching; no quantum-hardware integration. Correlated-noise-aware decoders (exact DEM decoding at d=3, hypergraph BP+OSD at d=5) show a pre-registered development-evidence advantage over the strongest static matcher for synthetic weight-3 burst families (at d=5, robust across two families and p = 0.002–0.004, confirmed with burst support learned from calibration data for a known and a sealed hidden burst, and 94.0% below in a burst-dominated low-p regime, short of the 95% target); none beats it at d=7 (see below).
 
-## Correlated-noise decoder line V1.1–d=5 learned support (2026-11-15 to 2026-11-17)
+## Correlated-noise decoder line V1.1–d=5 low-p regime (2026-11-15 to 2026-11-18)
 
 Full summary, deviations and links: `outputs/qshift_correlated_decoder_synthesis_v1/REPORT.md`. All results are simulation-only development evidence (rotated Z-memory, 5 rounds, p=0.003, synthetic `CORRELATED_ERROR(q)` X-burst, q ∈ {0, 0.01, 0.02}); comparators are the strongest static matcher (correlated PyMatching, selected on development data), not nominal matching.
 
@@ -11,8 +11,10 @@ Full summary, deviations and links: `outputs/qshift_correlated_decoder_synthesis
 - d=5: serial hypergraph BP+OSD (`ldpc` 2.4.1) with one static prior is 64.8% below correlated PyMatching (95% CI 61.2–68.4%), and 46% below at q=0 (frozen Phase 2, 600,048 fresh shots, GO_d5).
 - d=5 robustness (frozen, 1,800,144 fresh shots, ROBUST): the gain holds for a 2-detector centre_row burst (−20.9%, 95% CI 13.3–28.0), at p=0.002 (−78.1%, 71.8–83.8) and at p=0.004 (−56.8%, 53.0–60.3), each against a re-selected correlated PyMatching. It passed the Bonferroni CI and q=0 safety in every condition.
 - d=5 learned support (frozen Phase C, 1,200,096 fresh shots + 27,000 calibration, CONFIRMED): BP+OSD with a burst support learned by a null-calibrated parity-moment learner is 59.8% below true-support correlated PyMatching for the known burst (95% CI 55.8–63.7) and 44.8% below for a sealed hidden burst (40.3–49.3). Both supports were learned exactly, so the learned-support decoder matched the oracle-support decoder bit for bit. Caveats: one learning draw per condition; the learner assumes the true base noise model; the hidden burst (12,34,40) is a one-qubit neighbour of a development surrogate.
+- d=5 model mismatch (Phase A development diagnostic): the Phase C learner is not robust to a wrong base model. With the true p 17% lower (Mlo) or Z-biased noise (Mz) it learned 0/24 burst pools; with p 17% higher (Mhi) it falsely accepted 24/24 burst-free pools. Phase B is on hold.
+- d=5 low-p regime (frozen Stage E, 2,892,888 fresh shots, CONFIRMED): at p = 0.001 BP+OSD (true support) is 94.0% below re-selected correlated PyMatching (95% CI 92.3–95.5); at p = 0.0015, 93.1% (90.7–95.2). Pre-registered target verdict: TARGET_NOT_MET. The burst is effectively decoded (L2 errors 25/26/30 against a burst-free floor of 25); the limit is background decoding. The regime was chosen because the target is reachable there.
 - d=7: BP+OSD (four configurations) and parallel belief-matching all failed pre-registered development screens (STOP); serial belief-matching untested for cost reasons.
-- The owner's 90–95% reduction target is not reached; the V1.4 headroom gate found no regime of this noise family where it is attainable with margin.
+- The owner's 95% reduction target is not reached. At p = 0.003 the background floor caps it near 65%; the closest result is 94.0% in the low-p regime.
 
 ## Core software integration v1 (engineering-only; 2026-11-12)
 
