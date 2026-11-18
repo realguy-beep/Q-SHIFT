@@ -24,22 +24,22 @@ BIAS=10.
 THRESHOLD=.0018
 
 
-def idle_arm() -> tuple[stim.Circuit,dict]:
-    source=build_scaled_circuit("z","z_biased",5,5).flattened()
+def idle_arm(active_rounds: int = 5, idle_cycles: int = 4) -> tuple[stim.Circuit,dict]:
+    source=build_scaled_circuit("z","z_biased",5,active_rounds).flattened()
     p1=one_qubit_probabilities("z_biased",BASE_P,BIAS)
     out=stim.Circuit(); data=None; inserted=False
     for inst in source:
         if inst.name in ("M","MX","MY"):
             data=list(inst.targets_copy())
             if len(data)!=25: raise RuntimeError(f"expected 25 terminal data qubits, got {len(data)}")
-            for k in range(4):
+            for k in range(idle_cycles):
                 out.append("PAULI_CHANNEL_1",data,p1)
-                if k<3: out.append("TICK")
+                if k<idle_cycles-1: out.append("TICK")
             inserted=True
         out.append(inst.name,inst.targets_copy(),inst.gate_args_copy())
     if not inserted: raise RuntimeError("terminal measurement missing")
-    return out,{"active_rounds":5,"idle_cycles":4,"idle_data_qubits_per_cycle":25,
-                "idle_channel_targets":100,"idle_probability_per_data_qubit_per_cycle":float(sum(p1)),
+    return out,{"active_rounds":active_rounds,"idle_cycles":idle_cycles,"idle_data_qubits_per_cycle":25,
+                "idle_channel_targets":25*idle_cycles,"idle_probability_per_data_qubit_per_cycle":float(sum(p1)),
                 "idle_pauli_probabilities_XYZ":list(p1),
                 "terminal_data_qubits":[int(t.value) for t in data]}
 

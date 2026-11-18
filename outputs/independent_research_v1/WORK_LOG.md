@@ -574,3 +574,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Candidate 146 errors (.000146) vs baseline 139 (.000139), RR=1.050 (95% .833–1.325). No d5 improvement; the interval excludes a >=20% reduction under the stated ratio approximation. This fails to reproduce the d3 effect at higher distance and ends the current round-count expansion.
 - Integrity: five-round and nine-round dimensions 120/216 detectors; 64 physical qubits, 25 idle data qubits, matching terminal reads, noiseless circuits, scalar/batch checks; 9-round comparator byte-identical to prior d5 builder. Runtime 12.05s (10.36s projected).
 - Added 2,000,000 main +20,000 preflight samples; cumulative unique Q-SHIFT development samples: 91,244,200. No confirmatory/sealed data accessed.
+
+
+## Equal-duration d5 intermediate schedule — gate failure — 2026-11-18
+
+- Tested one prespecified mechanistic interpolation: seven active d5 Z-biased rounds plus two p=.003 data-idle cycles versus nine active rounds. 1M shots/arm; integrity and runtime preflight passed.
+- Candidate 140 errors, baseline 166, RR=.843 (95% .674–1.056). It fails the frozen gate (requires point RR<=.90 and upper interval <1). No replicate or further round-count sweep launched.
+- Resources: both 64 qubits and same final readout; candidate 168 detectors/560 pair sites/218 1Q targets, baseline 216/720/216.
+- Added 2,000,000 main +20,000 preflight shots; cumulative unique development samples: 93,264,200. No sealed/confirmatory evidence.

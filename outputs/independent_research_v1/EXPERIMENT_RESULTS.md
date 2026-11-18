@@ -417,3 +417,8 @@ With only the idle arm's data Pauli p increased to .006, X-aligned three-plus-id
 ## Distance-5 equal-duration schedule extension
 
 For Z memory/Z bias at d5, five active rounds plus four p=.003 biased data-idle cycles had 146/1,000,000 failures (.000146; Wilson 95% .000124–.000172), versus 139 (.000139; .000118–.000164) for nine active rounds. RR=1.050 (95% .833–1.325); no benefit was observed, and the interval excludes a 20% or larger reduction under the log-normal approximation. Resources: same 64 qubits/readout targets; 400 two-qubit pair sites and 220 one-qubit targets with five+idle versus 720 and 216 with nine active. This does not reproduce the d3 Z-aligned benefit; see `../independent_research_v2/equal_duration_d5_report.md`.
+
+
+## Distance-5 intermediate schedule challenge
+
+At d5 Z alignment, seven active rounds plus two p=.003 biased data-idle cycles yielded 140/1M errors vs 166/1M for nine active rounds, RR=.843 (95% .674–1.056). The point estimate favored seven-plus-idle, but the frozen advancement gate required upper CI <1 and failed. No sample expansion or additional round count followed. See `../independent_research_v2/equal_duration_d5_intermediate_report.md`.

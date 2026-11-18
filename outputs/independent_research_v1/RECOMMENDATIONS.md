@@ -174,3 +174,8 @@ The twofold idle-noise challenge fails the preregistered across-cell robustness 
 ### Distance-5 schedule result
 
 Do not scale the d3 three-plus-idle result into a general schedule recommendation. At d5 Z alignment the five-plus-idle schedule was statistically inconclusive around parity (RR=1.05, 95% .83–1.33) and excludes a 20% or larger gain. The candidate has no demonstrated distance-5 benefit under this idle model.
+
+
+### D5 schedule branch stop
+
+The targeted seven-round d5 screen was inconclusive and failed its frozen gate (RR=.843, 95% .674–1.056). Stop round-count exploration at d5; no tested shorter-active schedule passes a robust evidence gate. The d3 result remains model- and distance-specific.

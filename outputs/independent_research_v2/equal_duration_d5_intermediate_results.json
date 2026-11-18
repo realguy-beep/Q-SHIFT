@@ -1,0 +1,88 @@
+{
+  "status": "equal_duration_d5_intermediate_development",
+  "condition": {
+    "memory_basis": "z",
+    "regime": "z_biased"
+  },
+  "arms": {
+    "seven_rounds_plus_idle": {
+      "errors": 140,
+      "shots": 1000000,
+      "ler": 0.00014,
+      "wilson_95": [
+        0.00011865187994854949,
+        0.00016518848851105757
+      ],
+      "seed": 2026114111,
+      "resources": {
+        "qubits": 64,
+        "detectors": 168,
+        "observables": 1,
+        "two_qubit_pair_sites": 560,
+        "one_qubit_pauli_targets": 218
+      }
+    },
+    "nine_active_rounds": {
+      "errors": 166,
+      "shots": 1000000,
+      "ler": 0.000166,
+      "wilson_95": [
+        0.00014259696085411848,
+        0.00019324320785039727
+      ],
+      "seed": 2026114112,
+      "resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_pair_sites": 720,
+        "one_qubit_pauli_targets": 216
+      }
+    }
+  },
+  "candidate_schedule": {
+    "active_rounds": 7,
+    "idle_cycles": 2,
+    "idle_noise_p": 0.003,
+    "idle_targets": 50
+  },
+  "rate_ratio_candidate_over_nine_active": 0.8433734939759036,
+  "rate_ratio_log_normal_95_ci": [
+    0.6735143126509363,
+    1.0560708762692017
+  ],
+  "advancement_gate_passed": false,
+  "preflight": [
+    {
+      "arm": "seven_rounds_plus_idle",
+      "seed": 2026114101,
+      "sample_seconds": 0.01648365700020804,
+      "decode_seconds": 0.040061348998278845,
+      "resources": {
+        "qubits": 64,
+        "detectors": 168,
+        "observables": 1,
+        "two_qubit_pair_sites": 560,
+        "one_qubit_pauli_targets": 218
+      }
+    },
+    {
+      "arm": "nine_active_rounds",
+      "seed": 2026114102,
+      "sample_seconds": 0.018897534999268828,
+      "decode_seconds": 0.04967159999796422,
+      "resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_pair_sites": 720,
+        "one_qubit_pauli_targets": 216
+      }
+    }
+  ],
+  "preflight_samples": 20000,
+  "main_samples": 2000000,
+  "projected_main_seconds": 12.511414099571994,
+  "elapsed_seconds": 15.151512296000874,
+  "scope": "single targeted intermediate schedule; d5 Z-aligned simulator development only"
+}

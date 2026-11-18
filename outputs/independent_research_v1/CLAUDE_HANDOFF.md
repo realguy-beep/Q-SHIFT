@@ -212,3 +212,8 @@ A predeclared 2x idle-channel stress (.006 on data during the two idle cycles; f
 ### Distance-5 equal-duration schedule challenge
 
 At d5 Z memory/Z bias, five active rounds plus four p=.003 biased data-idle cycles had 146/1M failures versus 139/1M for nine active rounds (RR=1.05, 95% .83–1.33). No benefit was observed; the interval excludes a 20% or larger improvement. This fails to extend the d3 signal to d5. Do not recommend the round-count change as a scalable gain under the current idle model. Details: `outputs/independent_research_v2/equal_duration_d5_report.md`.
+
+
+### D5 intermediate schedule stop
+
+A targeted d5 Z-aligned seven-active-plus-two-idle screen had 140/1M errors versus 166/1M for nine active rounds, RR=.843 (95% .674–1.056). It failed the predeclared confidence gate; no extra samples were run. Combined with the five-plus-idle d5 result, do not recommend a reduced-round d5 schedule.

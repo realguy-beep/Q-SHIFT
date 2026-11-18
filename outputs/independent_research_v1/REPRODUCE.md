@@ -392,3 +392,8 @@ Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_
 ### Distance-5 equal-duration schedule extension
 
 Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/equal_duration_d5.py`. This compares d5 Z-bias/Z-memory with five active rounds plus four biased p=.003 data-idle cycles against nine active rounds. It writes a separate result summary and uses new fixed seeds. Scope and limitations are in `equal_duration_d5_protocol.md`.
+
+
+### D5 intermediate equal-duration schedule
+
+Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/equal_duration_d5_intermediate.py`. This is a single fixed seven-active-plus-two-idle comparison against nine active rounds. It writes a separate result file and stops at the declared advancement gate; no tuning is performed.

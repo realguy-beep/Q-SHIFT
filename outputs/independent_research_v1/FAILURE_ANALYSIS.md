@@ -236,3 +236,8 @@ Doubling only the data-idle channel to .006 preserved the Z-aligned benefit but 
 ### Equal-duration schedule at d5
 
 The aligned Z-memory d5 extension did not show an advantage for five active rounds plus four p=.003 idles versus nine active rounds (RR=1.05, 95% .83–1.33). The interval excludes gains of 20% or more in this cell. This weakens the prospect that the d3 schedule result scales with distance; the d5 sample is finite and does not establish equivalence or harm.
+
+
+### Distance-5 intermediate schedule was inconclusive
+
+The seven-active-plus-two-idle d5 point estimate favored it over nine active rounds, but uncertainty included parity (RR=.843, 95% .674–1.056). It failed the predeclared gate. Combined with the five-plus-idle result, there is no supported d5 schedule gain. Do not treat the lower point estimate as evidence of benefit or run post-hoc extra shots.

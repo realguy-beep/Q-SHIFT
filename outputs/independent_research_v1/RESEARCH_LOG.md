@@ -426,3 +426,11 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - Fresh 1M/arm screen: candidate 146 failures, baseline 139; RR=1.050 (95% .833–1.325). No observed gain; interval excludes a reduction >=20%. This weakens the d3 finding's distance-scaling relevance.
 - Cumulative unique development samples: 91,244,200. No sealed/confirmatory data.
 - Decision: do not expand this round-count design absent a calibrated idle model or stronger mechanism. Move to a substantially different remaining candidate / source-verified literature question.
+
+
+## Checkpoint — d5 intermediate schedule gate failure (2026-11-18)
+
+- At branch `97d614b`, tested the single preselected d5 Z-aligned seven-active-plus-two-idle point. RR=.843, but its 95% interval [.674,1.056] crosses 1 and fails the fixed advancement gate.
+- No post-hoc sampling or round sweep. Together with the five-plus-idle result, current evidence does not support d5 schedule improvement.
+- Cumulative unique development samples: 93,264,200. No confirmatory/sealed evidence.
+- Move to a distinct research family; retain schedule evidence as finite-distance negative/inconclusive results.
