@@ -194,3 +194,8 @@ Completed fresh-seed 2x2 screens at d3 and d7. Fixed protocol: `xzzx_basis_facto
 ## d9 challenge of the XZZX/CSS memory-basis tradeoff
 
 Completed predeclared four-cell d9 screen; protocol, preflight, and results are recorded in `xzzx_basis_factorial_d9_protocol.md`, `xzzx_basis_factorial_d9_preflight.json`, and `xzzx_basis_factorial_d9_results.json`.
+
+
+## d11 challenge of the balanced-memory tradeoff
+
+Completed predeclared d11 CSS/XZZX basis screen. Protocol and JSON artifacts: `xzzx_basis_factorial_d11_protocol.md`, `xzzx_basis_factorial_d11_preflight.json`, `xzzx_basis_factorial_d11_results.json`.

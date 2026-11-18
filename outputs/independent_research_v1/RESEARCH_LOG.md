@@ -328,3 +328,6 @@ The XZZX/CSS equal-weight separate-memory tradeoff is distance-sensitive in new 
 
 
 The d9 challenge extends the balanced separate-memory XZZX/CSS benefit to a rate ratio .107, dominated by Z-memory suppression. CSS-X remains lower than XZZX-X. This is 89%, not 99.99%, and does not measure arbitrary logical states or account for actual native-gate calibration. A d11 preflight is the next falsification step if it remains within the declared runtime cap.
+
+
+The d11 balanced X/Z task result continues the XZZX/CSS trend but with a broad interval and only 3 XZZX-Z versus 67 CSS-Z failures; both X-basis cells are zero-failure. The point rate ratio .0448 is far from 1e-4. Since runtime was 282s, stop this fixed-size sweep and move to another research family rather than adding a marginal d13 run.

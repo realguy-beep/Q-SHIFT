@@ -279,3 +279,13 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xz
 ```
 
 See `xzzx_basis_factorial_d9_protocol.md` for fixed conditions and seeds.
+
+
+### d11 XZZX/CSS basis-workload challenge
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_basis_factorial_d11.py --preflight
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_basis_factorial_d11.py
+```
+
+The preflight projected 217.6s; actual main runtime was 281.9s. Do not assume larger distances fit the same cap.

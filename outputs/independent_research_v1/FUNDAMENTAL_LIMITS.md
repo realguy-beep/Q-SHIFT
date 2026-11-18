@@ -130,3 +130,6 @@ The balanced-memory XZZX/CSS rate ratio was 1.18 at d3, about .66 at d5 on two s
 
 
 The d9 equal-weight separate X/Z memory rate ratio XZZX/CSS is .107 (.070–.159), an 89% reduction, not 99.99%. The known-X basis comparison is sparse and reversed (1 CSS-X vs 10 XZZX-X failures). This bounds the balanced-workload claim at one finite size; it establishes no threshold or full logical-channel behavior.
+
+
+At d11, equal-weight separate-basis XZZX/CSS=.0448 (.0090–.1366), with only 70 combined errors; X memory had zero errors in each architecture. The point is 448x above the aspirational relative target. The largest tested run now takes 282s/2m shots and ~2.69 GiB, so further same-size evidence has increasing resource cost. This is not an asymptotic exponent.

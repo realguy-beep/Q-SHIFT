@@ -333,3 +333,8 @@ Fresh 500k-per-cell 2x2 streams gave CSS-X/Z vs XZZX-X/Z failures of 656/3,729 v
 ## d9 XZZX/CSS basis-workload challenge
 
 At d9/17 rounds and 500k independent shots/cell, CSS-X/Z had 1/260 failures; XZZX-X/Z had 10/18. The primary equal-weight separate-memory XZZX/CSS rate ratio was .107 (95% conditional interval .070–.159), an 89% point reduction. XZZX-Z/CSS-Z was .0692 (.0404–.1116); XZZX-X/CSS-X was 10.0 (1.42–433.98), with only 11 combined failures. Resource counts matched across qubits, detectors, interactions, noise targets, ticks, and measurement targets. Preflight projected 155.6 seconds; main took 163.0 seconds with peak RSS 1.49 GiB. This extends the d3/d5/d7 finite-size workload trend, but remains a synthetic, one-distance development result and far from 10,000-fold reduction.
+
+
+## d11 challenge of the balanced-memory XZZX/CSS result
+
+At d11/21 rounds and 500k shots/cell, CSS-X and XZZX-X each had zero failures; CSS-Z had 67 and XZZX-Z had 3. The equal-weight separate-memory XZZX/CSS rate ratio was .0448 (95% conditional interval .0090–.1366), based on 70 combined failures. The XZZX-Z/CSS-Z ratio was also .0448; X-vs-X has no informative rate ratio because both cells had zero failures. Per-cell Wilson one-sided upper for zero counts is about 7.68e-6. This continues the balanced-workload trend but remains 448x above the 1e-4 target at the point estimate. Preflight projected 217.6s; main completed in 281.9s (<300s) and used 2.69 GiB peak RSS. Do not infer arbitrary-state or asymptotic performance.

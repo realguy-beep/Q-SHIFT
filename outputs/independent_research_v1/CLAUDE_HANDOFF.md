@@ -148,3 +148,6 @@ A fresh d3/d7 extension found equal-weight separate X/Z memory XZZX/CSS ratios 1
 
 
 The d9 XZZX/CSS factorial produced CSS-X/Z 1/260 failures and XZZX-X/Z 10/18 (500k/cell). Equal-weight separate X/Z task ratio was .107 (95% interval .070–.159); XZZX-Z/CSS-Z=.069, but XZZX-X/CSS-X=10 with a wide interval. This is an 89% aggregate reduction at d9, far from 99.99%, and not an arbitrary-state channel. Recommend only as a workload-specific code-design candidate; require device gate characterization before hardware claims.
+
+
+At d11, CSS-X and XZZX-X each had 0/500k failures; CSS-Z had 67 and XZZX-Z 3. Equal-weight separate X/Z task rate ratio XZZX/CSS=.0448 (95% interval .0090–.1366), 448x above 1e-4. The run took 281.9s and 2.69 GiB. This supports a finite-size balanced-workload tradeoff but leaves X-memory comparison unresolved and is not arbitrary-state or hardware evidence. The next distance may exceed the 300s screen; do not launch without a preflight.

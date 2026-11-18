@@ -440,3 +440,12 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - CSS-X/Z 1/260; XZZX-X/Z 10/18. Equal-weight separate-basis rate ratio .1073 (95% conditional interval .0699–.1587); XZZX-Z/CSS-Z .0692; XZZX-X/CSS-X 10.0 with broad interval.
 - Total unique Q-SHIFT development shots: 60,420,000. No sealed or confirmatory data accessed.
 - Active question: can the balanced-workload finite-size benefit be challenged at d11 within the same 300s bound, or does the preflight stop rule prevent it? Keep basis-specific outcomes prominent.
+
+
+## d11 XZZX/CSS checkpoint — 2026-11-18
+
+- Preflight passed; projected 217.56s. Main 2,000,000-shot screen completed in 281.85s, peak RSS 2,686,992 KiB; under the 300s cap but close.
+- CSS-X/XZZX-X 0/500k each; CSS-Z/XZZX-Z 67/3. Equal-weight separate-basis XZZX/CSS RR=.0448, exact conditional 95% interval .0090–.1366. X-basis RR is unidentifiable from zero failures in both arms.
+- Total unique Q-SHIFT development shots: 62,460,000. No sealed/confirmatory data accessed.
+- A numerical Wilson lower endpoint for zero-count cells was clamped to the mathematically correct zero in the stored JSON and reproduction code; stochastic data were not rerun.
+- Next: move to a different high-value research family; d11 near-cap runtime and sparse outcomes make another distance sweep low-value without a new algorithm or higher-efficiency estimator.

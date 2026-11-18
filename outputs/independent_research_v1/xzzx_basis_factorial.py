@@ -71,7 +71,7 @@ def wilson(k,n):
     from scipy.stats import norm
     z=float(norm.ppf(.975));p=k/n;den=1+z*z/n
     center=(p+z*z/(2*n))/den;half=z*np.sqrt(p*(1-p)/n+z*z/(4*n*n))/den
-    return [float(center-half),float(center+half)]
+    return [float(max(0.0,center-half)),float(min(1.0,center+half))]
 
 
 def main():

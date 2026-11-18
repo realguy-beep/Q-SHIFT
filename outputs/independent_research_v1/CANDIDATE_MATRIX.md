@@ -78,3 +78,6 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 
 
 **d9 extension:** equal-weight separate-basis XZZX/CSS ratio .107 (.070–.159), with Z-memory ratio .069 and X-memory ratio 10 (sparse). The balanced workload gain persists at d9 but is not an arbitrary-state or 99.99% result; retain the basis-specific tradeoff.
+
+
+**d11 challenge:** equal-weight separate-basis XZZX/CSS=.0448 (.009–.137), based on 3 vs 67 Z-memory errors; both X-memory arms had zero errors. Runtime 282s and 2.69 GiB. The finite-size tradeoff persists, but d11 is underpowered for X-memory and near the declared runtime cap.

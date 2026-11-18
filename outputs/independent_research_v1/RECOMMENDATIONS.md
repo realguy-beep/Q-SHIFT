@@ -122,3 +122,6 @@ The equal-weight X/Z memory-task tradeoff merits one larger finite-size check: d
 
 
 A fresh d9 screen supports a balanced separate-basis XZZX/CSS tradeoff through d9 (aggregate ratio .107), but the improvement is driven by Z memory and CSS-X remains better for known X memory. Treat this as a task-mix design option under an unverified gate assumption; do not claim it approaches the 10,000-fold target.
+
+
+The balanced separate-memory trend continues through d11 (point ratio .0448), but the exact interval is broad and X-memory comparisons are zero-failure. Treat this as a promising code-design tradeoff for that task mix, not a 10,000-fold result. d11 already approaches the per-run 300s limit; any larger-distance plan needs a fresh feasibility gate and should not assume runtime scales linearly.

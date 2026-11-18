@@ -171,3 +171,6 @@ Across d3/d5/d7, the XZZX/CSS ratio for an equal-weight separate X/Z task mix mo
 
 
 At d9 the balanced-task XZZX gain is driven by Z-memory: 18 XZZX-Z errors vs 260 CSS-Z, while CSS-X had 1 failure vs 10 XZZX-X. The equal-weight aggregate .107 therefore masks a severe known-X-memory tradeoff and sparse X-memory counts. The result is not an arbitrary-state channel and relies on equal native gate noise/duration. Do not report only the aggregate.
+
+
+The d11 balanced aggregate is driven by 3 versus 67 Z-memory failures; both X-memory cells had zero failures in 500k. Therefore the X-memory architecture comparison is unresolved, not tied. The aggregate rate ratio .0448 has a broad exact interval (.009–.137), and does not establish the 1e-4 goal. The run took 282s, leaving little headroom under the 300s cap.
