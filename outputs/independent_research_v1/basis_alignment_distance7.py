@@ -15,9 +15,9 @@ TEST_REGIMES=('x_biased','z_biased')
 CONDS=tuple((b,r) for r in TEST_REGIMES for b in MEMORY_BASES)
 PREFLIGHT_SEEDS=tuple(range(2026111501,2026111505))
 MAIN_SEEDS=tuple(range(2026111511,2026111515))
-def build(basis,regime,distance=D,rounds=R):
-    p1=one_qubit_probabilities(regime,DEFAULT_GATE_P,DEFAULT_BIAS_RATIO)
-    p2=two_qubit_probabilities(regime,DEFAULT_GATE_P,DEFAULT_BIAS_RATIO)
+def build(basis,regime,distance=D,rounds=R,bias_ratio=DEFAULT_BIAS_RATIO):
+    p1=one_qubit_probabilities(regime,DEFAULT_GATE_P,bias_ratio)
+    p2=two_qubit_probabilities(regime,DEFAULT_GATE_P,bias_ratio)
     c=stim.Circuit.generated(f'surface_code:rotated_memory_{basis}',distance=distance,rounds=rounds,after_clifford_depolarization=DEFAULT_GATE_P,before_measure_flip_probability=DEFAULT_MEAS_P)
     body=str(c)
     body,n1=re.subn(r'DEPOLARIZE1\([^)]*\)','PAULI_CHANNEL_1('+','.join(format(v,'.17g') for v in p1)+')',body)

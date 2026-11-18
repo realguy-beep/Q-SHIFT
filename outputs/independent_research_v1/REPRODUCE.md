@@ -57,3 +57,9 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the distance-7 known-profile extension preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/basis_alignment_distance7.py --preflight`; the fixed 500,000-shot-per-cell run uses the same command without `--preflight`.
 
 - Reproduce the fixed-bond qecsim MPS 100-shot preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/tensor_mps_truncated.py --preflight`; reproduce the fixed χ=16 development screen without `--preflight`.
+
+- Reproduce detector-only binary identification with `bias_identification.py --preflight` and then without the flag; reproduce the three-class strength stress test with `bias_strength_identification.py --preflight` and then without the flag. `bias_binary_cross_strength.py` re-scores those exact seeded streams using the earlier frozen two-class model; it does not fit a model or add independent sample streams.
+
+- Reproduce the cross-sample LER projection with `python outputs/independent_research_v1/basis_decision_projection.py` only if needed; the saved projection is `bias_decision_projection.json`.
+
+- Reproduce direct, independent calibration-to-memory policy validation with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/adaptive_basis_end_to_end.py --preflight`, then run without the flag. `adaptive_basis_end_to_end_first_pass_reversed.json` is an invalid implementation pass retained for audit; use only `adaptive_basis_end_to_end_results.json`.

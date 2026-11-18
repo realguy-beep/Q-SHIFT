@@ -1,0 +1,408 @@
+{
+  "status": "development_validation",
+  "stim_version": "1.16.0",
+  "calibration_circuit": "fixed Z-memory; detector outcomes only; observable bits not sampled or used",
+  "feature_names": [
+    "type0_early",
+    "type0_late",
+    "type2_early",
+    "type2_late"
+  ],
+  "feature_definition": "normalized detector event rates grouped by (coord_x+coord_y) mod 4 in {0,2}, then early/late time halves",
+  "d3_source_byte_identical": {
+    "z_x_biased": true,
+    "z_balanced": true,
+    "z_z_biased": true
+  },
+  "training": {
+    "shots_per_profile": 100000,
+    "seeds": {
+      "x_biased": 2026111601,
+      "z_biased": 2026111602
+    },
+    "profiles": [
+      "x_biased",
+      "z_biased"
+    ],
+    "means": [
+      [
+        0.024569166666666833,
+        0.025530833333333364,
+        0.01958125,
+        0.01946875
+      ],
+      [
+        0.010989166666666573,
+        0.014142499999999938,
+        0.0346675,
+        0.03465125
+      ]
+    ],
+    "covariance_shrinkage_fraction": 0.1,
+    "weights": [
+      -5.5243798251828276,
+      -4.262694412073278,
+      3.2866039388700097,
+      3.155660244229553
+    ],
+    "intercept": 0.008237273872817844,
+    "training_rows": [
+      {
+        "profile": "x_biased",
+        "distance": 3,
+        "shots": 100000,
+        "seed": 2026111601,
+        "sampling_seconds": 0.05625624499953119
+      },
+      {
+        "profile": "z_biased",
+        "distance": 3,
+        "shots": 100000,
+        "seed": 2026111602,
+        "sampling_seconds": 0.03470127400032652
+      }
+    ]
+  },
+  "validation": [
+    {
+      "distance": 3,
+      "profile": "x_biased",
+      "seed": 2026111611,
+      "independent_windows": 1000,
+      "sampling_seconds": 0.29470854600003804,
+      "budget_results": [
+        {
+          "calibration_shots": 25,
+          "correct": 882,
+          "windows": 1000,
+          "accuracy": 0.882,
+          "exact_95_ci": [
+            0.8603722794655597,
+            0.9013474836051032
+          ]
+        },
+        {
+          "calibration_shots": 100,
+          "correct": 992,
+          "windows": 1000,
+          "accuracy": 0.992,
+          "exact_95_ci": [
+            0.9842979508239253,
+            0.9965400238346707
+          ]
+        },
+        {
+          "calibration_shots": 500,
+          "correct": 1000,
+          "windows": 1000,
+          "accuracy": 1.0,
+          "exact_95_ci": [
+            0.9963179161031344,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "distance": 3,
+      "profile": "z_biased",
+      "seed": 2026111612,
+      "independent_windows": 1000,
+      "sampling_seconds": 0.10658064099879994,
+      "budget_results": [
+        {
+          "calibration_shots": 25,
+          "correct": 893,
+          "windows": 1000,
+          "accuracy": 0.893,
+          "exact_95_ci": [
+            0.872171355882932,
+            0.9114795633574837
+          ]
+        },
+        {
+          "calibration_shots": 100,
+          "correct": 998,
+          "windows": 1000,
+          "accuracy": 0.998,
+          "exact_95_ci": [
+            0.9927941610885425,
+            0.9997576988831227
+          ]
+        },
+        {
+          "calibration_shots": 500,
+          "correct": 1000,
+          "windows": 1000,
+          "accuracy": 1.0,
+          "exact_95_ci": [
+            0.9963179161031344,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "distance": 5,
+      "profile": "x_biased",
+      "seed": 2026111613,
+      "independent_windows": 1000,
+      "sampling_seconds": 1.5907502789996215,
+      "budget_results": [
+        {
+          "calibration_shots": 25,
+          "correct": 1000,
+          "windows": 1000,
+          "accuracy": 1.0,
+          "exact_95_ci": [
+            0.9963179161031344,
+            1.0
+          ]
+        },
+        {
+          "calibration_shots": 100,
+          "correct": 1000,
+          "windows": 1000,
+          "accuracy": 1.0,
+          "exact_95_ci": [
+            0.9963179161031344,
+            1.0
+          ]
+        },
+        {
+          "calibration_shots": 500,
+          "correct": 1000,
+          "windows": 1000,
+          "accuracy": 1.0,
+          "exact_95_ci": [
+            0.9963179161031344,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "distance": 5,
+      "profile": "z_biased",
+      "seed": 2026111614,
+      "independent_windows": 1000,
+      "sampling_seconds": 1.6575778639999044,
+      "budget_results": [
+        {
+          "calibration_shots": 25,
+          "correct": 999,
+          "windows": 1000,
+          "accuracy": 0.999,
+          "exact_95_ci": [
+            0.9944410757201734,
+            0.9999746825125088
+          ]
+        },
+        {
+          "calibration_shots": 100,
+          "correct": 1000,
+          "windows": 1000,
+          "accuracy": 1.0,
+          "exact_95_ci": [
+            0.9963179161031344,
+            1.0
+          ]
+        },
+        {
+          "calibration_shots": 500,
+          "correct": 1000,
+          "windows": 1000,
+          "accuracy": 1.0,
+          "exact_95_ci": [
+            0.9963179161031344,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "distance": 7,
+      "profile": "x_biased",
+      "seed": 2026111615,
+      "independent_windows": 1000,
+      "sampling_seconds": 6.052015991001099,
+      "budget_results": [
+        {
+          "calibration_shots": 25,
+          "correct": 1000,
+          "windows": 1000,
+          "accuracy": 1.0,
+          "exact_95_ci": [
+            0.9963179161031344,
+            1.0
+          ]
+        },
+        {
+          "calibration_shots": 100,
+          "correct": 1000,
+          "windows": 1000,
+          "accuracy": 1.0,
+          "exact_95_ci": [
+            0.9963179161031344,
+            1.0
+          ]
+        },
+        {
+          "calibration_shots": 500,
+          "correct": 1000,
+          "windows": 1000,
+          "accuracy": 1.0,
+          "exact_95_ci": [
+            0.9963179161031344,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "distance": 7,
+      "profile": "z_biased",
+      "seed": 2026111616,
+      "independent_windows": 1000,
+      "sampling_seconds": 6.271110675001182,
+      "budget_results": [
+        {
+          "calibration_shots": 25,
+          "correct": 1000,
+          "windows": 1000,
+          "accuracy": 1.0,
+          "exact_95_ci": [
+            0.9963179161031344,
+            1.0
+          ]
+        },
+        {
+          "calibration_shots": 100,
+          "correct": 1000,
+          "windows": 1000,
+          "accuracy": 1.0,
+          "exact_95_ci": [
+            0.9963179161031344,
+            1.0
+          ]
+        },
+        {
+          "calibration_shots": 500,
+          "correct": 1000,
+          "windows": 1000,
+          "accuracy": 1.0,
+          "exact_95_ci": [
+            0.9963179161031344,
+            1.0
+          ]
+        }
+      ]
+    }
+  ],
+  "balanced_accuracy_by_distance_and_budget": [
+    {
+      "distance": 3,
+      "calibration_shots": 25,
+      "correct": 1775,
+      "windows": 2000,
+      "balanced_accuracy": 0.8875,
+      "exact_95_ci": [
+        0.8728301319648243,
+        0.9010225627397397
+      ]
+    },
+    {
+      "distance": 3,
+      "calibration_shots": 100,
+      "correct": 1990,
+      "windows": 2000,
+      "balanced_accuracy": 0.995,
+      "exact_95_ci": [
+        0.9908241049299802,
+        0.9975997802443343
+      ]
+    },
+    {
+      "distance": 3,
+      "calibration_shots": 500,
+      "correct": 2000,
+      "windows": 2000,
+      "balanced_accuracy": 1.0,
+      "exact_95_ci": [
+        0.998157260206594,
+        1.0
+      ]
+    },
+    {
+      "distance": 5,
+      "calibration_shots": 25,
+      "correct": 1999,
+      "windows": 2000,
+      "balanced_accuracy": 0.9995,
+      "exact_95_ci": [
+        0.997217360165341,
+        0.9999873411761314
+      ]
+    },
+    {
+      "distance": 5,
+      "calibration_shots": 100,
+      "correct": 2000,
+      "windows": 2000,
+      "balanced_accuracy": 1.0,
+      "exact_95_ci": [
+        0.998157260206594,
+        1.0
+      ]
+    },
+    {
+      "distance": 5,
+      "calibration_shots": 500,
+      "correct": 2000,
+      "windows": 2000,
+      "balanced_accuracy": 1.0,
+      "exact_95_ci": [
+        0.998157260206594,
+        1.0
+      ]
+    },
+    {
+      "distance": 7,
+      "calibration_shots": 25,
+      "correct": 2000,
+      "windows": 2000,
+      "balanced_accuracy": 1.0,
+      "exact_95_ci": [
+        0.998157260206594,
+        1.0
+      ]
+    },
+    {
+      "distance": 7,
+      "calibration_shots": 100,
+      "correct": 2000,
+      "windows": 2000,
+      "balanced_accuracy": 1.0,
+      "exact_95_ci": [
+        0.998157260206594,
+        1.0
+      ]
+    },
+    {
+      "distance": 7,
+      "calibration_shots": 500,
+      "correct": 2000,
+      "windows": 2000,
+      "balanced_accuracy": 1.0,
+      "exact_95_ci": [
+        0.998157260206594,
+        1.0
+      ]
+    }
+  ],
+  "windows_per_profile_distance": 1000,
+  "elapsed_seconds": 19.92084181700011,
+  "validation_sampling_seconds": 15.972743996000645,
+  "stochastic_circuit_shots": 3200000,
+  "scope": "detector-only profile identification feasibility; no end-to-end adaptive LER claim"
+}

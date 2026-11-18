@@ -17,6 +17,8 @@ The practical use of an independent-root LER gate for correlation-aware decoding
 
 Memory-basis alignment under known Pauli bias is established bias-aware code configuration, not a novel decoder. The new distance-3 measurements provide Q-SHIFT-specific matched-resource evidence (5.2×–11.1× lower LER in the aligned biased conditions), but novelty would require a new code/circuit schedule, a robust policy under bias drift, or a resource-aware scaling result. No such claim is supported here.
 
+Detector-only bias estimation by a linear classifier is also an established statistical technique, and noise adaptation is a mature QEC research direction. The current Q-SHIFT-specific result is empirical: one frozen detector-only X/Z classifier trained on synthetic ratio-10 d=3 streams generalized across tested d=3,5,7 and ratios 2,5,10; a direct d=3 selected-basis development run beat static Z under equal profile weights. This is not evidence of a new inference algorithm. Publication value would depend on robust performance under realistic calibration mismatch and time-varying noise at equal total shot/round cost; those tests remain open.
+
 ## Publication boundary
 
 No publication-level novelty claim is justified by this expedition checkpoint. The current supported contribution is a negative feasibility result: the proposed non-approximated DEM follow-up cannot pass Stim conversion for Phase 2B's categorical `PAULI_CHANNEL_2` circuits, and an initial generalized sum-product Bethe approach failed an exact toy topology. External literature retrieval was partially blocked, so the broader novelty assessment remains provisional.

@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 4914800,
+  "stochastic_qshift_shots_generated": 23159800,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -239,7 +239,7 @@
     },
     "interpretation": "all three BP+LSD variants worse in every tested condition; one distance/configuration/approximate model only; not an integration or superiority claim"
   },
-  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples; no confirmatory or sealed evaluation data accessed",
+  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed",
   "stochastic_dem_samples_generated": 780000,
   "rare_event_importance_sampling": {
     "status": "positive_development_method_result_limited_to_approximate_dem",
@@ -1614,5 +1614,1281 @@
     "projected_main_seconds": null,
     "stochastic_circuit_shots": 2000000,
     "scope": "third finite-distance point for fixed known-profile basis alignment; not threshold or adaptive-policy evidence"
+  },
+  "bias_identification": {
+    "artifact": "bias_identification_results.json",
+    "preflight": "bias_identification_preflight.json",
+    "status": "development_validation",
+    "balanced_accuracy_by_distance_and_budget": [
+      {
+        "distance": 3,
+        "calibration_shots": 25,
+        "correct": 1775,
+        "windows": 2000,
+        "balanced_accuracy": 0.8875,
+        "exact_95_ci": [
+          0.8728301319648243,
+          0.9010225627397397
+        ]
+      },
+      {
+        "distance": 3,
+        "calibration_shots": 100,
+        "correct": 1990,
+        "windows": 2000,
+        "balanced_accuracy": 0.995,
+        "exact_95_ci": [
+          0.9908241049299802,
+          0.9975997802443343
+        ]
+      },
+      {
+        "distance": 3,
+        "calibration_shots": 500,
+        "correct": 2000,
+        "windows": 2000,
+        "balanced_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 5,
+        "calibration_shots": 25,
+        "correct": 1999,
+        "windows": 2000,
+        "balanced_accuracy": 0.9995,
+        "exact_95_ci": [
+          0.997217360165341,
+          0.9999873411761314
+        ]
+      },
+      {
+        "distance": 5,
+        "calibration_shots": 100,
+        "correct": 2000,
+        "windows": 2000,
+        "balanced_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 5,
+        "calibration_shots": 500,
+        "correct": 2000,
+        "windows": 2000,
+        "balanced_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 7,
+        "calibration_shots": 25,
+        "correct": 2000,
+        "windows": 2000,
+        "balanced_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 7,
+        "calibration_shots": 100,
+        "correct": 2000,
+        "windows": 2000,
+        "balanced_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 7,
+        "calibration_shots": 500,
+        "correct": 2000,
+        "windows": 2000,
+        "balanced_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      }
+    ]
+  },
+  "bias_identification_preflight": {
+    "artifact": "bias_identification_preflight.json",
+    "status": "preflight",
+    "projected_validation_sampling_seconds": 8.00710000021354
+  },
+  "bias_strength_identification": {
+    "artifact": "bias_strength_identification_results.json",
+    "preflight": "bias_strength_identification_preflight.json",
+    "status": "development_validation",
+    "summary_by_distance_ratio_budget": [
+      {
+        "distance": 3,
+        "bias_ratio": 1.0,
+        "calibration_shots": 25,
+        "profile_classes": [
+          "balanced"
+        ],
+        "class_correct": 509,
+        "windows": 1000,
+        "class_accuracy": 0.509,
+        "exact_95_ci": [
+          0.47752761793841597,
+          0.540419255650088
+        ],
+        "basis_action_accuracy": 1.0
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 1.0,
+        "calibration_shots": 100,
+        "profile_classes": [
+          "balanced"
+        ],
+        "class_correct": 860,
+        "windows": 1000,
+        "class_accuracy": 0.86,
+        "exact_95_ci": [
+          0.8369342847990453,
+          0.8809215026186442
+        ],
+        "basis_action_accuracy": 1.0
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 1.0,
+        "calibration_shots": 500,
+        "profile_classes": [
+          "balanced"
+        ],
+        "class_correct": 998,
+        "windows": 1000,
+        "class_accuracy": 0.998,
+        "exact_95_ci": [
+          0.9927941610885425,
+          0.9997576988831227
+        ],
+        "basis_action_accuracy": 1.0
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 2.0,
+        "calibration_shots": 25,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 736,
+        "windows": 2000,
+        "class_accuracy": 0.368,
+        "exact_95_ci": [
+          0.3468208511422536,
+          0.38956687616450664
+        ],
+        "basis_action_accuracy": 0.368
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 2.0,
+        "calibration_shots": 100,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 547,
+        "windows": 2000,
+        "class_accuracy": 0.2735,
+        "exact_95_ci": [
+          0.2540578855858598,
+          0.29360824905225336
+        ],
+        "basis_action_accuracy": 0.2735
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 2.0,
+        "calibration_shots": 500,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 138,
+        "windows": 2000,
+        "class_accuracy": 0.069,
+        "exact_95_ci": [
+          0.05828040513292326,
+          0.08100287591066666
+        ],
+        "basis_action_accuracy": 0.069
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 5.0,
+        "calibration_shots": 25,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1215,
+        "windows": 2000,
+        "class_accuracy": 0.6075,
+        "exact_95_ci": [
+          0.585704514294174,
+          0.6289797825202473
+        ],
+        "basis_action_accuracy": 0.6075
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 5.0,
+        "calibration_shots": 100,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1455,
+        "windows": 2000,
+        "class_accuracy": 0.7275,
+        "exact_95_ci": [
+          0.7074125754268266,
+          0.7469183363505498
+        ],
+        "basis_action_accuracy": 0.7275
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 5.0,
+        "calibration_shots": 500,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1836,
+        "windows": 2000,
+        "class_accuracy": 0.918,
+        "exact_95_ci": [
+          0.9051033032837182,
+          0.9296547998330024
+        ],
+        "basis_action_accuracy": 0.918
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 10.0,
+        "calibration_shots": 25,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1582,
+        "windows": 2000,
+        "class_accuracy": 0.791,
+        "exact_95_ci": [
+          0.772510134179846,
+          0.8086326826495237
+        ],
+        "basis_action_accuracy": 0.791
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 10.0,
+        "calibration_shots": 100,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1891,
+        "windows": 2000,
+        "class_accuracy": 0.9455,
+        "exact_95_ci": [
+          0.9346299677387182,
+          0.955039229200515
+        ],
+        "basis_action_accuracy": 0.9455
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 10.0,
+        "calibration_shots": 500,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1999,
+        "windows": 2000,
+        "class_accuracy": 0.9995,
+        "exact_95_ci": [
+          0.997217360165341,
+          0.9999873411761314
+        ],
+        "basis_action_accuracy": 0.9995
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 1.0,
+        "calibration_shots": 25,
+        "profile_classes": [
+          "balanced"
+        ],
+        "class_correct": 974,
+        "windows": 1000,
+        "class_accuracy": 0.974,
+        "exact_95_ci": [
+          0.9621348775210785,
+          0.9829472136543705
+        ],
+        "basis_action_accuracy": 1.0
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 1.0,
+        "calibration_shots": 100,
+        "profile_classes": [
+          "balanced"
+        ],
+        "class_correct": 1000,
+        "windows": 1000,
+        "class_accuracy": 1.0,
+        "exact_95_ci": [
+          0.9963179161031344,
+          1.0
+        ],
+        "basis_action_accuracy": 1.0
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 1.0,
+        "calibration_shots": 500,
+        "profile_classes": [
+          "balanced"
+        ],
+        "class_correct": 1000,
+        "windows": 1000,
+        "class_accuracy": 1.0,
+        "exact_95_ci": [
+          0.9963179161031344,
+          1.0
+        ],
+        "basis_action_accuracy": 1.0
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 2.0,
+        "calibration_shots": 25,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 246,
+        "windows": 2000,
+        "class_accuracy": 0.123,
+        "exact_95_ci": [
+          0.10891641724029004,
+          0.13819883054617332
+        ],
+        "basis_action_accuracy": 0.123
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 2.0,
+        "calibration_shots": 100,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 35,
+        "windows": 2000,
+        "class_accuracy": 0.0175,
+        "exact_95_ci": [
+          0.012218892300887312,
+          0.02425488947719145
+        ],
+        "basis_action_accuracy": 0.0175
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 2.0,
+        "calibration_shots": 500,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 0,
+        "windows": 2000,
+        "class_accuracy": 0.0,
+        "exact_95_ci": [
+          0.0,
+          0.0018427397934059364
+        ],
+        "basis_action_accuracy": 0.0
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 5.0,
+        "calibration_shots": 25,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1330,
+        "windows": 2000,
+        "class_accuracy": 0.665,
+        "exact_95_ci": [
+          0.6438341317695653,
+          0.6856810483997947
+        ],
+        "basis_action_accuracy": 0.665
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 5.0,
+        "calibration_shots": 100,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1511,
+        "windows": 2000,
+        "class_accuracy": 0.7555,
+        "exact_95_ci": [
+          0.7360476110409395,
+          0.7742005066458159
+        ],
+        "basis_action_accuracy": 0.7555
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 5.0,
+        "calibration_shots": 500,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1576,
+        "windows": 2000,
+        "class_accuracy": 0.788,
+        "exact_95_ci": [
+          0.7694213550999073,
+          0.805730378148559
+        ],
+        "basis_action_accuracy": 0.788
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 10.0,
+        "calibration_shots": 25,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1921,
+        "windows": 2000,
+        "class_accuracy": 0.9605,
+        "exact_95_ci": [
+          0.9510122229893169,
+          0.9686050772106086
+        ],
+        "basis_action_accuracy": 0.9605
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 10.0,
+        "calibration_shots": 100,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1999,
+        "windows": 2000,
+        "class_accuracy": 0.9995,
+        "exact_95_ci": [
+          0.997217360165341,
+          0.9999873411761314
+        ],
+        "basis_action_accuracy": 0.9995
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 10.0,
+        "calibration_shots": 500,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 2000,
+        "windows": 2000,
+        "class_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ],
+        "basis_action_accuracy": 1.0
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 1.0,
+        "calibration_shots": 25,
+        "profile_classes": [
+          "balanced"
+        ],
+        "class_correct": 1000,
+        "windows": 1000,
+        "class_accuracy": 1.0,
+        "exact_95_ci": [
+          0.9963179161031344,
+          1.0
+        ],
+        "basis_action_accuracy": 1.0
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 1.0,
+        "calibration_shots": 100,
+        "profile_classes": [
+          "balanced"
+        ],
+        "class_correct": 1000,
+        "windows": 1000,
+        "class_accuracy": 1.0,
+        "exact_95_ci": [
+          0.9963179161031344,
+          1.0
+        ],
+        "basis_action_accuracy": 1.0
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 1.0,
+        "calibration_shots": 500,
+        "profile_classes": [
+          "balanced"
+        ],
+        "class_correct": 1000,
+        "windows": 1000,
+        "class_accuracy": 1.0,
+        "exact_95_ci": [
+          0.9963179161031344,
+          1.0
+        ],
+        "basis_action_accuracy": 1.0
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 2.0,
+        "calibration_shots": 25,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 34,
+        "windows": 2000,
+        "class_accuracy": 0.017,
+        "exact_95_ci": [
+          0.011800987897346257,
+          0.023675406227339907
+        ],
+        "basis_action_accuracy": 0.017
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 2.0,
+        "calibration_shots": 100,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 0,
+        "windows": 2000,
+        "class_accuracy": 0.0,
+        "exact_95_ci": [
+          0.0,
+          0.0018427397934059364
+        ],
+        "basis_action_accuracy": 0.0
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 2.0,
+        "calibration_shots": 500,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 0,
+        "windows": 2000,
+        "class_accuracy": 0.0,
+        "exact_95_ci": [
+          0.0,
+          0.0018427397934059364
+        ],
+        "basis_action_accuracy": 0.0
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 5.0,
+        "calibration_shots": 25,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1311,
+        "windows": 2000,
+        "class_accuracy": 0.6555,
+        "exact_95_ci": [
+          0.6342074158906938,
+          0.6763357262440215
+        ],
+        "basis_action_accuracy": 0.6555
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 5.0,
+        "calibration_shots": 100,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1203,
+        "windows": 2000,
+        "class_accuracy": 0.6015,
+        "exact_95_ci": [
+          0.5796572015647417,
+          0.6230447276480725
+        ],
+        "basis_action_accuracy": 0.6015
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 5.0,
+        "calibration_shots": 500,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1020,
+        "windows": 2000,
+        "class_accuracy": 0.51,
+        "exact_95_ci": [
+          0.48784025304799145,
+          0.5321303894698542
+        ],
+        "basis_action_accuracy": 0.51
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 10.0,
+        "calibration_shots": 25,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 1994,
+        "windows": 2000,
+        "class_accuracy": 0.997,
+        "exact_95_ci": [
+          0.9934817813900255,
+          0.9988982817749746
+        ],
+        "basis_action_accuracy": 0.997
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 10.0,
+        "calibration_shots": 100,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 2000,
+        "windows": 2000,
+        "class_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ],
+        "basis_action_accuracy": 1.0
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 10.0,
+        "calibration_shots": 500,
+        "profile_classes": [
+          "x_biased",
+          "z_biased"
+        ],
+        "class_correct": 2000,
+        "windows": 2000,
+        "class_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ],
+        "basis_action_accuracy": 1.0
+      }
+    ]
+  },
+  "bias_strength_identification_preflight": {
+    "artifact": "bias_strength_identification_preflight.json",
+    "status": "preflight",
+    "projected_sampling_seconds": 22.372362001078727
+  },
+  "bias_binary_cross_strength": {
+    "artifact": "bias_binary_cross_strength_results.json",
+    "status": "frozen_binary_classifier_cross_strength_rescore",
+    "direction_accuracy_by_distance_ratio_budget": [
+      {
+        "distance": 3,
+        "bias_ratio": 2.0,
+        "calibration_shots": 25,
+        "correct_direction": 1281,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.6405,
+        "exact_95_ci": [
+          0.6190259989172523,
+          0.6615612749349906
+        ]
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 2.0,
+        "calibration_shots": 100,
+        "correct_direction": 1551,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.7755,
+        "exact_95_ci": [
+          0.756566697357003,
+          0.7936221496519851
+        ]
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 2.0,
+        "calibration_shots": 500,
+        "correct_direction": 1898,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.949,
+        "exact_95_ci": [
+          0.9384302465684916,
+          0.9582271615092796
+        ]
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 5.0,
+        "calibration_shots": 25,
+        "correct_direction": 1622,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.811,
+        "exact_95_ci": [
+          0.7931405609458613,
+          0.8279427087449167
+        ]
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 5.0,
+        "calibration_shots": 100,
+        "correct_direction": 1926,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.963,
+        "exact_95_ci": [
+          0.9537706611985064,
+          0.9708375375877352
+        ]
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 5.0,
+        "calibration_shots": 500,
+        "correct_direction": 2000,
+        "windows": 2000,
+        "balanced_direction_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 10.0,
+        "calibration_shots": 25,
+        "correct_direction": 1808,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.904,
+        "exact_95_ci": [
+          0.8902404403434343,
+          0.9165614157287773
+        ]
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 10.0,
+        "calibration_shots": 100,
+        "correct_direction": 1988,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.994,
+        "exact_95_ci": [
+          0.9895426861782051,
+          0.9968959837176227
+        ]
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 10.0,
+        "calibration_shots": 500,
+        "correct_direction": 2000,
+        "windows": 2000,
+        "balanced_direction_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 2.0,
+        "calibration_shots": 25,
+        "correct_direction": 1615,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.8075,
+        "exact_95_ci": [
+          0.7895252158847861,
+          0.8245684887677462
+        ]
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 2.0,
+        "calibration_shots": 100,
+        "correct_direction": 1829,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.9145,
+        "exact_95_ci": [
+          0.9013787558092895,
+          0.9263903521633325
+        ]
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 2.0,
+        "calibration_shots": 500,
+        "correct_direction": 1986,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.993,
+        "exact_95_ci": [
+          0.9882830542294679,
+          0.9961679060996261
+        ]
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 5.0,
+        "calibration_shots": 25,
+        "correct_direction": 1984,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.992,
+        "exact_95_ci": [
+          0.9870409314115283,
+          0.9954205953386015
+        ]
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 5.0,
+        "calibration_shots": 100,
+        "correct_direction": 2000,
+        "windows": 2000,
+        "balanced_direction_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 5.0,
+        "calibration_shots": 500,
+        "correct_direction": 2000,
+        "windows": 2000,
+        "balanced_direction_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 10.0,
+        "calibration_shots": 25,
+        "correct_direction": 1999,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.9995,
+        "exact_95_ci": [
+          0.997217360165341,
+          0.9999873411761314
+        ]
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 10.0,
+        "calibration_shots": 100,
+        "correct_direction": 2000,
+        "windows": 2000,
+        "balanced_direction_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 5,
+        "bias_ratio": 10.0,
+        "calibration_shots": 500,
+        "correct_direction": 2000,
+        "windows": 2000,
+        "balanced_direction_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 2.0,
+        "calibration_shots": 25,
+        "correct_direction": 1687,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.8435,
+        "exact_95_ci": [
+          0.8268250957026795,
+          0.8591609115237413
+        ]
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 2.0,
+        "calibration_shots": 100,
+        "correct_direction": 1839,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.9195,
+        "exact_95_ci": [
+          0.9067014912590344,
+          0.9310518797802613
+        ]
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 2.0,
+        "calibration_shots": 500,
+        "correct_direction": 1987,
+        "windows": 2000,
+        "balanced_direction_accuracy": 0.9935,
+        "exact_95_ci": [
+          0.9889104507283436,
+          0.9965346187913324
+        ]
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 5.0,
+        "calibration_shots": 25,
+        "correct_direction": 2000,
+        "windows": 2000,
+        "balanced_direction_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 5.0,
+        "calibration_shots": 100,
+        "correct_direction": 2000,
+        "windows": 2000,
+        "balanced_direction_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 5.0,
+        "calibration_shots": 500,
+        "correct_direction": 2000,
+        "windows": 2000,
+        "balanced_direction_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 10.0,
+        "calibration_shots": 25,
+        "correct_direction": 2000,
+        "windows": 2000,
+        "balanced_direction_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 10.0,
+        "calibration_shots": 100,
+        "correct_direction": 2000,
+        "windows": 2000,
+        "balanced_direction_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      },
+      {
+        "distance": 7,
+        "bias_ratio": 10.0,
+        "calibration_shots": 500,
+        "correct_direction": 2000,
+        "windows": 2000,
+        "balanced_direction_accuracy": 1.0,
+        "exact_95_ci": [
+          0.998157260206594,
+          1.0
+        ]
+      }
+    ]
+  },
+  "bias_decision_projection": {
+    "artifact": "bias_decision_projection.json",
+    "status": "cross_sample_projection",
+    "rows": [
+      {
+        "distance": 3,
+        "bias_ratio": 2.0,
+        "calibration_shots": 25,
+        "x_profile_direction_accuracy": 0.616,
+        "z_profile_direction_accuracy": 0.665,
+        "projected_policy_ler_equal_profile_prior": 0.00473315,
+        "projected_fixed_z_ler": 0.00483,
+        "projected_fixed_x_ler": 0.005169999999999999,
+        "projected_oracle_profile_ler": 0.00408,
+        "relative_reduction_vs_fixed_best": 0.020051759834368466,
+        "oracle_gap_fraction": 0.8708666666666668
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 2.0,
+        "calibration_shots": 100,
+        "x_profile_direction_accuracy": 0.766,
+        "z_profile_direction_accuracy": 0.785,
+        "projected_policy_ler_equal_profile_prior": 0.00448985,
+        "projected_fixed_z_ler": 0.00483,
+        "projected_fixed_x_ler": 0.005169999999999999,
+        "projected_oracle_profile_ler": 0.00408,
+        "relative_reduction_vs_fixed_best": 0.07042443064182191,
+        "oracle_gap_fraction": 0.5464666666666665
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 2.0,
+        "calibration_shots": 500,
+        "x_profile_direction_accuracy": 0.956,
+        "z_profile_direction_accuracy": 0.942,
+        "projected_policy_ler_equal_profile_prior": 0.00417622,
+        "projected_fixed_z_ler": 0.00483,
+        "projected_fixed_x_ler": 0.005169999999999999,
+        "projected_oracle_profile_ler": 0.00408,
+        "relative_reduction_vs_fixed_best": 0.13535817805383032,
+        "oracle_gap_fraction": 0.12829333333333243
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 5.0,
+        "calibration_shots": 25,
+        "x_profile_direction_accuracy": 0.817,
+        "z_profile_direction_accuracy": 0.805,
+        "projected_policy_ler_equal_profile_prior": 0.002852,
+        "projected_fixed_z_ler": 0.00401,
+        "projected_fixed_x_ler": 0.00477,
+        "projected_oracle_profile_ler": 0.00191,
+        "relative_reduction_vs_fixed_best": 0.2887780548628428,
+        "oracle_gap_fraction": 0.4485714285714287
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 5.0,
+        "calibration_shots": 100,
+        "x_profile_direction_accuracy": 0.964,
+        "z_profile_direction_accuracy": 0.962,
+        "projected_policy_ler_equal_profile_prior": 0.0020942800000000004,
+        "projected_fixed_z_ler": 0.00401,
+        "projected_fixed_x_ler": 0.00477,
+        "projected_oracle_profile_ler": 0.00191,
+        "relative_reduction_vs_fixed_best": 0.4777356608478801,
+        "oracle_gap_fraction": 0.08775238095238118
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 5.0,
+        "calibration_shots": 500,
+        "x_profile_direction_accuracy": 1.0,
+        "z_profile_direction_accuracy": 1.0,
+        "projected_policy_ler_equal_profile_prior": 0.00191,
+        "projected_fixed_z_ler": 0.00401,
+        "projected_fixed_x_ler": 0.00477,
+        "projected_oracle_profile_ler": 0.00191,
+        "relative_reduction_vs_fixed_best": 0.5236907730673317,
+        "oracle_gap_fraction": 0.0
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 10.0,
+        "calibration_shots": 25,
+        "x_profile_direction_accuracy": 0.889,
+        "z_profile_direction_accuracy": 0.919,
+        "projected_policy_ler_equal_profile_prior": 0.0015691999999999998,
+        "projected_fixed_z_ler": 0.0036375,
+        "projected_fixed_x_ler": 0.0045375,
+        "projected_oracle_profile_ler": 0.0009875,
+        "relative_reduction_vs_fixed_best": 0.5686048109965636,
+        "oracle_gap_fraction": 0.21950943396226402
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 10.0,
+        "calibration_shots": 100,
+        "x_profile_direction_accuracy": 0.993,
+        "z_profile_direction_accuracy": 0.995,
+        "projected_policy_ler_equal_profile_prior": 0.0010238,
+        "projected_fixed_z_ler": 0.0036375,
+        "projected_fixed_x_ler": 0.0045375,
+        "projected_oracle_profile_ler": 0.0009875,
+        "relative_reduction_vs_fixed_best": 0.7185429553264604,
+        "oracle_gap_fraction": 0.013698113207547154
+      },
+      {
+        "distance": 3,
+        "bias_ratio": 10.0,
+        "calibration_shots": 500,
+        "x_profile_direction_accuracy": 1.0,
+        "z_profile_direction_accuracy": 1.0,
+        "projected_policy_ler_equal_profile_prior": 0.0009875,
+        "projected_fixed_z_ler": 0.0036375,
+        "projected_fixed_x_ler": 0.0045375,
+        "projected_oracle_profile_ler": 0.0009875,
+        "relative_reduction_vs_fixed_best": 0.7285223367697594,
+        "oracle_gap_fraction": 0.0
+      }
+    ]
+  },
+  "adaptive_basis_end_to_end": {
+    "artifact": "adaptive_basis_end_to_end_results.json",
+    "status": "development_end_to_end_validation",
+    "distance": 3,
+    "summary": [
+      {
+        "bias_ratio": 2.0,
+        "profiles_equally_weighted": true,
+        "policy_ler": 0.00405,
+        "fixed_x_ler": 0.00534,
+        "fixed_z_ler": 0.004855,
+        "oracle_ler": 0.00392,
+        "policy_minus_fixed_z": -0.0008050000000000002,
+        "policy_minus_fixed_z_cluster_bootstrap_95_ci": [
+          -0.0011250000000000001,
+          -0.00049
+        ],
+        "relative_reduction_vs_fixed_z": 0.16580844490216273,
+        "calibration_shots_per_profile_job": 500,
+        "logical_shots_per_profile_basis": 100000,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected_windows": 954,
+            "z_selected_windows": 46
+          },
+          "z_biased": {
+            "x_selected_windows": 56,
+            "z_selected_windows": 944
+          }
+        }
+      },
+      {
+        "bias_ratio": 5.0,
+        "profiles_equally_weighted": true,
+        "policy_ler": 0.00198,
+        "fixed_x_ler": 0.004915,
+        "fixed_z_ler": 0.00416,
+        "oracle_ler": 0.00198,
+        "policy_minus_fixed_z": -0.0021799999999999996,
+        "policy_minus_fixed_z_cluster_bootstrap_95_ci": [
+          -0.0024599999999999995,
+          -0.0019000000000000002
+        ],
+        "relative_reduction_vs_fixed_z": 0.5240384615384615,
+        "calibration_shots_per_profile_job": 500,
+        "logical_shots_per_profile_basis": 100000,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected_windows": 1000,
+            "z_selected_windows": 0
+          },
+          "z_biased": {
+            "x_selected_windows": 0,
+            "z_selected_windows": 1000
+          }
+        }
+      },
+      {
+        "bias_ratio": 10.0,
+        "profiles_equally_weighted": true,
+        "policy_ler": 0.001165,
+        "fixed_x_ler": 0.00477,
+        "fixed_z_ler": 0.00412,
+        "oracle_ler": 0.001165,
+        "policy_minus_fixed_z": -0.002955,
+        "policy_minus_fixed_z_cluster_bootstrap_95_ci": [
+          -0.00323,
+          -0.0026698750000000017
+        ],
+        "relative_reduction_vs_fixed_z": 0.7172330097087378,
+        "calibration_shots_per_profile_job": 500,
+        "logical_shots_per_profile_basis": 100000,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected_windows": 1000,
+            "z_selected_windows": 0
+          },
+          "z_biased": {
+            "x_selected_windows": 0,
+            "z_selected_windows": 1000
+          }
+        }
+      }
+    ],
+    "note": "Full window-level outcomes stored in the referenced artifact."
+  },
+  "adaptive_basis_end_to_end_preflight": {
+    "artifact": "adaptive_basis_end_to_end_preflight.json",
+    "status": "preflight",
+    "projected_main_sample_and_decode_seconds": 1.926135200119461
+  },
+  "adaptive_basis_end_to_end_invalid_first_pass": {
+    "artifact": "adaptive_basis_end_to_end_first_pass_reversed.json",
+    "status": "invalid_first_pass_selector_sign_reversed",
+    "valid_for_inference": false,
+    "failure_reason": "Classifier score polarity was reversed; same deterministic samples were reused by the corrected run."
   }
 }
