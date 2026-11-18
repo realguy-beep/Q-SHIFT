@@ -199,3 +199,31 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/ca
 ```
 
 See `categorical_seven_layer_tt_protocol.md` for rank tolerances and stop gate.
+
+
+### All-location fault composition
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/all_fault_mechanism.py --preflight
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/all_fault_mechanism.py
+```
+
+Seeds, conditions, gates, and limitations are fixed in `all_fault_mechanism_protocol.md`.
+
+
+### Existing-data basis-alignment scaling synthesis
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/basis_scaling_synthesis.py
+```
+
+This recomputes a descriptive summary from fixed embedded counts; it generates no samples.
+
+
+### Native XZZX versus aligned-CSS existing-data audit
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/basis_matched_xzzx_comparison.py
+```
+
+No samples are generated; inputs are fixed summaries in `RESULTS.json`.

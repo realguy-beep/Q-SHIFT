@@ -116,3 +116,20 @@ Natural detector-order TT-SVD of the exact seven-layer P/Z arrays gave max rank 
 ## d9 rare-event sample budget
 
 The observed d9 mismatched rate was 408/500k=.000816. A 1e-4 relative target corresponds to 8.16e-8 candidate LER; an exact baseline lower endpoint gives a conservative 7.39e-8 target. An optimistic IID calculation requires 36.7M / 40.6M zero-failure shots, or 58.1M / 64.2M shots if one candidate failure occurs. These are single-condition minimum evidence counts and exclude multiplicity/root effects. See `d9_relative_target_sample_budget.json`.
+
+
+### All-location fault composition screen
+
+## All-location fault composition under ratio-sensitive decoding
+
+The preflight passed synthetic flags for all 15 two-qubit Paulis, all three one-qubit Paulis, and explicit X/Z error events (zero data/flag mismatches). Both d3 conditions had 120 two-qubit pairs and 40 one-qubit locations; explicit measurement targets were 49 for Z-memory/X-biased and 49 total for X-memory/Z-biased. Source and instrumented samples had unchanged 40-detector/one-observable layout, and failure-rate differences were below 1.1 combined standard errors. The 200,000-shot main screen took 3.94 seconds.
+
+At 100,000 shots/condition, ratio-5/ratio-10 models failed on 753/752 Z-memory X-biased shots (61 prediction disagreements) and 769/766 X-memory Z-biased shots (95 disagreements). The both-wrong groups contained 722 and 720 shots; ratio-10-fixes-ratio-5 groups contained 31 and 49, while ratio-10-breaks-ratio-5 contained 30 and 46. In both conditions, mean tracked two-qubit faults were about 0.349 per both-correct shot and 1.87 per both-wrong shot. In the biased Pauli outcome counts, XX was most frequent in the X-biased Z-memory both-wrong group (794 events), while ZZ was most frequent in the Z-biased X-memory both-wrong group (800). One-qubit and explicit measurement-fault counts also differed across outcome groups; see the JSON for full counts.
+
+The decoder-disagreement groups are small, particularly the 30–49-shot fix/break groups. These are conditional fault associations from one fixed development stream, not causal attribution, evidence that one fault channel caused decoding errors, or a hardware noise claim. The new instrumentation extends the earlier two-qubit-only report; it does not change the prior conclusion that raw fault burden alone cannot explain decoder behavior. No sealed or confirmatory data were accessed.
+
+
+For X-biased ratio-10 memory, compare code proposals against the tested X-aligned CSS configuration, not only a mismatched CSS memory. The d3/d5/d7/d9 point ratios favor alignment, but d9 has only one aligned failure; no asymptotic claim is warranted. See `basis_scaling_synthesis_results.json`.
+
+
+For X-biased workloads, the native-XCX XZZX comparison must include CSS with X-memory alignment. In the saved d3/d5 streams, native XZZX Z-memory had 3.57x and 13.48x the aligned-CSS LER under matched counted qubit, detector, two-qubit, one-qubit-noise, measurement-target, and tick resources. Existing reported XZZX/CSS results used CSS Z-memory, so qualify them as a same-basis comparison. Native gate equivalence is still assumed, and the streams are unpaired.

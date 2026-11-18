@@ -363,3 +363,31 @@
 - Reconstructed exact seven-layer P/Z arrays and computed all 19 cut spectra in the fixed natural detector order. Runtime 6.44s, no stochastic samples.
 - Max rank at 1e-10 relative Frobenius tolerance: 91 (P and Z); at 1e-6: 30. The predeclared rank<=64 at 1e-10 gate failed. No MPS inference prototype was launched.
 - Scope is the seven-layer tail and chosen ordering only. Continue to another candidate family.
+
+
+### All-location fault composition screen
+
+## All-location fault composition under ratio-sensitive decoding
+
+The preflight passed synthetic flags for all 15 two-qubit Paulis, all three one-qubit Paulis, and explicit X/Z error events (zero data/flag mismatches). Both d3 conditions had 120 two-qubit pairs and 40 one-qubit locations; explicit measurement targets were 49 for Z-memory/X-biased and 49 total for X-memory/Z-biased. Source and instrumented samples had unchanged 40-detector/one-observable layout, and failure-rate differences were below 1.1 combined standard errors. The 200,000-shot main screen took 3.94 seconds.
+
+At 100,000 shots/condition, ratio-5/ratio-10 models failed on 753/752 Z-memory X-biased shots (61 prediction disagreements) and 769/766 X-memory Z-biased shots (95 disagreements). The both-wrong groups contained 722 and 720 shots; ratio-10-fixes-ratio-5 groups contained 31 and 49, while ratio-10-breaks-ratio-5 contained 30 and 46. In both conditions, mean tracked two-qubit faults were about 0.349 per both-correct shot and 1.87 per both-wrong shot. In the biased Pauli outcome counts, XX was most frequent in the X-biased Z-memory both-wrong group (794 events), while ZZ was most frequent in the Z-biased X-memory both-wrong group (800). One-qubit and explicit measurement-fault counts also differed across outcome groups; see the JSON for full counts.
+
+The decoder-disagreement groups are small, particularly the 30–49-shot fix/break groups. These are conditional fault associations from one fixed development stream, not causal attribution, evidence that one fault channel caused decoding errors, or a hardware noise claim. The new instrumentation extends the earlier two-qubit-only report; it does not change the prior conclusion that raw fault burden alone cannot explain decoder behavior. No sealed or confirmatory data were accessed.
+
+
+## Existing-data basis-scaling synthesis — 2026-11-18
+
+- Reanalyzed fixed X-bias ratio-10, p=.003 basis-alignment screens at d3/5/7/9; no new samples.
+- Counts aligned/mismatched: 51/263, 6/217, 5/1,009, 1/408. The descriptive Poisson rate multiplier per +2 distance was .095 aligned and .496 mismatched.
+- d9 ratio point .00245 remains 24.5x above 1e-4; one aligned failure leaves major uncertainty. Not a threshold/scaling claim.
+- Follow-up completed in the XZZX comparator audit below; next investigate literature and source implementations for biased surface-code co-design.
+
+
+## XZZX comparator audit — 2026-11-18
+
+- Audited code: the native-XCX screen uses `source_build("z", ...)` for CSS and XZZX, so its X-bias comparison is Z-memory versus Z-memory.
+- Reused same-profile X-aligned CSS streams at d3/d5. Counted resources match (qubits, detectors, observables, two-qubit interactions, rounds); no new sampling.
+- XZZX/CSS-aligned rate ratios: 3.57 (95% conditional interval 2.70–4.80) at d3; 13.48 (6.17–36.85) at d5. Independent streams; cross-screen uncertainty only.
+- Practical conclusion: the original .66/.38 ratios versus mismatched CSS Z are not the strongest code-design comparison. Aligned CSS is better in the tested X-biased memory task.
+- Next: complete a source-verified literature pass on biased surface-code code/circuit co-design and distinguish established evidence from local results.

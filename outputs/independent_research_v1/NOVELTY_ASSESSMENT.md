@@ -39,3 +39,9 @@ The biased-noise planar MPS comparison applies an established tensor decoder to 
 
 
 The tensor-train rank diagnostic uses standard SVD-based ranks and makes no algorithmic novelty claim. Its local value is a reproducible compressibility boundary for one exact Q-SHIFT categorical tail under a fixed detector ordering.
+
+
+The d3/d5/d7/d9 fixed-bias synthesis adds no algorithmic novelty. It is a descriptive four-point finite-size analysis with sparse aligned counts, not a new threshold or scaling result.
+
+
+The XZZX finite-size advantage against mismatched CSS does not establish a useful code-design gain against bias-aligned CSS. The new comparison reuses independent development data and is not a novel algorithmic result.

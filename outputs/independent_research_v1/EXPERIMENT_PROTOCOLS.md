@@ -164,3 +164,18 @@ The fixed MPS contraction-mode ablation is specified in `tensor_mps_biased_mode_
 
 
 A deterministic tensor-train rank audit is fixed in `categorical_seven_layer_tt_protocol.md`. It computes singular spectra of exact P and Z posterior matricizations in the stored detector order, without new samples.
+
+
+## All-location fault composition
+
+Completed predeclared two-condition d3 development screen. Protocol and gates: `all_fault_mechanism_protocol.md`; preflight: `all_fault_mechanism_preflight.json`; results: `all_fault_mechanism_results.json`.
+
+
+## Secondary synthesis: basis-alignment distance trend
+
+Descriptive reanalysis of existing independent d3/d5/d7/d9 X-biased ratio-10 streams; no new samples. Script and output: `basis_scaling_synthesis.py` and `basis_scaling_synthesis_results.json`. This is exploratory and not threshold inference.
+
+
+## Comparator audit: native-XCX XZZX vs X-aligned CSS
+
+Exploratory analysis of fixed independent d3/d5 development streams; no resampling. The original XZZX comparator was CSS Z-memory. The existing X-aligned CSS streams permit a stronger baseline check. See `basis_matched_xzzx_comparison_results.json`.

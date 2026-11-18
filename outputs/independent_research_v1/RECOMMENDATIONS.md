@@ -92,3 +92,18 @@ The natural detector-order exact tensor-train audit missed its rank-64/1e-10 gat
 
 
 At the d9 mismatched baseline, the aspirational 1e-4 relative rate corresponds to candidate LER 8.16e-08. The one-failure exact evidence budget is already about 58,135,593 IID shots in one condition, before roots or multiplicity. Do not treat a zero count in a few hundred thousand shots as evidence for the target.
+
+
+## All-location fault composition under ratio-sensitive decoding
+
+The preflight passed synthetic flags for all 15 two-qubit Paulis, all three one-qubit Paulis, and explicit X/Z error events (zero data/flag mismatches). Both d3 conditions had 120 two-qubit pairs and 40 one-qubit locations; explicit measurement targets were 49 for Z-memory/X-biased and 49 total for X-memory/Z-biased. Source and instrumented samples had unchanged 40-detector/one-observable layout, and failure-rate differences were below 1.1 combined standard errors. The 200,000-shot main screen took 3.73 seconds.
+
+At 100,000 shots/condition, ratio-5/ratio-10 models failed on 753/752 Z-memory X-biased shots (61 prediction disagreements) and 769/766 X-memory Z-biased shots (95 disagreements). The both-wrong groups contained 722 and 720 shots; ratio-10-fixes-ratio-5 groups contained 31 and 49, while ratio-10-breaks-ratio-5 contained 30 and 46. In both conditions, mean tracked two-qubit faults were about 0.349 per both-correct shot and 1.87 per both-wrong shot. In the biased Pauli outcome counts, XX was most frequent in the X-biased Z-memory both-wrong group (794 events), while ZZ was most frequent in the Z-biased X-memory both-wrong group (800). One-qubit and explicit measurement-fault counts also differed across outcome groups; see the JSON for full counts.
+
+The decoder-disagreement groups are small, particularly the 30–49-shot fix/break groups. These are conditional fault associations from one fixed development stream, not causal attribution, evidence that one fault channel caused decoding errors, or a hardware noise claim. The new instrumentation extends the earlier two-qubit-only report; it does not change the prior conclusion that raw fault burden alone cannot explain decoder behavior. No sealed or confirmatory data were accessed.
+
+
+For fixed known X bias, preserve memory-basis alignment as the strongest tested code-configuration baseline. The d3–d9 synthesis suggests rapidly improving finite-size ratios, but sparse aligned counts and distance-round confounding rule out a scaling claim. Any future code comparison must use aligned CSS as a strong baseline and report matched physical-qubit/round resources.
+
+
+Revise the X-bias code-design baseline: use X-aligned CSS as the static comparator before considering XZZX. The reported XZZX improvement over CSS Z-memory is real for that memory task, but the aligned CSS stream was better at both tested distances. Do not promote XZZX from this evidence.

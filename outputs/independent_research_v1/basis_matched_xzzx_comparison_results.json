@@ -1,0 +1,190 @@
+{
+  "status": "exploratory_existing_data_comparator_audit",
+  "question": "Does the native-XCX XZZX advantage under X bias survive comparison with CSS memory aligned to X noise?",
+  "data_sources": [
+    "xzzx_native_xcx",
+    "known_profile_memory_basis_alignment",
+    "known_profile_memory_basis_distance5"
+  ],
+  "new_samples_generated": 0,
+  "conditions": [
+    {
+      "distance": 3,
+      "rounds": 5,
+      "profile": "x_biased",
+      "bias_ratio": 10.0,
+      "xzzx_native_xcx": {
+        "shots": 500000,
+        "failures": 2273,
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_interactions": 120,
+        "one_qubit_noise_targets": 40,
+        "ticks": 35,
+        "ler": 0.004546
+      },
+      "css_x_aligned": {
+        "shots": 40000,
+        "failures": 51,
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_interactions": 120,
+        "rounds": 5,
+        "gate_probability": 0.003,
+        "measurement_probability": 0.003,
+        "ler": 0.001275
+      },
+      "xzzx_over_aligned_css": {
+        "point_rate_ratio": 3.565490196078431,
+        "conditional_exact_95_ci": [
+          2.7022648284677344,
+          4.803398887668021
+        ],
+        "conditioning": "independent Poisson counts conditional on total failures; equal-tail beta interval"
+      },
+      "css_resources": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_interactions": 120,
+        "one_qubit_noise_targets": 40,
+        "ticks": 35,
+        "hadamard_targets": 40,
+        "gate_counts": {
+          "CX": 20,
+          "XCX": 0,
+          "CZ": 0,
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20
+        },
+        "measurement_flip_targets": 49
+      },
+      "xzzx_resources": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_interactions": 120,
+        "one_qubit_noise_targets": 40,
+        "ticks": 35,
+        "hadamard_targets": 40,
+        "gate_counts": {
+          "CX": 20,
+          "XCX": 10,
+          "CZ": 10,
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20
+        },
+        "measurement_flip_targets": 49
+      },
+      "resource_match_verified": [
+        "physical_qubits",
+        "detectors",
+        "observables",
+        "two_qubit_interactions",
+        "one_qubit_noise_targets",
+        "ticks",
+        "measurement_flip_targets"
+      ]
+    },
+    {
+      "distance": 5,
+      "rounds": 9,
+      "profile": "x_biased",
+      "bias_ratio": 10.0,
+      "xzzx_native_xcx": {
+        "shots": 500000,
+        "failures": 809,
+        "physical_qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_interactions": 720,
+        "one_qubit_noise_targets": 216,
+        "ticks": 63,
+        "ler": 0.001618
+      },
+      "css_x_aligned": {
+        "shots": 50000,
+        "failures": 6,
+        "physical_qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_interactions": 720,
+        "rounds": 9,
+        "gate_probability": 0.003,
+        "measurement_probability": 0.003,
+        "ler": 0.00012
+      },
+      "xzzx_over_aligned_css": {
+        "point_rate_ratio": 13.483333333333334,
+        "conditional_exact_95_ci": [
+          6.167792675810433,
+          36.849961772097465
+        ],
+        "conditioning": "independent Poisson counts conditional on total failures; equal-tail beta interval"
+      },
+      "css_resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_interactions": 720,
+        "one_qubit_noise_targets": 216,
+        "ticks": 63,
+        "hadamard_targets": 216,
+        "gate_counts": {
+          "CX": 36,
+          "XCX": 0,
+          "CZ": 0,
+          "PAULI_CHANNEL_1": 18,
+          "PAULI_CHANNEL_2": 36
+        },
+        "measurement_flip_targets": 241
+      },
+      "xzzx_resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_interactions": 720,
+        "one_qubit_noise_targets": 216,
+        "ticks": 63,
+        "hadamard_targets": 216,
+        "gate_counts": {
+          "CX": 36,
+          "XCX": 18,
+          "CZ": 18,
+          "PAULI_CHANNEL_1": 18,
+          "PAULI_CHANNEL_2": 36
+        },
+        "measurement_flip_targets": 241
+      },
+      "resource_match_verified": [
+        "physical_qubits",
+        "detectors",
+        "observables",
+        "two_qubit_interactions",
+        "one_qubit_noise_targets",
+        "ticks",
+        "measurement_flip_targets"
+      ]
+    }
+  ],
+  "original_comparator_ratios": [
+    {
+      "distance": 3,
+      "xzzx_over_css_z_mismatched_point": 0.6615250291036089
+    },
+    {
+      "distance": 5,
+      "xzzx_over_css_z_mismatched_point": 0.37627906976744185
+    }
+  ],
+  "interpretation": "XZZX beat CSS Z-memory (the mismatched basis) by the original reported factors, but lost to X-aligned CSS at both tested distances under equal counted qubit, detector, observable, and two-qubit interaction budgets. The compared streams are independent and the memory observable differs; this is a cross-screen descriptive comparison, not a paired decoder or universal-code result.",
+  "limitations": [
+    "Native CX/XCX/CZ duration and PAULI_CHANNEL_2 equivalence is an explicit unverified hardware assumption.",
+    "Only d3/d5 and one XZZX orientation are available.",
+    "Streams are independent, so uncertainty uses a conditional count-rate ratio.",
+    "Logical memory basis differs; arbitrary-state performance and worst-case XZZX memory are untested.",
+    "One-factor-at-a-time code-design conclusions do not establish an asymptotic threshold."
+  ]
+}

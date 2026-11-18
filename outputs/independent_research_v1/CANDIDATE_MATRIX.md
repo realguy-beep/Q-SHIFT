@@ -52,3 +52,20 @@ Distance scaling update: a d9 extension observed 1 aligned vs 408 mismatched fai
 
 
 Exact-inference update: the natural-order seven-layer P/Z tensor-train arrays need maximum rank 91 at 1e-10 (rank 30 at 1e-6), so the predeclared exact-fidelity MPS gate failed.
+
+
+### All-location fault composition screen
+
+## All-location fault composition under ratio-sensitive decoding
+
+The preflight passed synthetic flags for all 15 two-qubit Paulis, all three one-qubit Paulis, and explicit X/Z error events (zero data/flag mismatches). Both d3 conditions had 120 two-qubit pairs and 40 one-qubit locations; explicit measurement targets were 49 for Z-memory/X-biased and 49 total for X-memory/Z-biased. Source and instrumented samples had unchanged 40-detector/one-observable layout, and failure-rate differences were below 1.1 combined standard errors. The 200,000-shot main screen took 3.94 seconds.
+
+At 100,000 shots/condition, ratio-5/ratio-10 models failed on 753/752 Z-memory X-biased shots (61 prediction disagreements) and 769/766 X-memory Z-biased shots (95 disagreements). The both-wrong groups contained 722 and 720 shots; ratio-10-fixes-ratio-5 groups contained 31 and 49, while ratio-10-breaks-ratio-5 contained 30 and 46. In both conditions, mean tracked two-qubit faults were about 0.349 per both-correct shot and 1.87 per both-wrong shot. In the biased Pauli outcome counts, XX was most frequent in the X-biased Z-memory both-wrong group (794 events), while ZZ was most frequent in the Z-biased X-memory both-wrong group (800). One-qubit and explicit measurement-fault counts also differed across outcome groups; see the JSON for full counts.
+
+The decoder-disagreement groups are small, particularly the 30–49-shot fix/break groups. These are conditional fault associations from one fixed development stream, not causal attribution, evidence that one fault channel caused decoding errors, or a hardware noise claim. The new instrumentation extends the earlier two-qubit-only report; it does not change the prior conclusion that raw fault burden alone cannot explain decoder behavior. No sealed or confirmatory data were accessed.
+
+
+**Scaling update:** saved d3/d5/d7/d9 X-bias streams give aligned/mismatched point ratios .194/.0276/.00496/.00245; the aligned d9 cell has one error. Treat the log-linear fit as a descriptive synthesis only. Use aligned CSS as the baseline in any XZZX code-design comparison.
+
+
+**Comparator correction:** native-XCX XZZX beat CSS Z-memory under X bias, but reused matched-resource X-aligned CSS streams had lower LER at d3/d5. XZZX/CSS-aligned ratios were 3.57 and 13.48. Keep XZZX as orientation/code-design evidence, not a leading X-bias recommendation.

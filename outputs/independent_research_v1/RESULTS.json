@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 50000000,
+  "stochastic_qshift_shots_generated": 50220000,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -239,7 +239,7 @@
     },
     "interpretation": "all three BP+LSD variants worse in every tested condition; one distance/configuration/approximate model only; not an integration or superiority claim"
   },
-  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples",
+  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples; includes 20,000 all-fault instrumentation preflight and 200,000 all-fault composition development samples; excludes 50,000 synthetic instrumentation checks",
   "stochastic_dem_samples_generated": 780000,
   "rare_event_importance_sampling": {
     "status": "positive_development_method_result_limited_to_approximate_dem",
@@ -20577,5 +20577,543 @@
     "iid_shots_for_one_candidate_failure_point_baseline": 58135593,
     "iid_shots_for_one_candidate_failure_baseline_lower": 64213866,
     "assumptions": "single condition, independent Bernoulli shots, fixed baseline known except conservative exact lower-rate scenario; no multiplicity/root clustering/model selection"
+  },
+  "all_fault_mechanism_preflight": {
+    "status": "all_fault_preflight_passed",
+    "artifact": "all_fault_mechanism_preflight.json",
+    "max_abs_independent_rate_z": 1.0830581812517859,
+    "projected_main_seconds": 7.700882299905061
+  },
+  "all_fault_mechanism": {
+    "status": "development_all_fault_composition_screen",
+    "artifact": "all_fault_mechanism_results.json",
+    "protocol": "all_fault_mechanism_protocol.md",
+    "shots_per_condition": 100000,
+    "new_source_equivalent_samples": 200000,
+    "elapsed_seconds": 3.729604380001547,
+    "conditions": [
+      {
+        "memory_basis": "z",
+        "profile": "x_biased",
+        "failures_by_assumed_ratio": {
+          "5": 753,
+          "10": 752
+        },
+        "prediction_disagreements": 61,
+        "fault_groups": {
+          "both_correct": {
+            "shots": 99217,
+            "mean_fault_events_per_shot": {
+              "one_qubit_pauli": 0.11881028452785308,
+              "two_qubit_pair": 0.3486902446153381,
+              "measurement_flip_X_ERROR": 0.14761583196428033
+            },
+            "outcome_counts_by_kind": {
+              "one_qubit_pauli": {
+                "X": 9842,
+                "Y": 952,
+                "Z": 994
+              },
+              "two_qubit_pair": {
+                "IX": 2037,
+                "IY": 185,
+                "IZ": 196,
+                "XI": 2063,
+                "XX": 20520,
+                "XY": 2126,
+                "XZ": 2020,
+                "YI": 194,
+                "YX": 2122,
+                "YY": 189,
+                "YZ": 218,
+                "ZI": 197,
+                "ZX": 2064,
+                "ZY": 225,
+                "ZZ": 240
+              },
+              "measurement_flip_X_ERROR": {
+                "flip": 14646
+              }
+            }
+          },
+          "both_wrong": {
+            "shots": 722,
+            "mean_fault_events_per_shot": {
+              "one_qubit_pauli": 0.1149584487534626,
+              "two_qubit_pair": 1.873961218836565,
+              "measurement_flip_X_ERROR": 0.39196675900277006
+            },
+            "outcome_counts_by_kind": {
+              "one_qubit_pauli": {
+                "X": 69,
+                "Y": 3,
+                "Z": 11
+              },
+              "two_qubit_pair": {
+                "IX": 68,
+                "IY": 5,
+                "IZ": 4,
+                "XI": 67,
+                "XX": 794,
+                "XY": 118,
+                "XZ": 116,
+                "YI": 5,
+                "YX": 57,
+                "YY": 12,
+                "YZ": 10,
+                "ZI": 2,
+                "ZX": 83,
+                "ZY": 10,
+                "ZZ": 2
+              },
+              "measurement_flip_X_ERROR": {
+                "flip": 283
+              }
+            }
+          },
+          "ratio10_fixes_ratio5": {
+            "shots": 31,
+            "mean_fault_events_per_shot": {
+              "one_qubit_pauli": 0.16129032258064516,
+              "two_qubit_pair": 1.6774193548387097,
+              "measurement_flip_X_ERROR": 0.1935483870967742
+            },
+            "outcome_counts_by_kind": {
+              "one_qubit_pauli": {
+                "X": 4,
+                "Y": 1,
+                "Z": 0
+              },
+              "two_qubit_pair": {
+                "IX": 1,
+                "IY": 1,
+                "IZ": 2,
+                "XI": 0,
+                "XX": 27,
+                "XY": 3,
+                "XZ": 11,
+                "YI": 0,
+                "YX": 4,
+                "YY": 0,
+                "YZ": 0,
+                "ZI": 1,
+                "ZX": 2,
+                "ZY": 0,
+                "ZZ": 0
+              },
+              "measurement_flip_X_ERROR": {
+                "flip": 6
+              }
+            }
+          },
+          "ratio10_breaks_ratio5": {
+            "shots": 30,
+            "mean_fault_events_per_shot": {
+              "one_qubit_pauli": 0.03333333333333333,
+              "two_qubit_pair": 2.0,
+              "measurement_flip_X_ERROR": 0.4666666666666667
+            },
+            "outcome_counts_by_kind": {
+              "one_qubit_pauli": {
+                "X": 1,
+                "Y": 0,
+                "Z": 0
+              },
+              "two_qubit_pair": {
+                "IX": 4,
+                "IY": 1,
+                "IZ": 0,
+                "XI": 3,
+                "XX": 29,
+                "XY": 4,
+                "XZ": 2,
+                "YI": 1,
+                "YX": 2,
+                "YY": 2,
+                "YZ": 2,
+                "ZI": 0,
+                "ZX": 9,
+                "ZY": 1,
+                "ZZ": 0
+              },
+              "measurement_flip_X_ERROR": {
+                "flip": 14
+              }
+            }
+          }
+        }
+      },
+      {
+        "memory_basis": "x",
+        "profile": "z_biased",
+        "failures_by_assumed_ratio": {
+          "5": 769,
+          "10": 766
+        },
+        "prediction_disagreements": 95,
+        "fault_groups": {
+          "both_correct": {
+            "shots": 99185,
+            "mean_fault_events_per_shot": {
+              "one_qubit_pauli": 0.11945354640318596,
+              "two_qubit_pair": 0.34848011292030046,
+              "measurement_flip_X_ERROR": 0.12060291374703837,
+              "measurement_flip_Z_ERROR": 0.02579019004889852
+            },
+            "outcome_counts_by_kind": {
+              "one_qubit_pauli": {
+                "X": 971,
+                "Y": 928,
+                "Z": 9949
+              },
+              "two_qubit_pair": {
+                "IX": 194,
+                "IY": 214,
+                "IZ": 2073,
+                "XI": 206,
+                "XX": 210,
+                "XY": 198,
+                "XZ": 2115,
+                "YI": 222,
+                "YX": 203,
+                "YY": 201,
+                "YZ": 2050,
+                "ZI": 2082,
+                "ZX": 2031,
+                "ZY": 2079,
+                "ZZ": 20486
+              },
+              "measurement_flip_X_ERROR": {
+                "flip": 11962
+              },
+              "measurement_flip_Z_ERROR": {
+                "flip": 2558
+              }
+            }
+          },
+          "both_wrong": {
+            "shots": 720,
+            "mean_fault_events_per_shot": {
+              "one_qubit_pauli": 0.19166666666666668,
+              "two_qubit_pair": 1.8763888888888889,
+              "measurement_flip_X_ERROR": 0.2,
+              "measurement_flip_Z_ERROR": 0.1638888888888889
+            },
+            "outcome_counts_by_kind": {
+              "one_qubit_pauli": {
+                "X": 15,
+                "Y": 19,
+                "Z": 104
+              },
+              "two_qubit_pair": {
+                "IX": 0,
+                "IY": 9,
+                "IZ": 98,
+                "XI": 0,
+                "XX": 2,
+                "XY": 7,
+                "XZ": 100,
+                "YI": 7,
+                "YX": 6,
+                "YY": 7,
+                "YZ": 92,
+                "ZI": 87,
+                "ZX": 68,
+                "ZY": 68,
+                "ZZ": 800
+              },
+              "measurement_flip_X_ERROR": {
+                "flip": 144
+              },
+              "measurement_flip_Z_ERROR": {
+                "flip": 118
+              }
+            }
+          },
+          "ratio10_fixes_ratio5": {
+            "shots": 49,
+            "mean_fault_events_per_shot": {
+              "one_qubit_pauli": 0.16326530612244897,
+              "two_qubit_pair": 2.0816326530612246,
+              "measurement_flip_X_ERROR": 0.1836734693877551,
+              "measurement_flip_Z_ERROR": 0.061224489795918366
+            },
+            "outcome_counts_by_kind": {
+              "one_qubit_pauli": {
+                "X": 3,
+                "Y": 2,
+                "Z": 3
+              },
+              "two_qubit_pair": {
+                "IX": 0,
+                "IY": 0,
+                "IZ": 4,
+                "XI": 0,
+                "XX": 0,
+                "XY": 0,
+                "XZ": 2,
+                "YI": 0,
+                "YX": 1,
+                "YY": 0,
+                "YZ": 4,
+                "ZI": 4,
+                "ZX": 3,
+                "ZY": 0,
+                "ZZ": 84
+              },
+              "measurement_flip_X_ERROR": {
+                "flip": 9
+              },
+              "measurement_flip_Z_ERROR": {
+                "flip": 3
+              }
+            }
+          },
+          "ratio10_breaks_ratio5": {
+            "shots": 46,
+            "mean_fault_events_per_shot": {
+              "one_qubit_pauli": 0.5652173913043478,
+              "two_qubit_pair": 1.6304347826086956,
+              "measurement_flip_X_ERROR": 0.43478260869565216,
+              "measurement_flip_Z_ERROR": 0.0
+            },
+            "outcome_counts_by_kind": {
+              "one_qubit_pauli": {
+                "X": 1,
+                "Y": 4,
+                "Z": 21
+              },
+              "two_qubit_pair": {
+                "IX": 0,
+                "IY": 1,
+                "IZ": 5,
+                "XI": 0,
+                "XX": 0,
+                "XY": 0,
+                "XZ": 4,
+                "YI": 0,
+                "YX": 2,
+                "YY": 0,
+                "YZ": 2,
+                "ZI": 8,
+                "ZX": 6,
+                "ZY": 2,
+                "ZZ": 45
+              },
+              "measurement_flip_X_ERROR": {
+                "flip": 20
+              },
+              "measurement_flip_Z_ERROR": {
+                "flip": 0
+              }
+            }
+          }
+        }
+      }
+    ],
+    "limitation": "development conditional compositions only; not causal decoder attribution or hardware model"
+  },
+  "basis_scaling_synthesis": {
+    "status": "secondary_descriptive_development_synthesis",
+    "artifact": "basis_scaling_synthesis_results.json",
+    "distance_points": [
+      {
+        "distance": 3,
+        "shots": 40000,
+        "aligned_failures": 51,
+        "mismatched_failures": 263,
+        "source": "known_profile_memory_basis_alignment",
+        "aligned_ler": 0.001275,
+        "mismatched_ler": 0.006575,
+        "aligned_over_mismatched": {
+          "point": 0.19391634980988595,
+          "conditional_exact_95_ci": [
+            0.1407547065601956,
+            0.2625640298991713
+          ],
+          "conditional_failures": 314
+        }
+      },
+      {
+        "distance": 5,
+        "shots": 50000,
+        "aligned_failures": 6,
+        "mismatched_failures": 217,
+        "source": "known_profile_memory_basis_distance5",
+        "aligned_ler": 0.00012,
+        "mismatched_ler": 0.00434,
+        "aligned_over_mismatched": {
+          "point": 0.027649769585253458,
+          "conditional_exact_95_ci": [
+            0.010036338329269253,
+            0.061165363621220124
+          ],
+          "conditional_failures": 223
+        }
+      },
+      {
+        "distance": 7,
+        "shots": 500000,
+        "aligned_failures": 5,
+        "mismatched_failures": 1009,
+        "source": "known_profile_memory_basis_distance7",
+        "aligned_ler": 1e-05,
+        "mismatched_ler": 0.002018,
+        "aligned_over_mismatched": {
+          "point": 0.004955401387512389,
+          "conditional_exact_95_ci": [
+            0.0016055250310669095,
+            0.011602508660017436
+          ],
+          "conditional_failures": 1014
+        }
+      },
+      {
+        "distance": 9,
+        "shots": 500000,
+        "aligned_failures": 1,
+        "mismatched_failures": 408,
+        "source": "basis_alignment_d9",
+        "aligned_ler": 2e-06,
+        "mismatched_ler": 0.000816,
+        "aligned_over_mismatched": {
+          "point": 0.0024509803921568627,
+          "conditional_exact_95_ci": [
+            6.190364696461825e-05,
+            0.01373274272696722
+          ],
+          "conditional_failures": 409
+        }
+      }
+    ],
+    "aligned_poisson_log_linear_fit": {
+      "log_rate_intercept": -3.1335111783177227,
+      "log_rate_slope_per_distance": -1.1786368210048255,
+      "slope_wald_95_ci": [
+        -1.3642457682337281,
+        -0.9930278737759229
+      ],
+      "rate_multiplier_per_plus_2_distance": 0.09467799775946367,
+      "model": "independent Poisson counts with log(shots) offset; descriptive log-linear fit"
+    },
+    "mismatched_poisson_log_linear_fit": {
+      "log_rate_intercept": -3.822561293422964,
+      "log_rate_slope_per_distance": -0.3509094418241805,
+      "slope_wald_95_ci": [
+        -0.37390576832588146,
+        -0.3279131153224795
+      ],
+      "rate_multiplier_per_plus_2_distance": 0.4956828938404686,
+      "model": "independent Poisson counts with log(shots) offset; descriptive log-linear fit"
+    },
+    "d9_observed_ratio_over_1e-4_target": 24.509803921568626,
+    "samples_generated": 0,
+    "limitations": [
+      "Only four finite distances and independent streams; not a threshold estimate.",
+      "Aligned counts are sparse (51, 6, 5, 1); Poisson slope intervals are model-based and do not capture circuit-model uncertainty.",
+      "Distance, qubit count, and round count change together.",
+      "All results use the simulator's stipulated noise model; no hardware calibration or arbitrary logical-state result.",
+      "No 99.99% relative LER reduction is demonstrated; the d9 point ratio is 24.5 times the 1e-4 target."
+    ]
+  },
+  "basis_matched_xzzx_comparison": {
+    "status": "exploratory_existing_data_comparator_audit",
+    "artifact": "basis_matched_xzzx_comparison_results.json",
+    "new_samples_generated": 0,
+    "conditions": [
+      {
+        "distance": 3,
+        "rounds": 5,
+        "profile": "x_biased",
+        "bias_ratio": 10.0,
+        "xzzx_native_xcx": {
+          "shots": 500000,
+          "failures": 2273,
+          "physical_qubits": 26,
+          "detectors": 40,
+          "observables": 1,
+          "two_qubit_interactions": 120,
+          "one_qubit_noise_targets": 40,
+          "ticks": 35,
+          "ler": 0.004546
+        },
+        "css_x_aligned": {
+          "shots": 40000,
+          "failures": 51,
+          "physical_qubits": 26,
+          "detectors": 40,
+          "observables": 1,
+          "two_qubit_interactions": 120,
+          "rounds": 5,
+          "gate_probability": 0.003,
+          "measurement_probability": 0.003,
+          "ler": 0.001275
+        },
+        "xzzx_over_aligned_css": {
+          "point_rate_ratio": 3.565490196078431,
+          "conditional_exact_95_ci": [
+            2.7022648284677344,
+            4.803398887668021
+          ],
+          "conditioning": "independent Poisson counts conditional on total failures; equal-tail beta interval"
+        },
+        "resource_match_verified": [
+          "physical_qubits",
+          "detectors",
+          "observables",
+          "two_qubit_interactions"
+        ]
+      },
+      {
+        "distance": 5,
+        "rounds": 9,
+        "profile": "x_biased",
+        "bias_ratio": 10.0,
+        "xzzx_native_xcx": {
+          "shots": 500000,
+          "failures": 809,
+          "physical_qubits": 64,
+          "detectors": 216,
+          "observables": 1,
+          "two_qubit_interactions": 720,
+          "one_qubit_noise_targets": 216,
+          "ticks": 63,
+          "ler": 0.001618
+        },
+        "css_x_aligned": {
+          "shots": 50000,
+          "failures": 6,
+          "physical_qubits": 64,
+          "detectors": 216,
+          "observables": 1,
+          "two_qubit_interactions": 720,
+          "rounds": 9,
+          "gate_probability": 0.003,
+          "measurement_probability": 0.003,
+          "ler": 0.00012
+        },
+        "xzzx_over_aligned_css": {
+          "point_rate_ratio": 13.483333333333334,
+          "conditional_exact_95_ci": [
+            6.167792675810433,
+            36.849961772097465
+          ],
+          "conditioning": "independent Poisson counts conditional on total failures; equal-tail beta interval"
+        },
+        "resource_match_verified": [
+          "physical_qubits",
+          "detectors",
+          "observables",
+          "two_qubit_interactions"
+        ]
+      }
+    ],
+    "limitations": [
+      "Native CX/XCX/CZ duration and PAULI_CHANNEL_2 equivalence is an explicit unverified hardware assumption.",
+      "Only d3/d5 and one XZZX orientation are available.",
+      "Streams are independent, so uncertainty uses a conditional count-rate ratio.",
+      "Logical memory basis differs; arbitrary-state performance and worst-case XZZX memory are untested.",
+      "One-factor-at-a-time code-design conclusions do not establish an asymptotic threshold."
+    ]
   }
 }
