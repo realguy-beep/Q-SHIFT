@@ -75,3 +75,7 @@ The larger basis-alignment LER reductions score different logical observables: X
 
 The fixed checkerboard local-H transform produced deterministic detectors and matched qubits, rounds, detectors, and two-qubit pairs, but its exact CNOT conjugation required H-CX-H in many locations. Modeling the extra H gates with the same one-qubit Pauli noise raised H/noise targets by 150% at d3 and 167% at d5. The XZZX-transformed circuit then had higher LER than CSS in all four d3/d5 × X/Z-bias cells, by 1.33× to 19.8×. The negative result applies to this explicit gate-level transpilation and noise model. It should not be generalized to an XZZX schedule compiled to native two-qubit gates or a device where single-qubit frame changes are effectively noiseless.
 
+## Bias-strength misspecification
+
+On 12 paired d3 conditions, the correlation-enabled matching model built at assumed bias ratio10 had lower equal-weight macro LER than models built at ratios5 and2, including on actual ratio2 and5 samples. This challenges the expectation that a decoder trained at the true channel ratio necessarily wins under this approximate DEM plus matching decoder. The ratio10 decoder was chosen from a three-model grid evaluated on the same development streams, so its apparent macro advantage is exploratory and selection-biased. The screen cannot support ratio10 as a deployable default without independent fresh validation and additional actual ratios.
+

@@ -85,3 +85,5 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the two-layer scope-only ordering audit with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_phase2b_two_layer_preflight.py`. It allocates no inference tables; all eight tested orders exceeded the one-million-entry cap.
 
 - Reproduce the distance-3 round-count frontier preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/round_count_frontier.py --preflight`, then the 200,000-shot-per-cell screen with the same command without `--preflight`.
+
+- Reproduce the bias-strength robustness preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_strength_robustness.py --preflight`, then the 100,000-shot-per-cell paired screen with the same command without `--preflight`.

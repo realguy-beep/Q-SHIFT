@@ -134,3 +134,10 @@
 - The corrected preflight passed; 3.2M main circuit shots completed. Per-attempt LER rose monotonically with round count in every cell, while two-qubit channel opportunities rose 72→120→168→216. Source five-round configuration remains one point on this fixed-distance resource frontier; this does not imply fewer rounds improve equal-duration storage because duration shrinks with round count.
 - Full preflight/results/protocol, code, and report references are saved under `outputs/independent_research_v1/round_count_frontier*`. Cumulative Q-SHIFT development shots now 35,791,400; no confirmatory data accessed.
 - Next: examine circuit time and idle-noise semantics before defining any equal-duration comparison. If the source lacks an evidence-backed schedule/noise model, reject this comparison design and choose another question rather than inventing padding semantics.
+
+## Checkpoint — bias-strength decoder robustness (2026-11-18)
+
+- Source audit found no explicit idle-time noise model; equal-time round padding was not attempted.
+- Preflight and 1.2M-shot development run compared matching models built at assumed X/Z bias ratios 2/5/10 on identical detections from actual ratios 2/5/10 and both bases. Preflight passed; geometry matched within actual ratio. Macro LER was .005522/.005216/.005022 for assumed 2/5/10. Assumed10 beat assumed5 by paired delta -.000194 (conditional 95% interval [-.000242,-.000146]) and the per-condition correctly specified reference by -.000273 ([-.000323,-.000222]).
+- Interpretation is a misspecification-robustness signal specific to this approximate DEM plus correlation-enabled matching implementation. The ratio10 winner is selected on the same finite grid and is exploratory; an independent, frozen ratio10-vs-ratio5 validation is needed before any deployment recommendation. No confirmatory data accessed. Cumulative Q-SHIFT development samples: 36,992,600.
+- Reproduction: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_strength_robustness.py --preflight` followed by the same command without `--preflight`.

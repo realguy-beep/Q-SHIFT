@@ -109,3 +109,7 @@ Test a fixed checkerboard local-Hadamard transform of the rotated surface-code d
 ## Distance-3 syndrome-round resource frontier
 
 The fixed protocol for rounds 3/5/7/9 at distance 3 and p=.003, crossed with X/Z memory and X/Z-bias profiles, is in `round_count_frontier_protocol.md`. It uses a 100-shot/cell timing/validity preflight followed by 200,000 direct source-circuit shots per 16 cells only if projected runtime remains within five minutes. It compares task LER per attempt and reports round/qubit/two-qubit-pair resources; this is code/circuit co-design, not decoder-only improvement or a threshold estimate.
+
+## Bias-strength decoder robustness
+
+The fixed screen is in `bias_strength_robustness_protocol.md`. Use d=3, five rounds, p=.003, actual X/Z profile strengths 2/5/10, and both memory bases (12 cells). For each independent sample stream, compare correlation-enabled matching under assumed strengths 2/5/10 on the exact same detections. Preflight uses 100 shots/cell and validates dimensions, resources, and scalar/batch agreement; main uses 100,000 shots/cell if the five-minute projection passes. Primary results are paired LER differences for fixed assumed ratio5 versus the correctly specified model and equal-weight fixed-assumption macro rates. The correctly specified model is only a reference, not presumed optimal. This tests model misspecification, not ratio selection or adaptation.
