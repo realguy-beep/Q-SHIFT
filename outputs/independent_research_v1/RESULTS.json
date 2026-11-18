@@ -3651,5 +3651,140 @@
       }
     ],
     "interpretation": "plug-in alternating-profile resource projection only; no causal change-point or device test; no uncertainty propagation"
+  },
+  "categorical_variable_elimination": {
+    "status": "exact_toy_feasibility_pass",
+    "artifact": "categorical_elimination_results.json",
+    "toy_models": [
+      {
+        "model": "single_location_tree_control",
+        "fault_locations": 1,
+        "max_outcomes_per_location": 2,
+        "syndromes_evaluated": 2,
+        "joint_mass_max_abs_error": 0.0,
+        "independent_stim_joint_mass_max_abs_error": null,
+        "posterior_max_abs_error": 0.0,
+        "map_decisions_matching_reference": 2,
+        "map_decisions_total": 2,
+        "map_risk": 0.0,
+        "reference_map_risk": 0.0,
+        "induced_width": 1,
+        "max_intermediate_factor_entries": 4,
+        "elapsed_seconds_all_syndromes": 0.0012097859998903004
+      },
+      {
+        "model": "one_qubit_repetition_cycle",
+        "fault_locations": 3,
+        "max_outcomes_per_location": 4,
+        "syndromes_evaluated": 4,
+        "joint_mass_max_abs_error": 1.0408340855860843e-17,
+        "independent_stim_joint_mass_max_abs_error": 1.0408340855860843e-17,
+        "posterior_max_abs_error": 3.3881317890172014e-21,
+        "map_decisions_matching_reference": 4,
+        "map_decisions_total": 4,
+        "map_risk": 0.0026460000000000008,
+        "reference_map_risk": 0.0026459999999999956,
+        "induced_width": 2,
+        "max_intermediate_factor_entries": 32,
+        "elapsed_seconds_all_syndromes": 0.008382533000258263
+      },
+      {
+        "model": "two_qubit_repetition_cycle",
+        "fault_locations": 2,
+        "max_outcomes_per_location": 16,
+        "syndromes_evaluated": 4,
+        "joint_mass_max_abs_error": 1.1102230246251565e-16,
+        "independent_stim_joint_mass_max_abs_error": 1.1102230246251565e-16,
+        "posterior_max_abs_error": 2.7755575615628914e-16,
+        "map_decisions_matching_reference": 4,
+        "map_decisions_total": 4,
+        "map_risk": 0.060000000000000005,
+        "reference_map_risk": 0.06000000000000002,
+        "induced_width": 2,
+        "max_intermediate_factor_entries": 512,
+        "elapsed_seconds_all_syndromes": 0.010197826999501558
+      }
+    ],
+    "synthetic_grid_width_stress": [
+      {
+        "grid_distance": 2,
+        "fault_locations": 4,
+        "detector_checks": 4,
+        "target_syndrome": 15,
+        "target_logical": 1,
+        "target_joint_mass": 0.016200000000000006,
+        "induced_width": 3,
+        "max_intermediate_factor_entries": 16,
+        "elapsed_seconds": 0.0010220799995295238,
+        "exhaustive_reference_checked": true,
+        "exhaustive_reference_abs_error": 3.469446951953614e-18
+      },
+      {
+        "grid_distance": 3,
+        "fault_locations": 9,
+        "detector_checks": 12,
+        "target_syndrome": 4095,
+        "target_logical": 1,
+        "target_joint_mass": 5.904900000000002e-05,
+        "induced_width": 4,
+        "max_intermediate_factor_entries": 32,
+        "elapsed_seconds": 0.0038042000014684163,
+        "exhaustive_reference_checked": false
+      },
+      {
+        "grid_distance": 5,
+        "fault_locations": 25,
+        "detector_checks": 40,
+        "target_syndrome": 1099511627775,
+        "target_logical": 0,
+        "target_joint_mass": 2.541865828329009e-13,
+        "induced_width": 6,
+        "max_intermediate_factor_entries": 128,
+        "elapsed_seconds": 0.010124467999048647,
+        "exhaustive_reference_checked": false
+      },
+      {
+        "grid_distance": 7,
+        "fault_locations": 49,
+        "detector_checks": 84,
+        "target_syndrome": 19342813113834066795298815,
+        "target_logical": 1,
+        "target_joint_mass": 7.178979876918543e-26,
+        "induced_width": 9,
+        "max_intermediate_factor_entries": 1024,
+        "elapsed_seconds": 0.02825302000019292,
+        "exhaustive_reference_checked": false
+      },
+      {
+        "grid_distance": 9,
+        "fault_locations": 81,
+        "detector_checks": 144,
+        "target_syndrome": 22300745198530623141535718272648361505980415,
+        "target_logical": 0,
+        "target_joint_mass": 1.3302794647291488e-42,
+        "induced_width": 15,
+        "max_intermediate_factor_entries": 65536,
+        "elapsed_seconds": 0.11517819099935878,
+        "exhaustive_reference_checked": false
+      },
+      {
+        "grid_distance": 11,
+        "fault_locations": 121,
+        "detector_checks": 220,
+        "target_syndrome": 1684996666696914987166688442938726917102321526408785780068975640575,
+        "target_logical": 1,
+        "target_joint_mass": 1.6173092699231063e-63,
+        "induced_width": 18,
+        "max_intermediate_factor_entries": 524288,
+        "elapsed_seconds": 0.37750391100053093,
+        "exhaustive_reference_checked": false
+      }
+    ],
+    "max_toy_probability_error": 2.7755575615628914e-16,
+    "largest_intermediate_factor_entries": 524288,
+    "state_cap": 1000000,
+    "qshift_circuit_fragment_mapped": false,
+    "stochastic_qshift_shots_generated": 0,
+    "interpretation": "exact controlled-model feasibility only; synthetic grids are not representative Phase 2B circuits"
   }
 }

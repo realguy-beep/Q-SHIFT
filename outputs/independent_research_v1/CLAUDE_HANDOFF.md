@@ -32,7 +32,7 @@ The proposed correlation-mechanism follow-up requiring a non-approximated DEM ca
 
 ## Suggested next implementation
 
-If Claude chooses to explore native categorical inference, begin with a new region-graph or variable-elimination prototype. Keep every local Pauli outcome mutually exclusive. Validate joint syndrome/logical posterior values against exhaustive exact references on at least two cyclic and one tree factor graph. Record convergence, posterior error, induced width, and memory. Stop if exact small-case performance is not reliable. This is a feasibility suggestion, not a claim of novelty.
+The independent branch now has a log-domain exact variable-elimination prototype that keeps local Pauli outcomes categorical. It matches exhaustive joint masses, posteriors, MAP decisions, and risk on one tree and two cyclic repetition toys; forced Stim outcomes independently verify the two circuit-backed toys. Synthetic pairwise grid tables grow from 128 entries at 5x5 to 524,288 at 11x11. This is not a Phase 2B decoder result. Next, map a bounded native-categorical circuit fragment into these factors, verify the detector/observable effects against forced circuit faults, and estimate width before attempting inference. Stop if the one-million-entry factor cap is exceeded. See `categorical_elimination_protocol.md`, `categorical_elimination.py`, and `categorical_elimination_results.json`.
 
 ## Avoid
 

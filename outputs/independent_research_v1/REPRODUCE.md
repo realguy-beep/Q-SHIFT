@@ -75,3 +75,5 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Recompute the plug-in calibration-throughput horizon with `python outputs/independent_research_v1/calibration_amortization.py`; this reads saved LER estimates and generates no shots.
 
 - Recompute the exploratory alternating-profile resource replay with `.venv/bin/python outputs/independent_research_v1/temporal_basis_replay.py`. It reads the saved classifier-confusion and logical-window summaries and generates no new circuit samples.
+
+- Reproduce the exact categorical toy/grid variable-elimination analysis with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_elimination.py`. It checks exhaustive posteriors, forced Stim outcomes, and sparse-grid state growth; it generates no stochastic Q-SHIFT shots.

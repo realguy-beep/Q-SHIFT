@@ -101,3 +101,10 @@
 - Reused only previously saved classifier-confusion and independent per-window logical-failure summaries; no new stochastic samples. Tested deterministic equal-duration X↔Z profile alternation at dwell periods 100, 1,000, 10,000, and 100,000 logical shots, 25/100/500 calibration shots, and four re-estimation intervals (144 schedules, d=3, ratios 2/5/10).
 - With calibration shots charged as unusable circuit resources, no tested schedule beat the best static basis through 10k-shot dwell. At 100k dwell, the best plug-in throughput ratio to static was 0.999857, 1.001041, and 1.002052 at ratios 2, 5, and 10. This is a scenario projection with point estimates, not an empirical change-point detector or uncertainty-bounded result.
 - No Q-SHIFT circuit-shot increase; cumulative unique development samples remain 32,589,800. No confirmatory data accessed. Next: examine exact native-categorical inference via width-bounded elimination and stop before scaling if width grows too quickly.
+
+## Checkpoint — exact categorical variable elimination
+
+- The corrected log-domain elimination engine retained each local error as a categorical variable. Exhaustive comparison covered every syndrome/logical target on a one-location tree and two cyclic/repetition toys; max joint/posterior discrepancy 2.8e-16, with exact MAP risk and decisions. Forced Stim Pauli outcomes independently reproduced the joint masses for both circuit-backed toys.
+- Topology stress on sparse pairwise grids reached 11x11 (121 binary variables, 220 checks) at induced width 18 and 524,288 intermediate table entries under a hard 1,000,000-entry cap; one target took 0.38 s. Growth was sharp between 7x7, 9x9, and 11x11. This is not a Phase 2B factor graph, and only one target per grid was evaluated beyond 2x2.
+- Floating-point tie and factor-axis ordering bugs were found by exact controls and fixed before final metrics. No Q-SHIFT stochastic or confirmatory samples generated.
+- Next: derive exact event-to-detector/observable signatures for a bounded Phase 2B fragment and perform an induced-width-only preflight before any inference run.

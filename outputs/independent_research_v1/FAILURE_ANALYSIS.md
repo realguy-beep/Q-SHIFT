@@ -22,6 +22,12 @@ The first implementation estimated logical parity from the product of individual
 
 Likely issue: the global logical parity factor creates loops in the factor graph, and the Bethe approximation is not accurate enough for the one-qubit fixture. This explanation is consistent with the topology dependence but is not yet proven by an exact Bethe/free-energy derivation or a tree-topology control. The candidate is stopped before circuit evaluation. A follow-up must separate coding errors from approximation error with hand-computable trees and exact toy posterior checks, and should only proceed if all fixtures meet a prespecified risk/decision agreement gate.
 
+## Exact categorical variable-elimination feasibility
+
+A new exact log-domain elimination implementation passed exhaustive posterior and independent forced-Stim mapping checks on the existing distance-1 categorical repetition fixtures. During development, a strict MAP comparison disagreed on a two-qubit syndrome because floating-point roundoff broke a posterior tie; matching the reference's 1e-15 tie policy fixed it. A later 2x2 grid reference exposed a factor-axis bug from a noncanonical (unsorted) prefix-parity scope; factor scopes are now sorted and table axes mapped by variable ID. The final results reproduce exact toy joint masses and risks to floating-point precision. These were code/algorithm defects caught by exact controls, not circuit-sample evidence.
+
+The corrected ordering kept intermediate tables small on synthetic sparse grids through 7x7, but grew to 65,536 entries at 9x9 and 524,288 at 11x11. This topology stress test stops before the 1,000,000-entry cap and does not represent Phase 2B's high-domain categorical gates or temporal detector graph. No Q-SHIFT circuit fragment has yet been mapped into this factor representation; circuit-level exact inference remains unresolved.
+
 ## Thresholded DEM sensitivity route
 
 The official Stim CLI permits a maximum probability threshold for approximating disjoint errors. A fixed threshold of 0.001 cannot convert any of the biased conditions because one two-qubit Pauli-pair event has probability 0.00178571. Thresholds 0.0018, 0.003, and 1.0 all convert, but produce identical DEM and matching graph hashes within every condition. This threshold family therefore provides no alternate matching model at the tested probabilities. Changing the gate probabilities or threshold after observing decoder outcomes would be a different study and is not supported by this static check.

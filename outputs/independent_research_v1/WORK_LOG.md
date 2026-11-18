@@ -14,7 +14,7 @@
 
 ## Next actions
 
-1. Quantify whether exact variable elimination on a native-categorical Phase 2B fragment can fit a useful bounded width; require exact toy agreement and report state-width growth before any decoder prototype.
+1. Map a bounded native-categorical circuit fragment into local factors; verify the detector/observable effects with forced Stim faults and estimate min-fill width before attempting inference. Stop above the one-million-entry factor cap.
 2. Revisit neural/hybrid and rare-event approaches for a distinct mechanism not already rejected by current development screens.
 3. Continue primary literature review using accessible primary/repository sources. Mark inaccessible sources explicitly and avoid citation details that cannot be supported.
 4. Maintain checkpoints on the isolated branch. No confirmatory/sealed evaluation is authorized.
@@ -154,4 +154,12 @@
 - Replayed 144 combinations of ratio 2/5/10, detector-only calibration budgets 25/100/500, update periods 100/1,000/10,000/100,000 logical shots, and equal profile dwell periods in the same grid. Frozen classifier confusion rates and basis-specific logical failure rates were applied to deterministic alternating X/Z-bias profiles over 10M logical attempts.
 - Charged every calibration shot as a circuit resource with no useful output and compared correct outputs per total circuit shot to the best static X/Z basis. No tested schedule beat static at dwell <=10k shots. At 100k dwell, best plug-in throughput ratios were 0.999857 (ratio2), 1.001041 (ratio5), and 1.002052 (ratio10). This is a temporal scenario projection, not an empirical change-point or device test; no uncertainty propagation was performed.
 - Source and stable-policy reconstruction checks passed; 144 schedule rows saved in `temporal_basis_replay_results.json`. Cumulative unique Q-SHIFT circuit samples remain 32,589,800; no confirmatory data accessed.
-- Next: assess the native categorical exact-inference route with an explicit width-bounded variable-elimination analysis before implementing a larger decoder.
+- Next: map a bounded native-categorical circuit fragment into local factors; require forced-fault agreement and measure induced width before attempting inference.
+
+## Exact categorical variable-elimination feasibility — 2026-11-18
+
+- Current branch before this checkpoint: `codex/qshift-independent-research-v1`, commit `fe1f992`. Implemented exact log-domain dense factor elimination with greedy weighted min-fill, one mutually exclusive categorical variable/location, detector XOR constraints, and a prefix logical parity chain.
+- Exhaustively compared all syndrome/logical masses, posteriors, MAP decisions, and risk on the single-location tree and one-/two-qubit repetition toys. Maximum error was 2.8e-16. Independently forced each local Pauli outcome through Stim on both circuit-backed toys; joint masses agreed.
+- Synthetic pairwise grid stress at one consistent syndrome kept max table size 16/32/128/1,024/65,536/524,288 at 2x2/3x3/5x5/7x7/9x9/11x11, with induced width 3/4/6/9/15/18. The 2x2 result also matched exhaustive enumeration. At 11x11, one target took .38s and remained under the 1M-entry cap. This does not represent the Phase 2B categorical temporal graph.
+- Exact controls caught two implementation defects before final reporting: floating-point MAP tie handling and unsorted variable order in prefix parity factors. Both were corrected; final independent checks pass. No Q-SHIFT stochastic samples generated.
+- Next: map a bounded Phase 2B native categorical fragment to local factors and measure exact width, stopping before any dense intermediate exceeds 1M entries.
