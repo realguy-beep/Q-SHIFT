@@ -289,3 +289,12 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xz
 ```
 
 The preflight projected 217.6s; actual main runtime was 281.9s. Do not assume larger distances fit the same cap.
+
+
+### d11 relative-target sample budget
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_d11_target_budget.py
+```
+
+This is deterministic and generates no circuit samples.

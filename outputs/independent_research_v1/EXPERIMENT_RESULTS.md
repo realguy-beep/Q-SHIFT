@@ -338,3 +338,8 @@ At d9/17 rounds and 500k independent shots/cell, CSS-X/Z had 1/260 failures; XZZ
 ## d11 challenge of the balanced-memory XZZX/CSS result
 
 At d11/21 rounds and 500k shots/cell, CSS-X and XZZX-X each had zero failures; CSS-Z had 67 and XZZX-Z had 3. The equal-weight separate-memory XZZX/CSS rate ratio was .0448 (95% conditional interval .0090–.1366), based on 70 combined failures. The XZZX-Z/CSS-Z ratio was also .0448; X-vs-X has no informative rate ratio because both cells had zero failures. Per-cell Wilson one-sided upper for zero counts is about 7.68e-6. This continues the balanced-workload trend but remains 448x above the 1e-4 target at the point estimate. Preflight projected 217.6s; main completed in 281.9s (<300s) and used 2.69 GiB peak RSS. Do not infer arbitrary-state or asymptotic performance.
+
+
+## d11 relative-target evidence budget
+
+The observed equal-weight CSS point LER was 6.7e-5, so a 1e-4 relative target would require candidate LER 6.7e-9. The d11 XZZX point was 3e-6 (ratio .0448), about 448 times above that target. Even assuming the baseline is known and IID sampling, a one-sided 95% upper bound at the target needs about 447M zero-failure candidate shots; allowing one observed failure needs about 708M shots. These are optimistic Poisson rare-event budgets and ignore baseline uncertainty, multiple conditions, roots, and model selection. More samples at the observed XZZX rate would not establish the target.

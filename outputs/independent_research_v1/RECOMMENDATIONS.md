@@ -125,3 +125,6 @@ A fresh d9 screen supports a balanced separate-basis XZZX/CSS tradeoff through d
 
 
 The balanced separate-memory trend continues through d11 (point ratio .0448), but the exact interval is broad and X-memory comparisons are zero-failure. Treat this as a promising code-design tradeoff for that task mix, not a 10,000-fold result. d11 already approaches the per-run 300s limit; any larger-distance plan needs a fresh feasibility gate and should not assume runtime scales linearly.
+
+
+Do not scale the d11 XZZX run just to narrow a relative-rate interval around a point rate 448x above the target. Progress toward 10,000-fold reduction requires a mechanism that lowers the rate, plus very large independent evidence; ordinary extra sampling alone is not a path to the target.

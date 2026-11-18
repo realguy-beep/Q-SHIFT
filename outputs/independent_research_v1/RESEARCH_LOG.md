@@ -331,3 +331,6 @@ The d9 challenge extends the balanced separate-memory XZZX/CSS benefit to a rate
 
 
 The d11 balanced X/Z task result continues the XZZX/CSS trend but with a broad interval and only 3 XZZX-Z versus 67 CSS-Z failures; both X-basis cells are zero-failure. The point rate ratio .0448 is far from 1e-4. Since runtime was 282s, stop this fixed-size sweep and move to another research family rather than adding a marginal d13 run.
+
+
+A d11 exact rare-event budget shows the current balanced-memory XZZX point is ~448x above the 1e-4 relative target. Even if a future candidate hit the target, an optimistic one-sided IID 95% bound requires ~447M zero-failure shots. Do not scale sampling without a rate-lowering hypothesis.

@@ -151,3 +151,6 @@ The d9 XZZX/CSS factorial produced CSS-X/Z 1/260 failures and XZZX-X/Z 10/18 (50
 
 
 At d11, CSS-X and XZZX-X each had 0/500k failures; CSS-Z had 67 and XZZX-Z 3. Equal-weight separate X/Z task rate ratio XZZX/CSS=.0448 (95% interval .0090–.1366), 448x above 1e-4. The run took 281.9s and 2.69 GiB. This supports a finite-size balanced-workload tradeoff but leaves X-memory comparison unresolved and is not arbitrary-state or hardware evidence. The next distance may exceed the 300s screen; do not launch without a preflight.
+
+
+The d11 equal-weight CSS point LER .000067 implies candidate target 6.7e-9 for 10,000x reduction. The XZZX point is 3e-6 (about448x above). Optimistic one-sided IID evidence alone would take ~447M zero-failure candidate shots (or708M with one), before baseline uncertainty/roots/model-selection. A genuinely lower-rate mechanism is needed before a huge run is useful.

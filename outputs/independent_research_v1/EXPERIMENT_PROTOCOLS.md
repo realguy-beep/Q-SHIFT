@@ -199,3 +199,8 @@ Completed predeclared four-cell d9 screen; protocol, preflight, and results are 
 ## d11 challenge of the balanced-memory tradeoff
 
 Completed predeclared d11 CSS/XZZX basis screen. Protocol and JSON artifacts: `xzzx_basis_factorial_d11_protocol.md`, `xzzx_basis_factorial_d11_preflight.json`, `xzzx_basis_factorial_d11_results.json`.
+
+
+## d11 evidence budget for the relative target
+
+Deterministic sample-size calculation only; no new sampling. Assumes the observed equal-weight CSS baseline point is known and an IID single stream. See `xzzx_d11_target_budget.json` for exact rarity-budget arithmetic and caveats.

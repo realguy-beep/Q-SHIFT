@@ -448,4 +448,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - CSS-X/XZZX-X 0/500k each; CSS-Z/XZZX-Z 67/3. Equal-weight separate-basis XZZX/CSS RR=.0448, exact conditional 95% interval .0090–.1366. X-basis RR is unidentifiable from zero failures in both arms.
 - Total unique Q-SHIFT development shots: 62,460,000. No sealed/confirmatory data accessed.
 - A numerical Wilson lower endpoint for zero-count cells was clamped to the mathematically correct zero in the stored JSON and reproduction code; stochastic data were not rerun.
-- Next: move to a different high-value research family; d11 near-cap runtime and sparse outcomes make another distance sweep low-value without a new algorithm or higher-efficiency estimator.
+- Next: run a d13 preflight only to establish whether the fixed balanced-memory screen fits the 300s cap; if it projects above cap, stop the sweep and switch research families.
+
+
+## d11 relative-target statistical budget — 2026-11-18
+
+- No sampling. Under an optimistic known-baseline IID design, CSS equal-mix point .000067 implies candidate target 6.7e-9.
+- The XZZX point is 3e-6, ~448x above. At the target, 95% one-sided rate bounding needs ~447M zero-failure shots, or ~708M allowing one failure. Baseline uncertainty and root heterogeneity increase this.
+- Decision: no extra d11 sample budget can turn the observed candidate into 10,000x. Need a new rate-reducing mechanism before large evaluation.

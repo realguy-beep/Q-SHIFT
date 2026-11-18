@@ -133,3 +133,6 @@ The d9 equal-weight separate X/Z memory rate ratio XZZX/CSS is .107 (.070–.159
 
 
 At d11, equal-weight separate-basis XZZX/CSS=.0448 (.0090–.1366), with only 70 combined errors; X memory had zero errors in each architecture. The point is 448x above the aspirational relative target. The largest tested run now takes 282s/2m shots and ~2.69 GiB, so further same-size evidence has increasing resource cost. This is not an asymptotic exponent.
+
+
+At d11, the observed comparator point implies target candidate LER 6.7e-9 for a 1e-4 relative rate. An optimistic one-sided 95% IID design would need 447M shots with zero failures (708M allowing one), assuming the comparator rate is known. The observed XZZX point rate is 3e-6, roughly 448 times the target; sample size cannot close a performance gap by itself.

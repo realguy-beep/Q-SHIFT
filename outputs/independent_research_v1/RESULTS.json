@@ -22906,5 +22906,40 @@
       "One simulated point; native gate equality remains unverified.",
       "Rate ratio .0448 remains 448x above 1e-4 target."
     ]
+  },
+  "xzzx_d11_target_budget": {
+    "status": "analytical_development_feasibility_note",
+    "artifact": "xzzx_d11_target_budget.json",
+    "new_samples_generated": 0,
+    "baseline_point_ler": 6.7e-05,
+    "candidate_target_ler": 6.7000000000000004e-09,
+    "candidate_point_ler": 3e-06,
+    "candidate_over_target_point": 447.76119402985074,
+    "optimistic_iid_shot_budgets": [
+      {
+        "observed_candidate_failures": 0,
+        "iid_candidate_shots_to_bound_at_target": 447124220,
+        "poisson_count_cutoff_at_boundary": 2.9957322735539913,
+        "assumption": "one-sided 95% upper-rate criterion; rare-event Poisson approximation"
+      },
+      {
+        "observed_candidate_failures": 1,
+        "iid_candidate_shots_to_bound_at_target": 708039481,
+        "poisson_count_cutoff_at_boundary": 4.743864518390578,
+        "assumption": "one-sided 95% upper-rate criterion; rare-event Poisson approximation"
+      },
+      {
+        "observed_candidate_failures": 3,
+        "iid_candidate_shots_to_bound_at_target": 1157262169,
+        "poisson_count_cutoff_at_boundary": 7.753656527932726,
+        "assumption": "one-sided 95% upper-rate criterion; rare-event Poisson approximation"
+      }
+    ],
+    "limitations": [
+      "Uses the observed baseline point as known; baseline uncertainty increases evidence needs.",
+      "Ignores root clustering, multiple conditions, model selection, and code-family selection.",
+      "The current d11 XZZX point rate is above the target; more shots at the same true rate cannot make it meet the target.",
+      "Equal-weight separate basis tasks are not arbitrary-state logical channel trials."
+    ]
   }
 }
