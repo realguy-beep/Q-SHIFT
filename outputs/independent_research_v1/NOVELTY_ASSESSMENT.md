@@ -120,3 +120,8 @@ The gate-p shift's fresh stream fell just below the fixed utility threshold, des
 ### Gate-noise axis is not uniformly robust
 
 The half-rate gate shift passed strongly, while the double-rate shift narrowly failed its utility gate on replication. Robustness claims must preserve this directional boundary.
+
+
+### Measurement-rate robustness scope
+
+The frozen selector passed half- and double-measurement-rate shifts at d3, strengthening stationary development evidence. This remains a robustness result, not a novel algorithm or temporal-noise guarantee.

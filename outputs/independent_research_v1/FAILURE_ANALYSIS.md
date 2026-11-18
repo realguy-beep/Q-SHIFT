@@ -316,3 +316,8 @@ Doubling gate p to .006 produced 10.01% macro reduction initially and 9.95% on r
 ### Gate-rate shift is asymmetric
 
 Halving gate p to .0015 gave 23%–24% macro gains on two streams; doubling to .006 gave 10.01% then 9.95% and failed the frozen gate on replication. This asymmetry means the selector's rate robustness is bounded and directional. Keep the doubled-rate borderline result alongside the positive half-rate result; do not state generic gate-rate robustness.
+
+
+### Measurement-rate shift is robust on both tested sides
+
+Halving measurement p to .0015 gave 18%–19% gains twice, complementing the ~13% gain at doubled measurement p=.006. Both directions passed the frozen gate, unlike doubled gate p, which narrowly missed. This supports only stationary measurement-rate mismatch at d3; temporal correlations and graph uncertainty remain untested.

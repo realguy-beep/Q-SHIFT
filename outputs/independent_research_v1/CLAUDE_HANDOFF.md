@@ -292,3 +292,8 @@ At gate p=.006 the frozen selector reduced macro LER 10.01% initially and 9.95% 
 ### Half-rate gate shift — 2026-11-18
 
 At gate p=.0015, the frozen selector gained 24.4%/23.4% macro LER on two streams (~1.36x cost). This contrasts with doubled gate p=.006, where fresh replication was 9.95% and missed the 10% gate. Keep the gate-rate boundary explicitly asymmetric. See `../independent_research_v2/fast_flagged_logistic_gate_half_shift_report.md`.
+
+
+### Halved measurement-rate challenge — 2026-11-18
+
+At measurement p=.0015 the frozen selector gained 18.89%/18.00% macro LER on two fresh d3 streams (~1.37x cost; all cell intervals favorable). Combined with the doubled-measurement pass, both tested stationary sides pass. Doubled gate noise remains borderline. See `../independent_research_v2/fast_flagged_logistic_measurement_half_shift_report.md`.

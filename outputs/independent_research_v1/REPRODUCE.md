@@ -472,3 +472,8 @@ Run `fast_flagged_logistic_gate_shift.py` and its replication counterpart with t
 ### Half-rate gate-noise challenge and replication
 
 Run `fast_flagged_logistic_gate_half_shift.py` and its replication counterpart from the v2 directory. This freezes the .003 selector/graphs and evaluates gate p=.0015; see the report alongside the separate doubled-gate borderline report.
+
+
+### Halved measurement-rate shift
+
+Run `fast_flagged_logistic_measurement_half_shift.py` and its replication counterpart in the v2 research directory with the project venv. Both keep the nominal .003 model/graph fixed; report is alongside the doubled-measurement result.

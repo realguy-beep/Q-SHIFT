@@ -709,3 +709,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Independent replication: .001965→.001506 (23.36%), paired delta -.000459 (95% CI [-.000489,-.000429]), cost 1.357x; all six intervals favored candidate. Both gates passed.
 - Gate-rate mismatch is asymmetric: half-rate shift passes strongly, while the doubled-rate shift narrowly missed the frozen utility gate on replication. Preserve both results. Added 6,120,000 unique samples; cumulative development count: 269,928,200. No confirmatory/sealed data.
 - Report: `outputs/independent_research_v2/fast_flagged_logistic_gate_half_shift_report.md`.
+
+
+## Frozen selector under halved measurement noise — fresh-seed replication — 2026-11-18
+
+- Froze p=.003 ratio-10 d3 selectors/graphs and changed physical measurement p to .0015. Initial macro LER .004550→.003691 (18.89%), paired macro delta -.000859 (95% CI [-.000904,-.000814]), cost 1.365x; all six paired intervals favorable.
+- Independent stream: .004613→.003783 (18.00%), paired delta -.000830 (95% CI [-.000875,-.000786]), cost 1.370x; all six intervals favorable. Both gates passed.
+- Measurement-rate shifts now pass in both directions: p=.006 and .0015. This is stationary d3 only; doubled gate rate remains borderline. Added 6,120,000 unique samples; cumulative development total: 276,048,200. No confirmatory/sealed data.
+- Report: `outputs/independent_research_v2/fast_flagged_logistic_measurement_half_shift_report.md`.

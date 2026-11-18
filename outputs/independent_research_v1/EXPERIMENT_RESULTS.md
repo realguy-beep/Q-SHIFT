@@ -497,3 +497,8 @@ At physical gate p=.006 with measurement p=.003, the frozen selector reduced mac
 ## Halved gate-noise shift
 
 With gate p reduced from .003 to .0015 and other nominal settings fixed, the frozen selector gave 24.42% and 23.36% macro reductions on independent d3 streams at ~1.36x cost. Paired macro intervals were [-.000512,-.000452] and [-.000489,-.000429]; all cell intervals favored the selector. This contrasts with doubled gate noise, which missed the fixed 10% utility gate on replication. See `../independent_research_v2/fast_flagged_logistic_gate_half_shift_report.md`.
+
+
+## Halved measurement-noise shift
+
+With measurement p reduced from .003 to .0015 and the selector/graphs frozen, two d3 streams showed 18.89% and 18.00% macro LER reductions at 1.365x/1.370x cost. Paired macro difference intervals were [-.000904,-.000814] and [-.000875,-.000786]; all six per-cell intervals favored the selector on both streams. Measurement shifts at .0015 and .006 both pass; see `../independent_research_v2/fast_flagged_logistic_measurement_half_shift_report.md`.

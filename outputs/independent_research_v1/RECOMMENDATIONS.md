@@ -254,3 +254,8 @@ Do not include doubled gate noise in the selector's positive robustness envelope
 ### Gate-rate robustness remains asymmetric
 
 A half-rate shift is strongly positive, but a double-rate shift misses the frozen utility gate on replication by 0.05 point. Do not include doubled gate noise in the validated envelope and do not generalize from the half-rate result.
+
+
+### Measurement-rate range
+
+Both tested stationary measurement-rate shifts (half and double) passed. Keep that as a narrow d3 robustness statement. It does not imply tolerance to time-varying measurement noise, detector correlations, or unknown profile graphs; the doubled gate-rate challenge remains borderline.

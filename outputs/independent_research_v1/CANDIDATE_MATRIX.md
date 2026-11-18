@@ -185,3 +185,8 @@ The frozen selector reduced macro LER 10.01% in the first stream and 9.95% on re
 ### Gate-rate stress pair
 
 Halving gate p to .0015 passed twice (24.42%/23.36% macro gains); doubling to .006 narrowly failed the 10% gate on replication (10.01%/9.95%). This is asymmetric rate robustness, not a uniform gate-noise envelope. See both gate-shift reports in v2.
+
+
+### Measurement-rate stress pair
+
+The ratio-10 frozen selector passed both measurement p=.0015 and .006 on two streams each, with ~18% and ~13% macro reductions respectively and ~1.35x cost. This is a bounded stationary rate range; temporal and graph-mismatch claims remain unsupported. See both measurement-shift reports in v2.

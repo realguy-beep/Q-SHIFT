@@ -533,3 +533,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 
 - Physical gate p=.0015 with the ratio-10/.003 model frozen yielded 24.42% and 23.36% macro gains on two streams, ~1.36x cost, all per-cell intervals favorable. By contrast p=.006 achieved 10.01% then 9.95% and failed the strict utility gate on replication.
 - Preserve asymmetry rather than summarizing generic gate-noise robustness. Cumulative unique samples: 269,928,200; no sealed/confirmatory data. See `outputs/independent_research_v2/fast_flagged_logistic_gate_half_shift_report.md` and the doubled-gate report.
+
+
+## Measurement-rate range passed in both directions — 2026-11-18
+
+- The frozen selector passed physical measurement p=.0015 on two d3 streams (18.89%/18.00% macro reductions, ~1.37x cost; all cell intervals favorable). Previously, p=.006 passed twice (~13%). Thus tested static measurement rates on both sides of nominal pass, unlike doubled gate p which narrowly missed its threshold.
+- Do not generalize to temporal or unknown-graph shift. Cumulative development samples: 276,048,200; no sealed/confirmatory evidence. See `outputs/independent_research_v2/fast_flagged_logistic_measurement_half_shift_report.md`.
