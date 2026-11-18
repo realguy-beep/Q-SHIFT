@@ -51,3 +51,9 @@ The first end-to-end policy script used the correct trained coefficient vector b
 
 The doubled-total-rate robustness screen initially attempted to reuse the .0018 approximate-DEM threshold, which failed because a p=.006 categorical fault probability exceeded it. No logical samples were generated under that failed setup. A deterministic probability calculation established a maximum event probability of .003571; the prospectively updated screen used .004 for all arms. This changes the approximation threshold from the nominal-rate tests, so the rate-shift comparison is internally matched but not a direct absolute comparison against the p=.003 sample.
 
+# Same-observable decoder selection result
+
+Although the detector-only classifier identified the X/Z profile in all 2,000 calibration windows, a same-circuit, same-Z-observable comparison of profile-specific matching graphs against a static pooled graph found only four fewer failures in 200,000 test shots (775 vs 779); its paired window-bootstrap interval includes zero. This is a negative development result for the claim that accurate profile labels alone yield a meaningful decoder improvement. For this circuit/noise pair the pooled graph was already close to the profile-conditioned graphs. The result is limited to one distance, one bias ratio, and one pooled-model construction.
+
+The larger basis-alignment LER reductions score different logical observables: X-memory reports an X observable and Z-memory reports a Z observable. Those comparisons are valid for known-basis memory tasks but do not show that a general logical-qubit channel or a fixed-observable decoder improves. Any arbitrary-state memory claim needs both conjugate logical error channels and a task-matched objective.
+

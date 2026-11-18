@@ -128,3 +128,16 @@
 - Re-scored the fixed classifier on nested 25/100-shot prefixes of existing 500-shot calibration windows and reused the same direct logical outcome arrays. No new sample streams, no model refit, and no shot-count increase. This is explicitly exploratory.
 - LER reductions versus static Z at calibration budgets 25/100/500 per 100 logical shots: 5.1/11.6/16.6% at ratio2 (25-shot interval includes zero), 27.8/49.6/52.4% at ratio5, and 57.5/71.2/71.7% at ratio10. Calibration load is .25/1/5 shots per logical shot, respectively. The result shows the weak-bias regime needs more calibration for reliable selection; nested estimates are correlated and not confirmatory.
 - Current research branch before this checkpoint: `codex/qshift-independent-research-v1`, commit `4b91bba`. Continue with a model-mismatch/drift question; avoid tuning a budget on the inspected rescore.
+
+## Calibration amortization analysis — 2026-11-18
+
+- Derived a plug-in throughput break-even for the direct policy if calibration shots yield no logical output and cost the same as a memory shot: `N > C(1-p_static)/(p_static-p_policy)`.
+- At C=500, observed d3 policy/static rates imply about 618k, 228k, and 169k logical shots per calibration at bias ratios 2, 5, and 10. This is a resource-objective calculation only; plug-in error rates are uncertain and long-term stationarity is untested. It does not change LER per logical shot.
+- No new circuit samples. Current branch head before commit: `6ac1a17`.
+
+## Same-observable decoder-selection checkpoint — 2026-11-18
+
+- To separate code/task selection from decoder improvement, fixed the d=3 Z-memory circuit and logical observable, then compared correlation-enabled PyMatching graphs trained from X-profile, Z-profile, and pooled mean-channel DEMs. Frozen detector-only calibration selected X/Z graph; 1,000 500-shot calibration windows/profile; independent 100,000 logical shots/profile.
+- Classifier chose the correct profile for all 2,000 windows. Selected bank had 775 errors vs 779 for pooled graph in 200,000 same-observable samples; paired window-bootstrap interval for LER difference [-9e-5,+5e-5] includes zero. Static X graph also had 779; static Z graph 806. Oracle graph had 775. This is a negative result for decoder selection in this one d3 ratio10 condition despite accurate labels.
+- Important scope correction: prior basis-adaptation results switch X/Z memory circuits and thus the observable under test. They support a configurable known-basis memory task only, not an arbitrary logical-qubit memory or decoder-only gain. This distinction is now explicit in fundamental limits and handoff.
+- Unique development circuit samples now total 28,581,800 including preflights; qecsim code-capacity samples remain separate. No confirmatory data accessed.

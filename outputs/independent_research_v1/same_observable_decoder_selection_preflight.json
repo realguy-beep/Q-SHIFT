@@ -1,0 +1,78 @@
+{
+  "status": "preflight",
+  "d3_profile_circuits_byte_identical_to_source": {
+    "x_biased": true,
+    "z_biased": true
+  },
+  "decoder_graphs": {
+    "x_biased": {
+      "nodes": 40,
+      "edges": 142
+    },
+    "z_biased": {
+      "nodes": 40,
+      "edges": 142
+    },
+    "pooled": {
+      "nodes": 40,
+      "edges": 142
+    }
+  },
+  "rows": [
+    {
+      "kind": "calibration",
+      "profile": "x_biased",
+      "shots": 1000,
+      "seed": 2026112001,
+      "sampling_seconds": 0.000621900999249192,
+      "detectors": 40
+    },
+    {
+      "kind": "logical",
+      "profile": "x_biased",
+      "shots": 1000,
+      "seed": 2026112002,
+      "sampling_seconds": 0.00023498700102209114,
+      "decode_seconds": {
+        "x_biased": 0.001373872999465675,
+        "z_biased": 0.0005209619994275272,
+        "pooled": 0.0030760789995838422
+      },
+      "failures_preflight_only": {
+        "x_biased": 9,
+        "z_biased": 9,
+        "pooled": 9
+      },
+      "detectors": 40
+    },
+    {
+      "kind": "calibration",
+      "profile": "z_biased",
+      "shots": 1000,
+      "seed": 2026112003,
+      "sampling_seconds": 0.000801168998805224,
+      "detectors": 40
+    },
+    {
+      "kind": "logical",
+      "profile": "z_biased",
+      "shots": 1000,
+      "seed": 2026112004,
+      "sampling_seconds": 0.0004143429996474879,
+      "decode_seconds": {
+        "x_biased": 0.0002028560011240188,
+        "z_biased": 0.00016887300080270506,
+        "pooled": 0.00022160499975143466
+      },
+      "failures_preflight_only": {
+        "x_biased": 1,
+        "z_biased": 1,
+        "pooled": 1
+      },
+      "detectors": 40
+    }
+  ],
+  "projected_main_seconds": 1.1062363990276936,
+  "elapsed_seconds": 0.025464574000579887,
+  "stochastic_circuit_shots": 4000
+}

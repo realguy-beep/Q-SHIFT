@@ -33,3 +33,17 @@ For binary logical observable L and syndrome S under a fully specified channel, 
 `LER_ML = Σ_s min(P(S=s,L=0), P(S=s,L=1))`.
 
 This is a maximum-posterior logical-class decoder. It is distinct from choosing a most likely physical fault, an MWPM correction, or a mode among existing decoders. A quantitative decoder-only headroom claim requires either a trustworthy estimate of this quantity or a defensible lower bound for the exact circuit/noise distribution. Q-SHIFT has exact toy values, but no validated full d=3/d=5 logical-class posterior. Therefore the remaining recoverable inference gap and any fixed-distance physical error floor are unknown.
+
+## Calibration overhead versus logical throughput
+
+The detector-only policy experiment reports LER per logical-memory shot. It used C=500 full-circuit calibration shots before each N=100 logical shots and did not charge the fixed-Z baseline for calibration. If calibration shots cannot themselves produce useful logical outputs, a throughput comparison has a different break-even condition. With adaptive LER p_A and static LER p_S, adaptive correct outputs per total circuit shot exceed the static rate only when
+
+`N > C(1-p_S)/(p_S-p_A)`.
+
+Using the observed d=3 direct-development rates and C=500 gives illustrative minimum amortization horizons of about 618,000 logical shots at ratio2 (p_A=.00405, p_S=.004855), 228,000 at ratio5 (.00198 vs .00416), and 169,000 at ratio10 (.001165 vs .00412). These plug-in values have sampling uncertainty and assume each calibration shot consumes the same resources as one logical shot while yielding no usable logical result. They do not negate the per-logical-shot LER gain; they show that operational value depends on calibration reuse and the chosen resource objective. The fixed test did not measure stability over these long horizons.
+
+## Observable-specific memory is not a full logical-qubit channel
+
+The X-memory and Z-memory Stim circuits prepare and score different logical observables. Selecting between them after learning the noise profile is meaningful when the workload can choose which logical eigenstate/observable to store. It is not a same-task comparison for an arbitrary encoded qubit, whose logical X and Z channels both matter. The d=3 detector-selected basis experiment therefore supports a known-basis memory configuration result only. It does not establish improved arbitrary-state quantum memory or a decoder-only gain.
+
+A direct same-observable check held the Z-memory circuit and observable fixed and selected between two profile-conditioned PyMatching graphs using detector calibration. The selected bank had 775 failures versus 779 for a pooled static graph in 200,000 shots; its bootstrap interval included no change. This small result suggests that profile inference can be accurate while decoder selection yields little gain when the static graph already captures the relevant syndrome statistics. The tested graph family and one d=3 condition do not bound all decoder improvements.

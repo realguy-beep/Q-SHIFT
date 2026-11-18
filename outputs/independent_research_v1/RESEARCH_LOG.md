@@ -78,3 +78,14 @@
 - Re-scored existing direct-policy seed streams at calibration prefixes 25 and 100 in addition to the primary 500; no new random streams or model fitting. Results are exploratory and correlated because the windows are nested.
 - At ratios 2/5/10, the 25/100/500-shot per 100-logical-shot LER reductions versus static Z were 5.1/11.6/16.6%, 27.8/49.6/52.4%, and 57.5/71.2/71.7%. Ratio2/25-shot interval includes zero. This suggests the calibration cost/benefit depends strongly on bias magnitude.
 - No sample-count increase. Future evaluation should predeclare one calibration budget and an equal total-resource objective; do not choose a confirmatory budget from this rescore.
+
+## Checkpoint — calibration amortization
+
+- Computed a resource break-even for correct logical outputs per total circuit shot under an explicit assumption that 500 calibration shots are unusable and cost the same as logical memory shots. The minimum stationary horizon from observed d3 rates is roughly 618k/228k/169k logical shots per calibration at ratios 2/5/10.
+- This differs from per-logical-shot LER, which improves in the direct experiments, and makes the operational objective explicit. It is an uncertain plug-in calculation, not empirical evidence of noise stability. No new samples generated.
+
+## Checkpoint — same-observable decoder selection
+
+- Frozen profile classifier selected between profile-conditioned correlation-enabled PyMatching graphs on one fixed Z-memory circuit and observable. Static pooled model used elementwise-averaged X/Z channel probabilities. Correct profile was selected in all 2,000 calibration windows.
+- Test errors: 775 selected-bank vs 779 pooled in 200,000 source-circuit shots; 95% paired window-bootstrap interval includes zero. Fixed X graph also 779; fixed Z 806; oracle 775. Accurate model labels therefore added no statistically resolved decoder gain in this condition.
+- This also narrows interpretation of basis-alignment findings: X/Z memory evaluate different logical observables; large reductions are task-specific and do not establish arbitrary-state memory improvement. New total unique development shots: 28,581,800. Next candidate: robust same-observable model selection at multiple profiles or stop decoder-bank line if no distinct mechanism; keep fixed resource/task objective.

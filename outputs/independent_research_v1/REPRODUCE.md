@@ -67,3 +67,7 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the total-rate drift preflight and development run with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/adaptive_basis_rate_shift.py --preflight`, then run without the flag. It keeps the frozen classifier and compares p=.003 calibration with p=.006 logical circuits; DEM approximation threshold .004 is fixed in the protocol.
 
 - Reproduce the exploratory calibration-prefix rescore with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/adaptive_basis_cost_frontier.py`. It uses the fixed seeds and saved logical windows; it generates no new unique sample streams.
+
+- Reproduce the same-observable decoder-bank preflight and development run with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/same_observable_decoder_selection.py --preflight`, then run without the flag.
+
+- Recompute the plug-in calibration-throughput horizon with `python outputs/independent_research_v1/calibration_amortization.py`; this reads saved LER estimates and generates no shots.

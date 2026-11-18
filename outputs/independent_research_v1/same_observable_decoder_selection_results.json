@@ -1,0 +1,66 @@
+{
+  "status": "development_same_observable_validation",
+  "distance": 3,
+  "rounds": 5,
+  "bias_ratio": 10.0,
+  "gate_measurement_p": 0.003,
+  "logical_observable": "same Z-memory observable for all decoders and profiles",
+  "decoder_bank": "correlation-enabled PyMatching graphs from x-profile, z-profile, and pooled mean-channel DEM; approximate_disjoint_errors=.0018",
+  "pooled_channel": "elementwise average of source X- and Z-profile categorical channel vectors at each location",
+  "policy": "frozen detector-only binary LDA, 500-shot Z-memory calibration windows",
+  "primary_comparator": "single static pooled mean-channel graph",
+  "per_profile": [
+    {
+      "profile": "x_biased",
+      "selected_failures": 667,
+      "pooled_failures": 668,
+      "oracle_failures": 667,
+      "x_selected_windows": 1000,
+      "z_selected_windows": 0
+    },
+    {
+      "profile": "z_biased",
+      "selected_failures": 108,
+      "pooled_failures": 111,
+      "oracle_failures": 108,
+      "x_selected_windows": 0,
+      "z_selected_windows": 1000
+    }
+  ],
+  "rates": {
+    "selected": 0.003875,
+    "pooled": 0.003895,
+    "x_biased": 0.003895,
+    "z_biased": 0.00403,
+    "oracle": 0.003875
+  },
+  "selected_minus_pooled": -2.0000000000000052e-05,
+  "selected_minus_pooled_cluster_bootstrap_95_ci": [
+    -9.000000000000067e-05,
+    4.99999999999997e-05
+  ],
+  "relative_reduction_vs_pooled": 0.005134788189987138,
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 2026112091,
+  "source_builder_matches": {
+    "x_biased": true,
+    "z_biased": true
+  },
+  "decoder_graphs": {
+    "x_biased": {
+      "nodes": 40,
+      "edges": 142
+    },
+    "z_biased": {
+      "nodes": 40,
+      "edges": 142
+    },
+    "pooled": {
+      "nodes": 40,
+      "edges": 142
+    }
+  },
+  "elapsed_seconds": 0.6087966510003753,
+  "stochastic_circuit_shots": 1200000,
+  "scope": "decoder selection with a fixed circuit and observable; development-only and not compared against every possible static decoder"
+}
