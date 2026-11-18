@@ -57,3 +57,7 @@ Although the detector-only classifier identified the X/Z profile in all 2,000 ca
 
 The larger basis-alignment LER reductions score different logical observables: X-memory reports an X observable and Z-memory reports a Z observable. Those comparisons are valid for known-basis memory tasks but do not show that a general logical-qubit channel or a fixed-observable decoder improves. Any arbitrary-state memory claim needs both conjugate logical error channels and a task-matched objective.
 
+# Local-H XZZX transpilation screen
+
+The fixed checkerboard local-H transform produced deterministic detectors and matched qubits, rounds, detectors, and two-qubit pairs, but its exact CNOT conjugation required H-CX-H in many locations. Modeling the extra H gates with the same one-qubit Pauli noise raised H/noise targets by 150% at d3 and 167% at d5. The XZZX-transformed circuit then had higher LER than CSS in all four d3/d5 × X/Z-bias cells, by 1.33× to 19.8×. The negative result applies to this explicit gate-level transpilation and noise model. It should not be generalized to an XZZX schedule compiled to native two-qubit gates or a device where single-qubit frame changes are effectively noiseless.
+

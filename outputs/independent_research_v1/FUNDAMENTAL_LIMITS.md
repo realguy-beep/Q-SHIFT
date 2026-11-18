@@ -18,6 +18,8 @@ For a fixed stabilizer code and circuit, maximum-likelihood decoding is optimal 
 
 A decoder-only comparison holds the code, circuit, physical noise, measurement schedule, and information set fixed. Increasing distance, adding rounds, changing to XZZX or another code, or changing syndrome extraction alters resources and often the error mechanisms. Those are legitimate engineering directions, but their gain must be reported separately from decoder gains.
 
+The checkerboard local-H XZZX screen is a finite-size code/circuit co-design result. This exact gate-level transform increased one-qubit H/noise targets by 150–167% and worsened LER in all four tested d=3/5 and X/Z-biased cells. It rejects this transpilation under the declared noisy-H model, not XZZX with a native schedule. A fair follow-up would need a concrete native-gate schedule and matched physical noise/resource budget; no threshold or arbitrary-state-memory conclusion follows from this screen.
+
 No positive lower bound on the achievable LER for the exact Q-SHIFT circuit has been established in this checkpoint. The numerical sample bounds above are statistical requirements, not a physical error floor proof. Further study must distinguish irreducible logical mechanisms at fixed distance from recoverable model or inference errors.
 
 ## Empirical ceiling for the existing correlation-mode pair

@@ -141,3 +141,10 @@
 - Classifier chose the correct profile for all 2,000 windows. Selected bank had 775 errors vs 779 for pooled graph in 200,000 same-observable samples; paired window-bootstrap interval for LER difference [-9e-5,+5e-5] includes zero. Static X graph also had 779; static Z graph 806. Oracle graph had 775. This is a negative result for decoder selection in this one d3 ratio10 condition despite accurate labels.
 - Important scope correction: prior basis-adaptation results switch X/Z memory circuits and thus the observable under test. They support a configurable known-basis memory task only, not an arbitrary logical-qubit memory or decoder-only gain. This distinction is now explicit in fundamental limits and handoff.
 - Unique development circuit samples now total 28,581,800 including preflights; qecsim code-capacity samples remain separate. No confirmatory data accessed.
+
+## XZZX code/circuit co-design checkpoint — 2026-11-18
+
+- Implemented a fixed checkerboard local-H conjugation of the source rotated-memory circuit. A first gate rewrite incorrectly treated H-CX-H as a reversed CX and produced nondeterministic detectors; it stopped before any shots. The corrected exact conjugation compiles marked-control interactions as H-CX-H, models each added H with the source one-qubit Pauli channel, and passed noiseless deterministic detector and DEM checks.
+- Core resources matched (qubits, detectors, rounds, two-qubit pairs), but one-qubit H/noise targets increased 40→100 at d3 and 216→576 at d5. Fixed 500k/cell run completed in 11.9s.
+- XZZX-transformed LER was worse than CSS in all conditions: d3 X-bias .009594 vs .007216 (1.33x), d3 Z-bias .006532 vs .000982 (6.65x), d5 X-bias .006752 vs .004534 (1.49x), d5 Z-bias .003332 vs .000168 (19.8x). This rejects this local-H transpilation under its explicit noisy-H cost model; it does not reject native-compiled XZZX generally.
+- Cumulative unique Q-SHIFT development circuit samples now 32,589,800 including preflights; failed deterministic gate preflight had no shots. No confirmatory data accessed.

@@ -1,0 +1,510 @@
+{
+  "status": "preflight",
+  "stim_version": "1.16.0",
+  "pymatching_version": "2.4.0",
+  "gate_meas_p": 0.003,
+  "bias_ratio": 10.0,
+  "distance_rounds": {
+    "3": 5,
+    "5": 9
+  },
+  "source_css_reproductions": {
+    "3_x_biased": true,
+    "3_z_biased": true,
+    "5_x_biased": true,
+    "5_z_biased": true
+  },
+  "core_resource_match": {
+    "3_x_biased": true,
+    "3_z_biased": true,
+    "5_x_biased": true,
+    "5_z_biased": true
+  },
+  "resource_details": {
+    "3_x_biased": {
+      "data_qubits": 9,
+      "hadamard_data_qubits": 5,
+      "css": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 6,
+          "Z_ERROR": 0
+        },
+        "noise_targets": {
+          "one_qubit": 40,
+          "two_qubit_pairs": 120,
+          "measurement_flips": 49
+        },
+        "ticks": 35,
+        "hadamard_targets": 40
+      },
+      "xzzx": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 70,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 9,
+          "Z_ERROR": 5
+        },
+        "noise_targets": {
+          "one_qubit": 100,
+          "two_qubit_pairs": 120,
+          "measurement_flips": 49
+        },
+        "ticks": 35,
+        "hadamard_targets": 100
+      }
+    },
+    "3_z_biased": {
+      "data_qubits": 9,
+      "hadamard_data_qubits": 5,
+      "css": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 6,
+          "Z_ERROR": 0
+        },
+        "noise_targets": {
+          "one_qubit": 40,
+          "two_qubit_pairs": 120,
+          "measurement_flips": 49
+        },
+        "ticks": 35,
+        "hadamard_targets": 40
+      },
+      "xzzx": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 70,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 9,
+          "Z_ERROR": 5
+        },
+        "noise_targets": {
+          "one_qubit": 100,
+          "two_qubit_pairs": 120,
+          "measurement_flips": 49
+        },
+        "ticks": 35,
+        "hadamard_targets": 100
+      }
+    },
+    "5_x_biased": {
+      "data_qubits": 25,
+      "hadamard_data_qubits": 13,
+      "css": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 18,
+          "PAULI_CHANNEL_2": 36,
+          "X_ERROR": 10,
+          "Z_ERROR": 0
+        },
+        "noise_targets": {
+          "one_qubit": 216,
+          "two_qubit_pairs": 720,
+          "measurement_flips": 241
+        },
+        "ticks": 63,
+        "hadamard_targets": 216
+      },
+      "xzzx": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 378,
+          "PAULI_CHANNEL_2": 36,
+          "X_ERROR": 21,
+          "Z_ERROR": 13
+        },
+        "noise_targets": {
+          "one_qubit": 576,
+          "two_qubit_pairs": 720,
+          "measurement_flips": 241
+        },
+        "ticks": 63,
+        "hadamard_targets": 576
+      }
+    },
+    "5_z_biased": {
+      "data_qubits": 25,
+      "hadamard_data_qubits": 13,
+      "css": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 18,
+          "PAULI_CHANNEL_2": 36,
+          "X_ERROR": 10,
+          "Z_ERROR": 0
+        },
+        "noise_targets": {
+          "one_qubit": 216,
+          "two_qubit_pairs": 720,
+          "measurement_flips": 241
+        },
+        "ticks": 63,
+        "hadamard_targets": 216
+      },
+      "xzzx": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 378,
+          "PAULI_CHANNEL_2": 36,
+          "X_ERROR": 21,
+          "Z_ERROR": 13
+        },
+        "noise_targets": {
+          "one_qubit": 576,
+          "two_qubit_pairs": 720,
+          "measurement_flips": 241
+        },
+        "ticks": 63,
+        "hadamard_targets": 576
+      }
+    }
+  },
+  "shots_per_condition": 100,
+  "conditions": [
+    {
+      "distance": 3,
+      "profile": "x_biased",
+      "code": "css",
+      "seed": 2026112101,
+      "shots": 100,
+      "failures": 0,
+      "ler": 0.0,
+      "wilson_95": [
+        3.469446951953614e-18,
+        0.03699349820698568
+      ],
+      "sampling_seconds": 0.0003175630008627195,
+      "decode_seconds": 0.0004285199993319111,
+      "resources": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 6,
+          "Z_ERROR": 0
+        },
+        "noise_targets": {
+          "one_qubit": 40,
+          "two_qubit_pairs": 120,
+          "measurement_flips": 49
+        },
+        "ticks": 35,
+        "hadamard_targets": 40
+      }
+    },
+    {
+      "distance": 3,
+      "profile": "x_biased",
+      "code": "xzzx",
+      "seed": 2026112102,
+      "shots": 100,
+      "failures": 0,
+      "ler": 0.0,
+      "wilson_95": [
+        3.469446951953614e-18,
+        0.03699349820698568
+      ],
+      "sampling_seconds": 0.00015765200078021735,
+      "decode_seconds": 0.00023279499873751774,
+      "resources": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 70,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 9,
+          "Z_ERROR": 5
+        },
+        "noise_targets": {
+          "one_qubit": 100,
+          "two_qubit_pairs": 120,
+          "measurement_flips": 49
+        },
+        "ticks": 35,
+        "hadamard_targets": 100
+      }
+    },
+    {
+      "distance": 3,
+      "profile": "z_biased",
+      "code": "css",
+      "seed": 2026112103,
+      "shots": 100,
+      "failures": 0,
+      "ler": 0.0,
+      "wilson_95": [
+        3.469446951953614e-18,
+        0.03699349820698568
+      ],
+      "sampling_seconds": 0.00014984500012360513,
+      "decode_seconds": 0.0002289139993081335,
+      "resources": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 10,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 6,
+          "Z_ERROR": 0
+        },
+        "noise_targets": {
+          "one_qubit": 40,
+          "two_qubit_pairs": 120,
+          "measurement_flips": 49
+        },
+        "ticks": 35,
+        "hadamard_targets": 40
+      }
+    },
+    {
+      "distance": 3,
+      "profile": "z_biased",
+      "code": "xzzx",
+      "seed": 2026112104,
+      "shots": 100,
+      "failures": 0,
+      "ler": 0.0,
+      "wilson_95": [
+        3.469446951953614e-18,
+        0.03699349820698568
+      ],
+      "sampling_seconds": 0.00028850999842688907,
+      "decode_seconds": 0.00027073199998994824,
+      "resources": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 70,
+          "PAULI_CHANNEL_2": 20,
+          "X_ERROR": 9,
+          "Z_ERROR": 5
+        },
+        "noise_targets": {
+          "one_qubit": 100,
+          "two_qubit_pairs": 120,
+          "measurement_flips": 49
+        },
+        "ticks": 35,
+        "hadamard_targets": 100
+      }
+    },
+    {
+      "distance": 5,
+      "profile": "x_biased",
+      "code": "css",
+      "seed": 2026112105,
+      "shots": 100,
+      "failures": 0,
+      "ler": 0.0,
+      "wilson_95": [
+        3.469446951953614e-18,
+        0.03699349820698568
+      ],
+      "sampling_seconds": 0.0007352370012085885,
+      "decode_seconds": 0.0022379519996320596,
+      "resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 18,
+          "PAULI_CHANNEL_2": 36,
+          "X_ERROR": 10,
+          "Z_ERROR": 0
+        },
+        "noise_targets": {
+          "one_qubit": 216,
+          "two_qubit_pairs": 720,
+          "measurement_flips": 241
+        },
+        "ticks": 63,
+        "hadamard_targets": 216
+      }
+    },
+    {
+      "distance": 5,
+      "profile": "x_biased",
+      "code": "xzzx",
+      "seed": 2026112106,
+      "shots": 100,
+      "failures": 1,
+      "ler": 0.01,
+      "wilson_95": [
+        0.0017674320641406505,
+        0.054486196178705315
+      ],
+      "sampling_seconds": 0.0009526300000288757,
+      "decode_seconds": 0.0015668960004404653,
+      "resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 378,
+          "PAULI_CHANNEL_2": 36,
+          "X_ERROR": 21,
+          "Z_ERROR": 13
+        },
+        "noise_targets": {
+          "one_qubit": 576,
+          "two_qubit_pairs": 720,
+          "measurement_flips": 241
+        },
+        "ticks": 63,
+        "hadamard_targets": 576
+      }
+    },
+    {
+      "distance": 5,
+      "profile": "z_biased",
+      "code": "css",
+      "seed": 2026112107,
+      "shots": 100,
+      "failures": 0,
+      "ler": 0.0,
+      "wilson_95": [
+        3.469446951953614e-18,
+        0.03699349820698568
+      ],
+      "sampling_seconds": 0.0006777790003980044,
+      "decode_seconds": 0.0013248459999886109,
+      "resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 18,
+          "PAULI_CHANNEL_2": 36,
+          "X_ERROR": 10,
+          "Z_ERROR": 0
+        },
+        "noise_targets": {
+          "one_qubit": 216,
+          "two_qubit_pairs": 720,
+          "measurement_flips": 241
+        },
+        "ticks": 63,
+        "hadamard_targets": 216
+      }
+    },
+    {
+      "distance": 5,
+      "profile": "z_biased",
+      "code": "xzzx",
+      "seed": 2026112108,
+      "shots": 100,
+      "failures": 0,
+      "ler": 0.0,
+      "wilson_95": [
+        3.469446951953614e-18,
+        0.03699349820698568
+      ],
+      "sampling_seconds": 0.0008520299998053815,
+      "decode_seconds": 0.0015990150004654424,
+      "resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "pauli_channel_counts": {
+          "PAULI_CHANNEL_1": 378,
+          "PAULI_CHANNEL_2": 36,
+          "X_ERROR": 21,
+          "Z_ERROR": 13
+        },
+        "noise_targets": {
+          "one_qubit": 576,
+          "two_qubit_pairs": 720,
+          "measurement_flips": 241
+        },
+        "ticks": 63,
+        "hadamard_targets": 576
+      }
+    }
+  ],
+  "xzzx_vs_css": [
+    {
+      "distance": 3,
+      "profile": "x_biased",
+      "css_failures": 0,
+      "xzzx_failures": 0,
+      "css_ler": 0.0,
+      "xzzx_ler": 0.0,
+      "xzzx_over_css_rate_ratio": {
+        "ratio": null,
+        "conditional_exact_95_ci": null,
+        "equal_rate_exact_p": null
+      }
+    },
+    {
+      "distance": 3,
+      "profile": "z_biased",
+      "css_failures": 0,
+      "xzzx_failures": 0,
+      "css_ler": 0.0,
+      "xzzx_ler": 0.0,
+      "xzzx_over_css_rate_ratio": {
+        "ratio": null,
+        "conditional_exact_95_ci": null,
+        "equal_rate_exact_p": null
+      }
+    },
+    {
+      "distance": 5,
+      "profile": "x_biased",
+      "css_failures": 0,
+      "xzzx_failures": 1,
+      "css_ler": 0.0,
+      "xzzx_ler": 0.01,
+      "xzzx_over_css_rate_ratio": {
+        "ratio": null,
+        "conditional_exact_95_ci": null,
+        "equal_rate_exact_p": 1.0
+      }
+    },
+    {
+      "distance": 5,
+      "profile": "z_biased",
+      "css_failures": 0,
+      "xzzx_failures": 0,
+      "css_ler": 0.0,
+      "xzzx_ler": 0.0,
+      "xzzx_over_css_rate_ratio": {
+        "ratio": null,
+        "conditional_exact_95_ci": null,
+        "equal_rate_exact_p": null
+      }
+    }
+  ],
+  "elapsed_seconds": 0.26813390699862794,
+  "projected_main_seconds": 60.10457999764185,
+  "stochastic_circuit_shots": 800,
+  "scope": "fixed XZZX local-Clifford code/circuit comparison with abstract logical-Z memory task held fixed; not a threshold or arbitrary qubit process claim"
+}

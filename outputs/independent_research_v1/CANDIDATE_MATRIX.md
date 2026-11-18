@@ -15,7 +15,7 @@ Scores are 1 (low) to 5 (high). Improvement and novelty are speculative upside, 
 | Bayesian noise-profile inference plus uncertainty-aware decoder selection | Noise inference / adaptation | 3 | 5 | 4 | 3 | 5 | 3 | 3 | 4 | 5 | 3 | 4 | 4 | A frozen detector-only LDA identified synthetic X/Z bias across d=3,5,7; same-observable decoder selection was neutral vs pooled matching at d3, while choosing the measured logical basis reduced task-specific LER 16.6%–71.7%. Basis switching is not an arbitrary-qubit decoder gain; drift and equal-resource value remain open. |
 | Change-point detection with bounded adaptive compute | Online adaptation | 2 | 4 | 3 | 2 | 4 | 3 | 3 | 4 | 5 | 2 | 4 | 4 | Fundamentally different from current static regime selection, but likely gains in latency or robustness rather than enormous LER ratios. |
 | Importance sampling for rare logical faults | Rare-event statistics | 4 | 4 | 4 | 4 | 5 | 3 | 3 | 3 | 4 | 2 | 2 | 4 | High value for mapping logical error mechanisms and estimating tail rates, but unbiasedness/weight variance and support coverage must be demonstrated. |
-| XZZX / code-distance / syndrome-extraction co-design | Code and circuit | 5 | 3 | 4 | 4 | 3 | 1 | 1 | 3 | 3 | 1 | 1 | 3 | High resource-direction upside; report separately from decoder-only gains and compare at declared qubit/time overhead. |
+| XZZX / code-distance / syndrome-extraction co-design | Code and circuit | 5 | 3 | 4 | 4 | 3 | 1 | 1 | 3 | 3 | 1 | 1 | 3 | A fixed local-H circuit transform passed detector checks but used 1.5–1.67× more one-qubit H/noise targets and had worse LER in all four d3/d5 biased cells. Do not generalize to hardware-native XZZX schedules; follow-up must specify physical H/CZ costs and noise. |
 
 ## Proposed feasibility shortlist
 
