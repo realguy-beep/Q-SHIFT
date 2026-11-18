@@ -272,3 +272,8 @@ The relative-choice model trained on two regimes transferred to a third across b
 ### Cross-basis holdout failed — 2026-11-18
 
 The relative-choice classifier did not transfer from one memory basis to the other (1.54% macro worsening; X-memory holdout -3.72%, one cell >5% harm). No replication. Prior leave-one-regime-out evidence requires both bases in training. See `../independent_research_v2/fast_flagged_logistic_leave_basis_out_report.md`.
+
+
+### Ratio-2 robustness extension — 2026-11-18
+
+The ratio-10 frozen selector passed physical ratio 2 on two independent d3 streams (17.38%/17.90% macro gains, ~1.35x cost; all cells favorable). Static bias-strength evidence now includes ratio 2, 5, and one combined shift. Cross-basis and d5 transfer remain negative. Details: `../independent_research_v2/fast_flagged_logistic_bias_ratio2_report.md`.

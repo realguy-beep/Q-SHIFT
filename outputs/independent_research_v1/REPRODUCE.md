@@ -452,3 +452,8 @@ Run `fast_flagged_logistic_leave_profile_out.py` and `fast_flagged_logistic_leav
 ### Leave-one-memory-basis-out transfer screen
 
 Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_leave_basis_out.py`. This is a single frozen screen; the gate failed, so there is no replication. Protocol and negative result are in the same v2 directory.
+
+
+### Ratio-2 frozen bias-shift challenge
+
+Run `fast_flagged_logistic_bias_ratio2.py` and its `_replication.py` counterpart from `outputs/independent_research_v2/` with the project venv. These freeze nominal ratio-10 models/graphs and test physical ratio 2. Protocol and report are in the same directory.

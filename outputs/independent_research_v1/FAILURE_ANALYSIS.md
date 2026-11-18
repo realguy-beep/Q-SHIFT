@@ -296,3 +296,8 @@ The relative-choice classifier trained without labels from one Pauli regime pass
 ### Cross-basis transfer breaks relative-choice generalization
 
 Although leave-one-regime-out passed when both memory bases appeared in training, leave-one-basis-out failed: macro LER worsened 1.54%, and the X-memory holdout fold worsened 3.72%, with one cell exceeding 5% harm. The model's relative target is not basis-invariant under this encoding. Any transfer statement must specify that training includes the target basis; do not describe this as universal cross-profile or cross-task decoding.
+
+
+### Ratio-2 bias shift adds static robustness evidence
+
+The frozen d3 selector retained ~17%–18% macro gains when anisotropic profiles were weakened from ratio 10 to ratio 2, on two independent streams and at ~1.35x cost. This extends the tested static bias range but says nothing about temporal drift, graph uncertainty, cross-basis transfer, or distance scaling. Do not merge these boundaries into a general robustness claim.

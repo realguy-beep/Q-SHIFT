@@ -677,3 +677,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Z-memory holdout was slightly positive (+.48% macro); X-memory holdout worsened 3.72%, with all three X cells worse and X-memory/balanced harmed 5.05%, beyond the 5% limit. No replication/tuning followed.
 - This narrows leave-one-regime-out transfer: target memory basis must be represented in classifier training. Added 12,060,000 unique samples; cumulative Q-SHIFT development count: 245,448,200. No confirmatory/sealed data.
 - Report: `outputs/independent_research_v2/fast_flagged_logistic_leave_basis_out_report.md`.
+
+
+## Frozen selector at bias ratio 2 — fresh-seed replication — 2026-11-18
+
+- Kept nominal ratio-10 coefficients and matcher graphs fixed; physical gate/measurement p=.003 channels changed to bias ratio 2. First d3 six-condition stream: macro LER .005660→.004677 (17.38%), paired macro delta -.000984 (95% CI [-.001037,-.000930]), cost 1.324x; all six cell intervals favored selector.
+- Independent stream: .005616→.004611 (17.90%), paired delta -.001005 (95% CI [-.001058,-.000952]), cost 1.374x; all six cell intervals again favored selector. Both gates passed. Balanced channels were unchanged controls.
+- This is a stationary bias-strength challenge only; cross-basis transfer and d5 transfer remain negative. Added 6,120,000 unique samples; cumulative Q-SHIFT development samples: 251,568,200. No confirmatory/sealed evidence.
+- Full report: `outputs/independent_research_v2/fast_flagged_logistic_bias_ratio2_report.md`.

@@ -165,3 +165,8 @@ Two independent three-fold runs withheld each Pauli regime from training and ret
 ### Basis-agnostic relative-choice transfer rejected
 
 Leave-one-memory-basis-out testing failed (1.54% macro worsening; X-memory holdout -3.72%, one cell >5% harm). The earlier profile transfer required both bases in training. Keep relative-choice claims task/basis-scoped and do not call it basis-agnostic. No replication. Report: `../independent_research_v2/fast_flagged_logistic_leave_basis_out_report.md`.
+
+
+### Ratio-2 static bias-strength challenge
+
+Two ratio-10 frozen-model streams at physical ratio 2 gave 17.38%/17.90% macro gains at ~1.35x cost with all six cells favorable. This extends stationary bias-strength evidence; the cross-basis and d5 transfer failures remain. Report: `../independent_research_v2/fast_flagged_logistic_bias_ratio2_report.md`.

@@ -100,3 +100,8 @@ The relative-choice classifier transferred to one withheld d3 Pauli regime when 
 ### Basis holdout failure further limits transfer claims
 
 The relative-choice model failed when one memory basis was excluded from training. The positive held-out-regime result is therefore basis-conditional and should not be described as a universal decoder or general transfer algorithm.
+
+
+### Ratio-2 shift strengthens evidence, not novelty
+
+The frozen selector passed one more stationary bias-strength shift at ratio 2. This adds empirical scope for the established supervised selector but is not an algorithmic novelty claim and does not address temporal or hardware robustness.

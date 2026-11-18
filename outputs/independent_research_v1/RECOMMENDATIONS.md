@@ -234,3 +234,8 @@ A model trained on two of the three d3 Pauli regimes transferred to the excluded
 ### Basis transfer limitation
 
 Do not deploy a relative-choice classifier trained on one logical memory basis to the other: the leave-one-basis-out screen worsened macro LER and violated the per-cell gate. The positive leave-one-profile-out result only applies when the target basis was represented in training and its matching graph is profile-matched.
+
+
+### Static bias-strength range
+
+The fixed d3 selector has now passed ratio 5, ratio 2, and a ratio-5 plus doubled-measurement joint shift. These support a bounded stationary Pauli-composition range. Do not extrapolate to time-varying or unknown matcher graphs; cross-basis transfer and d5 transfer failed.

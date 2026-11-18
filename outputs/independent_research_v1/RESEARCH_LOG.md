@@ -509,3 +509,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 
 - Leave-one-memory-basis-out training failed: macro LER worsened 1.54% at 1.366x; paired macro interval favored baseline. The X-memory held-out fold worsened 3.72%, and one cell exceeded 5% harm. No replication.
 - Therefore prior leave-one-regime-out transfer requires training labels from the target memory basis. Do not claim basis-agnostic selection. Cumulative development samples 245,448,200; no sealed/confirmatory data. Details: `outputs/independent_research_v2/fast_flagged_logistic_leave_basis_out_report.md`.
+
+
+## Ratio-2 frozen-selector challenge passed twice — 2026-11-18
+
+- With ratio-10 training and graphs frozen, physical X/Z-biased channels at ratio 2 yielded 17.38% and 17.90% macro LER reductions on independent d3 streams, at 1.324x/1.374x total inference cost; all six per-cell paired intervals favored selector.
+- This strengthens static bias-strength robustness for the tested channel family, but not temporal drift or unknown-graph adaptation. Cross-basis and d5 transfer remain failed. Cumulative development samples: 251,568,200; no sealed/confirmatory data. See `outputs/independent_research_v2/fast_flagged_logistic_bias_ratio2_report.md`.

@@ -477,3 +477,8 @@ A shared selector fit on two Pauli regimes transferred to the third with profile
 ## Leave-one-memory-basis-out selector transfer failed
 
 Training the relative-choice classifier on one basis and testing the other increased macro LER 1.54% (.0051605→.0052402) at 1.366x cost. Paired macro difference was +.0000797 (approximate 95% CI [.0000547,.0001047]); the X-memory holdout fold worsened 3.72%, with one cell harmed 5.05%. No replication followed the frozen gate failure. This limits leave-one-regime-out claims to cases where target basis is represented in training. See `../independent_research_v2/fast_flagged_logistic_leave_basis_out_report.md`.
+
+
+## Frozen selector at bias ratio 2
+
+A ratio-10 trained selector and matcher bank were applied without change to physical ratio-2 channels. Two independent d3 streams produced macro LER reductions of 17.38% and 17.90% at 1.324x/1.374x inference cost; paired macro difference intervals were [-.001037,-.000930] and [-.001058,-.000952], and all six per-cell intervals favored the selector on both streams. This supports the tested stationary bias shift only; details: `../independent_research_v2/fast_flagged_logistic_bias_ratio2_report.md`.
