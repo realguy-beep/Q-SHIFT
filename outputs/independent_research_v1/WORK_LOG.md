@@ -456,3 +456,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - No sampling. Under an optimistic known-baseline IID design, CSS equal-mix point .000067 implies candidate target 6.7e-9.
 - The XZZX point is 3e-6, ~448x above. At the target, 95% one-sided rate bounding needs ~447M zero-failure shots, or ~708M allowing one failure. Baseline uncertainty and root heterogeneity increase this.
 - Decision: no extra d11 sample budget can turn the observed candidate into 10,000x. Need a new rate-reducing mechanism before large evaluation.
+
+
+## d13 feasibility stop — 2026-11-18
+
+- First preflight completed all four cells but failed only in the final print statement; preserved in `xzzx_basis_factorial_d13_preflight_failed_attempt.json`. Fixed typo and replayed identical seeds; all resource/DEM/noiseless/scalar-batch checks passed.
+- Corrected preflight took 16.61s and projected 454.70s for 500k x 4, exceeding the 300s cap. No d13 main samples. Unique preflight samples=40,000.
+- Total unique Q-SHIFT development samples now 62,500,000. No sealed/confirmatory data.
+- Switch to a different family or an explicit speed/rare-event method; do not shrink shots after observing the stop.

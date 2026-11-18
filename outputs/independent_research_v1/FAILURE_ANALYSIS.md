@@ -174,3 +174,6 @@ At d9 the balanced-task XZZX gain is driven by Z-memory: 18 XZZX-Z errors vs 260
 
 
 The d11 balanced aggregate is driven by 3 versus 67 Z-memory failures; both X-memory cells had zero failures in 500k. Therefore the X-memory architecture comparison is unresolved, not tied. The aggregate rate ratio .0448 has a broad exact interval (.009–.137), and does not establish the 1e-4 goal. The run took 282s, leaving little headroom under the 300s cap.
+
+
+The current four-cell d13 screen is too expensive under the 300-second run cap: preflight projects 454.7s. Do not reduce shot count or split conditions after seeing results to force a d13 claim; a new computational design is required. The d11 result is the highest-distance full factorial checkpoint.

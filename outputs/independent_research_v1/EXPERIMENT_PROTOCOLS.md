@@ -204,3 +204,8 @@ Completed predeclared d11 CSS/XZZX basis screen. Protocol and JSON artifacts: `x
 ## d11 evidence budget for the relative target
 
 Deterministic sample-size calculation only; no new sampling. Assumes the observed equal-weight CSS baseline point is known and an IID single stream. See `xzzx_d11_target_budget.json` for exact rarity-budget arithmetic and caveats.
+
+
+## d13 runtime feasibility stop
+
+The fresh d13 preflight passed resource and decoder checks but projected 454.7s for the fixed main design, above the 300s gate. The preserved reporting-error attempt and corrected preflight are `xzzx_basis_factorial_d13_preflight_failed_attempt.json` and `xzzx_basis_factorial_d13_preflight.json`. No d13 main samples were generated.

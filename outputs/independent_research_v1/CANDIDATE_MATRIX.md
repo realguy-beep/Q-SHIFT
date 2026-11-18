@@ -81,3 +81,6 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 
 
 **d11 challenge:** equal-weight separate-basis XZZX/CSS=.0448 (.009–.137), based on 3 vs 67 Z-memory errors; both X-memory arms had zero errors. Runtime 282s and 2.69 GiB. The finite-size tradeoff persists, but d11 is underpowered for X-memory and near the declared runtime cap.
+
+
+**Scalability boundary:** the d13 four-cell 500k/condition screen projected 455s at preflight, above the 300s cap. No d13 LER result exists; current screen stops at d11.

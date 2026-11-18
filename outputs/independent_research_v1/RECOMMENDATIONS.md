@@ -128,3 +128,6 @@ The balanced separate-memory trend continues through d11 (point ratio .0448), bu
 
 
 Do not scale the d11 XZZX run just to narrow a relative-rate interval around a point rate 448x above the target. Progress toward 10,000-fold reduction requires a mechanism that lowers the rate, plus very large independent evidence; ordinary extra sampling alone is not a path to the target.
+
+
+Do not pursue d13 with the current 500k-per-cell four-circuit batch under a 300s cap; it projects 455s. The balanced code-design sweep should pause at d11 until a faster or more sample-efficient method is justified. Focus next on a different research family or a concrete decoder acceleration hypothesis.

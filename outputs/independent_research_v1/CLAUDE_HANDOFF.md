@@ -154,3 +154,6 @@ At d11, CSS-X and XZZX-X each had 0/500k failures; CSS-Z had 67 and XZZX-Z 3. Eq
 
 
 The d11 equal-weight CSS point LER .000067 implies candidate target 6.7e-9 for 10,000x reduction. The XZZX point is 3e-6 (about448x above). Optimistic one-sided IID evidence alone would take ~447M zero-failure candidate shots (or708M with one), before baseline uncertainty/roots/model-selection. A genuinely lower-rate mechanism is needed before a huge run is useful.
+
+
+The d13 preflight passed structural checks but projected 454.7s for 500k per cell, above the 300s cap; no d13 main data exist. The current full factorial runtime envelope ends at d11. Any d13 follow-up needs a prospectively designed streaming/faster decode or a high-efficiency estimator, not post-hoc reduction of shots.

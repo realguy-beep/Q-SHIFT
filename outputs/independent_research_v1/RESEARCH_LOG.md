@@ -334,3 +334,6 @@ The d11 balanced X/Z task result continues the XZZX/CSS trend but with a broad i
 
 
 A d11 exact rare-event budget shows the current balanced-memory XZZX point is ~448x above the 1e-4 relative target. Even if a future candidate hit the target, an optimistic one-sided IID 95% bound requires ~447M zero-failure shots. Do not scale sampling without a rate-lowering hypothesis.
+
+
+The d13 balanced-memory factorial cannot fit the fixed runtime cap: preflight projects 455s. Preserve this as a scalability constraint and stop the sweep at d11 unless a new, independently justified computational method is designed.

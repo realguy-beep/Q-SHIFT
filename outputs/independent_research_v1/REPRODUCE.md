@@ -298,3 +298,12 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xz
 ```
 
 This is deterministic and generates no circuit samples.
+
+
+### d13 runtime feasibility only
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_basis_factorial_d13.py --preflight
+```
+
+The protocol's 300s stop gate failed; do not run the main command without a new predeclared design.

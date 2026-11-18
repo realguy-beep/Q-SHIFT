@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 62460000,
+  "stochastic_qshift_shots_generated": 62500000,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -239,7 +239,7 @@
     },
     "interpretation": "all three BP+LSD variants worse in every tested condition; one distance/configuration/approximate model only; not an integration or superiority claim"
   },
-  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples; includes 20,000 all-fault instrumentation preflight and 200,000 all-fault composition development samples; excludes 50,000 synthetic instrumentation checks; includes fresh 40,000-shot preflight and 2,000,000-shot main d5 CSS/XZZX by memory-basis factorial screen; includes independent 40,000-shot preflight and 2,000,000-shot d5 XZZX/CSS basis-factorial development replication; includes d3/d7 CSS/XZZX basis-scale preflight 80,000 and main 4,000,000 development samples; an identical-seed replay after a preflight reporting bug is counted once; includes d9 CSS/XZZX four-cell basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d11 CSS/XZZX basis-factorial preflight 40,000 and main 2,000,000 development samples",
+  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples; includes 20,000 all-fault instrumentation preflight and 200,000 all-fault composition development samples; excludes 50,000 synthetic instrumentation checks; includes fresh 40,000-shot preflight and 2,000,000-shot main d5 CSS/XZZX by memory-basis factorial screen; includes independent 40,000-shot preflight and 2,000,000-shot d5 XZZX/CSS basis-factorial development replication; includes d3/d7 CSS/XZZX basis-scale preflight 80,000 and main 4,000,000 development samples; an identical-seed replay after a preflight reporting bug is counted once; includes d9 CSS/XZZX four-cell basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d11 CSS/XZZX basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d13 runtime-gate preflight 40,000 samples; deterministic rerun after output typo is counted once; no d13 main samples",
   "stochastic_dem_samples_generated": 780000,
   "rare_event_importance_sampling": {
     "status": "positive_development_method_result_limited_to_approximate_dem",
@@ -22940,6 +22940,50 @@
       "Ignores root clustering, multiple conditions, model selection, and code-family selection.",
       "The current d11 XZZX point rate is above the target; more shots at the same true rate cannot make it meet the target.",
       "Equal-weight separate basis tasks are not arbitrary-state logical channel trials."
+    ]
+  },
+  "xzzx_basis_factorial_d13_preflight": {
+    "status": "xzzx_basis_d13_preflight_stopped",
+    "artifact": "xzzx_basis_factorial_d13_preflight.json",
+    "failed_reporting_attempt": "xzzx_basis_factorial_d13_preflight_failed_attempt.json",
+    "projected_main_seconds": 454.7005893997266,
+    "max_main_seconds": 300,
+    "elapsed_seconds": 16.609340536000673,
+    "new_source_equivalent_samples": 40000,
+    "main_run_started": false,
+    "conditions": [
+      {
+        "code": "css",
+        "basis": "x",
+        "preflight_failures": 0,
+        "sample_seconds": 0.3102941059987643,
+        "decode_seconds": 1.5740945830002602,
+        "max_rss_kib": 281252
+      },
+      {
+        "code": "css",
+        "basis": "z",
+        "preflight_failures": 0,
+        "sample_seconds": 0.2586512089983444,
+        "decode_seconds": 1.5208218600018881,
+        "max_rss_kib": 290916
+      },
+      {
+        "code": "xzzx",
+        "basis": "x",
+        "preflight_failures": 0,
+        "sample_seconds": 0.30767625400039833,
+        "decode_seconds": 2.5326259989997197,
+        "max_rss_kib": 304084
+      },
+      {
+        "code": "xzzx",
+        "basis": "z",
+        "preflight_failures": 0,
+        "sample_seconds": 0.3020455989972106,
+        "decode_seconds": 2.2878021779979463,
+        "max_rss_kib": 311608
+      }
     ]
   }
 }

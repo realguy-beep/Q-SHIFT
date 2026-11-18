@@ -343,3 +343,8 @@ At d11/21 rounds and 500k shots/cell, CSS-X and XZZX-X each had zero failures; C
 ## d11 relative-target evidence budget
 
 The observed equal-weight CSS point LER was 6.7e-5, so a 1e-4 relative target would require candidate LER 6.7e-9. The d11 XZZX point was 3e-6 (ratio .0448), about 448 times above that target. Even assuming the baseline is known and IID sampling, a one-sided 95% upper bound at the target needs about 447M zero-failure candidate shots; allowing one observed failure needs about 708M shots. These are optimistic Poisson rare-event budgets and ignore baseline uncertainty, multiple conditions, roots, and model selection. More samples at the observed XZZX rate would not establish the target.
+
+
+## d13 scaling feasibility stop
+
+The corrected 10k/cell preflight passed resource equality and decoder checks but projected 454.7 seconds for the fixed 500k/cell main screen, exceeding the 300-second cap. No performance results are available at d13. The first attempt's output typo is preserved; identical seeds were replayed and unique preflight samples counted once. This marks the runtime boundary for the current four-cell PyMatching screen.
