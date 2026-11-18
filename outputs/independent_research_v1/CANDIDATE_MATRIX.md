@@ -140,3 +140,8 @@ Six distance-specific d5 fits on 1M training shots each, tested on 1M independen
 ### Fast selector: replicated ratio-10 to ratio-5 bias challenge
 
 Two frozen-model d3 streams showed 17.95% and 17.81% macro LER reduction at ~1.35x cost; all six per-cell paired intervals favored the selector. The X/Z-biased profiles changed anisotropy; balanced profiles were unchanged controls. This strengthens the bounded d3 robustness evidence, alongside the separate measurement-p shift. It does not change the negative d5 transfer result and is not broad or multi-axis robustness. Report: `../independent_research_v2/fast_flagged_logistic_bias_shift_report.md`.
+
+
+### Fast selector under simultaneous measurement and bias shift
+
+The frozen d3 policy passed a joint shift (measurement p .006, bias ratio 5) on two independent streams: 14.62% and 14.02% macro LER reduction at ~1.35x cost; every per-cell interval favored it. This supports one specific two-axis simulator condition, beyond the separate one-axis challenges. It remains d3-only; the d5 transfer screen failed. Report: `../independent_research_v2/fast_flagged_logistic_combined_shift_report.md`.

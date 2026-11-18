@@ -634,3 +634,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Fresh-seed replication with identical coefficients gave .005291→.004349 (17.81%), paired macro delta -.000942 (95% interval [-.000992,-.000893]), 1.364x cost; again all six per-cell intervals favored the selector. Both frozen gates passed. No shifted data were used for fitting.
 - This is a narrow d3 simulation result across one bias-ratio shift; it does not override the negative d5 transfer screen or imply simultaneous/arbitrary noise robustness. Added 6,120,000 unique samples; cumulative Q-SHIFT development count: 142,908,200. No confirmatory/sealed data.
 - Full report: `outputs/independent_research_v2/fast_flagged_logistic_bias_shift_report.md`.
+
+
+## Fast flagged logistic selector — combined measurement and bias shift — 2026-11-18
+
+- With ratio-10, measurement-p=.003 models/matchers frozen, jointly changed physical measurement p to .006 and bias ratio to 5. First six-condition d3 stream: macro LER .006924→.005912, 14.62% reduction; paired macro delta -.001013 (approximate 95% CI [-.001065,-.000961]); full inference 1.345x; all cells favored selector.
+- Independent fresh-seed replication: .006835→.005877, 14.02% reduction; paired macro delta -.000958 (95% CI [-.001010,-.000906]); cost 1.362x; all six cell intervals again favored selector. Frozen gate passed both times; no retraining or calibration.
+- This supports the tested joint d3 shift only; the separate d5 transfer screen remains negative. Added 6,120,000 unique samples (both streams 60k preflight +6M main); cumulative unique Q-SHIFT development samples: 149,028,200. No confirmatory/sealed data.
+- Full report: `outputs/independent_research_v2/fast_flagged_logistic_combined_shift_report.md`.

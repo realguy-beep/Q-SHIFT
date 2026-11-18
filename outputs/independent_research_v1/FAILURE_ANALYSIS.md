@@ -271,3 +271,8 @@ The method was re-fit with d5-specific 218-dimensional features rather than blin
 ### Reduced-bias shift adds a second bounded positive result
 
 The selector frozen at bias ratio 10 retained a 17.8%–18.0% macro LER reduction on two fresh streams at physical ratio 5, at ~1.35x cost, with all per-cell intervals favorable. This reduces concern for that one shift axis at d3. It does not reconcile the negative d5 transfer result or establish robustness to simultaneous shifts, other profiles, or hardware. Balanced cells did not shift and should be recognized as controls. Do not make a general robustness claim. See `../independent_research_v2/fast_flagged_logistic_bias_shift_report.md`.
+
+
+### Combined shift did not erase the d3 selector benefit
+
+A two-axis challenge combining measurement p .003→.006 with bias ratio 10→5 retained a 14.0%–14.6% macro reduction on two fresh streams, with all per-cell intervals favorable and ~1.35x cost. This addresses interaction for one specified combination, but not arbitrary or larger shifts. It remains limited to d3 simulator conditions and cannot be extrapolated over the failed d5 transfer. The actual-profile matcher remains diagnostic, not an optimality bound. See `../independent_research_v2/fast_flagged_logistic_combined_shift_report.md`.

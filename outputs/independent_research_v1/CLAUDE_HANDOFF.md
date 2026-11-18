@@ -247,3 +247,8 @@ The d3 flagged logistic method did not transfer to a distance-specific d5 fit in
 ### Second d3 robustness axis — 2026-11-18
 
 A fixed ratio-10 selector applied at physical ratio 5 passed on two independent d3 streams (17.95% and 17.81% macro reduction, ~1.35x inference; all six cells favorable). Balanced profiles are unchanged controls. Together with the measurement shift, this supports two bounded one-axis results only. The d5 distance-specific fit still failed, so positive claims stay d3-specific. See `../independent_research_v2/fast_flagged_logistic_bias_shift_report.md`.
+
+
+### Joint-shift challenge — 2026-11-18
+
+The frozen d3 selector passed simultaneous measurement p .006 and bias ratio 5 on two fresh streams (14.62%/14.02% macro reductions, ~1.35x cost; all six cells favorable). This supports the tested joint simulator shift only. The d5 method-transfer screen remains negative. Full per-condition data and reproduction: `../independent_research_v2/fast_flagged_logistic_combined_shift_report.md`.

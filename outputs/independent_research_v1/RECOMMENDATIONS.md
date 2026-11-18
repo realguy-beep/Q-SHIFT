@@ -209,3 +209,8 @@ The distance-specific d5 fit failed: held-out macro LER worsened 1.35%, and only
 ### Selector robustness after second shift challenge
 
 The frozen d3 selector now has two independently replicated single-axis simulator shift results: measurement p .003→.006 and bias ratio 10→5, each with ~13% and ~18% macro gains, respectively, at ~1.35x cost. This supports further bounded d3 study, not broad distributional robustness. The failed d5 screen remains a hard scope boundary. A useful next step would be a predeclared combined shift only if its operating profile is justified; do not extrapolate the two separate shifts to simultaneous mismatch or hardware.
+
+
+### Combined-shift evidence
+
+The frozen d3 selector also passed one predeclared combined measurement/bias shift on two streams (~14% macro reduction at ~1.35x cost). This is a stronger bounded robustness result than separate-axis evidence alone, but it remains one tested simulator composition and does not generalize to arbitrary drift or hardware. Keep claims scoped to these d3 conditions and shifts; preserve the d5 transfer failure as the distance boundary.

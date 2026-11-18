@@ -452,3 +452,8 @@ The d5-specific, 218-feature logistic policy was fit on independent six-conditio
 ## Frozen logistic selector under reduced bias ratio
 
 At gate/measurement p=.003, the ratio-10 selector and matchers were frozen while biased physical channels changed to ratio 5. Two independent d3 streams gave macro LER .005377→.004412 (17.95%) and .005291→.004349 (17.81%), at 1.347x/1.364x total inference cost. Paired macro difference 95% intervals were [-.001015,-.000916] and [-.000992,-.000893]; all six per-cell intervals favored the selector on both streams. Balanced cells were unchanged-profile controls. This supports only the tested single-axis shift at d3; see `../independent_research_v2/fast_flagged_logistic_bias_shift_report.md`.
+
+
+## Combined measurement and bias shift
+
+With the ratio-10, measurement-p=.003 models frozen, the simultaneous physical change to measurement p=.006 and bias ratio 5 produced 14.62% and 14.02% macro LER reductions on two fresh six-condition d3 streams. Paired macro difference intervals were [-.001065,-.000961] and [-.001010,-.000906]; all six cell intervals favored the selector on both streams. Full inference was 1.345x/1.362x. The unchanged gate passed. This is a specific joint simulator shift and remains d3-only; see `../independent_research_v2/fast_flagged_logistic_combined_shift_report.md`.

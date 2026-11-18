@@ -478,3 +478,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 
 - With model and nominal matchers frozen at 10:1 bias, physical biased profiles were shifted to 5:1. Two independent d3 streams gave macro LER reductions 17.95% and 17.81% at 1.347x and 1.364x full inference cost; all six cell intervals favored the selector on each stream. Balanced cells are unchanged-profile controls.
 - This is one additional shift axis only. It does not establish multi-axis or broad noise robustness and does not address distance transfer (the d5 screen failed). Cumulative unique development samples: 142,908,200; no confirmatory/sealed data. Details: `outputs/independent_research_v2/fast_flagged_logistic_bias_shift_report.md`.
+
+
+## Joint measurement and bias shift challenge replicated — 2026-11-18
+
+- Simultaneously shifted measurement p .003→.006 and bias ratio 10→5 while keeping the learned d3 policy and matchers nominal. Two fresh streams gave 14.62% and 14.02% macro LER reductions, 1.345x and 1.362x inference cost, with all six per-cell intervals favorable on each stream.
+- This extends evidence to one specific joint simulator shift; it is not broad robustness or hardware evidence. Does not overturn negative d5 transfer. Cumulative development samples 149,028,200; no sealed/confirmatory data. See `outputs/independent_research_v2/fast_flagged_logistic_combined_shift_report.md`.
