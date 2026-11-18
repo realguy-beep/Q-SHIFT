@@ -45,3 +45,5 @@ Next, challenge this policy under profile drift and misspecified calibration, in
 
 One limited robustness check now doubles gate and measurement p after nominal-rate calibration while preserving X/Z bias direction. The frozen selector retained 12.2%, 50.6%, and 71.0% LER reduction versus static Z at ratios 2, 5, and 10. This supports robustness to total-rate change for a stable direction in the simulator. It leaves direction changes, spatially varying noise, device calibration, and resource amortization unresolved.
 
+An exploratory rescore using calibration prefixes of 25/100/500 shots per 100 logical shots showed reductions versus static Z of 5.1/11.6/16.6% at ratio2, 27.8/49.6/52.4% at ratio5, and 57.5/71.2/71.7% at ratio10. The 25-shot ratio2 interval included zero. Use this only to design a future frozen budget tradeoff; the nested prefix analysis is correlated and not the primary endpoint.
+

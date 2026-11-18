@@ -122,3 +122,9 @@
 - The .0018 DEM conversion threshold failed before shot generation on a categorical channel probability .00357. Deterministically selected .004 as the smallest fixed round threshold covering the p=.006 channels; every comparison arm used it. Preflight passed batch/scalar agreement and projected 2.3 s for the full sample.
 - On 1,000 calibration windows/profile and 100 logical shots/basis/window, selector LER was .014785/.00776/.004325 at ratios2/5/10, versus static-Z .016845/.015715/.01493; reductions 12.2/50.6/71.0%, bootstrap intervals for policy-minus-static below zero. It matched oracle at ratios5/10 in this sample and was close at ratio2.
 - This is one synthetic rate-shift condition with direction held fixed, not a change-point or hardware test. Calibration cost remains 500 shots for each 100-shot memory block. Unique Q-SHIFT development circuit sample total now 27,377,800 including preflights; qecsim code-capacity shots are separate.
+
+## Calibration-cost frontier checkpoint — 2026-11-18
+
+- Re-scored the fixed classifier on nested 25/100-shot prefixes of existing 500-shot calibration windows and reused the same direct logical outcome arrays. No new sample streams, no model refit, and no shot-count increase. This is explicitly exploratory.
+- LER reductions versus static Z at calibration budgets 25/100/500 per 100 logical shots: 5.1/11.6/16.6% at ratio2 (25-shot interval includes zero), 27.8/49.6/52.4% at ratio5, and 57.5/71.2/71.7% at ratio10. Calibration load is .25/1/5 shots per logical shot, respectively. The result shows the weak-bias regime needs more calibration for reliable selection; nested estimates are correlated and not confirmatory.
+- Current research branch before this checkpoint: `codex/qshift-independent-research-v1`, commit `4b91bba`. Continue with a model-mismatch/drift question; avoid tuning a budget on the inspected rescore.

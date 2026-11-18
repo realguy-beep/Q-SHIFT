@@ -72,3 +72,9 @@
 - Frozen detector-only basis selector evaluated with p=.003 calibration and p=.006 gate/measurement error in independent logical runs; bias direction remained stable. A deterministic conversion check required DEM approximation threshold .004 (max local event probability .003571); .0018 failed before shots. The same .004 threshold was used for all arms.
 - Equal-prior LER reductions versus static Z at ratios 2/5/10 were 12.2/50.6/71.0%, with 5,000-window-bootstrap intervals below zero. This is synthetic model robustness only, not drift in X/Z direction.
 - Unique development circuit sample total 27,377,800 including preflights; repeated score-sign fix used identical seeds and is excluded from unique count. No confirmatory data accessed. Next: evaluate reconfiguration under actual X↔Z profile transitions and compare calibration interval/resource costs against a periodically recalibrated fixed basis.
+
+## Checkpoint — calibration-cost frontier — 2026-11-18
+
+- Re-scored existing direct-policy seed streams at calibration prefixes 25 and 100 in addition to the primary 500; no new random streams or model fitting. Results are exploratory and correlated because the windows are nested.
+- At ratios 2/5/10, the 25/100/500-shot per 100-logical-shot LER reductions versus static Z were 5.1/11.6/16.6%, 27.8/49.6/52.4%, and 57.5/71.2/71.7%. Ratio2/25-shot interval includes zero. This suggests the calibration cost/benefit depends strongly on bias magnitude.
+- No sample-count increase. Future evaluation should predeclare one calibration budget and an equal total-resource objective; do not choose a confirmatory budget from this rescore.

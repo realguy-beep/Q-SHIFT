@@ -2979,5 +2979,242 @@
     "artifact": "adaptive_basis_rate_shift_preflight.json",
     "status": "preflight",
     "projected_main_seconds": 2.3089318989150343
+  },
+  "adaptive_basis_cost_frontier": {
+    "artifact": "adaptive_basis_cost_frontier.json",
+    "status": "exploratory_prefix_rescore",
+    "budgets": [
+      25,
+      100,
+      500
+    ],
+    "summary": [
+      {
+        "bias_ratio": 2.0,
+        "calibration_shots": 25,
+        "calibration_shots_per_logical_shot": 0.25,
+        "policy_ler": 0.004605,
+        "fixed_x_ler": 0.00534,
+        "fixed_z_ler": 0.004855,
+        "oracle_ler": 0.00392,
+        "policy_minus_fixed_z": -0.0002500000000000002,
+        "cluster_bootstrap_95_ci": [
+          -0.0005550000000000004,
+          5.500000000000036e-05
+        ],
+        "relative_reduction_vs_fixed_z": 0.05149330587023693,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected_windows": 655,
+            "z_selected_windows": 345
+          },
+          "z_biased": {
+            "x_selected_windows": 356,
+            "z_selected_windows": 644
+          }
+        }
+      },
+      {
+        "bias_ratio": 2.0,
+        "calibration_shots": 100,
+        "calibration_shots_per_logical_shot": 1.0,
+        "policy_ler": 0.00429,
+        "fixed_x_ler": 0.00534,
+        "fixed_z_ler": 0.004855,
+        "oracle_ler": 0.00392,
+        "policy_minus_fixed_z": -0.0005649999999999995,
+        "cluster_bootstrap_95_ci": [
+          -0.0008851250000000005,
+          -0.00023500000000000062
+        ],
+        "relative_reduction_vs_fixed_z": 0.11637487126673518,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected_windows": 782,
+            "z_selected_windows": 218
+          },
+          "z_biased": {
+            "x_selected_windows": 245,
+            "z_selected_windows": 755
+          }
+        }
+      },
+      {
+        "bias_ratio": 2.0,
+        "calibration_shots": 500,
+        "calibration_shots_per_logical_shot": 5.0,
+        "policy_ler": 0.00405,
+        "fixed_x_ler": 0.00534,
+        "fixed_z_ler": 0.004855,
+        "oracle_ler": 0.00392,
+        "policy_minus_fixed_z": -0.0008050000000000002,
+        "cluster_bootstrap_95_ci": [
+          -0.001125,
+          -0.0004900000000000004
+        ],
+        "relative_reduction_vs_fixed_z": 0.16580844490216273,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected_windows": 954,
+            "z_selected_windows": 46
+          },
+          "z_biased": {
+            "x_selected_windows": 56,
+            "z_selected_windows": 944
+          }
+        }
+      },
+      {
+        "bias_ratio": 5.0,
+        "calibration_shots": 25,
+        "calibration_shots_per_logical_shot": 0.25,
+        "policy_ler": 0.003005,
+        "fixed_x_ler": 0.004915,
+        "fixed_z_ler": 0.00416,
+        "oracle_ler": 0.00198,
+        "policy_minus_fixed_z": -0.0011549999999999998,
+        "cluster_bootstrap_95_ci": [
+          -0.00145,
+          -0.0008648750000000016
+        ],
+        "relative_reduction_vs_fixed_z": 0.2776442307692307,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected_windows": 830,
+            "z_selected_windows": 170
+          },
+          "z_biased": {
+            "x_selected_windows": 203,
+            "z_selected_windows": 797
+          }
+        }
+      },
+      {
+        "bias_ratio": 5.0,
+        "calibration_shots": 100,
+        "calibration_shots_per_logical_shot": 1.0,
+        "policy_ler": 0.002095,
+        "fixed_x_ler": 0.004915,
+        "fixed_z_ler": 0.00416,
+        "oracle_ler": 0.00198,
+        "policy_minus_fixed_z": -0.0020649999999999996,
+        "cluster_bootstrap_95_ci": [
+          -0.0023350000000000003,
+          -0.0017900000000000001
+        ],
+        "relative_reduction_vs_fixed_z": 0.4963942307692307,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected_windows": 976,
+            "z_selected_windows": 24
+          },
+          "z_biased": {
+            "x_selected_windows": 32,
+            "z_selected_windows": 968
+          }
+        }
+      },
+      {
+        "bias_ratio": 5.0,
+        "calibration_shots": 500,
+        "calibration_shots_per_logical_shot": 5.0,
+        "policy_ler": 0.00198,
+        "fixed_x_ler": 0.004915,
+        "fixed_z_ler": 0.00416,
+        "oracle_ler": 0.00198,
+        "policy_minus_fixed_z": -0.0021799999999999996,
+        "cluster_bootstrap_95_ci": [
+          -0.0024549999999999997,
+          -0.0019
+        ],
+        "relative_reduction_vs_fixed_z": 0.5240384615384615,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected_windows": 1000,
+            "z_selected_windows": 0
+          },
+          "z_biased": {
+            "x_selected_windows": 0,
+            "z_selected_windows": 1000
+          }
+        }
+      },
+      {
+        "bias_ratio": 10.0,
+        "calibration_shots": 25,
+        "calibration_shots_per_logical_shot": 0.25,
+        "policy_ler": 0.00175,
+        "fixed_x_ler": 0.00477,
+        "fixed_z_ler": 0.00412,
+        "oracle_ler": 0.001165,
+        "policy_minus_fixed_z": -0.0023700000000000006,
+        "cluster_bootstrap_95_ci": [
+          -0.0026650000000000003,
+          -0.0020748750000000016
+        ],
+        "relative_reduction_vs_fixed_z": 0.575242718446602,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected_windows": 887,
+            "z_selected_windows": 113
+          },
+          "z_biased": {
+            "x_selected_windows": 91,
+            "z_selected_windows": 909
+          }
+        }
+      },
+      {
+        "bias_ratio": 10.0,
+        "calibration_shots": 100,
+        "calibration_shots_per_logical_shot": 1.0,
+        "policy_ler": 0.001185,
+        "fixed_x_ler": 0.00477,
+        "fixed_z_ler": 0.00412,
+        "oracle_ler": 0.001165,
+        "policy_minus_fixed_z": -0.002935,
+        "cluster_bootstrap_95_ci": [
+          -0.0032201250000000003,
+          -0.00265
+        ],
+        "relative_reduction_vs_fixed_z": 0.712378640776699,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected_windows": 994,
+            "z_selected_windows": 6
+          },
+          "z_biased": {
+            "x_selected_windows": 4,
+            "z_selected_windows": 996
+          }
+        }
+      },
+      {
+        "bias_ratio": 10.0,
+        "calibration_shots": 500,
+        "calibration_shots_per_logical_shot": 5.0,
+        "policy_ler": 0.001165,
+        "fixed_x_ler": 0.00477,
+        "fixed_z_ler": 0.00412,
+        "oracle_ler": 0.001165,
+        "policy_minus_fixed_z": -0.002955,
+        "cluster_bootstrap_95_ci": [
+          -0.0032500000000000003,
+          -0.00268
+        ],
+        "relative_reduction_vs_fixed_z": 0.7172330097087378,
+        "policy_confusion_by_profile": {
+          "x_biased": {
+            "x_selected_windows": 1000,
+            "z_selected_windows": 0
+          },
+          "z_biased": {
+            "x_selected_windows": 0,
+            "z_selected_windows": 1000
+          }
+        }
+      }
+    ],
+    "new_sample_streams": false
   }
 }

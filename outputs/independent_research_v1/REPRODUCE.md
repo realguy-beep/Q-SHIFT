@@ -65,3 +65,5 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce direct, independent calibration-to-memory policy validation with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/adaptive_basis_end_to_end.py --preflight`, then run without the flag. `adaptive_basis_end_to_end_first_pass_reversed.json` is an invalid implementation pass retained for audit; use only `adaptive_basis_end_to_end_results.json`.
 
 - Reproduce the total-rate drift preflight and development run with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/adaptive_basis_rate_shift.py --preflight`, then run without the flag. It keeps the frozen classifier and compares p=.003 calibration with p=.006 logical circuits; DEM approximation threshold .004 is fixed in the protocol.
+
+- Reproduce the exploratory calibration-prefix rescore with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/adaptive_basis_cost_frontier.py`. It uses the fixed seeds and saved logical windows; it generates no new unique sample streams.

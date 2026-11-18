@@ -68,6 +68,10 @@ As a follow-up, calibration windows remained at gate/measurement p=.003, but ind
 
 This checks a twofold total-rate change after calibration while the dominant Pauli direction remains stable. It does not test an X↔Z change point, hidden spatial variation, device noise, calibration amortization, or equal total-workload utility. Results remain development-only. The decoder used the same per-test-circuit approximate DEM and correlation-enabled PyMatching at the fixed .004 conversion threshold.
 
+## Exploratory calibration-cost frontier
+
+Re-scored prefixes of the same seeded calibration windows and reused the same independent logical outcome arrays; no new sample streams were generated and the classifier was not refit. At 25/100/500 calibration shots per 100 logical shots, the projected policy reductions versus static Z were 5.1%/11.6%/16.6% at ratio 2, 27.8%/49.6%/52.4% at ratio 5, and 57.5%/71.2%/71.7% at ratio 10. The ratio-2, 25-shot interval included zero; other listed policy-minus-static bootstrap intervals were below zero. Calibration expenditure was 0.25/1/5 shots per logical shot respectively. Prefixes are nested, so these estimates are correlated and the lower-budget endpoints are exploratory rather than confirmatory. They expose a practical tradeoff: fewer calibration shots reduce overhead but leave more direction mistakes, especially at weak bias.
+
 ## BP+LSD development screen on Phase 2B circuits
 
 LDPC 2.4.1's `BpLsdDecoder` accepted the flattened approximate DEMs in all six distance-3 Phase 2B conditions (40 detector checks, 578–586 fault variables, one observable). A preflight showed the 5,000-shot-per-condition plan was well within the runtime cap. The main run sampled 5,000 fresh shots from each original Stim circuit (30,000 total), using the same circuit outcomes for correlation-enabled PyMatching and BP+LSD. All decoders used the same `decompose_errors=True`, `approximate_disjoint_errors=0.0018` decoder model. The BP+LSD fault vectors reproduced every observed detector syndrome (0 invalid outputs).
