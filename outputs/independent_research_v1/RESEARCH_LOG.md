@@ -183,3 +183,9 @@
 - Instrumented each PAULI_CHANNEL_2 event into categorical E/ELSE outcomes with private flags, leaving 1Q/measurement channels unchanged. The four-cell 5k-per-arm preflight had max independent LER difference .85 SD; main 100k/cell took 16.8s.
 - For actual ratio10 high-LER mismatched-basis cells, shared wrong outcomes carried mean 1.94 pair faults/shot at d3 and4.67 at d5 versus .35/2.14 among both-correct. XX/ZZ was enriched 5.7–5.8x/2.28x per shot; decoder ratio10 fixed/broke 91/67 events at d3 and37/41 at d5.
 - Limitation: only two cells per distance and pair faults only; this is not a lower bound on correctable LER. Cumulative simulated Q-SHIFT samples 40,635,800. See the shared-failure artifacts and protocol.
+
+## Checkpoint — sparse exact categorical inference across three layers (2026-11-18)
+
+- Exact sparse signature aggregation solved the final two layers despite dense VE's 17.2B entry estimate: 12 categorical locations/10 detectors, 2,048 states, direct DP versus six-plus-six convolution max difference1.33e-15, 512 Stim composition checks, 4.85s.
+- Extended the exact slice to 18 locations/12 detectors. Sparse DP and Walsh XOR convolution agreed over 8,192 states at1.22e-15; 512 forced-fault cases passed; runtime4.63s. The isolated fragment MAP risk is not full-circuit LER.
+- An incorrect Walsh normalization was detected by sparse-DP comparison and fixed before final result. No stochastic circuit shots were generated. Sparse complexity scales exponentially with touched detector support; next do only a fourth-layer scope preflight.

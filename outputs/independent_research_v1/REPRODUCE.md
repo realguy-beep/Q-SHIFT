@@ -97,3 +97,6 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the archived-seed paired decision decomposition with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_strength_decision_replay.py`. The script verifies all stored counts and creates no new independent samples.
 
 - Reproduce the two-qubit shared-failure fault-composition preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/shared_failure_fault_mechanism.py --preflight`, then the 100,000-shot-per-cell screen with the same command without `--preflight`.
+
+- Reproduce the exact two-layer sparse categorical inference with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_two_layer_sparse.py`.
+- Reproduce the three-layer sparse preflight and exact DP/Walsh comparison with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_three_layer_preflight.py` followed by `categorical_three_layer_sparse.py`.

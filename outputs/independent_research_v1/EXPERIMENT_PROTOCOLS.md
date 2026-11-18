@@ -123,3 +123,5 @@ The deterministic topology/weight audit is in `bias_graph_mechanism_protocol.md`
 The paired output decomposition replays archived seeds only and is specified in `bias_strength_decision_replay_protocol.md`; exact agreement with archived per-cell error counts is a required integrity gate.
 
 The bounded two-qubit fault-composition screen is in `shared_failure_fault_mechanism_protocol.md`. It instruments only mutually exclusive pair-channel outcomes at actual ratio10 in four high-LER mismatched-basis d3/d5 conditions, validates source-equivalent LER in independent preflight samples, and reports fault counts within paired decoder outcome groups. One-qubit/measurement faults remain untracked.
+
+The sparse exact categorical extensions are fixed in `categorical_two_layer_sparse_protocol.md` and `categorical_three_layer_sparse_protocol.md`. They aggregate by detector/logical XOR signatures, cross-check with an independent representation, and never allocate the dense VE factor that exceeded its cap.

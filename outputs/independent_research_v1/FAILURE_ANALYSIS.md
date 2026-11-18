@@ -93,3 +93,7 @@ On the predeclared detector-weight bins, d3's ratio10 disagreements mostly occur
 ## Shared-failure pair-channel composition
 
 An instrumented actual-ratio10 screen in two high-LER mismatched-basis cells per distance found shared-both-wrong events contained about 1.94 pair-channel faults/shot at d3 and 4.67 at d5, versus .35 and 2.14 in both-correct samples. Bias-aligned XX/ZZ pair events were enriched 5.7–5.8× per shot among d3 shared failures and 2.28× at d5. One-qubit and measurement faults were not individually tracked; this covers only two profile/basis cells. It is descriptive fault composition, not an error-floor or decoder-impossibility result.
+
+## Dense VE stop and sparse categorical inference
+
+Dense VE exceeded its fixed cap at two adjacent layers, but an exact sparse XOR-state DP plus independent half-convolution solved that isolated fragment, and sparse DP plus Walsh-Hadamard convolution solved three final layers. A first Walsh implementation mistakenly divided by N^(L-1) and disagreed by .95; the sparse independent DP caught this before reporting, and the correct inverse transform divides by N once. Final sparse/Walsh agreement is 1.22e-15. This fixes the local scaling conclusion: dense VE is stopped, while exact sparse signature contraction remains feasible for fragments with only 12 touched detectors. It still scales exponentially in syndrome support and is not full-circuit decoding.
