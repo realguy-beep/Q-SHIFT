@@ -222,3 +222,12 @@
 - Declared fresh fixed caps and validation before inference. Seven-layer tail ran over 1,048,576 syndrome states (42 locations, 20 detectors), with 788.5M updates and 1.804B Walsh ops in 14.51s. P/Z independent Walsh errors <8e-16; six-layer joint-reference max error <6e-16; all 512 forced Stim checks passed.
 - Exact isolated-tail MAP risk 0.0010409337; not full-circuit LER. No stochastic shots. Result establishes a bounded exact representation, not a decoder gain.
 - Next: move to a distinct research question; do not increase caps or infer whole-circuit behavior from this fragment.
+
+
+## Checkpoint — pair-cluster categorical importance sampling (2026-11-18)
+
+- Formed a fixed physically local cluster proposal after independent per-location cross-entropy failed. Pairing adjacent channel events within each native PAULI_CHANNEL_2 instruction gives 60 two-location clusters/condition, each with 256 joint outcomes.
+- Synthetic channel instrumentation observed all categories and reproduced the expected data Pauli for every flag with zero mismatches. The actual circuit instrument had 15,987 instructions; the preregistered preflight projected 45.2s, and the full development screen took 60.3s.
+- With six separate 100k training streams and independent three-arm 20k validations, the variance advancement gate passed 0/6. Cluster max absolute log weights were 17.84–23.67; biased-condition training failure ESS 113–129; mean weighted failure categories per cluster 20–37. All six estimates remained within 3 combined SE of both direct and global-tilt comparators.
+- Negative finding is specific to this grouping/shrinkage/budget. Do not alter it based on validation or claim that all structured rare-event methods fail. Q-SHIFT samples +962,400; no confirmatory/sealed data.
+- Next: select a different research family, rather than more proposal tuning on the same validation pool.

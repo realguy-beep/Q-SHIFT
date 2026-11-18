@@ -71,3 +71,8 @@ A sample-specific oracle ceiling further limits selector-only proposals for the 
 ## New exact tail-inference result
 
 A parity-compressed exact method was tested on the final seven channel layers of a d3 circuit. For each syndrome it tracks total mass P and signed logical mass Z, allowing exact binary logical MAP risk without carrying the logical bit as another state dimension. The 20-detector / 1,048,576-state fragment passed independent Walsh and six-layer joint-distribution checks (<6e-16), plus 512 forced Stim compositions, in 14.5 seconds; its isolated risk is 0.00104093. Artifacts and fixed protocol: `categorical_seven_layer_parity.py`, `_results.json`, and `_protocol.md`. This is a feasibility result for a tail fragment only, not a full-circuit decoder result.
+
+
+## Pair-cluster importance-sampling result
+
+A development-only proposal grouped adjacent two-qubit channel pairs within each `PAULI_CHANNEL_2` instruction (60 two-location clusters, 256 joint categories) and trained cluster distributions from likelihood-weighted failures. Synthetic instrumentation and weighted estimates validated; all six validation estimates were within 3 combined SE of direct and global tilt. However, its predeclared variance gate passed 0/6: the proposal never reduced SE by 25% versus both baselines in four conditions. Max |log weight| was 17.8–23.7 and biased-condition training failure ESS was about 113–129. Keep the existing global-tilt estimator as the more stable tested method; do not tune the cluster proposal on its validation data. Details: `categorical_cluster_importance_results.json` and its fixed protocol.

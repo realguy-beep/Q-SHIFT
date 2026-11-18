@@ -61,3 +61,8 @@ The direct experiment uses 500 calibration circuits per 100 logical circuits. If
 # Exact logical-parity contraction
 
 The new P/Z syndrome representation extends exact categorical tail inference from six to seven final channel layers while preserving all logical posterior information. The d3 tail used 14.5s and matched independent Walsh inference and the prior joint six-layer reference below 6e-16; all 512 forced Stim checks passed. Keep it as an exact-prototype tool for investigating local posterior contributions. Do not present its 0.00104 tail MAP risk as circuit-level LER or infer a global decoder gain. Extending it to the full circuit still faces exponential detector support and requires a new bounded plan.
+
+
+# Pair-cluster rare-event estimation
+
+Do not advance the fixed adjacent-pair cluster proposal: it passed its estimator-compatibility checks but its efficiency gate was 0/6. Validation max |log weight| reached 23.7, and biased-condition training failure ESS was near 100. Avoid tuning the proposal against the inspected validation streams. Any future rare-event method should model broader failure progress or use a separate prospectively derived structure, then pass fresh independent validation before any efficiency claim.

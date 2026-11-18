@@ -293,3 +293,13 @@
 - Completed: 42 categorical locations, 20 detector bits; 788,529,152 updates, 1,803,550,720 Walsh operations, 14.51s. P/Z Walsh errors 7.77e-16/3.33e-16; six-layer aggregation error 5.55e-16; 512 forced checks passed. Isolated tail risk 0.0010409337; no stochastic samples.
 - Exact reproduction command: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_seven_layer_parity.py`.
 - Remaining work: broaden to another research family and assess what exactness can say about full-circuit posterior; do not extrapolate tail risk to full circuit.
+
+
+## Pair-cluster rare-event estimation checkpoint — 2026-11-18
+
+- Branch `codex/qshift-independent-research-v1`; previous checkpoint `5550a2c`.
+- Hypothesis: failure-conditioned two-location categorical proposals could capture within-instruction fault dependence missed by independent per-location marginals.
+- Fixed layout: 120 channel-pair events/condition, 60 adjacent two-location groups, 256 categories/group. Synthetic uniform test exercised all 256 categories with zero flag/Pauli mismatches; instrument size 15,987 instructions.
+- Completed the 100-shot resource preflight and the fixed 100k train + three 20k validation arms across six conditions. Projected 45.2s; actual 60.3s. Efficiency gate passed 0/6. Validation max |log weight| 17.84–23.67; mean observed weighted failure categories/cluster 20.3–37.3; biased-condition training failure ESS 113–129. All candidate estimates stayed within 3 combined SE of comparators.
+- Q-SHIFT development samples added: 962,400; synthetic channel-validation shots: 50,000 (not Q-SHIFT). Exact reproduction command is in `REPRODUCE.md`. No confirmatory/sealed data touched.
+- Decision: do not advance or tune against validation. Next: shift to another research family; treat this as a negative result for this fixed adjacent-pair proposal and budget.

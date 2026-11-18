@@ -110,3 +110,8 @@ The seventh temporal layer adds two detector support bits, doubling the joint si
 
 
 The seven-layer joint-state method stopped at its predeclared 1M-state cap. A separately designed parity-state formulation removed the redundant logical dimension without dropping information. It passed cross-checks, so the earlier stop was a representation boundary, not an inference boundary. The new method still has exponential syndrome-state cost and was only applied to a 42-location tail; its exact MAP risk cannot be interpreted as full-circuit LER.
+
+
+## Pair-cluster rare-event proposal
+
+The pair-cluster proposal is correctly instrumented and likelihood weighted: a synthetic uniform test observed all 256 two-channel categories with no flag/Pauli mismatch, and all six Q-SHIFT estimates remained within three combined SE of both comparators. It nevertheless failed its variance-advancement gate in all six conditions. One plausible mechanism is sparse failure-conditioned cluster coverage: only about 20–37 of 256 weighted failure categories were observed per cluster on average, and biased-condition training failure ESS was 113–129. The fitted proposal then had longer log-weight tails than the global fivefold tilt. Do not tune shrinkage or cluster boundaries on this validation set. The result rejects this fixed adjacent-pair/product proposal at the declared sample budget; it does not reject all cluster or sequential rare-event methods.

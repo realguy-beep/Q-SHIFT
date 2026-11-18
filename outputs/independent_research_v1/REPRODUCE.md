@@ -121,3 +121,12 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/ca
 ```
 
 The fixed caps and validation gates are in `outputs/independent_research_v1/categorical_seven_layer_parity_protocol.md`. The script uses stored forced-outcome signatures and does not generate stochastic samples.
+
+
+### Pair-cluster categorical importance sampling
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_cluster_importance.py
+```
+
+This reruns the preregistered 100-shot instrumentation/resource preflight and, if the 300-second projection passes, the fixed six-condition development screen. The exact seeds, grouping, estimator, and stop rules are in `categorical_cluster_importance_protocol.md`.
