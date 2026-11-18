@@ -281,3 +281,8 @@ A two-axis challenge combining measurement p .003→.006 with bias ratio 10→5 
 ### Shared pooling passes but gives up some specialization accuracy
 
 One pooled d3 model passed the same baseline advancement gate on two independent streams, reducing macro LER 14%–15% at ~1.36x cost. However, the same-stream specialized models were better by about .00010 absolute macro LER with paired intervals favoring specialization. The shared fit therefore trades a smaller coefficient bank and no condition-model routing for a modest accuracy loss. No noninferiority threshold was declared; do not state that it matches specialized performance. The d5 transfer boundary still applies.
+
+
+### Relative-choice target passes but gives up selector accuracy
+
+The pooled 40-bit model predicting whether correlated matching is wrong reduced macro LER 12% on two fresh streams at ~1.35x cost. It passed the frozen baseline gate, but shared absolute-bit selection was better by ~.00014 macro LER and specialized selection by ~.00022. One cell was essentially tied on each stream. Treat relative choice as an interpretable compact alternative, not an improvement over the best learned policy.

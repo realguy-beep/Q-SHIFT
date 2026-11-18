@@ -651,3 +651,12 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Shared model was modestly less accurate than specialized models in both paired streams: shared-minus-specialized macro differences about +.000105 and +.000098, with paired intervals excluding zero. Do not claim equivalence; pooled model offers a simpler single coefficient set at a small measured accuracy cost.
 - Added 24,120,000 unique samples across both fits (120k preflight +12M training +12M validation); cumulative unique Q-SHIFT development samples: 173,148,200. No confirmatory/sealed data.
 - Detailed report: `outputs/independent_research_v2/fast_flagged_logistic_shared_selector_report.md`.
+
+
+## Relative matcher-choice classifier — fresh-stream replication — 2026-11-18
+
+- Fit one pooled logistic model on flagged 40-detector syndromes, with the target `correlated_wrong`; at inference it chooses ordinary matching only when predicted true. This removes absolute logical-bit and matcher-output features. Same six nominal d3 conditions, 1M train and 1M validation shots/cell, 10k preflight.
+- First stream macro LER .005149→.004534 (11.96%) at 1.378x cost; paired macro delta -.000616 (95% CI [-.000651,-.000581]). Fresh replication .005193→.004558 (12.23%) at 1.345x; paired delta -.000635 (95% CI [-.000671,-.000600]). Both pass the frozen gate. X-memory/Z-bias was effectively neutral in each stream, within the no->5%-harm rule.
+- Shared absolute-bit reference remained more accurate by .000139/.000134 macro LER; specialized reference by .000216/.000219. Keep relative-choice only as an interpretable compact alternative, not the best accuracy candidate.
+- Added 24,120,000 unique samples (both streams 120k preflight +12M train +12M validation); cumulative unique Q-SHIFT development samples: 197,268,200. No confirmatory/sealed data.
+- Full report: `outputs/independent_research_v2/fast_flagged_logistic_relative_choice_report.md`.

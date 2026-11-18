@@ -491,3 +491,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - A single pooled d3 logistic model trained across six conditions passed the fixed gate twice: 14.47% and 15.06% macro LER reduction vs correlated matching, at 1.361x/1.359x inference cost. Every per-cell point estimate improved over baseline.
 - On the same held-out streams, prior condition-specific models were better by about .00010 absolute macro LER; paired intervals favored specialization. Thus a shared model is a lower-complexity alternative, not equivalent to the specialized model bank. Unknown-profile and distance claims remain unsupported; the d5 screen failed.
 - Cumulative unique development samples: 173,148,200. Two import failures preceded sampling and add zero samples. No sealed/confirmatory data. See `outputs/independent_research_v2/fast_flagged_logistic_shared_selector_report.md`.
+
+
+## Relative-choice formulation works, with a small accuracy penalty — 2026-11-18
+
+- One shared model predicting whether correlated matching is wrong, using only detector bits on disagreement flags, passed twice: 11.96% and 12.23% macro reduction at 1.378x/1.345x cost. One cell was effectively neutral each time, but not harmed beyond the frozen 5% allowance.
+- Fixed shared absolute-bit models were better by .000139/.000134 macro LER; per-condition models by .000216/.000219. This is an interpretable compact alternative, not the best performer. Cumulative development samples: 197,268,200; no confirmatory/sealed data. See `outputs/independent_research_v2/fast_flagged_logistic_relative_choice_report.md`.

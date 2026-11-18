@@ -150,3 +150,8 @@ The frozen d3 policy passed a joint shift (measurement p .006, bias ratio 5) on 
 ### One pooled d3 selector as a compact alternative
 
 Two pooled train/validation streams passed the baseline gate (14.5%/15.1% macro improvement, ~1.36x cost). Every condition improved over correlated matching. Compared on identical held-out streams, the specialized models remained better by ~.00010 absolute macro LER. Consider shared pooling only when a single coefficient set is valuable and that accuracy cost is acceptable; it is not an equivalent replacement or an unknown-profile solution. Report: `../independent_research_v2/fast_flagged_logistic_shared_selector_report.md`.
+
+
+### Relative matcher-choice model
+
+Two pooled 40-detector-bit relative-choice fits passed the baseline gate (11.96%/12.23% macro reductions, ~1.35x cost). The target is whether correlated matching is wrong on flagged syndromes, then the policy chooses the ordinary output if so. It is simpler to interpret but was measurably less accurate than shared absolute-bit and specialized selectors. Consider only where that tradeoff is acceptable. Full report: `../independent_research_v2/fast_flagged_logistic_relative_choice_report.md`.

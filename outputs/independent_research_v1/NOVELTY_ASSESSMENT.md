@@ -85,3 +85,8 @@ The frozen selector passed one simultaneous measurement/bias shift on two d3 str
 ### Pooled selector alternative
 
 Pooling the flagged examples into one logistic model is a compact implementation variant, not a novel method. It passed the baseline development gate but was measurably weaker than six specialized models. No algorithmic novelty or unknown-profile generalization is established.
+
+
+### Relative-choice variant
+
+Recasting the label as which matcher is wrong is a useful representation but remains conventional supervised meta-decoding, not a novelty claim. It passed a bounded d3 gate but was weaker than the absolute-bit selector.

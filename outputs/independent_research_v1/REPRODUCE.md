@@ -437,3 +437,8 @@ Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_
 ### Shared pooled d3 selector and independent replication
 
 Run the two scripts `fast_flagged_logistic_shared_selector.py` and `fast_flagged_logistic_shared_selector_replication.py` in `outputs/independent_research_v2/` with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python`. Each fits one model from six condition-specific training streams and validates on six independent streams; outputs are separate. Protocol, report, and same-stream specialized-reference comparison are in the same directory.
+
+
+### Relative matcher-choice classifier and replication
+
+Run `fast_flagged_logistic_relative_choice.py` and `fast_flagged_logistic_relative_choice_replication.py` from `outputs/independent_research_v2/` with the project venv. These fit a pooled detector-only model predicting whether correlated matching is wrong, then compare against absolute-bit references on held-out streams. Protocols and analysis are in the same v2 directory.

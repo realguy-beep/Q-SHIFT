@@ -257,3 +257,8 @@ The frozen d3 selector passed simultaneous measurement p .006 and bias ratio 5 o
 ### Shared-model alternative — 2026-11-18
 
 One pooled d3 logistic model passed twice (14.5%/15.1% macro improvement at ~1.36x cost), but six specialized models were better by ~.00010 absolute macro LER on the same validation streams. The pooled selector simplifies model storage but has a measured accuracy penalty; it is not equivalent or an unknown-profile solution. Full report: `../independent_research_v2/fast_flagged_logistic_shared_selector_report.md`.
+
+
+### Relative-choice alternative — 2026-11-18
+
+A shared detector-only classifier predicting `correlated_wrong` passed twice at ~12% macro reduction and ~1.35x cost. It was consistently weaker than the shared absolute-bit model by ~.00014 macro LER and the specialized bank by ~.00022. Useful only as an interpretable compact alternative; not the accuracy leader. Details: `../independent_research_v2/fast_flagged_logistic_relative_choice_report.md`.

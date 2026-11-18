@@ -462,3 +462,8 @@ With the ratio-10, measurement-p=.003 models frozen, the simultaneous physical c
 ## Shared pooled selector across six d3 conditions
 
 Two independent pooled train/validation runs gave 14.47% and 15.06% macro LER reduction over correlated matching at ~1.36x cost, passing the frozen gate with all six cells improved. On those same validation streams, six specialized models were more accurate by ~.00010 absolute macro LER; paired intervals favored specialization. A single model is a lower-complexity alternative with a small measured accuracy penalty, not an equivalent replacement. Details: `../independent_research_v2/fast_flagged_logistic_shared_selector_report.md`.
+
+
+## Relative matcher-choice selector
+
+A single pooled model predicts whether correlated matching is wrong on disagreement flags, using only detector bits. Two independent nominal d3 streams yielded 11.96% and 12.23% macro LER reduction at 1.378x/1.345x cost, passing the frozen gate. X-memory/Z-bias was effectively neutral in both. Fixed shared absolute-bit and specialized selectors were more accurate by ~.00014 and ~.00022 macro LER. This is an interpretable alternative, not the current accuracy leader. See `../independent_research_v2/fast_flagged_logistic_relative_choice_report.md`.

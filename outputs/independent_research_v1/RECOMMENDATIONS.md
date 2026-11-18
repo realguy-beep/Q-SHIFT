@@ -219,3 +219,8 @@ The frozen d3 selector also passed one predeclared combined measurement/bias shi
 ### Shared versus specialized selector
 
 A single pooled d3 selector is a viable lower-complexity option: it passed the same baseline gate on two streams, but specialized per-condition models were measurably better by ~.00010 macro LER on the same validation samples. Keep both design choices explicit; use specialized models when accuracy is primary, and consider pooling only when one model bank is operationally preferable and the observed penalty is acceptable. No noninferiority criterion was set.
+
+
+### Relative-choice formulation
+
+Keep as a compact interpretable variant, not the preferred accuracy candidate. It passed the base gate twice, but gave up ~.00014 macro LER versus shared absolute-bit selection and ~.00022 versus specialized selection; one cell was near-neutral. Prefer absolute-bit/specialized models when minimizing errors is primary.
