@@ -286,3 +286,8 @@ One pooled d3 model passed the same baseline advancement gate on two independent
 ### Relative-choice target passes but gives up selector accuracy
 
 The pooled 40-bit model predicting whether correlated matching is wrong reduced macro LER 12% on two fresh streams at ~1.35x cost. It passed the frozen baseline gate, but shared absolute-bit selection was better by ~.00014 macro LER and specialized selection by ~.00022. One cell was essentially tied on each stream. Treat relative choice as an interpretable compact alternative, not an improvement over the best learned policy.
+
+
+### Profile holdout supports selector transfer but not unknown-profile decoding
+
+The relative-choice classifier trained without labels from one Pauli regime passed three leave-one-regime-out folds on two fresh runs, with 11.4%–11.5% macro reductions and every held-out cell slightly or substantially improved. However, the matching graphs remained profile-matched, and all-profile/specialized references were more accurate. The experiment does not establish unknown-profile decoding or arbitrary transfer; one d5 screen still failed.

@@ -90,3 +90,8 @@ Pooling the flagged examples into one logistic model is a compact implementation
 ### Relative-choice variant
 
 Recasting the label as which matcher is wrong is a useful representation but remains conventional supervised meta-decoding, not a novelty claim. It passed a bounded d3 gate but was weaker than the absolute-bit selector.
+
+
+### Leave-one-regime-out evidence is bounded transfer, not novelty
+
+The relative-choice classifier transferred to one withheld d3 Pauli regime when the matcher graph remained profile-matched. This is a robustness result for supervised selective decoding, not a new algorithm or unknown-profile decoder. The d5 method-transfer result remains negative.

@@ -1,0 +1,815 @@
+{
+  "status": "fast_flagged_logistic_leave_profile_out_replication",
+  "folds": [
+    {
+      "held_out_regime": "x_biased",
+      "training": [
+        {
+          "memory_basis": "z",
+          "regime": "balanced",
+          "seed": 2026118961,
+          "shots": 1000000,
+          "flags": 5160,
+          "correlated_wrong": 3662,
+          "seconds": 1.5205574099963997
+        },
+        {
+          "memory_basis": "z",
+          "regime": "z_biased",
+          "seed": 2026118962,
+          "shots": 1000000,
+          "flags": 963,
+          "correlated_wrong": 700,
+          "seconds": 1.1522111730009783
+        },
+        {
+          "memory_basis": "x",
+          "regime": "balanced",
+          "seed": 2026118963,
+          "shots": 1000000,
+          "flags": 3874,
+          "correlated_wrong": 1935,
+          "seconds": 1.3072533390004537
+        },
+        {
+          "memory_basis": "x",
+          "regime": "z_biased",
+          "seed": 2026118964,
+          "shots": 1000000,
+          "flags": 2021,
+          "correlated_wrong": 981,
+          "seconds": 1.127176285997848
+        }
+      ],
+      "training_flagged": 12018,
+      "training_correlated_wrong": 7278,
+      "training_fit": {
+        "iterations": 30,
+        "objective": 7501.737833660122,
+        "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "training_flag_rows": 12018,
+        "training_class_counts": {
+          "logical0": 4740,
+          "logical1": 7278
+        }
+      },
+      "fit_seconds": 0.5284955480019562,
+      "validation": [
+        {
+          "memory_basis": "z",
+          "regime": "x_biased",
+          "seed": 2026118991,
+          "shots": 1000000,
+          "flagged": 2614,
+          "flag_rate": 0.002614,
+          "failures": {
+            "correlated": 7649,
+            "leave_profile_out": 6918,
+            "all_profile_relative_reference": 6892,
+            "all_profile_absolute_reference": 6819,
+            "specialized_reference": 6728
+          },
+          "ler": {
+            "correlated": 0.007649,
+            "leave_profile_out": 0.006918,
+            "all_profile_relative_reference": 0.006892,
+            "all_profile_absolute_reference": 0.006819,
+            "specialized_reference": 0.006728
+          },
+          "paired_transfer_minus_correlated": {
+            "delta_second_minus_first": -0.000731,
+            "normal_95_ci": [
+              -0.0008190996215223926,
+              -0.0006429003784776074
+            ],
+            "first_only_failures": 1376,
+            "second_only_failures": 645,
+            "mcnemar_exact_two_sided": 1.3096344770861715e-60
+          },
+          "time_ratio": 1.3386276161518131
+        },
+        {
+          "memory_basis": "x",
+          "regime": "x_biased",
+          "seed": 2026118994,
+          "shots": 1000000,
+          "flagged": 906,
+          "flag_rate": 0.000906,
+          "failures": {
+            "correlated": 1306,
+            "leave_profile_out": 1167,
+            "all_profile_relative_reference": 1157,
+            "all_profile_absolute_reference": 1066,
+            "specialized_reference": 1048
+          },
+          "ler": {
+            "correlated": 0.001306,
+            "leave_profile_out": 0.001167,
+            "all_profile_relative_reference": 0.001157,
+            "all_profile_absolute_reference": 0.001066,
+            "specialized_reference": 0.001048
+          },
+          "paired_transfer_minus_correlated": {
+            "delta_second_minus_first": -0.000139,
+            "normal_95_ci": [
+              -0.0001884665290362447,
+              -8.953347096375527e-05
+            ],
+            "first_only_failures": 388,
+            "second_only_failures": 249,
+            "mcnemar_exact_two_sided": 4.047019568538974e-08
+          },
+          "time_ratio": 1.3790127540352985
+        }
+      ],
+      "macro_ler": {
+        "correlated": 0.004477500000000001,
+        "leave_profile_out": 0.0040425
+      },
+      "macro_relative_reduction": 0.09715242881072039,
+      "per_cell_reductions": [
+        0.09556804811086428,
+        0.10643185298621749
+      ],
+      "passed_fold_positive_direction": true
+    },
+    {
+      "held_out_regime": "balanced",
+      "training": [
+        {
+          "memory_basis": "z",
+          "regime": "x_biased",
+          "seed": 2026118971,
+          "shots": 1000000,
+          "flags": 2632,
+          "correlated_wrong": 1679,
+          "seconds": 1.4863264250016073
+        },
+        {
+          "memory_basis": "z",
+          "regime": "z_biased",
+          "seed": 2026118972,
+          "shots": 1000000,
+          "flags": 959,
+          "correlated_wrong": 706,
+          "seconds": 1.3265839369996684
+        },
+        {
+          "memory_basis": "x",
+          "regime": "x_biased",
+          "seed": 2026118973,
+          "shots": 1000000,
+          "flags": 853,
+          "correlated_wrong": 482,
+          "seconds": 1.4935373719999916
+        },
+        {
+          "memory_basis": "x",
+          "regime": "z_biased",
+          "seed": 2026118974,
+          "shots": 1000000,
+          "flags": 2121,
+          "correlated_wrong": 995,
+          "seconds": 1.3984026320031262
+        }
+      ],
+      "training_flagged": 6565,
+      "training_correlated_wrong": 3862,
+      "training_fit": {
+        "iterations": 29,
+        "objective": 4099.273161011025,
+        "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "training_flag_rows": 6565,
+        "training_class_counts": {
+          "logical0": 2703,
+          "logical1": 3862
+        }
+      },
+      "fit_seconds": 0.03918971800158033,
+      "validation": [
+        {
+          "memory_basis": "z",
+          "regime": "balanced",
+          "seed": 2026118992,
+          "shots": 1000000,
+          "flagged": 5291,
+          "flag_rate": 0.005291,
+          "failures": {
+            "correlated": 6971,
+            "leave_profile_out": 5039,
+            "all_profile_relative_reference": 4824,
+            "all_profile_absolute_reference": 4666,
+            "specialized_reference": 4565
+          },
+          "ler": {
+            "correlated": 0.006971,
+            "leave_profile_out": 0.005039,
+            "all_profile_relative_reference": 0.004824,
+            "all_profile_absolute_reference": 0.004666,
+            "specialized_reference": 0.004565
+          },
+          "paired_transfer_minus_correlated": {
+            "delta_second_minus_first": -0.001932,
+            "normal_95_ci": [
+              -0.0020500912214288136,
+              -0.0018139087785711862
+            ],
+            "first_only_failures": 2783,
+            "second_only_failures": 851,
+            "mcnemar_exact_two_sided": 4.996560266016456e-237
+          },
+          "time_ratio": 1.3771342589698545
+        },
+        {
+          "memory_basis": "x",
+          "regime": "balanced",
+          "seed": 2026118995,
+          "shots": 1000000,
+          "flagged": 3876,
+          "flag_rate": 0.003876,
+          "failures": {
+            "correlated": 5646,
+            "leave_profile_out": 5349,
+            "all_profile_relative_reference": 5343,
+            "all_profile_absolute_reference": 5112,
+            "specialized_reference": 4875
+          },
+          "ler": {
+            "correlated": 0.005646,
+            "leave_profile_out": 0.005349,
+            "all_profile_relative_reference": 0.005343,
+            "all_profile_absolute_reference": 0.005112,
+            "specialized_reference": 0.004875
+          },
+          "paired_transfer_minus_correlated": {
+            "delta_second_minus_first": -0.000297,
+            "normal_95_ci": [
+              -0.0003976840658388965,
+              -0.00019631593416110353
+            ],
+            "first_only_failures": 1468,
+            "second_only_failures": 1171,
+            "mcnemar_exact_two_sided": 8.028006788265587e-09
+          },
+          "time_ratio": 1.341465210553756
+        }
+      ],
+      "macro_ler": {
+        "correlated": 0.0063085,
+        "leave_profile_out": 0.005194
+      },
+      "macro_relative_reduction": 0.17666640247285414,
+      "per_cell_reductions": [
+        0.27714818533926266,
+        0.052603613177470865
+      ],
+      "passed_fold_positive_direction": true
+    },
+    {
+      "held_out_regime": "z_biased",
+      "training": [
+        {
+          "memory_basis": "z",
+          "regime": "x_biased",
+          "seed": 2026118981,
+          "shots": 1000000,
+          "flags": 2584,
+          "correlated_wrong": 1608,
+          "seconds": 1.2169341150001856
+        },
+        {
+          "memory_basis": "z",
+          "regime": "balanced",
+          "seed": 2026118982,
+          "shots": 1000000,
+          "flags": 5283,
+          "correlated_wrong": 3659,
+          "seconds": 1.579225639005017
+        },
+        {
+          "memory_basis": "x",
+          "regime": "x_biased",
+          "seed": 2026118983,
+          "shots": 1000000,
+          "flags": 858,
+          "correlated_wrong": 479,
+          "seconds": 1.2299485260009533
+        },
+        {
+          "memory_basis": "x",
+          "regime": "balanced",
+          "seed": 2026118984,
+          "shots": 1000000,
+          "flags": 3828,
+          "correlated_wrong": 1873,
+          "seconds": 1.3904629629978444
+        }
+      ],
+      "training_flagged": 12553,
+      "training_correlated_wrong": 7619,
+      "training_fit": {
+        "iterations": 31,
+        "objective": 7674.097079126681,
+        "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "training_flag_rows": 12553,
+        "training_class_counts": {
+          "logical0": 4934,
+          "logical1": 7619
+        }
+      },
+      "fit_seconds": 0.9409662200050661,
+      "validation": [
+        {
+          "memory_basis": "z",
+          "regime": "z_biased",
+          "seed": 2026118993,
+          "shots": 1000000,
+          "flagged": 977,
+          "flag_rate": 0.000977,
+          "failures": {
+            "correlated": 1485,
+            "leave_profile_out": 1031,
+            "all_profile_relative_reference": 1025,
+            "all_profile_absolute_reference": 985,
+            "specialized_reference": 992
+          },
+          "ler": {
+            "correlated": 0.001485,
+            "leave_profile_out": 0.001031,
+            "all_profile_relative_reference": 0.001025,
+            "all_profile_absolute_reference": 0.000985,
+            "specialized_reference": 0.000992
+          },
+          "paired_transfer_minus_correlated": {
+            "delta_second_minus_first": -0.000454,
+            "normal_95_ci": [
+              -0.0005069478607354086,
+              -0.00040105213926459134
+            ],
+            "first_only_failures": 592,
+            "second_only_failures": 138,
+            "mcnemar_exact_two_sided": 8.870417077637404e-68
+          },
+          "time_ratio": 1.3562888692482975
+        },
+        {
+          "memory_basis": "x",
+          "regime": "z_biased",
+          "seed": 2026118996,
+          "shots": 1000000,
+          "flagged": 2025,
+          "flag_rate": 0.002025,
+          "failures": {
+            "correlated": 8071,
+            "leave_profile_out": 8038,
+            "all_profile_relative_reference": 8026,
+            "all_profile_absolute_reference": 7843,
+            "specialized_reference": 7755
+          },
+          "ler": {
+            "correlated": 0.008071,
+            "leave_profile_out": 0.008038,
+            "all_profile_relative_reference": 0.008026,
+            "all_profile_absolute_reference": 0.007843,
+            "specialized_reference": 0.007755
+          },
+          "paired_transfer_minus_correlated": {
+            "delta_second_minus_first": -3.3e-05,
+            "normal_95_ci": [
+              -0.00011122688692171373,
+              4.522688692171373e-05
+            ],
+            "first_only_failures": 813,
+            "second_only_failures": 780,
+            "mcnemar_exact_two_sided": 0.4227029415929212
+          },
+          "time_ratio": 1.3654609796466655
+        }
+      ],
+      "macro_ler": {
+        "correlated": 0.004778,
+        "leave_profile_out": 0.0045345
+      },
+      "macro_relative_reduction": 0.05096274591879446,
+      "per_cell_reductions": [
+        0.30572390572390573,
+        0.0040887126750093206
+      ],
+      "passed_fold_positive_direction": true
+    }
+  ],
+  "validation": [
+    {
+      "memory_basis": "z",
+      "regime": "x_biased",
+      "seed": 2026118991,
+      "shots": 1000000,
+      "flagged": 2614,
+      "flag_rate": 0.002614,
+      "failures": {
+        "correlated": 7649,
+        "leave_profile_out": 6918,
+        "all_profile_relative_reference": 6892,
+        "all_profile_absolute_reference": 6819,
+        "specialized_reference": 6728
+      },
+      "ler": {
+        "correlated": 0.007649,
+        "leave_profile_out": 0.006918,
+        "all_profile_relative_reference": 0.006892,
+        "all_profile_absolute_reference": 0.006819,
+        "specialized_reference": 0.006728
+      },
+      "paired_transfer_minus_correlated": {
+        "delta_second_minus_first": -0.000731,
+        "normal_95_ci": [
+          -0.0008190996215223926,
+          -0.0006429003784776074
+        ],
+        "first_only_failures": 1376,
+        "second_only_failures": 645,
+        "mcnemar_exact_two_sided": 1.3096344770861715e-60
+      },
+      "time_ratio": 1.3386276161518131
+    },
+    {
+      "memory_basis": "x",
+      "regime": "x_biased",
+      "seed": 2026118994,
+      "shots": 1000000,
+      "flagged": 906,
+      "flag_rate": 0.000906,
+      "failures": {
+        "correlated": 1306,
+        "leave_profile_out": 1167,
+        "all_profile_relative_reference": 1157,
+        "all_profile_absolute_reference": 1066,
+        "specialized_reference": 1048
+      },
+      "ler": {
+        "correlated": 0.001306,
+        "leave_profile_out": 0.001167,
+        "all_profile_relative_reference": 0.001157,
+        "all_profile_absolute_reference": 0.001066,
+        "specialized_reference": 0.001048
+      },
+      "paired_transfer_minus_correlated": {
+        "delta_second_minus_first": -0.000139,
+        "normal_95_ci": [
+          -0.0001884665290362447,
+          -8.953347096375527e-05
+        ],
+        "first_only_failures": 388,
+        "second_only_failures": 249,
+        "mcnemar_exact_two_sided": 4.047019568538974e-08
+      },
+      "time_ratio": 1.3790127540352985
+    },
+    {
+      "memory_basis": "z",
+      "regime": "balanced",
+      "seed": 2026118992,
+      "shots": 1000000,
+      "flagged": 5291,
+      "flag_rate": 0.005291,
+      "failures": {
+        "correlated": 6971,
+        "leave_profile_out": 5039,
+        "all_profile_relative_reference": 4824,
+        "all_profile_absolute_reference": 4666,
+        "specialized_reference": 4565
+      },
+      "ler": {
+        "correlated": 0.006971,
+        "leave_profile_out": 0.005039,
+        "all_profile_relative_reference": 0.004824,
+        "all_profile_absolute_reference": 0.004666,
+        "specialized_reference": 0.004565
+      },
+      "paired_transfer_minus_correlated": {
+        "delta_second_minus_first": -0.001932,
+        "normal_95_ci": [
+          -0.0020500912214288136,
+          -0.0018139087785711862
+        ],
+        "first_only_failures": 2783,
+        "second_only_failures": 851,
+        "mcnemar_exact_two_sided": 4.996560266016456e-237
+      },
+      "time_ratio": 1.3771342589698545
+    },
+    {
+      "memory_basis": "x",
+      "regime": "balanced",
+      "seed": 2026118995,
+      "shots": 1000000,
+      "flagged": 3876,
+      "flag_rate": 0.003876,
+      "failures": {
+        "correlated": 5646,
+        "leave_profile_out": 5349,
+        "all_profile_relative_reference": 5343,
+        "all_profile_absolute_reference": 5112,
+        "specialized_reference": 4875
+      },
+      "ler": {
+        "correlated": 0.005646,
+        "leave_profile_out": 0.005349,
+        "all_profile_relative_reference": 0.005343,
+        "all_profile_absolute_reference": 0.005112,
+        "specialized_reference": 0.004875
+      },
+      "paired_transfer_minus_correlated": {
+        "delta_second_minus_first": -0.000297,
+        "normal_95_ci": [
+          -0.0003976840658388965,
+          -0.00019631593416110353
+        ],
+        "first_only_failures": 1468,
+        "second_only_failures": 1171,
+        "mcnemar_exact_two_sided": 8.028006788265587e-09
+      },
+      "time_ratio": 1.341465210553756
+    },
+    {
+      "memory_basis": "z",
+      "regime": "z_biased",
+      "seed": 2026118993,
+      "shots": 1000000,
+      "flagged": 977,
+      "flag_rate": 0.000977,
+      "failures": {
+        "correlated": 1485,
+        "leave_profile_out": 1031,
+        "all_profile_relative_reference": 1025,
+        "all_profile_absolute_reference": 985,
+        "specialized_reference": 992
+      },
+      "ler": {
+        "correlated": 0.001485,
+        "leave_profile_out": 0.001031,
+        "all_profile_relative_reference": 0.001025,
+        "all_profile_absolute_reference": 0.000985,
+        "specialized_reference": 0.000992
+      },
+      "paired_transfer_minus_correlated": {
+        "delta_second_minus_first": -0.000454,
+        "normal_95_ci": [
+          -0.0005069478607354086,
+          -0.00040105213926459134
+        ],
+        "first_only_failures": 592,
+        "second_only_failures": 138,
+        "mcnemar_exact_two_sided": 8.870417077637404e-68
+      },
+      "time_ratio": 1.3562888692482975
+    },
+    {
+      "memory_basis": "x",
+      "regime": "z_biased",
+      "seed": 2026118996,
+      "shots": 1000000,
+      "flagged": 2025,
+      "flag_rate": 0.002025,
+      "failures": {
+        "correlated": 8071,
+        "leave_profile_out": 8038,
+        "all_profile_relative_reference": 8026,
+        "all_profile_absolute_reference": 7843,
+        "specialized_reference": 7755
+      },
+      "ler": {
+        "correlated": 0.008071,
+        "leave_profile_out": 0.008038,
+        "all_profile_relative_reference": 0.008026,
+        "all_profile_absolute_reference": 0.007843,
+        "specialized_reference": 0.007755
+      },
+      "paired_transfer_minus_correlated": {
+        "delta_second_minus_first": -3.3e-05,
+        "normal_95_ci": [
+          -0.00011122688692171373,
+          4.522688692171373e-05
+        ],
+        "first_only_failures": 813,
+        "second_only_failures": 780,
+        "mcnemar_exact_two_sided": 0.4227029415929212
+      },
+      "time_ratio": 1.3654609796466655
+    }
+  ],
+  "training": [
+    {
+      "memory_basis": "z",
+      "regime": "balanced",
+      "seed": 2026118961,
+      "shots": 1000000,
+      "flags": 5160,
+      "correlated_wrong": 3662,
+      "seconds": 1.5205574099963997
+    },
+    {
+      "memory_basis": "z",
+      "regime": "z_biased",
+      "seed": 2026118962,
+      "shots": 1000000,
+      "flags": 963,
+      "correlated_wrong": 700,
+      "seconds": 1.1522111730009783
+    },
+    {
+      "memory_basis": "x",
+      "regime": "balanced",
+      "seed": 2026118963,
+      "shots": 1000000,
+      "flags": 3874,
+      "correlated_wrong": 1935,
+      "seconds": 1.3072533390004537
+    },
+    {
+      "memory_basis": "x",
+      "regime": "z_biased",
+      "seed": 2026118964,
+      "shots": 1000000,
+      "flags": 2021,
+      "correlated_wrong": 981,
+      "seconds": 1.127176285997848
+    },
+    {
+      "memory_basis": "z",
+      "regime": "x_biased",
+      "seed": 2026118971,
+      "shots": 1000000,
+      "flags": 2632,
+      "correlated_wrong": 1679,
+      "seconds": 1.4863264250016073
+    },
+    {
+      "memory_basis": "z",
+      "regime": "z_biased",
+      "seed": 2026118972,
+      "shots": 1000000,
+      "flags": 959,
+      "correlated_wrong": 706,
+      "seconds": 1.3265839369996684
+    },
+    {
+      "memory_basis": "x",
+      "regime": "x_biased",
+      "seed": 2026118973,
+      "shots": 1000000,
+      "flags": 853,
+      "correlated_wrong": 482,
+      "seconds": 1.4935373719999916
+    },
+    {
+      "memory_basis": "x",
+      "regime": "z_biased",
+      "seed": 2026118974,
+      "shots": 1000000,
+      "flags": 2121,
+      "correlated_wrong": 995,
+      "seconds": 1.3984026320031262
+    },
+    {
+      "memory_basis": "z",
+      "regime": "x_biased",
+      "seed": 2026118981,
+      "shots": 1000000,
+      "flags": 2584,
+      "correlated_wrong": 1608,
+      "seconds": 1.2169341150001856
+    },
+    {
+      "memory_basis": "z",
+      "regime": "balanced",
+      "seed": 2026118982,
+      "shots": 1000000,
+      "flags": 5283,
+      "correlated_wrong": 3659,
+      "seconds": 1.579225639005017
+    },
+    {
+      "memory_basis": "x",
+      "regime": "x_biased",
+      "seed": 2026118983,
+      "shots": 1000000,
+      "flags": 858,
+      "correlated_wrong": 479,
+      "seconds": 1.2299485260009533
+    },
+    {
+      "memory_basis": "x",
+      "regime": "balanced",
+      "seed": 2026118984,
+      "shots": 1000000,
+      "flags": 3828,
+      "correlated_wrong": 1873,
+      "seconds": 1.3904629629978444
+    }
+  ],
+  "preflight": [
+    {
+      "memory_basis": "z",
+      "regime": "x_biased",
+      "seed": 2026118951,
+      "shots": 10000,
+      "flags": 23,
+      "sample_seconds": 0.004547137003100943,
+      "correlated_seconds": 0.005352330997993704,
+      "ordinary_seconds": 0.0018884169985540211
+    },
+    {
+      "memory_basis": "z",
+      "regime": "balanced",
+      "seed": 2026118952,
+      "shots": 10000,
+      "flags": 41,
+      "sample_seconds": 0.001675963998422958,
+      "correlated_seconds": 0.0097805210025399,
+      "ordinary_seconds": 0.002190514001995325
+    },
+    {
+      "memory_basis": "z",
+      "regime": "z_biased",
+      "seed": 2026118953,
+      "shots": 10000,
+      "flags": 11,
+      "sample_seconds": 0.001342826995823998,
+      "correlated_seconds": 0.004450745000212919,
+      "ordinary_seconds": 0.0017542260029586032
+    },
+    {
+      "memory_basis": "x",
+      "regime": "x_biased",
+      "seed": 2026118954,
+      "shots": 10000,
+      "flags": 6,
+      "sample_seconds": 0.001362868002615869,
+      "correlated_seconds": 0.004937079997034743,
+      "ordinary_seconds": 0.0017243819966097362
+    },
+    {
+      "memory_basis": "x",
+      "regime": "balanced",
+      "seed": 2026118955,
+      "shots": 10000,
+      "flags": 38,
+      "sample_seconds": 0.0014402220040210523,
+      "correlated_seconds": 0.006082102001528256,
+      "ordinary_seconds": 0.0020386369942571037
+    },
+    {
+      "memory_basis": "x",
+      "regime": "z_biased",
+      "seed": 2026118956,
+      "shots": 10000,
+      "flags": 21,
+      "sample_seconds": 0.0015217359978123568,
+      "correlated_seconds": 0.005087013996671885,
+      "ordinary_seconds": 0.0016388919975725003
+    }
+  ],
+  "macro_ler": {
+    "correlated": 0.005188000000000001,
+    "leave_profile_out": 0.004590333333333333,
+    "all_profile_relative_reference": 0.0045445,
+    "all_profile_absolute_reference": 0.004415166666666666,
+    "specialized_reference": 0.004327166666666667
+  },
+  "macro_relative_reduction": 0.11520174762271918,
+  "per_condition_relative_reductions": [
+    0.09556804811086428,
+    0.10643185298621749,
+    0.27714818533926266,
+    0.052603613177470865,
+    0.30572390572390573,
+    0.0040887126750093206
+  ],
+  "mean_time_ratio": 1.3596649481009475,
+  "advancement_gate_passed": true,
+  "preflight_samples": 60000,
+  "training_samples": 12000000,
+  "validation_samples": 6000000,
+  "projected_sampling_matching_seconds": 17.644684496917762,
+  "training_runtime_seconds": 16.228619817004073,
+  "elapsed_seconds": 28.026184116999502,
+  "scope": "leave-one-regime-out transfer of relative-choice classifier; held-out regime absent from fit labels",
+  "run_metadata": {
+    "command": "MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_leave_profile_out_replication.py",
+    "repository_base_revision": "38d7f17",
+    "software_versions": {
+      "python": "3.12",
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "stim": "1.16.0",
+      "pymatching": "2.4.0"
+    },
+    "peak_rss_kib": null,
+    "peak_rss_note": "not captured by the run",
+    "sha256": {
+      "runner": "1510a9dc42ef201a1f2fe3c7a8685dc1fa9cdab2d9ccd20bcdfd082fd550bf67",
+      "protocol": "3b3988655b52347a06cdde5be67ed4f8d8c415762bb70259a39b69745d234036"
+    }
+  }
+}

@@ -442,3 +442,8 @@ Run the two scripts `fast_flagged_logistic_shared_selector.py` and `fast_flagged
 ### Relative matcher-choice classifier and replication
 
 Run `fast_flagged_logistic_relative_choice.py` and `fast_flagged_logistic_relative_choice_replication.py` from `outputs/independent_research_v2/` with the project venv. These fit a pooled detector-only model predicting whether correlated matching is wrong, then compare against absolute-bit references on held-out streams. Protocols and analysis are in the same v2 directory.
+
+
+### Leave-one-regime-out relative-choice transfer
+
+Run `fast_flagged_logistic_leave_profile_out.py` and `fast_flagged_logistic_leave_profile_out_replication.py` with the project venv and `MPLCONFIGDIR=/tmp/qshift-mpl`. Each creates three folds, training two regimes and evaluating the held-out regime with its profile-matched matcher graph. Protocols and report are in the v2 research directory.

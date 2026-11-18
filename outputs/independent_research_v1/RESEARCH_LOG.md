@@ -497,3 +497,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 
 - One shared model predicting whether correlated matching is wrong, using only detector bits on disagreement flags, passed twice: 11.96% and 12.23% macro reduction at 1.378x/1.345x cost. One cell was effectively neutral each time, but not harmed beyond the frozen 5% allowance.
 - Fixed shared absolute-bit models were better by .000139/.000134 macro LER; per-condition models by .000216/.000219. This is an interpretable compact alternative, not the best performer. Cumulative development samples: 197,268,200; no confirmatory/sealed data. See `outputs/independent_research_v2/fast_flagged_logistic_relative_choice_report.md`.
+
+
+## Leave-one-profile-out selector transfer replicated — 2026-11-18
+
+- A shared relative-choice classifier trained on two of three regimes transferred to the held-out regime with profile-matched graphs. Two independent three-fold runs gave 11.39%/11.52% macro reduction, ~1.35x cost, positive fold-level gains in X-biased, balanced, and Z-biased regimes, and all six held-out cells favored the selector by point estimate.
+- This supports classifier transfer only when the matching graphs are profile-matched; it does not solve unknown-profile decoding or distance transfer. Full-profile/specialized references remain stronger; the d5 screen remains negative. Cumulative development samples 233,388,200; no sealed/confirmatory data. See `outputs/independent_research_v2/fast_flagged_logistic_leave_profile_out_report.md`.

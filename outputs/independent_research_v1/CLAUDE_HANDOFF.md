@@ -262,3 +262,8 @@ One pooled d3 logistic model passed twice (14.5%/15.1% macro improvement at ~1.3
 ### Relative-choice alternative — 2026-11-18
 
 A shared detector-only classifier predicting `correlated_wrong` passed twice at ~12% macro reduction and ~1.35x cost. It was consistently weaker than the shared absolute-bit model by ~.00014 macro LER and the specialized bank by ~.00022. Useful only as an interpretable compact alternative; not the accuracy leader. Details: `../independent_research_v2/fast_flagged_logistic_relative_choice_report.md`.
+
+
+### Leave-one-regime-out selector transfer — 2026-11-18
+
+The relative-choice model trained on two regimes transferred to a third across both memory bases, across all three held-out regimes and two fresh runs (11.4%–11.5% macro gain, ~1.35x cost). Graphs remained matched to the test profile; stronger all-profile/specialized references remain. Do not call this unknown-profile decoding. Full report: `../independent_research_v2/fast_flagged_logistic_leave_profile_out_report.md`.

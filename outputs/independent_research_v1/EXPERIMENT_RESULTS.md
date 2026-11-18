@@ -467,3 +467,8 @@ Two independent pooled train/validation runs gave 14.47% and 15.06% macro LER re
 ## Relative matcher-choice selector
 
 A single pooled model predicts whether correlated matching is wrong on disagreement flags, using only detector bits. Two independent nominal d3 streams yielded 11.96% and 12.23% macro LER reduction at 1.378x/1.345x cost, passing the frozen gate. X-memory/Z-bias was effectively neutral in both. Fixed shared absolute-bit and specialized selectors were more accurate by ~.00014 and ~.00022 macro LER. This is an interpretable alternative, not the current accuracy leader. See `../independent_research_v2/fast_flagged_logistic_relative_choice_report.md`.
+
+
+## Leave-one-regime-out relative-choice transfer
+
+A shared selector fit on two Pauli regimes transferred to the third with profile-matched decoders. Two complete three-fold runs yielded 11.39% and 11.52% equal-cell macro LER reductions at 1.354x/1.360x cost. Each held-out regime had positive macro gain (X-biased ~9.6%–9.7%, balanced ~17.6%, Z-biased ~5.0%–5.1%), and all six held-out cells favored selection by point estimate. The all-profile and specialized references were stronger. This is selector transfer, not unknown-profile matcher transfer; see `../independent_research_v2/fast_flagged_logistic_leave_profile_out_report.md`.

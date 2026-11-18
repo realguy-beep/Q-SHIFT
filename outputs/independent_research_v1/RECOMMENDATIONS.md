@@ -224,3 +224,8 @@ A single pooled d3 selector is a viable lower-complexity option: it passed the s
 ### Relative-choice formulation
 
 Keep as a compact interpretable variant, not the preferred accuracy candidate. It passed the base gate twice, but gave up ~.00014 macro LER versus shared absolute-bit selection and ~.00022 versus specialized selection; one cell was near-neutral. Prefer absolute-bit/specialized models when minimizing errors is primary.
+
+
+### Relative-choice transfer scope
+
+A model trained on two of the three d3 Pauli regimes transferred to the excluded regime when that regime's matching graphs were available, with positive gains in every fold on two streams. This may reduce selector-label requirements across known profile families, but does not support unknown-profile graph selection. All-profile and specialized models are more accurate; d5 transfer remains unproven and was negative.

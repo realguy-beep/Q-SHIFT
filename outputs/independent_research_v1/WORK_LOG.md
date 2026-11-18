@@ -660,3 +660,12 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Shared absolute-bit reference remained more accurate by .000139/.000134 macro LER; specialized reference by .000216/.000219. Keep relative-choice only as an interpretable compact alternative, not the best accuracy candidate.
 - Added 24,120,000 unique samples (both streams 120k preflight +12M train +12M validation); cumulative unique Q-SHIFT development samples: 197,268,200. No confirmatory/sealed data.
 - Full report: `outputs/independent_research_v2/fast_flagged_logistic_relative_choice_report.md`.
+
+
+## Relative-choice model transfers across a held-out Pauli regime — 2026-11-18
+
+- Three leave-one-regime-out folds each trained on two regimes across both bases (12M train samples/run total) and tested the excluded regime's two memory cells (6M validation), with profile-matched correlated/ordinary graphs. The shared model used flagged detector bits and `correlated_wrong`; no held-out regime labels entered that fold's fit.
+- First run: macro LER .005136→.004551 (11.39%), paired macro delta -.000585 (95% CI [-.000619,-.000550]), cost 1.354x. Fold gains: 9.63% X-biased, 17.60% balanced, 4.97% Z-biased. All six cell point estimates improved.
+- Fresh replication: .005188→.004590 (11.52%), paired delta -.000598 (95% CI [-.000632,-.000563]), cost 1.360x. Fold gains 9.72%, 17.67%, and 5.10%; all six points improved. Both frozen gates passed, including positive gain in each held-out regime.
+- This tests selector transfer only; each decoder graph was matched to the held-out profile. The model remained weaker than all-profile and specialized references, and d5 transfer is still negative. Added 36,120,000 unique samples; cumulative Q-SHIFT development samples: 233,388,200. No confirmatory/sealed data.
+- Full report: `outputs/independent_research_v2/fast_flagged_logistic_leave_profile_out_report.md`.

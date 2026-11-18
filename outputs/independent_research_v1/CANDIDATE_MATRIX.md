@@ -155,3 +155,8 @@ Two pooled train/validation streams passed the baseline gate (14.5%/15.1% macro 
 ### Relative matcher-choice model
 
 Two pooled 40-detector-bit relative-choice fits passed the baseline gate (11.96%/12.23% macro reductions, ~1.35x cost). The target is whether correlated matching is wrong on flagged syndromes, then the policy chooses the ordinary output if so. It is simpler to interpret but was measurably less accurate than shared absolute-bit and specialized selectors. Consider only where that tradeoff is acceptable. Full report: `../independent_research_v2/fast_flagged_logistic_relative_choice_report.md`.
+
+
+### Relative-choice classifier: leave-one-regime-out transfer
+
+Two independent three-fold runs withheld each Pauli regime from training and retained 11.4%/11.5% macro gains at ~1.35x cost, with positive direction in all folds and held-out cells. The decoder graphs were still profile-matched; full-profile and specialized models remained better. Keep this as selector transfer evidence only, not unknown-profile decoding or distance scaling. Report: `../independent_research_v2/fast_flagged_logistic_leave_profile_out_report.md`.
