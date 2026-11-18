@@ -107,3 +107,6 @@ For fixed known X bias, preserve memory-basis alignment as the strongest tested 
 
 
 Revise the X-bias code-design baseline: use X-aligned CSS as the static comparator before considering XZZX. The reported XZZX improvement over CSS Z-memory is real for that memory task, but the aligned CSS stream was better at both tested distances. Do not promote XZZX from this evidence.
+
+
+The fresh d5 factorial confirms the strongest tested X-bias memory choice is CSS-X among these cells. Keep XZZX as a possible Z-memory improvement over CSS-Z under the stated native-gate model, but do not recommend it over aligned CSS for X-biased memory.

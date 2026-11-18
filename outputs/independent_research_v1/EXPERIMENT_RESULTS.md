@@ -310,3 +310,8 @@ Across saved d3/d5/d7/d9 X-bias ratio-10 screens, aligned/mismatched failure cou
 ## XZZX comparator audit against aligned CSS
 
 The native-XCX XZZX screen compared Z-memory XZZX only with CSS Z-memory, a mismatched basis under X-biased noise. Against the previously measured X-aligned CSS stream at matched qubit, detector, two-qubit, one-qubit-noise, measurement-target, and tick resources, XZZX/CSS rate ratios were 3.57 (conditional 95% interval 2.70–4.80) at d3 and 13.48 (6.17–36.85) at d5. The original XZZX benefit over mismatched CSS Z remains valid, but does not survive the stronger aligned-CSS comparator. This is an independent-stream cross-screen comparison under the explicit native-gate equivalence assumption, not a paired run or general XZZX result. No new samples.
+
+
+## d5 CSS/XZZX by memory-basis factorial screen
+
+At X-bias ratio 10:1 and p=.003, four fresh 500k streams passed equal-resource preflight (qubits, detectors, observables, two-qubit interactions, one-qubit noise targets, ticks, and measurement targets). CSS-X had 79 failures; CSS-Z 1,848; XZZX-X 604; XZZX-Z 670. XZZX-X/CSS-X was 7.65 (conditional 95% interval 6.04–9.79), while XZZX-Z/CSS-Z was .363 (.331–.396). CSS basis alignment gave .0427 (.0337–.0536) X/Z; within XZZX, X/Z was .901 (.806–1.008). This fresh d5 stream replicates that XZZX improves over mismatched CSS Z-memory but loses to aligned CSS-X. Development-only code/configuration evidence; native-gate equivalence and logical-basis scope remain limitations. See the protocol and JSON.

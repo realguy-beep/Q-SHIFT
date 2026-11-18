@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 50220000,
+  "stochastic_qshift_shots_generated": 52260000,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -239,7 +239,7 @@
     },
     "interpretation": "all three BP+LSD variants worse in every tested condition; one distance/configuration/approximate model only; not an integration or superiority claim"
   },
-  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples; includes 20,000 all-fault instrumentation preflight and 200,000 all-fault composition development samples; excludes 50,000 synthetic instrumentation checks",
+  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples; includes 20,000 all-fault instrumentation preflight and 200,000 all-fault composition development samples; excludes 50,000 synthetic instrumentation checks; includes fresh 40,000-shot preflight and 2,000,000-shot main d5 CSS/XZZX by memory-basis factorial screen",
   "stochastic_dem_samples_generated": 780000,
   "rare_event_importance_sampling": {
     "status": "positive_development_method_result_limited_to_approximate_dem",
@@ -21114,6 +21114,100 @@
       "Streams are independent, so uncertainty uses a conditional count-rate ratio.",
       "Logical memory basis differs; arbitrary-state performance and worst-case XZZX memory are untested.",
       "One-factor-at-a-time code-design conclusions do not establish an asymptotic threshold."
+    ]
+  },
+  "xzzx_basis_factorial_preflight": {
+    "status": "xzzx_basis_factorial_preflight_passed",
+    "artifact": "xzzx_basis_factorial_preflight.json",
+    "projected_main_seconds": 13.990096350062231,
+    "elapsed_seconds": 0.6666368070000317,
+    "max_main_seconds": 300
+  },
+  "xzzx_basis_factorial": {
+    "status": "development_xzzx_basis_factorial",
+    "artifact": "xzzx_basis_factorial_results.json",
+    "protocol": "xzzx_basis_factorial_protocol.md",
+    "shots_per_condition": 500000,
+    "new_source_equivalent_samples": 2000000,
+    "elapsed_seconds": 17.89060514400262,
+    "resources_equal": true,
+    "conditions": [
+      {
+        "code": "css",
+        "basis": "x",
+        "failures": 79,
+        "ler": 0.000158,
+        "wilson_95": [
+          0.00012679100542931863,
+          0.00019688942540197738
+        ]
+      },
+      {
+        "code": "css",
+        "basis": "z",
+        "failures": 1848,
+        "ler": 0.003696,
+        "wilson_95": [
+          0.003531570846068025,
+          0.0038680552208557144
+        ]
+      },
+      {
+        "code": "xzzx",
+        "basis": "x",
+        "failures": 604,
+        "ler": 0.001208,
+        "wilson_95": [
+          0.0011154767269323138,
+          0.0013081875698958917
+        ]
+      },
+      {
+        "code": "xzzx",
+        "basis": "z",
+        "failures": 670,
+        "ler": 0.00134,
+        "wilson_95": [
+          0.001242362356849881,
+          0.0014452999117036504
+        ]
+      }
+    ],
+    "comparisons": {
+      "xzzx_x_over_css_x": {
+        "point": 7.645569620253165,
+        "conditional_exact_95_ci": [
+          6.039240222236563,
+          9.793167799386904
+        ]
+      },
+      "xzzx_z_over_css_z": {
+        "point": 0.3625541125541126,
+        "conditional_exact_95_ci": [
+          0.33138988841214106,
+          0.39627511511122293
+        ]
+      },
+      "css_x_over_css_z": {
+        "point": 0.042748917748917745,
+        "conditional_exact_95_ci": [
+          0.03368695429276238,
+          0.05355652058731577
+        ]
+      },
+      "xzzx_x_over_xzzx_z": {
+        "point": 0.9014925373134328,
+        "conditional_exact_95_ci": [
+          0.8062694827526249,
+          1.0077970140962564
+        ]
+      }
+    },
+    "limitations": [
+      "d5 only; synthetic X-biased ratio 10:1, p=.003.",
+      "Independent streams; conditional rate-ratio intervals.",
+      "CX/XCX/CZ equal duration and noise is an unverified hardware assumption.",
+      "Code/memory configuration evidence, not arbitrary-state or threshold evidence."
     ]
   }
 }

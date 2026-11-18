@@ -309,3 +309,8 @@ The independent fixed-profile records show declining aligned/mismatched point ra
 ## XZZX comparator correction — 2026-11-18
 
 The XZZX generator explicitly builds both CSS and XZZX as Z-memory. Reused X-aligned CSS streams show lower LER at matched counted resources: native XZZX ratios 3.57 at d3, 13.48 at d5. This downgrades XZZX from a practical X-bias recommendation while preserving the conditional finding that it improves on mismatched CSS Z-memory. No samples generated.
+
+
+## XZZX by memory-basis factorial — 2026-11-18
+
+A fresh d5 2x2 screen found that native XZZX lowered LER versus mismatched CSS-Z (XZZX-Z/CSS-Z .363) but was worse than CSS-X in either XZZX memory basis (XZZX-X/CSS-X 7.65). The CSS X/Z ratio was .0427. Equal counted resources were verified; result remains conditional on identical CX/XCX/CZ physical errors and durations.

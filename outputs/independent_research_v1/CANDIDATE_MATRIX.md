@@ -69,3 +69,6 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 
 
 **Comparator correction:** native-XCX XZZX beat CSS Z-memory under X bias, but reused matched-resource X-aligned CSS streams had lower LER at d3/d5. XZZX/CSS-aligned ratios were 3.57 and 13.48. Keep XZZX as orientation/code-design evidence, not a leading X-bias recommendation.
+
+
+**Fresh d5 factorial:** CSS-X/Z had 79/1,848 failures; native XZZX-X/Z 604/670 on 500k streams each. XZZX helps against CSS-Z but loses to X-aligned CSS-X by 7.65x. Keep code-design conclusions workload- and basis-specific.

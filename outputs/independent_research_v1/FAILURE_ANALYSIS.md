@@ -156,3 +156,6 @@ The d3/d5/d7/d9 basis-alignment synthesis suggests stronger finite-distance supp
 
 
 The XZZX X-bias result used CSS Z-memory as its reference. Same-resource X-aligned CSS streams already in the record had lower LER than XZZX Z-memory at d3 and d5. This changes the practical code-design recommendation: first select the memory basis for the known bias, then compare codes. The cross-screen comparison is descriptive, unpaired, and depends on equal CX/XCX/CZ duration and noise.
+
+
+The fresh d5 factorial clarifies the code/basis interaction. XZZX-X and XZZX-Z were similar, but both had about eight times the CSS-X failure rate. XZZX-Z still beat CSS-Z by about 2.8x. Thus the initial XZZX gain reflects the choice of comparator memory basis; it does not outperform the best known-bias CSS configuration. The 2x2 comparison is one finite-size simulator screen under an unverified native-gate assumption.

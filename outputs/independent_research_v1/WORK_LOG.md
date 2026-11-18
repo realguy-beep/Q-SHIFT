@@ -391,3 +391,13 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - XZZX/CSS-aligned rate ratios: 3.57 (95% conditional interval 2.70–4.80) at d3; 13.48 (6.17–36.85) at d5. Independent streams; cross-screen uncertainty only.
 - Practical conclusion: the original .66/.38 ratios versus mismatched CSS Z are not the strongest code-design comparison. Aligned CSS is better in the tested X-biased memory task.
 - Next: complete a source-verified literature pass on biased surface-code code/circuit co-design and distinguish established evidence from local results.
+
+
+## XZZX memory-basis factorial checkpoint — 2026-11-18
+
+- Branch `codex/qshift-independent-research-v1`; pre-analysis checkpoint commit `8e693c9`.
+- Preflight passed all four circuits; projection 13.99s. Main 2,000,000-shot screen completed in 17.89s; plus 40,000 preflight samples.
+- CSS-X/Z 79/1848; XZZX-X/Z 604/670. XZZX-X/CSS-X=7.65 (95% conditional interval 6.04–9.79); XZZX-Z/CSS-Z=.363 (.331–.396).
+- Resource equality verified across all four cells; independent streams; native gate equivalence remains assumed.
+- Total Q-SHIFT development samples now 52,260,000. No sealed or confirmatory data.
+- Continue with source-verifiable literature and implementation audit; network requests to arXiv and Crossref currently return proxy 403.

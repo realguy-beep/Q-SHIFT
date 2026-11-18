@@ -118,3 +118,6 @@ A secondary matched-resource synthesis estimates an aligned per-2-distance LER m
 
 
 The d3/d5 native-XCX XZZX gain under X bias is relative to CSS Z-memory. Against X-aligned CSS, the observed XZZX rate was 3.6x / 13.5x higher at equal counted qubit, detector, round, and two-qubit interaction budgets. Neither finite-size screen supports a threshold conclusion; native gate equivalence remains an assumption.
+
+
+Fresh d5 2x2 code/basis evidence: CSS-X 79/500k, CSS-Z 1,848/500k, XZZX-X 604/500k, XZZX-Z 670/500k. Under the tested model XZZX improves on CSS-Z but not aligned CSS-X (7.65x higher XZZX-X rate). This bounds one code-selection claim, not the asymptotic XZZX threshold.

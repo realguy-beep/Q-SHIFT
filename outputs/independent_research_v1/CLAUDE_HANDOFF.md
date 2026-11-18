@@ -133,3 +133,6 @@ For X-biased ratio-10 memory, compare code proposals against the tested X-aligne
 
 
 For X-biased workloads, the native-XCX XZZX comparison must include CSS with X-memory alignment. In the saved d3/d5 streams, native XZZX Z-memory had 3.57x and 13.48x the aligned-CSS LER under matched counted qubit, detector, two-qubit, one-qubit-noise, measurement-target, and tick resources. Existing reported XZZX/CSS results used CSS Z-memory, so qualify them as a same-basis comparison. Native gate equivalence is still assumed, and the streams are unpaired.
+
+
+A fresh d5 2x2 development screen passed equal-resource gates (500k per cell): CSS-X 79 errors, CSS-Z 1,848, native XZZX-X 604, XZZX-Z 670. XZZX-X/CSS-X=7.65 (95% conditional interval 6.04–9.79); XZZX-Z/CSS-Z=.363 (.331–.396). Practical takeaway: keep CSS-X as the X-bias baseline; XZZX only improves the mismatched CSS-Z task in this model. Native CX/XCX/CZ noise/duration equivalence is assumed, not measured.

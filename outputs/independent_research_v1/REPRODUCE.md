@@ -227,3 +227,13 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/ba
 ```
 
 No samples are generated; inputs are fixed summaries in `RESULTS.json`.
+
+
+### d5 CSS/XZZX memory-basis factorial
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_basis_factorial.py --preflight
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_basis_factorial.py
+```
+
+Protocol, seeds, gates, and resource assumptions: `xzzx_basis_factorial_protocol.md`.
