@@ -286,3 +286,8 @@ On a fresh 5,000 paired biased-code-capacity sample per distance, qecsim `Planar
 ## Exact seven-layer tensor-train compressibility audit
 
 The exact P(s) and Z(s) arrays were matricized at all 19 cuts in the frozen 20-detector order. Maximum rank was 91 for each array to relative Frobenius error 1e-10, and 30 at 1e-6. The predeclared exact-fidelity prototype gate (rank <=64 at 1e-10) failed; no tensor-train decoder was implemented and no stochastic samples were generated. This is an ordering-specific compressibility result for the seven-layer tail, not a lower bound for other detector orderings or a full-circuit network.
+
+
+## d9 evidence budget calculation
+
+Using the observed mismatched LER 0.000816 (408/500k), a 1e-4 relative-rate target is 8.16e-08. The exact baseline 95% lower endpoint (0.00073876) implies a conservative target 7.39e-08. Even in an optimistic IID single-condition design, about 36,712,404 zero-failure candidate shots are needed at the point baseline; a single candidate failure raises this to 58,135,593. This is a mathematical sample-size requirement, not a new experiment or proof of physical feasibility.

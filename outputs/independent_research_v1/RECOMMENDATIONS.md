@@ -89,3 +89,6 @@ The qecsim averaged row/column MPS mode produced exactly the same predictions as
 
 
 The natural detector-order exact tensor-train audit missed its rank-64/1e-10 gate (max rank 91). Do not build an exact-fidelity MPS prototype from this tensor ordering. A lower-rank 1e-6 approximation is only a future hypothesis and would need a new protocol with direct risk/error calibration against the exact fragment before any circuit-scale use.
+
+
+At the d9 mismatched baseline, the aspirational 1e-4 relative rate corresponds to candidate LER 8.16e-08. The one-failure exact evidence budget is already about 58,135,593 IID shots in one condition, before roots or multiplicity. Do not treat a zero count in a few hundred thousand shots as evidence for the target.

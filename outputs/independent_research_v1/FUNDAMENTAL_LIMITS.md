@@ -98,3 +98,8 @@ At p=.05 in perfect-syndrome planar code capacity with X:Y:Z=10:1:1, fixed chi=1
 ## Tensor-train rank of the exact seven-layer tail
 
 For the exact 20-detector P/Z posterior, natural temporal detector order gives maximum tensor-train ranks 91 at relative Frobenius tolerance 1e-10 and 30 at 1e-6. The fixed rank<=64 high-accuracy gate therefore fails. The finding is representation/order specific and cannot be generalized to the full circuit or all tensor-network contractions.
+
+
+## d9 shot budget for the 99.99% relative target
+
+The mismatched d9 baseline observed 408/500,000 failures, LER 0.000816; its exact two-sided 95% lower endpoint is 0.00073876. A 10,000-fold reduction would require candidate LER <= 8.16e-08 using the point baseline, or <= 7.39e-08 under this conservative baseline endpoint. Under an optimistic single-condition IID binomial model, zero candidate failures require 36,712,404 shots using the point baseline and 40,550,810 using the lower endpoint. If one candidate failure occurs, the corresponding exact one-sided 95% upper-bound requirements rise to 58,135,593 and 64,213,866. These are lower-bound evidence budgets before independent roots, multiple conditions, baseline uncertainty, or model selection; they are not a physical lower bound. Full calculation: `d9_relative_target_sample_budget.json`.

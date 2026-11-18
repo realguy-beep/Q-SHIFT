@@ -282,3 +282,9 @@
 - Audited whether the exact P/Z posterior can fit a low-rank MPS in the frozen temporal detector order. SVD across every binary cut completed in 6.44s with no sampling.
 - Maximum TT rank 91 at 1e-10 relative error; rank 30 at 1e-6. Fixed exact-fidelity rank-64 gate failed. Do not implement the predeclared exact-fidelity prototype or adjust tolerances post hoc.
 - This is not a bound for other orderings or a full circuit. Next, switch families/approaches.
+
+
+## Statistical feasibility note — d9 relative target (2026-11-18)
+
+- No new sampling. From 408/500k mismatched d9 errors, computed the 1e-4 relative target and exact IID candidate sample counts. At the point baseline, target LER=8.16e-8: 36.7M zero-failure shots or 58.1M shots allowing one failure to bound the rate. Conservative baseline lower endpoint needs 40.6M / 64.2M. These omit multiple conditions and clustered roots.
+- This explains why the 500k aligned sample cannot establish the aspirational ratio; result artifact `d9_relative_target_sample_budget.json`.

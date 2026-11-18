@@ -111,3 +111,8 @@ Under the same X-biased code-capacity model, qecsim chi16 mode `a` and mode `c` 
 ## Exact tail tensor-train audit
 
 Natural detector-order TT-SVD of the exact seven-layer P/Z arrays gave max rank 91 at 1e-10 relative Frobenius error and rank 30 at 1e-6. The preregistered rank<=64 at 1e-10 gate failed, so no MPS prototype followed. This is specific to the stored detector order and tail fragment. Artifact/protocol: `categorical_seven_layer_tt_results.json` and `categorical_seven_layer_tt_protocol.md`.
+
+
+## d9 rare-event sample budget
+
+The observed d9 mismatched rate was 408/500k=.000816. A 1e-4 relative target corresponds to 8.16e-8 candidate LER; an exact baseline lower endpoint gives a conservative 7.39e-8 target. An optimistic IID calculation requires 36.7M / 40.6M zero-failure shots, or 58.1M / 64.2M shots if one candidate failure occurs. These are single-condition minimum evidence counts and exclude multiplicity/root effects. See `d9_relative_target_sample_budget.json`.
