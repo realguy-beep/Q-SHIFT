@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 30000,
+  "stochastic_qshift_shots_generated": 1352400,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -239,7 +239,7 @@
     },
     "interpretation": "all three BP+LSD variants worse in every tested condition; one distance/configuration/approximate model only; not an integration or superiority claim"
   },
-  "stochastic_qshift_shots_scope": "new development-only circuit samples; no confirmatory or sealed evaluation data accessed",
+  "stochastic_qshift_shots_scope": "development-only circuit samples from Phase 2B; no confirmatory or sealed evaluation data accessed",
   "stochastic_dem_samples_generated": 780000,
   "rare_event_importance_sampling": {
     "status": "positive_development_method_result_limited_to_approximate_dem",
@@ -299,5 +299,221 @@
       "rare_event_replication_check.json"
     ],
     "interpretation": "promising variance-reduction method for this approximate DEM surrogate only; no circuit-level rare-event estimator"
+  },
+  "categorical_importance_sampling": {
+    "status": "instrumentation_and_likelihood_weights_validated_but_global_tilt_efficiency_not_robust",
+    "exact_channel_sampler_validation": {
+      "shots_per_channel": 50000,
+      "channel_probabilities": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "alpha": 5.0,
+      "direct_and_tilted": {
+        "1.0": {
+          "counts": [
+            42659,
+            484,
+            490,
+            522,
+            502,
+            473,
+            509,
+            512,
+            449,
+            482,
+            476,
+            489,
+            474,
+            483,
+            510,
+            486
+          ],
+          "expected_probabilities": [
+            0.85,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "data_pauli_mismatches": 0,
+          "instrumented_qubits": 6
+        },
+        "5.0": {
+          "counts": [
+            26612,
+            1597,
+            1501,
+            1618,
+            1524,
+            1472,
+            1529,
+            1550,
+            1547,
+            1506,
+            1605,
+            1632,
+            1543,
+            1568,
+            1580,
+            1616
+          ],
+          "expected_probabilities": [
+            0.53125,
+            0.03125,
+            0.03125,
+            0.03125,
+            0.03125,
+            0.03125,
+            0.03125,
+            0.03125,
+            0.03125,
+            0.03125,
+            0.03125,
+            0.03125,
+            0.03125,
+            0.03125,
+            0.03125,
+            0.03125
+          ],
+          "data_pauli_mismatches": 0,
+          "instrumented_qubits": 6
+        }
+      },
+      "noiseless_detector_observable_equality": true,
+      "scope": "synthetic channel instrumentation only; no Phase 2B shots"
+    },
+    "main_shots_per_arm_per_condition": 20000,
+    "main_direct_ler_range": [
+      0.00065,
+      0.008
+    ],
+    "main_importance_ler_range": [
+      0.001049961039802208,
+      0.00872417574375359
+    ],
+    "main_relative_se_gain_conditions": 5,
+    "main_failure_weight_ess_range": [
+      21.198277646543115,
+      357.19302283741297
+    ],
+    "raw_unmodified_circuit_crosscheck_max_abs_z": 0.7005911068879224,
+    "replication_blocks": 2,
+    "replicates_per_block": 8,
+    "shots_per_arm_per_condition_per_replicate": 5000,
+    "combined_condition_summaries": [
+      {
+        "memory_basis": "z",
+        "regime": "x_biased",
+        "direct_mean": 0.0072499999999999995,
+        "importance_mean": 0.006770095146915446,
+        "direct_between_replicate_sd": 0.0013155480480266262,
+        "importance_between_replicate_sd": 0.0006784662573601501,
+        "importance_to_direct_sd_ratio": 0.5157289833525094,
+        "mean_importance_minus_direct": -0.00047990485308455375,
+        "difference_standard_error": 0.0003490566297641669,
+        "difference_z": -1.3748624497084951
+      },
+      {
+        "memory_basis": "z",
+        "regime": "balanced",
+        "direct_mean": 0.0050875,
+        "importance_mean": 0.004932851796887459,
+        "direct_between_replicate_sd": 0.0007727655961976223,
+        "importance_between_replicate_sd": 0.0006099853069579169,
+        "importance_to_direct_sd_ratio": 0.7893536021263595,
+        "mean_importance_minus_direct": -0.00015464820311254137,
+        "difference_standard_error": 0.0002548842400526658,
+        "difference_z": -0.6067389771944588
+      },
+      {
+        "memory_basis": "z",
+        "regime": "z_biased",
+        "direct_mean": 0.0010999999999999998,
+        "importance_mean": 0.0010837222564001724,
+        "direct_between_replicate_sd": 0.0003265986323710904,
+        "importance_between_replicate_sd": 0.0005348063817459001,
+        "importance_to_direct_sd_ratio": 1.6375034330769587,
+        "mean_importance_minus_direct": -1.6277743599827506e-05,
+        "difference_standard_error": 0.00018671763973508216,
+        "difference_z": -0.08717839205188442
+      },
+      {
+        "memory_basis": "x",
+        "regime": "x_biased",
+        "direct_mean": 0.0012,
+        "importance_mean": 0.0013048696368868021,
+        "direct_between_replicate_sd": 0.0005977736472389305,
+        "importance_between_replicate_sd": 0.0004683377295510442,
+        "importance_to_direct_sd_ratio": 0.7834700169775957,
+        "mean_importance_minus_direct": 0.00010486963688680226,
+        "difference_standard_error": 0.0001581652163205803,
+        "difference_z": 0.6630385575691001
+      },
+      {
+        "memory_basis": "x",
+        "regime": "balanced",
+        "direct_mean": 0.005762499999999999,
+        "importance_mean": 0.0057296672121030425,
+        "direct_between_replicate_sd": 0.0009749358953285083,
+        "importance_between_replicate_sd": 0.0008066745227653878,
+        "importance_to_direct_sd_ratio": 0.8274128859452609,
+        "mean_importance_minus_direct": -3.2832787896957584e-05,
+        "difference_standard_error": 0.0002503679838507563,
+        "difference_z": -0.13113812473934014
+      },
+      {
+        "memory_basis": "x",
+        "regime": "z_biased",
+        "direct_mean": 0.007925000000000001,
+        "importance_mean": 0.007885052202415432,
+        "direct_between_replicate_sd": 0.0009462205521617745,
+        "importance_between_replicate_sd": 0.0010199605404848178,
+        "importance_to_direct_sd_ratio": 1.0779310787052487,
+        "mean_importance_minus_direct": -3.9947797584569816e-05,
+        "difference_standard_error": 0.00039960609723713327,
+        "difference_z": -0.09996793807894301
+      }
+    ],
+    "combined_six_condition_macro_direct_mean": 0.004720833333333334,
+    "combined_six_condition_macro_importance_mean": 0.004617709708601392,
+    "combined_macro_sd_direct": 0.00025353062493075235,
+    "combined_macro_sd_importance": 0.00028375191288792064,
+    "combined_macro_importance_to_direct_sd_ratio": 1.1192017254934101,
+    "conclusion": "direct and weighted estimates agree across replications; global fivefold tilt does not reliably reduce variance overall and raises variance in some strata",
+    "qshift_circuit_shots": 1322400,
+    "artifacts": [
+      "categorical_importance_sampler.py",
+      "categorical_importance_preflight.json",
+      "categorical_importance_results.json",
+      "categorical_importance_replication.json",
+      "categorical_importance_replication_2.json",
+      "categorical_sampler_crosscheck.py",
+      "categorical_sampler_crosscheck.json"
+    ]
   }
 }

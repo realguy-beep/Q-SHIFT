@@ -27,3 +27,5 @@ The remaining requested reports and any prototype are pending. Treat all conclus
 - Added a paired, development-only BP+LSD screen (30,000 new circuit shots). All three tested configurations lost to correlation-enabled PyMatching; details and scope limits are in `EXPERIMENT_RESULTS.md` and `bplsd_results.json`.
 
 - Added an importance-sampling method study with exact toy weight validation and eight-replicate stability check. It improves precision for the approximate DEM surrogate only; it is not a circuit-level rare-event estimate.
+
+- Extended the importance-sampling work to the exact categorical circuit channels with validated event recording, source-sampler crosscheck, and 16 independent replicates. The likelihood ratio is valid, but the tested global tilt did not reduce variance consistently across regimes.
