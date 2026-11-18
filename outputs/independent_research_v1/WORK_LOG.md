@@ -669,3 +669,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Fresh replication: .005188→.004590 (11.52%), paired delta -.000598 (95% CI [-.000632,-.000563]), cost 1.360x. Fold gains 9.72%, 17.67%, and 5.10%; all six points improved. Both frozen gates passed, including positive gain in each held-out regime.
 - This tests selector transfer only; each decoder graph was matched to the held-out profile. The model remained weaker than all-profile and specialized references, and d5 transfer is still negative. Added 36,120,000 unique samples; cumulative Q-SHIFT development samples: 233,388,200. No confirmatory/sealed data.
 - Full report: `outputs/independent_research_v2/fast_flagged_logistic_leave_profile_out_report.md`.
+
+
+## Relative-choice selector does not transfer across memory basis — 2026-11-18
+
+- Two leave-one-basis-out folds trained on one memory basis across all three profiles and tested the other basis. Macro LER worsened .0051605→.0052402 (+1.54%); paired macro delta was +.0000797 (approximate 95% CI [.0000547,.0001047]). Runtime was 1.366x; accuracy gate failed.
+- Z-memory holdout was slightly positive (+.48% macro); X-memory holdout worsened 3.72%, with all three X cells worse and X-memory/balanced harmed 5.05%, beyond the 5% limit. No replication/tuning followed.
+- This narrows leave-one-regime-out transfer: target memory basis must be represented in classifier training. Added 12,060,000 unique samples; cumulative Q-SHIFT development count: 245,448,200. No confirmatory/sealed data.
+- Report: `outputs/independent_research_v2/fast_flagged_logistic_leave_basis_out_report.md`.

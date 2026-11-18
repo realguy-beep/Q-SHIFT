@@ -229,3 +229,8 @@ Keep as a compact interpretable variant, not the preferred accuracy candidate. I
 ### Relative-choice transfer scope
 
 A model trained on two of the three d3 Pauli regimes transferred to the excluded regime when that regime's matching graphs were available, with positive gains in every fold on two streams. This may reduce selector-label requirements across known profile families, but does not support unknown-profile graph selection. All-profile and specialized models are more accurate; d5 transfer remains unproven and was negative.
+
+
+### Basis transfer limitation
+
+Do not deploy a relative-choice classifier trained on one logical memory basis to the other: the leave-one-basis-out screen worsened macro LER and violated the per-cell gate. The positive leave-one-profile-out result only applies when the target basis was represented in training and its matching graph is profile-matched.

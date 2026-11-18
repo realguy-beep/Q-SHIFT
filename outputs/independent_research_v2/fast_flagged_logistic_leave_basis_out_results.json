@@ -1,0 +1,679 @@
+{
+  "status": "fast_flagged_logistic_leave_basis_out",
+  "folds": [
+    {
+      "held_out_basis": "z",
+      "training": [
+        {
+          "memory_basis": "x",
+          "regime": "x_biased",
+          "seed": 2026120111,
+          "shots": 1000000,
+          "flags": 855,
+          "correlated_wrong": 474,
+          "seconds": 1.6223765370014007
+        },
+        {
+          "memory_basis": "x",
+          "regime": "balanced",
+          "seed": 2026120112,
+          "shots": 1000000,
+          "flags": 3826,
+          "correlated_wrong": 1868,
+          "seconds": 1.9806333360029384
+        },
+        {
+          "memory_basis": "x",
+          "regime": "z_biased",
+          "seed": 2026120113,
+          "shots": 1000000,
+          "flags": 2079,
+          "correlated_wrong": 973,
+          "seconds": 1.4244041909987573
+        }
+      ],
+      "training_flagged": 6760,
+      "training_correlated_wrong": 3315,
+      "training_fit": {
+        "iterations": 34,
+        "objective": 4022.900142305868,
+        "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "training_flag_rows": 6760,
+        "training_class_counts": {
+          "logical0": 3445,
+          "logical1": 3315
+        }
+      },
+      "fit_seconds": 0.0411539630003972,
+      "validation": [
+        {
+          "memory_basis": "z",
+          "regime": "x_biased",
+          "seed": 2026120131,
+          "shots": 1000000,
+          "flagged": 2680,
+          "flag_rate": 0.00268,
+          "failures": {
+            "correlated": 7722,
+            "leave_basis_out": 7737,
+            "all_profile_relative_reference": 6979,
+            "all_profile_absolute_reference": 6886,
+            "specialized_reference": 6771
+          },
+          "ler": {
+            "correlated": 0.007722,
+            "leave_basis_out": 0.007737,
+            "all_profile_relative_reference": 0.006979,
+            "all_profile_absolute_reference": 0.006886,
+            "specialized_reference": 0.006771
+          },
+          "paired_transfer_minus_correlated": {
+            "delta_second_minus_first": 1.5e-05,
+            "normal_95_ci": [
+              -2.6807471185807727e-05,
+              5.6807471185807724e-05
+            ],
+            "first_only_failures": 220,
+            "second_only_failures": 235,
+            "mcnemar_exact_two_sided": 0.5116560053459213
+          },
+          "time_ratio": 1.4097563482209303
+        },
+        {
+          "memory_basis": "z",
+          "regime": "balanced",
+          "seed": 2026120132,
+          "shots": 1000000,
+          "flagged": 5179,
+          "flag_rate": 0.005179,
+          "failures": {
+            "correlated": 6875,
+            "leave_basis_out": 6797,
+            "all_profile_relative_reference": 4799,
+            "all_profile_absolute_reference": 4568,
+            "specialized_reference": 4500
+          },
+          "ler": {
+            "correlated": 0.006875,
+            "leave_basis_out": 0.006797,
+            "all_profile_relative_reference": 0.004799,
+            "all_profile_absolute_reference": 0.004568,
+            "specialized_reference": 0.0045
+          },
+          "paired_transfer_minus_correlated": {
+            "delta_second_minus_first": -7.8e-05,
+            "normal_95_ci": [
+              -0.00013460173573999075,
+              -2.139826426000924e-05
+            ],
+            "first_only_failures": 456,
+            "second_only_failures": 378,
+            "mcnemar_exact_two_sided": 0.007632144639861966
+          },
+          "time_ratio": 1.3404148476443603
+        },
+        {
+          "memory_basis": "z",
+          "regime": "z_biased",
+          "seed": 2026120133,
+          "shots": 1000000,
+          "flagged": 943,
+          "flag_rate": 0.000943,
+          "failures": {
+            "correlated": 1462,
+            "leave_basis_out": 1448,
+            "all_profile_relative_reference": 1002,
+            "all_profile_absolute_reference": 979,
+            "specialized_reference": 953
+          },
+          "ler": {
+            "correlated": 0.001462,
+            "leave_basis_out": 0.001448,
+            "all_profile_relative_reference": 0.001002,
+            "all_profile_absolute_reference": 0.000979,
+            "specialized_reference": 0.000953
+          },
+          "paired_transfer_minus_correlated": {
+            "delta_second_minus_first": -1.4e-05,
+            "normal_95_ci": [
+              -3.668821817160395e-05,
+              8.688218171603949e-06
+            ],
+            "first_only_failures": 74,
+            "second_only_failures": 60,
+            "mcnemar_exact_two_sided": 0.2613502966249506
+          },
+          "time_ratio": 1.3544273531163602
+        }
+      ],
+      "macro_ler": {
+        "correlated": 0.005353,
+        "leave_basis_out": 0.005327333333333333
+      },
+      "macro_relative_reduction": 0.004794819104552039,
+      "per_cell_reductions": [
+        -0.0019425019425018952,
+        0.011345454545454547,
+        0.009575923392612817
+      ],
+      "passed_fold_positive_direction": true
+    },
+    {
+      "held_out_basis": "x",
+      "training": [
+        {
+          "memory_basis": "z",
+          "regime": "x_biased",
+          "seed": 2026120121,
+          "shots": 1000000,
+          "flags": 2726,
+          "correlated_wrong": 1689,
+          "seconds": 1.479347416003293
+        },
+        {
+          "memory_basis": "z",
+          "regime": "balanced",
+          "seed": 2026120122,
+          "shots": 1000000,
+          "flags": 5137,
+          "correlated_wrong": 3590,
+          "seconds": 1.392969506996451
+        },
+        {
+          "memory_basis": "z",
+          "regime": "z_biased",
+          "seed": 2026120123,
+          "shots": 1000000,
+          "flags": 1020,
+          "correlated_wrong": 731,
+          "seconds": 1.2136888180029928
+        }
+      ],
+      "training_flagged": 8883,
+      "training_correlated_wrong": 6010,
+      "training_fit": {
+        "iterations": 42,
+        "objective": 4898.567989506332,
+        "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "training_flag_rows": 8883,
+        "training_class_counts": {
+          "logical0": 2873,
+          "logical1": 6010
+        }
+      },
+      "fit_seconds": 0.03496508199896198,
+      "validation": [
+        {
+          "memory_basis": "x",
+          "regime": "x_biased",
+          "seed": 2026120134,
+          "shots": 1000000,
+          "flagged": 798,
+          "flag_rate": 0.000798,
+          "failures": {
+            "correlated": 1201,
+            "leave_basis_out": 1234,
+            "all_profile_relative_reference": 1052,
+            "all_profile_absolute_reference": 998,
+            "specialized_reference": 955
+          },
+          "ler": {
+            "correlated": 0.001201,
+            "leave_basis_out": 0.001234,
+            "all_profile_relative_reference": 0.001052,
+            "all_profile_absolute_reference": 0.000998,
+            "specialized_reference": 0.000955
+          },
+          "paired_transfer_minus_correlated": {
+            "delta_second_minus_first": 3.3e-05,
+            "normal_95_ci": [
+              -8.530862644008053e-06,
+              7.453086264400806e-05
+            ],
+            "first_only_failures": 208,
+            "second_only_failures": 241,
+            "mcnemar_exact_two_sided": 0.1309076669365471
+          },
+          "time_ratio": 1.3755093196328168
+        },
+        {
+          "memory_basis": "x",
+          "regime": "balanced",
+          "seed": 2026120135,
+          "shots": 1000000,
+          "flagged": 3792,
+          "flag_rate": 0.003792,
+          "failures": {
+            "correlated": 5659,
+            "leave_basis_out": 5945,
+            "all_profile_relative_reference": 5292,
+            "all_profile_absolute_reference": 5064,
+            "specialized_reference": 4843
+          },
+          "ler": {
+            "correlated": 0.005659,
+            "leave_basis_out": 0.005945,
+            "all_profile_relative_reference": 0.005292,
+            "all_profile_absolute_reference": 0.005064,
+            "specialized_reference": 0.004843
+          },
+          "paired_transfer_minus_correlated": {
+            "delta_second_minus_first": 0.000286,
+            "normal_95_ci": [
+              0.00018816028036725436,
+              0.00038383971963274567
+            ],
+            "first_only_failures": 1103,
+            "second_only_failures": 1389,
+            "mcnemar_exact_two_sided": 1.0957348762800256e-08
+          },
+          "time_ratio": 1.3454948045137423
+        },
+        {
+          "memory_basis": "x",
+          "regime": "z_biased",
+          "seed": 2026120136,
+          "shots": 1000000,
+          "flagged": 1990,
+          "flag_rate": 0.00199,
+          "failures": {
+            "correlated": 8044,
+            "leave_basis_out": 8280,
+            "all_profile_relative_reference": 8059,
+            "all_profile_absolute_reference": 7834,
+            "specialized_reference": 7725
+          },
+          "ler": {
+            "correlated": 0.008044,
+            "leave_basis_out": 0.00828,
+            "all_profile_relative_reference": 0.008059,
+            "all_profile_absolute_reference": 0.007834,
+            "specialized_reference": 0.007725
+          },
+          "paired_transfer_minus_correlated": {
+            "delta_second_minus_first": 0.000236,
+            "normal_95_ci": [
+              0.00016029499132928402,
+              0.00031170500867071596
+            ],
+            "first_only_failures": 628,
+            "second_only_failures": 864,
+            "mcnemar_exact_two_sided": 1.0857320600988185e-09
+          },
+          "time_ratio": 1.3681967288790566
+        }
+      ],
+      "macro_ler": {
+        "correlated": 0.004968,
+        "leave_basis_out": 0.005153
+      },
+      "macro_relative_reduction": -0.037238325281803375,
+      "per_cell_reductions": [
+        -0.02747710241465451,
+        -0.050538964481357196,
+        -0.02933863749378407
+      ],
+      "passed_fold_positive_direction": false
+    }
+  ],
+  "validation": [
+    {
+      "memory_basis": "z",
+      "regime": "x_biased",
+      "seed": 2026120131,
+      "shots": 1000000,
+      "flagged": 2680,
+      "flag_rate": 0.00268,
+      "failures": {
+        "correlated": 7722,
+        "leave_basis_out": 7737,
+        "all_profile_relative_reference": 6979,
+        "all_profile_absolute_reference": 6886,
+        "specialized_reference": 6771
+      },
+      "ler": {
+        "correlated": 0.007722,
+        "leave_basis_out": 0.007737,
+        "all_profile_relative_reference": 0.006979,
+        "all_profile_absolute_reference": 0.006886,
+        "specialized_reference": 0.006771
+      },
+      "paired_transfer_minus_correlated": {
+        "delta_second_minus_first": 1.5e-05,
+        "normal_95_ci": [
+          -2.6807471185807727e-05,
+          5.6807471185807724e-05
+        ],
+        "first_only_failures": 220,
+        "second_only_failures": 235,
+        "mcnemar_exact_two_sided": 0.5116560053459213
+      },
+      "time_ratio": 1.4097563482209303
+    },
+    {
+      "memory_basis": "z",
+      "regime": "balanced",
+      "seed": 2026120132,
+      "shots": 1000000,
+      "flagged": 5179,
+      "flag_rate": 0.005179,
+      "failures": {
+        "correlated": 6875,
+        "leave_basis_out": 6797,
+        "all_profile_relative_reference": 4799,
+        "all_profile_absolute_reference": 4568,
+        "specialized_reference": 4500
+      },
+      "ler": {
+        "correlated": 0.006875,
+        "leave_basis_out": 0.006797,
+        "all_profile_relative_reference": 0.004799,
+        "all_profile_absolute_reference": 0.004568,
+        "specialized_reference": 0.0045
+      },
+      "paired_transfer_minus_correlated": {
+        "delta_second_minus_first": -7.8e-05,
+        "normal_95_ci": [
+          -0.00013460173573999075,
+          -2.139826426000924e-05
+        ],
+        "first_only_failures": 456,
+        "second_only_failures": 378,
+        "mcnemar_exact_two_sided": 0.007632144639861966
+      },
+      "time_ratio": 1.3404148476443603
+    },
+    {
+      "memory_basis": "z",
+      "regime": "z_biased",
+      "seed": 2026120133,
+      "shots": 1000000,
+      "flagged": 943,
+      "flag_rate": 0.000943,
+      "failures": {
+        "correlated": 1462,
+        "leave_basis_out": 1448,
+        "all_profile_relative_reference": 1002,
+        "all_profile_absolute_reference": 979,
+        "specialized_reference": 953
+      },
+      "ler": {
+        "correlated": 0.001462,
+        "leave_basis_out": 0.001448,
+        "all_profile_relative_reference": 0.001002,
+        "all_profile_absolute_reference": 0.000979,
+        "specialized_reference": 0.000953
+      },
+      "paired_transfer_minus_correlated": {
+        "delta_second_minus_first": -1.4e-05,
+        "normal_95_ci": [
+          -3.668821817160395e-05,
+          8.688218171603949e-06
+        ],
+        "first_only_failures": 74,
+        "second_only_failures": 60,
+        "mcnemar_exact_two_sided": 0.2613502966249506
+      },
+      "time_ratio": 1.3544273531163602
+    },
+    {
+      "memory_basis": "x",
+      "regime": "x_biased",
+      "seed": 2026120134,
+      "shots": 1000000,
+      "flagged": 798,
+      "flag_rate": 0.000798,
+      "failures": {
+        "correlated": 1201,
+        "leave_basis_out": 1234,
+        "all_profile_relative_reference": 1052,
+        "all_profile_absolute_reference": 998,
+        "specialized_reference": 955
+      },
+      "ler": {
+        "correlated": 0.001201,
+        "leave_basis_out": 0.001234,
+        "all_profile_relative_reference": 0.001052,
+        "all_profile_absolute_reference": 0.000998,
+        "specialized_reference": 0.000955
+      },
+      "paired_transfer_minus_correlated": {
+        "delta_second_minus_first": 3.3e-05,
+        "normal_95_ci": [
+          -8.530862644008053e-06,
+          7.453086264400806e-05
+        ],
+        "first_only_failures": 208,
+        "second_only_failures": 241,
+        "mcnemar_exact_two_sided": 0.1309076669365471
+      },
+      "time_ratio": 1.3755093196328168
+    },
+    {
+      "memory_basis": "x",
+      "regime": "balanced",
+      "seed": 2026120135,
+      "shots": 1000000,
+      "flagged": 3792,
+      "flag_rate": 0.003792,
+      "failures": {
+        "correlated": 5659,
+        "leave_basis_out": 5945,
+        "all_profile_relative_reference": 5292,
+        "all_profile_absolute_reference": 5064,
+        "specialized_reference": 4843
+      },
+      "ler": {
+        "correlated": 0.005659,
+        "leave_basis_out": 0.005945,
+        "all_profile_relative_reference": 0.005292,
+        "all_profile_absolute_reference": 0.005064,
+        "specialized_reference": 0.004843
+      },
+      "paired_transfer_minus_correlated": {
+        "delta_second_minus_first": 0.000286,
+        "normal_95_ci": [
+          0.00018816028036725436,
+          0.00038383971963274567
+        ],
+        "first_only_failures": 1103,
+        "second_only_failures": 1389,
+        "mcnemar_exact_two_sided": 1.0957348762800256e-08
+      },
+      "time_ratio": 1.3454948045137423
+    },
+    {
+      "memory_basis": "x",
+      "regime": "z_biased",
+      "seed": 2026120136,
+      "shots": 1000000,
+      "flagged": 1990,
+      "flag_rate": 0.00199,
+      "failures": {
+        "correlated": 8044,
+        "leave_basis_out": 8280,
+        "all_profile_relative_reference": 8059,
+        "all_profile_absolute_reference": 7834,
+        "specialized_reference": 7725
+      },
+      "ler": {
+        "correlated": 0.008044,
+        "leave_basis_out": 0.00828,
+        "all_profile_relative_reference": 0.008059,
+        "all_profile_absolute_reference": 0.007834,
+        "specialized_reference": 0.007725
+      },
+      "paired_transfer_minus_correlated": {
+        "delta_second_minus_first": 0.000236,
+        "normal_95_ci": [
+          0.00016029499132928402,
+          0.00031170500867071596
+        ],
+        "first_only_failures": 628,
+        "second_only_failures": 864,
+        "mcnemar_exact_two_sided": 1.0857320600988185e-09
+      },
+      "time_ratio": 1.3681967288790566
+    }
+  ],
+  "training": [
+    {
+      "memory_basis": "x",
+      "regime": "x_biased",
+      "seed": 2026120111,
+      "shots": 1000000,
+      "flags": 855,
+      "correlated_wrong": 474,
+      "seconds": 1.6223765370014007
+    },
+    {
+      "memory_basis": "x",
+      "regime": "balanced",
+      "seed": 2026120112,
+      "shots": 1000000,
+      "flags": 3826,
+      "correlated_wrong": 1868,
+      "seconds": 1.9806333360029384
+    },
+    {
+      "memory_basis": "x",
+      "regime": "z_biased",
+      "seed": 2026120113,
+      "shots": 1000000,
+      "flags": 2079,
+      "correlated_wrong": 973,
+      "seconds": 1.4244041909987573
+    },
+    {
+      "memory_basis": "z",
+      "regime": "x_biased",
+      "seed": 2026120121,
+      "shots": 1000000,
+      "flags": 2726,
+      "correlated_wrong": 1689,
+      "seconds": 1.479347416003293
+    },
+    {
+      "memory_basis": "z",
+      "regime": "balanced",
+      "seed": 2026120122,
+      "shots": 1000000,
+      "flags": 5137,
+      "correlated_wrong": 3590,
+      "seconds": 1.392969506996451
+    },
+    {
+      "memory_basis": "z",
+      "regime": "z_biased",
+      "seed": 2026120123,
+      "shots": 1000000,
+      "flags": 1020,
+      "correlated_wrong": 731,
+      "seconds": 1.2136888180029928
+    }
+  ],
+  "preflight": [
+    {
+      "memory_basis": "z",
+      "regime": "x_biased",
+      "seed": 2026120101,
+      "shots": 10000,
+      "flags": 27,
+      "sample_seconds": 0.005107578996103257,
+      "correlated_seconds": 0.006262896000407636,
+      "ordinary_seconds": 0.00219709499651799
+    },
+    {
+      "memory_basis": "z",
+      "regime": "balanced",
+      "seed": 2026120102,
+      "shots": 10000,
+      "flags": 67,
+      "sample_seconds": 0.0017022579995682463,
+      "correlated_seconds": 0.006276252999668941,
+      "ordinary_seconds": 0.0022486310044769198
+    },
+    {
+      "memory_basis": "z",
+      "regime": "z_biased",
+      "seed": 2026120103,
+      "shots": 10000,
+      "flags": 10,
+      "sample_seconds": 0.0015350579997175373,
+      "correlated_seconds": 0.004732497000077274,
+      "ordinary_seconds": 0.0016918019973672926
+    },
+    {
+      "memory_basis": "x",
+      "regime": "x_biased",
+      "seed": 2026120104,
+      "shots": 10000,
+      "flags": 12,
+      "sample_seconds": 0.0015736470013507642,
+      "correlated_seconds": 0.005671769002219662,
+      "ordinary_seconds": 0.001908019999973476
+    },
+    {
+      "memory_basis": "x",
+      "regime": "balanced",
+      "seed": 2026120105,
+      "shots": 10000,
+      "flags": 37,
+      "sample_seconds": 0.0016301919968100265,
+      "correlated_seconds": 0.0061625150046893395,
+      "ordinary_seconds": 0.002421776996925473
+    },
+    {
+      "memory_basis": "x",
+      "regime": "z_biased",
+      "seed": 2026120106,
+      "shots": 10000,
+      "flags": 16,
+      "sample_seconds": 0.0023061450046952814,
+      "correlated_seconds": 0.00760855499538593,
+      "ordinary_seconds": 0.0021142970072105527
+    }
+  ],
+  "macro_ler": {
+    "correlated": 0.005160500000000001,
+    "leave_basis_out": 0.005240166666666666,
+    "all_profile_relative_reference": 0.004530500000000001,
+    "all_profile_absolute_reference": 0.004388166666666667,
+    "specialized_reference": 0.004291166666666666
+  },
+  "macro_relative_reduction": -0.015437780576817328,
+  "per_condition_relative_reductions": [
+    -0.0019425019425018952,
+    0.011345454545454547,
+    0.009575923392612817,
+    -0.02747710241465451,
+    -0.050538964481357196,
+    -0.02933863749378407
+  ],
+  "mean_time_ratio": 1.3656332336678778,
+  "advancement_gate_passed": false,
+  "preflight_samples": 60000,
+  "training_samples": 6000000,
+  "validation_samples": 6000000,
+  "projected_sampling_matching_seconds": 12.63019720063312,
+  "training_runtime_seconds": 9.113419805005833,
+  "elapsed_seconds": 19.49703285000578,
+  "scope": "leave-one-basis-out transfer of relative-choice classifier; held-out memory basis absent from fit labels",
+  "run_metadata": {
+    "command": "MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_leave_basis_out.py",
+    "repository_base_revision": "d7c7f39",
+    "software_versions": {
+      "python": "3.12",
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "stim": "1.16.0",
+      "pymatching": "2.4.0"
+    },
+    "peak_rss_kib": null,
+    "peak_rss_note": "not captured by the run",
+    "sha256": {
+      "runner": "98459e5ba9f6ed0018b90542ae187a2a5c82561c752d53f4e069bc503b5762be",
+      "protocol": "f25f5cabace3bbb4f82d0af533111ac29065ff26eda3b45a5cc9e1db52e643fc"
+    }
+  }
+}

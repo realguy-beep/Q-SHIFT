@@ -160,3 +160,8 @@ Two pooled 40-detector-bit relative-choice fits passed the baseline gate (11.96%
 ### Relative-choice classifier: leave-one-regime-out transfer
 
 Two independent three-fold runs withheld each Pauli regime from training and retained 11.4%/11.5% macro gains at ~1.35x cost, with positive direction in all folds and held-out cells. The decoder graphs were still profile-matched; full-profile and specialized models remained better. Keep this as selector transfer evidence only, not unknown-profile decoding or distance scaling. Report: `../independent_research_v2/fast_flagged_logistic_leave_profile_out_report.md`.
+
+
+### Basis-agnostic relative-choice transfer rejected
+
+Leave-one-memory-basis-out testing failed (1.54% macro worsening; X-memory holdout -3.72%, one cell >5% harm). The earlier profile transfer required both bases in training. Keep relative-choice claims task/basis-scoped and do not call it basis-agnostic. No replication. Report: `../independent_research_v2/fast_flagged_logistic_leave_basis_out_report.md`.

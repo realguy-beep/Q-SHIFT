@@ -291,3 +291,8 @@ The pooled 40-bit model predicting whether correlated matching is wrong reduced 
 ### Profile holdout supports selector transfer but not unknown-profile decoding
 
 The relative-choice classifier trained without labels from one Pauli regime passed three leave-one-regime-out folds on two fresh runs, with 11.4%–11.5% macro reductions and every held-out cell slightly or substantially improved. However, the matching graphs remained profile-matched, and all-profile/specialized references were more accurate. The experiment does not establish unknown-profile decoding or arbitrary transfer; one d5 screen still failed.
+
+
+### Cross-basis transfer breaks relative-choice generalization
+
+Although leave-one-regime-out passed when both memory bases appeared in training, leave-one-basis-out failed: macro LER worsened 1.54%, and the X-memory holdout fold worsened 3.72%, with one cell exceeding 5% harm. The model's relative target is not basis-invariant under this encoding. Any transfer statement must specify that training includes the target basis; do not describe this as universal cross-profile or cross-task decoding.

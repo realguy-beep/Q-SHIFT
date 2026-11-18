@@ -472,3 +472,8 @@ A single pooled model predicts whether correlated matching is wrong on disagreem
 ## Leave-one-regime-out relative-choice transfer
 
 A shared selector fit on two Pauli regimes transferred to the third with profile-matched decoders. Two complete three-fold runs yielded 11.39% and 11.52% equal-cell macro LER reductions at 1.354x/1.360x cost. Each held-out regime had positive macro gain (X-biased ~9.6%–9.7%, balanced ~17.6%, Z-biased ~5.0%–5.1%), and all six held-out cells favored selection by point estimate. The all-profile and specialized references were stronger. This is selector transfer, not unknown-profile matcher transfer; see `../independent_research_v2/fast_flagged_logistic_leave_profile_out_report.md`.
+
+
+## Leave-one-memory-basis-out selector transfer failed
+
+Training the relative-choice classifier on one basis and testing the other increased macro LER 1.54% (.0051605→.0052402) at 1.366x cost. Paired macro difference was +.0000797 (approximate 95% CI [.0000547,.0001047]); the X-memory holdout fold worsened 3.72%, with one cell harmed 5.05%. No replication followed the frozen gate failure. This limits leave-one-regime-out claims to cases where target basis is represented in training. See `../independent_research_v2/fast_flagged_logistic_leave_basis_out_report.md`.

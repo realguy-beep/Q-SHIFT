@@ -95,3 +95,8 @@ Recasting the label as which matcher is wrong is a useful representation but rem
 ### Leave-one-regime-out evidence is bounded transfer, not novelty
 
 The relative-choice classifier transferred to one withheld d3 Pauli regime when the matcher graph remained profile-matched. This is a robustness result for supervised selective decoding, not a new algorithm or unknown-profile decoder. The d5 method-transfer result remains negative.
+
+
+### Basis holdout failure further limits transfer claims
+
+The relative-choice model failed when one memory basis was excluded from training. The positive held-out-regime result is therefore basis-conditional and should not be described as a universal decoder or general transfer algorithm.

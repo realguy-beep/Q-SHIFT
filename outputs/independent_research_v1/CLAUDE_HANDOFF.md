@@ -267,3 +267,8 @@ A shared detector-only classifier predicting `correlated_wrong` passed twice at 
 ### Leave-one-regime-out selector transfer — 2026-11-18
 
 The relative-choice model trained on two regimes transferred to a third across both memory bases, across all three held-out regimes and two fresh runs (11.4%–11.5% macro gain, ~1.35x cost). Graphs remained matched to the test profile; stronger all-profile/specialized references remain. Do not call this unknown-profile decoding. Full report: `../independent_research_v2/fast_flagged_logistic_leave_profile_out_report.md`.
+
+
+### Cross-basis holdout failed — 2026-11-18
+
+The relative-choice classifier did not transfer from one memory basis to the other (1.54% macro worsening; X-memory holdout -3.72%, one cell >5% harm). No replication. Prior leave-one-regime-out evidence requires both bases in training. See `../independent_research_v2/fast_flagged_logistic_leave_basis_out_report.md`.

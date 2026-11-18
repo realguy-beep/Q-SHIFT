@@ -503,3 +503,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 
 - A shared relative-choice classifier trained on two of three regimes transferred to the held-out regime with profile-matched graphs. Two independent three-fold runs gave 11.39%/11.52% macro reduction, ~1.35x cost, positive fold-level gains in X-biased, balanced, and Z-biased regimes, and all six held-out cells favored the selector by point estimate.
 - This supports classifier transfer only when the matching graphs are profile-matched; it does not solve unknown-profile decoding or distance transfer. Full-profile/specialized references remain stronger; the d5 screen remains negative. Cumulative development samples 233,388,200; no sealed/confirmatory data. See `outputs/independent_research_v2/fast_flagged_logistic_leave_profile_out_report.md`.
+
+
+## Cross-basis transfer boundary for relative-choice model — 2026-11-18
+
+- Leave-one-memory-basis-out training failed: macro LER worsened 1.54% at 1.366x; paired macro interval favored baseline. The X-memory held-out fold worsened 3.72%, and one cell exceeded 5% harm. No replication.
+- Therefore prior leave-one-regime-out transfer requires training labels from the target memory basis. Do not claim basis-agnostic selection. Cumulative development samples 245,448,200; no sealed/confirmatory data. Details: `outputs/independent_research_v2/fast_flagged_logistic_leave_basis_out_report.md`.
