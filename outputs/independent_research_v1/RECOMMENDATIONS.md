@@ -74,3 +74,6 @@ The native-XCX follow-up removes the extra H-noise cost of the earlier transpila
 
 
 The only preregistered complementary checkerboard test improved the original XZZX orientation for Z-biased noise but still lost to CSS by factors 3.04 at d3 and 6.16 at d5. Stop this checkerboard family at these fixed schedules. Do not run more pattern sweeps on these conditions; any future XZZX work should start from a different native schedule/noise model or decoder mechanism. Native CX/XCX/CZ equal-noise assumptions must be replaced with measured hardware characterization before deployment claims.
+
+
+Do not advance a detector-only east/west hotspot selector from the tested model: the true-map local graph reduced macro LER by only 0.9%, missed its 10% gate, and slightly harmed the east-hot profile. A stronger or hardware-calibrated spatial mismatch would need independent motivation before new experiments.

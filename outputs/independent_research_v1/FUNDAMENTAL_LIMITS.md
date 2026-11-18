@@ -78,3 +78,8 @@ A direct Stim `XCX` implementation removes extra one-qubit H targets while prese
 ## Complementary XZZX orientation result
 
 One fixed complementary checkerboard orientation improved over the original orientation for Z-biased d3/d5 simulation, but its LER remained 3.04x/6.16x that of CSS at matched resources. This is not a general code limit: it is evidence about two fixed orientations with correlation-enabled matching and a specific native-gate noise assumption.
+
+
+## Spatial heterogeneity check
+
+Under a synthetic stable spatial map that doubles/halves rates relative to the .003 mean (actual 1.5x/.5x factors), even the decoder with the exact profile map achieved less than a 1% equal-weight relative reduction over a pooled graph on d3. This is evidence about one approximate-DEM decoder and two hotspot orientations, not a fundamental limit on spatial adaptation. It suggests the present graph representation is relatively insensitive to this mild local rate pattern.

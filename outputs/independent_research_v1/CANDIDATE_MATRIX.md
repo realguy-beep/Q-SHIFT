@@ -43,3 +43,6 @@ An importance-sampling prototype is a parallel measurement-method candidate, not
 - `outputs/headroom_feasibility/` already screens specialized decoder headroom at d=3/5/7 and reaches a no-go under its stated gate. A generic repeat of that grid is not a priority.
 
 The matrix is therefore a landscape of distinct approaches, not a claim that every row is an untested Q-SHIFT candidate. The next genuinely open implementation gap is structured native-categorical inference, but the first loopy Bethe prototype failed a small exact fixture and needs algorithm redesign before any circuit evaluation.
+
+
+Spatial robustness update: the exact local-map graph and pooled graph were nearly tied on the fixed 1.5x/.5x two-zone d3 stress test; macro gain .93%, below the declared 10% gate. Do not advance a selector for this profile.

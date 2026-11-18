@@ -247,3 +247,11 @@
 - 500k shots/arm/distance; preflight passed resource, noise, tableau, DEM, and noiseless-determinism checks. Complement improved over original by 13.7%/21.5% but remained 3.04x/6.16x worse than CSS.
 - Decision: the tested checkerboard family is not a competitive universal code option under this model. Stop this family here. Native entangler equal-noise remains assumed.
 - Q-SHIFT shot count +3,000,600.
+
+
+## Checkpoint — local-map versus pooled matching under spatial hotspots (2026-11-18)
+
+- Built east-/west-hot synthetic two-qubit maps with 1.5x/.5x local factors and exactly preserved mean p=.003. Local graph had the exact map; pooled graph used the mean model. Both decoded identical detector/observable shots.
+- A no-shot DEM preflight first exposed the .0018 threshold issue; after predeclaring .003 uniformly across both decoders, preflight passed and the 200k/profile run completed.
+- East-hot paired local-minus-pooled LER +.000035 (95% CI [-.000143,.000213]); west-hot -.000170 ([-.000336,-.000004]); equal-weight macro relative gain .93%, below 10%. No spatial selector follow-up under this model.
+- Synthetic robustness evidence only; not hardware calibrated. +400,200 Q-SHIFT samples; no confirmatory/sealed data touched.

@@ -125,3 +125,8 @@ Removing explicit H-gate overhead did not produce a uniform XZZX benefit. At the
 ## Complementary XZZX orientation on Z-biased noise
 
 The single complementary checkerboard reduced Z-biased LER relative to the original XZZX orientation by about 14% at d3 and 21% at d5, which supports a real orientation effect. It nevertheless remained 3.04x/6.16x worse than CSS. The orientation adjustment therefore did not rescue this XZZX family for the tested Z-memory Z-biased task. Do not continue searching checkerboard variants on these same conditions; a useful new direction would require a different code schedule or decoder mechanism and a fresh protocol. The equal native CX/XCX/CZ noise assumption remains unverified for hardware.
+
+
+## Spatial local-rate decoder screen
+
+A true-map local DEM gave only a small, one-sided benefit over the pooled mean graph: 2.3% relative reduction for west-hot and a 0.5% increase for east-hot. The macro reduction was under 1%, with only 288–331 discordant paired outcomes/profile. The local graph also decoded slightly slower. Under this fixed 1.5x/.5x two-zone map and d3 circuit, spatial calibration did not pass the prospective utility gate. This does not show local calibration is useless for stronger/more complex heterogeneity, but the tested profile supplies no reason to pay calibration/selection costs. The DEM itself uses the same approximate disjoint-error conversion for both arms.

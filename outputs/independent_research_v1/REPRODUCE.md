@@ -150,3 +150,13 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xz
 ```
 
 The run is limited to CSS, original, and complementary patterns at d3/d5 under Z-biased noise. See `xzzx_native_orientation_protocol.md`.
+
+
+### Spatial hotspot local-versus-pooled matching
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/spatial_noise_decoder.py --preflight
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/spatial_noise_decoder.py
+```
+
+See the fixed noise map and shared DEM threshold amendment in `spatial_noise_decoder_protocol.md`.

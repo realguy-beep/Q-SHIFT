@@ -86,3 +86,8 @@ A new finite-distance screen compiled marked-control H-CX-H into native XCX, avo
 ## Complementary XZZX orientation result and decision
 
 A fresh Z-biased d3/d5 screen compared CSS, the original native-XCX checkerboard, and one complementary checkerboard. The complement was 14%/21% better than the original but still had 3.04x/6.16x CSS LER at matched physical resources. Combined with the original orientation helping X-bias but hurting Z-bias, the evidence shows orientation-by-noise dependence but no universal XZZX benefit. Stop this fixed checkerboard family unless a different schedule/noise model or decoder is proposed. This remains conditional on equal CX/XCX/CZ noise/duration. Artifacts: `xzzx_native_orientation.py`, protocol, preflight, results.
+
+
+## Spatially heterogeneous noise result
+
+A d3 Z-memory X-biased test used two synthetic two-qubit hotspot maps (1.5x/.5x, equal average p=.003) and compared pooled matching with a graph built from the exact local map on the same 200k syndrome rows/profile. Local-minus-pooled LER was +.000035 east-hot (95% paired interval [-.000143,.000213]) and -.000170 west-hot ([-.000336,-.000004]); equal-weight relative reduction was only 0.93%, so the predeclared 10% gate failed. This provides no support for a detector-only spatial selector for this map. Approximate-DEM threshold .003 was applied identically after a no-shot preflight showed .0018 was below the maximum local categorical component. Synthetic stress test only; not hardware calibration. Artifacts: `spatial_noise_decoder.py`, protocol, preflight, result JSON.

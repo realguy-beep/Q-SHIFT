@@ -149,3 +149,6 @@ A follow-up native-gate code/circuit protocol is in `xzzx_native_xcx_protocol.md
 
 
 The one complementary checkerboard follow-up is fixed in `xzzx_native_orientation_protocol.md`. It tests only `(x+y) mod 4 = 0` on Z-biased d3/d5 circuits against CSS and the already tested orientation, with fresh streams and the same native CX/XCX/CZ noise assumption. No broader pattern search is planned.
+
+
+The local-vs-pooled spatial heterogeneity stress test is fixed in `spatial_noise_decoder_protocol.md`. It uses a stable east/west 1.5x/.5x two-qubit fault map with exactly preserved spatial mean and compares local-map and pooled correlation-enabled matching on identical syndrome streams. The fixed DEM conversion threshold is .003 for both models: the original no-shot preflight showed the .0018 threshold rejects the largest hotspot categorical component (.0026786); no shots were generated before this protocol amendment.
