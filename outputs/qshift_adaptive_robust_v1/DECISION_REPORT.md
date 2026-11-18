@@ -125,3 +125,13 @@ The full list is in `RISK_REGISTER.md`. The main ones:
   7. Optionally, a `beliefmatching` dependency install with a pinned-version plan, if step 1 supports H-F2.
   8. An owner decision on the `structured_diagnostic_config.json` hash discrepancy.
 - **Not done, by design:** no PR was opened and nothing was merged.
+
+## Addendum (2026-11-18): roadmap step 1 completed
+
+The floor re-decode, pre-registered in `600551456` and reported in `REDECODE_RESULTS.md`, returned **H-F2_FLOOR_DEGENERACY_DOMINATED**.
+- **Min-sum 0.9:** net +15 failures [+3, +27] over 1.2 M development shots, which is significantly worse.
+- **OSD_CS-40 + BP-200:** net −1 [−9, +7], no detectable effect.
+
+**Effect on §5:** the projected 95.0–95.8% at p = 0.001 is withdrawn. The best figure remains Stage E's 94.0%, and broad-benchmark 95% stays implausible.
+
+**Effect on §7:** the smallest next experiment is now roadmap step 2 (H-E1 on the existing mismatch development arrays). Degeneracy-aware decoding (ensembles or belief-matching) is the only remaining lever on the floor.

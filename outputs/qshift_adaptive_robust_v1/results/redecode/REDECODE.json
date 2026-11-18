@@ -1,0 +1,192 @@
+{
+  "schema": "qshift-adaptive-robust-redecode-v1",
+  "protocol": "REDECODE_PROTOCOL.md",
+  "data": "Stage S development arrays only",
+  "variants": {
+    "V1_min_sum_0.9": {
+      "bp_method": "minimum_sum",
+      "schedule": "serial",
+      "max_iter": 50,
+      "osd_method": "OSD_CS",
+      "osd_order": 10,
+      "ms_scaling_factor": 0.9
+    },
+    "V2_osd_cs40_bp200": {
+      "bp_method": "product_sum",
+      "schedule": "serial",
+      "max_iter": 200,
+      "osd_method": "OSD_CS",
+      "osd_order": 40
+    }
+  },
+  "files": {
+    "L10_q0": {
+      "shots": 200000,
+      "L2_errors": 4,
+      "identity_check_bit_equal": true,
+      "V1_min_sum_0.9": {
+        "errors": 5,
+        "variant_only": 1,
+        "L2_only": 0,
+        "net": 1
+      },
+      "V2_osd_cs40_bp200": {
+        "errors": 3,
+        "variant_only": 0,
+        "L2_only": 1,
+        "net": -1
+      }
+    },
+    "L10_q1": {
+      "shots": 200000,
+      "L2_errors": 4,
+      "identity_check_bit_equal": true,
+      "V1_min_sum_0.9": {
+        "errors": 7,
+        "variant_only": 3,
+        "L2_only": 0,
+        "net": 3
+      },
+      "V2_osd_cs40_bp200": {
+        "errors": 4,
+        "variant_only": 1,
+        "L2_only": 1,
+        "net": 0
+      }
+    },
+    "L10_q2": {
+      "shots": 200000,
+      "L2_errors": 4,
+      "identity_check_bit_equal": true,
+      "V1_min_sum_0.9": {
+        "errors": 5,
+        "variant_only": 2,
+        "L2_only": 1,
+        "net": 1
+      },
+      "V2_osd_cs40_bp200": {
+        "errors": 3,
+        "variant_only": 0,
+        "L2_only": 1,
+        "net": -1
+      }
+    },
+    "L15_q0": {
+      "shots": 200000,
+      "L2_errors": 16,
+      "identity_check_bit_equal": true,
+      "V1_min_sum_0.9": {
+        "errors": 20,
+        "variant_only": 8,
+        "L2_only": 4,
+        "net": 4
+      },
+      "V2_osd_cs40_bp200": {
+        "errors": 18,
+        "variant_only": 3,
+        "L2_only": 1,
+        "net": 2
+      }
+    },
+    "L15_q1": {
+      "shots": 200000,
+      "L2_errors": 12,
+      "identity_check_bit_equal": true,
+      "V1_min_sum_0.9": {
+        "errors": 18,
+        "variant_only": 9,
+        "L2_only": 3,
+        "net": 6
+      },
+      "V2_osd_cs40_bp200": {
+        "errors": 11,
+        "variant_only": 1,
+        "L2_only": 2,
+        "net": -1
+      }
+    },
+    "L15_q2": {
+      "shots": 200000,
+      "L2_errors": 16,
+      "identity_check_bit_equal": true,
+      "V1_min_sum_0.9": {
+        "errors": 16,
+        "variant_only": 4,
+        "L2_only": 4,
+        "net": 0
+      },
+      "V2_osd_cs40_bp200": {
+        "errors": 16,
+        "variant_only": 2,
+        "L2_only": 2,
+        "net": 0
+      }
+    }
+  },
+  "pooled": {
+    "V1_min_sum_0.9": {
+      "all": {
+        "shots": 1200000,
+        "variant_only": 27,
+        "L2_only": 12,
+        "net": 15,
+        "net_95ci": [
+          3.0,
+          27.0
+        ],
+        "net_upper_95_one_sided": 25.0,
+        "mcnemar_one_sided_p": 0.9952623478602618
+      },
+      "q0": {
+        "shots": 400000,
+        "variant_only": 9,
+        "L2_only": 4,
+        "net": 5,
+        "net_95ci": [
+          -2.0,
+          12.0
+        ],
+        "net_upper_95_one_sided": 11.0,
+        "mcnemar_one_sided_p": 0.953857421875
+      }
+    },
+    "V2_osd_cs40_bp200": {
+      "all": {
+        "shots": 1200000,
+        "variant_only": 7,
+        "L2_only": 8,
+        "net": -1,
+        "net_95ci": [
+          -9.0,
+          7.0
+        ],
+        "net_upper_95_one_sided": 5.0,
+        "mcnemar_one_sided_p": 0.5
+      },
+      "q0": {
+        "shots": 400000,
+        "variant_only": 3,
+        "L2_only": 2,
+        "net": 1,
+        "net_95ci": [
+          -3.0,
+          6.0
+        ],
+        "net_upper_95_one_sided": 5.0,
+        "mcnemar_one_sided_p": 0.8125
+      }
+    }
+  },
+  "decision": {
+    "V1_min_sum_0.9": "DO_NOT_ADVANCE",
+    "V2_osd_cs40_bp200": "DO_NOT_ADVANCE"
+  },
+  "identity_checks_all_pass": true,
+  "overall": "H-F2_FLOOR_DEGENERACY_DOMINATED",
+  "wall_seconds": 3033.2,
+  "cpu_seconds_by_variant": {
+    "V1_min_sum_0.9": 1555.4,
+    "V2_osd_cs40_bp200": 22026.4,
+    "identity_check": 114.5
+  }
+}

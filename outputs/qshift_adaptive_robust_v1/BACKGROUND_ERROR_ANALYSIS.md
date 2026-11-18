@@ -75,3 +75,7 @@ The sample is every shot that the Stage-S-selected L2 failed (prior 0.001 at L10
 **Decision rule, fixed before running:**
 - A variant advances to a fresh-seed validation screen only if its net change is negative with a 95% upper bound < 0 in pooled dev data, and q=0 harm is ≤ 0.
 - Otherwise the conclusion is "the floor is degeneracy-dominated". That redirects effort to degeneracy-aware decoding: belief-matching, which needs an approved dependency, or ensembles.
+
+## Outcome of the next step (added after the run)
+
+The full re-decode (`REDECODE_RESULTS.md`) did not confirm the projection above. Min-sum creates 27 new failures among L2's successes (net +15 [+3, +27]), and OSD_CS-40 + BP-200 is neutral (net −1 [−9, +7]). Verdict: H-F2.
