@@ -148,3 +148,18 @@ The test was pre-registered in `fcd9b8834` and is reported in `HE1_RESULTS.md`. 
 - H-E1b: a (p, bias) fit on the existing Mz pools;
 - an end-to-end decode check under mismatch, which needs small new development samples;
 - a fresh-seed validation screen.
+
+## Addendum (2026-11-18): H-E1b completed
+
+The test was pre-registered in `6169c6656` and is reported in `HE1B_RESULTS.md`. Verdict: **H-E1b_SUPPORTED**.
+
+The background p and the bias were fitted jointly from unlabeled detector rows.
+- **Mz:** learned pools went from 0/24 to **24/24**, with 0/24 false accepts. b̂ was 10 in all 48 pools, and p̂ was within about 0.2% of the true p.
+- **Other conditions:** Mlo, Mhi and the control stayed at 24/24 learned and 0/24 false accepts.
+
+**Caveats:**
+- The bias grid contains the true value, so an off-grid test is needed. It requires new development samples.
+- p̂ is snapped to the grid, which put the control's largest burst-free Δ back at 1,544, close to τ = 1,561. A continuous p refinement is recommended.
+- The decoders under mismatch are untested.
+
+**Standing:** robust support inference is now repaired on development data for every mismatch tested. It is the program's strongest result so far, and it is still development-only.
