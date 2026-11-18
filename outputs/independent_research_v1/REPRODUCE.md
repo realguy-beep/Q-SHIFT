@@ -457,3 +457,8 @@ Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_
 ### Ratio-2 frozen bias-shift challenge
 
 Run `fast_flagged_logistic_bias_ratio2.py` and its `_replication.py` counterpart from `outputs/independent_research_v2/` with the project venv. These freeze nominal ratio-10 models/graphs and test physical ratio 2. Protocol and report are in the same directory.
+
+
+### Isotropic ratio-1 shift
+
+Run `fast_flagged_logistic_bias_ratio1.py` and `fast_flagged_logistic_bias_ratio1_replication.py` from the v2 research directory with the project venv. Models/graphs remain trained at ratio 10. The protocol and result report are in the same directory.

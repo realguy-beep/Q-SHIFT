@@ -277,3 +277,8 @@ The relative-choice classifier did not transfer from one memory basis to the oth
 ### Ratio-2 robustness extension — 2026-11-18
 
 The ratio-10 frozen selector passed physical ratio 2 on two independent d3 streams (17.38%/17.90% macro gains, ~1.35x cost; all cells favorable). Static bias-strength evidence now includes ratio 2, 5, and one combined shift. Cross-basis and d5 transfer remain negative. Details: `../independent_research_v2/fast_flagged_logistic_bias_ratio2_report.md`.
+
+
+### Isotropic channel challenge — 2026-11-18
+
+At physical ratio 1, the ratio-10 frozen d3 selector retained 16.4%/16.8% macro gains in two streams (~1.33x cost). One initial cell interval crossed parity; replication intervals all favored candidate. Tested stationary bias ratios now include 1, 2, and 5, plus one joint shift. Cross-basis and d5 screens remain negative. See `../independent_research_v2/fast_flagged_logistic_bias_ratio1_report.md`.

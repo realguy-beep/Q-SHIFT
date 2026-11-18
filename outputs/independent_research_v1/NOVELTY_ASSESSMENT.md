@@ -105,3 +105,8 @@ The relative-choice model failed when one memory basis was excluded from trainin
 ### Ratio-2 shift strengthens evidence, not novelty
 
 The frozen selector passed one more stationary bias-strength shift at ratio 2. This adds empirical scope for the established supervised selector but is not an algorithmic novelty claim and does not address temporal or hardware robustness.
+
+
+### Isotropic shift is a robustness result only
+
+Passing the ratio-1 stationary channel challenge increases empirical scope but does not introduce a new algorithmic contribution or establish broad noise robustness.

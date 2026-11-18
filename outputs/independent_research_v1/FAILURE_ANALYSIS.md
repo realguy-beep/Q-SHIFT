@@ -301,3 +301,8 @@ Although leave-one-regime-out passed when both memory bases appeared in training
 ### Ratio-2 bias shift adds static robustness evidence
 
 The frozen d3 selector retained ~17%–18% macro gains when anisotropic profiles were weakened from ratio 10 to ratio 2, on two independent streams and at ~1.35x cost. This extends the tested static bias range but says nothing about temporal drift, graph uncertainty, cross-basis transfer, or distance scaling. Do not merge these boundaries into a general robustness claim.
+
+
+### Isotropic ratio-1 shift adds bounded static robustness
+
+The frozen ratio-10 selector retained ~16% macro gain at physical ratio 1 on two fresh d3 streams. One first-stream cell interval crossed parity, but point estimates were positive throughout and the independent replication intervals all favored the selector. This extends stationary bias-strength evidence without changing limitations: no temporal shift, graph selection, cross-basis transfer, hardware, or d5 generalization.

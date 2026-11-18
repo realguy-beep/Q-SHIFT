@@ -482,3 +482,8 @@ Training the relative-choice classifier on one basis and testing the other incre
 ## Frozen selector at bias ratio 2
 
 A ratio-10 trained selector and matcher bank were applied without change to physical ratio-2 channels. Two independent d3 streams produced macro LER reductions of 17.38% and 17.90% at 1.324x/1.374x inference cost; paired macro difference intervals were [-.001037,-.000930] and [-.001058,-.000952], and all six per-cell intervals favored the selector on both streams. This supports the tested stationary bias shift only; details: `../independent_research_v2/fast_flagged_logistic_bias_ratio2_report.md`.
+
+
+## Frozen selector under isotropic bias ratio 1
+
+The ratio-10 trained selector was evaluated at physical ratio 1 without retraining. Two d3 streams produced 16.43% and 16.77% macro reductions at 1.345x/1.327x cost. Paired macro difference intervals were [-.000993,-.000885] and [-.001011,-.000903]. All per-cell point estimates improved; one interval in the first stream crossed parity, while all replication intervals favored the selector. This extends stationary profile evidence only; details: `../independent_research_v2/fast_flagged_logistic_bias_ratio1_report.md`.

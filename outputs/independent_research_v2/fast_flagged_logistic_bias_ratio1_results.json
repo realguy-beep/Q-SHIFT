@@ -1,0 +1,674 @@
+{
+  "status": "fast_flagged_logistic_bias_ratio1",
+  "measurement_p": 0.003,
+  "gate_p": 0.003,
+  "nominal_bias_ratio": 10.0,
+  "shifted_bias_ratio": 1.0,
+  "frozen_models": "trained at bias ratio 10; no shift retraining",
+  "conditions": [
+    {
+      "memory_basis": "z",
+      "regime": "x_biased",
+      "seed": 2026120411,
+      "shots": 500000,
+      "flagged": 2094,
+      "flag_rate": 0.004188,
+      "failures": {
+        "nominal_correlated": 3106,
+        "nominal_ordinary": 2560,
+        "frozen_logistic": 2427,
+        "actual_profile_matcher_diagnostic": 3533
+      },
+      "ler": {
+        "nominal_correlated": 0.006212,
+        "nominal_ordinary": 0.00512,
+        "frozen_logistic": 0.004854,
+        "actual_profile_matcher_diagnostic": 0.007066
+      },
+      "wilson_95": {
+        "nominal_correlated": [
+          0.005997977642231154,
+          0.006433609764548035
+        ],
+        "frozen_logistic": [
+          0.004665122926128218,
+          0.005050485347294969
+        ],
+        "actual_profile_matcher_diagnostic": [
+          0.006837585012786892,
+          0.007301989271669785
+        ]
+      },
+      "paired_logistic_minus_nominal_correlated": {
+        "delta_second_minus_first": -0.001358,
+        "normal_95_ci": [
+          -0.0015020316506783613,
+          -0.0012139683493216388
+        ],
+        "first_only_failures": 1015,
+        "second_only_failures": 336,
+        "mcnemar_exact_two_sided": 1.9299190090983642e-79
+      },
+      "paired_actual_oracle_minus_nominal_correlated": {
+        "delta_second_minus_first": 0.000854,
+        "normal_95_ci": [
+          0.0007082420176728046,
+          0.0009997579823271955
+        ],
+        "first_only_failures": 478,
+        "second_only_failures": 905,
+        "mcnemar_exact_two_sided": 7.538822673551689e-31
+      },
+      "timing": {
+        "nominal_correlated": 0.35545555100543424,
+        "nominal_ordinary_flag": 0.12422670599335106,
+        "frozen_classifier": 0.0025486380036454648,
+        "actual_oracle": 0.3251561630022479
+      },
+      "frozen_policy_time_ratio": 1.3566559690470508
+    },
+    {
+      "memory_basis": "z",
+      "regime": "balanced",
+      "seed": 2026120412,
+      "shots": 500000,
+      "flagged": 2671,
+      "flag_rate": 0.005342,
+      "failures": {
+        "nominal_correlated": 3456,
+        "nominal_ordinary": 2439,
+        "frozen_logistic": 2270,
+        "actual_profile_matcher_diagnostic": 3456
+      },
+      "ler": {
+        "nominal_correlated": 0.006912,
+        "nominal_ordinary": 0.004878,
+        "frozen_logistic": 0.00454,
+        "actual_profile_matcher_diagnostic": 0.006912
+      },
+      "wilson_95": {
+        "nominal_correlated": [
+          0.006686111996901863,
+          0.007145464653875265
+        ],
+        "frozen_logistic": [
+          0.004357429748217661,
+          0.004730183350040737
+        ],
+        "actual_profile_matcher_diagnostic": [
+          0.006686111996901863,
+          0.007145464653875265
+        ]
+      },
+      "paired_logistic_minus_nominal_correlated": {
+        "delta_second_minus_first": -0.002372,
+        "normal_95_ci": [
+          -0.0025519409629830465,
+          -0.0021920590370169534
+        ],
+        "first_only_failures": 1648,
+        "second_only_failures": 462,
+        "mcnemar_exact_two_sided": 1.6535081974952768e-155
+      },
+      "paired_actual_oracle_minus_nominal_correlated": {
+        "delta_second_minus_first": 0.0,
+        "normal_95_ci": [
+          0.0,
+          0.0
+        ],
+        "first_only_failures": 0,
+        "second_only_failures": 0,
+        "mcnemar_exact_two_sided": 1.0
+      },
+      "timing": {
+        "nominal_correlated": 0.31183379299909575,
+        "nominal_ordinary_flag": 0.1105572150045191,
+        "frozen_classifier": 0.0025792300002649426,
+        "actual_oracle": 0.418927070000791
+      },
+      "frozen_policy_time_ratio": 1.3628100851953275
+    },
+    {
+      "memory_basis": "z",
+      "regime": "z_biased",
+      "seed": 2026120413,
+      "shots": 500000,
+      "flagged": 1400,
+      "flag_rate": 0.0028,
+      "failures": {
+        "nominal_correlated": 2393,
+        "nominal_ordinary": 2523,
+        "frozen_logistic": 2300,
+        "actual_profile_matcher_diagnostic": 3477
+      },
+      "ler": {
+        "nominal_correlated": 0.004786,
+        "nominal_ordinary": 0.005046,
+        "frozen_logistic": 0.0046,
+        "actual_profile_matcher_diagnostic": 0.006954
+      },
+      "wilson_95": {
+        "nominal_correlated": [
+          0.004598470776185704,
+          0.004981138542106256
+        ],
+        "frozen_logistic": [
+          0.004416207936125145,
+          0.004791404240190218
+        ],
+        "actual_profile_matcher_diagnostic": [
+          0.006727419994507542,
+          0.007188156010909464
+        ]
+      },
+      "paired_logistic_minus_nominal_correlated": {
+        "delta_second_minus_first": -0.000186,
+        "normal_95_ci": [
+          -0.0003062456407563343,
+          -6.575435924366567e-05
+        ],
+        "first_only_failures": 517,
+        "second_only_failures": 424,
+        "mcnemar_exact_two_sided": 0.002688782511940632
+      },
+      "paired_actual_oracle_minus_nominal_correlated": {
+        "delta_second_minus_first": 0.002168,
+        "normal_95_ci": [
+          0.0020011540547564734,
+          0.002334845945243526
+        ],
+        "first_only_failures": 365,
+        "second_only_failures": 1449,
+        "mcnemar_exact_two_sided": 1.8615598667676408e-152
+      },
+      "timing": {
+        "nominal_correlated": 0.32518091200472554,
+        "nominal_ordinary_flag": 0.10622542399505619,
+        "frozen_classifier": 0.0026039479998871684,
+        "actual_oracle": 0.2889887870042003
+      },
+      "frozen_policy_time_ratio": 1.3346733094633851
+    },
+    {
+      "memory_basis": "x",
+      "regime": "x_biased",
+      "seed": 2026120414,
+      "shots": 500000,
+      "flagged": 1420,
+      "flag_rate": 0.00284,
+      "failures": {
+        "nominal_correlated": 2457,
+        "nominal_ordinary": 2827,
+        "frozen_logistic": 2425,
+        "actual_profile_matcher_diagnostic": 2687
+      },
+      "ler": {
+        "nominal_correlated": 0.004914,
+        "nominal_ordinary": 0.005654,
+        "frozen_logistic": 0.00485,
+        "actual_profile_matcher_diagnostic": 0.005374
+      },
+      "wilson_95": {
+        "nominal_correlated": [
+          0.0047239415748745635,
+          0.00511166577660559
+        ],
+        "frozen_logistic": [
+          0.004661201945417759,
+          0.005046406389468297
+        ],
+        "actual_profile_matcher_diagnostic": [
+          0.0051751175245431024,
+          0.005580482758707127
+        ]
+      },
+      "paired_logistic_minus_nominal_correlated": {
+        "delta_second_minus_first": -6.4e-05,
+        "normal_95_ci": [
+          -0.00016889007863994527,
+          4.0890078639945274e-05
+        ],
+        "first_only_failures": 374,
+        "second_only_failures": 342,
+        "mcnemar_exact_two_sided": 0.2466313701890686
+      },
+      "paired_actual_oracle_minus_nominal_correlated": {
+        "delta_second_minus_first": 0.00046,
+        "normal_95_ci": [
+          0.00033982392773512326,
+          0.0005801760722648768
+        ],
+        "first_only_failures": 355,
+        "second_only_failures": 585,
+        "mcnemar_exact_two_sided": 6.085212566312877e-14
+      },
+      "timing": {
+        "nominal_correlated": 0.3586553890054347,
+        "nominal_ordinary_flag": 0.11727166600030614,
+        "frozen_classifier": 0.004280248002032749,
+        "actual_oracle": 0.30550182099977974
+      },
+      "frozen_policy_time_ratio": 1.3389100449303357
+    },
+    {
+      "memory_basis": "x",
+      "regime": "balanced",
+      "seed": 2026120415,
+      "shots": 500000,
+      "flagged": 1931,
+      "flag_rate": 0.003862,
+      "failures": {
+        "nominal_correlated": 2736,
+        "nominal_ordinary": 2775,
+        "frozen_logistic": 2334,
+        "actual_profile_matcher_diagnostic": 2736
+      },
+      "ler": {
+        "nominal_correlated": 0.005472,
+        "nominal_ordinary": 0.00555,
+        "frozen_logistic": 0.004668,
+        "actual_profile_matcher_diagnostic": 0.005472
+      },
+      "wilson_95": {
+        "nominal_correlated": [
+          0.005271287796080683,
+          0.0056803109813292575
+        ],
+        "frozen_logistic": [
+          0.004482832935077111,
+          0.004860778196369482
+        ],
+        "actual_profile_matcher_diagnostic": [
+          0.005271287796080683,
+          0.0056803109813292575
+        ]
+      },
+      "paired_logistic_minus_nominal_correlated": {
+        "delta_second_minus_first": -0.000804,
+        "normal_95_ci": [
+          -0.0009219682509759348,
+          -0.0006860317490240652
+        ],
+        "first_only_failures": 654,
+        "second_only_failures": 252,
+        "mcnemar_exact_two_sided": 7.346165865869679e-42
+      },
+      "paired_actual_oracle_minus_nominal_correlated": {
+        "delta_second_minus_first": 0.0,
+        "normal_95_ci": [
+          0.0,
+          0.0
+        ],
+        "first_only_failures": 0,
+        "second_only_failures": 0,
+        "mcnemar_exact_two_sided": 1.0
+      },
+      "timing": {
+        "nominal_correlated": 0.3159545519956737,
+        "nominal_ordinary_flag": 0.10152329900301993,
+        "frozen_classifier": 0.002316715006600134,
+        "actual_oracle": 0.3072219970053993
+      },
+      "frozen_policy_time_ratio": 1.3286549073394642
+    },
+    {
+      "memory_basis": "x",
+      "regime": "z_biased",
+      "seed": 2026120416,
+      "shots": 500000,
+      "flagged": 1907,
+      "flag_rate": 0.003814,
+      "failures": {
+        "nominal_correlated": 2994,
+        "nominal_ordinary": 3009,
+        "frozen_logistic": 2569,
+        "actual_profile_matcher_diagnostic": 2803
+      },
+      "ler": {
+        "nominal_correlated": 0.005988,
+        "nominal_ordinary": 0.006018,
+        "frozen_logistic": 0.005138,
+        "actual_profile_matcher_diagnostic": 0.005606
+      },
+      "wilson_95": {
+        "nominal_correlated": [
+          0.00577791722315702,
+          0.00620567362554283
+        ],
+        "frozen_logistic": [
+          0.004943594582819361,
+          0.005340009326740133
+        ],
+        "actual_profile_matcher_diagnostic": [
+          0.0054028126545860155,
+          0.005816784063817816
+        ]
+      },
+      "paired_logistic_minus_nominal_correlated": {
+        "delta_second_minus_first": -0.00085,
+        "normal_95_ci": [
+          -0.0009673781534013705,
+          -0.0007326218465986294
+        ],
+        "first_only_failures": 661,
+        "second_only_failures": 236,
+        "mcnemar_exact_two_sided": 2.7721862013264306e-47
+      },
+      "paired_actual_oracle_minus_nominal_correlated": {
+        "delta_second_minus_first": -0.000382,
+        "normal_95_ci": [
+          -0.0004949951925249023,
+          -0.00026900480747509773
+        ],
+        "first_only_failures": 511,
+        "second_only_failures": 320,
+        "mcnemar_exact_two_sided": 3.601178936800071e-11
+      },
+      "timing": {
+        "nominal_correlated": 0.291637925998657,
+        "nominal_ordinary_flag": 0.09911734899651492,
+        "frozen_classifier": 0.0023280290042748675,
+        "actual_oracle": 0.32938102199841524
+      },
+      "frozen_policy_time_ratio": 1.3478470012204686
+    }
+  ],
+  "preflight": [
+    {
+      "basis": "z",
+      "regime": "x_biased",
+      "metrics": {
+        "shots": 10000,
+        "seed": 2026120401,
+        "flagged": 38,
+        "flag_rate": 0.0038,
+        "sample_seconds": 0.005448526004329324,
+        "corr_seconds": 0.006135049996373709,
+        "plain_seconds": 0.0019268629985162988,
+        "classifier_seconds": 0.00010263999865856022,
+        "hybrid_inference_seconds": 0.008164552993548568,
+        "hybrid_to_corr_time_ratio": 1.3308046386540375,
+        "feature_dimension": 42,
+        "failures": {
+          "correlated": 53,
+          "ordinary": 39,
+          "hybrid": 39
+        },
+        "ler": {
+          "correlated": 0.0053,
+          "ordinary": 0.0039,
+          "hybrid": 0.0039
+        },
+        "hybrid_flagged_failures": 12,
+        "hybrid_unflagged_failures": 27,
+        "flagged_logical_class_counts": {
+          "logical0": 24,
+          "logical1": 14
+        },
+        "paired_hybrid_minus_correlated_delta": -0.0014,
+        "paired_normal_95_ci": [
+          -0.0023990626507229508,
+          -0.0004009373492770492
+        ],
+        "correlated_only_failures": 20,
+        "hybrid_only_failures": 6,
+        "mcnemar_exact_two_sided": 0.009355306625366211,
+        "classifier_error_on_flagged": 12
+      },
+      "projected_seconds": 0.9874064497125801
+    },
+    {
+      "basis": "z",
+      "regime": "balanced",
+      "metrics": {
+        "shots": 10000,
+        "seed": 2026120402,
+        "flagged": 45,
+        "flag_rate": 0.0045,
+        "sample_seconds": 0.0016526039980817586,
+        "corr_seconds": 0.006670424998446833,
+        "plain_seconds": 0.0022256450029090047,
+        "classifier_seconds": 7.87230019341223e-05,
+        "hybrid_inference_seconds": 0.00897479300328996,
+        "hybrid_to_corr_time_ratio": 1.345460447479686,
+        "feature_dimension": 42,
+        "failures": {
+          "correlated": 73,
+          "ordinary": 44,
+          "hybrid": 44
+        },
+        "ler": {
+          "correlated": 0.0073,
+          "ordinary": 0.0044,
+          "hybrid": 0.0044
+        },
+        "hybrid_flagged_failures": 8,
+        "hybrid_unflagged_failures": 36,
+        "flagged_logical_class_counts": {
+          "logical0": 34,
+          "logical1": 11
+        },
+        "paired_hybrid_minus_correlated_delta": -0.0029,
+        "paired_normal_95_ci": [
+          -0.00409090340577258,
+          -0.001709096594227419
+        ],
+        "correlated_only_failures": 33,
+        "hybrid_only_failures": 4,
+        "mcnemar_exact_two_sided": 1.0843941709026694e-06,
+        "classifier_error_on_flagged": 8
+      },
+      "projected_seconds": 0.8648910999909276
+    },
+    {
+      "basis": "z",
+      "regime": "z_biased",
+      "metrics": {
+        "shots": 10000,
+        "seed": 2026120403,
+        "flagged": 30,
+        "flag_rate": 0.003,
+        "sample_seconds": 0.0015823249996174127,
+        "corr_seconds": 0.0059350410010665655,
+        "plain_seconds": 0.0024405939984717406,
+        "classifier_seconds": 7.473000005120412e-05,
+        "hybrid_inference_seconds": 0.00845036499958951,
+        "hybrid_to_corr_time_ratio": 1.4238090348610775,
+        "feature_dimension": 42,
+        "failures": {
+          "correlated": 49,
+          "ordinary": 49,
+          "hybrid": 45
+        },
+        "ler": {
+          "correlated": 0.0049,
+          "ordinary": 0.0049,
+          "hybrid": 0.0045
+        },
+        "hybrid_flagged_failures": 11,
+        "hybrid_unflagged_failures": 34,
+        "flagged_logical_class_counts": {
+          "logical0": 21,
+          "logical1": 9
+        },
+        "paired_hybrid_minus_correlated_delta": -0.0004,
+        "paired_normal_95_ci": [
+          -0.001276531306634739,
+          0.000476531306634739
+        ],
+        "correlated_only_failures": 12,
+        "hybrid_only_failures": 8,
+        "mcnemar_exact_two_sided": 0.5034446716308594,
+        "classifier_error_on_flagged": 11
+      },
+      "projected_seconds": 0.7983865500136744
+    },
+    {
+      "basis": "x",
+      "regime": "x_biased",
+      "metrics": {
+        "shots": 10000,
+        "seed": 2026120404,
+        "flagged": 27,
+        "flag_rate": 0.0027,
+        "sample_seconds": 0.0017526980009279214,
+        "corr_seconds": 0.006642766995355487,
+        "plain_seconds": 0.0024204639994422905,
+        "classifier_seconds": 7.358800212386996e-05,
+        "hybrid_inference_seconds": 0.009136818996921647,
+        "hybrid_to_corr_time_ratio": 1.3754537835377878,
+        "feature_dimension": 42,
+        "failures": {
+          "correlated": 50,
+          "ordinary": 57,
+          "hybrid": 46
+        },
+        "ler": {
+          "correlated": 0.005,
+          "ordinary": 0.0057,
+          "hybrid": 0.0046
+        },
+        "hybrid_flagged_failures": 6,
+        "hybrid_unflagged_failures": 40,
+        "flagged_logical_class_counts": {
+          "logical0": 16,
+          "logical1": 11
+        },
+        "paired_hybrid_minus_correlated_delta": -0.0004,
+        "paired_normal_95_ci": [
+          -0.001133346133289825,
+          0.0003333461332898251
+        ],
+        "correlated_only_failures": 9,
+        "hybrid_only_failures": 5,
+        "mcnemar_exact_two_sided": 0.4239501953125,
+        "classifier_error_on_flagged": 6
+      },
+      "projected_seconds": 0.8766141996602528
+    },
+    {
+      "basis": "x",
+      "regime": "balanced",
+      "metrics": {
+        "shots": 10000,
+        "seed": 2026120405,
+        "flagged": 39,
+        "flag_rate": 0.0039,
+        "sample_seconds": 0.0019038169994018972,
+        "corr_seconds": 0.006775974994525313,
+        "plain_seconds": 0.0020438619976630434,
+        "classifier_seconds": 7.601200195495039e-05,
+        "hybrid_inference_seconds": 0.008895848994143307,
+        "hybrid_to_corr_time_ratio": 1.3128515086508965,
+        "feature_dimension": 42,
+        "failures": {
+          "correlated": 66,
+          "ordinary": 55,
+          "hybrid": 55
+        },
+        "ler": {
+          "correlated": 0.0066,
+          "ordinary": 0.0055,
+          "hybrid": 0.0055
+        },
+        "hybrid_flagged_failures": 14,
+        "hybrid_unflagged_failures": 41,
+        "flagged_logical_class_counts": {
+          "logical0": 23,
+          "logical1": 16
+        },
+        "paired_hybrid_minus_correlated_delta": -0.0011,
+        "paired_normal_95_ci": [
+          -0.0020397654112304362,
+          -0.000160234588769564
+        ],
+        "correlated_only_failures": 17,
+        "hybrid_only_failures": 6,
+        "mcnemar_exact_two_sided": 0.03468966484069824,
+        "classifier_error_on_flagged": 14
+      },
+      "projected_seconds": 0.8787820494035259
+    },
+    {
+      "basis": "x",
+      "regime": "z_biased",
+      "metrics": {
+        "shots": 10000,
+        "seed": 2026120406,
+        "flagged": 44,
+        "flag_rate": 0.0044,
+        "sample_seconds": 0.0015655709939892404,
+        "corr_seconds": 0.00998047099710675,
+        "plain_seconds": 0.00226748099521501,
+        "classifier_seconds": 7.323500176426023e-05,
+        "hybrid_inference_seconds": 0.01232118699408602,
+        "hybrid_to_corr_time_ratio": 1.2345296126463192,
+        "feature_dimension": 42,
+        "failures": {
+          "correlated": 51,
+          "ordinary": 53,
+          "hybrid": 40
+        },
+        "ler": {
+          "correlated": 0.0051,
+          "ordinary": 0.0053,
+          "hybrid": 0.004
+        },
+        "hybrid_flagged_failures": 10,
+        "hybrid_unflagged_failures": 30,
+        "flagged_logical_class_counts": {
+          "logical0": 32,
+          "logical1": 12
+        },
+        "paired_hybrid_minus_correlated_delta": -0.0011,
+        "paired_normal_95_ci": [
+          -0.0019540991206794056,
+          -0.00024590087932059427
+        ],
+        "correlated_only_failures": 15,
+        "hybrid_only_failures": 4,
+        "mcnemar_exact_two_sided": 0.0192108154296875,
+        "classifier_error_on_flagged": 10
+      },
+      "projected_seconds": 1.1933614492591005
+    }
+  ],
+  "macro_ler": {
+    "nominal_correlated": 0.005714000000000001,
+    "frozen_logistic": 0.004775,
+    "actual_profile_matcher_diagnostic": 0.0062306666666666665
+  },
+  "macro_relative_reduction_frozen_selector": 0.16433321666083323,
+  "per_condition_relative_reductions": [
+    0.21860914359304573,
+    0.3431712962962963,
+    0.03886335144170505,
+    0.013024013024013015,
+    0.14692982456140347,
+    0.14195056780227122
+  ],
+  "mean_frozen_policy_time_ratio": 1.344925219532672,
+  "advancement_gate_passed": true,
+  "preflight_samples": 60000,
+  "main_samples": 3000000,
+  "projected_total_main_seconds": 5.599441798040061,
+  "elapsed_seconds": 6.283044034003979,
+  "scope": "frozen nominal selector and nominal matchers under bias-composition shift; actual-profile matcher is a diagnostic, not an optimality bound",
+  "run_metadata": {
+    "command": "MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_bias_ratio1.py",
+    "repository_base_revision": "e7e6f4a",
+    "software_versions": {
+      "python": "3.12",
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "stim": "1.16.0",
+      "pymatching": "2.4.0"
+    },
+    "peak_rss_kib": null,
+    "peak_rss_note": "not captured by the run",
+    "sha256": {
+      "runner": "5cae6bbc035099a7035665fd8540e52bfcc6fa49f0b498f0ae238429aea52ee2",
+      "protocol": "2af5f13f3a4faa6e59b06c58e3b90fc7f403aa8d7da8432035634ae4e3938681"
+    }
+  }
+}

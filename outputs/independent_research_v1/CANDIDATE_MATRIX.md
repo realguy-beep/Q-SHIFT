@@ -170,3 +170,8 @@ Leave-one-memory-basis-out testing failed (1.54% macro worsening; X-memory holdo
 ### Ratio-2 static bias-strength challenge
 
 Two ratio-10 frozen-model streams at physical ratio 2 gave 17.38%/17.90% macro gains at ~1.35x cost with all six cells favorable. This extends stationary bias-strength evidence; the cross-basis and d5 transfer failures remain. Report: `../independent_research_v2/fast_flagged_logistic_bias_ratio2_report.md`.
+
+
+### Ratio-1 isotropic bias challenge
+
+Two frozen-model d3 streams at physical ratio 1 gave 16.43%/16.77% macro reduction at ~1.33x cost. All points improved; one first-stream cell interval crossed parity. Stationary robustness now includes ratios 1, 2, and 5, but the cross-basis and d5 limitations remain. Report: `../independent_research_v2/fast_flagged_logistic_bias_ratio1_report.md`.

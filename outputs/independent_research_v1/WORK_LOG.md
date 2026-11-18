@@ -685,3 +685,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Independent stream: .005616→.004611 (17.90%), paired delta -.001005 (95% CI [-.001058,-.000952]), cost 1.374x; all six cell intervals again favored selector. Both gates passed. Balanced channels were unchanged controls.
 - This is a stationary bias-strength challenge only; cross-basis transfer and d5 transfer remain negative. Added 6,120,000 unique samples; cumulative Q-SHIFT development samples: 251,568,200. No confirmatory/sealed evidence.
 - Full report: `outputs/independent_research_v2/fast_flagged_logistic_bias_ratio2_report.md`.
+
+
+## Frozen selector under isotropic ratio-1 noise — fresh-seed replication — 2026-11-18
+
+- Kept ratio-10 d3 selectors and matcher graphs fixed; changed physical X/Z-biased channels to ratio 1 with gate/measurement p=.003. First stream macro LER .005714→.004775 (16.43%), paired delta -.000939 (95% CI [-.000993,-.000885]), cost 1.345x. All cell points improved; five paired intervals excluded parity, one included it.
+- Independent replication: .005706→.004749 (16.77%), paired delta -.000957 (95% CI [-.001011,-.000903]), cost 1.327x; all six cell intervals favored candidate. Both gates passed.
+- This extends only the tested stationary bias-strength range. Cross-basis and d5 transfer remain negative. Added 6,120,000 unique samples; cumulative Q-SHIFT development count: 257,688,200. No confirmatory/sealed data.
+- Details: `outputs/independent_research_v2/fast_flagged_logistic_bias_ratio1_report.md`.

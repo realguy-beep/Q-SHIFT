@@ -239,3 +239,8 @@ Do not deploy a relative-choice classifier trained on one logical memory basis t
 ### Static bias-strength range
 
 The fixed d3 selector has now passed ratio 5, ratio 2, and a ratio-5 plus doubled-measurement joint shift. These support a bounded stationary Pauli-composition range. Do not extrapolate to time-varying or unknown matcher graphs; cross-basis transfer and d5 transfer failed.
+
+
+### Static isotropic limit
+
+The ratio-10 frozen selector also performed well when physical channels became isotropic at ratio 1. This is a useful stationary composition boundary point, not evidence for time-varying noise or an unknown matcher graph. Preserve the basis and d5 failures in any summary.

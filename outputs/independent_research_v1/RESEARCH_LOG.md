@@ -515,3 +515,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 
 - With ratio-10 training and graphs frozen, physical X/Z-biased channels at ratio 2 yielded 17.38% and 17.90% macro LER reductions on independent d3 streams, at 1.324x/1.374x total inference cost; all six per-cell paired intervals favored selector.
 - This strengthens static bias-strength robustness for the tested channel family, but not temporal drift or unknown-graph adaptation. Cross-basis and d5 transfer remain failed. Cumulative development samples: 251,568,200; no sealed/confirmatory data. See `outputs/independent_research_v2/fast_flagged_logistic_bias_ratio2_report.md`.
+
+
+## Ratio-1 isotropic shift also passed — 2026-11-18
+
+- The ratio-10 frozen selector retained a 16.43% and 16.77% macro LER gain at physical ratio 1 on two independent d3 streams, at 1.345x/1.327x total inference cost. First stream had five significant per-cell paired intervals and one crossing parity; replication intervals all favored candidate.
+- Stationary ratio tests now include 1, 2, and 5, with a separate joint measurement/bias shift. This does not cover temporal drift, graph selection, cross-basis transfer, or distance scaling. Cumulative unique development samples 257,688,200; no sealed/confirmatory evidence. See `outputs/independent_research_v2/fast_flagged_logistic_bias_ratio1_report.md`.
