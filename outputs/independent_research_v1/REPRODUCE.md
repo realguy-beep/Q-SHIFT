@@ -422,3 +422,8 @@ Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_
 ### Distance-5 transfer screen of the learned selector
 
 Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_d5_transfer.py`. It uses d5-specific training (does not transfer d3 coefficients), separate held-out streams, and writes `fast_flagged_logistic_d5_transfer_results.json`. The fixed protocol and interpretation are in `fast_flagged_logistic_d5_transfer_protocol.md` and `fast_flagged_logistic_d5_transfer_report.md`.
+
+
+### Frozen selector bias-ratio shift and replication
+
+Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_bias_shift.py` followed, if the frozen gate passes, by `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_bias_shift_replication.py`. Both keep the ratio-10 models/graphs fixed while physical bias ratio is 5; separate results and seeds are preserved. Protocol and report are `fast_flagged_logistic_bias_shift_protocol.md` and `fast_flagged_logistic_bias_shift_report.md`.

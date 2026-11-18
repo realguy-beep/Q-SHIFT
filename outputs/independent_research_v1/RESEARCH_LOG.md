@@ -472,3 +472,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 
 - A d5-specific version of the flagged L2 logistic selector, trained on six 1M-shot streams and assessed on separate 1M-shot streams, increased equal-cell macro LER from .001959 to .0019855 (+1.35%) at 1.379x cost. Only two of six cells improved. Approximate paired macro delta CI was [.0000133,.0000397]. Accuracy advancement gate failed; no replication or tuning launched.
 - This is a negative transfer result for this fixed method/configuration, not proof no d5 selective decoder can work. It weakens scalability claims for the d3 lead. Cumulative unique development samples: 136,788,200; no confirmatory/sealed data. See `outputs/independent_research_v2/fast_flagged_logistic_d5_transfer_report.md`.
+
+
+## Frozen selector also passes one reduced-bias shift — 2026-11-18
+
+- With model and nominal matchers frozen at 10:1 bias, physical biased profiles were shifted to 5:1. Two independent d3 streams gave macro LER reductions 17.95% and 17.81% at 1.347x and 1.364x full inference cost; all six cell intervals favored the selector on each stream. Balanced cells are unchanged-profile controls.
+- This is one additional shift axis only. It does not establish multi-axis or broad noise robustness and does not address distance transfer (the d5 screen failed). Cumulative unique development samples: 142,908,200; no confirmatory/sealed data. Details: `outputs/independent_research_v2/fast_flagged_logistic_bias_shift_report.md`.

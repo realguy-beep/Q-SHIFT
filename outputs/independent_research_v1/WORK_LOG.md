@@ -626,3 +626,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Validation macro LER was .001959 for correlated matching and .0019855 for the selector, a 1.35% relative worsening; paired macro difference selector-minus-baseline +.0000265 (approximate 95% CI [.0000133,.0000397]). Only two of six point estimates improved. Full inference time was 1.379x, but the fixed >=10% accuracy gate failed. No d5 replication or tuning followed.
 - Projected sample/decode time was 101.7s; total run including setup and fitting 180.7s. Added 12,060,000 unique samples (60k preflight +6M training +6M validation); cumulative unique Q-SHIFT development samples: 136,788,200. No confirmatory/sealed data.
 - Interpretation: the d3 learned selector's benefit did not transfer to this d5 method/configuration. Do not generalize or keep this as a positive distance-scaling claim. Full report: `outputs/independent_research_v2/fast_flagged_logistic_d5_transfer_report.md`.
+
+
+## Fast flagged logistic selector — reduced bias-ratio shift and replication — 2026-11-18
+
+- Froze models/matchers trained at bias ratio 10 and evaluated the d3 six-condition policy at physical ratio 5 (gate/measurement p=.003); balanced conditions remain unchanged-profile controls. First stream: macro LER .005377→.004412 (17.95% reduction), paired macro delta -.000965 (95% interval [-.001015,-.000916]), 1.347x full inference; all six paired intervals favored the selector.
+- Fresh-seed replication with identical coefficients gave .005291→.004349 (17.81%), paired macro delta -.000942 (95% interval [-.000992,-.000893]), 1.364x cost; again all six per-cell intervals favored the selector. Both frozen gates passed. No shifted data were used for fitting.
+- This is a narrow d3 simulation result across one bias-ratio shift; it does not override the negative d5 transfer screen or imply simultaneous/arbitrary noise robustness. Added 6,120,000 unique samples; cumulative Q-SHIFT development count: 142,908,200. No confirmatory/sealed data.
+- Full report: `outputs/independent_research_v2/fast_flagged_logistic_bias_shift_report.md`.

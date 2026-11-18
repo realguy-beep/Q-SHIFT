@@ -135,3 +135,8 @@ The nominal selector was applied without retraining at measurement p=.006 after 
 ### Flagged logistic method at d5: no useful transfer observed
 
 Six distance-specific d5 fits on 1M training shots each, tested on 1M independent shots/cell, gave macro LER .001959→.0019855 (+1.35%); only two cells improved. The 1.379x inference cost passed, but the fixed accuracy gate failed. No replication or tuning. Limit the positive selector result to d3 and its tested measurement shift; do not claim distance scaling. A distinct d5 algorithm remains possible but is not supported by this screen. Report: `../independent_research_v2/fast_flagged_logistic_d5_transfer_report.md`.
+
+
+### Fast selector: replicated ratio-10 to ratio-5 bias challenge
+
+Two frozen-model d3 streams showed 17.95% and 17.81% macro LER reduction at ~1.35x cost; all six per-cell paired intervals favored the selector. The X/Z-biased profiles changed anisotropy; balanced profiles were unchanged controls. This strengthens the bounded d3 robustness evidence, alongside the separate measurement-p shift. It does not change the negative d5 transfer result and is not broad or multi-axis robustness. Report: `../independent_research_v2/fast_flagged_logistic_bias_shift_report.md`.

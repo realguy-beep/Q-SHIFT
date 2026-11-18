@@ -70,3 +70,8 @@ The learned disagreement-subset selector has now passed one prespecified twofold
 ### Distance-transfer screen narrows scope
 
 The method-specific d5 test did not show benefit (macro LER worsened 1.35%); this further limits the learned-selector development result to d3 and the tested measurement shift. It does not alter the novelty assessment: the d3 method remains an established supervised selective-decoding pattern, and the d5 screen supplies no positive algorithmic contribution.
+
+
+### Second bounded robustness result
+
+The frozen selector also survived one ratio-10 to ratio-5 bias shift on two d3 streams. This strengthens empirical robustness for that configuration but is not an algorithmic novelty claim; the method remains established supervised selective decoding. The d5 transfer failure remains and limits scaling claims.

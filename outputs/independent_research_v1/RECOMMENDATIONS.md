@@ -204,3 +204,8 @@ Retain as the strongest current low-cost decoder development lead. Two independe
 ### Selector distance-scaling recommendation
 
 The distance-specific d5 fit failed: held-out macro LER worsened 1.35%, and only two of six cells improved, although cost was 1.38x. Do not invest in a replication or describe the d3 selector as scalable to d5. Retain only the bounded d3 simulator lead and its one tested measurement shift. A new d5 algorithm would require a new prospective method and gate, not tuning this failed validation result.
+
+
+### Selector robustness after second shift challenge
+
+The frozen d3 selector now has two independently replicated single-axis simulator shift results: measurement p .003→.006 and bias ratio 10→5, each with ~13% and ~18% macro gains, respectively, at ~1.35x cost. This supports further bounded d3 study, not broad distributional robustness. The failed d5 screen remains a hard scope boundary. A useful next step would be a predeclared combined shift only if its operating profile is justified; do not extrapolate the two separate shifts to simultaneous mismatch or hardware.

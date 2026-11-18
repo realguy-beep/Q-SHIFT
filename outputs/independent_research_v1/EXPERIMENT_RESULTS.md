@@ -447,3 +447,8 @@ With model coefficients frozen from nominal p_measure=.003 training, the six-con
 ## Distance-5 transfer of flagged logistic selector failed
 
 The d5-specific, 218-feature logistic policy was fit on independent six-condition training streams and evaluated on separate 1M-shot/cell validation streams. Macro LER rose from .001959 to .0019855 (+1.35% relative); only two of six cells improved. Paired macro difference was +.0000265 (approximate 95% CI [.0000133,.0000397]). Runtime was 1.379x and passed, but the frozen >=10% accuracy gate failed; no replication or tuning was performed. Thus the d3 method's benefit did not transfer to this d5 setup. Details: `../independent_research_v2/fast_flagged_logistic_d5_transfer_report.md`.
+
+
+## Frozen logistic selector under reduced bias ratio
+
+At gate/measurement p=.003, the ratio-10 selector and matchers were frozen while biased physical channels changed to ratio 5. Two independent d3 streams gave macro LER .005377→.004412 (17.95%) and .005291→.004349 (17.81%), at 1.347x/1.364x total inference cost. Paired macro difference 95% intervals were [-.001015,-.000916] and [-.000992,-.000893]; all six per-cell intervals favored the selector on both streams. Balanced cells were unchanged-profile controls. This supports only the tested single-axis shift at d3; see `../independent_research_v2/fast_flagged_logistic_bias_shift_report.md`.

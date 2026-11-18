@@ -242,3 +242,8 @@ The frozen per-condition logistic selector, trained at measurement p=.003, passe
 ### Distance-transfer boundary — 2026-11-18
 
 The d3 flagged logistic method did not transfer to a distance-specific d5 fit in a frozen six-cell train/validation screen: macro LER worsened 1.35%, only two cells improved, and the >=10% accuracy gate failed (runtime 1.38x passed). No replication or tuning was launched. Keep positive claims limited to d3; report and reproducibility are in `../independent_research_v2/fast_flagged_logistic_d5_transfer_report.md`.
+
+
+### Second d3 robustness axis — 2026-11-18
+
+A fixed ratio-10 selector applied at physical ratio 5 passed on two independent d3 streams (17.95% and 17.81% macro reduction, ~1.35x inference; all six cells favorable). Balanced profiles are unchanged controls. Together with the measurement shift, this supports two bounded one-axis results only. The d5 distance-specific fit still failed, so positive claims stay d3-specific. See `../independent_research_v2/fast_flagged_logistic_bias_shift_report.md`.

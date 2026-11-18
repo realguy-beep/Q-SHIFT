@@ -266,3 +266,8 @@ The nominally trained logistic policy did not fail under the prespecified measur
 ### Distance transfer exposed a boundary for the learned selector
 
 The method was re-fit with d5-specific 218-dimensional features rather than blindly applying d3 coefficients. Despite adequate training data and converged fits, held-out macro LER was 1.35% worse than correlated matching; only two of six cells improved. Full inference cost was acceptable (1.38x), so this is an accuracy/transfer failure, not a runtime rejection. The fixed gate failed and no replication or tuning followed. The current d3 result must not be described as a scalable d5 advantage. This does not rule out a different d5 model or selective decoder, but those would be new candidates. See `../independent_research_v2/fast_flagged_logistic_d5_transfer_report.md`.
+
+
+### Reduced-bias shift adds a second bounded positive result
+
+The selector frozen at bias ratio 10 retained a 17.8%–18.0% macro LER reduction on two fresh streams at physical ratio 5, at ~1.35x cost, with all per-cell intervals favorable. This reduces concern for that one shift axis at d3. It does not reconcile the negative d5 transfer result or establish robustness to simultaneous shifts, other profiles, or hardware. Balanced cells did not shift and should be recognized as controls. Do not make a general robustness claim. See `../independent_research_v2/fast_flagged_logistic_bias_shift_report.md`.
