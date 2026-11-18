@@ -115,3 +115,8 @@ Passing the ratio-1 stationary channel challenge increases empirical scope but d
 ### Gate-noise robustness is unresolved
 
 The gate-p shift's fresh stream fell just below the fixed utility threshold, despite favorable paired errors. Do not fold it into the positive robustness claims or characterize the selector as robust to arbitrary gate-rate mismatch.
+
+
+### Gate-noise axis is not uniformly robust
+
+The half-rate gate shift passed strongly, while the double-rate shift narrowly failed its utility gate on replication. Robustness claims must preserve this directional boundary.

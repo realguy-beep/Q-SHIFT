@@ -467,3 +467,8 @@ Run `fast_flagged_logistic_bias_ratio1.py` and `fast_flagged_logistic_bias_ratio
 ### Doubled gate-noise challenge
 
 Run `fast_flagged_logistic_gate_shift.py` and its replication counterpart with the project venv. The initial preflight diagnostic-threshold failure is preserved in `fast_flagged_logistic_gate_shift_preflight_failure.md`; the corrected diagnostic-only rerun uses identical preflight seeds. The independent replication narrowly misses the frozen utility gate.
+
+
+### Half-rate gate-noise challenge and replication
+
+Run `fast_flagged_logistic_gate_half_shift.py` and its replication counterpart from the v2 directory. This freezes the .003 selector/graphs and evaluates gate p=.0015; see the report alongside the separate doubled-gate borderline report.

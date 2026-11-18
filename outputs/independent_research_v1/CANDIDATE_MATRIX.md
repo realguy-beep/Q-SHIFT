@@ -180,3 +180,8 @@ Two frozen-model d3 streams at physical ratio 1 gave 16.43%/16.77% macro reducti
 ### Doubled gate-noise challenge: borderline, not a pass
 
 The frozen selector reduced macro LER 10.01% in the first stream and 9.95% on replication at gate p=.006; all cells improved and inference cost passed, but the >=10% advancement gate failed on replication. Treat as inconclusive/borderline rather than robustly passing. Report: `../independent_research_v2/fast_flagged_logistic_gate_shift_report.md`.
+
+
+### Gate-rate stress pair
+
+Halving gate p to .0015 passed twice (24.42%/23.36% macro gains); doubling to .006 narrowly failed the 10% gate on replication (10.01%/9.95%). This is asymmetric rate robustness, not a uniform gate-noise envelope. See both gate-shift reports in v2.

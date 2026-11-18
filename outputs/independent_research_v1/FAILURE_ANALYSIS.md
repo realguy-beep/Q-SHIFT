@@ -311,3 +311,8 @@ The frozen ratio-10 selector retained ~16% macro gain at physical ratio 1 on two
 ### Gate-rate robustness did not clear the strict utility gate twice
 
 Doubling gate p to .006 produced 10.01% macro reduction initially and 9.95% on replication. Paired intervals favored the selector in both streams and all cells improved, but the frozen macro threshold failed by 0.05 percentage point on fresh validation. Do not upgrade the gate-shift result based on its paired significance alone; it is a borderline utility-gate miss. The diagnostic graph threshold preflight failure is retained in v2.
+
+
+### Gate-rate shift is asymmetric
+
+Halving gate p to .0015 gave 23%–24% macro gains on two streams; doubling to .006 gave 10.01% then 9.95% and failed the frozen gate on replication. This asymmetry means the selector's rate robustness is bounded and directional. Keep the doubled-rate borderline result alongside the positive half-rate result; do not state generic gate-rate robustness.

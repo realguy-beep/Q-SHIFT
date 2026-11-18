@@ -249,3 +249,8 @@ The ratio-10 frozen selector also performed well when physical channels became i
 ### Gate-rate shift limitation
 
 Do not include doubled gate noise in the selector's positive robustness envelope: the initial 10.01% gain narrowly passed, but independent replication was 9.95% and failed the fixed utility gate. The effect is real by paired error comparison but misses the practical threshold. No extra shots were taken.
+
+
+### Gate-rate robustness remains asymmetric
+
+A half-rate shift is strongly positive, but a double-rate shift misses the frozen utility gate on replication by 0.05 point. Do not include doubled gate noise in the validated envelope and do not generalize from the half-rate result.

@@ -492,3 +492,8 @@ The ratio-10 trained selector was evaluated at physical ratio 1 without retraini
 ## Doubled gate-noise shift was borderline
 
 At physical gate p=.006 with measurement p=.003, the frozen selector reduced macro LER 10.01% initially and 9.95% on independent replication, at 1.34x/1.35x cost. Paired macro intervals strongly favored the selector, and all cells improved, but the strict >=10% gate failed on replication; no further samples were taken. Record as borderline/inconclusive for advancement. The first preflight's diagnostic DEM threshold failure and correction are preserved. See `../independent_research_v2/fast_flagged_logistic_gate_shift_report.md`.
+
+
+## Halved gate-noise shift
+
+With gate p reduced from .003 to .0015 and other nominal settings fixed, the frozen selector gave 24.42% and 23.36% macro reductions on independent d3 streams at ~1.36x cost. Paired macro intervals were [-.000512,-.000452] and [-.000489,-.000429]; all cell intervals favored the selector. This contrasts with doubled gate noise, which missed the fixed 10% utility gate on replication. See `../independent_research_v2/fast_flagged_logistic_gate_half_shift_report.md`.

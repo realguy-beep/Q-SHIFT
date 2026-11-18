@@ -287,3 +287,8 @@ At physical ratio 1, the ratio-10 frozen d3 selector retained 16.4%/16.8% macro 
 ### Gate-noise challenge was borderline — 2026-11-18
 
 At gate p=.006 the frozen selector reduced macro LER 10.01% initially and 9.95% on replication. Despite all cells improving and paired intervals excluding zero, the strict >=10% gate failed on replication. Treat as borderline/inconclusive, not a robustness pass. Preserved preflight issue and report: `../independent_research_v2/fast_flagged_logistic_gate_shift_report.md`.
+
+
+### Half-rate gate shift — 2026-11-18
+
+At gate p=.0015, the frozen selector gained 24.4%/23.4% macro LER on two streams (~1.36x cost). This contrasts with doubled gate p=.006, where fresh replication was 9.95% and missed the 10% gate. Keep the gate-rate boundary explicitly asymmetric. See `../independent_research_v2/fast_flagged_logistic_gate_half_shift_report.md`.

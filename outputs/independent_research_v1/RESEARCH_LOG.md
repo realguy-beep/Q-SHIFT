@@ -527,3 +527,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 
 - With physical gate p doubled to .006, the frozen selector improved macro LER by 10.01% initially but 9.95% on independent replication. Both streams show strongly favorable paired differences and all six cells improved, yet the preregistered >=10% utility gate failed on replication. No extension shots or tuning.
 - Record as a borderline gate miss, not replicated advancement. Measurement/bias robustness results remain; gate-rate robustness is weaker. Cumulative development samples: 263,808,200; no sealed/confirmatory data. Full record: `outputs/independent_research_v2/fast_flagged_logistic_gate_shift_report.md`.
+
+
+## Half-rate gate shift passed; double-rate remains borderline — 2026-11-18
+
+- Physical gate p=.0015 with the ratio-10/.003 model frozen yielded 24.42% and 23.36% macro gains on two streams, ~1.36x cost, all per-cell intervals favorable. By contrast p=.006 achieved 10.01% then 9.95% and failed the strict utility gate on replication.
+- Preserve asymmetry rather than summarizing generic gate-noise robustness. Cumulative unique samples: 269,928,200; no sealed/confirmatory data. See `outputs/independent_research_v2/fast_flagged_logistic_gate_half_shift_report.md` and the doubled-gate report.

@@ -701,3 +701,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Fresh replication: .015523→.013978 (9.95%), paired delta -.001545 (95% CI [-.001620,-.001470]), cost 1.351x; all six cells improved, but strict >=10% macro gate failed by .05 percentage point. No more shots or tuning.
 - First preflight attempt sampled 60k then failed constructing only the shifted diagnostic graph because threshold .0018 was below a .003571 PAULI_CHANNEL_2 component. Raised that diagnostic threshold to .004 and replayed identical seeds; unique preflight count is 60k, not 120k. Nominal graph/model unchanged. Failure note preserved.
 - Added 6,120,000 unique samples across initial and replication streams; cumulative Q-SHIFT development samples: 263,808,200. No confirmatory/sealed data. Result is borderline/inconclusive for advancement, not a replicated gate pass. See `outputs/independent_research_v2/fast_flagged_logistic_gate_shift_report.md`.
+
+
+## Frozen selector under halved gate noise — fresh-seed replication — 2026-11-18
+
+- Kept ratio-10 d3 selector/graphs fixed and changed physical gate p=.003→.0015; measurement stayed .003. Initial stream macro LER .001973→.001491 (24.42%), paired macro delta -.000482 (95% CI [-.000512,-.000452]), cost 1.368x; all six intervals favored selector.
+- Independent replication: .001965→.001506 (23.36%), paired delta -.000459 (95% CI [-.000489,-.000429]), cost 1.357x; all six intervals favored candidate. Both gates passed.
+- Gate-rate mismatch is asymmetric: half-rate shift passes strongly, while the doubled-rate shift narrowly missed the frozen utility gate on replication. Preserve both results. Added 6,120,000 unique samples; cumulative development count: 269,928,200. No confirmatory/sealed data.
+- Report: `outputs/independent_research_v2/fast_flagged_logistic_gate_half_shift_report.md`.
