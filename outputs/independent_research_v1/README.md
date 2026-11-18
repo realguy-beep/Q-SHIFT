@@ -9,6 +9,10 @@ The expedition is in progress. The available checkpoint records repository revis
 - `RESEARCH_LOG.md` records the initial audit and the remaining sequence.
 - `FUNDAMENTAL_LIMITS.md` defines the 99.99% ratio and quantifies optimistic zero-error sampling requirements.
 - `zero_failure_bounds.py` reproduces those sample counts using only the Python standard library.
+- `LITERATURE_SURVEY.md` summarizes source-reviewed prior work and notes sources blocked during this session.
+- `EXPERIMENT_RESULTS.md`, `FAILURE_ANALYSIS.md`, and `RESULTS.json` capture actual outcomes and limitations.
+- `REPRODUCE.md` documents environment setup and checks.
+- `CLAUDE_HANDOFF.md` and `RECOMMENDATIONS.md` provide interim research guidance.
 - `CANDIDATE_MATRIX.md` compares decoder, inference, learning, adaptation, and code-design directions for the next research phase.
 
 The remaining requested reports and any prototype are pending. Treat all conclusions as preliminary until the literature references, the named Stage E and Stage S material, decoder implementations, and additional historical audits have been reviewed. No results in this package support a superiority claim.

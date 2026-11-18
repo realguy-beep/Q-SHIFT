@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "status": "interim_development_only",
+  "branch": "codex/qshift-independent-research-v1",
+  "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
+  "confirmatory_data_accessed": false,
+  "stochastic_qshift_shots_generated": 0,
+  "dem_conversion_preflight": {
+    "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
+    "conditions": 6,
+    "conversions_succeeded": 0,
+    "expected_pauli_channel_2_blockers": 6
+  },
+  "categorical_bethe_prototype": {
+    "validation_cases": [
+      {
+        "model": "single_location_tree_control",
+        "syndromes": 2,
+        "exact_posterior_agreement": true
+      },
+      {
+        "model": "one_qubit_repetition_toy",
+        "syndromes": 4,
+        "exact_map_ler": 0.002646,
+        "prototype_ler": 0.057354,
+        "decision_agreement": 2
+      },
+      {
+        "model": "two_qubit_repetition_toy",
+        "syndromes": 4,
+        "exact_map_ler": 0.06,
+        "prototype_ler": 0.06,
+        "decision_agreement": 4
+      }
+    ],
+    "unit_tests_passed": 3,
+    "unit_tests_failed": 0,
+    "advancement_decision": "stop_before_circuit_evaluation_due_to_poor_one_qubit_toy_performance"
+  },
+  "previous_qshift_correlation_pilot": {
+    "source": "outputs/correlation_pilot/RESULTS.json",
+    "shots": 720000,
+    "pooled_fixed_uncorrelated_errors": 3532,
+    "pooled_fixed_correlated_errors": 3349,
+    "equal_stratum_paired_ler_difference_correlated_minus_uncorrelated": -0.00025417,
+    "root_bootstrap_95_ci": [-0.00035, -0.0001625],
+    "predeclared_practical_gate": "failed"
+  },
+  "zero_failure_95_percent_candidate_sample_counts": {
+    "baseline_ler_0.001": 29957322,
+    "baseline_ler_0.005": 5991464,
+    "baseline_ler_0.014333": 2090093
+  },
+  "environment": {
+    "python": "3.12.14",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "ldpc": "2.4.1",
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
+    "networkx": "3.7",
+    "cpu_cores": 5,
+    "ram_gib": 33,
+    "gpu_visible": false
+  }
+}

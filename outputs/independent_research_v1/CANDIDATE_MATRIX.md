@@ -24,3 +24,15 @@ Scores are 1 (low) to 5 (high). Improvement and novelty are speculative upside, 
 3. **Different mechanism:** Bayesian detector-profile inference under withheld regimes with uncertainty-aware selection. Compare against the frozen pooled fixed decoder and detector-profile calibrated alternatives, with root-held-out splits and explicit no-oracle inputs.
 
 An importance-sampling prototype is a parallel measurement-method candidate, not a decoder. Literature and source review must determine whether it adds information beyond existing saved development arrays. No candidate is authorized for confirmatory evaluation by this matrix.
+
+## Prior-work disposition from the repository audit
+
+- The earlier categorical exact reference already covers two tiny Pauli-channel toys and independent forced-outcome validation. Exact enumeration of the complete d=3 circuit is ruled out by 2^609 assignments. The remaining gap is structured scaling, not another toy enumerator.
+- `outputs/matching_representation_investigation/` already compares categorical MAP, exact independent-DEM MAP, standard/correlation-aware matching, separator-free matching, and restricted local posterior methods. Do not repeat those small-fragment experiments.
+- `outputs/correlation_pilot/` already contains the correlation-mode pilot. Its aggregate gain is smaller than the preregistered practical gate and heterogeneous by stratum. The raw pilot arrays are absent in this checkout.
+- `outputs/competition_pivot/` already reports a no-go for uncertainty-aware decoder selection. Ensemble selection is established literature, and its saved utility predictors were weak. Do not re-train a selector on the same results.
+- `outputs/neural_decoder_diagnostic/` reports the position-preserving CNN as still worse than fixed PyMatching. Scaling a neural candidate without a distinct mechanism is not justified.
+- The user's initial brief reports Stage S BP+OSD results, but corresponding Stage S files are absent from published `main`. I did not inspect or fetch Claude's branch. Treat those numbers as supplied context until a safe independent source is made available.
+- `outputs/headroom_feasibility/` already screens specialized decoder headroom at d=3/5/7 and reaches a no-go under its stated gate. A generic repeat of that grid is not a priority.
+
+The matrix is therefore a landscape of distinct approaches, not a claim that every row is an untested Q-SHIFT candidate. The next genuinely open implementation gap is structured native-categorical inference, but the first loopy Bethe prototype failed a small exact fixture and needs algorithm redesign before any circuit evaluation.
