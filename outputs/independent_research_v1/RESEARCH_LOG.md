@@ -168,3 +168,8 @@
 - Replayed prior d3/d5 seeds exactly and matched all 64 archived per-cell error counts. No new independent samples were generated.
 - d3 model predictions differed on 1,105/1.6M shots; ratio10 fixed 730 errors and introduced 375 (66.1% correct among disagreements, Wilson 95% 63.2–68.8%). d5 disagreed on 452/1.6M; ratio10 fixed 210 and introduced 242 (46.5%, 41.9–51.1%). This decomposes observed net LER changes, but does not identify the syndrome features/mechanism.
 - Cumulative unique development samples remain 40,195,800. Full cell and aggregate counts saved to `bias_strength_decision_replay_results.json`; reproduction uses `bias_strength_decision_replay.py`.
+
+### Same-seed syndrome-weight strata (descriptive)
+
+- Added predeclared detector-click bins to the existing exact-seed replay without changing seeds. At d3, 1,022/1,105 model disagreements had 3–8 clicks and ratio10 was right on 678/1,022; only 29 disagreements had 9+ clicks and ratio10 lost 18 vs fixed 11. At d5, 363/452 disagreements were 9+ and ratio10 won only 168 vs 195. This is consistent with a changed disagreement population, not a causal finding; d3/d5 detector counts differ and bins are unnormalized.
+- No new unique Q-SHIFT samples; aggregate/condition/bin data all in `bias_strength_decision_replay_results.json`.

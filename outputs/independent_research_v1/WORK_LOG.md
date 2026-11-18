@@ -230,3 +230,8 @@
 - At d3, ratio5/10 predictions disagreed on 1,105 of 1.6M samples (.0691%). Ratio10 fixed 730 ratio5 failures and introduced 375; accuracy among changed predictions was 66.1% (Wilson 95% 63.2%–68.8%). At d5, disagreement was 452/1.6M (.0283%); ratio10 fixed 210 and introduced 242, with 46.5% conditional accuracy (41.9%–51.1%). This decomposes the net d3/d5 contrast but not the syndrome mechanism.
 - Cumulative unique Q-SHIFT development samples remain 40,195,800; no confirmatory data accessed. Exact replay verification and aggregates are saved; the raw syndromes are not retained in the report artifact.
 - Next: avoid overfitting this finite set of disagreement cases. Move to an orthogonal research family or, if pursuing the mechanism, design fresh retained-syndrome data with predeclared stratification and an independent validation split.
+
+### Coarse syndrome-weight diagnostic (same replay, no new samples)
+
+- On d3, ratio10 changed decisions were concentrated in syndrome weights3–8 (1,022/1,105), where 678/1,022 favored ratio10; weight9+ changes were sparse (29) and favored ratio5 (18 vs11). At d5, 363/452 changes were weight9+ and ratio10 was correct on 168/363. These are raw counts across 40 versus216 detectors and cannot be compared as normalized distance coordinates.
+- This gives a descriptive lead that ratio10's changed-decision mix varies by distance, but it does not identify fault geometry or causality. The full bin table is saved in the replay artifact; all archived error counts still reproduce.

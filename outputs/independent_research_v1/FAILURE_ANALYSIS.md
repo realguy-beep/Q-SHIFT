@@ -87,3 +87,5 @@ A deterministic graph audit found identical ratio5/ratio10 topology and logical-
 
 An exact-seed replay reproduced every stored error total and decomposed decoder disagreements. On d3, ratio10 altered 1,105/1.6M logical predictions and was correct in 730 versus 375 errors introduced (66.1% conditional success). On d5 it altered 452/1.6M and fixed 210 while introducing 242 (46.5%). This explains the net margin at the level of paired outputs but not why a given syndrome's preferred logical class changes. Because the replay reuses archived seeds, it is not independent confirmation.
 
+On the predeclared detector-weight bins, d3's ratio10 disagreements mostly occurred at weights3–8 and were usually beneficial; high-weight disagreements were mostly harmful but sparse. At d5 most disagreements were weight9+ and close to a coin flip. Raw click counts use different detector totals across distances (40 versus216), so these categories are not comparable normalized coordinates. This is a descriptive lead for a future error-mechanism study, not an established causal explanation.
+

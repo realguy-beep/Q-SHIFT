@@ -49,6 +49,7 @@ def main() -> None:
     start = time.perf_counter()
     rows = []
     aggregate_by_distance_ratio = {}
+    aggregate_by_distance_syndrome_bin = {}
     for distance, seed_start, result_name in (
         (3, 2026112421, "bias_strength_frozen_validation_results.json"),
         (5, 2026112521, "bias_strength_distance5_validation_results.json"),
@@ -72,6 +73,7 @@ def main() -> None:
                     detectors, enable_correlations=True), dtype=np.bool_).reshape(SHOTS, -1)
                 failures[str(assumed)] = np.any(pred[str(assumed)] != observables, axis=1)
             decoded_disagree = np.any(pred["5"] != pred["10"], axis=1)
+            syndrome_weight = detectors.sum(axis=1)
             both_correct = int(np.count_nonzero(~failures["5"] & ~failures["10"]))
             both_wrong = int(np.count_nonzero(failures["5"] & failures["10"]))
             ratio10_fixes = int(np.count_nonzero(failures["5"] & ~failures["10"]))
@@ -103,6 +105,38 @@ def main() -> None:
                     (disagree_n - ratio10_fixes) / disagree_n if disagree_n else None),
                 "archived_error_counts_reproduced": True,
             }
+            bin_id = np.select(
+                [syndrome_weight == 0, syndrome_weight <= 2,
+                 syndrome_weight <= 4, syndrome_weight <= 8],
+                [0, 1, 2, 3], default=4)
+            bin_names = {0: "weight_0", 1: "weight_1_2", 2: "weight_3_4",
+                         3: "weight_5_8", 4: "weight_9_plus"}
+            by_bin = {}
+            for bin_value, bin_name in bin_names.items():
+                mask = bin_id == bin_value
+                dis = mask & decoded_disagree
+                by_bin[bin_name] = {
+                    "shots": int(mask.sum()),
+                    "prediction_disagreements": int(dis.sum()),
+                    "ratio10_fixes_ratio5_failure": int(np.count_nonzero(
+                        mask & failures["5"] & ~failures["10"])),
+                    "ratio10_breaks_ratio5_success": int(np.count_nonzero(
+                        mask & ~failures["5"] & failures["10"])),
+                    "both_wrong": int(np.count_nonzero(
+                        mask & failures["5"] & failures["10"])),
+                }
+                key = (distance, bin_name)
+                agg = aggregate_by_distance_syndrome_bin.setdefault(key, {
+                    "distance": distance, "syndrome_weight_bin": bin_name,
+                    "shots": 0, "prediction_disagreements": 0,
+                    "ratio10_fixes_ratio5_failure": 0,
+                    "ratio10_breaks_ratio5_success": 0, "both_wrong": 0,
+                })
+                for field in ("shots", "prediction_disagreements",
+                              "ratio10_fixes_ratio5_failure",
+                              "ratio10_breaks_ratio5_success", "both_wrong"):
+                    agg[field] += by_bin[bin_name][field]
+            row["paired_outcomes_by_syndrome_weight"] = by_bin
             rows.append(row)
             key = (distance, actual)
             a = aggregate_by_distance_ratio.setdefault(key, {
@@ -152,6 +186,8 @@ def main() -> None:
         "conditions": rows,
         "aggregates_by_distance_and_actual_ratio": aggregates,
         "aggregates_by_distance": by_distance,
+        "aggregates_by_distance_and_syndrome_weight": list(
+            aggregate_by_distance_syndrome_bin.values()),
         "all_archived_error_counts_reproduced": True,
         "new_independent_samples": 0,
         "elapsed_seconds": time.perf_counter() - start,
