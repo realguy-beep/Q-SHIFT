@@ -93,3 +93,5 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the d5 ratio10-vs-ratio5 preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_strength_distance5_validation.py --preflight`, then the 100,000-shot-per-cell run with the same command without `--preflight`.
 
 - Reproduce the deterministic ratio5/ratio10 matching graph audit with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_graph_mechanism.py`. It generates no stochastic samples.
+
+- Reproduce the archived-seed paired decision decomposition with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_strength_decision_replay.py`. The script verifies all stored counts and creates no new independent samples.

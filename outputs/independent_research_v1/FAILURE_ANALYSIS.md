@@ -85,3 +85,5 @@ At d5, the same frozen ratio10-vs-ratio5 contrast was near zero (+.000020, condi
 
 A deterministic graph audit found identical ratio5/ratio10 topology and logical-fault labels in every d3/d5 profile/basis pair, with comparable median edge-weight changes (.131 at d3, .128 at d5). Thus edge addition/removal is not the explanation. The audit does not resolve how different syndrome distributions interact with those weights; no raw detector arrays were saved in the robustness results, so that causal path remains untested.
 
+An exact-seed replay reproduced every stored error total and decomposed decoder disagreements. On d3, ratio10 altered 1,105/1.6M logical predictions and was correct in 730 versus 375 errors introduced (66.1% conditional success). On d5 it altered 452/1.6M and fixed 210 while introducing 242 (46.5%). This explains the net margin at the level of paired outputs but not why a given syndrome's preferred logical class changes. Because the replay reuses archived seeds, it is not independent confirmation.
+

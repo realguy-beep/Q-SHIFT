@@ -4927,5 +4927,48 @@
     ],
     "elapsed_seconds": 0.16851616599888075,
     "scope": "descriptive graph topology and edge-weight audit; no causal or LER claim"
+  },
+  "bias_strength_decision_replay": {
+    "status": "paired_seed_replay_decomposition",
+    "artifact": "bias_strength_decision_replay_results.json",
+    "new_independent_samples": 0,
+    "conditions": 32,
+    "all_archived_error_counts_reproduced": true,
+    "aggregates_by_distance": [
+      {
+        "distance": 3,
+        "shots": 1600000,
+        "both_correct": 1591266,
+        "both_wrong": 7629,
+        "ratio10_fixes_ratio5_failure": 730,
+        "ratio10_breaks_ratio5_success": 375,
+        "prediction_disagreements": 1105,
+        "disagreement_rate": 0.000690625,
+        "ratio10_success_given_disagreement": 0.6606334841628959,
+        "ratio10_conditional_success_wilson_95": [
+          0.6322019976497926,
+          0.6879519767313236
+        ],
+        "net_error_rate_change_ratio10_minus_ratio5": -0.000221875
+      },
+      {
+        "distance": 5,
+        "shots": 1600000,
+        "both_correct": 1596697,
+        "both_wrong": 2851,
+        "ratio10_fixes_ratio5_failure": 210,
+        "ratio10_breaks_ratio5_success": 242,
+        "prediction_disagreements": 452,
+        "disagreement_rate": 0.0002825,
+        "ratio10_success_given_disagreement": 0.4646017699115044,
+        "ratio10_conditional_success_wilson_95": [
+          0.41911443676723925,
+          0.5106857176926313
+        ],
+        "net_error_rate_change_ratio10_minus_ratio5": 2e-05
+      }
+    ],
+    "elapsed_seconds": 26.889488954000626,
+    "scope": "replay of archived seeds only; paired outcome decomposition, no new validation"
   }
 }

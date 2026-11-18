@@ -162,3 +162,9 @@
 - All pairs had exact same topology and logical-fault labels: 142 edges at d3 and 950 at d5. Mean absolute edge-weight delta .238/.249, median .131/.128, and median absolute edge-error-probability delta .000353/.000353 at d3/d5. Ratio10 raised 74.6%/70.3% of common weights.
 - This rules out edge topology changes as the simple explanation; causal syndrome interaction remains open, and raw earlier shot records are unavailable. No fundamental inference from this deterministic audit.
 - Reproduce with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_graph_mechanism.py`.
+
+## Checkpoint — paired decoder-decision seed replay (2026-11-18)
+
+- Replayed prior d3/d5 seeds exactly and matched all 64 archived per-cell error counts. No new independent samples were generated.
+- d3 model predictions differed on 1,105/1.6M shots; ratio10 fixed 730 errors and introduced 375 (66.1% correct among disagreements, Wilson 95% 63.2–68.8%). d5 disagreed on 452/1.6M; ratio10 fixed 210 and introduced 242 (46.5%, 41.9–51.1%). This decomposes observed net LER changes, but does not identify the syndrome features/mechanism.
+- Cumulative unique development samples remain 40,195,800. Full cell and aggregate counts saved to `bias_strength_decision_replay_results.json`; reproduction uses `bias_strength_decision_replay.py`.

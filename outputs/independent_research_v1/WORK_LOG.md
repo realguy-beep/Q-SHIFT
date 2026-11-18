@@ -223,3 +223,10 @@
 - Every pair had identical edge topology and logical-fault labels (142 edges at d3, 950 at d5). Mean absolute edge-weight perturbations were .238 (d3) and .249 (d5); medians .131 and .128; median absolute error-probability perturbation .000353 at both. The higher-ratio graph increased about 74.6% of common d3 weights and 70.3% at d5.
 - Therefore edge addition/removal does not explain the d3/d5 performance difference, and gross reweighting magnitudes are similar. This audit is descriptive and does not identify the syndrome/decision mechanism. Raw sample syndromes were not saved with the earlier aggregate artifacts, limiting offline paired error-pattern analysis.
 - Next: avoid further claims about why the finite-distance effect differs. If pursuing it, define a fresh targeted decoder-decision analysis where the same sample streams are retained and disagreement syndromes can be stratified; otherwise move to a separate research family.
+
+## Paired decoder-decision seed replay — 2026-11-18
+
+- Replayed the exact 32 saved d3/d5 seeds (100,000 shots/cell); all 64 archived per-cell decoder error counts matched exactly. This is a reanalysis/reproduction and adds no unique stochastic samples.
+- At d3, ratio5/10 predictions disagreed on 1,105 of 1.6M samples (.0691%). Ratio10 fixed 730 ratio5 failures and introduced 375; accuracy among changed predictions was 66.1% (Wilson 95% 63.2%–68.8%). At d5, disagreement was 452/1.6M (.0283%); ratio10 fixed 210 and introduced 242, with 46.5% conditional accuracy (41.9%–51.1%). This decomposes the net d3/d5 contrast but not the syndrome mechanism.
+- Cumulative unique Q-SHIFT development samples remain 40,195,800; no confirmatory data accessed. Exact replay verification and aggregates are saved; the raw syndromes are not retained in the report artifact.
+- Next: avoid overfitting this finite set of disagreement cases. Move to an orthogonal research family or, if pursuing the mechanism, design fresh retained-syndrome data with predeclared stratification and an independent validation split.

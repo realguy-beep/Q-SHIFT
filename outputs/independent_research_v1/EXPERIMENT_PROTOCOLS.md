@@ -119,3 +119,5 @@ The frozen follow-up in `bias_strength_frozen_validation_protocol.md` independen
 The second-distance check is fixed in `bias_strength_distance5_validation_protocol.md`: same ratio pair and actual-strength grid, d=5 with nine rounds, 16 cells, and 100,000 samples/cell. It is expressly a finite-distance replication, not threshold analysis.
 
 The deterministic topology/weight audit is in `bias_graph_mechanism_protocol.md`; it rebuilds both model graphs at d3 and d5, checks their edge signatures, and summarizes weight changes without generating samples.
+
+The paired output decomposition replays archived seeds only and is specified in `bias_strength_decision_replay_protocol.md`; exact agreement with archived per-cell error counts is a required integrity gate.
