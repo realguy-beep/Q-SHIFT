@@ -51,3 +51,6 @@ The min-fill TT ordering is a standard graph heuristic, not a new method. The lo
 Sequential probability ratio testing is established statistical methodology (Wald, *Sequential Analysis*, 1947); this is not claimed as a new algorithm. The local contribution is a frozen detector-only feature application and a matched Q-SHIFT simulator cost/LER evaluation. Its positive long-dwell result is a stable-profile plug-in projection; novelty and deployment value remain unestablished.
 
 Stim shortest-graphlike-error analysis and the identity-paired lower-bound argument are established tools/logic. The local result is an exact physical certificate for two d3 circuits, but its probability is too small to inform the practical floor; no novel floor method is claimed.
+
+
+The equal-duration round-count experiments use standard syndrome scheduling and biased surface-code circuits. They make no algorithmic novelty claim. Their local evidence is a d3 simulator tradeoff under an assumed idle Pauli model, a failed across-profile idle robustness gate, and no supported d5 improvement. Neither publication novelty nor hardware relevance is established.

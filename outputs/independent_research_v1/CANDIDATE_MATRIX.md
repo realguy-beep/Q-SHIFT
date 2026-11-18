@@ -111,3 +111,7 @@ Class-specific and common-variance likelihood CUSUMs detected all simulated tran
 ### Exact physical-pattern lower-bound screen
 
 One shortest graphlike path per d3 aligned X-memory circuit yielded exact circuit-pattern bounds 3.07e-15 (CSS-X) and 3.07e-13 (XZZX-X), far below observed LER. This validates a physical certificate but rejects the single-path method as a useful floor estimator; multiplicity is the open issue.
+
+### Equal-duration syndrome schedule follow-up (independent research v2)
+
+A d3 screen and fresh-seed replication favored three active rounds plus two matched-duration biased data-idle cycles over five active rounds on aligned tasks (mean cell RR .762 and .773). A 2x idle-rate stress retained the Z-aligned benefit (RR .753) but made X alignment near-neutral (RR 1.016), failing the across-cell robustness gate. At d5, five-plus-idle versus nine active rounds showed no gain (RR 1.05, 95% .83–1.33); a single seven-plus-idle point was inconclusive (RR .843, .674–1.056). This is not a general or distance-scaling candidate. Retain only as a workload-specific d3 simulator result; require calibrated idle noise and a concrete application before further work.

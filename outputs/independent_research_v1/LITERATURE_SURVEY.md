@@ -63,3 +63,7 @@ The official Fusion Blossom Python demo at tag `v0.2.13` (commit `3b66cb07052631
 ### Sequential calibration methods
 
 Wald's sequential probability ratio test is classical methodology, not a new decoder contribution: Abraham Wald, *Sequential Analysis* (Wiley, 1947). The local implementation applies a Gaussian score likelihood model to a frozen four-feature detector-only classifier. The current experiment covers only two fixed synthetic profiles; it does not test change-point detection or model-misspecification robustness.
+
+### Syndrome-round scheduling context
+
+Changing the number of repeated syndrome-extraction rounds is a code/circuit resource choice within established spacetime surface-code decoding, not a new decoder. The local round-count work explicitly separates active entangling/measurement cycles from added data-idle time and compares decoder models built from each schedule. Its d3 result does not extend to d5 under the tested model, so no scaling or publication claim follows. The broader threshold and spacetime-memory context remains the established statistical-mechanical framework cited above (Dennis et al.); this update does not add a new literature claim.
