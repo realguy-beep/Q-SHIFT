@@ -1,0 +1,141 @@
+{
+  "training_score_means": {
+    "x_biased": -0.11018636938308729,
+    "z_biased": 0.10946998321970859
+  },
+  "training_score_variances": {
+    "x_biased": 0.20742010254537505,
+    "z_biased": 0.18289699772103085
+  },
+  "wald_threshold": 2.9444389791664403,
+  "per_profile": [
+    {
+      "profile": "x_biased",
+      "sprt_errors": 23,
+      "sprt_error_rate": 0.046,
+      "sprt_exact_95_ci": [
+        0.029380175392402792,
+        0.0682254278812379
+      ],
+      "mean_shots_consumed": 24.448,
+      "median_shots_consumed": 19.0,
+      "stopped_before_cap": 500,
+      "fixed_prefix_baselines": {
+        "25": {
+          "errors": 51,
+          "windows": 500,
+          "error_rate": 0.102,
+          "exact_95_ci": [
+            0.07689229322668846,
+            0.1319264605647195
+          ]
+        },
+        "100": {
+          "errors": 4,
+          "windows": 500,
+          "error_rate": 0.008,
+          "exact_95_ci": [
+            0.0021839081083421838,
+            0.020355632593743928
+          ]
+        },
+        "500": {
+          "errors": 0,
+          "windows": 500,
+          "error_rate": 0.0,
+          "exact_95_ci": [
+            0.0,
+            0.007350610051907784
+          ]
+        }
+      }
+    },
+    {
+      "profile": "z_biased",
+      "sprt_errors": 17,
+      "sprt_error_rate": 0.034,
+      "sprt_exact_95_ci": [
+        0.019928600046206307,
+        0.0538803507360769
+      ],
+      "mean_shots_consumed": 23.97,
+      "median_shots_consumed": 20.0,
+      "stopped_before_cap": 500,
+      "fixed_prefix_baselines": {
+        "25": {
+          "errors": 55,
+          "windows": 500,
+          "error_rate": 0.11,
+          "exact_95_ci": [
+            0.08394905540685549,
+            0.14076584477314388
+          ]
+        },
+        "100": {
+          "errors": 2,
+          "windows": 500,
+          "error_rate": 0.004,
+          "exact_95_ci": [
+            0.0004847861762900009,
+            0.014374078562200309
+          ]
+        },
+        "500": {
+          "errors": 0,
+          "windows": 500,
+          "error_rate": 0.0,
+          "exact_95_ci": [
+            0.0,
+            0.007350610051907784
+          ]
+        }
+      }
+    }
+  ],
+  "both_profile_error_rates_at_most_5pct": true,
+  "mean_shots_under_25": true,
+  "status": "sequential_calibration_replication_preflight",
+  "frozen_training_source": "adaptive_basis_sprt_results.json; means, variances, LDA, and threshold unchanged",
+  "sample_rows": [
+    {
+      "profile": "x_biased",
+      "seed": 2026115391,
+      "windows": 500,
+      "shots": 250000,
+      "sampling_seconds": 0.11755695300234947,
+      "resources": {
+        "detectors": 40,
+        "feature_bucket_sizes": [
+          12,
+          12,
+          8,
+          8
+        ],
+        "feature_count": 4
+      }
+    },
+    {
+      "profile": "z_biased",
+      "seed": 2026115392,
+      "windows": 500,
+      "shots": 250000,
+      "sampling_seconds": 0.0702948939979251,
+      "resources": {
+        "detectors": 40,
+        "feature_bucket_sizes": [
+          12,
+          12,
+          8,
+          8
+        ],
+        "feature_count": 4
+      }
+    }
+  ],
+  "elapsed_seconds": 0.2776309049986594,
+  "new_source_equivalent_samples": 500000,
+  "scope": "independent detector calibration validation only; no LER or hardware claim",
+  "projected_main_seconds": 1.388154524993297,
+  "runtime_cap_seconds": 300,
+  "runtime_gate_passed": true
+}

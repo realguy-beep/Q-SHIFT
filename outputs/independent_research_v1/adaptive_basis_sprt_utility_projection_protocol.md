@@ -1,0 +1,7 @@
+# Stable-profile sequential calibration utility projection
+
+The direct end-to-end replay measured one calibration decision per 100 logical attempts and found calibration overhead dominates throughput at that short dwell. To estimate whether reuse over the already studied 100,000-attempt stable-profile horizon changes the decision, use the same saved calibration decisions and per-basis logical failure streams; generate no new samples.
+
+For each policy (SPRT, fixed LDA/likelihood at 25/100/500, static X/Z, profile oracle), estimate profile-specific selection probability and basis-specific LER. Compute expected failures and calibration shots for equal X/Z-profile workloads at dwell lengths 100, 1,000, 10,000, and 100,000 logical attempts per calibration decision. Use 5,000 paired stratified bootstraps that resample calibration windows and X/Z logical windows independently within profile; calculate correct outputs divided by logical plus calibration circuit shots and paired differences from static Z. Keep the 100,000 point explicitly labeled a stable-profile plug-in projection, not a directly sampled 100,000-attempt change-point or hardware experiment.
+
+Advance no dynamic-policy recommendation unless the 100,000-attempt bootstrap throughput-difference interval is above zero. If it crosses zero, report the projection as inconclusive and preserve static Z as the throughput baseline. Profiles are assumed to persist through the chosen horizon; no drift detection or re-estimation delay is modeled.

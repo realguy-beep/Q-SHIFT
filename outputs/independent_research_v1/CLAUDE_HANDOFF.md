@@ -171,3 +171,7 @@ The d13 bit-packed sampler and PyMatching batch API matched ordinary samples and
 ## Exact-tail ordering challenge
 
 A hash-verified min-fill order on the 20-detector seven-layer exact posterior increased max P/Z ranks at 1e-10 from 91 to 151/150. No alternative ordering was tested. Artifact/protocol: `categorical_seven_layer_minfill_results.json` and `categorical_seven_layer_minfill_protocol.md`.
+
+## Sequential detector-only calibration lead
+
+The frozen-feature Gaussian SPRT was independently validated at ~4% X/Z profile-selection errors using a mean 24.83 detector-only calibration shots. On fresh d3 logical streams it reduced equal-weight separate-memory LER to .001386 from .004198 static Z, but calibration every 100 logical attempts reduced correct-output yield to .800. Reusing the decision for a stable 100k-attempt job gives a bootstrap plug-in yield .998403 vs .995802 static Z (difference CI [.002425,.002781]); this assumes no profile drift and is not a direct 100k run. Next useful challenge: withheld noise-composition mismatch and actual profile change, plus direct cost at realistic reuse horizons. X/Z terminal readout/fault-axis differences remain. See `adaptive_basis_sprt_*` artifacts.

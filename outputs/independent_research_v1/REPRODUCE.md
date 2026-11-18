@@ -343,3 +343,13 @@ The script runs a fixed 1,000-sample development screen and writes `fusion_bloss
 `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_seven_layer_minfill.py`
 
 This deterministic analysis uses the saved seven-layer event map and adds no stochastic samples.
+
+### Sequential profile calibration and reuse
+
+- Primary detector-only validation: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/adaptive_basis_sprt.py --preflight` then run without `--preflight`.
+- Independent frozen-parameter replication: run `adaptive_basis_sprt_replication.py --preflight`, then without the flag.
+- Direct fresh logical policy comparison: run `adaptive_basis_sprt_end_to_end.py --preflight`, then without the flag.
+- Deterministic saved-stream reuse replay: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/adaptive_basis_sprt_reuse.py`.
+- Deterministic stable-profile expected-utility bootstrap: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/adaptive_basis_sprt_utility_projection.py`.
+
+The reuse and utility scripts add no unique stochastic samples. Their stable-profile assumption and projected status are stated in their protocol files.

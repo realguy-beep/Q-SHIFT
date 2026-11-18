@@ -59,3 +59,7 @@ The current pinned source audit confirms the Stim, PyMatching, and qecsim implem
 ### Fusion Blossom implementation note (pinned source audit, 2026-11-18)
 
 The official Fusion Blossom Python demo at tag `v0.2.13` (commit `3b66cb07052631947ee78667d1d48e753cc7d707`) constructs a `SolverInitializer` and supports user-defined weighted graphs; the package exposes serial and partitioned parallel solvers. This establishes API capability, not performance on Q-SHIFT. The local d3 screen below the literature section tests only serial custom-graph wiring. Upstream: `https://github.com/yuewuo/fusion-blossom/tree/v0.2.13`.
+
+### Sequential calibration methods
+
+Wald's sequential probability ratio test is classical methodology, not a new decoder contribution: Abraham Wald, *Sequential Analysis* (Wiley, 1947). The local implementation applies a Gaussian score likelihood model to a frozen four-feature detector-only classifier. The current experiment covers only two fixed synthetic profiles; it does not test change-point detection or model-misspecification robustness.

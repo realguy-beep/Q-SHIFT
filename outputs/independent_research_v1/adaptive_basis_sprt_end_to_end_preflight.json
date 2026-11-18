@@ -1,0 +1,159 @@
+{
+  "status": "sprt_end_to_end_preflight",
+  "source_builder_byte_identical": {
+    "x_biased_x": true,
+    "x_biased_z": true,
+    "z_biased_x": true,
+    "z_biased_z": true
+  },
+  "resources": {
+    "x_biased_x": {
+      "qubits": 26,
+      "detectors": 40,
+      "observables": 1,
+      "ticks": 35,
+      "operations": {
+        "QUBIT_COORDS": 17,
+        "RX": 1,
+        "R": 1,
+        "TICK": 35,
+        "H": 10,
+        "PAULI_CHANNEL_1": 10,
+        "CX": 20,
+        "PAULI_CHANNEL_2": 20,
+        "X_ERROR": 5,
+        "MR": 5,
+        "DETECTOR": 40,
+        "Z_ERROR": 1,
+        "MX": 1,
+        "OBSERVABLE_INCLUDE": 1
+      },
+      "two_qubit_interactions": 120,
+      "two_qubit_noise_targets": 120,
+      "one_qubit_noise_targets": 89
+    },
+    "x_biased_z": {
+      "qubits": 26,
+      "detectors": 40,
+      "observables": 1,
+      "ticks": 35,
+      "operations": {
+        "QUBIT_COORDS": 17,
+        "R": 1,
+        "TICK": 35,
+        "H": 10,
+        "PAULI_CHANNEL_1": 10,
+        "CX": 20,
+        "PAULI_CHANNEL_2": 20,
+        "X_ERROR": 6,
+        "MR": 5,
+        "DETECTOR": 40,
+        "M": 1,
+        "OBSERVABLE_INCLUDE": 1
+      },
+      "two_qubit_interactions": 120,
+      "two_qubit_noise_targets": 120,
+      "one_qubit_noise_targets": 89
+    },
+    "z_biased_x": {
+      "qubits": 26,
+      "detectors": 40,
+      "observables": 1,
+      "ticks": 35,
+      "operations": {
+        "QUBIT_COORDS": 17,
+        "RX": 1,
+        "R": 1,
+        "TICK": 35,
+        "H": 10,
+        "PAULI_CHANNEL_1": 10,
+        "CX": 20,
+        "PAULI_CHANNEL_2": 20,
+        "X_ERROR": 5,
+        "MR": 5,
+        "DETECTOR": 40,
+        "Z_ERROR": 1,
+        "MX": 1,
+        "OBSERVABLE_INCLUDE": 1
+      },
+      "two_qubit_interactions": 120,
+      "two_qubit_noise_targets": 120,
+      "one_qubit_noise_targets": 89
+    },
+    "z_biased_z": {
+      "qubits": 26,
+      "detectors": 40,
+      "observables": 1,
+      "ticks": 35,
+      "operations": {
+        "QUBIT_COORDS": 17,
+        "R": 1,
+        "TICK": 35,
+        "H": 10,
+        "PAULI_CHANNEL_1": 10,
+        "CX": 20,
+        "PAULI_CHANNEL_2": 20,
+        "X_ERROR": 6,
+        "MR": 5,
+        "DETECTOR": 40,
+        "M": 1,
+        "OBSERVABLE_INCLUDE": 1
+      },
+      "two_qubit_interactions": 120,
+      "two_qubit_noise_targets": 120,
+      "one_qubit_noise_targets": 89
+    }
+  },
+  "logical_rows": [
+    {
+      "profile": "x_biased",
+      "basis": "x",
+      "code": "correlation-enabled PyMatching from approximate_disjoint_errors=0.0018 DEM",
+      "seed": 2026115601,
+      "shots": 5000,
+      "failures": 7,
+      "sampling_seconds": 0.0008801910007605329,
+      "decode_seconds": 0.0014174460011417978,
+      "scalar_batch_checks": 100
+    },
+    {
+      "profile": "x_biased",
+      "basis": "z",
+      "code": "correlation-enabled PyMatching from approximate_disjoint_errors=0.0018 DEM",
+      "seed": 2026115602,
+      "shots": 5000,
+      "failures": 31,
+      "sampling_seconds": 0.0008797350019449368,
+      "decode_seconds": 0.001368819001072552,
+      "scalar_batch_checks": 100
+    },
+    {
+      "profile": "z_biased",
+      "basis": "x",
+      "code": "correlation-enabled PyMatching from approximate_disjoint_errors=0.0018 DEM",
+      "seed": 2026115603,
+      "shots": 5000,
+      "failures": 42,
+      "sampling_seconds": 0.0008603560017945711,
+      "decode_seconds": 0.0010493650006537791,
+      "scalar_batch_checks": 100
+    },
+    {
+      "profile": "z_biased",
+      "basis": "z",
+      "code": "correlation-enabled PyMatching from approximate_disjoint_errors=0.0018 DEM",
+      "seed": 2026115604,
+      "shots": 5000,
+      "failures": 6,
+      "sampling_seconds": 0.0009813300021050964,
+      "decode_seconds": 0.0011061779987358022,
+      "scalar_batch_checks": 100
+    }
+  ],
+  "elapsed_seconds": 1.1992010900030436,
+  "projected_main_seconds": 0.4271710004104534,
+  "runtime_cap_seconds": 300,
+  "runtime_gate_passed": true,
+  "new_source_equivalent_samples": 20000,
+  "calibration_streams_reused": true
+}

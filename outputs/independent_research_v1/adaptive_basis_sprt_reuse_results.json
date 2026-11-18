@@ -1,0 +1,830 @@
+{
+  "status": "sprt_stable_profile_reuse_replay",
+  "horizons_blocks_of_100_attempts": [
+    1,
+    10,
+    100
+  ],
+  "profile_reuse_assumption": "profile remains stable for the full dwell; no change-point observations",
+  "calibration_streams_reused": [
+    {
+      "profile": "x_biased",
+      "seed": 2026115401,
+      "samples_reused": 1250000
+    },
+    {
+      "profile": "z_biased",
+      "seed": 2026115402,
+      "samples_reused": 1250000
+    }
+  ],
+  "logical_streams_reused": {
+    "x_biased_x": {
+      "seed": 2026115611,
+      "samples_reused": 250000,
+      "failures": 273
+    },
+    "x_biased_z": {
+      "seed": 2026115612,
+      "samples_reused": 250000,
+      "failures": 1827
+    },
+    "z_biased_x": {
+      "seed": 2026115613,
+      "samples_reused": 250000,
+      "failures": 1994
+    },
+    "z_biased_z": {
+      "seed": 2026115614,
+      "samples_reused": 250000,
+      "failures": 272
+    }
+  },
+  "summary": [
+    {
+      "logical_attempts_per_profile": 250000,
+      "reuse_horizon_blocks": 1,
+      "dwell_logical_attempts": 100,
+      "policy": "sprt",
+      "logical_failures": 693,
+      "ler": 0.001386,
+      "calibration_shots": 124138,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.7999945524867897,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.0029940500000000003,
+        -0.002628
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.19885579306384446,
+        -0.19263950037519478
+      ],
+      "profile_failures": {
+        "x_biased": 349,
+        "z_biased": 344
+      },
+      "profile_selection_errors": {
+        "x_biased": 102,
+        "z_biased": 96
+      }
+    },
+    {
+      "logical_attempts_per_profile": 250000,
+      "reuse_horizon_blocks": 1,
+      "dwell_logical_attempts": 100,
+      "policy": "lda_25",
+      "logical_failures": 900,
+      "ler": 0.0018,
+      "calibration_shots": 125000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.79856,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.00258,
+        -0.002208
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.19742119999999996,
+        -0.19706999000000008
+      ],
+      "profile_failures": {
+        "x_biased": 430,
+        "z_biased": 470
+      },
+      "profile_selection_errors": {
+        "x_biased": 253,
+        "z_biased": 271
+      }
+    },
+    {
+      "logical_attempts_per_profile": 250000,
+      "reuse_horizon_blocks": 1,
+      "dwell_logical_attempts": 100,
+      "policy": "lda_100",
+      "logical_failures": 569,
+      "ler": 0.001138,
+      "calibration_shots": 500000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.499431,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003234,
+        -0.002874
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.496547,
+        -0.496203
+      ],
+      "profile_failures": {
+        "x_biased": 287,
+        "z_biased": 282
+      },
+      "profile_selection_errors": {
+        "x_biased": 25,
+        "z_biased": 8
+      }
+    },
+    {
+      "logical_attempts_per_profile": 250000,
+      "reuse_horizon_blocks": 1,
+      "dwell_logical_attempts": 100,
+      "policy": "lda_500",
+      "logical_failures": 545,
+      "ler": 0.00109,
+      "calibration_shots": 2500000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.166485,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003288,
+        -0.0029359500000000005
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.8294913500000001,
+        -0.8291389916666666
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 272
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 0
+      }
+    },
+    {
+      "logical_attempts_per_profile": 250000,
+      "reuse_horizon_blocks": 1,
+      "dwell_logical_attempts": 100,
+      "policy": "gaussian_llr_25",
+      "logical_failures": 934,
+      "ler": 0.001868,
+      "calibration_shots": 125000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.7985056,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.002518,
+        -0.002142
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.19747360000000003,
+        -0.1971172
+      ],
+      "profile_failures": {
+        "x_biased": 464,
+        "z_biased": 470
+      },
+      "profile_selection_errors": {
+        "x_biased": 305,
+        "z_biased": 273
+      }
+    },
+    {
+      "logical_attempts_per_profile": 250000,
+      "reuse_horizon_blocks": 1,
+      "dwell_logical_attempts": 100,
+      "policy": "gaussian_llr_100",
+      "logical_failures": 577,
+      "ler": 0.001154,
+      "calibration_shots": 500000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.499423,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003226,
+        -0.002862
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.49655099999999996,
+        -0.496207
+      ],
+      "profile_failures": {
+        "x_biased": 289,
+        "z_biased": 288
+      },
+      "profile_selection_errors": {
+        "x_biased": 26,
+        "z_biased": 12
+      }
+    },
+    {
+      "logical_attempts_per_profile": 250000,
+      "reuse_horizon_blocks": 1,
+      "dwell_logical_attempts": 100,
+      "policy": "gaussian_llr_500",
+      "logical_failures": 545,
+      "ler": 0.00109,
+      "calibration_shots": 2500000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.166485,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003284,
+        -0.002936
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.8294896666666667,
+        -0.8291396583333333
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 272
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 0
+      }
+    },
+    {
+      "logical_attempts_per_profile": 250000,
+      "reuse_horizon_blocks": 1,
+      "dwell_logical_attempts": 100,
+      "policy": "static_x",
+      "logical_failures": 2267,
+      "ler": 0.004534,
+      "calibration_shots": 0,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.995466,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        6.6e-05,
+        0.000586
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.0005859999999999754,
+        -6.60000000000105e-05
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 1994
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 2500
+      }
+    },
+    {
+      "logical_attempts_per_profile": 250000,
+      "reuse_horizon_blocks": 1,
+      "dwell_logical_attempts": 100,
+      "policy": "static_z",
+      "logical_failures": 2099,
+      "ler": 0.004198,
+      "calibration_shots": 0,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.995802,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        0.0,
+        0.0
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        0.0,
+        0.0
+      ],
+      "profile_failures": {
+        "x_biased": 1827,
+        "z_biased": 272
+      },
+      "profile_selection_errors": {
+        "x_biased": 2500,
+        "z_biased": 0
+      }
+    },
+    {
+      "logical_attempts_per_profile": 250000,
+      "reuse_horizon_blocks": 1,
+      "dwell_logical_attempts": 100,
+      "policy": "oracle",
+      "logical_failures": 545,
+      "ler": 0.00109,
+      "calibration_shots": 0,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.99891,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003286,
+        -0.002932
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        0.0029319999999999347,
+        0.003286000000000011
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 272
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 0
+      }
+    },
+    {
+      "logical_attempts_per_profile": 2500000,
+      "reuse_horizon_blocks": 10,
+      "dwell_logical_attempts": 1000,
+      "policy": "sprt",
+      "logical_failures": 695,
+      "ler": 0.00139,
+      "calibration_shots": 12394,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.9744552043934941,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003032,
+        -0.002596
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.022810614249208494,
+        -0.01987016656073042
+      ],
+      "profile_failures": {
+        "x_biased": 337,
+        "z_biased": 358
+      },
+      "profile_selection_errors": {
+        "x_biased": 9,
+        "z_biased": 11
+      }
+    },
+    {
+      "logical_attempts_per_profile": 2500000,
+      "reuse_horizon_blocks": 10,
+      "dwell_logical_attempts": 1000,
+      "policy": "lda_25",
+      "logical_failures": 973,
+      "ler": 0.001946,
+      "calibration_shots": 12500,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.9737112195121951,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.002524,
+        -0.0019859500000000006
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.022352059756097557,
+        -0.021823120731707297
+      ],
+      "profile_failures": {
+        "x_biased": 454,
+        "z_biased": 519
+      },
+      "profile_selection_errors": {
+        "x_biased": 26,
+        "z_biased": 32
+      }
+    },
+    {
+      "logical_attempts_per_profile": 2500000,
+      "reuse_horizon_blocks": 10,
+      "dwell_logical_attempts": 1000,
+      "policy": "lda_100",
+      "logical_failures": 551,
+      "ler": 0.001102,
+      "calibration_shots": 50000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.908089090909091,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003276,
+        -0.002916
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.0878890999999999,
+        -0.08753653636363629
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 278
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 1
+      }
+    },
+    {
+      "logical_attempts_per_profile": 2500000,
+      "reuse_horizon_blocks": 10,
+      "dwell_logical_attempts": 1000,
+      "policy": "lda_500",
+      "logical_failures": 545,
+      "ler": 0.00109,
+      "calibration_shots": 250000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.66594,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003282,
+        -0.00293
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.33003400000000005,
+        -0.3296906666666667
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 272
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 0
+      }
+    },
+    {
+      "logical_attempts_per_profile": 2500000,
+      "reuse_horizon_blocks": 10,
+      "dwell_logical_attempts": 1000,
+      "policy": "gaussian_llr_25",
+      "logical_failures": 1016,
+      "ler": 0.002032,
+      "calibration_shots": 12500,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.9736273170731707,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.002422,
+        -0.001906
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.022430352439024363,
+        -0.021922720731707313
+      ],
+      "profile_failures": {
+        "x_biased": 496,
+        "z_biased": 520
+      },
+      "profile_selection_errors": {
+        "x_biased": 33,
+        "z_biased": 32
+      }
+    },
+    {
+      "logical_attempts_per_profile": 2500000,
+      "reuse_horizon_blocks": 10,
+      "dwell_logical_attempts": 1000,
+      "policy": "gaussian_llr_100",
+      "logical_failures": 556,
+      "ler": 0.001112,
+      "calibration_shots": 50000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.90808,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.00326,
+        -0.002906
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.08789746818181825,
+        -0.08755000000000002
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 283
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 2
+      }
+    },
+    {
+      "logical_attempts_per_profile": 2500000,
+      "reuse_horizon_blocks": 10,
+      "dwell_logical_attempts": 1000,
+      "policy": "gaussian_llr_500",
+      "logical_failures": 545,
+      "ler": 0.00109,
+      "calibration_shots": 250000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.66594,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.00328005,
+        -0.002928
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.3300373333333333,
+        -0.3296933166666666
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 272
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 0
+      }
+    },
+    {
+      "logical_attempts_per_profile": 2500000,
+      "reuse_horizon_blocks": 10,
+      "dwell_logical_attempts": 1000,
+      "policy": "static_x",
+      "logical_failures": 2267,
+      "ler": 0.004534,
+      "calibration_shots": 0,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.995466,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        7.6e-05,
+        0.0005960499999999992
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.0005960500000000396,
+        -7.599999999996498e-05
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 1994
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 250
+      }
+    },
+    {
+      "logical_attempts_per_profile": 2500000,
+      "reuse_horizon_blocks": 10,
+      "dwell_logical_attempts": 1000,
+      "policy": "static_z",
+      "logical_failures": 2099,
+      "ler": 0.004198,
+      "calibration_shots": 0,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.995802,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        0.0,
+        0.0
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        0.0,
+        0.0
+      ],
+      "profile_failures": {
+        "x_biased": 1827,
+        "z_biased": 272
+      },
+      "profile_selection_errors": {
+        "x_biased": 250,
+        "z_biased": 0
+      }
+    },
+    {
+      "logical_attempts_per_profile": 2500000,
+      "reuse_horizon_blocks": 10,
+      "dwell_logical_attempts": 1000,
+      "policy": "oracle",
+      "logical_failures": 545,
+      "ler": 0.00109,
+      "calibration_shots": 0,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.99891,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003286,
+        -0.00293
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        0.002929999999999988,
+        0.003286000000000011
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 272
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 0
+      }
+    },
+    {
+      "logical_attempts_per_profile": 25000000,
+      "reuse_horizon_blocks": 100,
+      "dwell_logical_attempts": 10000,
+      "policy": "sprt",
+      "logical_failures": 680,
+      "ler": 0.00136,
+      "calibration_shots": 1380,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.9958913399018708,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003182,
+        -0.002398
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.0005604920109941846,
+        0.0006946531511477226
+      ],
+      "profile_failures": {
+        "x_biased": 339,
+        "z_biased": 341
+      },
+      "profile_selection_errors": {
+        "x_biased": 1,
+        "z_biased": 1
+      }
+    },
+    {
+      "logical_attempts_per_profile": 25000000,
+      "reuse_horizon_blocks": 100,
+      "dwell_logical_attempts": 10000,
+      "policy": "lda_25",
+      "logical_failures": 996,
+      "ler": 0.001992,
+      "calibration_shots": 1250,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.9955192019950124,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.0027901,
+        -0.001556
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.0009311781795510842,
+        0.00030033802992516395
+      ],
+      "profile_failures": {
+        "x_biased": 339,
+        "z_biased": 657
+      },
+      "profile_selection_errors": {
+        "x_biased": 1,
+        "z_biased": 6
+      }
+    },
+    {
+      "logical_attempts_per_profile": 25000000,
+      "reuse_horizon_blocks": 100,
+      "dwell_logical_attempts": 10000,
+      "policy": "lda_100",
+      "logical_failures": 614,
+      "ler": 0.001228,
+      "calibration_shots": 5000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.9888831683168317,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.00324005,
+        -0.0026159500000000006
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.007271253960396062,
+        -0.006649283168316786
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 341
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 1
+      }
+    },
+    {
+      "logical_attempts_per_profile": 25000000,
+      "reuse_horizon_blocks": 100,
+      "dwell_logical_attempts": 10000,
+      "policy": "lda_500",
+      "logical_failures": 545,
+      "ler": 0.00109,
+      "calibration_shots": 25000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.9513428571428572,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003278,
+        -0.002941950000000001
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.04462428809523805,
+        -0.044289990476190526
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 272
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 0
+      }
+    },
+    {
+      "logical_attempts_per_profile": 25000000,
+      "reuse_horizon_blocks": 100,
+      "dwell_logical_attempts": 10000,
+      "policy": "gaussian_llr_25",
+      "logical_failures": 996,
+      "ler": 0.001992,
+      "calibration_shots": 1250,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.9955192019950124,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.00278605,
+        -0.0015719500000000008
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.0009154598503740396,
+        0.00029581533665838037
+      ],
+      "profile_failures": {
+        "x_biased": 339,
+        "z_biased": 657
+      },
+      "profile_selection_errors": {
+        "x_biased": 1,
+        "z_biased": 6
+      }
+    },
+    {
+      "logical_attempts_per_profile": 25000000,
+      "reuse_horizon_blocks": 100,
+      "dwell_logical_attempts": 10000,
+      "policy": "gaussian_llr_100",
+      "logical_failures": 614,
+      "ler": 0.001228,
+      "calibration_shots": 5000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.9888831683168317,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003232,
+        -0.0026039500000000007
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.007281313861386057,
+        -0.006658660396039589
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 341
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 1
+      }
+    },
+    {
+      "logical_attempts_per_profile": 25000000,
+      "reuse_horizon_blocks": 100,
+      "dwell_logical_attempts": 10000,
+      "policy": "gaussian_llr_500",
+      "logical_failures": 545,
+      "ler": 0.00109,
+      "calibration_shots": 25000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.9513428571428572,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003276,
+        -0.0029439500000000007
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.04462248333333325,
+        -0.04429396666666672
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 272
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 0
+      }
+    },
+    {
+      "logical_attempts_per_profile": 25000000,
+      "reuse_horizon_blocks": 100,
+      "dwell_logical_attempts": 10000,
+      "policy": "static_x",
+      "logical_failures": 2267,
+      "ler": 0.004534,
+      "calibration_shots": 0,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.995466,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        6.6e-05,
+        0.0006080499999999993
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        -0.0006080500000000516,
+        -6.60000000000105e-05
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 1994
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 25
+      }
+    },
+    {
+      "logical_attempts_per_profile": 25000000,
+      "reuse_horizon_blocks": 100,
+      "dwell_logical_attempts": 10000,
+      "policy": "static_z",
+      "logical_failures": 2099,
+      "ler": 0.004198,
+      "calibration_shots": 0,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.995802,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        0.0,
+        0.0
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        0.0,
+        0.0
+      ],
+      "profile_failures": {
+        "x_biased": 1827,
+        "z_biased": 272
+      },
+      "profile_selection_errors": {
+        "x_biased": 25,
+        "z_biased": 0
+      }
+    },
+    {
+      "logical_attempts_per_profile": 25000000,
+      "reuse_horizon_blocks": 100,
+      "dwell_logical_attempts": 10000,
+      "policy": "oracle",
+      "logical_failures": 545,
+      "ler": 0.00109,
+      "calibration_shots": 0,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.99891,
+      "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.00328,
+        -0.002946
+      ],
+      "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+        0.002946000000000004,
+        0.0032799999999999496
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 272
+      },
+      "profile_selection_errors": {
+        "x_biased": 0,
+        "z_biased": 0
+      }
+    }
+  ],
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 2026115791,
+  "elapsed_seconds": 4.312279367000883,
+  "new_stochastic_samples": 0,
+  "scope": "deterministic reuse-horizon reanalysis; not temporal robustness or hardware validation"
+}

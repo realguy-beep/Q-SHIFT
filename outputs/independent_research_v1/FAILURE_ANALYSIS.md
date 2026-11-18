@@ -195,3 +195,7 @@ Custom graph conversion was feasible after even-integer weight quantization, wit
 ## Min-fill TT ordering
 
 The fixed min-fill detector order was structurally motivated by event co-occurrence but increased the high-accuracy maximum TT ranks from 91 to 151/150 for P/Z. Event-graph fill is not a reliable proxy for singular-value compressibility on this posterior. The single preregistered order failed; no post-hoc search of orderings was conducted.
+
+## Sequential profile calibration limits
+
+The SPRT improved detector profile decisions over fixed 25-shot baselines at a similar average sample cost, but still made about 4% profile errors. At 100 logical attempts per calibration, direct correct-output yield was only .800 because calibration shots were charged as unusable; static Z yielded .9958. A stable-profile bootstrap suggests the overhead may amortize over 100k logical attempts, but the 10k grouped replay was inconclusive. There is no evidence for mid-run change detection, non-Gaussian score robustness, multi-profile generalization, or hardware drift. X/Z output circuits differ in terminal measurement and fault-axis composition; report these differences whenever aggregating tasks.

@@ -1,0 +1,356 @@
+{
+  "status": "sprt_end_to_end_development_result",
+  "distance": 3,
+  "rounds": 5,
+  "bias_ratio": 10,
+  "profiles_equal_weight": true,
+  "logical_attempts_per_profile": 250000,
+  "calibration_streams_reused_from_sequential_validation": true,
+  "logical_samples": [
+    {
+      "profile": "x_biased",
+      "basis": "x",
+      "code": "correlation-enabled PyMatching from approximate_disjoint_errors=0.0018 DEM",
+      "seed": 2026115611,
+      "shots": 250000,
+      "failures": 273,
+      "sampling_seconds": 0.04011873600029503,
+      "decode_seconds": 0.04430042400053935,
+      "scalar_batch_checks": 100
+    },
+    {
+      "profile": "x_biased",
+      "basis": "z",
+      "code": "correlation-enabled PyMatching from approximate_disjoint_errors=0.0018 DEM",
+      "seed": 2026115612,
+      "shots": 250000,
+      "failures": 1827,
+      "sampling_seconds": 0.03985840799941798,
+      "decode_seconds": 0.04794014100116328,
+      "scalar_batch_checks": 100
+    },
+    {
+      "profile": "z_biased",
+      "basis": "x",
+      "code": "correlation-enabled PyMatching from approximate_disjoint_errors=0.0018 DEM",
+      "seed": 2026115613,
+      "shots": 250000,
+      "failures": 1994,
+      "sampling_seconds": 0.04266184999869438,
+      "decode_seconds": 0.060252117000345606,
+      "scalar_batch_checks": 100
+    },
+    {
+      "profile": "z_biased",
+      "basis": "z",
+      "code": "correlation-enabled PyMatching from approximate_disjoint_errors=0.0018 DEM",
+      "seed": 2026115614,
+      "shots": 250000,
+      "failures": 272,
+      "sampling_seconds": 0.040949254002043745,
+      "decode_seconds": 0.04110011900047539,
+      "scalar_batch_checks": 100
+    }
+  ],
+  "source_builder_byte_identical": {
+    "x_biased_x": true,
+    "x_biased_z": true,
+    "z_biased_x": true,
+    "z_biased_z": true
+  },
+  "resources": {
+    "x_biased_x": {
+      "qubits": 26,
+      "detectors": 40,
+      "observables": 1,
+      "ticks": 35,
+      "operations": {
+        "QUBIT_COORDS": 17,
+        "RX": 1,
+        "R": 1,
+        "TICK": 35,
+        "H": 10,
+        "PAULI_CHANNEL_1": 10,
+        "CX": 20,
+        "PAULI_CHANNEL_2": 20,
+        "X_ERROR": 5,
+        "MR": 5,
+        "DETECTOR": 40,
+        "Z_ERROR": 1,
+        "MX": 1,
+        "OBSERVABLE_INCLUDE": 1
+      },
+      "two_qubit_interactions": 120,
+      "two_qubit_noise_targets": 120,
+      "one_qubit_noise_targets": 89
+    },
+    "x_biased_z": {
+      "qubits": 26,
+      "detectors": 40,
+      "observables": 1,
+      "ticks": 35,
+      "operations": {
+        "QUBIT_COORDS": 17,
+        "R": 1,
+        "TICK": 35,
+        "H": 10,
+        "PAULI_CHANNEL_1": 10,
+        "CX": 20,
+        "PAULI_CHANNEL_2": 20,
+        "X_ERROR": 6,
+        "MR": 5,
+        "DETECTOR": 40,
+        "M": 1,
+        "OBSERVABLE_INCLUDE": 1
+      },
+      "two_qubit_interactions": 120,
+      "two_qubit_noise_targets": 120,
+      "one_qubit_noise_targets": 89
+    },
+    "z_biased_x": {
+      "qubits": 26,
+      "detectors": 40,
+      "observables": 1,
+      "ticks": 35,
+      "operations": {
+        "QUBIT_COORDS": 17,
+        "RX": 1,
+        "R": 1,
+        "TICK": 35,
+        "H": 10,
+        "PAULI_CHANNEL_1": 10,
+        "CX": 20,
+        "PAULI_CHANNEL_2": 20,
+        "X_ERROR": 5,
+        "MR": 5,
+        "DETECTOR": 40,
+        "Z_ERROR": 1,
+        "MX": 1,
+        "OBSERVABLE_INCLUDE": 1
+      },
+      "two_qubit_interactions": 120,
+      "two_qubit_noise_targets": 120,
+      "one_qubit_noise_targets": 89
+    },
+    "z_biased_z": {
+      "qubits": 26,
+      "detectors": 40,
+      "observables": 1,
+      "ticks": 35,
+      "operations": {
+        "QUBIT_COORDS": 17,
+        "R": 1,
+        "TICK": 35,
+        "H": 10,
+        "PAULI_CHANNEL_1": 10,
+        "CX": 20,
+        "PAULI_CHANNEL_2": 20,
+        "X_ERROR": 6,
+        "MR": 5,
+        "DETECTOR": 40,
+        "M": 1,
+        "OBSERVABLE_INCLUDE": 1
+      },
+      "two_qubit_interactions": 120,
+      "two_qubit_noise_targets": 120,
+      "one_qubit_noise_targets": 89
+    }
+  },
+  "summary": {
+    "sprt": {
+      "logical_failures": 693,
+      "logical_attempts": 500000,
+      "ler": 0.001386,
+      "ler_exact_95_ci": [
+        0.0012847792857249515,
+        0.0014930671513771502
+      ],
+      "calibration_shots": 124138,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.7999945524867897,
+      "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.002996,
+        -0.002628
+      ],
+      "profile_failures": {
+        "x_biased": 349,
+        "z_biased": 344
+      }
+    },
+    "lda_25": {
+      "logical_failures": 900,
+      "logical_attempts": 500000,
+      "ler": 0.0018,
+      "ler_exact_95_ci": [
+        0.0016844035705485855,
+        0.001921429027261872
+      ],
+      "calibration_shots": 125000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.79856,
+      "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.0025840000000000004,
+        -0.0022080000000000003
+      ],
+      "profile_failures": {
+        "x_biased": 430,
+        "z_biased": 470
+      }
+    },
+    "lda_100": {
+      "logical_failures": 569,
+      "logical_attempts": 500000,
+      "ler": 0.001138,
+      "ler_exact_95_ci": [
+        0.0010464505035704182,
+        0.001235406440670218
+      ],
+      "calibration_shots": 500000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.499431,
+      "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.0032439999999999995,
+        -0.0028859999999999997
+      ],
+      "profile_failures": {
+        "x_biased": 287,
+        "z_biased": 282
+      }
+    },
+    "lda_500": {
+      "logical_failures": 545,
+      "logical_attempts": 500000,
+      "ler": 0.00109,
+      "ler_exact_95_ci": [
+        0.0010004409748200003,
+        0.0011854182951462084
+      ],
+      "calibration_shots": 2500000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.166485,
+      "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003292,
+        -0.0029320000000000006
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 272
+      }
+    },
+    "gaussian_llr_25": {
+      "logical_failures": 934,
+      "logical_attempts": 500000,
+      "ler": 0.001868,
+      "ler_exact_95_ci": [
+        0.0017502083357482652,
+        0.001991622283008358
+      ],
+      "calibration_shots": 125000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.7985056,
+      "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.002518,
+        -0.0021460000000000003
+      ],
+      "profile_failures": {
+        "x_biased": 464,
+        "z_biased": 470
+      }
+    },
+    "gaussian_llr_100": {
+      "logical_failures": 577,
+      "logical_attempts": 500000,
+      "ler": 0.001154,
+      "ler_exact_95_ci": [
+        0.0010617964090946083,
+        0.001252059784452611
+      ],
+      "calibration_shots": 500000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.499423,
+      "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003228,
+        -0.002868
+      ],
+      "profile_failures": {
+        "x_biased": 289,
+        "z_biased": 288
+      }
+    },
+    "gaussian_llr_500": {
+      "logical_failures": 545,
+      "logical_attempts": 500000,
+      "ler": 0.00109,
+      "ler_exact_95_ci": [
+        0.0010004409748200003,
+        0.0011854182951462084
+      ],
+      "calibration_shots": 2500000,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.166485,
+      "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003292,
+        -0.0029320000000000006
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 272
+      }
+    },
+    "static_x": {
+      "logical_failures": 2267,
+      "logical_attempts": 500000,
+      "ler": 0.004534,
+      "ler_exact_95_ci": [
+        0.004349659713094988,
+        0.004724117152420681
+      ],
+      "calibration_shots": 0,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.995466,
+      "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+        8.199999999999961e-05,
+        0.0005940499999999996
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 1994
+      }
+    },
+    "static_z": {
+      "logical_failures": 2099,
+      "logical_attempts": 500000,
+      "ler": 0.004198,
+      "ler_exact_95_ci": [
+        0.004020664413004674,
+        0.004381117958751636
+      ],
+      "calibration_shots": 0,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.995802,
+      "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+        0.0,
+        0.0
+      ],
+      "profile_failures": {
+        "x_biased": 1827,
+        "z_biased": 272
+      }
+    },
+    "oracle": {
+      "logical_failures": 545,
+      "logical_attempts": 500000,
+      "ler": 0.00109,
+      "ler_exact_95_ci": [
+        0.0010004409748200003,
+        0.0011854182951462084
+      ],
+      "calibration_shots": 0,
+      "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.99891,
+      "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+        -0.003292,
+        -0.0029320000000000006
+      ],
+      "profile_failures": {
+        "x_biased": 273,
+        "z_biased": 272
+      }
+    }
+  },
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 2026115691,
+  "elapsed_seconds": 2.9379832170016016,
+  "new_source_equivalent_samples": 1000000,
+  "scope": "development-only separate X/Z logical-memory tasks under two fixed simulator profiles; not arbitrary-state or change-point evaluation"
+}

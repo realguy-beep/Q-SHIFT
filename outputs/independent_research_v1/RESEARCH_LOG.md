@@ -357,3 +357,10 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - Reconstructed the hash-verified exact 20-detector P/Z posterior and applied the predeclared deterministic min-fill detector order; no stochastic samples were generated.
 - The min-fill ordering reached maximum relative-Frobenius ranks 151 (P) and 150 (Z) at 1e-10, worse than natural order's rank 91. It fails the fixed rank-64 gate; no MPS prototype or alternative ordering was selected post hoc.
 - Runtime 6.35s. Finding is specific to this graph and seven-layer tail. Next: switch away from ordering optimization and investigate a distinct robustness/adaptation candidate using existing methods and data, with a new prospective protocol.
+
+## Checkpoint — sequential profile calibration and stable-dwell challenge (2026-11-18)
+
+- Completed frozen SPRT training/validation, independent validation replication, matched fixed-budget likelihood checks, and direct d3 LER evaluation. The detector-only rule reduces selection errors at about the same calibration cost as 25 fixed shots in this two-profile simulator.
+- Direct LER improvement is substantial versus static Z for equal separate memory tasks, but per-100-attempt calibration costs erase throughput. A 100k stable-profile reuse bootstrap projects a modest positive throughput gain; 10k direct grouped replay is inconclusive.
+- X/Z gate family readout/fault composition differs; no hardware transfer or arbitrary-state claim.
+- Current branch checkpoint is recorded after files are committed below. Next open question: stress the frozen detector-only policy with a withheld noise-composition shift or profile change, where Gaussian SPRT assumptions may fail. Use a new preregistered mismatch/false-switch protocol and do not infer robustness from the stable-profile projection.

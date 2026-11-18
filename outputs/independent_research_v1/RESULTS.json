@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 66781000,
+  "stochastic_qshift_shots_generated": 72021000,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -239,7 +239,7 @@
     },
     "interpretation": "all three BP+LSD variants worse in every tested condition; one distance/configuration/approximate model only; not an integration or superiority claim"
   },
-  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples; includes 20,000 all-fault instrumentation preflight and 200,000 all-fault composition development samples; excludes 50,000 synthetic instrumentation checks; includes fresh 40,000-shot preflight and 2,000,000-shot main d5 CSS/XZZX by memory-basis factorial screen; includes independent 40,000-shot preflight and 2,000,000-shot d5 XZZX/CSS basis-factorial development replication; includes d3/d7 CSS/XZZX basis-scale preflight 80,000 and main 4,000,000 development samples; an identical-seed replay after a preflight reporting bug is counted once; includes d9 CSS/XZZX four-cell basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d11 CSS/XZZX basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d13 runtime-gate preflight 40,000 samples; deterministic rerun after output typo is counted once; no d13 main samples; includes d7 ratio-2:1 XZZX/CSS basis-robustness preflight 40,000 and main 2,000,000 development samples; includes d7 ratio-5:1 XZZX/CSS basis-robustness preflight 40,000 and main 2,000,000 development samples; includes the 200,000 unique d13 bit-packed throughput preflight samples (no main run); includes the 1,000 unique d3 Fusion Blossom interface feasibility samples",
+  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples; includes 20,000 all-fault instrumentation preflight and 200,000 all-fault composition development samples; excludes 50,000 synthetic instrumentation checks; includes fresh 40,000-shot preflight and 2,000,000-shot main d5 CSS/XZZX by memory-basis factorial screen; includes independent 40,000-shot preflight and 2,000,000-shot d5 XZZX/CSS basis-factorial development replication; includes d3/d7 CSS/XZZX basis-scale preflight 80,000 and main 4,000,000 development samples; an identical-seed replay after a preflight reporting bug is counted once; includes d9 CSS/XZZX four-cell basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d11 CSS/XZZX basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d13 runtime-gate preflight 40,000 samples; deterministic rerun after output typo is counted once; no d13 main samples; includes d7 ratio-2:1 XZZX/CSS basis-robustness preflight 40,000 and main 2,000,000 development samples; includes d7 ratio-5:1 XZZX/CSS basis-robustness preflight 40,000 and main 2,000,000 development samples; includes the 200,000 unique d13 bit-packed throughput preflight samples (no main run); includes the 1,000 unique d3 Fusion Blossom interface feasibility samples; includes 120,000 unique sequential calibration preflight samples and 1,100,000 main validation samples; includes 500,000 independent sequential calibration replication preflight samples and 2,500,000 independent validation samples; includes 20,000 unique end-to-end logical preflight samples and 1,000,000 end-to-end logical main samples; deterministic seeded replays and bootstrap utility projections add no unique samples",
   "stochastic_dem_samples_generated": 780000,
   "rare_event_importance_sampling": {
     "status": "positive_development_method_result_limited_to_approximate_dem",
@@ -23248,5 +23248,465 @@
     "elapsed_seconds": 6.345655701999931,
     "stochastic_samples_generated": 0,
     "artifact": "categorical_seven_layer_minfill_results.json"
+  },
+  "adaptive_basis_sprt_summary": {
+    "primary_validation": {
+      "new_samples": 1100000,
+      "rows": [
+        {
+          "profile": "x_biased",
+          "sprt_errors": 39,
+          "sprt_error_rate": 0.039,
+          "sprt_exact_95_ci": [
+            0.027877148795336416,
+            0.05293093578544508
+          ],
+          "mean_shots_consumed": 24.61,
+          "fixed_prefix_baselines": {
+            "25": {
+              "errors": 117,
+              "windows": 1000,
+              "error_rate": 0.117,
+              "exact_95_ci": [
+                0.09772900249506662,
+                0.13855746639058336
+              ]
+            },
+            "100": {
+              "errors": 7,
+              "windows": 1000,
+              "error_rate": 0.007,
+              "exact_95_ci": [
+                0.002818858759620524,
+                0.014369194978918632
+              ]
+            },
+            "500": {
+              "errors": 0,
+              "windows": 1000,
+              "error_rate": 0.0,
+              "exact_95_ci": [
+                0.0,
+                0.003682083896865671
+              ]
+            }
+          },
+          "fixed_prefix_gaussian_likelihood_baselines": {
+            "25": {
+              "errors": 133,
+              "windows": 1000,
+              "error_rate": 0.133,
+              "exact_95_ci": [
+                0.11255796438684741,
+                0.1556293270471284
+              ]
+            },
+            "100": {
+              "errors": 7,
+              "windows": 1000,
+              "error_rate": 0.007,
+              "exact_95_ci": [
+                0.002818858759620524,
+                0.014369194978918632
+              ]
+            },
+            "500": {
+              "errors": 0,
+              "windows": 1000,
+              "error_rate": 0.0,
+              "exact_95_ci": [
+                0.0,
+                0.003682083896865671
+              ]
+            }
+          }
+        },
+        {
+          "profile": "z_biased",
+          "sprt_errors": 35,
+          "sprt_error_rate": 0.035,
+          "sprt_exact_95_ci": [
+            0.02449752789475871,
+            0.04834238161422171
+          ],
+          "mean_shots_consumed": 24.427,
+          "fixed_prefix_baselines": {
+            "25": {
+              "errors": 99,
+              "windows": 1000,
+              "error_rate": 0.099,
+              "exact_95_ci": [
+                0.08119112894696874,
+                0.11920848268620651
+              ]
+            },
+            "100": {
+              "errors": 3,
+              "windows": 1000,
+              "error_rate": 0.003,
+              "exact_95_ci": [
+                0.0006190999316495713,
+                0.008742023238478303
+              ]
+            },
+            "500": {
+              "errors": 0,
+              "windows": 1000,
+              "error_rate": 0.0,
+              "exact_95_ci": [
+                0.0,
+                0.003682083896865671
+              ]
+            }
+          },
+          "fixed_prefix_gaussian_likelihood_baselines": {
+            "25": {
+              "errors": 94,
+              "windows": 1000,
+              "error_rate": 0.094,
+              "exact_95_ci": [
+                0.07662899292737786,
+                0.11380243871897454
+              ]
+            },
+            "100": {
+              "errors": 4,
+              "windows": 1000,
+              "error_rate": 0.004,
+              "exact_95_ci": [
+                0.0010909079877259714,
+                0.010209664683929871
+              ]
+            },
+            "500": {
+              "errors": 0,
+              "windows": 1000,
+              "error_rate": 0.0,
+              "exact_95_ci": [
+                0.0,
+                0.003682083896865671
+              ]
+            }
+          }
+        }
+      ],
+      "preflight_projected_seconds": 0.5721318900123151,
+      "artifact": "adaptive_basis_sprt_results.json"
+    },
+    "independent_replication": {
+      "new_samples": 2500000,
+      "rows": [
+        {
+          "profile": "x_biased",
+          "sprt_errors": 102,
+          "sprt_error_rate": 0.0408,
+          "sprt_exact_95_ci": [
+            0.03338772157296941,
+            0.049310721821974546
+          ],
+          "mean_shots_consumed": 24.3448,
+          "fixed_prefix_baselines": {
+            "25": {
+              "errors": 253,
+              "windows": 2500,
+              "error_rate": 0.1012,
+              "exact_95_ci": [
+                0.08965004337658311,
+                0.1136933411107567
+              ]
+            },
+            "100": {
+              "errors": 25,
+              "windows": 2500,
+              "error_rate": 0.01,
+              "exact_95_ci": [
+                0.006481632944811527,
+                0.01472679723853566
+              ]
+            },
+            "500": {
+              "errors": 0,
+              "windows": 2500,
+              "error_rate": 0.0,
+              "exact_95_ci": [
+                0.0,
+                0.001474463690359561
+              ]
+            }
+          },
+          "fixed_prefix_gaussian_likelihood_baselines": {
+            "25": {
+              "errors": 305,
+              "windows": 2500,
+              "error_rate": 0.122,
+              "exact_95_ci": [
+                0.10941897035447397,
+                0.1354736992909531
+              ]
+            },
+            "100": {
+              "errors": 26,
+              "windows": 2500,
+              "error_rate": 0.0104,
+              "exact_95_ci": [
+                0.006804558097982921,
+                0.015201513428118827
+              ]
+            },
+            "500": {
+              "errors": 0,
+              "windows": 2500,
+              "error_rate": 0.0,
+              "exact_95_ci": [
+                0.0,
+                0.001474463690359561
+              ]
+            }
+          }
+        },
+        {
+          "profile": "z_biased",
+          "sprt_errors": 96,
+          "sprt_error_rate": 0.0384,
+          "sprt_exact_95_ci": [
+            0.031212699243693895,
+            0.04669252705594312
+          ],
+          "mean_shots_consumed": 25.3104,
+          "fixed_prefix_baselines": {
+            "25": {
+              "errors": 271,
+              "windows": 2500,
+              "error_rate": 0.1084,
+              "exact_95_ci": [
+                0.09647752929964844,
+                0.12124822743719026
+              ]
+            },
+            "100": {
+              "errors": 8,
+              "windows": 2500,
+              "error_rate": 0.0032,
+              "exact_95_ci": [
+                0.001382513980431632,
+                0.006295488847291604
+              ]
+            },
+            "500": {
+              "errors": 0,
+              "windows": 2500,
+              "error_rate": 0.0,
+              "exact_95_ci": [
+                0.0,
+                0.001474463690359561
+              ]
+            }
+          },
+          "fixed_prefix_gaussian_likelihood_baselines": {
+            "25": {
+              "errors": 273,
+              "windows": 2500,
+              "error_rate": 0.1092,
+              "exact_95_ci": [
+                0.09723721094256653,
+                0.1220865923566618
+              ]
+            },
+            "100": {
+              "errors": 12,
+              "windows": 2500,
+              "error_rate": 0.0048,
+              "exact_95_ci": [
+                0.0024826152964909165,
+                0.008369607343754665
+              ]
+            },
+            "500": {
+              "errors": 0,
+              "windows": 2500,
+              "error_rate": 0.0,
+              "exact_95_ci": [
+                0.0,
+                0.001474463690359561
+              ]
+            }
+          }
+        }
+      ],
+      "combined_mean_shots": 24.8276,
+      "artifact": "adaptive_basis_sprt_replication_results.json"
+    },
+    "end_to_end": {
+      "new_logical_samples": 1000000,
+      "summary": {
+        "sprt": {
+          "ler": 0.001386,
+          "ler_exact_95_ci": [
+            0.0012847792857249515,
+            0.0014930671513771502
+          ],
+          "calibration_shots": 124138,
+          "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.7999945524867897,
+          "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+            -0.002996,
+            -0.002628
+          ]
+        },
+        "lda_25": {
+          "ler": 0.0018,
+          "ler_exact_95_ci": [
+            0.0016844035705485855,
+            0.001921429027261872
+          ],
+          "calibration_shots": 125000,
+          "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.79856,
+          "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+            -0.0025840000000000004,
+            -0.0022080000000000003
+          ]
+        },
+        "lda_100": {
+          "ler": 0.001138,
+          "ler_exact_95_ci": [
+            0.0010464505035704182,
+            0.001235406440670218
+          ],
+          "calibration_shots": 500000,
+          "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.499431,
+          "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+            -0.0032439999999999995,
+            -0.0028859999999999997
+          ]
+        },
+        "lda_500": {
+          "ler": 0.00109,
+          "ler_exact_95_ci": [
+            0.0010004409748200003,
+            0.0011854182951462084
+          ],
+          "calibration_shots": 2500000,
+          "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.166485,
+          "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+            -0.003292,
+            -0.0029320000000000006
+          ]
+        },
+        "gaussian_llr_25": {
+          "ler": 0.001868,
+          "ler_exact_95_ci": [
+            0.0017502083357482652,
+            0.001991622283008358
+          ],
+          "calibration_shots": 125000,
+          "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.7985056,
+          "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+            -0.002518,
+            -0.0021460000000000003
+          ]
+        },
+        "static_x": {
+          "ler": 0.004534,
+          "ler_exact_95_ci": [
+            0.004349659713094988,
+            0.004724117152420681
+          ],
+          "calibration_shots": 0,
+          "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.995466,
+          "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+            8.199999999999961e-05,
+            0.0005940499999999996
+          ]
+        },
+        "static_z": {
+          "ler": 0.004198,
+          "ler_exact_95_ci": [
+            0.004020664413004674,
+            0.004381117958751636
+          ],
+          "calibration_shots": 0,
+          "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.995802,
+          "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "oracle": {
+          "ler": 0.00109,
+          "ler_exact_95_ci": [
+            0.0010004409748200003,
+            0.0011854182951462084
+          ],
+          "calibration_shots": 0,
+          "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.99891,
+          "paired_cluster_bootstrap_ler_delta_vs_static_z_95_ci": [
+            -0.003292,
+            -0.0029320000000000006
+          ]
+        }
+      },
+      "resource_caveat": "X/Z terminal readout and one-qubit fault instruction composition differ; shared qubit/detector/tick/two-qubit/aggregate one-qubit-target counts match",
+      "artifact": "adaptive_basis_sprt_end_to_end_results.json"
+    },
+    "stable_reuse_projection": {
+      "new_samples": 0,
+      "sprt_100k_dwell": {
+        "logical_attempts_per_profile_dwell": 100000,
+        "policy": "sprt",
+        "expected_equal_profile_ler": 0.001349056,
+        "mean_calibration_shots_per_two_profile_cycle": 49.6552,
+        "expected_correct_outputs_per_total_circuit_shot": 0.998403064480763,
+        "bootstrap_95_ci_throughput_delta_vs_static_z": [
+          0.0024252158693591347,
+          0.002781326609694551
+        ],
+        "bootstrap_95_ci_ler_delta_vs_static_z": [
+          -0.0030298310799999994,
+          -0.0026748264
+        ]
+      },
+      "static_z_100k_dwell": {
+        "logical_attempts_per_profile_dwell": 100000,
+        "policy": "static_z",
+        "expected_equal_profile_ler": 0.004198,
+        "mean_calibration_shots_per_two_profile_cycle": 0.0,
+        "expected_correct_outputs_per_total_circuit_shot": 0.995802,
+        "bootstrap_95_ci_throughput_delta_vs_static_z": [
+          0.0,
+          0.0
+        ],
+        "bootstrap_95_ci_ler_delta_vs_static_z": [
+          0.0,
+          0.0
+        ]
+      },
+      "direct_10k_replay_sprt": {
+        "logical_attempts_per_profile": 25000000,
+        "reuse_horizon_blocks": 100,
+        "dwell_logical_attempts": 10000,
+        "policy": "sprt",
+        "logical_failures": 680,
+        "ler": 0.00136,
+        "calibration_shots": 1380,
+        "correct_outputs_per_logical_plus_calibration_circuit_shot": 0.9958913399018708,
+        "paired_group_bootstrap_ler_delta_vs_static_z_95_ci": [
+          -0.003182,
+          -0.002398
+        ],
+        "paired_group_bootstrap_throughput_delta_vs_static_z_95_ci": [
+          -0.0005604920109941846,
+          0.0006946531511477226
+        ],
+        "profile_failures": {
+          "x_biased": 339,
+          "z_biased": 341
+        },
+        "profile_selection_errors": {
+          "x_biased": 1,
+          "z_biased": 1
+        }
+      },
+      "scope": "stable-profile plug-in projection; no change-point or hardware validation",
+      "artifact": "adaptive_basis_sprt_utility_projection_results.json"
+    }
   }
 }

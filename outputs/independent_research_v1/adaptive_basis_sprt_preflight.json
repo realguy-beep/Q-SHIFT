@@ -1,0 +1,156 @@
+{
+  "training_score_means": {
+    "x_biased": -0.11361390934947357,
+    "z_biased": 0.10500137009618013
+  },
+  "training_score_variances": {
+    "x_biased": 0.21289863091739142,
+    "z_biased": 0.1799191795242022
+  },
+  "wald_threshold": 2.9444389791664403,
+  "per_profile": [
+    {
+      "profile": "x_biased",
+      "sprt_errors": 3,
+      "sprt_error_rate": 0.03,
+      "sprt_exact_95_ci": [
+        0.006229971538306395,
+        0.08517605297428002
+      ],
+      "mean_shots_consumed": 24.01,
+      "median_shots_consumed": 20.0,
+      "stopped_before_cap": 100,
+      "fixed_prefix_baselines": {
+        "25": {
+          "errors": 10,
+          "windows": 100,
+          "error_rate": 0.1,
+          "exact_95_ci": [
+            0.04900468922148595,
+            0.17622259774002266
+          ]
+        },
+        "100": {
+          "errors": 2,
+          "windows": 100,
+          "error_rate": 0.02,
+          "exact_95_ci": [
+            0.0024313368239425423,
+            0.07038393247107011
+          ]
+        },
+        "500": {
+          "errors": 0,
+          "windows": 100,
+          "error_rate": 0.0,
+          "exact_95_ci": [
+            0.0,
+            0.03621669264517641
+          ]
+        }
+      }
+    },
+    {
+      "profile": "z_biased",
+      "sprt_errors": 2,
+      "sprt_error_rate": 0.02,
+      "sprt_exact_95_ci": [
+        0.0024313368239425423,
+        0.07038393247107011
+      ],
+      "mean_shots_consumed": 24.55,
+      "median_shots_consumed": 21.0,
+      "stopped_before_cap": 100,
+      "fixed_prefix_baselines": {
+        "25": {
+          "errors": 7,
+          "windows": 100,
+          "error_rate": 0.07,
+          "exact_95_ci": [
+            0.028605288907438704,
+            0.13891972845585732
+          ]
+        },
+        "100": {
+          "errors": 0,
+          "windows": 100,
+          "error_rate": 0.0,
+          "exact_95_ci": [
+            0.0,
+            0.03621669264517641
+          ]
+        },
+        "500": {
+          "errors": 0,
+          "windows": 100,
+          "error_rate": 0.0,
+          "exact_95_ci": [
+            0.0,
+            0.03621669264517641
+          ]
+        }
+      }
+    }
+  ],
+  "both_profile_error_rates_at_most_5pct": true,
+  "mean_shots_under_25": true,
+  "status": "sequential_calibration_preflight",
+  "distance": 3,
+  "rounds": 5,
+  "bias_ratio": 10,
+  "gate_and_measurement_p": 0.003,
+  "frozen_lda_source": "bias_identification_results.json; no weights fitted or updated here",
+  "source_builder_byte_identical": {
+    "x_biased": true,
+    "z_biased": true
+  },
+  "decoder_observables_used": false,
+  "sample_rows": [
+    {
+      "profile": "x_biased",
+      "train_seed": 2026115301,
+      "training_shots": 10000,
+      "training_sampling_seconds": 0.005448591000458691,
+      "validation_seed": 2026115303,
+      "validation_windows": 100,
+      "validation_shots": 50000,
+      "validation_sampling_seconds": 0.026903539001068566,
+      "resources": {
+        "detectors": 40,
+        "feature_bucket_sizes": [
+          12,
+          12,
+          8,
+          8
+        ],
+        "feature_count": 4
+      }
+    },
+    {
+      "profile": "z_biased",
+      "train_seed": 2026115302,
+      "training_shots": 10000,
+      "training_sampling_seconds": 0.001655328000197187,
+      "validation_seed": 2026115304,
+      "validation_windows": 100,
+      "validation_shots": 50000,
+      "validation_sampling_seconds": 0.012405049998051254,
+      "resources": {
+        "detectors": 40,
+        "feature_bucket_sizes": [
+          12,
+          12,
+          8,
+          8
+        ],
+        "feature_count": 4
+      }
+    }
+  ],
+  "elapsed_seconds": 0.06241438800134347,
+  "new_source_equivalent_samples": 120000,
+  "scope": "detector calibration only; two fixed simulator profiles; no logical LER or change-point claim",
+  "projected_main_seconds": 0.5721318900123151,
+  "main_runtime_cap_seconds": 300,
+  "runtime_gate_passed": true
+}

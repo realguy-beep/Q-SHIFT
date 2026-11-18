@@ -231,3 +231,7 @@ Protocol and executable: `fusion_blossom_d3_screen_protocol.md`, `fusion_blossom
 ## Min-fill tensor-train ordering challenge
 
 The deterministic ordering rule, exact posterior source, SVD measurements, and advancement gate are fixed in `categorical_seven_layer_minfill_protocol.md`. It generates no new circuit samples and does not authorize testing additional orderings after observing the result.
+
+## Sequential detector-only profile calibration
+
+Primary protocol: `adaptive_basis_sprt_protocol.md`; 10k/profile preflight followed by 1,000 500-shot windows/profile. Independent frozen-parameter replication: `adaptive_basis_sprt_replication_protocol.md`; 500 windows/profile preflight then 2,500/profile. The replication protocol includes a retrospective stronger fixed Gaussian-LLR comparator, labeled exploratory. Direct logical policy test: `adaptive_basis_sprt_end_to_end_protocol.md`, using the saved calibration stream and 100 logical attempts per decision. Stable-profile reuse replay and plug-in utility projection are specified in `adaptive_basis_sprt_reuse_protocol.md` and `adaptive_basis_sprt_utility_projection_protocol.md`; these generate no new samples and assume profile persistence.

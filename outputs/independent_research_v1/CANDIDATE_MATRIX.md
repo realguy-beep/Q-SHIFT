@@ -95,3 +95,7 @@ At d7, the 5:1 bias check gave equal-mix XZZX/CSS=.608 (.529–.697); XZZX-X/CSS
 ### Additional decoder feasibility result
 
 Fusion Blossom 0.2.13 serial custom-graph MWPM was added as a classical-decoder candidate. Its custom graph reproduced ordinary PyMatching MWPM predictions on 1,000 d3 development samples after even-integer weight quantization, but achieved only 6.5%–15.3% of PyMatching throughput. Reject this serial path as a d13 acceleration hypothesis; parallel Fusion Blossom remains unassessed and would need a distinct preflight. Correlation-enabled behavior was not tested.
+
+### Sequential calibration result for the profile-inference candidate
+
+A frozen Gaussian SPRT over the existing detector-only LDA score achieved 4.08%/3.84% profile error on an independent 2,500-window/profile validation set at a combined mean 24.83 shots. A fresh d3 end-to-end screen showed LER .001386 vs static Z .004198 for equal separate memory tasks, but per-100-attempt calibration cost erased throughput. A plug-in stable-profile projection at 100k attempts/dwell showed a modest yield interval above static Z; direct 10k dwell remained inconclusive. Promote only as a research lead for long stable jobs, not as a deployment recommendation. Robustness to score-model misspecification and profile changes remains untested.

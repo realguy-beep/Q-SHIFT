@@ -47,3 +47,5 @@ The d3/d5/d7/d9 fixed-bias synthesis adds no algorithmic novelty. It is a descri
 The XZZX finite-size advantage against mismatched CSS does not establish a useful code-design gain against bias-aligned CSS. The new comparison reuses independent development data and is not a novel algorithmic result.
 
 The min-fill TT ordering is a standard graph heuristic, not a new method. The local result is negative: on the exact Q-SHIFT tail it increased rather than reduced the maximum high-accuracy ranks, and it does not establish a global tensor-network complexity bound.
+
+Sequential probability ratio testing is established statistical methodology (Wald, *Sequential Analysis*, 1947); this is not claimed as a new algorithm. The local contribution is a frozen detector-only feature application and a matched Q-SHIFT simulator cost/LER evaluation. Its positive long-dwell result is a stable-profile plug-in projection; novelty and deployment value remain unestablished.

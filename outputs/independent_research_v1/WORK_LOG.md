@@ -497,3 +497,14 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - This confirms interface feasibility but gives no speed case for a d13 run; quantization, correlation handling, and scale remain limitations. Added 1,000 unique Q-SHIFT development samples; cumulative total 66,781,000. No sealed/confirmatory data.
 
 - Ordering implementation check: re-evaluating the new axis transform with the original natural order reproduced both saved rank-91 maxima exactly. Cumulative stochastic Q-SHIFT count remains 66,781,000; deterministic rank audit added zero.
+
+
+## Sequential detector-only profile calibration — 2026-11-18
+
+- Tested a frozen-feature Gaussian SPRT (Wald threshold log(19), max 500 shots) using the existing four-detector-rate LDA features and no observables. Primary validation used 1,000 independent windows/profile; independent replication used 2,500/profile with frozen means, variances, weights, and threshold.
+- Replication errors: X-biased 102/2,500 (4.08%, exact 95% upper 4.93%); Z-biased 96/2,500 (3.84%, upper 4.67%). Combined mean calibration consumption 24.83 shots. Fixed 25-shot LDA errors were 10.12%/10.84%; fixed 25-shot Gaussian-LLR errors were 12.20%/10.92%.
+- Direct end-to-end screen used 2,500 saved calibration decisions/profile and 100 fresh logical attempts per decision, with fresh X/Z logical streams for each profile (1,000,000 new logical samples). SPRT LER=.001386 (95% interval .001285–.001493) vs static-Z .004198 (.004021–.004381); paired block bootstrap difference vs static-Z [-.002996,-.002628]. Fixed 25-shot LDA was .001800. Calibration charges made per-100-shot correct-output yield .8000 for SPRT vs .9958 static-Z, so frequent recalibration is not worthwhile.
+- A deterministic profile-stable reuse projection using the same samples estimates at 100,000 logical attempts per calibration: SPRT expected LER .001349 and correct-output yield .998403 vs static-Z .995802; bootstrap yield difference [.002425,.002781]. This is a model-based stable-profile projection, not a measured long-duration or change-point result. A direct 10,000-attempt grouped replay has a throughput-difference interval crossing zero.
+- Resource audit found X/Z circuits share qubits, detectors, rounds, two-qubit interactions, two-qubit noise targets, and total one-qubit noise target counts, but differ in terminal measurement instruction and X/Z one-qubit fault composition. Do not call the cross-basis comparison identical gate-level noise.
+- The reuse replay's first implementation mistakenly multiplied the fixed logical-attempt denominator by dwell; corrected before checkpoint, and all reported results are from the corrected replay. Seeded replays added no unique samples.
+- Unique Q-SHIFT development samples increased by 5,240,000 to 72,021,000. No confirmatory or sealed evidence accessed.
