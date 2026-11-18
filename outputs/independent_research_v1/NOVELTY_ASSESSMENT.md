@@ -49,3 +49,5 @@ The XZZX finite-size advantage against mismatched CSS does not establish a usefu
 The min-fill TT ordering is a standard graph heuristic, not a new method. The local result is negative: on the exact Q-SHIFT tail it increased rather than reduced the maximum high-accuracy ranks, and it does not establish a global tensor-network complexity bound.
 
 Sequential probability ratio testing is established statistical methodology (Wald, *Sequential Analysis*, 1947); this is not claimed as a new algorithm. The local contribution is a frozen detector-only feature application and a matched Q-SHIFT simulator cost/LER evaluation. Its positive long-dwell result is a stable-profile plug-in projection; novelty and deployment value remain unestablished.
+
+Stim shortest-graphlike-error analysis and the identity-paired lower-bound argument are established tools/logic. The local result is an exact physical certificate for two d3 circuits, but its probability is too small to inform the practical floor; no novel floor method is claimed.

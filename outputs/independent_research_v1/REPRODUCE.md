@@ -361,3 +361,9 @@ Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_
 ### Detector-only change detection challenge
 
 Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/adaptive_basis_change_detection.py --preflight`, then without `--preflight`. The main test measures false switches and detection delay under fixed simulator streams; it produces no logical LER data.
+
+### Exact graphlike physical-pattern lower bound
+
+`MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/graphlike_fault_floor.py`
+
+This deterministic Stim analysis generates no random samples and reports one pattern per d3 circuit only.

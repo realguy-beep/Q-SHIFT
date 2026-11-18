@@ -207,3 +207,7 @@ The nominal class-specific SPRT was not robust when measurement noise doubled wi
 ## Gaussian CUSUM false-switch failure
 
 Fast transition detection did not compensate for frequent false switching. With h=log(200), stable nominal controls produced dozens of false switches per 100k shots, far above the intended per-segment likelihood-ratio bound; shifted Z-biased controls were worse. The score increments are not distributed according to the fitted Gaussian likelihood closely enough for the martingale false-alarm guarantee, and resetting after switches can produce chatter. Do not deploy this CUSUM or claim the nominal threshold controls false alarms. An empirical threshold would require a new independent calibration/validation design and may increase detection delay materially.
+
+## Single shortest-path floor bound is too weak
+
+The selected shortest graphlike physical patterns are real, mutually exclusive circuit events with zero detector parity and logical parity one, so their probabilities paired with the no-error event lower-bound optimal-decoder risk. However, their probabilities are 1e-12–1e-11 of observed LER. The method finds existence, not the multiplicity of comparable logical mechanisms; it cannot explain the observed floor or certify useful decoder headroom.

@@ -388,3 +388,7 @@ A predeclared common-variance SPRT was tested on fresh nominal and shifted strea
 ## Detector-only change detection and false switching
 
 Both Gaussian LLR CUSUM variants detected all 100 profile transitions in each alternating sequence, with median delays of 27–33 shots and p90 65–74 shots; periodic 100-shot LDA updated at 100-shot cadence. But stable controls produced 25–50 false switches per 100k nominal calibration shots for CUSUM, and 147–271/100k in shifted Z-biased controls. Periodic LDA had fewer nominal false switches (about 4.6–7.8/100k) but more in shifted controls. The CUSUM's ideal likelihood-ratio threshold did not transfer to the non-Gaussian simulator score distribution. It is rejected as an adaptive controller. No logical outcomes were generated. See `adaptive_basis_change_detection_results.json`.
+
+## Single-pattern circuit-level logical lower bound
+
+For d3/five-round ratio10 X-biased aligned memory, Stim's shortest graphlike paths used three physical two-qubit Pauli outcomes in both CSS-X and native-XCX XZZX-X. The selected undetectable pattern plus the all-identity pattern establish exact decoder-independent LER lower bounds 3.07e-15 and 3.07e-13, respectively. Observed development LERs were .001312 and .004958, so the bounds are only 2.3e-12 and 6.2e-11 of those rates. This single-pattern bound is valid but too weak to constrain decoder headroom or the aspirational relative target. No stochastic samples were generated. Artifact: `graphlike_fault_floor_results.json`.

@@ -107,3 +107,7 @@ The nominal Gaussian SPRT failed under a fixed-direction measurement-noise shift
 ### CUSUM change detector screen
 
 Class-specific and common-variance likelihood CUSUMs detected all simulated transitions with ~30-shot median delay, but triggered 25–50 false switches/100k nominal shots and up to 271/100k under measurement shift. Periodic 100-shot LDA was less noisy in nominal controls. Reject the tested Gaussian CUSUM; the likelihood model's ideal false-alarm guarantee did not hold empirically.
+
+### Exact physical-pattern lower-bound screen
+
+One shortest graphlike path per d3 aligned X-memory circuit yielded exact circuit-pattern bounds 3.07e-15 (CSS-X) and 3.07e-13 (XZZX-X), far below observed LER. This validates a physical certificate but rejects the single-path method as a useful floor estimator; multiplicity is the open issue.

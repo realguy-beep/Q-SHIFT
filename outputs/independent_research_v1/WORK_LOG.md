@@ -525,3 +525,10 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Both CUSUMs detected all 100 transitions in every alternating condition, with median delay about 27–33 shots and p90 about 65–74. However, stable-control false switching was much higher than the nominal likelihood-ratio bound: approximately 25–50 false switches per 100k nominal calibration shots, and 147–271/100k for shifted Z-biased controls. Periodic LDA was substantially quieter in nominal controls, though also noisier under the shifted regime.
 - This rejects the Gaussian LLR CUSUM for deployment. The likelihood model does not satisfy its ideal false-alarm assumptions on the simulator score stream; fast response alone is insufficient.
 - Added 7,502,000 unique detector calibration samples (preflight 880k plus main 6.622M); cumulative Q-SHIFT development samples 82,823,000. No logical failures, confirmatory or sealed evidence accessed.
+
+
+## d3 exact graphlike physical-pattern bound — 2026-11-18
+
+- Stim's shortest graphlike logical error mapped to three mutually exclusive PAULI_CHANNEL_2 outcomes in both aligned CSS-X and XZZX-X circuits. Their combined DEM parity was zero detectors and L0=1; all other noise locations were assigned identity.
+- Exact pattern probabilities were 3.07e-15 (CSS-X) and 3.07e-13 (XZZX-X), versus observed development LER .001312 and .004958. These are valid but extremely weak lower bounds: 2.3e-12 and 6.2e-11 of observed LER. A single shortest pattern does not explain the observed error rate or constrain the 1e-4 relative target.
+- No stochastic samples generated. This closes the single-pattern d3 feasibility question; a useful floor would require multiplicity / logical-class mass, not another representative path.

@@ -243,3 +243,7 @@ The measurement-only shift protocol is `adaptive_basis_sprt_measurement_shift_pr
 ## Online change detection challenge
 
 `adaptive_basis_change_detection_protocol.md` freezes two Gaussian LLR CUSUM variants at h=log(200), a 100-shot LDA initialization, periodic 100-shot LDA baseline, stable controls, and alternating profiles at 1k/10k dwell. The result reports false switches and transition delay only; it does not authorize a logical LER claim.
+
+## Exact physical-pattern lower bound
+
+`graphlike_fault_floor_protocol.md` maps one shortest Stim graphlike logical error back to a mutually exclusive circuit Pauli pattern in two d3 aligned X-memory cells. It requires zero detector parity, logical parity one, unique independent channel locations, and exact channel-probability calculation. It produces no samples and is explicitly not a complete error-floor estimate.

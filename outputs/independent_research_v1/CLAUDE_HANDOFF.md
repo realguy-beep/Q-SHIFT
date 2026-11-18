@@ -183,3 +183,7 @@ At measurement p=.006 with gate p=.003, the frozen nominal SPRT made 17.6% Z-pro
 ### Change detector rejection
 
 The two tested Gaussian LLR CUSUMs detected all simulated profile changes with ~30-shot median delay, but false-switched 25–50 times/100k shots in nominal stable controls and up to 271/100k under shifted Z-bias noise. The threshold's nominal likelihood guarantee did not transfer. Do not use this controller. Artifact/protocol: `adaptive_basis_change_detection_results.json`, `adaptive_basis_change_detection_protocol.md`.
+
+### Error-floor lower-bound result
+
+A physically mapped, zero-syndrome logical Pauli pattern exists at three two-qubit fault locations in both d3 aligned arms. Pattern-plus-identity bounds are 3.07e-15 CSS-X and 3.07e-13 XZZX-X, 10–12 orders below observed LER. The single-path method is not a useful decoder-floor estimate without multiplicity. Artifact/protocol: `graphlike_fault_floor_results.json`, `graphlike_fault_floor_protocol.md`.

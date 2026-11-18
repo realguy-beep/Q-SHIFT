@@ -147,3 +147,5 @@ Sequential calibration is a promising efficiency refinement for the already test
 The sequential calibration lead is fragile to noise composition. Doubling measurement p at fixed gate p raised nominal Gaussian-SPRT Z-profile error to 17.6%; a pooled-variance redesign still had 12.0% error. Keep the method scoped to the nominal simulator profile. A fixed 100-shot LDA prefix was better in this stress sample, but requires independent replication before any robustness claim.
 
 Reject the tested Gaussian CUSUM for profile switching: it detects changes quickly but false-switches too often even under nominal stable noise. Robust adaptation remains unresolved; retain static or periodically calibrated baselines until a detector passes independent false-switch and cost tests under both nominal and shifted profiles.
+
+Do not use the single shortest graphlike pattern as a practical error-floor estimate: its lower bound is 10–12 orders below measured development LER. A meaningful floor calculation needs degenerate mechanism multiplicity or logical-class posterior mass. Avoid repeating this representative-path analysis across larger distances without a multiplicity method.

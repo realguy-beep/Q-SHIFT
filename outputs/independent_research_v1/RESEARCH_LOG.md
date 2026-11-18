@@ -377,3 +377,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - At branch checkpoint `05ca401`, started a detector-only change-point challenge. The CUSUM found all simulated switches quickly but false-switched frequently under stable controls. This failure is now committed with exact seeds and protocols.
 - This rules out the nominal Gaussian likelihood CUSUM at its fixed threshold. No evidence supports mid-run profile adaptation from this prototype.
 - Next open direction: evaluate minimum-fault-weight logical failure mechanisms / error-floor structure from the current Stim circuits and decoders, using deterministic development-only analysis, or return to a distinct decoding family if the existing tools cannot make this measurable.
+
+## Error-floor feasibility checkpoint (2026-11-18)
+
+- The first exact circuit-pattern lower bound validated physically, but was many orders below observed LER. It does not prove or disprove 10,000-fold potential. The single-path approach is not useful without counting an enormous family of degenerate logical mechanisms.
+- Current branch before this deterministic analysis: `0af694c`; no samples or tree modifications to protected work.
+- Next productive option: inspect whether the existing exact categorical and MPS tools support tractable error-family multiplicity estimates on a bounded circuit fragment; if not, move to a different candidate and record the gap rather than expanding distance blindly.
