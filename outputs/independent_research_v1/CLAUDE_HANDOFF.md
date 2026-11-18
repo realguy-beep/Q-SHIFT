@@ -13,6 +13,7 @@ The proposed correlation-mechanism follow-up requiring a non-approximated DEM ca
 - The exact categorical reference is validated on tiny toys. Full d=3 enumeration covers 2^609 fault assignments and is infeasible.
 - A new generic loopy sum-product Bethe prototype passed a hand tree control but had LER 0.057354 versus exact MAP 0.002646 on one exact toy, and only matched the other toy. It is stopped before circuit evaluation.
 - A paired BP+LSD screen on 5,000 distance-3 circuit samples in each of six Phase 2B conditions found 321 errors per tested LSD variant versus 138 for correlation-enabled PyMatching. All returned fault estimates reproduced their observed detector syndromes, and BP+LSD was worse in every condition. The screen uses one approximate DEM threshold and one fixed min-sum/LSD configuration; treat this as a negative development result, not a general BP+LSD conclusion.
+- A fivefold-odds likelihood-ratio importance sampler passed exhaustive validation on a tiny DEM toy and reduced estimated relative standard error for the approximate Phase 2B DEM surrogate in the main screen and five of six independent replication conditions. This estimates the correlation-enabled decoder's LER under that approximate DEM only; it does not reweight the original categorical circuit. It is a promising measurement-method lead, not a physical LER claim.
 
 ## Suggested next implementation
 

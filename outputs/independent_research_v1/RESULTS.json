@@ -239,5 +239,65 @@
     },
     "interpretation": "all three BP+LSD variants worse in every tested condition; one distance/configuration/approximate model only; not an integration or superiority claim"
   },
-  "stochastic_qshift_shots_scope": "new development-only circuit samples; no confirmatory or sealed evaluation data accessed"
+  "stochastic_qshift_shots_scope": "new development-only circuit samples; no confirmatory or sealed evaluation data accessed",
+  "stochastic_dem_samples_generated": 780000,
+  "rare_event_importance_sampling": {
+    "status": "positive_development_method_result_limited_to_approximate_dem",
+    "method": "uniform 5x odds tilt with exact Bernoulli likelihood ratio",
+    "target": "correlation-enabled PyMatching LER under the same approximate Phase 2B DEM, not original categorical circuit distribution",
+    "exact_toy_validation": {
+      "patterns": 8,
+      "weight_normalization": 1.0,
+      "weighted_ler": 0.33999999999999997,
+      "exact_ler": 0.34,
+      "absolute_error": 5.551115123125783e-17
+    },
+    "preflight_conditions_meeting_25pct_relative_se_gain": 6,
+    "main_shots_per_arm_per_condition": 20000,
+    "main_conditions_meeting_25pct_relative_se_gain": 6,
+    "main_relative_se_ratios": [
+      0.4822749527726065,
+      0.47411059413815476,
+      0.4370146077231465,
+      0.5091258345055828,
+      0.4736171227632867,
+      0.4936585553989941
+    ],
+    "importance_ler_range": [
+      0.0009846137531807327,
+      0.008241393616425877
+    ],
+    "direct_ler_range": [
+      0.001,
+      0.009
+    ],
+    "failure_weight_ess_range": [
+      104.28029656296312,
+      718.5471540037789
+    ],
+    "max_abs_log_weight_range": [
+      13.997040087423546,
+      17.217373563077103
+    ],
+    "replicates": 8,
+    "replication_conditions_with_25pct_between_replicate_sd_reduction": 5,
+    "replication_sd_ratios": [
+      0.5474348542850556,
+      1.120110758210588,
+      0.38736760427634254,
+      0.34295990068139065,
+      0.5824299331138039,
+      0.38905553625856215
+    ],
+    "all_replicate_mean_differences_within_2_se": true,
+    "approximate_dem_samples_generated": 780000,
+    "qshift_circuit_shots_generated_for_this_method": 0,
+    "artifact_paths": [
+      "rare_event_is.py",
+      "rare_event_preflight.json",
+      "rare_event_results.json",
+      "rare_event_replication_check.json"
+    ],
+    "interpretation": "promising variance-reduction method for this approximate DEM surrogate only; no circuit-level rare-event estimator"
+  }
 }

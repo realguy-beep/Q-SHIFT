@@ -41,3 +41,5 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the bounded MPS validity/runtime preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/tensor_mps_screen.py --preflight`. This does not launch the full screen.
 
 - Reproduce BP+LSD setup/runtime validity preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bplsd_feasibility.py --preflight`. Reproduce the fixed development run with the same command without `--preflight`; it writes to this research directory only.
+
+- Reproduce the rare-event estimator preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/rare_event_is.py --preflight`; reproduce the main and 8-replicate development runs with the same script and respectively no flag or `--replicates 8 --shots 5000`. These runs sample approximate DEMs only.
