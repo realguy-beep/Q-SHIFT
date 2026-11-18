@@ -19,6 +19,7 @@ From the worktree root:
 python3.12 outputs/independent_research_v1/zero_failure_bounds.py
 MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python -m unittest discover -s outputs/independent_research_v1 -p 'test_categorical_bp.py' -v
 MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/dem_preflight.py
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/dem_threshold_scan.py
 ```
 
 The toy tests load analytically defined categorical circuits and exact-posterior code from the tracked `outputs/categorical_decoder_feasibility/` directory. The DEM preflight imports the read-only tracked Phase 2B builder. It generates circuits in memory and does not sample shots or write under historical output paths.
@@ -36,3 +37,7 @@ The toy tests load analytically defined categorical circuits and exact-posterior
 ## Continuation
 
 Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`, and `CLAUDE_HANDOFF.md` first. Do not repeat the existing correlation pilot. The next potentially useful step is an exactness-controlled redesign of native categorical inference on small cyclic factor graphs; the current Bethe prototype is a negative screen and must not be used on the distance-3 circuit without a revised exact-toy validation gate.
+
+- Reproduce the bounded MPS validity/runtime preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/tensor_mps_screen.py --preflight`. This does not launch the full screen.
+
+- Reproduce BP+LSD setup/runtime validity preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bplsd_feasibility.py --preflight`. Reproduce the fixed development run with the same command without `--preflight`; it writes to this research directory only.

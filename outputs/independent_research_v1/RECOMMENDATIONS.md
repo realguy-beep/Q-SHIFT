@@ -18,3 +18,7 @@ Do not advance the current categorical Bethe prototype, claim the correlation pi
 - Which physical fault mechanisms explain the correlation-mode heterogeneity.
 - Whether a practical noise-profile selector can predict incremental logical utility under causal, detector-only inputs. Existing selection evidence is discouraging.
 - Whether larger-distance code/circuit design can approach the ratio target under a matched resource budget. No current evidence answers this.
+
+The existing correlation pilot also puts a sharp empirical ceiling on selector-only work: a label-aware oracle choosing between its two outputs could reduce the uncorrelated baseline's 3,532 errors by at most 763 (21.6% relative) on the 720,000 observed development shots. Both modes remain wrong together on 2,769 samples. A useful new decoder would need complementary predictions that correct those shared failure cases; a more elaborate controller over the same pair cannot achieve the aspirational 99.99% reduction in this sample.
+
+The new BP+LSD distance-3 screen is a negative signal: the tested LDPC 2.4.1 settings lost to correlation-enabled PyMatching on all six conditions (321 vs 138 failures total), despite returning valid syndromes. Do not respond with a parameter sweep on the same inspected samples. Any further BP+LSD study should first identify a specific model/inference mismatch, predeclare a changed mechanism, and use fresh development seeds; confirmatory claims still require separate authorization.

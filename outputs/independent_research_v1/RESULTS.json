@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 0,
+  "stochastic_qshift_shots_generated": 30000,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -43,7 +43,10 @@
     "pooled_fixed_uncorrelated_errors": 3532,
     "pooled_fixed_correlated_errors": 3349,
     "equal_stratum_paired_ler_difference_correlated_minus_uncorrelated": -0.00025417,
-    "root_bootstrap_95_ci": [-0.00035, -0.0001625],
+    "root_bootstrap_95_ci": [
+      -0.00035,
+      -0.0001625
+    ],
     "predeclared_practical_gate": "failed"
   },
   "zero_failure_95_percent_candidate_sample_counts": {
@@ -61,6 +64,180 @@
     "networkx": "3.7",
     "cpu_cores": 5,
     "ram_gib": 33,
-    "gpu_visible": false
-  }
+    "gpu_visible": false,
+    "qecsim": "1.0b9"
+  },
+  "dem_threshold_scan": {
+    "thresholds": [
+      0.001,
+      0.0018,
+      0.003,
+      1.0
+    ],
+    "conditions": 6,
+    "threshold_0_001_blocked_biased_conditions": 3,
+    "all_successful_thresholds_same_per_condition": true,
+    "unique_dem_graph_variants_per_condition": 1,
+    "stochastic_shots_generated": 0
+  },
+  "existing_correlation_pair_oracle_ceiling": {
+    "pilot_shots": 720000,
+    "baseline_errors": 3532,
+    "candidate_errors": 3349,
+    "prediction_disagreements": 1343,
+    "baseline_only_failures": 763,
+    "correlation_only_failures": 580,
+    "both_modes_wrong_on_same_prediction": 2769,
+    "oracle_selector_minimum_errors": 2769,
+    "oracle_relative_reduction_ceiling_on_observed_sample": 0.21602491506228766,
+    "observed_candidate_relative_reduction": 0.05181200453001133,
+    "target_candidate_error_rate_at_baseline_ler": 4.905555555555556e-07,
+    "interpretation": "descriptive development-sample ceiling for choosing between these two outputs; not a population bound"
+  },
+  "tensor_mps_preflight": {
+    "status": "full_screen_stopped_at_preflight_by_predeclared_runtime_cap",
+    "qecsim": "1.0b9",
+    "code_capacity_p": 0.05,
+    "shots_per_distance_preflight": 100,
+    "distances": [
+      3,
+      5
+    ],
+    "mps_chi": null,
+    "contraction_mode": "c",
+    "mwpm_mps_errors_d3": [
+      4,
+      3
+    ],
+    "mwpm_mps_errors_d5": [
+      3,
+      0
+    ],
+    "mps_seconds_per_decode_d3": 0.0008638106100033838,
+    "mps_seconds_per_decode_d5": 0.06087275432001207,
+    "projected_mps_decode_seconds_at_5000_each": 308.68,
+    "preflight_elapsed_seconds": 6.314404006999666,
+    "preflight_peak_rss_kib": 147200,
+    "all_recoveries_in_codespace": true,
+    "samples_in_full_run": 0,
+    "warning": "libpypm.so unavailable; qecsim MWPM used Python implementation",
+    "interpretation": "runtime feasibility only; preflight error counts not used as comparative performance evidence"
+  },
+  "bp_lsd_phase2b_development_screen": {
+    "status": "development_only_negative_screen",
+    "source": "bplsd_results.json",
+    "shots_per_condition": 5000,
+    "conditions": 6,
+    "total_original_circuit_shots": 30000,
+    "decoder_model": "Stim approximate DEM, decompose_errors=true, approximate_disjoint_errors=0.0018",
+    "baseline": "PyMatching with correlations enabled",
+    "ldpc": "2.4.1",
+    "configuration": {
+      "methods": [
+        "LSD_0",
+        "LSD_E",
+        "LSD_CS"
+      ],
+      "bp_method": "minimum_sum",
+      "ms_scaling_factor": 0.9,
+      "max_iter": 200,
+      "lsd_order": 0,
+      "bits_per_step": 1
+    },
+    "fault_variables_per_condition": [
+      586,
+      586,
+      586,
+      578,
+      578,
+      578
+    ],
+    "detectors_per_condition": [
+      40,
+      40,
+      40,
+      40,
+      40,
+      40
+    ],
+    "pymatching_errors": 138,
+    "methods": {
+      "LSD_0": {
+        "errors": 321,
+        "ler": 0.0107,
+        "paired_delta_vs_pymatching": 0.0061,
+        "condition_deltas": [
+          0.006,
+          0.009,
+          0.0026,
+          0.002,
+          0.0098,
+          0.0072
+        ],
+        "baseline_only_failures": 40,
+        "candidate_only_failures": 223,
+        "mcnemar_two_sided_p_by_condition": [
+          6.038535502739251e-07,
+          6.108279451688681e-09,
+          0.002349853515625,
+          0.0308837890625,
+          4.802196531399105e-09,
+          7.288430776686282e-07
+        ]
+      },
+      "LSD_E": {
+        "errors": 321,
+        "ler": 0.0107,
+        "paired_delta_vs_pymatching": 0.0061,
+        "condition_deltas": [
+          0.006,
+          0.009,
+          0.0026,
+          0.002,
+          0.0098,
+          0.0072
+        ],
+        "baseline_only_failures": 40,
+        "candidate_only_failures": 223,
+        "mcnemar_two_sided_p_by_condition": [
+          6.038535502739251e-07,
+          6.108279451688681e-09,
+          0.002349853515625,
+          0.0308837890625,
+          4.802196531399105e-09,
+          7.288430776686282e-07
+        ]
+      },
+      "LSD_CS": {
+        "errors": 321,
+        "ler": 0.0107,
+        "paired_delta_vs_pymatching": 0.0061,
+        "condition_deltas": [
+          0.006,
+          0.009,
+          0.0026,
+          0.002,
+          0.0098,
+          0.0072
+        ],
+        "baseline_only_failures": 40,
+        "candidate_only_failures": 223,
+        "mcnemar_two_sided_p_by_condition": [
+          6.038535502739251e-07,
+          6.108279451688681e-09,
+          0.002349853515625,
+          0.0308837890625,
+          4.802196531399105e-09,
+          7.288430776686282e-07
+        ]
+      }
+    },
+    "invalid_syndrome_estimates": {
+      "LSD_0": 0,
+      "LSD_E": 0,
+      "LSD_CS": 0
+    },
+    "interpretation": "all three BP+LSD variants worse in every tested condition; one distance/configuration/approximate model only; not an integration or superiority claim"
+  },
+  "stochastic_qshift_shots_scope": "new development-only circuit samples; no confirmatory or sealed evaluation data accessed"
 }

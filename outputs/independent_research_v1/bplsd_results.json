@@ -1,0 +1,565 @@
+{
+  "status": "development_screen",
+  "ldpc_version": "2.4.1",
+  "stim_version": "1.16.0",
+  "pymatching_version": "2.4.0",
+  "bp_lsd": {
+    "methods": [
+      "LSD_0",
+      "LSD_E",
+      "LSD_CS"
+    ],
+    "bp_method": "minimum_sum",
+    "ms_scaling_factor": 0.9,
+    "max_iter": 200,
+    "lsd_order": 0,
+    "bits_per_step": 1
+  },
+  "shots_per_condition": 5000,
+  "distance": 3,
+  "elapsed_seconds": 18.724904617999982,
+  "stochastic_qshift_shots": 30000,
+  "scope": "development only; circuit samples are exact but all candidate decoders use the same approximate DEM",
+  "conditions": [
+    {
+      "memory_basis": "z",
+      "regime": "x_biased",
+      "seed": 202611191,
+      "shots": 5000,
+      "detectors": 40,
+      "observables": 1,
+      "dem_fault_variables": 586,
+      "approximate_dem_threshold": 0.0018,
+      "failures": {
+        "pymatching_corr": 29,
+        "LSD_0": 59,
+        "LSD_E": 59,
+        "LSD_CS": 59
+      },
+      "invalid_syndrome_estimates": {
+        "LSD_0": 0,
+        "LSD_E": 0,
+        "LSD_CS": 0
+      },
+      "ler": {
+        "pymatching_corr": 0.0058,
+        "LSD_0": 0.0118,
+        "LSD_E": 0.0118,
+        "LSD_CS": 0.0118
+      },
+      "wilson_95": {
+        "pymatching_corr": [
+          0.004041457970253664,
+          0.008317338632240798
+        ],
+        "LSD_0": [
+          0.009159421922706208,
+          0.015190162256447572
+        ],
+        "LSD_E": [
+          0.009159421922706208,
+          0.015190162256447572
+        ],
+        "LSD_CS": [
+          0.009159421922706208,
+          0.015190162256447572
+        ]
+      },
+      "comparisons": {
+        "LSD_0": {
+          "paired_ler_delta_vs_pymatching": 0.006,
+          "paired_normal_95": [
+            0.003588498996392095,
+            0.008411501003607906
+          ],
+          "baseline_only_failures": 4,
+          "lsd_only_failures": 34,
+          "mcnemar_two_sided_p": 6.038535502739251e-07
+        },
+        "LSD_E": {
+          "paired_ler_delta_vs_pymatching": 0.006,
+          "paired_normal_95": [
+            0.003588498996392095,
+            0.008411501003607906
+          ],
+          "baseline_only_failures": 4,
+          "lsd_only_failures": 34,
+          "mcnemar_two_sided_p": 6.038535502739251e-07
+        },
+        "LSD_CS": {
+          "paired_ler_delta_vs_pymatching": 0.006,
+          "paired_normal_95": [
+            0.003588498996392095,
+            0.008411501003607906
+          ],
+          "baseline_only_failures": 4,
+          "lsd_only_failures": 34,
+          "mcnemar_two_sided_p": 6.038535502739251e-07
+        }
+      },
+      "decode_seconds": {
+        "pymatching_corr": 0.058078939009647,
+        "LSD_0": 0.7433855479807789,
+        "LSD_E": 0.6826259159911388,
+        "LSD_CS": 0.67094482601442
+      },
+      "seconds_per_decode": {
+        "pymatching_corr": 1.1615787801929401e-05,
+        "LSD_0": 0.0001486771095961558,
+        "LSD_E": 0.00013652518319822774,
+        "LSD_CS": 0.000134188965202884
+      },
+      "max_rss_kib": 135004
+    },
+    {
+      "memory_basis": "z",
+      "regime": "balanced",
+      "seed": 202611192,
+      "shots": 5000,
+      "detectors": 40,
+      "observables": 1,
+      "dem_fault_variables": 586,
+      "approximate_dem_threshold": 0.0018,
+      "failures": {
+        "pymatching_corr": 20,
+        "LSD_0": 65,
+        "LSD_E": 65,
+        "LSD_CS": 65
+      },
+      "invalid_syndrome_estimates": {
+        "LSD_0": 0,
+        "LSD_E": 0,
+        "LSD_CS": 0
+      },
+      "ler": {
+        "pymatching_corr": 0.004,
+        "LSD_0": 0.013,
+        "LSD_E": 0.013,
+        "LSD_CS": 0.013
+      },
+      "wilson_95": {
+        "pymatching_corr": [
+          0.002590942718784777,
+          0.006170617610711892
+        ],
+        "LSD_0": [
+          0.010213148925363891,
+          0.01653459276912175
+        ],
+        "LSD_E": [
+          0.010213148925363891,
+          0.01653459276912175
+        ],
+        "LSD_CS": [
+          0.010213148925363891,
+          0.01653459276912175
+        ]
+      },
+      "comparisons": {
+        "LSD_0": {
+          "paired_ler_delta_vs_pymatching": 0.009,
+          "paired_normal_95": [
+            0.005897609180183485,
+            0.012102390819816514
+          ],
+          "baseline_only_failures": 9,
+          "lsd_only_failures": 54,
+          "mcnemar_two_sided_p": 6.108279451688681e-09
+        },
+        "LSD_E": {
+          "paired_ler_delta_vs_pymatching": 0.009,
+          "paired_normal_95": [
+            0.005897609180183485,
+            0.012102390819816514
+          ],
+          "baseline_only_failures": 9,
+          "lsd_only_failures": 54,
+          "mcnemar_two_sided_p": 6.108279451688681e-09
+        },
+        "LSD_CS": {
+          "paired_ler_delta_vs_pymatching": 0.009,
+          "paired_normal_95": [
+            0.005897609180183485,
+            0.012102390819816514
+          ],
+          "baseline_only_failures": 9,
+          "lsd_only_failures": 54,
+          "mcnemar_two_sided_p": 6.108279451688681e-09
+        }
+      },
+      "decode_seconds": {
+        "pymatching_corr": 0.0671163370029717,
+        "LSD_0": 1.2214951220194052,
+        "LSD_E": 1.2082244399957744,
+        "LSD_CS": 1.1655787700192377
+      },
+      "seconds_per_decode": {
+        "pymatching_corr": 1.3423267400594341e-05,
+        "LSD_0": 0.00024429902440388106,
+        "LSD_E": 0.0002416448879991549,
+        "LSD_CS": 0.00023311575400384755
+      },
+      "max_rss_kib": 135004
+    },
+    {
+      "memory_basis": "z",
+      "regime": "z_biased",
+      "seed": 202611193,
+      "shots": 5000,
+      "detectors": 40,
+      "observables": 1,
+      "dem_fault_variables": 586,
+      "approximate_dem_threshold": 0.0018,
+      "failures": {
+        "pymatching_corr": 5,
+        "LSD_0": 18,
+        "LSD_E": 18,
+        "LSD_CS": 18
+      },
+      "invalid_syndrome_estimates": {
+        "LSD_0": 0,
+        "LSD_E": 0,
+        "LSD_CS": 0
+      },
+      "ler": {
+        "pymatching_corr": 0.001,
+        "LSD_0": 0.0036,
+        "LSD_E": 0.0036,
+        "LSD_CS": 0.0036
+      },
+      "wilson_95": {
+        "pymatching_corr": [
+          0.00042721349110879964,
+          0.002338953050058211
+        ],
+        "LSD_0": [
+          0.002278440754413015,
+          0.005683733736639698
+        ],
+        "LSD_E": [
+          0.002278440754413015,
+          0.005683733736639698
+        ],
+        "LSD_CS": [
+          0.002278440754413015,
+          0.005683733736639698
+        ]
+      },
+      "comparisons": {
+        "LSD_0": {
+          "paired_ler_delta_vs_pymatching": 0.0026,
+          "paired_normal_95": [
+            0.0009848272613251989,
+            0.004215172738674801
+          ],
+          "baseline_only_failures": 2,
+          "lsd_only_failures": 15,
+          "mcnemar_two_sided_p": 0.002349853515625
+        },
+        "LSD_E": {
+          "paired_ler_delta_vs_pymatching": 0.0026,
+          "paired_normal_95": [
+            0.0009848272613251989,
+            0.004215172738674801
+          ],
+          "baseline_only_failures": 2,
+          "lsd_only_failures": 15,
+          "mcnemar_two_sided_p": 0.002349853515625
+        },
+        "LSD_CS": {
+          "paired_ler_delta_vs_pymatching": 0.0026,
+          "paired_normal_95": [
+            0.0009848272613251989,
+            0.004215172738674801
+          ],
+          "baseline_only_failures": 2,
+          "lsd_only_failures": 15,
+          "mcnemar_two_sided_p": 0.002349853515625
+        }
+      },
+      "decode_seconds": {
+        "pymatching_corr": 0.06515462998959265,
+        "LSD_0": 0.7207500830104436,
+        "LSD_E": 0.7200844709986995,
+        "LSD_CS": 0.7111982710089251
+      },
+      "seconds_per_decode": {
+        "pymatching_corr": 1.303092599791853e-05,
+        "LSD_0": 0.00014415001660208872,
+        "LSD_E": 0.0001440168941997399,
+        "LSD_CS": 0.000142239654201785
+      },
+      "max_rss_kib": 135132
+    },
+    {
+      "memory_basis": "x",
+      "regime": "x_biased",
+      "seed": 202611194,
+      "shots": 5000,
+      "detectors": 40,
+      "observables": 1,
+      "dem_fault_variables": 578,
+      "approximate_dem_threshold": 0.0018,
+      "failures": {
+        "pymatching_corr": 9,
+        "LSD_0": 19,
+        "LSD_E": 19,
+        "LSD_CS": 19
+      },
+      "invalid_syndrome_estimates": {
+        "LSD_0": 0,
+        "LSD_E": 0,
+        "LSD_CS": 0
+      },
+      "ler": {
+        "pymatching_corr": 0.0018,
+        "LSD_0": 0.0038,
+        "LSD_E": 0.0038,
+        "LSD_CS": 0.0038
+      },
+      "wilson_95": {
+        "pymatching_corr": [
+          0.0009472935076811986,
+          0.003417644710373721
+        ],
+        "LSD_0": [
+          0.002434138850885676,
+          0.005927728559389015
+        ],
+        "LSD_E": [
+          0.002434138850885676,
+          0.005927728559389015
+        ],
+        "LSD_CS": [
+          0.002434138850885676,
+          0.005927728559389015
+        ]
+      },
+      "comparisons": {
+        "LSD_0": {
+          "paired_ler_delta_vs_pymatching": 0.002,
+          "paired_normal_95": [
+            0.00033727078187275683,
+            0.0036627292181272432
+          ],
+          "baseline_only_failures": 4,
+          "lsd_only_failures": 14,
+          "mcnemar_two_sided_p": 0.0308837890625
+        },
+        "LSD_E": {
+          "paired_ler_delta_vs_pymatching": 0.002,
+          "paired_normal_95": [
+            0.00033727078187275683,
+            0.0036627292181272432
+          ],
+          "baseline_only_failures": 4,
+          "lsd_only_failures": 14,
+          "mcnemar_two_sided_p": 0.0308837890625
+        },
+        "LSD_CS": {
+          "paired_ler_delta_vs_pymatching": 0.002,
+          "paired_normal_95": [
+            0.00033727078187275683,
+            0.0036627292181272432
+          ],
+          "baseline_only_failures": 4,
+          "lsd_only_failures": 14,
+          "mcnemar_two_sided_p": 0.0308837890625
+        }
+      },
+      "decode_seconds": {
+        "pymatching_corr": 0.05909899398466223,
+        "LSD_0": 0.7056149749987526,
+        "LSD_E": 0.6945186640245993,
+        "LSD_CS": 0.7595322379893332
+      },
+      "seconds_per_decode": {
+        "pymatching_corr": 1.1819798796932445e-05,
+        "LSD_0": 0.00014112299499975052,
+        "LSD_E": 0.00013890373280491986,
+        "LSD_CS": 0.00015190644759786664
+      },
+      "max_rss_kib": 135132
+    },
+    {
+      "memory_basis": "x",
+      "regime": "balanced",
+      "seed": 202611195,
+      "shots": 5000,
+      "detectors": 40,
+      "observables": 1,
+      "dem_fault_variables": 578,
+      "approximate_dem_threshold": 0.0018,
+      "failures": {
+        "pymatching_corr": 31,
+        "LSD_0": 80,
+        "LSD_E": 80,
+        "LSD_CS": 80
+      },
+      "invalid_syndrome_estimates": {
+        "LSD_0": 0,
+        "LSD_E": 0,
+        "LSD_CS": 0
+      },
+      "ler": {
+        "pymatching_corr": 0.0062,
+        "LSD_0": 0.016,
+        "LSD_E": 0.016,
+        "LSD_CS": 0.016
+      },
+      "wilson_95": {
+        "pymatching_corr": [
+          0.0043713883985244135,
+          0.008786794042414002
+        ],
+        "LSD_0": [
+          0.012875175027561829,
+          0.01986796045525347
+        ],
+        "LSD_E": [
+          0.012875175027561829,
+          0.01986796045525347
+        ],
+        "LSD_CS": [
+          0.012875175027561829,
+          0.01986796045525347
+        ]
+      },
+      "comparisons": {
+        "LSD_0": {
+          "paired_ler_delta_vs_pymatching": 0.0098,
+          "paired_normal_95": [
+            0.006460703489854683,
+            0.013139296510145317
+          ],
+          "baseline_only_failures": 12,
+          "lsd_only_failures": 61,
+          "mcnemar_two_sided_p": 4.802196531399105e-09
+        },
+        "LSD_E": {
+          "paired_ler_delta_vs_pymatching": 0.0098,
+          "paired_normal_95": [
+            0.006460703489854683,
+            0.013139296510145317
+          ],
+          "baseline_only_failures": 12,
+          "lsd_only_failures": 61,
+          "mcnemar_two_sided_p": 4.802196531399105e-09
+        },
+        "LSD_CS": {
+          "paired_ler_delta_vs_pymatching": 0.0098,
+          "paired_normal_95": [
+            0.006460703489854683,
+            0.013139296510145317
+          ],
+          "baseline_only_failures": 12,
+          "lsd_only_failures": 61,
+          "mcnemar_two_sided_p": 4.802196531399105e-09
+        }
+      },
+      "decode_seconds": {
+        "pymatching_corr": 0.06984667599681416,
+        "LSD_0": 1.1730311820265342,
+        "LSD_E": 1.2350656079902365,
+        "LSD_CS": 1.2457607849719352
+      },
+      "seconds_per_decode": {
+        "pymatching_corr": 1.396933519936283e-05,
+        "LSD_0": 0.00023460623640530684,
+        "LSD_E": 0.0002470131215980473,
+        "LSD_CS": 0.00024915215699438704
+      },
+      "max_rss_kib": 135132
+    },
+    {
+      "memory_basis": "x",
+      "regime": "z_biased",
+      "seed": 202611196,
+      "shots": 5000,
+      "detectors": 40,
+      "observables": 1,
+      "dem_fault_variables": 578,
+      "approximate_dem_threshold": 0.0018,
+      "failures": {
+        "pymatching_corr": 44,
+        "LSD_0": 80,
+        "LSD_E": 80,
+        "LSD_CS": 80
+      },
+      "invalid_syndrome_estimates": {
+        "LSD_0": 0,
+        "LSD_E": 0,
+        "LSD_CS": 0
+      },
+      "ler": {
+        "pymatching_corr": 0.0088,
+        "LSD_0": 0.016,
+        "LSD_E": 0.016,
+        "LSD_CS": 0.016
+      },
+      "wilson_95": {
+        "pymatching_corr": [
+          0.006562037439973316,
+          0.011792152950850806
+        ],
+        "LSD_0": [
+          0.012875175027561829,
+          0.01986796045525347
+        ],
+        "LSD_E": [
+          0.012875175027561829,
+          0.01986796045525347
+        ],
+        "LSD_CS": [
+          0.012875175027561829,
+          0.01986796045525347
+        ]
+      },
+      "comparisons": {
+        "LSD_0": {
+          "paired_ler_delta_vs_pymatching": 0.0072,
+          "paired_normal_95": [
+            0.0043253912159679775,
+            0.010074608784032022
+          ],
+          "baseline_only_failures": 9,
+          "lsd_only_failures": 45,
+          "mcnemar_two_sided_p": 7.288430776686282e-07
+        },
+        "LSD_E": {
+          "paired_ler_delta_vs_pymatching": 0.0072,
+          "paired_normal_95": [
+            0.0043253912159679775,
+            0.010074608784032022
+          ],
+          "baseline_only_failures": 9,
+          "lsd_only_failures": 45,
+          "mcnemar_two_sided_p": 7.288430776686282e-07
+        },
+        "LSD_CS": {
+          "paired_ler_delta_vs_pymatching": 0.0072,
+          "paired_normal_95": [
+            0.0043253912159679775,
+            0.010074608784032022
+          ],
+          "baseline_only_failures": 9,
+          "lsd_only_failures": 45,
+          "mcnemar_two_sided_p": 7.288430776686282e-07
+        }
+      },
+      "decode_seconds": {
+        "pymatching_corr": 0.06196521501215102,
+        "LSD_0": 0.6617538190257619,
+        "LSD_E": 0.6845916179763663,
+        "LSD_CS": 0.6846163400109617
+      },
+      "seconds_per_decode": {
+        "pymatching_corr": 1.2393043002430204e-05,
+        "LSD_0": 0.0001323507638051524,
+        "LSD_E": 0.00013691832359527325,
+        "LSD_CS": 0.00013692326800219235
+      },
+      "max_rss_kib": 135132
+    }
+  ]
+}
