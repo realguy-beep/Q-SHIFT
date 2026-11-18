@@ -231,3 +231,8 @@ The fresh stream reproduced the three-round-plus-idle direction and similar macr
 ### Equal-duration schedule under doubled idle noise
 
 Doubling only the data-idle channel to .006 preserved the Z-aligned benefit but erased the X-aligned direction: RR=.753 (95% .676–.839) for Z, versus 1.016 (.914–1.129) for X. The macro mean RR=.885 does not override the fixed per-cell rule; the robustness challenge fails because X is not below 1. This limits the candidate to a workload-dependent hypothesis and does not warrant a general round-count policy.
+
+
+### Equal-duration schedule at d5
+
+The aligned Z-memory d5 extension did not show an advantage for five active rounds plus four p=.003 idles versus nine active rounds (RR=1.05, 95% .83–1.33). The interval excludes gains of 20% or more in this cell. This weakens the prospect that the d3 schedule result scales with distance; the d5 sample is finite and does not establish equivalence or harm.

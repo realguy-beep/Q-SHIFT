@@ -1,0 +1,7 @@
+# Distance-5 equal-duration schedule extension
+
+At d5 Z memory under Z bias, five active rounds plus four biased p=.003 data-idle cycles produced 146 failures in 1,000,000 attempts (LER .000146, Wilson 95% .000124–.000172). Nine active rounds produced 139/1,000,000 (.000139, .000118–.000164). The rate ratio was 1.050 (95% log-normal interval .833–1.325), showing no evidence of improvement. The interval also excludes a 20% or larger reduction under this approximation.
+
+Both arms preserve the same 64 qubits and terminal data-readout targets. The five-plus-idle arm has 120 detectors, 400 two-qubit pair sites, and 220 one-qubit Pauli targets (including 100 idle targets over 25 data qubits and four cycles); the nine-active arm has 216 detectors, 720 pair sites, and 216 one-qubit targets. The nine-round comparator was byte-identical to the existing scaled d5 circuit. Each arm used a separate approximate-DEM, correlation-enabled PyMatching decoder. Preflight passed all geometry, noiseless, scalar/batch, and runtime checks; projected main time was 10.4 seconds, measured total 12.1 seconds.
+
+This finite d5 result does not reproduce the d3 aligned Z gain. It is not evidence that fewer rounds are generally worse, but it provides no basis for scaling the d3 schedule advantage upward. Do not spend a large sample budget on this round-count candidate absent a measured idle model or a more specific mechanism. No confirmatory or sealed data were accessed.

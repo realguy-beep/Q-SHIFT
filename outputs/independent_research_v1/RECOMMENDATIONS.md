@@ -169,3 +169,8 @@ The fresh independent seed stream preserved the effect direction and macro resul
 ### Equal-duration idle-model robustness decision
 
 The twofold idle-noise challenge fails the preregistered across-cell robustness gate. Retain only as a Z-aligned d3 simulator lead (RR=.753, 95% .676–.839); X alignment was near-neutral/slightly worse (RR=1.016, .914–1.129). Do not recommend three-plus-idle for both workloads or invest in an online schedule selector without a measured idle model and explicit task mix.
+
+
+### Distance-5 schedule result
+
+Do not scale the d3 three-plus-idle result into a general schedule recommendation. At d5 Z alignment the five-plus-idle schedule was statistically inconclusive around parity (RR=1.05, 95% .83–1.33) and excludes a 20% or larger gain. The candidate has no demonstrated distance-5 benefit under this idle model.

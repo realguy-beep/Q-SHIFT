@@ -1,0 +1,175 @@
+{
+  "status": "equal_duration_d5_development",
+  "condition": {
+    "memory_basis": "z",
+    "regime": "z_biased"
+  },
+  "arms": {
+    "five_rounds_plus_idle": {
+      "errors": 146,
+      "shots": 1000000,
+      "ler": 0.000146,
+      "wilson_95": [
+        0.00012416187908676526,
+        0.00017167844327551306
+      ],
+      "seed": 2026114011,
+      "resources": {
+        "qubits": 64,
+        "detectors": 120,
+        "observables": 1,
+        "two_qubit_pair_sites": 400,
+        "one_qubit_pauli_targets": 220
+      },
+      "extra": {
+        "active_rounds": 5,
+        "idle_cycles": 4,
+        "idle_data_qubits_per_cycle": 25,
+        "idle_channel_targets": 100,
+        "idle_probability_per_data_qubit_per_cycle": 0.003,
+        "idle_pauli_probabilities_XYZ": [
+          0.00025,
+          0.00025,
+          0.0025
+        ],
+        "terminal_data_qubits": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          12,
+          14,
+          16,
+          18,
+          20,
+          23,
+          25,
+          27,
+          29,
+          31,
+          34,
+          36,
+          38,
+          40,
+          42,
+          45,
+          47,
+          49,
+          51,
+          53
+        ]
+      }
+    },
+    "nine_active_rounds": {
+      "errors": 139,
+      "shots": 1000000,
+      "ler": 0.000139,
+      "wilson_95": [
+        0.00011773455401529499,
+        0.0001641058221272002
+      ],
+      "seed": 2026114012,
+      "resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_pair_sites": 720,
+        "one_qubit_pauli_targets": 216
+      },
+      "extra": {
+        "active_rounds": 9,
+        "idle_cycles": 0,
+        "idle_data_qubits_per_cycle": 0,
+        "idle_channel_targets": 0,
+        "terminal_data_qubits": []
+      }
+    }
+  },
+  "rate_ratio_five_active_plus_idle_over_nine_active": 1.050359712230216,
+  "rate_ratio_log_normal_95_ci": [
+    0.8326566770385166,
+    1.3249824993900916
+  ],
+  "preflight": [
+    {
+      "arm": "five_rounds_plus_idle",
+      "seed": 2026114001,
+      "shots": 10000,
+      "resources": {
+        "qubits": 64,
+        "detectors": 120,
+        "observables": 1,
+        "two_qubit_pair_sites": 400,
+        "one_qubit_pauli_targets": 220
+      },
+      "extra": {
+        "active_rounds": 5,
+        "idle_cycles": 4,
+        "idle_data_qubits_per_cycle": 25,
+        "idle_channel_targets": 100,
+        "idle_probability_per_data_qubit_per_cycle": 0.003,
+        "idle_pauli_probabilities_XYZ": [
+          0.00025,
+          0.00025,
+          0.0025
+        ],
+        "terminal_data_qubits": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          12,
+          14,
+          16,
+          18,
+          20,
+          23,
+          25,
+          27,
+          29,
+          31,
+          34,
+          36,
+          38,
+          40,
+          42,
+          45,
+          47,
+          49,
+          51,
+          53
+        ]
+      },
+      "sample_seconds": 0.01222403000065242,
+      "decode_seconds": 0.025802178999583703
+    },
+    {
+      "arm": "nine_active_rounds",
+      "seed": 2026114002,
+      "shots": 10000,
+      "resources": {
+        "qubits": 64,
+        "detectors": 216,
+        "observables": 1,
+        "two_qubit_pair_sites": 720,
+        "one_qubit_pauli_targets": 216
+      },
+      "extra": {
+        "active_rounds": 9,
+        "idle_cycles": 0,
+        "idle_data_qubits_per_cycle": 0,
+        "idle_channel_targets": 0,
+        "terminal_data_qubits": []
+      },
+      "sample_seconds": 0.019703336998645682,
+      "decode_seconds": 0.04586867300167796
+    }
+  ],
+  "preflight_samples": 20000,
+  "main_samples": 2000000,
+  "projected_main_seconds": 10.359821900055977,
+  "elapsed_seconds": 12.050412437998602,
+  "scope": "single aligned d5 memory workload; p=.003 biased data-idle assumption; development only"
+}

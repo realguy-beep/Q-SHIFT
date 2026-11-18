@@ -207,3 +207,8 @@ A second independent d3 seed stream reproduced the aggregate benefit of three ac
 ### Idle-noise robustness limits the schedule result
 
 A predeclared 2x idle-channel stress (.006 on data during the two idle cycles; five-round comparator unchanged) kept the Z-aligned gain (RR=.753, 95% .676–.839) but made X alignment near-neutral/slightly worse (RR=1.016, .914–1.129). The across-cell robustness rule fails. This supports only a workload-specific Z-aligned d3 simulator hypothesis; it is not a general schedule recommendation. Do not extrapolate beyond the assumed Pauli idle model.
+
+
+### Distance-5 equal-duration schedule challenge
+
+At d5 Z memory/Z bias, five active rounds plus four p=.003 biased data-idle cycles had 146/1M failures versus 139/1M for nine active rounds (RR=1.05, 95% .83–1.33). No benefit was observed; the interval excludes a 20% or larger improvement. This fails to extend the d3 signal to d5. Do not recommend the round-count change as a scalable gain under the current idle model. Details: `outputs/independent_research_v2/equal_duration_d5_report.md`.

@@ -566,3 +566,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - X alignment: 694 vs 683 failures, RR=1.016 (95% .914–1.129); Z alignment: 580 vs 770, RR=.753 (.676–.839); macro mean RR=.885. The preregistered robustness rule requires both point RRs <1, so it fails on X.
 - This narrows the result to a Z-aligned simulator lead. It does not support a general schedule recommendation; no idle-rate sweep is authorized by this evidence.
 - Added 2,000,000 main and 400 preflight samples; cumulative unique Q-SHIFT development samples: 89,224,200. No sealed/confirmatory evidence accessed.
+
+
+## Equal-duration syndrome schedule — d5 extension — 2026-11-18
+
+- Tested one aligned Z-memory/Z-bias d5 condition: five active rounds + four p=.003 biased data-idle cycles versus nine active rounds. Both own-DEM correlated PyMatching decoders; fresh 1M main shots/arm, 10k preflight/arm.
+- Candidate 146 errors (.000146) vs baseline 139 (.000139), RR=1.050 (95% .833–1.325). No d5 improvement; the interval excludes a >=20% reduction under the stated ratio approximation. This fails to reproduce the d3 effect at higher distance and ends the current round-count expansion.
+- Integrity: five-round and nine-round dimensions 120/216 detectors; 64 physical qubits, 25 idle data qubits, matching terminal reads, noiseless circuits, scalar/batch checks; 9-round comparator byte-identical to prior d5 builder. Runtime 12.05s (10.36s projected).
+- Added 2,000,000 main +20,000 preflight samples; cumulative unique Q-SHIFT development samples: 91,244,200. No confirmatory/sealed data accessed.

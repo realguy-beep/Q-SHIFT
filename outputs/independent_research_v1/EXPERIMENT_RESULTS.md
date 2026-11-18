@@ -412,3 +412,8 @@ A separate 500k/arm/cell stream again favored three active rounds plus two p=.00
 ### Twofold idle-rate robustness challenge
 
 With only the idle arm's data Pauli p increased to .006, X-aligned three-plus-idle had 694/500k errors versus 683 for five active rounds (RR 1.016, 95% .914–1.129); Z-aligned had 580 vs 770 (RR .753, .676–.839). Mean cell RR=.885, but the preregistered robustness rule required both cells' point ratios below 1; it therefore fails on X alignment. This is a one-point synthetic stress. The Z result remains positive; the X result is near-neutral and uncertain. See `../independent_research_v2/equal_duration_rounds_idle_2x_report.md`.
+
+
+## Distance-5 equal-duration schedule extension
+
+For Z memory/Z bias at d5, five active rounds plus four p=.003 biased data-idle cycles had 146/1,000,000 failures (.000146; Wilson 95% .000124–.000172), versus 139 (.000139; .000118–.000164) for nine active rounds. RR=1.050 (95% .833–1.325); no benefit was observed, and the interval excludes a 20% or larger reduction under the log-normal approximation. Resources: same 64 qubits/readout targets; 400 two-qubit pair sites and 220 one-qubit targets with five+idle versus 720 and 216 with nine active. This does not reproduce the d3 Z-aligned benefit; see `../independent_research_v2/equal_duration_d5_report.md`.

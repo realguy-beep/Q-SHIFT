@@ -418,3 +418,11 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - Fresh stream: X-aligned RR=1.016 (95% .914–1.129), Z-aligned RR=.753 (.676–.839), macro mean RR=.885. The fixed per-cell robustness rule fails because both cells must favor the short schedule; X is near-neutral/uncertain.
 - Cumulative unique development samples: 89,224,200, including 400 preflight and 2M main challenge shots. No confirmatory/sealed data.
 - Active recommendation: no general three-round schedule policy; retain a Z-aligned d3 simulator candidate only. Further idle-noise tests require a measured range or specific application profile.
+
+
+## Checkpoint — d5 equal-duration schedule (2026-11-18)
+
+- Continued at `4ff924d`; d5 protocol compared five active rounds plus four p=.003 biased data-idle cycles with nine active rounds on Z memory/Z bias.
+- Fresh 1M/arm screen: candidate 146 failures, baseline 139; RR=1.050 (95% .833–1.325). No observed gain; interval excludes a reduction >=20%. This weakens the d3 finding's distance-scaling relevance.
+- Cumulative unique development samples: 91,244,200. No sealed/confirmatory data.
+- Decision: do not expand this round-count design absent a calibrated idle model or stronger mechanism. Move to a substantially different remaining candidate / source-verified literature question.

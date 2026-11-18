@@ -387,3 +387,8 @@ Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_
 ### Twofold idle-noise robustness challenge
 
 Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/equal_duration_rounds_idle_2x.py`. This writes a separate result file, keeps the five-round model fixed at p=.003, changes only idle data-channel probability to .006, and uses fresh preflight/main seeds. It does not overwrite the initial screen or its independent replication.
+
+
+### Distance-5 equal-duration schedule extension
+
+Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/equal_duration_d5.py`. This compares d5 Z-bias/Z-memory with five active rounds plus four biased p=.003 data-idle cycles against nine active rounds. It writes a separate result summary and uses new fixed seeds. Scope and limitations are in `equal_duration_d5_protocol.md`.
