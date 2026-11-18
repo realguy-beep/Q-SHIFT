@@ -164,3 +164,8 @@ A first matched-duration d3 screen favored three active rounds plus two data-idl
 ### Equal-duration schedule replication
 
 The fresh independent seed stream preserved the effect direction and macro result (mean cell RR=.773); the Z-aligned cell was stronger (.641, 95% .570–.721), while X alignment was near-neutral (.906, .809–1.014). Keep as a promising finite-distance code/circuit design candidate. Before a handoff recommendation, vary only the assumed idle channel in one predeclared robustness stress; do not expand round counts or profiles.
+
+
+### Equal-duration idle-model robustness decision
+
+The twofold idle-noise challenge fails the preregistered across-cell robustness gate. Retain only as a Z-aligned d3 simulator lead (RR=.753, 95% .676–.839); X alignment was near-neutral/slightly worse (RR=1.016, .914–1.129). Do not recommend three-plus-idle for both workloads or invest in an online schedule selector without a measured idle model and explicit task mix.

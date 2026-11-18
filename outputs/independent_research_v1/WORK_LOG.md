@@ -558,3 +558,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - X: 575 vs 635 errors, RR=.906 (95% .809–1.014); Z: 456 vs 711, RR=.641 (.570–.721). Equal-weight mean RR=.773, similar to initial .762. Directional and macro advancement gates reproduced; X is individually uncertain.
 - Added 2,000,000 main + 400 preflight samples; cumulative unique Q-SHIFT development samples: 87,223,800. No sealed or confirmatory evidence accessed.
 - Next: challenge the sole material uncertainty, idle-channel strength, under one frozen 2x idle-noise condition; stop after this sensitivity if the result fails or is inconclusive.
+
+
+## Equal-duration schedule — twofold idle-noise stress — 2026-11-18
+
+- Changed only per-cycle data-idle Pauli p from .003 to .006; five-active-round gate/measurement rates remained .003. Fresh 500k/arm/cell streams and fixed decoder construction passed circuit/readout/noiseless/scalar-batch checks.
+- X alignment: 694 vs 683 failures, RR=1.016 (95% .914–1.129); Z alignment: 580 vs 770, RR=.753 (.676–.839); macro mean RR=.885. The preregistered robustness rule requires both point RRs <1, so it fails on X.
+- This narrows the result to a Z-aligned simulator lead. It does not support a general schedule recommendation; no idle-rate sweep is authorized by this evidence.
+- Added 2,000,000 main and 400 preflight samples; cumulative unique Q-SHIFT development samples: 89,224,200. No sealed/confirmatory evidence accessed.

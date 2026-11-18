@@ -407,3 +407,8 @@ At equal five-cycle storage duration, three active d3 syndrome rounds followed b
 ### Independent-seed replication of equal-duration schedule
 
 A separate 500k/arm/cell stream again favored three active rounds plus two p=.003 biased data-idle cycles over five active rounds. X alignment: 575 vs 635 errors, RR=.906 (95% .809–1.014); Z alignment: 456 vs 711, RR=.641 (.570–.721). Equal-weight mean cell RR=.773. Both cells favored the candidate by point estimate; the X interval includes 1. This independently reproduces direction and the aggregate advancement gate under the same assumed idle model, not hardware validity. See `../independent_research_v2/equal_duration_rounds_replication_report.md`.
+
+
+### Twofold idle-rate robustness challenge
+
+With only the idle arm's data Pauli p increased to .006, X-aligned three-plus-idle had 694/500k errors versus 683 for five active rounds (RR 1.016, 95% .914–1.129); Z-aligned had 580 vs 770 (RR .753, .676–.839). Mean cell RR=.885, but the preregistered robustness rule required both cells' point ratios below 1; it therefore fails on X alignment. This is a one-point synthetic stress. The Z result remains positive; the X result is near-neutral and uncertain. See `../independent_research_v2/equal_duration_rounds_idle_2x_report.md`.

@@ -410,3 +410,11 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - Fresh independent streams reproduced the macro advantage: three active rounds plus two p=.003 biased data-idle cycles vs five active rounds gave cell RRs .906 (X-aligned; 95% .809–1.014) and .641 (Z-aligned; .570–.721), mean .773. Both point estimates favor fewer active rounds; only Z is individually decisive.
 - Evidence remains tied to the same idle model. Cumulative unique development samples: 87,223,800. No confirmatory/sealed evidence.
 - Continue with a single prospectively defined 2x idle-rate stress challenge; use fresh streams and then decide whether the candidate is robust enough for a cautious handoff.
+
+
+## Checkpoint — doubled idle-noise challenge (2026-11-18)
+
+- At branch checkpoint `454785b`, tested a fixed 2x idle-noise stress: p_idle=.006; five-round comparator remains p_gate=p_measure=.003.
+- Fresh stream: X-aligned RR=1.016 (95% .914–1.129), Z-aligned RR=.753 (.676–.839), macro mean RR=.885. The fixed per-cell robustness rule fails because both cells must favor the short schedule; X is near-neutral/uncertain.
+- Cumulative unique development samples: 89,224,200, including 400 preflight and 2M main challenge shots. No confirmatory/sealed data.
+- Active recommendation: no general three-round schedule policy; retain a Z-aligned d3 simulator candidate only. Further idle-noise tests require a measured range or specific application profile.

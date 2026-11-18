@@ -226,3 +226,8 @@ Adding two biased data-idle cycles to the three-round memory schedule preserves 
 ### Equal-duration schedule replication caveat
 
 The fresh stream reproduced the three-round-plus-idle direction and similar macro rate ratio (.773 vs .762 initially), but the X-aligned cell interval now includes parity (RR .906, 95% .809–1.014); only the Z-aligned cell is individually decisive. Both use the same p=.003 idle assumption, so this is independent sampling replication, not model robustness.
+
+
+### Equal-duration schedule under doubled idle noise
+
+Doubling only the data-idle channel to .006 preserved the Z-aligned benefit but erased the X-aligned direction: RR=.753 (95% .676–.839) for Z, versus 1.016 (.914–1.129) for X. The macro mean RR=.885 does not override the fixed per-cell rule; the robustness challenge fails because X is not below 1. This limits the candidate to a workload-dependent hypothesis and does not warrant a general round-count policy.

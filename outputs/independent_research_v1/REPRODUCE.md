@@ -382,3 +382,8 @@ Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_
 ### Equal-duration schedule independent replication
 
 Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/equal_duration_rounds_replication.py`. This uses new frozen seeds and writes `equal_duration_rounds_replication_results.json`, preserving the initial screen result. It repeats scalar/batch, source-builder, terminal-readout, noiseless-circuit, and runtime checks before sampling.
+
+
+### Twofold idle-noise robustness challenge
+
+Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/equal_duration_rounds_idle_2x.py`. This writes a separate result file, keeps the five-round model fixed at p=.003, changes only idle data-channel probability to .006, and uses fresh preflight/main seeds. It does not overwrite the initial screen or its independent replication.

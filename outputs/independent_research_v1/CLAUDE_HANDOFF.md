@@ -202,3 +202,8 @@ A fresh d3 development comparison matched total five-cycle duration: three activ
 ### Fresh-stream replication of equal-duration schedule
 
 A second independent d3 seed stream reproduced the aggregate benefit of three active rounds plus two .003 biased data-idle cycles versus five active rounds (mean cell RR=.773). The Z-aligned cell was .641 (.570–.721); the X-aligned cell was .906 (.809–1.014) and uncertain. This is stronger than a one-stream result but still shares the assumed idle channel and does not justify hardware or scaling claims. One frozen idle-rate robustness challenge is pending.
+
+
+### Idle-noise robustness limits the schedule result
+
+A predeclared 2x idle-channel stress (.006 on data during the two idle cycles; five-round comparator unchanged) kept the Z-aligned gain (RR=.753, 95% .676–.839) but made X alignment near-neutral/slightly worse (RR=1.016, .914–1.129). The across-cell robustness rule fails. This supports only a workload-specific Z-aligned d3 simulator hypothesis; it is not a general schedule recommendation. Do not extrapolate beyond the assumed Pauli idle model.

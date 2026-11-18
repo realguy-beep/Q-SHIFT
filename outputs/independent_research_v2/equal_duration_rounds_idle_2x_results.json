@@ -1,0 +1,202 @@
+{
+  "status": "equal_duration_rounds_idle_2x_robustness",
+  "idle_probability_per_cycle": 0.006,
+  "active_gate_and_measurement_p": 0.003,
+  "profiles": [
+    {
+      "memory_basis": "x",
+      "regime": "x_biased",
+      "three_rounds_plus_idle": {
+        "errors": 694,
+        "shots": 500000,
+        "ler": 0.001388,
+        "wilson_95": [
+          0.0012885656641524082,
+          0.0014950958668466957
+        ],
+        "seed": 2026113911
+      },
+      "five_active_rounds": {
+        "errors": 683,
+        "shots": 500000,
+        "ler": 0.001366,
+        "wilson_95": [
+          0.0012673852169411066,
+          0.0014722766521037768
+        ],
+        "seed": 2026113912
+      },
+      "rate_ratio_three_idle_over_five_active": 1.0161054172767203,
+      "rate_ratio_log_normal_95_ci": [
+        0.9142400844709702,
+        1.1293206637472502
+      ]
+    },
+    {
+      "memory_basis": "z",
+      "regime": "z_biased",
+      "three_rounds_plus_idle": {
+        "errors": 580,
+        "shots": 500000,
+        "ler": 0.00116,
+        "wilson_95": [
+          0.0010694054759032027,
+          0.0012582595584794299
+        ],
+        "seed": 2026113913
+      },
+      "five_active_rounds": {
+        "errors": 770,
+        "shots": 500000,
+        "ler": 0.00154,
+        "wilson_95": [
+          0.001435072770711956,
+          0.0016525864246981293
+        ],
+        "seed": 2026113914
+      },
+      "rate_ratio_three_idle_over_five_active": 0.7532467532467533,
+      "rate_ratio_log_normal_95_ci": [
+        0.6762976945729312,
+        0.8389510652332847
+      ]
+    }
+  ],
+  "preflight": [
+    {
+      "basis": "x",
+      "regime": "x_biased",
+      "arm": "three_rounds_plus_idle",
+      "resources": {
+        "qubits": 26,
+        "detectors": 24,
+        "observables": 1,
+        "two_qubit_pair_sites": 72,
+        "one_qubit_pauli_targets": 42,
+        "one_qubit_instruction_count": 8,
+        "two_qubit_instruction_count": 12
+      },
+      "extra": {
+        "idle_cycles": 2,
+        "idle_data_qubits_per_cycle": 9,
+        "idle_pauli_targets": 18,
+        "idle_total_error_probability": 0.006,
+        "idle_p": 0.006,
+        "idle_pauli_probabilities_XYZ": [
+          0.005,
+          0.0005,
+          0.0005
+        ],
+        "terminal_data_qubits": [
+          1,
+          3,
+          5,
+          8,
+          10,
+          12,
+          15,
+          17,
+          19
+        ]
+      },
+      "seed": 2026113901,
+      "sample_seconds": 0.00015922699822112918,
+      "decode_seconds": 0.00041116299689747393
+    },
+    {
+      "basis": "x",
+      "regime": "x_biased",
+      "arm": "five_active_rounds",
+      "resources": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_pair_sites": 120,
+        "one_qubit_pauli_targets": 40,
+        "one_qubit_instruction_count": 10,
+        "two_qubit_instruction_count": 20
+      },
+      "extra": {
+        "idle_cycles": 0,
+        "idle_data_qubits_per_cycle": 0,
+        "idle_pauli_targets": 0,
+        "terminal_data_qubits": []
+      },
+      "seed": 2026113902,
+      "sample_seconds": 0.00021990900131640956,
+      "decode_seconds": 0.00047223899673554115
+    },
+    {
+      "basis": "z",
+      "regime": "z_biased",
+      "arm": "three_rounds_plus_idle",
+      "resources": {
+        "qubits": 26,
+        "detectors": 24,
+        "observables": 1,
+        "two_qubit_pair_sites": 72,
+        "one_qubit_pauli_targets": 42,
+        "one_qubit_instruction_count": 8,
+        "two_qubit_instruction_count": 12
+      },
+      "extra": {
+        "idle_cycles": 2,
+        "idle_data_qubits_per_cycle": 9,
+        "idle_pauli_targets": 18,
+        "idle_total_error_probability": 0.006,
+        "idle_p": 0.006,
+        "idle_pauli_probabilities_XYZ": [
+          0.0005,
+          0.0005,
+          0.005
+        ],
+        "terminal_data_qubits": [
+          1,
+          3,
+          5,
+          8,
+          10,
+          12,
+          15,
+          17,
+          19
+        ]
+      },
+      "seed": 2026113903,
+      "sample_seconds": 7.914300294942223e-05,
+      "decode_seconds": 0.00021203600044827908
+    },
+    {
+      "basis": "z",
+      "regime": "z_biased",
+      "arm": "five_active_rounds",
+      "resources": {
+        "qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "two_qubit_pair_sites": 120,
+        "one_qubit_pauli_targets": 40,
+        "one_qubit_instruction_count": 10,
+        "two_qubit_instruction_count": 20
+      },
+      "extra": {
+        "idle_cycles": 0,
+        "idle_data_qubits_per_cycle": 0,
+        "idle_pauli_targets": 0,
+        "terminal_data_qubits": []
+      },
+      "seed": 2026113904,
+      "sample_seconds": 0.00011320400153636001,
+      "decode_seconds": 0.00031613200189894997
+    }
+  ],
+  "equal_weight_macro_rate_ratio": 0.8846760852617368,
+  "directionally_retained": false,
+  "robustness_gate_passed": false,
+  "preflight_samples": 400,
+  "main_samples": 2000000,
+  "projected_main_seconds": 9.915265000017826,
+  "elapsed_seconds": 1.2650916050006344,
+  "scope": "single declared twofold idle-rate stress; all comparator/source noise unchanged",
+  "robustness_gate_definition": "macro RR <= 0.90; both cell point estimates below 1; no cell above 1.05"
+}

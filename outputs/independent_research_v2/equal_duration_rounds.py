@@ -67,9 +67,9 @@ def resources(circuit: stim.Circuit) -> dict:
     }
 
 
-def make_idle_circuit(memory_basis: str, regime: str) -> tuple[stim.Circuit, dict]:
+def make_idle_circuit(memory_basis: str, regime: str, idle_p: float = GATE_P) -> tuple[stim.Circuit, dict]:
     source = source_circuit(memory_basis, regime, 3).flattened()
-    p1 = one_qubit_probabilities(regime, GATE_P, BIAS_RATIO)
+    p1 = one_qubit_probabilities(regime, idle_p, BIAS_RATIO)
     out = stim.Circuit()
     data_targets = None
     idle_inserted = False
@@ -88,13 +88,14 @@ def make_idle_circuit(memory_basis: str, regime: str) -> tuple[stim.Circuit, dic
         raise RuntimeError("did not find terminal data measurement")
     return out, {"idle_cycles": 2, "idle_data_qubits_per_cycle": 9,
                  "idle_pauli_targets": 18, "idle_total_error_probability": float(sum(p1)),
+                 "idle_p": idle_p,
                  "idle_pauli_probabilities_XYZ": list(p1),
                  "terminal_data_qubits": [int(x.value) for x in data_targets]}
 
 
-def circuit_for(arm: str, basis: str, regime: str) -> tuple[stim.Circuit, dict]:
+def circuit_for(arm: str, basis: str, regime: str, idle_p: float = GATE_P) -> tuple[stim.Circuit, dict]:
     if arm == "three_rounds_plus_idle":
-        return make_idle_circuit(basis, regime)
+        return make_idle_circuit(basis, regime, idle_p=idle_p)
     if arm == "five_active_rounds":
         circuit = source_circuit(basis, regime, 5)
         return circuit, {"idle_cycles": 0, "idle_data_qubits_per_cycle": 0,
