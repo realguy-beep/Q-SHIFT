@@ -259,3 +259,8 @@ A half-rate shift is strongly positive, but a double-rate shift misses the froze
 ### Measurement-rate range
 
 Both tested stationary measurement-rate shifts (half and double) passed. Keep that as a narrow d3 robustness statement. It does not imply tolerance to time-varying measurement noise, detector correlations, or unknown profile graphs; the doubled gate-rate challenge remains borderline.
+
+
+### Temporal-rate evidence
+
+A fixed selector transferred to one alternating five-round gate-rate pattern on Z-memory/X-bias. Preserve it as a narrow development lead only; do not claim online rate estimation or arbitrary drift robustness. A broader temporal study needs a concrete measured pattern and must retain the other task limits.

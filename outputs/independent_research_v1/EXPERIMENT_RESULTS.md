@@ -502,3 +502,8 @@ With gate p reduced from .003 to .0015 and other nominal settings fixed, the fro
 ## Halved measurement-noise shift
 
 With measurement p reduced from .003 to .0015 and the selector/graphs frozen, two d3 streams showed 18.89% and 18.00% macro LER reductions at 1.365x/1.370x cost. Paired macro difference intervals were [-.000904,-.000814] and [-.000875,-.000786]; all six per-cell intervals favored the selector on both streams. Measurement shifts at .0015 and .006 both pass; see `../independent_research_v2/fast_flagged_logistic_measurement_half_shift_report.md`.
+
+
+## Frozen selector under temporal gate-rate variation
+
+On two reversed five-round rate maps with mean two-qubit p=.003, the stationary-trained z-memory/X-biased selector reduced macro LER 12.47% and 11.68% at 1.364x/1.361x inference cost. Paired macro intervals were [-.001077,-.000911] and [-.001018,-.000852]. Both fixed gates passed. This covers one temporal profile pair only and does not test online adaptation; see `../independent_research_v2/fast_flagged_logistic_temporal_shift_report.md`.

@@ -539,3 +539,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 
 - The frozen selector passed physical measurement p=.0015 on two d3 streams (18.89%/18.00% macro reductions, ~1.37x cost; all cell intervals favorable). Previously, p=.006 passed twice (~13%). Thus tested static measurement rates on both sides of nominal pass, unlike doubled gate p which narrowly missed its threshold.
 - Do not generalize to temporal or unknown-graph shift. Cumulative development samples: 276,048,200; no sealed/confirmatory evidence. See `outputs/independent_research_v2/fast_flagged_logistic_measurement_half_shift_report.md`.
+
+
+## Temporal gate-rate pattern passed on two streams — 2026-11-18
+
+- The stationary-trained selector transferred to two reversed five-round gate-rate profiles with mean p=.003 on Z-memory/X-bias d3: 12.47% then 11.68% macro reductions, ~1.36x inference, paired intervals favorable. No temporal retraining; exact-map matcher only diagnostic.
+- This is one imposed temporal pattern, not online adaptation or arbitrary drift. Cross-basis/d5 remain negative and doubled stationary gate noise borderline. Cumulative development samples 278,088,200; no sealed/confirmatory data. See `outputs/independent_research_v2/fast_flagged_logistic_temporal_shift_report.md`.

@@ -297,3 +297,8 @@ At gate p=.0015, the frozen selector gained 24.4%/23.4% macro LER on two streams
 ### Halved measurement-rate challenge — 2026-11-18
 
 At measurement p=.0015 the frozen selector gained 18.89%/18.00% macro LER on two fresh d3 streams (~1.37x cost; all cell intervals favorable). Combined with the doubled-measurement pass, both tested stationary sides pass. Doubled gate noise remains borderline. See `../independent_research_v2/fast_flagged_logistic_measurement_half_shift_report.md`.
+
+
+### Temporal gate-rate selector challenge — 2026-11-18
+
+A stationary z-memory/X-biased selector passed on two reversed five-round rate patterns (12.47%/11.68% macro gain, ~1.36x cost). Scope is one temporal simulator pattern, not online adaptation or arbitrary drift. See `../independent_research_v2/fast_flagged_logistic_temporal_shift_report.md`.

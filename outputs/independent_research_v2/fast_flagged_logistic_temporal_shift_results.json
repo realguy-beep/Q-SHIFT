@@ -1,0 +1,185 @@
+{
+  "status": "fast_flagged_logistic_temporal_shift",
+  "nominal_gate_p": 0.003,
+  "temporal_mean_gate_p": 0.003,
+  "measurement_p": 0.003,
+  "bias_ratio": 10.0,
+  "frozen_model": "nominal z-memory/x-biased per-condition selector; no temporal retraining",
+  "conditions": [
+    {
+      "profile": "phase_a",
+      "seed": 2026121211,
+      "shots": 500000,
+      "round_factors": [
+        0.25,
+        1.75,
+        1.0,
+        0.25,
+        1.75
+      ],
+      "flagged": 1335,
+      "flag_rate": 0.00267,
+      "failures": {
+        "nominal_correlated": 4084,
+        "frozen_selector": 3592,
+        "actual_map_diagnostic": 3974
+      },
+      "ler": {
+        "nominal_correlated": 0.008168,
+        "frozen_selector": 0.007184,
+        "actual_map_diagnostic": 0.007948
+      },
+      "wilson_95": {
+        "nominal_correlated": [
+          0.007922268563221492,
+          0.008421288788214796
+        ],
+        "frozen_selector": [
+          0.00695366771728681,
+          0.007421904754015234
+        ]
+      },
+      "paired": {
+        "delta_selector_minus_nominal_correlated": -0.000984,
+        "normal_95_ci": [
+          -0.0011026073110027674,
+          -0.0008653926889972327
+        ],
+        "nominal_only_failures": 704,
+        "selector_only_failures": 212,
+        "mcnemar_exact_two_sided": 2.685523154328369e-62
+      },
+      "time_ratio": 1.4303374429940643,
+      "nominal_correlated_seconds": 0.23964518700086046,
+      "nominal_ordinary_seconds": 0.10067751099995803,
+      "classifier_seconds": 0.0024507859998266213,
+      "diagnostic_seconds": 0.25794491600390757
+    },
+    {
+      "profile": "phase_b",
+      "seed": 2026121212,
+      "shots": 500000,
+      "round_factors": [
+        1.75,
+        0.25,
+        1.0,
+        1.75,
+        0.25
+      ],
+      "flagged": 1313,
+      "flag_rate": 0.002626,
+      "failures": {
+        "nominal_correlated": 3886,
+        "frozen_selector": 3384,
+        "actual_map_diagnostic": 3813
+      },
+      "ler": {
+        "nominal_correlated": 0.007772,
+        "frozen_selector": 0.006768,
+        "actual_map_diagnostic": 0.007626
+      },
+      "wilson_95": {
+        "nominal_correlated": [
+          0.007532345066666172,
+          0.008019218369594142
+        ],
+        "frozen_selector": [
+          0.006544501008726467,
+          0.006999077854713943
+        ]
+      },
+      "paired": {
+        "delta_selector_minus_nominal_correlated": -0.001004,
+        "normal_95_ci": [
+          -0.001119454870755609,
+          -0.0008885451292443907
+        ],
+        "nominal_only_failures": 685,
+        "selector_only_failures": 183,
+        "mcnemar_exact_two_sided": 6.618759173245488e-69
+      },
+      "time_ratio": 1.2976780119326055,
+      "nominal_correlated_seconds": 0.29458889300440205,
+      "nominal_ordinary_seconds": 0.0852270760005922,
+      "classifier_seconds": 0.0024655600063852035,
+      "diagnostic_seconds": 0.2603307320023305
+    }
+  ],
+  "preflight": [
+    {
+      "profile": "phase_a",
+      "seed": 2026121201,
+      "shots": 10000,
+      "flagged": 30,
+      "sample_seconds": 0.004103265993762761,
+      "nominal_correlated_seconds": 0.005525404994841665,
+      "nominal_ordinary_seconds": 0.0017770369959180243,
+      "actual_map_diagnostic_seconds": 0.005020450000301935,
+      "classifier_seconds": 0.0001106589988921769,
+      "projected_seconds": 0.8268408491858281,
+      "factors": [
+        0.25,
+        1.75,
+        1.0,
+        0.25,
+        1.75
+      ],
+      "mean_two_qubit_rate": 0.0030000000000000014
+    },
+    {
+      "profile": "phase_b",
+      "seed": 2026121202,
+      "shots": 10000,
+      "flagged": 21,
+      "sample_seconds": 0.0016703310029697604,
+      "nominal_correlated_seconds": 0.004761220996442717,
+      "nominal_ordinary_seconds": 0.0018152250049752183,
+      "actual_map_diagnostic_seconds": 0.005885626997041982,
+      "classifier_seconds": 9.829099872149527e-05,
+      "projected_seconds": 0.7115347500075586,
+      "factors": [
+        1.75,
+        0.25,
+        1.0,
+        1.75,
+        0.25
+      ],
+      "mean_two_qubit_rate": 0.0030000000000000005
+    }
+  ],
+  "macro_ler": {
+    "nominal_correlated": 0.00797,
+    "frozen_selector": 0.0069759999999999996,
+    "actual_profile_matcher_diagnostic": 0.0077870000000000005
+  },
+  "macro_relative_reduction": 0.12471769134253452,
+  "per_profile_relative_reductions": [
+    0.12047012732615081,
+    0.12918167781780754
+  ],
+  "mean_frozen_policy_time_ratio": 1.3640077274633349,
+  "advancement_gate_passed": true,
+  "preflight_samples": 20000,
+  "main_samples": 1000000,
+  "projected_main_seconds": 1.5383755991933867,
+  "elapsed_seconds": 1.9067473569957656,
+  "scope": "stationary-trained frozen selector on two alternating temporal gate-rate profiles; Z-memory/X-bias d3 only; actual-map matcher diagnostic only",
+  "run_metadata": {
+    "command": "MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_temporal_shift.py",
+    "repository_base_revision": "72cf88b",
+    "software_versions": {
+      "python": "3.12",
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "stim": "1.16.0",
+      "pymatching": "2.4.0"
+    },
+    "peak_rss_kib": null,
+    "peak_rss_note": "not captured by the run",
+    "sha256": {
+      "runner": "a6e6779e9b32ff36329547f4baed9f58bac5c479ce17d6779981e71fcca1b835",
+      "protocol": "41c99421452f31dbb71a8a9a88ede76e6da79bdadb218c380b09726bda68e956",
+      "existing_temporal_builder": "7b5b7adbf19abbfaf2121dae4231bc64b4fb24fcce290b45774cc3a7bcf58088"
+    }
+  }
+}

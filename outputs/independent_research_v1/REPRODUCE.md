@@ -477,3 +477,8 @@ Run `fast_flagged_logistic_gate_half_shift.py` and its replication counterpart f
 ### Halved measurement-rate shift
 
 Run `fast_flagged_logistic_measurement_half_shift.py` and its replication counterpart in the v2 research directory with the project venv. Both keep the nominal .003 model/graph fixed; report is alongside the doubled-measurement result.
+
+
+### Temporal gate-rate selector challenge
+
+Run `fast_flagged_logistic_temporal_shift.py` and `fast_flagged_logistic_temporal_shift_replication.py` from the v2 directory. They use the existing alternating-rate circuit builder and frozen stationary coefficients. Report limits scope to one Z-memory/X-bias temporal pattern.

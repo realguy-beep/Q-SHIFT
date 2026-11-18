@@ -125,3 +125,8 @@ The half-rate gate shift passed strongly, while the double-rate shift narrowly f
 ### Measurement-rate robustness scope
 
 The frozen selector passed half- and double-measurement-rate shifts at d3, strengthening stationary development evidence. This remains a robustness result, not a novel algorithm or temporal-noise guarantee.
+
+
+### Temporal shift adds bounded robustness evidence
+
+One alternating gate-rate pattern transferred on a single d3 task. This is a robustness finding for an existing selector family, not an online adaptation algorithm or novelty claim.

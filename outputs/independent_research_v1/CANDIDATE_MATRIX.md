@@ -190,3 +190,8 @@ Halving gate p to .0015 passed twice (24.42%/23.36% macro gains); doubling to .0
 ### Measurement-rate stress pair
 
 The ratio-10 frozen selector passed both measurement p=.0015 and .006 on two streams each, with ~18% and ~13% macro reductions respectively and ~1.35x cost. This is a bounded stationary rate range; temporal and graph-mismatch claims remain unsupported. See both measurement-shift reports in v2.
+
+
+### Alternating temporal gate-rate screen
+
+A frozen stationary selector passed two reversed five-round gate-rate profiles at mean p=.003 on Z-memory/X-bias d3, with 12.47%/11.68% macro reductions at ~1.36x cost. This is a single task/pattern result, not online adaptation. Report: `../independent_research_v2/fast_flagged_logistic_temporal_shift_report.md`.

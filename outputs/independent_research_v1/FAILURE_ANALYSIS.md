@@ -321,3 +321,8 @@ Halving gate p to .0015 gave 23%–24% macro gains on two streams; doubling to .
 ### Measurement-rate shift is robust on both tested sides
 
 Halving measurement p to .0015 gave 18%–19% gains twice, complementing the ~13% gain at doubled measurement p=.006. Both directions passed the frozen gate, unlike doubled gate p, which narrowly missed. This supports only stationary measurement-rate mismatch at d3; temporal correlations and graph uncertainty remain untested.
+
+
+### One temporal-rate pattern is a positive but narrow result
+
+The stationary selector transferred to two reversed five-round gate-rate maps on Z-memory/X-bias d3 (11.7%–12.5% gain, ~1.36x cost). This reduces concern for that imposed temporal pattern, but it is not online calibration, arbitrary drift robustness, or evidence for other memory/profile tasks. Keep the separate gate-p=.006 borderline result and cross-basis/d5 failures visible.
