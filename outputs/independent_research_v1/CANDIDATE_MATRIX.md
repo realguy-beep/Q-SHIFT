@@ -145,3 +145,8 @@ Two frozen-model d3 streams showed 17.95% and 17.81% macro LER reduction at ~1.3
 ### Fast selector under simultaneous measurement and bias shift
 
 The frozen d3 policy passed a joint shift (measurement p .006, bias ratio 5) on two independent streams: 14.62% and 14.02% macro LER reduction at ~1.35x cost; every per-cell interval favored it. This supports one specific two-axis simulator condition, beyond the separate one-axis challenges. It remains d3-only; the d5 transfer screen failed. Report: `../independent_research_v2/fast_flagged_logistic_combined_shift_report.md`.
+
+
+### One pooled d3 selector as a compact alternative
+
+Two pooled train/validation streams passed the baseline gate (14.5%/15.1% macro improvement, ~1.36x cost). Every condition improved over correlated matching. Compared on identical held-out streams, the specialized models remained better by ~.00010 absolute macro LER. Consider shared pooling only when a single coefficient set is valuable and that accuracy cost is acceptable; it is not an equivalent replacement or an unknown-profile solution. Report: `../independent_research_v2/fast_flagged_logistic_shared_selector_report.md`.

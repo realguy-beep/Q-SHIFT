@@ -214,3 +214,8 @@ The frozen d3 selector now has two independently replicated single-axis simulato
 ### Combined-shift evidence
 
 The frozen d3 selector also passed one predeclared combined measurement/bias shift on two streams (~14% macro reduction at ~1.35x cost). This is a stronger bounded robustness result than separate-axis evidence alone, but it remains one tested simulator composition and does not generalize to arbitrary drift or hardware. Keep claims scoped to these d3 conditions and shifts; preserve the d5 transfer failure as the distance boundary.
+
+
+### Shared versus specialized selector
+
+A single pooled d3 selector is a viable lower-complexity option: it passed the same baseline gate on two streams, but specialized per-condition models were measurably better by ~.00010 macro LER on the same validation samples. Keep both design choices explicit; use specialized models when accuracy is primary, and consider pooling only when one model bank is operationally preferable and the observed penalty is acceptable. No noninferiority criterion was set.

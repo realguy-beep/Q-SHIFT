@@ -457,3 +457,8 @@ At gate/measurement p=.003, the ratio-10 selector and matchers were frozen while
 ## Combined measurement and bias shift
 
 With the ratio-10, measurement-p=.003 models frozen, the simultaneous physical change to measurement p=.006 and bias ratio 5 produced 14.62% and 14.02% macro LER reductions on two fresh six-condition d3 streams. Paired macro difference intervals were [-.001065,-.000961] and [-.001010,-.000906]; all six cell intervals favored the selector on both streams. Full inference was 1.345x/1.362x. The unchanged gate passed. This is a specific joint simulator shift and remains d3-only; see `../independent_research_v2/fast_flagged_logistic_combined_shift_report.md`.
+
+
+## Shared pooled selector across six d3 conditions
+
+Two independent pooled train/validation runs gave 14.47% and 15.06% macro LER reduction over correlated matching at ~1.36x cost, passing the frozen gate with all six cells improved. On those same validation streams, six specialized models were more accurate by ~.00010 absolute macro LER; paired intervals favored specialization. A single model is a lower-complexity alternative with a small measured accuracy penalty, not an equivalent replacement. Details: `../independent_research_v2/fast_flagged_logistic_shared_selector_report.md`.

@@ -642,3 +642,12 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Independent fresh-seed replication: .006835→.005877, 14.02% reduction; paired macro delta -.000958 (95% CI [-.001010,-.000906]); cost 1.362x; all six cell intervals again favored selector. Frozen gate passed both times; no retraining or calibration.
 - This supports the tested joint d3 shift only; the separate d5 transfer screen remains negative. Added 6,120,000 unique samples (both streams 60k preflight +6M main); cumulative unique Q-SHIFT development samples: 149,028,200. No confirmatory/sealed data.
 - Full report: `outputs/independent_research_v2/fast_flagged_logistic_combined_shift_report.md`.
+
+
+## One shared flagged logistic selector — independent pooled replication — 2026-11-18
+
+- Tested whether one pooled d3 logistic model can replace six separate per-condition fits. Each pooled fit used 1M training shots/condition and a separate 1M validation stream/condition; both use 10k/condition preflight. The feature set and L2 optimizer were unchanged. Two initial attempts failed at import before sampling due to an incorrectly imported paired-statistics helper; fixed locally, no samples from failed attempts are counted.
+- First pooled fit: macro LER .0051555 correlated vs .0044093 shared (14.47% reduction); prior specialized models scored .0043043 on the same stream. Shared policy cost 1.361x. Fresh pooled replication: .0051753→.0043958 (15.06% reduction), specialized reference .0042978, shared cost 1.359x. Both pass the frozen >=10% / no >5% cell harm / <2x gate; every shared cell beat correlated matching.
+- Shared model was modestly less accurate than specialized models in both paired streams: shared-minus-specialized macro differences about +.000105 and +.000098, with paired intervals excluding zero. Do not claim equivalence; pooled model offers a simpler single coefficient set at a small measured accuracy cost.
+- Added 24,120,000 unique samples across both fits (120k preflight +12M training +12M validation); cumulative unique Q-SHIFT development samples: 173,148,200. No confirmatory/sealed data.
+- Detailed report: `outputs/independent_research_v2/fast_flagged_logistic_shared_selector_report.md`.

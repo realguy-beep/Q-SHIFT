@@ -432,3 +432,8 @@ Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_
 ### Combined measurement/bias shift challenge and replication
 
 Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_combined_shift.py`, and if the frozen gate passes, `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_combined_shift_replication.py`. Both freeze ratio-10/p=.003 models and evaluate at measurement p=.006, bias ratio 5. Protocol and report are in the same v2 directory.
+
+
+### Shared pooled d3 selector and independent replication
+
+Run the two scripts `fast_flagged_logistic_shared_selector.py` and `fast_flagged_logistic_shared_selector_replication.py` in `outputs/independent_research_v2/` with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python`. Each fits one model from six condition-specific training streams and validates on six independent streams; outputs are separate. Protocol, report, and same-stream specialized-reference comparison are in the same directory.

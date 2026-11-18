@@ -80,3 +80,8 @@ The frozen selector also survived one ratio-10 to ratio-5 bias shift on two d3 s
 ### Joint-shift robustness does not change novelty or scope
 
 The frozen selector passed one simultaneous measurement/bias shift on two d3 streams. This strengthens development evidence but remains an established supervised selective-decoding method, not a novelty claim. Its negative d5 transfer screen still prevents distance-scaling claims.
+
+
+### Pooled selector alternative
+
+Pooling the flagged examples into one logistic model is a compact implementation variant, not a novel method. It passed the baseline development gate but was measurably weaker than six specialized models. No algorithmic novelty or unknown-profile generalization is established.

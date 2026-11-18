@@ -276,3 +276,8 @@ The selector frozen at bias ratio 10 retained a 17.8%–18.0% macro LER reductio
 ### Combined shift did not erase the d3 selector benefit
 
 A two-axis challenge combining measurement p .003→.006 with bias ratio 10→5 retained a 14.0%–14.6% macro reduction on two fresh streams, with all per-cell intervals favorable and ~1.35x cost. This addresses interaction for one specified combination, but not arbitrary or larger shifts. It remains limited to d3 simulator conditions and cannot be extrapolated over the failed d5 transfer. The actual-profile matcher remains diagnostic, not an optimality bound. See `../independent_research_v2/fast_flagged_logistic_combined_shift_report.md`.
+
+
+### Shared pooling passes but gives up some specialization accuracy
+
+One pooled d3 model passed the same baseline advancement gate on two independent streams, reducing macro LER 14%–15% at ~1.36x cost. However, the same-stream specialized models were better by about .00010 absolute macro LER with paired intervals favoring specialization. The shared fit therefore trades a smaller coefficient bank and no condition-model routing for a modest accuracy loss. No noninferiority threshold was declared; do not state that it matches specialized performance. The d5 transfer boundary still applies.
