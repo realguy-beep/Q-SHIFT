@@ -107,3 +107,6 @@ The fifth-layer sparse-dictionary protocol stopped at its 100M Python-transition
 The final six-layer preflight narrowly exceeded the raw 16-outcome update cap, but exact per-location signature coalescing collapsed 576 labels to 296 unique `(detector,logical)` signatures. The coalesced vectorized DP and Walsh reference then passed at 524,288 states in6.10s, with2.32e-16 mass difference. This is an exact algebraic simplification, not probability pruning. Scope remains the isolated tail; added earlier channel layers can increase detector support exponentially.
 
 The seventh temporal layer adds two detector support bits, doubling the joint signature bound from 524,288 to 2,097,152; the fixed 1M-state cap fails before inference. Do not infer that every exact representation must fail at seven layers, but the current dense-signature DP/Walsh route is now beyond its declared memory/state budget.
+
+
+The seven-layer joint-state method stopped at its predeclared 1M-state cap. A separately designed parity-state formulation removed the redundant logical dimension without dropping information. It passed cross-checks, so the earlier stop was a representation boundary, not an inference boundary. The new method still has exponential syndrome-state cost and was only applied to a 42-location tail; its exact MAP risk cannot be interpreted as full-circuit LER.

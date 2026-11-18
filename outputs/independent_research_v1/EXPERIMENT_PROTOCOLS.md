@@ -135,3 +135,8 @@ A separate vectorized implementation of the fifth-layer signature convolution is
 The six-layer exact result uses the separate algebraic coalescing protocol `categorical_six_layer_coalesced_protocol.md`, which groups only identical detector/logical signatures and sums their probabilities. It is distinct from the raw 16-outcome preflight stop.
 
 The seventh-layer preflight uses the unchanged six-layer state/operation caps and stopped at 20 touched detectors; see `categorical_seven_layer_preflight_protocol.md` and its artifact.
+
+
+## Exact seven-layer syndrome/logical-parity inference
+
+A separate fixed protocol is in `categorical_seven_layer_parity_protocol.md`. It propagates total syndrome mass P(s) and signed logical parity Z(s)=P(s,L=0)-P(s,L=1), then computes isolated-fragment MAP risk as sum_s(P(s)-|Z(s)|)/2. It uses the stored forced-outcome signatures for the final seven categorical channel layers (42 locations, 20 detector bits), exact detector-mask coalescing, vectorized XOR convolution, and an independent Walsh transform. Fixed caps: <=1.1M syndrome states, <=1B combined P/Z updates, <=2B Walsh operations, <=1GiB estimated memory, and <=300s. Validation requires agreement with the existing six-layer joint distribution, full P/Z Walsh agreement, normalization/parity constraints, and 512 forced Stim combinations. It generates no stochastic samples and is not full-circuit decoding evidence.

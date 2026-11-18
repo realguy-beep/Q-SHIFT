@@ -283,3 +283,13 @@
 - Mapped the final seven channel layers (42 categorical locations); compact support grew to 20 detector bits. Joint detector/logical state bound 2,097,152 exceeds the fixed 1M cap; raw transition bound 1.409B also exceeds budget.
 - Stopped before mass expansion as predeclared. No stochastic samples. Exact coalesced DP/Walsh is demonstrated through six final layers only; this does not bound other structured exact representations.
 - Next: stop extending the same signature DP/Walsh method. Investigate a distinct tensor/temporal contraction strategy or another research family under its own feasibility protocol.
+
+
+## Exact seven-layer parity-state checkpoint — 2026-11-18
+
+- Branch `codex/qshift-independent-research-v1`; parent research checkpoint was `8341d48`.
+- Active hypothesis: remove the redundant binary logical dimension while retaining exact logical posterior information using syndrome total mass P and signed parity Z.
+- Fixed protocol caps: 1.1M states, 1B P/Z updates, 2B Walsh operations, 1GiB estimated memory, 300s; six-layer reference and 512 forced Stim checks required.
+- Completed: 42 categorical locations, 20 detector bits; 788,529,152 updates, 1,803,550,720 Walsh operations, 14.51s. P/Z Walsh errors 7.77e-16/3.33e-16; six-layer aggregation error 5.55e-16; 512 forced checks passed. Isolated tail risk 0.0010409337; no stochastic samples.
+- Exact reproduction command: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_seven_layer_parity.py`.
+- Remaining work: broaden to another research family and assess what exactness can say about full-circuit posterior; do not extrapolate tail risk to full circuit.

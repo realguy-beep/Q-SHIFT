@@ -56,3 +56,8 @@ An exploratory rescore using calibration prefixes of 25/100/500 shots per 100 lo
 
 The direct experiment uses 500 calibration circuits per 100 logical circuits. If calibration circuits cannot carry useful logical output, a simple correct-output-per-circuit-shot calculation requires calibration reuse over roughly 169k–618k logical shots, depending on bias, before this selector beats static Z on throughput. This plug-in calculation assumes stable noise for the full horizon; no such stability has been shown. Future work should define the operational objective (LER per logical attempt versus correct-output throughput), account for reusable calibration, and measure how quickly bias direction drifts.
 
+
+
+# Exact logical-parity contraction
+
+The new P/Z syndrome representation extends exact categorical tail inference from six to seven final channel layers while preserving all logical posterior information. The d3 tail used 14.5s and matched independent Walsh inference and the prior joint six-layer reference below 6e-16; all 512 forced Stim checks passed. Keep it as an exact-prototype tool for investigating local posterior contributions. Do not present its 0.00104 tail MAP risk as circuit-level LER or infer a global decoder gain. Extending it to the full circuit still faces exponential detector support and requires a new bounded plan.

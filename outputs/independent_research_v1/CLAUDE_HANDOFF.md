@@ -66,3 +66,8 @@ A sample-specific oracle ceiling further limits selector-only proposals for the 
 - A separate vectorized XOR-kernel protocol passed the five-layer state space: 524,288 states, DP/Walsh agreement 3.55e-15, 512 forced-fault checks, ~23MiB, 5.92s. The dictionary stop was implementation-specific. Full-circuit scaling is still untested.
 - Exact signature coalescing then passed six layers/36 locations: 576 raw outcomes reduced to 296 signatures; DP/Walsh difference 2.32e-16, 524,288 states, 512 checks, 6.10s. Probability mass is preserved by summing only identical detector/logical signatures. Full-circuit support is still untested.
 - Seventh-layer preflight reached 20 detectors/2,097,152 states and stopped at the fixed 1M cap before inference. Current exact vectorized slice limit is six final layers; this is not a bound on other tensor representations.
+
+
+## New exact tail-inference result
+
+A parity-compressed exact method was tested on the final seven channel layers of a d3 circuit. For each syndrome it tracks total mass P and signed logical mass Z, allowing exact binary logical MAP risk without carrying the logical bit as another state dimension. The 20-detector / 1,048,576-state fragment passed independent Walsh and six-layer joint-distribution checks (<6e-16), plus 512 forced Stim compositions, in 14.5 seconds; its isolated risk is 0.00104093. Artifacts and fixed protocol: `categorical_seven_layer_parity.py`, `_results.json`, and `_protocol.md`. This is a feasibility result for a tail fragment only, not a full-circuit decoder result.

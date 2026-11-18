@@ -24,3 +24,6 @@ A same-observable follow-up found the profile-selected matching bank statistical
 ## Publication boundary
 
 No publication-level novelty claim is justified by this expedition checkpoint. The current supported contribution is a negative feasibility result: the proposed non-approximated DEM follow-up cannot pass Stim conversion for Phase 2B's categorical `PAULI_CHANNEL_2` circuits, and an initial generalized sum-product Bethe approach failed an exact toy topology. External literature retrieval was partially blocked, so the broader novelty assessment remains provisional.
+
+
+The P(s), Z(s) representation is a standard parity/Fourier identity and is not claimed as a novel decoding algorithm. The development contribution is an independently validated implementation on Q-SHIFT's categorical seven-layer circuit tail, extending exact fragment feasibility beyond the prior joint-state cap. It does not establish novelty or full-circuit scalability.

@@ -110,3 +110,14 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the exact six-layer coalesced DP/Walsh result with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_six_layer_coalesced.py`. It consumes the saved six-layer forced-signature map and generates no stochastic samples.
 
 - Reproduce the seven-layer state/support preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_seven_layer_preflight.py`. It stops before posterior expansion at the fixed 1M-state cap.
+
+
+### Seven-layer parity-state exact fragment
+
+From the repository root run:
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_seven_layer_parity.py
+```
+
+The fixed caps and validation gates are in `outputs/independent_research_v1/categorical_seven_layer_parity_protocol.md`. The script uses stored forced-outcome signatures and does not generate stochastic samples.

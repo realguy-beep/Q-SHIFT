@@ -214,3 +214,11 @@
 
 - Final seven layers map to 42 locations/20 touched detectors; joint signature bound 2,097,152 exceeds fixed1M states, and raw transition estimate is1.409B. No probability expansion or stochastic sampling ran.
 - This bounds current coalesced dense-signature implementation at six final layers, not all exact methods. Artifact `categorical_seven_layer_preflight.json` preserves the signature map and cap result.
+
+
+## Checkpoint — exact seven-layer parity-state inference (2026-11-18)
+
+- Investigated the representation boundary after joint seven-layer signature inference exceeded 1M states. A new exact identity propagates syndrome mass and signed logical parity over 2^m states rather than 2^(m+1).
+- Declared fresh fixed caps and validation before inference. Seven-layer tail ran over 1,048,576 syndrome states (42 locations, 20 detectors), with 788.5M updates and 1.804B Walsh ops in 14.51s. P/Z independent Walsh errors <8e-16; six-layer joint-reference max error <6e-16; all 512 forced Stim checks passed.
+- Exact isolated-tail MAP risk 0.0010409337; not full-circuit LER. No stochastic shots. Result establishes a bounded exact representation, not a decoder gain.
+- Next: move to a distinct research question; do not increase caps or infer whole-circuit behavior from this fragment.
