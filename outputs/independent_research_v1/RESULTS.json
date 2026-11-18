@@ -4887,5 +4887,45 @@
     "projected_main_seconds": 92.02095225299854,
     "elapsed_seconds": 22.99974095899961,
     "scope": "fresh-seed d5 validation of frozen ratio10 versus ratio5; actual ratio 3.5 adds an interpolation point; no selection or adaptation"
+  },
+  "bias_graph_mechanism_audit": {
+    "status": "deterministic_matching_graph_mechanism_audit",
+    "artifact": "bias_graph_mechanism_results.json",
+    "stochastic_samples_generated": 0,
+    "conditions": 8,
+    "ratio10_builder_checks": {
+      "d3_x_biased_x_ratio10": true,
+      "d3_x_biased_z_ratio10": true,
+      "d3_z_biased_x_ratio10": true,
+      "d3_z_biased_z_ratio10": true,
+      "d5_x_biased_x_ratio10": true,
+      "d5_x_biased_z_ratio10": true,
+      "d5_z_biased_x_ratio10": true,
+      "d5_z_biased_z_ratio10": true
+    },
+    "summary_by_distance": [
+      {
+        "distance": 3,
+        "conditions": 4,
+        "topology_identical_count": 4,
+        "edge_count_by_condition": 142,
+        "mean_abs_weight_delta": 0.23827615190551932,
+        "median_abs_weight_delta_mean_across_conditions": 0.1308953245923523,
+        "fraction_weights_increased_mean_across_conditions": 0.7464788732394366,
+        "median_abs_probability_delta_mean_across_conditions": 0.0003531863278285791
+      },
+      {
+        "distance": 5,
+        "conditions": 4,
+        "topology_identical_count": 4,
+        "edge_count_by_condition": 950,
+        "mean_abs_weight_delta": 0.24923632132744145,
+        "median_abs_weight_delta_mean_across_conditions": 0.12770329364582822,
+        "fraction_weights_increased_mean_across_conditions": 0.7031578947368421,
+        "median_abs_probability_delta_mean_across_conditions": 0.0003531837505408689
+      }
+    ],
+    "elapsed_seconds": 0.16851616599888075,
+    "scope": "descriptive graph topology and edge-weight audit; no causal or LER claim"
   }
 }

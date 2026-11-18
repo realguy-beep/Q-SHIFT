@@ -155,3 +155,10 @@
 - Macro LER .0019131 for ratio5 and .0019331 for ratio10; paired ratio10-minus-ratio5 +.0000200 (conditional MC 95% interval [-.0000060,+.0000460]). No clear d5 difference; do not claim equivalence. The d3 ranking did not reproduce as a clear size-independent effect.
 - No confirmatory data accessed; cumulative Q-SHIFT development samples 40,195,800. Full report and per-cell output are saved in the d5 validation files.
 - Next: analyze graph/edge-weight shifts across assumed ratio and distance before considering more sampling.
+
+## Checkpoint — deterministic matching-graph audit (2026-11-18)
+
+- Audited eight ratio5-vs-ratio10 model pairs across d3/d5, both profiles, and both memory bases. Ratio10 source/scaled builder checks passed. No circuit shots generated.
+- All pairs had exact same topology and logical-fault labels: 142 edges at d3 and 950 at d5. Mean absolute edge-weight delta .238/.249, median .131/.128, and median absolute edge-error-probability delta .000353/.000353 at d3/d5. Ratio10 raised 74.6%/70.3% of common weights.
+- This rules out edge topology changes as the simple explanation; causal syndrome interaction remains open, and raw earlier shot records are unavailable. No fundamental inference from this deterministic audit.
+- Reproduce with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_graph_mechanism.py`.

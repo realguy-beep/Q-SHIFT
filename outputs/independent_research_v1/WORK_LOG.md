@@ -216,3 +216,10 @@
 - Macro LER was .0019331 (assumed10) versus .0019131 (assumed5). Paired ratio10-minus-ratio5 macro delta +.0000200, conditional MC 95% interval [-.0000060,+.0000460], including zero. Contrasts were near zero across actual strengths; actual ratio5 slightly favored assumed5, while ratio10 slightly favored assumed10. The d3 ratio10 advantage therefore did not replicate as a clear d5 effect. This is inconclusive, not evidence of equivalence.
 - Cumulative Q-SHIFT development samples: 40,195,800, including 1,600 preflight shots. No confirmatory data accessed. Artifacts/protocols and handoff/report updates are recorded.
 - Next: inspect how the matching graph/edge weights change across assumed ratios at d3 vs d5 to explain the apparent interaction before running another large sweep. Use deterministic graph diagnostics and exact same-syndrome redecoding of saved results where possible; do not tune or fit thresholds from these two distances.
+
+## Deterministic matching-graph mechanism audit — 2026-11-18
+
+- Rebuilt eight pairs of correlation-enabled matching models (d3/d5 × X/Z profile × X/Z basis) under assumed ratios5 and10. All source/scaled builder checks passed. No stochastic samples were generated.
+- Every pair had identical edge topology and logical-fault labels (142 edges at d3, 950 at d5). Mean absolute edge-weight perturbations were .238 (d3) and .249 (d5); medians .131 and .128; median absolute error-probability perturbation .000353 at both. The higher-ratio graph increased about 74.6% of common d3 weights and 70.3% at d5.
+- Therefore edge addition/removal does not explain the d3/d5 performance difference, and gross reweighting magnitudes are similar. This audit is descriptive and does not identify the syndrome/decision mechanism. Raw sample syndromes were not saved with the earlier aggregate artifacts, limiting offline paired error-pattern analysis.
+- Next: avoid further claims about why the finite-distance effect differs. If pursuing it, define a fresh targeted decoder-decision analysis where the same sample streams are retained and disagreement syndromes can be stratified; otherwise move to a separate research family.

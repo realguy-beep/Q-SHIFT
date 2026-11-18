@@ -117,3 +117,5 @@ The fixed screen is in `bias_strength_robustness_protocol.md`. Use d=3, five rou
 The frozen follow-up in `bias_strength_frozen_validation_protocol.md` independently compares only assumed ratios5 and10 on fresh seeds, including actual ratio3.5, for 16 cells. Ratio10-minus-ratio5 is the frozen primary paired contrast; the fixed condition macro and four actual-strength summaries are reported without post-hoc decoder selection.
 
 The second-distance check is fixed in `bias_strength_distance5_validation_protocol.md`: same ratio pair and actual-strength grid, d=5 with nine rounds, 16 cells, and 100,000 samples/cell. It is expressly a finite-distance replication, not threshold analysis.
+
+The deterministic topology/weight audit is in `bias_graph_mechanism_protocol.md`; it rebuilds both model graphs at d3 and d5, checks their edge signatures, and summarizes weight changes without generating samples.

@@ -83,3 +83,5 @@ A fresh-seed ratio10-vs-ratio5 run retained the macro ratio10 advantage and adde
 
 At d5, the same frozen ratio10-vs-ratio5 contrast was near zero (+.000020, conditional MC 95% interval [-.000006,+.000046]) and did not reproduce the d3 ranking. Thus the earlier effect is not shown to scale with distance. The d5 aligned-rate cells are sparse, so this does not establish equivalence; it is a no-clear-difference result under this sample size and condition grid.
 
+A deterministic graph audit found identical ratio5/ratio10 topology and logical-fault labels in every d3/d5 profile/basis pair, with comparable median edge-weight changes (.131 at d3, .128 at d5). Thus edge addition/removal is not the explanation. The audit does not resolve how different syndrome distributions interact with those weights; no raw detector arrays were saved in the robustness results, so that causal path remains untested.
+
