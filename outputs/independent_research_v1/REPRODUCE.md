@@ -32,7 +32,7 @@ The toy tests load analytically defined categorical circuits and exact-posterior
 - Phase 2B decoder bank SHA-256: `ea88bbd9c60b027b7525d330db39df5c48fc3495a6644a9b991fa70ac2161080`.
 - `research_direction_selection/PILOT_PROTOCOL.md` SHA-256: `96a08320b8f01a42f6be7b6526c8092e12e9202d0a0b2bf9738c24b8579c797a`.
 - `research_direction_selection/SELECTED_DIRECTION.md` SHA-256: `6655a6f0aa28380f7145b4531eaa49af634c9e97d30815fd89a0c3cbb3e1b98f`.
-- No confirmatory data or independent-test material was accessed. No stochastic Q-SHIFT shot experiment was run in this checkpoint.
+- No confirmatory data or independent-test material was accessed. Development-only source-circuit shots and separate ideal-syndrome qecsim code-capacity shots are recorded in `RESULTS.json` with their scopes.
 
 ## Continuation
 
@@ -53,3 +53,7 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the distance-5 timing/shape preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/code_distance_scaling.py --preflight`; the fixed development screen runs without `--preflight`.
 
 - Reproduce the bias-strength preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/bias_crossover.py --preflight`; rerun the fixed development screen without `--preflight`.
+
+- Reproduce the distance-7 known-profile extension preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/basis_alignment_distance7.py --preflight`; the fixed 500,000-shot-per-cell run uses the same command without `--preflight`.
+
+- Reproduce the fixed-bond qecsim MPS 100-shot preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/tensor_mps_truncated.py --preflight`; reproduce the fixed χ=16 development screen without `--preflight`.

@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 2914400,
+  "stochastic_qshift_shots_generated": 4914800,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -1468,5 +1468,151 @@
     "elapsed_seconds": 80.37809856500007,
     "stochastic_qshift_circuit_shots": 0,
     "scope": "ideal-syndrome code-capacity depolarizing model; not Q-SHIFT circuit-level validation"
+  },
+  "known_profile_memory_basis_distance7": {
+    "status": "distance_7_development_screen",
+    "stim_version": "1.16.0",
+    "pymatching_version": "2.4.0",
+    "distance": 7,
+    "rounds": 13,
+    "gate_error_probability": 0.003,
+    "measurement_error_probability": 0.003,
+    "bias_ratio": 10.0,
+    "d3_builder_byte_identical_to_source": {
+      "z_x_biased": true,
+      "x_x_biased": true,
+      "z_balanced": true,
+      "x_balanced": true,
+      "z_z_biased": true,
+      "x_z_biased": true
+    },
+    "matched_resources_by_regime": true,
+    "shots_per_condition": 500000,
+    "conditions": [
+      {
+        "memory_basis": "z",
+        "regime": "x_biased",
+        "seed": 2026111511,
+        "shots": 500000,
+        "physical_qubits": 118,
+        "detectors": 624,
+        "observables": 1,
+        "two_qubit_channel_pairs": 2184,
+        "failures": 1009,
+        "ler": 0.002018,
+        "wilson_95": [
+          0.00189737770594951,
+          0.0021462741446477396
+        ],
+        "sampling_seconds": 5.1722766350012535,
+        "batched_decode_seconds": 2.9975798619998386,
+        "seconds_per_decode": 5.995159723999677e-06,
+        "batch_scalar_checks": 100,
+        "max_rss_kib": 748596
+      },
+      {
+        "memory_basis": "x",
+        "regime": "x_biased",
+        "seed": 2026111512,
+        "shots": 500000,
+        "physical_qubits": 118,
+        "detectors": 624,
+        "observables": 1,
+        "two_qubit_channel_pairs": 2184,
+        "failures": 5,
+        "ler": 1e-05,
+        "wilson_95": [
+          4.271409598741289e-06,
+          2.3411295358704687e-05
+        ],
+        "sampling_seconds": 5.286213107001458,
+        "batched_decode_seconds": 2.962395074999222,
+        "seconds_per_decode": 5.924790149998444e-06,
+        "batch_scalar_checks": 100,
+        "max_rss_kib": 788628
+      },
+      {
+        "memory_basis": "z",
+        "regime": "z_biased",
+        "seed": 2026111513,
+        "shots": 500000,
+        "physical_qubits": 118,
+        "detectors": 624,
+        "observables": 1,
+        "two_qubit_channel_pairs": 2184,
+        "failures": 3,
+        "ler": 6e-06,
+        "wilson_95": [
+          2.040543507146045e-06,
+          1.764222291316884e-05
+        ],
+        "sampling_seconds": 5.782950811999399,
+        "batched_decode_seconds": 3.087648839000394,
+        "seconds_per_decode": 6.175297678000789e-06,
+        "batch_scalar_checks": 100,
+        "max_rss_kib": 788716
+      },
+      {
+        "memory_basis": "x",
+        "regime": "z_biased",
+        "seed": 2026111514,
+        "shots": 500000,
+        "physical_qubits": 118,
+        "detectors": 624,
+        "observables": 1,
+        "two_qubit_channel_pairs": 2184,
+        "failures": 1227,
+        "ler": 0.002454,
+        "wilson_95": [
+          0.0023206289895032033,
+          0.0025950161616413343
+        ],
+        "sampling_seconds": 5.6074307529997895,
+        "batched_decode_seconds": 3.558794143000341,
+        "seconds_per_decode": 7.117588286000682e-06,
+        "batch_scalar_checks": 100,
+        "max_rss_kib": 788716
+      }
+    ],
+    "aligned_vs_mismatched": [
+      {
+        "regime": "x_biased",
+        "aligned_basis": "x",
+        "mismatched_basis": "z",
+        "aligned_failures": 5,
+        "mismatched_failures": 1009,
+        "aligned_ler": 1e-05,
+        "mismatched_ler": 0.002018,
+        "aligned_over_mismatched_rate_ratio": {
+          "ratio": 0.004955401387512388,
+          "conditional_exact_95_ci": [
+            0.0016055250310669095,
+            0.01017155580454196
+          ],
+          "equal_rate_exact_p": 1.0127138430809355e-292
+        }
+      },
+      {
+        "regime": "z_biased",
+        "aligned_basis": "z",
+        "mismatched_basis": "x",
+        "aligned_failures": 3,
+        "mismatched_failures": 1227,
+        "aligned_ler": 6e-06,
+        "mismatched_ler": 0.002454,
+        "aligned_over_mismatched_rate_ratio": {
+          "ratio": 0.0024449877750611247,
+          "conditional_exact_95_ci": [
+            0.0005035215825062363,
+            0.005895825090268658
+          ],
+          "equal_rate_exact_p": 0.0
+        }
+      }
+    ],
+    "elapsed_seconds": 34.62695201399947,
+    "projected_main_seconds": null,
+    "stochastic_circuit_shots": 2000000,
+    "scope": "third finite-distance point for fixed known-profile basis alignment; not threshold or adaptive-policy evidence"
   }
 }

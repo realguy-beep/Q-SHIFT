@@ -51,3 +51,10 @@
 - Completed fixed chi=16 qecsim MPS vs qecsim MWPM on 5,000 paired ideal-syndrome IID depolarizing samples at p=.05 for d=3,5. MPS recorded 123 vs 206 logical failures at d3 and 30 vs 92 at d5; all recoveries valid. McNemar p values 3.49e−17 and 9.33e−12.
 - Result supports a model-specific code-capacity advantage with significant latency cost (13.74 ms/sample at d5 vs 0.507 ms for Python MWPM). It is not Q-SHIFT circuit-level evidence, a threshold estimate, or a scaling law.
 - Earlier candidate findings and limitations are retained. Next: establish circuit compatibility and a strong circuit-level baseline before further MPS work; if infeasible, prioritize another distinct candidate. Reproduce with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/tensor_mps_truncated.py` from the worktree.
+
+## Checkpoint — distance-7 basis alignment — 2026-11-18
+
+- Current branch/worktree: `codex/qshift-independent-research-v1` / `/workspace/qshift-independent-research-v1`. New files `basis_alignment_distance7.py`, preflight and results JSON. No changes outside isolated research worktree, no publication.
+- Extended known-profile X/Z memory orientation to d=7/13 rounds at p=.003, ratio 10, using exact categorical source circuits and the same approximate DEM/correlation-enabled PyMatching approach as earlier comparisons. Resources match: 118 qubits, 624 detectors, 2,184 two-qubit channel pairs.
+- Fixed batch decode passed scalar agreement on all 100 preflight syndromes in each condition. Main 500k per cell completed in 34.6s. Aligned failures: X-under-X-bias 5 vs 1,009; Z-under-Z-bias 3 vs 1,227. Rate ratios .00496 and .00244, with exact conditional intervals [.00161,.01017] and [.000504,.00590]. Sparse aligned counts limit absolute-rate precision; no threshold/scaling model.
+- Updated cumulative Q-SHIFT development circuit sample count to 4,914,800. No confirmatory/sealed evaluation accessed. Next: reassess if a useful unknown-bias protocol can beat the static known-profile bank using only detector data; do not use the outcome-aware basis here as an online policy.
