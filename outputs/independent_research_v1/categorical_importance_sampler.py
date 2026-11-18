@@ -36,13 +36,15 @@ def tilted_channel(probabilities: list[float], alpha: float) -> list[float]:
     return [float(alpha * x / denom) for x in p]
 
 
-def instrument_circuit(circuit: stim.Circuit, alpha: float) -> tuple[stim.Circuit, list[dict]]:
+def instrument_circuit(circuit: stim.Circuit, alpha: float,
+                       channel_proposals: list[list[float]] | None = None) -> tuple[stim.Circuit, list[dict]]:
     """Replace each pair channel with an exact categorical branch and private flags."""
     source = circuit.flattened()
     out = stim.Circuit()
     events: list[dict] = []
     flag_qubits: list[int] = []
     next_flag_qubit = circuit.num_qubits
+    event_index = 0
 
     for instruction in source:
         if instruction.name != "PAULI_CHANNEL_2":
@@ -55,10 +57,16 @@ def instrument_circuit(circuit: stim.Circuit, alpha: float) -> tuple[stim.Circui
         targets = instruction.targets_copy()
         if len(targets) % 2:
             raise RuntimeError("PAULI_CHANNEL_2 has an odd number of qubit targets")
-        q_probabilities = tilted_channel(probabilities, alpha)
-
         # Each target pair in one PAULI_CHANNEL_2 instruction is an independent draw.
         for offset in range(0, len(targets), 2):
+            if channel_proposals is None:
+                q_probabilities = tilted_channel(probabilities, alpha)
+            else:
+                if event_index >= len(channel_proposals):
+                    raise ValueError("channel proposal list is shorter than the circuit's channel-pair count")
+                q_probabilities = [float(x) for x in channel_proposals[event_index]]
+                if len(q_probabilities) != 15 or min(q_probabilities) <= 0 or sum(q_probabilities) >= 1:
+                    raise ValueError(f"invalid categorical proposal at channel-pair index {event_index}")
             data_qubits = (int(targets[offset].value), int(targets[offset+1].value))
             flags = tuple(range(next_flag_qubit, next_flag_qubit+4))
             next_flag_qubit += 4
@@ -84,6 +92,10 @@ def instrument_circuit(circuit: stim.Circuit, alpha: float) -> tuple[stim.Circui
                 "data_qubits": data_qubits,
             })
             flag_qubits.extend(flags)
+            event_index += 1
+
+    if channel_proposals is not None and event_index != len(channel_proposals):
+        raise ValueError("channel proposal list is longer than the circuit's channel-pair count")
 
     if events:
         out.append("M", flag_qubits)

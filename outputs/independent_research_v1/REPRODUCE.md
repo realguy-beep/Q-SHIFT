@@ -45,3 +45,7 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the rare-event estimator preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/rare_event_is.py --preflight`; reproduce the main and 8-replicate development runs with the same script and respectively no flag or `--replicates 8 --shots 5000`. These runs sample approximate DEMs only.
 
 - Reproduce exact-channel instrumentation validity/timing with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_importance_sampler.py --preflight`; reproduce the fixed main sample without `--preflight`; reproduce the two independent stability blocks using `--replicates 8 --shots 5000` and `--replicates 8 --replicate-start 8 --shots 5000`. Validate against raw Stim circuit sampling with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_sampler_crosscheck.py`.
+
+- Reproduce the cross-entropy training/validation run with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_cross_entropy.py`; it writes its learned proposal and independent validation metrics to `categorical_cross_entropy_results.json`.
+
+- Reproduce the memory-basis analysis from the saved independent direct-arm aggregates with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/basis_orientation_analysis.py`. It samples no new shots.

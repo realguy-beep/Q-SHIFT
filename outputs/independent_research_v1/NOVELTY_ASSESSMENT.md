@@ -15,6 +15,8 @@ A native categorical factor graph could preserve mutually exclusive Pauli gate o
 
 The practical use of an independent-root LER gate for correlation-aware decoding may yield an empirical systems result, but a 720,000-shot Q-SHIFT development pilot already exists and failed its practical-effect gate. Repeating it or presenting it as a newly discovered decoder would have no novelty.
 
+Memory-basis alignment under known Pauli bias is established bias-aware code configuration, not a novel decoder. The new distance-3 measurements provide Q-SHIFT-specific matched-resource evidence (5.2×–11.1× lower LER in the aligned biased conditions), but novelty would require a new code/circuit schedule, a robust policy under bias drift, or a resource-aware scaling result. No such claim is supported here.
+
 ## Publication boundary
 
 No publication-level novelty claim is justified by this expedition checkpoint. The current supported contribution is a negative feasibility result: the proposed non-approximated DEM follow-up cannot pass Stim conversion for Phase 2B's categorical `PAULI_CHANNEL_2` circuits, and an initial generalized sum-product Bethe approach failed an exact toy topology. External literature retrieval was partially blocked, so the broader novelty assessment remains provisional.

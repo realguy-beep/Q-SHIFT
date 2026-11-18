@@ -66,3 +66,17 @@
 - Independent exact-circuit stability check: two blocks of eight fresh replicates, each 5k per arm/condition. Across 16 replicates, mean direct and weighted estimates agree within 1.37 SE in every condition, but per-condition between-replicate SD ratios are 0.516, 0.789, 1.638, 0.783, 0.827, 1.078. Macro ratio is 1.12. Thus the weight estimator is validated, but this global 5x tilt is not a robust variance reduction and can increase variance in selected regimes. Do not claim general efficiency gain.
 - Total new Phase 2B circuit samples for this branch now 1,352,400, all development-only and all in the isolated branch; no confirmatory data accessed. Additional 780,000 samples were from approximate DEM surrogate runs.
 - Continue by identifying structured proposal distributions or return to code/noise co-design; no post-hoc tilt tuning on these samples.
+
+## Cross-entropy proposal checkpoint — 2026-11-18 16:02 UTC
+
+- Implemented the forward-KL independent product projection of the decoder-failure-conditioned per-location categorical marginals. Trained on 100,000 exact categorical circuit samples per condition under global 5x tilt, weighted back to the original channel law, with 50 baseline pseudocounts per location. Validation used fresh 20k direct, global-tilt, and cross-entropy arms per condition.
+- Code smoke check passed on an independent quick sample with 120 channel locations and finite weights. Full validation completed in 18 seconds. The proposal failed its predeclared advancement gate in 0/6 conditions; no condition had >=25% SE reduction against both comparators. All estimates were within 3 combined SE, but lowest cross-entropy failure ESS was 9.0 and maximum weight was 77.3.
+- Result: the independent conditional-marginal proposal does not capture enough failure trajectory structure at the tested shrinkage. No post-validation tuning was performed. Added 960,000 new source-circuit development shots; cumulative new Phase2B development shots 2,312,400. No confirmatory evidence accessed.
+- Next: continue to code/circuit co-design or investigate alternative structured rare-event progress functions; avoid tuning the failed proposal on these results.
+
+## Known-profile code/circuit co-design result — 2026-11-18 16:12 UTC
+
+- Reused two independent exact circuit samples already generated for the categorical importance study and its raw Stim crosscheck: 40,000 total shots per memory-basis/noise cell. No additional circuit samples were launched.
+- At matched resources (26 physical qubits, 40 detectors, 5 rounds, same gate/measurement p), X-memory under X-biased noise reduced failures 80.6% versus Z-memory (51 vs 263 / 40k; rate ratio .194, exact conditional 95% CI .141–.257). Z-memory under Z-biased noise reduced failures 91.0% versus X-memory (28 vs 312 / 40k; ratio .0897, CI .0614–.1323). Balanced noise had no evidence of a basis effect (187 vs 197; ratio 1.05, CI .858–1.280).
+- This is known-profile orientation evidence at d=3 only. It is not novel code construction, decoder superiority, or an adaptive selection result; no data on drift or scale.
+- Total generated Phase2B circuit samples remain 2,312,400; this analysis reuses saved aggregate result files.

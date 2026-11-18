@@ -1,0 +1,283 @@
+{
+  "status": "development_analysis_of_two_independent_exact_circuit_samples",
+  "samples_per_basis_regime": 40000,
+  "data_sources": [
+    "categorical_importance_results.json direct arm",
+    "categorical_sampler_crosscheck.json unmodified Stim arm"
+  ],
+  "decoder": "correlation-enabled PyMatching using the same approximate DEM construction",
+  "interval_method": "conditional binomial/Poisson rate-ratio interval for rare failures; exact two-sided binomial test under equal rates",
+  "conditions": [
+    {
+      "regime": "x_biased",
+      "per_basis": {
+        "z": {
+          "failures": 263,
+          "shots": 40000,
+          "ler": 0.006575
+        },
+        "x": {
+          "failures": 51,
+          "shots": 40000,
+          "ler": 0.001275
+        }
+      },
+      "x_over_z_rate_ratio": 0.19391634980988592,
+      "x_over_z_conditional_exact_95_ci": [
+        0.1407547065601956,
+        0.25704906543186734
+      ],
+      "equal_rate_two_sided_p": 1.4342113911353444e-35,
+      "bias_aligned_basis": "x",
+      "bias_mismatched_basis": "z",
+      "aligned_over_mismatched_rate_ratio": 0.19391634980988592,
+      "aligned_over_mismatched_95_ci": [
+        0.1407547065601956,
+        0.25704906543186734
+      ],
+      "relative_reduction_from_alignment": 0.8060836501901141,
+      "resources_by_basis": {
+        "z": {
+          "physical_qubits": 26,
+          "detectors": 40,
+          "observables": 1,
+          "noise_channel_counts": {
+            "PAULI_CHANNEL_1": 10,
+            "PAULI_CHANNEL_2": 20,
+            "X_ERROR": 6,
+            "Z_ERROR": 0
+          },
+          "noise_target_counts": {
+            "one_qubit_channel_targets": 40,
+            "two_qubit_channel_pairs": 120,
+            "measurement_flip_targets": 49
+          },
+          "gate_error_probability": 0.003,
+          "measurement_error_probability": 0.003
+        },
+        "x": {
+          "physical_qubits": 26,
+          "detectors": 40,
+          "observables": 1,
+          "noise_channel_counts": {
+            "PAULI_CHANNEL_1": 10,
+            "PAULI_CHANNEL_2": 20,
+            "X_ERROR": 5,
+            "Z_ERROR": 1
+          },
+          "noise_target_counts": {
+            "one_qubit_channel_targets": 40,
+            "two_qubit_channel_pairs": 120,
+            "measurement_flip_targets": 49
+          },
+          "gate_error_probability": 0.003,
+          "measurement_error_probability": 0.003
+        }
+      },
+      "common_resource_counts_match": true,
+      "matched_resources": {
+        "distance": 3,
+        "rounds": 5,
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "same_noise_target_counts": true,
+        "per_basis_measurement_error_channels": {
+          "z": {
+            "PAULI_CHANNEL_1": 10,
+            "PAULI_CHANNEL_2": 20,
+            "X_ERROR": 6,
+            "Z_ERROR": 0
+          },
+          "x": {
+            "PAULI_CHANNEL_1": 10,
+            "PAULI_CHANNEL_2": 20,
+            "X_ERROR": 5,
+            "Z_ERROR": 1
+          }
+        }
+      }
+    },
+    {
+      "regime": "balanced",
+      "per_basis": {
+        "z": {
+          "failures": 187,
+          "shots": 40000,
+          "ler": 0.004675
+        },
+        "x": {
+          "failures": 197,
+          "shots": 40000,
+          "ler": 0.004925
+        }
+      },
+      "x_over_z_rate_ratio": 1.0534759358288772,
+      "x_over_z_conditional_exact_95_ci": [
+        0.858018018738572,
+        1.2803431005506405
+      ],
+      "equal_rate_two_sided_p": 0.6460903332592174,
+      "bias_aligned_basis": null,
+      "bias_mismatched_basis": null,
+      "aligned_over_mismatched_rate_ratio": 1.0534759358288772,
+      "aligned_over_mismatched_95_ci": [
+        0.858018018738572,
+        1.2803431005506405
+      ],
+      "relative_reduction_from_alignment": null,
+      "resources_by_basis": {
+        "z": {
+          "physical_qubits": 26,
+          "detectors": 40,
+          "observables": 1,
+          "noise_channel_counts": {
+            "PAULI_CHANNEL_1": 10,
+            "PAULI_CHANNEL_2": 20,
+            "X_ERROR": 6,
+            "Z_ERROR": 0
+          },
+          "noise_target_counts": {
+            "one_qubit_channel_targets": 40,
+            "two_qubit_channel_pairs": 120,
+            "measurement_flip_targets": 49
+          },
+          "gate_error_probability": 0.003,
+          "measurement_error_probability": 0.003
+        },
+        "x": {
+          "physical_qubits": 26,
+          "detectors": 40,
+          "observables": 1,
+          "noise_channel_counts": {
+            "PAULI_CHANNEL_1": 10,
+            "PAULI_CHANNEL_2": 20,
+            "X_ERROR": 5,
+            "Z_ERROR": 1
+          },
+          "noise_target_counts": {
+            "one_qubit_channel_targets": 40,
+            "two_qubit_channel_pairs": 120,
+            "measurement_flip_targets": 49
+          },
+          "gate_error_probability": 0.003,
+          "measurement_error_probability": 0.003
+        }
+      },
+      "common_resource_counts_match": true,
+      "matched_resources": {
+        "distance": 3,
+        "rounds": 5,
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "same_noise_target_counts": true,
+        "per_basis_measurement_error_channels": {
+          "z": {
+            "PAULI_CHANNEL_1": 10,
+            "PAULI_CHANNEL_2": 20,
+            "X_ERROR": 6,
+            "Z_ERROR": 0
+          },
+          "x": {
+            "PAULI_CHANNEL_1": 10,
+            "PAULI_CHANNEL_2": 20,
+            "X_ERROR": 5,
+            "Z_ERROR": 1
+          }
+        }
+      }
+    },
+    {
+      "regime": "z_biased",
+      "per_basis": {
+        "z": {
+          "failures": 28,
+          "shots": 40000,
+          "ler": 0.0007
+        },
+        "x": {
+          "failures": 312,
+          "shots": 40000,
+          "ler": 0.0078
+        }
+      },
+      "x_over_z_rate_ratio": 11.142857142857137,
+      "x_over_z_conditional_exact_95_ci": [
+        7.559903064552973,
+        16.2811567259097
+      ],
+      "equal_rate_two_sided_p": 7.80251449616019e-62,
+      "bias_aligned_basis": "z",
+      "bias_mismatched_basis": "x",
+      "aligned_over_mismatched_rate_ratio": 0.08974358974358979,
+      "aligned_over_mismatched_95_ci": [
+        0.06142069736412574,
+        0.13227682834834487
+      ],
+      "relative_reduction_from_alignment": 0.9102564102564102,
+      "resources_by_basis": {
+        "z": {
+          "physical_qubits": 26,
+          "detectors": 40,
+          "observables": 1,
+          "noise_channel_counts": {
+            "PAULI_CHANNEL_1": 10,
+            "PAULI_CHANNEL_2": 20,
+            "X_ERROR": 6,
+            "Z_ERROR": 0
+          },
+          "noise_target_counts": {
+            "one_qubit_channel_targets": 40,
+            "two_qubit_channel_pairs": 120,
+            "measurement_flip_targets": 49
+          },
+          "gate_error_probability": 0.003,
+          "measurement_error_probability": 0.003
+        },
+        "x": {
+          "physical_qubits": 26,
+          "detectors": 40,
+          "observables": 1,
+          "noise_channel_counts": {
+            "PAULI_CHANNEL_1": 10,
+            "PAULI_CHANNEL_2": 20,
+            "X_ERROR": 5,
+            "Z_ERROR": 1
+          },
+          "noise_target_counts": {
+            "one_qubit_channel_targets": 40,
+            "two_qubit_channel_pairs": 120,
+            "measurement_flip_targets": 49
+          },
+          "gate_error_probability": 0.003,
+          "measurement_error_probability": 0.003
+        }
+      },
+      "common_resource_counts_match": true,
+      "matched_resources": {
+        "distance": 3,
+        "rounds": 5,
+        "physical_qubits": 26,
+        "detectors": 40,
+        "observables": 1,
+        "same_noise_target_counts": true,
+        "per_basis_measurement_error_channels": {
+          "z": {
+            "PAULI_CHANNEL_1": 10,
+            "PAULI_CHANNEL_2": 20,
+            "X_ERROR": 6,
+            "Z_ERROR": 0
+          },
+          "x": {
+            "PAULI_CHANNEL_1": 10,
+            "PAULI_CHANNEL_2": 20,
+            "X_ERROR": 5,
+            "Z_ERROR": 1
+          }
+        }
+      }
+    }
+  ],
+  "interpretation": "same-resource bias-aligned memory basis improves LER in biased regimes; this is known-profile code/circuit co-design, not decoder superiority or an adaptive-policy result"
+}

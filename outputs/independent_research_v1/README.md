@@ -29,3 +29,7 @@ The remaining requested reports and any prototype are pending. Treat all conclus
 - Added an importance-sampling method study with exact toy weight validation and eight-replicate stability check. It improves precision for the approximate DEM surrogate only; it is not a circuit-level rare-event estimate.
 
 - Extended the importance-sampling work to the exact categorical circuit channels with validated event recording, source-sampler crosscheck, and 16 independent replicates. The likelihood ratio is valid, but the tested global tilt did not reduce variance consistently across regimes.
+
+- A cross-entropy proposal learned from failure-conditioned categorical marginals was tested with independent validation and failed its predeclared variance-reduction gate in all conditions. See `categorical_cross_entropy_results.json`.
+
+- Added a same-resource memory-basis analysis: known-bias alignment improved LER in the two biased distance-3 profiles; the balanced profile showed no difference. This is static-profile co-design evidence only.

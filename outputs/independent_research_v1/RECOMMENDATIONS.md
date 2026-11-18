@@ -25,3 +25,7 @@ The new BP+LSD distance-3 screen is a negative signal: the tested LDPC 2.4.1 set
 
 
 The exact categorical importance sampler has been implemented and independently checked against raw Stim circuit sampling. The likelihood ratio is valid, but a uniform fivefold tilt does not reliably lower overall estimator variance: the 16-replicate macro SD was 12% higher, with pronounced condition dependence. Treat it as a correct weighting framework, not an efficiency result. A useful next study needs a prospectively derived proposal that targets rare logical failures without extreme weights, then a fresh independent variance comparison.
+
+The cross-entropy product proposal was a principled way to use failure-conditioned categorical marginals, but it failed the independent validation gate in all six conditions and sometimes had very low failure ESS. Do not tune its shrinkage or proposal values on the inspected validation data. A next rare-event method should model joint progress or fault clusters, not only independent per-location marginals, and must retain independent validation.
+
+Under a known stable Pauli bias, memory-basis alignment is a low-overhead baseline worth preserving: these matched distance-3 circuits show 5×–11× LER reductions without changing the qubit, detector, round, or error-rate budget. It is established bias-aware code configuration, not an adaptive result. Any dynamic controller should be compared against the correct fixed aligned basis and include the cost and error of estimating a changing bias.
