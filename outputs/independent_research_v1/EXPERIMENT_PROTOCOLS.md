@@ -127,3 +127,5 @@ The bounded two-qubit fault-composition screen is in `shared_failure_fault_mecha
 The sparse exact categorical extensions are fixed in `categorical_two_layer_sparse_protocol.md` and `categorical_three_layer_sparse_protocol.md`. They aggregate by detector/logical XOR signatures, cross-check with an independent representation, and never allocate the dense VE factor that exceeded its cap.
 
 A fourth-layer extension has a fixed protocol in `categorical_four_layer_sparse_protocol.md`; the tested four-layer pass stays within the signature-state and operation caps and is explicitly isolated-fragment evidence.
+
+The five-layer sparse protocol and explicit stop are documented in `categorical_five_layer_sparse_protocol.md`; the preflight exceeded the fixed sparse-operation cap, so no exact expansion was run.

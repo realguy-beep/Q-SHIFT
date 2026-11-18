@@ -194,3 +194,8 @@
 
 - Extended preflight to the final four PAULI_CHANNEL_2 layers (24 locations). Support remained 12 detector bits. Sparse DP/Walsh joint masses agreed to2.78e-15 over 8,192 states, normalization passed, and 512 forced-fault tests matched. Runtime3.55s; no samples. Isolated MAP risk is not full-circuit LER.
 - Continue only to a fifth-layer resource preflight next.
+
+## Checkpoint — fifth-layer sparse preflight stop (2026-11-18)
+
+- Forced-outcome mapping of the final five channel layers found 30 locations and 18 touched detectors. Upper bound 524,288 joint states; transition bound 251.66M exceeded the fixed 100M cap. Stopped before inference as planned; no samples generated.
+- This limits the current sparse-DP protocol at four layers; it is not a lower bound on other representations. Artifact `categorical_five_layer_preflight.json` preserves signatures and resource estimates.

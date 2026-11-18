@@ -259,3 +259,9 @@
 - The preflight passed for 24 categorical locations; all four final channel layers still touch only 12 detectors (8,192 joint states). Exact sparse DP and Walsh convolution agreed over all 4,096 syndromes to 2.78e-15; 512 forced combined-fault checks passed; normalization .9999999999999988; 3.55s.
 - Isolated four-layer MAP risk .000431, not a full-circuit LER. Sparse DP used 1.62M transitions and Walsh 2.66M operations. No stochastic samples generated.
 - Local support stayed at 12 detector bits across this temporal slice; this does not imply support remains bounded for longer/full circuits. Next: preflight a fifth layer against existing state/operation caps.
+
+## Fifth-layer sparse categorical preflight stop — 2026-11-18
+
+- Mapped the final five six-pair channel layers (30 locations) through forced-outcome Stim signatures. Compact detector support rose from 12 at four layers to 18; joint state upper bound 524,288; sparse-DP transition bound 251,658,240.
+- The fixed protocol cap was 1,000,000 states/100,000,000 transitions, so the run stopped before mass expansion. No inference table/mass distribution and no stochastic samples generated. Do not raise the cap post hoc; this is the current bounded sparse-DP boundary, not a lower bound for other exact representations.
+- Next: return to broader candidates or investigate a new representation under a separately predeclared resource design; do not keep extending layer count under changing caps.
