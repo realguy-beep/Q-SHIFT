@@ -1,0 +1,237 @@
+{
+  "status": "common_variance_preflight",
+  "nominal_score_means": {
+    "x_biased": -0.11018636938308729,
+    "z_biased": 0.10946998321970859
+  },
+  "nominal_score_variances": {
+    "x_biased": 0.20742010254537505,
+    "z_biased": 0.18289699772103085
+  },
+  "pooled_variance": 0.19515855013320293,
+  "fixed_wald_threshold": 2.9444389791664403,
+  "regimes": [
+    {
+      "name": "nominal",
+      "gate_p": 0.003,
+      "measurement_p": 0.003
+    },
+    {
+      "name": "measurement_shift",
+      "gate_p": 0.003,
+      "measurement_p": 0.006
+    }
+  ],
+  "conditions": [
+    {
+      "regime": "nominal",
+      "measurement_p": 0.003,
+      "profile": "x_biased",
+      "seed": 2026115921,
+      "resources": {
+        "source_builder_byte_identical": true,
+        "detectors": 40,
+        "bucket_sizes": [
+          12,
+          12,
+          8,
+          8
+        ]
+      },
+      "windows": 100,
+      "score_mean": -0.11025055691647884,
+      "score_variance": 0.2050092713368401,
+      "common_variance_sprt_errors": 3,
+      "common_variance_sprt_error_rate": 0.03,
+      "common_variance_sprt_exact_95_ci": [
+        0.006229971538306395,
+        0.08517605297428002
+      ],
+      "common_variance_mean_shots": 29.4,
+      "common_variance_median_shots": 24.0,
+      "heteroscedastic_sprt_errors": 5,
+      "heteroscedastic_sprt_error_rate": 0.05,
+      "heteroscedastic_sprt_exact_95_ci": [
+        0.016431879182052155,
+        0.11283491110546275
+      ],
+      "heteroscedastic_mean_shots": 28.28,
+      "fixed_budget_baselines": {
+        "25": {
+          "lda_errors": 10,
+          "heteroscedastic_llr_errors": 13,
+          "common_variance_llr_errors": 10
+        },
+        "100": {
+          "lda_errors": 2,
+          "heteroscedastic_llr_errors": 2,
+          "common_variance_llr_errors": 2
+        },
+        "500": {
+          "lda_errors": 0,
+          "heteroscedastic_llr_errors": 0,
+          "common_variance_llr_errors": 0
+        }
+      }
+    },
+    {
+      "regime": "nominal",
+      "measurement_p": 0.003,
+      "profile": "z_biased",
+      "seed": 2026115922,
+      "resources": {
+        "source_builder_byte_identical": true,
+        "detectors": 40,
+        "bucket_sizes": [
+          12,
+          12,
+          8,
+          8
+        ]
+      },
+      "windows": 100,
+      "score_mean": 0.10906395297251249,
+      "score_variance": 0.18206341773988718,
+      "common_variance_sprt_errors": 0,
+      "common_variance_sprt_error_rate": 0.0,
+      "common_variance_sprt_exact_95_ci": [
+        0.0,
+        0.03621669264517641
+      ],
+      "common_variance_mean_shots": 28.27,
+      "common_variance_median_shots": 22.0,
+      "heteroscedastic_sprt_errors": 2,
+      "heteroscedastic_sprt_error_rate": 0.02,
+      "heteroscedastic_sprt_exact_95_ci": [
+        0.0024313368239425423,
+        0.07038393247107011
+      ],
+      "heteroscedastic_mean_shots": 27.26,
+      "fixed_budget_baselines": {
+        "25": {
+          "lda_errors": 8,
+          "heteroscedastic_llr_errors": 5,
+          "common_variance_llr_errors": 8
+        },
+        "100": {
+          "lda_errors": 0,
+          "heteroscedastic_llr_errors": 0,
+          "common_variance_llr_errors": 0
+        },
+        "500": {
+          "lda_errors": 0,
+          "heteroscedastic_llr_errors": 0,
+          "common_variance_llr_errors": 0
+        }
+      }
+    },
+    {
+      "regime": "measurement_shift",
+      "measurement_p": 0.006,
+      "profile": "x_biased",
+      "seed": 2026115923,
+      "resources": {
+        "source_builder_byte_identical": true,
+        "detectors": 40,
+        "bucket_sizes": [
+          12,
+          12,
+          8,
+          8
+        ]
+      },
+      "windows": 100,
+      "score_mean": -0.13427675704671072,
+      "score_variance": 0.2713311945673337,
+      "common_variance_sprt_errors": 6,
+      "common_variance_sprt_error_rate": 0.06,
+      "common_variance_sprt_exact_95_ci": [
+        0.022334886071316368,
+        0.12602993458082296
+      ],
+      "common_variance_mean_shots": 21.32,
+      "common_variance_median_shots": 16.0,
+      "heteroscedastic_sprt_errors": 2,
+      "heteroscedastic_sprt_error_rate": 0.02,
+      "heteroscedastic_sprt_exact_95_ci": [
+        0.0024313368239425423,
+        0.07038393247107011
+      ],
+      "heteroscedastic_mean_shots": 18.27,
+      "fixed_budget_baselines": {
+        "25": {
+          "lda_errors": 10,
+          "heteroscedastic_llr_errors": 7,
+          "common_variance_llr_errors": 10
+        },
+        "100": {
+          "lda_errors": 1,
+          "heteroscedastic_llr_errors": 1,
+          "common_variance_llr_errors": 1
+        },
+        "500": {
+          "lda_errors": 0,
+          "heteroscedastic_llr_errors": 0,
+          "common_variance_llr_errors": 0
+        }
+      }
+    },
+    {
+      "regime": "measurement_shift",
+      "measurement_p": 0.006,
+      "profile": "z_biased",
+      "seed": 2026115924,
+      "resources": {
+        "source_builder_byte_identical": true,
+        "detectors": 40,
+        "bucket_sizes": [
+          12,
+          12,
+          8,
+          8
+        ]
+      },
+      "windows": 100,
+      "score_mean": 0.08574659767766239,
+      "score_variance": 0.25230317603230507,
+      "common_variance_sprt_errors": 13,
+      "common_variance_sprt_error_rate": 0.13,
+      "common_variance_sprt_exact_95_ci": [
+        0.07107304618542953,
+        0.21204067708744978
+      ],
+      "common_variance_mean_shots": 29.11,
+      "common_variance_median_shots": 23.0,
+      "heteroscedastic_sprt_errors": 21,
+      "heteroscedastic_sprt_error_rate": 0.21,
+      "heteroscedastic_sprt_exact_95_ci": [
+        0.1349436957053291,
+        0.30291537935054064
+      ],
+      "heteroscedastic_mean_shots": 31.56,
+      "fixed_budget_baselines": {
+        "25": {
+          "lda_errors": 25,
+          "heteroscedastic_llr_errors": 32,
+          "common_variance_llr_errors": 25
+        },
+        "100": {
+          "lda_errors": 5,
+          "heteroscedastic_llr_errors": 17,
+          "common_variance_llr_errors": 5
+        },
+        "500": {
+          "lda_errors": 0,
+          "heteroscedastic_llr_errors": 0,
+          "common_variance_llr_errors": 0
+        }
+      }
+    }
+  ],
+  "elapsed_seconds": 0.07842764000088209,
+  "new_source_equivalent_samples": 200000,
+  "scope": "common-vs-class-specific Gaussian SPRT robustness; development-only",
+  "projected_main_seconds": 0.7842764000088209,
+  "runtime_cap_seconds": 300,
+  "runtime_gate_passed": true
+}

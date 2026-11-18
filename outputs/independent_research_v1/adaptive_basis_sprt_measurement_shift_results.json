@@ -1,0 +1,207 @@
+{
+  "training_score_means": {
+    "x_biased": -0.11018636938308729,
+    "z_biased": 0.10946998321970859
+  },
+  "training_score_variances": {
+    "x_biased": 0.20742010254537505,
+    "z_biased": 0.18289699772103085
+  },
+  "wald_threshold": 2.9444389791664403,
+  "per_profile": [
+    {
+      "profile": "x_biased",
+      "sprt_errors": 36,
+      "sprt_error_rate": 0.036,
+      "sprt_exact_95_ci": [
+        0.02533891492983775,
+        0.04949291171801237
+      ],
+      "mean_shots_consumed": 18.666,
+      "median_shots_consumed": 15.0,
+      "stopped_before_cap": 1000,
+      "fixed_prefix_baselines": {
+        "25": {
+          "errors": 117,
+          "windows": 1000,
+          "error_rate": 0.117,
+          "exact_95_ci": [
+            0.09772900249506662,
+            0.13855746639058336
+          ]
+        },
+        "100": {
+          "errors": 4,
+          "windows": 1000,
+          "error_rate": 0.004,
+          "exact_95_ci": [
+            0.0010909079877259714,
+            0.010209664683929871
+          ]
+        },
+        "500": {
+          "errors": 0,
+          "windows": 1000,
+          "error_rate": 0.0,
+          "exact_95_ci": [
+            0.0,
+            0.003682083896865671
+          ]
+        }
+      },
+      "fixed_prefix_gaussian_likelihood_baselines": {
+        "25": {
+          "errors": 97,
+          "windows": 1000,
+          "error_rate": 0.097,
+          "exact_95_ci": [
+            0.0793644718293639,
+            0.11704784398028707
+          ]
+        },
+        "100": {
+          "errors": 0,
+          "windows": 1000,
+          "error_rate": 0.0,
+          "exact_95_ci": [
+            0.0,
+            0.003682083896865671
+          ]
+        },
+        "500": {
+          "errors": 0,
+          "windows": 1000,
+          "error_rate": 0.0,
+          "exact_95_ci": [
+            0.0,
+            0.003682083896865671
+          ]
+        }
+      }
+    },
+    {
+      "profile": "z_biased",
+      "sprt_errors": 176,
+      "sprt_error_rate": 0.176,
+      "sprt_exact_95_ci": [
+        0.15287828961643138,
+        0.20104651271780774
+      ],
+      "mean_shots_consumed": 28.637,
+      "median_shots_consumed": 23.0,
+      "stopped_before_cap": 1000,
+      "fixed_prefix_baselines": {
+        "25": {
+          "errors": 193,
+          "windows": 1000,
+          "error_rate": 0.193,
+          "exact_95_ci": [
+            0.16897210326979487,
+            0.21885000358205464
+          ]
+        },
+        "100": {
+          "errors": 51,
+          "windows": 1000,
+          "error_rate": 0.051,
+          "exact_95_ci": [
+            0.03820523677468616,
+            0.06651346159493482
+          ]
+        },
+        "500": {
+          "errors": 0,
+          "windows": 1000,
+          "error_rate": 0.0,
+          "exact_95_ci": [
+            0.0,
+            0.003682083896865671
+          ]
+        }
+      },
+      "fixed_prefix_gaussian_likelihood_baselines": {
+        "25": {
+          "errors": 233,
+          "windows": 1000,
+          "error_rate": 0.233,
+          "exact_95_ci": [
+            0.20711600666527016,
+            0.26046597912452674
+          ]
+        },
+        "100": {
+          "errors": 105,
+          "windows": 1000,
+          "error_rate": 0.105,
+          "exact_95_ci": [
+            0.0866848248245401,
+            0.12567684845533625
+          ]
+        },
+        "500": {
+          "errors": 1,
+          "windows": 1000,
+          "error_rate": 0.001,
+          "exact_95_ci": [
+            2.531748749129404e-05,
+            0.005558924279826672
+          ]
+        }
+      }
+    }
+  ],
+  "both_profile_error_rates_at_most_5pct": false,
+  "mean_shots_under_25": true,
+  "status": "measurement_shift_validation",
+  "gate_p": 0.003,
+  "measurement_p": 0.006,
+  "bias_ratio": 10,
+  "source_builder_byte_identical": {
+    "x_biased": true,
+    "z_biased": true
+  },
+  "frozen_model_source": "nominal p=.003 adaptive_basis_sprt_results.json; no fit/recalibration",
+  "sample_rows": [
+    {
+      "profile": "x_biased",
+      "seed": 2026115911,
+      "windows": 1000,
+      "shots": 500000,
+      "sampling_seconds": 0.22344058099770336,
+      "score_mean": -0.13147225571161678,
+      "score_variance": 0.2742927755742597,
+      "resources": {
+        "detectors": 40,
+        "feature_count": 4,
+        "bucket_sizes": [
+          12,
+          12,
+          8,
+          8
+        ]
+      }
+    },
+    {
+      "profile": "z_biased",
+      "seed": 2026115912,
+      "windows": 1000,
+      "shots": 500000,
+      "sampling_seconds": 0.14469702100177528,
+      "score_mean": 0.08511540661357538,
+      "score_variance": 0.2496503742441499,
+      "resources": {
+        "detectors": 40,
+        "feature_count": 4,
+        "bucket_sizes": [
+          12,
+          12,
+          8,
+          8
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 0.5104140260009444,
+  "new_source_equivalent_samples": 1000000,
+  "scope": "single measurement-noise composition stress; detector-only classifier, no LER result"
+}

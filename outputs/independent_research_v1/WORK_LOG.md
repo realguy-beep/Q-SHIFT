@@ -508,3 +508,12 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Resource audit found X/Z circuits share qubits, detectors, rounds, two-qubit interactions, two-qubit noise targets, and total one-qubit noise target counts, but differ in terminal measurement instruction and X/Z one-qubit fault composition. Do not call the cross-basis comparison identical gate-level noise.
 - The reuse replay's first implementation mistakenly multiplied the fixed logical-attempt denominator by dwell; corrected before checkpoint, and all reported results are from the corrected replay. Seeded replays added no unique samples.
 - Unique Q-SHIFT development samples increased by 5,240,000 to 72,021,000. No confirmatory or sealed evidence accessed.
+
+
+## Sequential calibration composition-shift challenge — 2026-11-18
+
+- Stress test held X/Z bias direction at 10:1, kept gate p=.003, and doubled measurement p to .006. The nominal frozen Gaussian SPRT had 36/1,000 X-profile errors (3.6%, exact 95% upper 4.95%) and 176/1,000 Z-profile errors (17.6%, upper 20.1%); mean costs 18.67/28.64 shots.
+- Shifted detector score means/variances moved from nominal (-.110/.207, +.109/.183) to (-.131/.274, +.085/.250). Class-specific normal evidence was miscalibrated for Z bias. Fixed 100-shot LDA had 4/1,000 and 51/1,000 errors; this single stream is suggestive only, not robust coverage.
+- A predeclared common-variance Gaussian SPRT on fresh nominal and shifted streams improved shifted Z-profile error to 120/1,000 (12.0%, exact interval 10.1%–14.2%), but did not meet the <=5% upper-bound gate. Nominal conditions remained under 5%. No end-to-end logical test was run after the failure gate.
+- A first preflight code attempt failed after sampling 50,000 shots because it expected the LDA model under the wrong JSON key. Fixed before continuing and replayed the same seed stream; unique sample count includes it once.
+- Added 3,300,000 unique Q-SHIFT development samples; cumulative total 75,321,000. No sealed or confirmatory data accessed.

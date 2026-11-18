@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 72021000,
+  "stochastic_qshift_shots_generated": 75321000,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -239,7 +239,7 @@
     },
     "interpretation": "all three BP+LSD variants worse in every tested condition; one distance/configuration/approximate model only; not an integration or superiority claim"
   },
-  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples; includes 20,000 all-fault instrumentation preflight and 200,000 all-fault composition development samples; excludes 50,000 synthetic instrumentation checks; includes fresh 40,000-shot preflight and 2,000,000-shot main d5 CSS/XZZX by memory-basis factorial screen; includes independent 40,000-shot preflight and 2,000,000-shot d5 XZZX/CSS basis-factorial development replication; includes d3/d7 CSS/XZZX basis-scale preflight 80,000 and main 4,000,000 development samples; an identical-seed replay after a preflight reporting bug is counted once; includes d9 CSS/XZZX four-cell basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d11 CSS/XZZX basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d13 runtime-gate preflight 40,000 samples; deterministic rerun after output typo is counted once; no d13 main samples; includes d7 ratio-2:1 XZZX/CSS basis-robustness preflight 40,000 and main 2,000,000 development samples; includes d7 ratio-5:1 XZZX/CSS basis-robustness preflight 40,000 and main 2,000,000 development samples; includes the 200,000 unique d13 bit-packed throughput preflight samples (no main run); includes the 1,000 unique d3 Fusion Blossom interface feasibility samples; includes 120,000 unique sequential calibration preflight samples and 1,100,000 main validation samples; includes 500,000 independent sequential calibration replication preflight samples and 2,500,000 independent validation samples; includes 20,000 unique end-to-end logical preflight samples and 1,000,000 end-to-end logical main samples; deterministic seeded replays and bootstrap utility projections add no unique samples",
+  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples; includes 20,000 all-fault instrumentation preflight and 200,000 all-fault composition development samples; excludes 50,000 synthetic instrumentation checks; includes fresh 40,000-shot preflight and 2,000,000-shot main d5 CSS/XZZX by memory-basis factorial screen; includes independent 40,000-shot preflight and 2,000,000-shot d5 XZZX/CSS basis-factorial development replication; includes d3/d7 CSS/XZZX basis-scale preflight 80,000 and main 4,000,000 development samples; an identical-seed replay after a preflight reporting bug is counted once; includes d9 CSS/XZZX four-cell basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d11 CSS/XZZX basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d13 runtime-gate preflight 40,000 samples; deterministic rerun after output typo is counted once; no d13 main samples; includes d7 ratio-2:1 XZZX/CSS basis-robustness preflight 40,000 and main 2,000,000 development samples; includes d7 ratio-5:1 XZZX/CSS basis-robustness preflight 40,000 and main 2,000,000 development samples; includes the 200,000 unique d13 bit-packed throughput preflight samples (no main run); includes the 1,000 unique d3 Fusion Blossom interface feasibility samples; includes 120,000 unique sequential calibration preflight samples and 1,100,000 main validation samples; includes 500,000 independent sequential calibration replication preflight samples and 2,500,000 independent validation samples; includes 20,000 unique end-to-end logical preflight samples and 1,000,000 end-to-end logical main samples; deterministic seeded replays and bootstrap utility projections add no unique samples; includes 100,000 unique measurement-composition-shift preflight and 1,000,000 main detector calibration samples; includes 200,000 unique common-variance robustness preflight and 2,000,000 main samples; a failed seeded-script import after 50,000 samples was corrected and replayed with the same seed, counted once",
   "stochastic_dem_samples_generated": 780000,
   "rare_event_importance_sampling": {
     "status": "positive_development_method_result_limited_to_approximate_dem",
@@ -23707,6 +23707,299 @@
       },
       "scope": "stable-profile plug-in projection; no change-point or hardware validation",
       "artifact": "adaptive_basis_sprt_utility_projection_results.json"
+    }
+  },
+  "adaptive_basis_sprt_robustness_summary": {
+    "measurement_shift": {
+      "gate_p": 0.003,
+      "measurement_p": 0.006,
+      "new_samples": 1000000,
+      "profiles": [
+        {
+          "profile": "x_biased",
+          "sprt_errors": 36,
+          "sprt_error_rate": 0.036,
+          "sprt_exact_95_ci": [
+            0.02533891492983775,
+            0.04949291171801237
+          ],
+          "mean_shots_consumed": 18.666,
+          "fixed_prefix_baselines": {
+            "25": {
+              "errors": 117,
+              "windows": 1000,
+              "error_rate": 0.117,
+              "exact_95_ci": [
+                0.09772900249506662,
+                0.13855746639058336
+              ]
+            },
+            "100": {
+              "errors": 4,
+              "windows": 1000,
+              "error_rate": 0.004,
+              "exact_95_ci": [
+                0.0010909079877259714,
+                0.010209664683929871
+              ]
+            },
+            "500": {
+              "errors": 0,
+              "windows": 1000,
+              "error_rate": 0.0,
+              "exact_95_ci": [
+                0.0,
+                0.003682083896865671
+              ]
+            }
+          },
+          "fixed_prefix_gaussian_likelihood_baselines": {
+            "25": {
+              "errors": 97,
+              "windows": 1000,
+              "error_rate": 0.097,
+              "exact_95_ci": [
+                0.0793644718293639,
+                0.11704784398028707
+              ]
+            },
+            "100": {
+              "errors": 0,
+              "windows": 1000,
+              "error_rate": 0.0,
+              "exact_95_ci": [
+                0.0,
+                0.003682083896865671
+              ]
+            },
+            "500": {
+              "errors": 0,
+              "windows": 1000,
+              "error_rate": 0.0,
+              "exact_95_ci": [
+                0.0,
+                0.003682083896865671
+              ]
+            }
+          },
+          "shifted_score_mean": -0.13147225571161678,
+          "shifted_score_variance": 0.2742927755742597
+        },
+        {
+          "profile": "z_biased",
+          "sprt_errors": 176,
+          "sprt_error_rate": 0.176,
+          "sprt_exact_95_ci": [
+            0.15287828961643138,
+            0.20104651271780774
+          ],
+          "mean_shots_consumed": 28.637,
+          "fixed_prefix_baselines": {
+            "25": {
+              "errors": 193,
+              "windows": 1000,
+              "error_rate": 0.193,
+              "exact_95_ci": [
+                0.16897210326979487,
+                0.21885000358205464
+              ]
+            },
+            "100": {
+              "errors": 51,
+              "windows": 1000,
+              "error_rate": 0.051,
+              "exact_95_ci": [
+                0.03820523677468616,
+                0.06651346159493482
+              ]
+            },
+            "500": {
+              "errors": 0,
+              "windows": 1000,
+              "error_rate": 0.0,
+              "exact_95_ci": [
+                0.0,
+                0.003682083896865671
+              ]
+            }
+          },
+          "fixed_prefix_gaussian_likelihood_baselines": {
+            "25": {
+              "errors": 233,
+              "windows": 1000,
+              "error_rate": 0.233,
+              "exact_95_ci": [
+                0.20711600666527016,
+                0.26046597912452674
+              ]
+            },
+            "100": {
+              "errors": 105,
+              "windows": 1000,
+              "error_rate": 0.105,
+              "exact_95_ci": [
+                0.0866848248245401,
+                0.12567684845533625
+              ]
+            },
+            "500": {
+              "errors": 1,
+              "windows": 1000,
+              "error_rate": 0.001,
+              "exact_95_ci": [
+                2.531748749129404e-05,
+                0.005558924279826672
+              ]
+            }
+          },
+          "shifted_score_mean": 0.08511540661357538,
+          "shifted_score_variance": 0.2496503742441499
+        }
+      ],
+      "artifact": "adaptive_basis_sprt_measurement_shift_results.json"
+    },
+    "common_variance_variant": {
+      "new_samples": 2000000,
+      "advances": false,
+      "conditions": [
+        {
+          "regime": "nominal",
+          "measurement_p": 0.003,
+          "profile": "x_biased",
+          "score_mean": -0.10962120824302735,
+          "score_variance": 0.20637028180314929,
+          "common_variance_sprt_errors": 30,
+          "common_variance_sprt_error_rate": 0.03,
+          "common_variance_sprt_exact_95_ci": [
+            0.020330485683109627,
+            0.042551402470029046
+          ],
+          "common_variance_mean_shots": 25.892,
+          "heteroscedastic_sprt_errors": 36,
+          "heteroscedastic_sprt_error_rate": 0.036,
+          "heteroscedastic_mean_shots": 24.655,
+          "fixed_budget_baselines": {
+            "25": {
+              "lda_errors": 110,
+              "heteroscedastic_llr_errors": 125,
+              "common_variance_llr_errors": 111
+            },
+            "100": {
+              "lda_errors": 9,
+              "heteroscedastic_llr_errors": 8,
+              "common_variance_llr_errors": 9
+            },
+            "500": {
+              "lda_errors": 0,
+              "heteroscedastic_llr_errors": 0,
+              "common_variance_llr_errors": 0
+            }
+          }
+        },
+        {
+          "regime": "nominal",
+          "measurement_p": 0.003,
+          "profile": "z_biased",
+          "score_mean": 0.10860639430787261,
+          "score_variance": 0.18089590053917626,
+          "common_variance_sprt_errors": 28,
+          "common_variance_sprt_error_rate": 0.028,
+          "common_variance_sprt_exact_95_ci": [
+            0.018684686195537564,
+            0.04021488737384331
+          ],
+          "common_variance_mean_shots": 26.387,
+          "heteroscedastic_sprt_errors": 45,
+          "heteroscedastic_sprt_error_rate": 0.045,
+          "heteroscedastic_mean_shots": 24.821,
+          "fixed_budget_baselines": {
+            "25": {
+              "lda_errors": 93,
+              "heteroscedastic_llr_errors": 90,
+              "common_variance_llr_errors": 92
+            },
+            "100": {
+              "lda_errors": 3,
+              "heteroscedastic_llr_errors": 5,
+              "common_variance_llr_errors": 3
+            },
+            "500": {
+              "lda_errors": 0,
+              "heteroscedastic_llr_errors": 0,
+              "common_variance_llr_errors": 0
+            }
+          }
+        },
+        {
+          "regime": "measurement_shift",
+          "measurement_p": 0.006,
+          "profile": "x_biased",
+          "score_mean": -0.1314314738382543,
+          "score_variance": 0.2728729373604623,
+          "common_variance_sprt_errors": 34,
+          "common_variance_sprt_error_rate": 0.034,
+          "common_variance_sprt_exact_95_ci": [
+            0.02365864810759675,
+            0.04718943861570743
+          ],
+          "common_variance_mean_shots": 21.497,
+          "heteroscedastic_sprt_errors": 24,
+          "heteroscedastic_sprt_error_rate": 0.024,
+          "heteroscedastic_mean_shots": 18.413,
+          "fixed_budget_baselines": {
+            "25": {
+              "lda_errors": 76,
+              "heteroscedastic_llr_errors": 70,
+              "common_variance_llr_errors": 78
+            },
+            "100": {
+              "lda_errors": 6,
+              "heteroscedastic_llr_errors": 3,
+              "common_variance_llr_errors": 6
+            },
+            "500": {
+              "lda_errors": 0,
+              "heteroscedastic_llr_errors": 0,
+              "common_variance_llr_errors": 0
+            }
+          }
+        },
+        {
+          "regime": "measurement_shift",
+          "measurement_p": 0.006,
+          "profile": "z_biased",
+          "score_mean": 0.08416074646023387,
+          "score_variance": 0.24999086017418187,
+          "common_variance_sprt_errors": 120,
+          "common_variance_sprt_error_rate": 0.12,
+          "common_variance_sprt_exact_95_ci": [
+            0.10050092374816784,
+            0.14176686379282544
+          ],
+          "common_variance_mean_shots": 27.281,
+          "heteroscedastic_sprt_errors": 186,
+          "heteroscedastic_sprt_error_rate": 0.186,
+          "heteroscedastic_mean_shots": 27.625,
+          "fixed_budget_baselines": {
+            "25": {
+              "lda_errors": 202,
+              "heteroscedastic_llr_errors": 249,
+              "common_variance_llr_errors": 202
+            },
+            "100": {
+              "lda_errors": 39,
+              "heteroscedastic_llr_errors": 88,
+              "common_variance_llr_errors": 38
+            },
+            "500": {
+              "lda_errors": 0,
+              "heteroscedastic_llr_errors": 2,
+              "common_variance_llr_errors": 0
+            }
+          }
+        }
+      ],
+      "artifact": "adaptive_basis_sprt_common_variance_results.json"
     }
   }
 }

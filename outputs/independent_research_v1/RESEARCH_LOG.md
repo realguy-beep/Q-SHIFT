@@ -364,3 +364,10 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - Direct LER improvement is substantial versus static Z for equal separate memory tasks, but per-100-attempt calibration costs erase throughput. A 100k stable-profile reuse bootstrap projects a modest positive throughput gain; 10k direct grouped replay is inconclusive.
 - X/Z gate family readout/fault composition differs; no hardware transfer or arbitrary-state claim.
 - Current branch checkpoint is recorded after files are committed below. Next open question: stress the frozen detector-only policy with a withheld noise-composition shift or profile change, where Gaussian SPRT assumptions may fail. Use a new preregistered mismatch/false-switch protocol and do not infer robustness from the stable-profile projection.
+
+## Checkpoint — sequential calibration misspecification challenge (2026-11-18)
+
+- Frozen nominal Gaussian SPRT failed a targeted measurement-noise composition shift; fresh equal-variance SPRT did not recover <=5% profile error. This rejects the current sequential likelihood model as robust to the tested shift.
+- Fixed 100-shot LDA was better in the shifted Z-profile sample, but its exact upper interval still exceeds the 5% target. No logical LER claim from the shifted stream.
+- Current committed checkpoint before this challenge: `2b7c9f6` on `codex/qshift-independent-research-v1`; uncommitted robustness artifacts will be saved in the next checkpoint.
+- Next: investigate actual piecewise profile changes with a frozen change-detection rule, using no oracle labels and explicit false-switch/detection-delay metrics. Do not reuse stable-profile utility as evidence of drift robustness.

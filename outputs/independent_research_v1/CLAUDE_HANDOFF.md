@@ -175,3 +175,7 @@ A hash-verified min-fill order on the 20-detector seven-layer exact posterior in
 ## Sequential detector-only calibration lead
 
 The frozen-feature Gaussian SPRT was independently validated at ~4% X/Z profile-selection errors using a mean 24.83 detector-only calibration shots. On fresh d3 logical streams it reduced equal-weight separate-memory LER to .001386 from .004198 static Z, but calibration every 100 logical attempts reduced correct-output yield to .800. Reusing the decision for a stable 100k-attempt job gives a bootstrap plug-in yield .998403 vs .995802 static Z (difference CI [.002425,.002781]); this assumes no profile drift and is not a direct 100k run. Next useful challenge: withheld noise-composition mismatch and actual profile change, plus direct cost at realistic reuse horizons. X/Z terminal readout/fault-axis differences remain. See `adaptive_basis_sprt_*` artifacts.
+
+### Robustness caveat for the sequential profile lead
+
+At measurement p=.006 with gate p=.003, the frozen nominal SPRT made 17.6% Z-profile errors. A fresh pooled-variance SPRT still made 12.0%, failing the preregistered gate; fixed 100-shot LDA scored better in one stream but is not independently verified. This rejects general robustness and prevents treating the 100k stable-profile utility projection as deployable guidance. Artifacts: `adaptive_basis_sprt_measurement_shift_*` and `adaptive_basis_sprt_common_variance_*`.

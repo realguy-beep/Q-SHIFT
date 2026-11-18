@@ -199,3 +199,7 @@ The fixed min-fill detector order was structurally motivated by event co-occurre
 ## Sequential profile calibration limits
 
 The SPRT improved detector profile decisions over fixed 25-shot baselines at a similar average sample cost, but still made about 4% profile errors. At 100 logical attempts per calibration, direct correct-output yield was only .800 because calibration shots were charged as unusable; static Z yielded .9958. A stable-profile bootstrap suggests the overhead may amortize over 100k logical attempts, but the 10k grouped replay was inconclusive. There is no evidence for mid-run change detection, non-Gaussian score robustness, multi-profile generalization, or hardware drift. X/Z output circuits differ in terminal measurement and fault-axis composition; report these differences whenever aggregating tasks.
+
+## Gaussian profile model under composition shift
+
+The nominal class-specific SPRT was not robust when measurement noise doubled with gate noise fixed. The Z-biased score mean moved toward the decision boundary and both score variances increased; nominal likelihood increments underweighted evidence for that shifted profile. A pooled-variance SPRT reduced Z-profile error from 17.6% to 12.0% but remained above the 5% gate. Fixed 100-shot LDA performed better on this stream, suggesting the variance-sensitive likelihood model caused part of the failure, but its 51/1,000 point error still has uncertainty and was not independently replicated. Do not use nominal Gaussian SPRT as a general adaptive policy.

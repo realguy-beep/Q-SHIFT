@@ -99,3 +99,7 @@ Fusion Blossom 0.2.13 serial custom-graph MWPM was added as a classical-decoder 
 ### Sequential calibration result for the profile-inference candidate
 
 A frozen Gaussian SPRT over the existing detector-only LDA score achieved 4.08%/3.84% profile error on an independent 2,500-window/profile validation set at a combined mean 24.83 shots. A fresh d3 end-to-end screen showed LER .001386 vs static Z .004198 for equal separate memory tasks, but per-100-attempt calibration cost erased throughput. A plug-in stable-profile projection at 100k attempts/dwell showed a modest yield interval above static Z; direct 10k dwell remained inconclusive. Promote only as a research lead for long stable jobs, not as a deployment recommendation. Robustness to score-model misspecification and profile changes remains untested.
+
+### Measurement-composition robustness challenge
+
+The nominal Gaussian SPRT failed under a fixed-direction measurement-noise shift (17.6% Z-profile selection errors). A fresh equal-variance SPRT lowered this to 12.0% but still missed the 5% upper-bound gate. This materially downgrades the profile-inference lead: score likelihoods need uncertainty/model-shift handling before long-dwell utility projections can be interpreted operationally.

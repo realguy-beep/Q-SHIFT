@@ -235,3 +235,7 @@ The deterministic ordering rule, exact posterior source, SVD measurements, and a
 ## Sequential detector-only profile calibration
 
 Primary protocol: `adaptive_basis_sprt_protocol.md`; 10k/profile preflight followed by 1,000 500-shot windows/profile. Independent frozen-parameter replication: `adaptive_basis_sprt_replication_protocol.md`; 500 windows/profile preflight then 2,500/profile. The replication protocol includes a retrospective stronger fixed Gaussian-LLR comparator, labeled exploratory. Direct logical policy test: `adaptive_basis_sprt_end_to_end_protocol.md`, using the saved calibration stream and 100 logical attempts per decision. Stable-profile reuse replay and plug-in utility projection are specified in `adaptive_basis_sprt_reuse_protocol.md` and `adaptive_basis_sprt_utility_projection_protocol.md`; these generate no new samples and assume profile persistence.
+
+## Profile calibration under measurement-noise composition shift
+
+The measurement-only shift protocol is `adaptive_basis_sprt_measurement_shift_protocol.md`; it freezes nominal p=.003 model parameters and raises measurement p to .006 at fixed gate p. The follow-up common-variance comparison is `adaptive_basis_sprt_common_variance_protocol.md`; it compares the class-specific and pooled-variance Gaussian SPRTs on independent nominal and shifted streams. The latter has a fixed advancement gate and a negative result does not authorize end-to-end logical testing.

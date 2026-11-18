@@ -353,3 +353,7 @@ This deterministic analysis uses the saved seven-layer event map and adds no sto
 - Deterministic stable-profile expected-utility bootstrap: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/adaptive_basis_sprt_utility_projection.py`.
 
 The reuse and utility scripts add no unique stochastic samples. Their stable-profile assumption and projected status are stated in their protocol files.
+
+### Measurement-noise composition robustness
+
+Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/adaptive_basis_sprt_measurement_shift.py --preflight` and then without the flag. For the independent common-variance SPRT challenge, run `adaptive_basis_sprt_common_variance.py --preflight` and then without the flag. Both main runs use fixed seeds stored in their scripts; neither uses observables or accesses confirmatory data.

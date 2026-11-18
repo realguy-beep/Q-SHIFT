@@ -1,0 +1,210 @@
+{
+  "training_score_means": {
+    "x_biased": -0.11018636938308729,
+    "z_biased": 0.10946998321970859
+  },
+  "training_score_variances": {
+    "x_biased": 0.20742010254537505,
+    "z_biased": 0.18289699772103085
+  },
+  "wald_threshold": 2.9444389791664403,
+  "per_profile": [
+    {
+      "profile": "x_biased",
+      "sprt_errors": 0,
+      "sprt_error_rate": 0.0,
+      "sprt_exact_95_ci": [
+        0.0,
+        0.03621669264517641
+      ],
+      "mean_shots_consumed": 17.44,
+      "median_shots_consumed": 12.0,
+      "stopped_before_cap": 100,
+      "fixed_prefix_baselines": {
+        "25": {
+          "errors": 9,
+          "windows": 100,
+          "error_rate": 0.09,
+          "exact_95_ci": [
+            0.041983595628392247,
+            0.1639822550296352
+          ]
+        },
+        "100": {
+          "errors": 1,
+          "windows": 100,
+          "error_rate": 0.01,
+          "exact_95_ci": [
+            0.00025314603297742064,
+            0.054459385392080645
+          ]
+        },
+        "500": {
+          "errors": 0,
+          "windows": 100,
+          "error_rate": 0.0,
+          "exact_95_ci": [
+            0.0,
+            0.03621669264517641
+          ]
+        }
+      },
+      "fixed_prefix_gaussian_likelihood_baselines": {
+        "25": {
+          "errors": 8,
+          "windows": 100,
+          "error_rate": 0.08,
+          "exact_95_ci": [
+            0.0351715625181628,
+            0.15155763586442095
+          ]
+        },
+        "100": {
+          "errors": 0,
+          "windows": 100,
+          "error_rate": 0.0,
+          "exact_95_ci": [
+            0.0,
+            0.03621669264517641
+          ]
+        },
+        "500": {
+          "errors": 0,
+          "windows": 100,
+          "error_rate": 0.0,
+          "exact_95_ci": [
+            0.0,
+            0.03621669264517641
+          ]
+        }
+      }
+    },
+    {
+      "profile": "z_biased",
+      "sprt_errors": 21,
+      "sprt_error_rate": 0.21,
+      "sprt_exact_95_ci": [
+        0.1349436957053291,
+        0.30291537935054064
+      ],
+      "mean_shots_consumed": 25.79,
+      "median_shots_consumed": 19.0,
+      "stopped_before_cap": 100,
+      "fixed_prefix_baselines": {
+        "25": {
+          "errors": 24,
+          "windows": 100,
+          "error_rate": 0.24,
+          "exact_95_ci": [
+            0.16022461317144718,
+            0.3357354892709986
+          ]
+        },
+        "100": {
+          "errors": 8,
+          "windows": 100,
+          "error_rate": 0.08,
+          "exact_95_ci": [
+            0.0351715625181628,
+            0.15155763586442095
+          ]
+        },
+        "500": {
+          "errors": 0,
+          "windows": 100,
+          "error_rate": 0.0,
+          "exact_95_ci": [
+            0.0,
+            0.03621669264517641
+          ]
+        }
+      },
+      "fixed_prefix_gaussian_likelihood_baselines": {
+        "25": {
+          "errors": 32,
+          "windows": 100,
+          "error_rate": 0.32,
+          "exact_95_ci": [
+            0.23021991676157702,
+            0.4207668616316226
+          ]
+        },
+        "100": {
+          "errors": 16,
+          "windows": 100,
+          "error_rate": 0.16,
+          "exact_95_ci": [
+            0.09431028997394623,
+            0.24678759741086234
+          ]
+        },
+        "500": {
+          "errors": 0,
+          "windows": 100,
+          "error_rate": 0.0,
+          "exact_95_ci": [
+            0.0,
+            0.03621669264517641
+          ]
+        }
+      }
+    }
+  ],
+  "both_profile_error_rates_at_most_5pct": false,
+  "mean_shots_under_25": true,
+  "status": "measurement_shift_preflight",
+  "gate_p": 0.003,
+  "measurement_p": 0.006,
+  "bias_ratio": 10,
+  "source_builder_byte_identical": {
+    "x_biased": true,
+    "z_biased": true
+  },
+  "frozen_model_source": "nominal p=.003 adaptive_basis_sprt_results.json; no fit/recalibration",
+  "sample_rows": [
+    {
+      "profile": "x_biased",
+      "seed": 2026115901,
+      "windows": 100,
+      "shots": 50000,
+      "sampling_seconds": 0.026827096000488382,
+      "score_mean": -0.13392991220401831,
+      "score_variance": 0.27288416602615734,
+      "resources": {
+        "detectors": 40,
+        "feature_count": 4,
+        "bucket_sizes": [
+          12,
+          12,
+          8,
+          8
+        ]
+      }
+    },
+    {
+      "profile": "z_biased",
+      "seed": 2026115902,
+      "windows": 100,
+      "shots": 50000,
+      "sampling_seconds": 0.019359857000381453,
+      "score_mean": 0.08304311673657147,
+      "score_variance": 0.2485633589006583,
+      "resources": {
+        "detectors": 40,
+        "feature_count": 4,
+        "bucket_sizes": [
+          12,
+          12,
+          8,
+          8
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 0.06199011599892401,
+  "new_source_equivalent_samples": 100000,
+  "scope": "single measurement-noise composition stress; detector-only classifier, no LER result",
+  "projected_main_seconds": 0.6199011599892401,
+  "runtime_cap_seconds": 300,
+  "runtime_gate_passed": true
+}
