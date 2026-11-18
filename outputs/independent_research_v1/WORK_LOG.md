@@ -271,3 +271,9 @@
 - The prior dictionary DP preflight stopped at 251.7M Python transitions. A separate fixed vectorized XOR-kernel protocol declared caps of 1M states, 300M array updates, 400M Walsh ops, 1GiB memory, and 300s runtime; its actual bounds were 524,288 states, 251.7M updates, 308.8M Walsh operations, ~23MiB.
 - Vectorized signature DP and independent Walsh-Hadamard convolution agreed over all 524,288 states to 3.55e-15; mass normalized, 262,144 syndromes reachable, and 512 forced combined faults matched Stim. 5.92s runtime. Isolated five-layer MAP risk 6.06e-4 only; other circuit stochastic sites are identity.
 - No stochastic shots generated. This passes five layers under the optimized representation without changing the original Python-dictionary cap. Next: structural preflight at six layers under a fixed 1M-state ceiling.
+
+## Coalesced six-layer exact categorical inference — 2026-11-18
+
+- The raw six-layer vector-update estimate was 301,989,888, just over the 300M cap. A separate exact coalescing protocol merged only outcomes with identical detector and logical signatures, summing their original probabilities. Across 36 locations, raw labels fell from576 to296 (48.6%).
+- Coalesced vectorized DP and independent Walsh convolution agreed over 524,288 states to2.32e-16; 512 forced-fault checks passed; normalization passed; 262,144 syndromes reachable. Work:155.2M DP updates,368.6M Walsh ops,~23MiB estimate,6.10s. Isolated MAP risk.000866, not full-circuit LER.
+- No stochastic samples generated. This is exact coalescing, not truncation. Next: preflight a seventh layer under the same 1M-state/300M-update/400M-Walsh caps.

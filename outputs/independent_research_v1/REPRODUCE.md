@@ -106,3 +106,5 @@ Continue in this same worktree and branch. Read `WORK_LOG.md`, `RESEARCH_LOG.md`
 - Reproduce the fifth-layer scope/resource preflight with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_five_layer_preflight.py`. It stops before mass expansion at the fixed 100M operation cap.
 
 - Reproduce the five-layer vectorized exact pass with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_five_layer_vectorized.py`; it consumes the saved five-layer forced-signature preflight artifact and produces no stochastic samples.
+
+- Reproduce the exact six-layer coalesced DP/Walsh result with `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/categorical_six_layer_coalesced.py`. It consumes the saved six-layer forced-signature map and generates no stochastic samples.

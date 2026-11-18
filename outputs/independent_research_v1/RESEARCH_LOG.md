@@ -204,3 +204,8 @@
 
 - The five-layer Python dictionary route exceeded its declared transition budget, but a different NumPy vectorized XOR-kernel route with separate predeclared caps passed. DP/Walsh mass error3.55e-15 over524,288 states; 512 forced-fault checks passed; ~23MiB estimate and5.92s.
 - This is exact five-layer fragment posterior evidence, not full-circuit decoding. No samples. The earlier stop is specific to the slow dictionary implementation. Next: preflight the six-layer support ceiling at the same 1M state cap.
+
+## Checkpoint — exact six-layer coalesced kernel
+
+- Exact per-location signature coalescing reduced 576 raw outcome branches to 296 distinct XOR signatures across 36 fault locations. Vectorized DP and Walsh-Hadamard convolution agreed to2.32e-16 across524,288 states; 512 forced combined errors matched Stim; runtime6.10s.
+- Six-layer slice MAP risk .000866 is not full-circuit LER; no samples. The algebraic reduction preserves all probability mass. Next: fixed-cap seventh-layer support preflight.

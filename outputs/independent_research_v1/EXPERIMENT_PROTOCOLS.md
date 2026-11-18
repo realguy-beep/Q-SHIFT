@@ -131,3 +131,5 @@ A fourth-layer extension has a fixed protocol in `categorical_four_layer_sparse_
 The five-layer sparse protocol and explicit stop are documented in `categorical_five_layer_sparse_protocol.md`; the preflight exceeded the fixed sparse-operation cap, so no exact expansion was run.
 
 A separate vectorized implementation of the fifth-layer signature convolution is specified in `categorical_five_layer_vectorized_protocol.md`; it has its own fixed state, operation, memory, and runtime caps and passed with Walsh-Hadamard cross-validation. This does not erase the earlier Python sparse-DP preflight stop.
+
+The six-layer exact result uses the separate algebraic coalescing protocol `categorical_six_layer_coalesced_protocol.md`, which groups only identical detector/logical signatures and sums their probabilities. It is distinct from the raw 16-outcome preflight stop.
