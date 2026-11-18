@@ -393,3 +393,20 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 - Main/preflight samples: 400,000/400; cumulative unique development samples: 83,223,400. No sealed/confirmatory data.
 - Current active direction: identify a materially different, evidence-backed decoder or code-design mechanism; do not expand the tested temporal rate factors.
 - Resume command: `cd /workspace/qshift-independent-research-v1 && MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/temporal_rate_hotspot.py`.
+
+
+## Checkpoint — equal-duration syndrome schedule (2026-11-18)
+
+- Active branch checkpoint before this experiment: `e3318ec`, `codex/qshift-independent-research-v1`.
+- The first fair-duration follow-up compared three syndrome rounds plus two biased data-idle cycles against five active rounds. Each arm covered five cycle units, with equal terminal readout targets and matched basis/profile; the five-round circuit reproduced the source builder exactly.
+- Initial development result favors three-plus-idle in both aligned workloads: LER rate ratios .848 and .676, mean cell RR .762; both 95% intervals exclude 1.0. This is a single simulator seed per cell and assumes p=.003 biased idle noise. Treat as provisional.
+- Added 2,000,000 main + 400 preflight samples; cumulative unique development shots: 85,223,400. No sealed/confirmatory evidence.
+- Immediate next action: freeze a fresh-seed independent replication under identical conditions before recommending a schedule.
+
+
+## Checkpoint — equal-duration schedule fresh-stream replication (2026-11-18)
+
+- Current branch `codex/qshift-independent-research-v1`; initial screen checkpoint `e3318ec` plus uncommitted replication outputs.
+- Fresh independent streams reproduced the macro advantage: three active rounds plus two p=.003 biased data-idle cycles vs five active rounds gave cell RRs .906 (X-aligned; 95% .809–1.014) and .641 (Z-aligned; .570–.721), mean .773. Both point estimates favor fewer active rounds; only Z is individually decisive.
+- Evidence remains tied to the same idle model. Cumulative unique development samples: 87,223,800. No confirmatory/sealed evidence.
+- Continue with a single prospectively defined 2x idle-rate stress challenge; use fresh streams and then decide whether the candidate is robust enough for a cautious handoff.

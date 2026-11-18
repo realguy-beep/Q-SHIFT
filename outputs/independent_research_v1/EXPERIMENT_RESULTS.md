@@ -397,3 +397,13 @@ For d3/five-round ratio10 X-biased aligned memory, Stim's shortest graphlike pat
 ## Round-wise gate-rate heterogeneity
 
 For two reverse five-round profiles with factors [0.25, 1.75, 1, 0.25, 1.75] and [1.75, 0.25, 1, 1.75, 0.25], the exact-map decoder reduced failures from 1,709 to 1,655 and 1,512 to 1,474 on paired 200k streams. Paired deltas were -0.000270 (95% CI [-0.000450, -0.000090], McNemar p=.0039) and -0.000190 ([-0.000349, -0.000031], p=.0226). Equal-weight macro relative reduction was 2.84%, below the preregistered 10% gate; decode time was 1.02–1.04x pooled. This is an oracle-known synthetic d3 rate-map result, not online adaptation. Full details: `../independent_research_v2/temporal_rate_hotspot_report.md`.
+
+
+## Equal-duration three-round plus idle versus five active rounds
+
+At equal five-cycle storage duration, three active d3 syndrome rounds followed by two biased data-idle cycles reduced LER versus five active rounds on the two aligned workloads. X alignment: 557/500k (.001114) vs 657/500k (.001314), RR .848 (95% .757–.949). Z alignment: 469/500k (.000938) vs 694/500k (.001388), RR .676 (.601–.760). The equal-weight mean cell RR=.762 passes the fixed .90 gate. The three-plus-idle arm uses 72 rather than 120 two-qubit pairs, but 42 rather than 40 one-qubit Pauli targets after adding 18 data-idle targets. This is an unpaired finite-sample simulator result under a fixed p=.003 biased idle assumption; fresh-seed replication is required. Details: `../independent_research_v2/equal_duration_rounds_report.md`.
+
+
+### Independent-seed replication of equal-duration schedule
+
+A separate 500k/arm/cell stream again favored three active rounds plus two p=.003 biased data-idle cycles over five active rounds. X alignment: 575 vs 635 errors, RR=.906 (95% .809–1.014); Z alignment: 456 vs 711, RR=.641 (.570–.721). Equal-weight mean cell RR=.773. Both cells favored the candidate by point estimate; the X interval includes 1. This independently reproduces direction and the aggregate advancement gate under the same assumed idle model, not hardware validity. See `../independent_research_v2/equal_duration_rounds_replication_report.md`.

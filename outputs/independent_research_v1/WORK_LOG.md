@@ -541,3 +541,20 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Main sample: 200,000 shots/profile. Profile-specific matching reduced errors 1,709→1,655 and 1,512→1,474; paired deltas -0.000270 (95% CI [-0.000450,-0.000090], McNemar p=.0039) and -0.000190 ([-0.000349,-0.000031], p=.0226). Macro relative reduction 2.84%; decode overhead 1.02–1.04x. Fails the fixed 10% advancement gate.
 - 400 preflight samples plus 400,000 main samples generated; cumulative unique Q-SHIFT development samples are 83,223,400. No sealed or confirmatory evidence accessed. Exact reproduction: `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/temporal_rate_hotspot.py`.
 - Decision: characterize as a small oracle-map gain; no online controller or follow-up sweep. Next research cycle should move to a substantially different remaining decoder/code candidate with a concrete mechanism and fresh predeclared stop rule.
+
+
+## Equal-duration syndrome schedule — initial development screen — 2026-11-18
+
+- Followed the previously identified duration-confounding issue in the d3 round-count frontier. Compared 3 active rounds plus two p=.003 regime-biased data-idle cycles against 5 active rounds at equal five-cycle duration, on aligned X/X-bias and Z/Z-bias tasks.
+- Each arm used its own approximate DEM and correlation-enabled PyMatching. Five-round source matched the Phase 2B builder byte-for-byte; qubits/readout targets, round counts, idle targets, noiseless determinism, decoder shape, and scalar/batch agreement checked.
+- Results: 557/657 failures on X alignment (RR=.848, 95% .757–.949), 469/694 on Z alignment (RR=.676, .601–.760); mean cell RR=.762. Fixed gate passed. This is a simulator result with an assumed idle channel; fresh independent replication is the next action.
+- Generated 400 preflight and 2,000,000 main samples; cumulative unique Q-SHIFT development samples: 85,223,400. No confirmatory or sealed data accessed.
+- Detailed protocol/source/results: `outputs/independent_research_v2/equal_duration_rounds_*`.
+
+
+## Equal-duration schedule — independent seed replication — 2026-11-18
+
+- Repeated the frozen initial protocol on fresh streams: 500k/arm/cell, identical d3 aligned circuits, per-arm DEMs, and p=.003 biased idle channels. Source-builder/readout/noiseless/scalar-batch integrity checks passed.
+- X: 575 vs 635 errors, RR=.906 (95% .809–1.014); Z: 456 vs 711, RR=.641 (.570–.721). Equal-weight mean RR=.773, similar to initial .762. Directional and macro advancement gates reproduced; X is individually uncertain.
+- Added 2,000,000 main + 400 preflight samples; cumulative unique Q-SHIFT development samples: 87,223,800. No sealed or confirmatory evidence accessed.
+- Next: challenge the sole material uncertainty, idle-channel strength, under one frozen 2x idle-noise condition; stop after this sensitivity if the result fails or is inconclusive.

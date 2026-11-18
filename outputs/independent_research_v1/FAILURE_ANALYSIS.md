@@ -216,3 +216,13 @@ The selected shortest graphlike physical patterns are real, mutually exclusive c
 ## Temporal-rate calibration has small oracle headroom
 
 Under the frozen alternating 0.25x/1.75x per-round gate-rate maps, exact profile-specific matching improved both phases, with paired statistical evidence, but the equal-weight LER reduction was only 2.84%. Decode cost was small (1.02–1.04x), yet the effect fails the 10% utility gate before charging any profile-estimation or change-detection cost. Do not promote online temporal rate adaptation from this oracle-map screen. This is a single synthetic d3 pattern and does not rule out stronger or different temporal correlations.
+
+
+## Equal-duration round-count positive result needs replication
+
+Adding two biased data-idle cycles to the three-round memory schedule preserves elapsed duration and leaves fewer active entangling gates than five syndrome rounds. The initial two aligned d3 cells favored three-plus-idle (cell rate ratios .848 and .676), but this is one seed per cell, uses an assumed idle Pauli channel, and is not hardware-calibrated. The apparent gain may depend on the idle model or code/task alignment. Do not recommend a round-count policy until a fresh independent stream reproduces it and idle-channel assumptions are bounded.
+
+
+### Equal-duration schedule replication caveat
+
+The fresh stream reproduced the three-round-plus-idle direction and similar macro rate ratio (.773 vs .762 initially), but the X-aligned cell interval now includes parity (RR .906, 95% .809–1.014); only the Z-aligned cell is individually decisive. Both use the same p=.003 idle assumption, so this is independent sampling replication, not model robustness.

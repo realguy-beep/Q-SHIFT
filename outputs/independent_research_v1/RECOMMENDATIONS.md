@@ -154,3 +154,13 @@ Do not use the single shortest graphlike pattern as a practical error-floor esti
 ## Round-wise rate heterogeneity follow-up
 
 The exact temporal-map decoder reduced LER by 2.84% on two reversed synthetic round-rate profiles, below the 10% advancement gate. Although compute overhead was only 2–4%, any causal estimator and switching policy would add cost. Keep the result as a robustness characterization; do not build an online selector for this pattern unless a realistic measured profile or a concrete mechanism predicts materially larger gains.
+
+
+## Equal-duration syndrome schedule
+
+A first matched-duration d3 screen favored three active rounds plus two data-idle cycles over five active rounds (macro cell RR=.762 on two aligned workloads). Preserve as a candidate, not yet as guidance: replicate with fresh roots and explicitly limit interpretation to the assumed biased idle channel. The model used p=.003 per idle cycle on data qubits and gave the shorter arm 42 total one-qubit targets versus 40 in the five-round arm.
+
+
+### Equal-duration schedule replication
+
+The fresh independent seed stream preserved the effect direction and macro result (mean cell RR=.773); the Z-aligned cell was stronger (.641, 95% .570–.721), while X alignment was near-neutral (.906, .809–1.014). Keep as a promising finite-distance code/circuit design candidate. Before a handoff recommendation, vary only the assumed idle channel in one predeclared robustness stress; do not expand round counts or profiles.

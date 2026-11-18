@@ -192,3 +192,13 @@ A physically mapped, zero-syndrome logical Pauli pattern exists at three two-qub
 ### Temporal rate-map characterization (independent research v2)
 
 On paired d3 circuit streams with a known alternating two-qubit error-rate map across five rounds (mean p=.003), profile-specific correlation-enabled PyMatching reduced LER by 2.84% macro versus the same-mean stationary model. Per-profile paired CIs excluded zero, but the result missed the preregistered 10% advancement gate; decode overhead was only 2–4%. This is an oracle-map stress test, not a causal adaptation result. It does not justify building an online temporal selector. Reproduction and scope are in `outputs/independent_research_v2/temporal_rate_hotspot_report.md`.
+
+
+### Equal-duration round-count result (provisional)
+
+A fresh d3 development comparison matched total five-cycle duration: three active syndrome rounds plus two p=.003 biased data-idle cycles versus five active rounds. On aligned X/X-bias and Z/Z-bias tasks, rate ratios were .848 (.757–.949) and .676 (.601–.760); equal-weight mean .762. This uses fewer two-qubit pair locations (72 vs 120) but more total one-qubit Pauli targets after idles (42 vs 40). The idle model is an explicit simulator assumption, not hardware-calibrated, and only one stream per cell has been run. Treat as provisional pending independent-seed replication. See `outputs/independent_research_v2/equal_duration_rounds_report.md`.
+
+
+### Fresh-stream replication of equal-duration schedule
+
+A second independent d3 seed stream reproduced the aggregate benefit of three active rounds plus two .003 biased data-idle cycles versus five active rounds (mean cell RR=.773). The Z-aligned cell was .641 (.570–.721); the X-aligned cell was .906 (.809–1.014) and uncertain. This is stronger than a one-stream result but still shares the assumed idle channel and does not justify hardware or scaling claims. One frozen idle-rate robustness challenge is pending.

@@ -372,3 +372,13 @@ This deterministic Stim analysis generates no random samples and reports one pat
 ### Round-wise gate-rate heterogeneity challenge
 
 Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/temporal_rate_hotspot.py` from the repository root. The script repeats 400 preflight samples, checks the resource/noiseless/scalar-batch invariants, then generates 200,000 fresh shots for each of two reverse profiles with frozen seeds. It compares exact-map and same-average pooled correlation-enabled PyMatching. The saved result is a development-only simulator stress test.
+
+
+### Equal-duration syndrome schedule screen
+
+Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/equal_duration_rounds.py` from the repository root. The fixed-seed run compares 3 active rounds plus two biased data-idle channels on data qubits against 5 active rounds for two aligned d3 tasks. Each arm builds its own correlation-enabled PyMatching model. The result is simulator development evidence only; idle p=.003 is an assumed model.
+
+
+### Equal-duration schedule independent replication
+
+Run `MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/equal_duration_rounds_replication.py`. This uses new frozen seeds and writes `equal_duration_rounds_replication_results.json`, preserving the initial screen result. It repeats scalar/batch, source-builder, terminal-readout, noiseless-circuit, and runtime checks before sampling.
