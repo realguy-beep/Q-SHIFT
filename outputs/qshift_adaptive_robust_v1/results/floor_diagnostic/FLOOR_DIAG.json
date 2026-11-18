@@ -1,0 +1,137 @@
+{
+  "schema": "qshift-adaptive-robust-floor-diagnostic-v1",
+  "data": "Stage S development arrays only (qshift_d5_lowp_regime_v1/work/dev); Stage E not read",
+  "selected_prior": {
+    "L10": 0.001,
+    "L15": 0.0025
+  },
+  "variants": {
+    "L2_baseline": {
+      "bp_method": "product_sum",
+      "schedule": "serial",
+      "max_iter": 50,
+      "osd_method": "OSD_CS",
+      "osd_order": 10
+    },
+    "osd_cs_40": {
+      "bp_method": "product_sum",
+      "schedule": "serial",
+      "max_iter": 50,
+      "osd_method": "OSD_CS",
+      "osd_order": 40
+    },
+    "osd_e_8": {
+      "bp_method": "product_sum",
+      "schedule": "serial",
+      "max_iter": 50,
+      "osd_method": "OSD_E",
+      "osd_order": 8
+    },
+    "bp_iter_500": {
+      "bp_method": "product_sum",
+      "schedule": "serial",
+      "max_iter": 500,
+      "osd_method": "OSD_CS",
+      "osd_order": 10
+    },
+    "min_sum_0.9": {
+      "bp_method": "minimum_sum",
+      "schedule": "serial",
+      "max_iter": 50,
+      "osd_method": "OSD_CS",
+      "osd_order": 10,
+      "ms_scaling_factor": 0.9
+    }
+  },
+  "failures": 56,
+  "failures_reproduced_by_baseline": 56,
+  "controls": 600,
+  "bp_converged_on_failures": 11,
+  "bp_converged_on_controls": 596,
+  "correct_class_found": 56,
+  "search_limited_failures": 10,
+  "mle_consistent_failures": 46,
+  "variant_fixes_on_failures": {
+    "L2_baseline": 0,
+    "osd_cs_40": 3,
+    "osd_e_8": 8,
+    "bp_iter_500": 4,
+    "min_sum_0.9": 12
+  },
+  "variant_breaks_on_controls": {
+    "L2_baseline": 0,
+    "osd_cs_40": 0,
+    "osd_e_8": 0,
+    "bp_iter_500": 0,
+    "min_sum_0.9": 0
+  },
+  "by_condition": {
+    "L10": {
+      "failures": 12,
+      "search_limited": 2
+    },
+    "L15": {
+      "failures": 44,
+      "search_limited": 8
+    }
+  },
+  "cost_gap_wrong_minus_correct": [
+    -9.328,
+    -8.096,
+    -7.63,
+    -7.206,
+    -7.144,
+    -7.13,
+    -6.921,
+    -6.153,
+    -5.71,
+    -5.684,
+    -5.472,
+    -5.396,
+    -5.277,
+    -4.893,
+    -4.588,
+    -3.836,
+    -3.662,
+    -3.354,
+    -2.971,
+    -2.633,
+    -2.45,
+    -2.291,
+    -2.285,
+    -2.006,
+    -1.791,
+    -1.527,
+    -1.386,
+    -1.307,
+    -1.224,
+    -1.217,
+    -1.015,
+    -1.013,
+    -0.931,
+    -0.866,
+    -0.847,
+    -0.748,
+    -0.717,
+    -0.431,
+    -0.2,
+    -0.17,
+    -0.143,
+    -0.132,
+    -0.112,
+    -0.062,
+    -0.031,
+    -0.0,
+    0.246,
+    0.251,
+    0.34,
+    1.504,
+    1.523,
+    1.582,
+    2.579,
+    3.967,
+    4.256,
+    4.897
+  ],
+  "seconds": 167.0
+}
