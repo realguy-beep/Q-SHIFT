@@ -135,3 +135,16 @@ The floor re-decode, pre-registered in `600551456` and reported in `REDECODE_RES
 **Effect on §5:** the projected 95.0–95.8% at p = 0.001 is withdrawn. The best figure remains Stage E's 94.0%, and broad-benchmark 95% stays implausible.
 
 **Effect on §7:** the smallest next experiment is now roadmap step 2 (H-E1 on the existing mismatch development arrays). Degeneracy-aware decoding (ensembles or belief-matching) is the only remaining lever on the floor.
+
+## Addendum (2026-11-18): roadmap step 2 (H-E1) completed
+
+The test was pre-registered in `fcd9b8834` and is reported in `HE1_RESULTS.md`. Verdict: **H-E1_PARTIAL**. The unchanged Phase C learner was re-based on a background p estimated from each pool's unlabeled detector rows. The estimate lands within about 1% of the true p.
+- **Mlo:** learned pools went from 0/24 to **24/24**.
+- **Mhi:** false accepts went from 24/24 to **0/24**, with 24/24 still learned.
+- **Control:** unaffected. Its burst-free margin improved (largest Δ fell from 1,544 to 362, against τ = 1,561).
+- **Z-bias (Mz):** still fails (0/24). Bias changes the shape of the detector-rate pattern, not only its level, so a bias-aware base model is required.
+
+**Effect on §3–§4.** Mismatch-robust support inference is now the program's strongest development-level result. The next steps are:
+- H-E1b: a (p, bias) fit on the existing Mz pools;
+- an end-to-end decode check under mismatch, which needs small new development samples;
+- a fresh-seed validation screen.
