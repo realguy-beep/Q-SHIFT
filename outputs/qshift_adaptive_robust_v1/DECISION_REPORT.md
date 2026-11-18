@@ -163,3 +163,24 @@ The background p and the bias were fitted jointly from unlabeled detector rows.
 - The decoders under mismatch are untested.
 
 **Standing:** robust support inference is now repaired on development data for every mismatch tested. It is the program's strongest result so far, and it is still development-only.
+
+## Addendum (2026-11-18): OG and E2E development studies completed
+
+Both studies were frozen at `fe035cde7` and run once.
+
+**OG: OG_SUPPORTED** (`OG_RESULTS.md`).
+- The continuous (p, bias) learner learns 24/24 with 0/24 false accepts in all 5 in-family conditions whose true values lie off the grid.
+- Grid snapping had produced 4–6 false accepts.
+- X-bias and measurement-heavy noise are flagged in 48/48 pools each and fall back safely.
+
+**E2E: E2E_SUPPORTED** (`E2E_RESULTS.md`).
+- The full pipeline (estimate (p, b) → learn the support → decode) repairs the mismatch failure.
+  - Mlo: 153 → 18 nonzero-q errors, against an oracle of 17.
+  - Mz: 82 → 2, against an oracle of 2.
+- There is no degradation under Mhi or the control.
+- R vs matching stays at about 65% at p ≈ 0.003. At Mz, correlated matching is worse with the correct biased model. Against the best matcher present, R ≈ 91% on small counts.
+
+**Standing:**
+- **Achieved:** the "exactly known base model" caveat is removed on development data, for scalar p error and Z-bias.
+- **Unchanged:** the 95% broad target remains implausible.
+- **Next:** a frozen evaluation of the robust pipeline on fresh seeds, plus a wider model family (X-bias, separate measurement p).
