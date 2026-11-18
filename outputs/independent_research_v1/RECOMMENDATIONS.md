@@ -131,3 +131,9 @@ Do not scale the d11 XZZX run just to narrow a relative-rate interval around a p
 
 
 Do not pursue d13 with the current 500k-per-cell four-circuit batch under a 300s cap; it projects 455s. The balanced code-design sweep should pause at d11 until a faster or more sample-efficient method is justified. Focus next on a different research family or a concrete decoder acceleration hypothesis.
+
+
+The d7 two-basis screen supports a bias-dependent configuration choice: at 2:1, XZZX has only a 15% equal-mix point advantage and is worse for X memory; at 5:1/10:1 the average gains are larger. Keep CSS-X as the known-X-memory baseline. Any operating rule needs a predeclared workload mix and measured gate-family calibration.
+
+
+At d7 and 5:1 bias, XZZX's equal-mix point gain is 39%, but XZZX-X remains 5.85x worse than CSS-X. Preserve an axis-specific decision rule and require the actual workload mix before considering an XZZX deployment.

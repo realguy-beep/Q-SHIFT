@@ -209,3 +209,13 @@ Deterministic sample-size calculation only; no new sampling. Assumes the observe
 ## d13 runtime feasibility stop
 
 The fresh d13 preflight passed resource and decoder checks but projected 454.7s for the fixed main design, above the 300s gate. The preserved reporting-error attempt and corrected preflight are `xzzx_basis_factorial_d13_preflight_failed_attempt.json` and `xzzx_basis_factorial_d13_preflight.json`. No d13 main samples were generated.
+
+
+## d7 XZZX/CSS robustness at 2:1 bias
+
+Completed a predeclared d7 four-cell screen at an already used 2:1 X-bias ratio. Protocol and JSON artifacts: `xzzx_bias_ratio2_protocol.md`, `xzzx_bias_ratio2_preflight.json`, and `xzzx_bias_ratio2_results.json`.
+
+
+## d7 XZZX/CSS robustness at 5:1 bias
+
+Completed the fixed d7 four-cell screen at an already used 5:1 X-bias point. Protocol and result artifacts: `xzzx_bias_ratio5_protocol.md`, `xzzx_bias_ratio5_preflight.json`, `xzzx_bias_ratio5_results.json`.

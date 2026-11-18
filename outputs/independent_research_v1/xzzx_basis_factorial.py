@@ -17,9 +17,9 @@ MAIN_SEEDS=(2026114111,2026114112,2026114113,2026114114)
 PREFLIGHT_SHOTS=10000;MAIN_SHOTS=500000;MAX_SECONDS=300
 
 
-def make_circuit(code,basis,distance=5,rounds=None):
+def make_circuit(code,basis,distance=5,rounds=None,bias_ratio=10.0):
     if rounds is None:rounds=2*distance-1
-    c=build(basis,'x_biased',distance=distance,rounds=rounds,bias_ratio=10.,gate_p=.003,measurement_p=.003)
+    c=build(basis,'x_biased',distance=distance,rounds=rounds,bias_ratio=bias_ratio,gate_p=.003,measurement_p=.003)
     if code=='xzzx':c,_,_,_=native_transform(c)
     return c
 
@@ -41,8 +41,8 @@ def rr(a,na,b,nb):
             'conditional_failures':a+b,'upper_unbounded':b==0}
 
 
-def one(code,basis,seed,shots,preflight=False,distance=5,rounds=None):
-    c=make_circuit(code,basis,distance,rounds)
+def one(code,basis,seed,shots,preflight=False,distance=5,rounds=None,bias_ratio=10.0):
+    c=make_circuit(code,basis,distance,rounds,bias_ratio)
     dem=c.detector_error_model(decompose_errors=True,approximate_disjoint_errors=.0018)
     matching=pymatching.Matching.from_detector_error_model(dem,enable_correlations=True)
     clean=stim.Circuit()

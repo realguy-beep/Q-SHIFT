@@ -157,3 +157,9 @@ The d11 equal-weight CSS point LER .000067 implies candidate target 6.7e-9 for 1
 
 
 The d13 preflight passed structural checks but projected 454.7s for 500k per cell, above the 300s cap; no d13 main data exist. The current full factorial runtime envelope ends at d11. Any d13 follow-up needs a prospectively designed streaming/faster decode or a high-efficiency estimator, not post-hoc reduction of shots.
+
+
+At d7/13 rounds/p=.003 the equal-weight separate X/Z XZZX/CSS ratios were .853 at 2:1 bias (95% interval .736–.988), .608 at 5:1 (.529–.697), and .279 at 10:1 (.239–.325). At 2:1, XZZX-X/CSS-X=1.44 and XZZX-Z/CSS-Z=.60. This shows a bias-dependent workload tradeoff; it is not a single universal code recommendation. Hardware gate equivalence remains unverified.
+
+
+At d7, the 5:1 robustness screen gave CSS-X/Z 27/526 and XZZX-X/Z 158/178 failures (500k/cell). Equal-mix XZZX/CSS=.608 (95% interval .529–.697); XZZX-X/CSS-X=5.85 and XZZX-Z/CSS-Z=.338. Combined with 2:1=.853 and 10:1=.279, this supports a bias-strength interaction. It remains simulator-only with unverified gate equivalence.

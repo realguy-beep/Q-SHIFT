@@ -337,3 +337,9 @@ A d11 exact rare-event budget shows the current balanced-memory XZZX point is ~4
 
 
 The d13 balanced-memory factorial cannot fit the fixed runtime cap: preflight projects 455s. Preserve this as a scalability constraint and stop the sweep at d11 unless a new, independently justified computational method is designed.
+
+
+The 2:1 d7 robustness point adds a mild-bias endpoint. Equal-weight separate-memory XZZX/CSS ratios at bias 2/5/10 are .853/.608/.279; at 2:1 the CI barely excludes 1 and XZZX-X is worse. The pattern is bias-dependent, not universal. Do not turn these three selected strengths into a fitted crossover without a defined physical workload.
+
+
+The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.608. At 2:1 the gain is only .853, and XZZX-X is worse than CSS-X at every tested bias. Do not claim XZZX as a uniform biased-noise replacement.

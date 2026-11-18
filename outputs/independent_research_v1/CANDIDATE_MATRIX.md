@@ -84,3 +84,9 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 
 
 **Scalability boundary:** the d13 four-cell 500k/condition screen projected 455s at preflight, above the 300s cap. No d13 LER result exists; current screen stops at d11.
+
+
+**Bias robustness:** at d7 equal-weight separate X/Z task ratios XZZX/CSS were .853 at 2:1, .608 at 5:1, and .279 at 10:1. The gain strengthens with bias, but at 2:1 XZZX-X is worse than CSS-X. Native-gate equivalence remains assumed.
+
+
+At d7, the 5:1 bias check gave equal-mix XZZX/CSS=.608 (.529–.697); XZZX-X/CSS-X=5.85 and XZZX-Z/CSS-Z=.338. Alongside 2:1=.853 and 10:1=.279, this is workload- and bias-strength dependent.

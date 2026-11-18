@@ -136,3 +136,9 @@ At d11, equal-weight separate-basis XZZX/CSS=.0448 (.0090–.1366), with only 70
 
 
 At d11, the observed comparator point implies target candidate LER 6.7e-9 for a 1e-4 relative rate. An optimistic one-sided 95% IID design would need 447M shots with zero failures (708M allowing one), assuming the comparator rate is known. The observed XZZX point rate is 3e-6, roughly 448 times the target; sample size cannot close a performance gap by itself.
+
+
+At d7 the equal-weight XZZX/CSS ratios at bias 2:1, 5:1, and 10:1 are .853, .608, and .279. The 2:1 interval nearly touches 1; XZZX-X is worse while XZZX-Z is better. Three finite points do not define a continuous crossover or threshold, and all rely on synthetic gate equivalence.
+
+
+At d7, XZZX/CSS equal-mix rate ratios are .853 (2:1), .608 (5:1), and .279 (10:1). This is a finite set of synthetic bias strengths, not a fit or operational crossover; XZZX-X loses to CSS-X at all tested strengths.

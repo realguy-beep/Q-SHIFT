@@ -4,7 +4,7 @@
   "branch": "codex/qshift-independent-research-v1",
   "base_commit": "7cbc2e791a854e40ed4e840393fc8b4368d95ac2",
   "confirmatory_data_accessed": false,
-  "stochastic_qshift_shots_generated": 62500000,
+  "stochastic_qshift_shots_generated": 66580000,
   "dem_conversion_preflight": {
     "method": "Stim detector_error_model(decompose_errors=true, approximate_disjoint_errors=false)",
     "conditions": 6,
@@ -239,7 +239,7 @@
     },
     "interpretation": "all three BP+LSD variants worse in every tested condition; one distance/configuration/approximate model only; not an integration or superiority claim"
   },
-  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples; includes 20,000 all-fault instrumentation preflight and 200,000 all-fault composition development samples; excludes 50,000 synthetic instrumentation checks; includes fresh 40,000-shot preflight and 2,000,000-shot main d5 CSS/XZZX by memory-basis factorial screen; includes independent 40,000-shot preflight and 2,000,000-shot d5 XZZX/CSS basis-factorial development replication; includes d3/d7 CSS/XZZX basis-scale preflight 80,000 and main 4,000,000 development samples; an identical-seed replay after a preflight reporting bug is counted once; includes d9 CSS/XZZX four-cell basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d11 CSS/XZZX basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d13 runtime-gate preflight 40,000 samples; deterministic rerun after output typo is counted once; no d13 main samples",
+  "stochastic_qshift_shots_scope": "development-only Phase 2B circuit samples from unique predeclared seed streams; excludes a selector-sign rerun that reused identical seeds; excludes qecsim ideal-syndrome code-capacity shots; no confirmatory or sealed evaluation data accessed; includes the new 962,400 categorical importance training, validation, and Q-SHIFT preflight samples; excludes 50,000 synthetic channel-instrumentation shots; includes native-XCX XZZX 4,000,800 development and preflight circuit samples; includes the complementary XZZX 3,000,600 development and preflight circuit samples; includes the 400,200 spatial-noise development and preflight circuit samples; includes the 1,000,200 d9 basis-alignment development and preflight samples; includes 20,000 all-fault instrumentation preflight and 200,000 all-fault composition development samples; excludes 50,000 synthetic instrumentation checks; includes fresh 40,000-shot preflight and 2,000,000-shot main d5 CSS/XZZX by memory-basis factorial screen; includes independent 40,000-shot preflight and 2,000,000-shot d5 XZZX/CSS basis-factorial development replication; includes d3/d7 CSS/XZZX basis-scale preflight 80,000 and main 4,000,000 development samples; an identical-seed replay after a preflight reporting bug is counted once; includes d9 CSS/XZZX four-cell basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d11 CSS/XZZX basis-factorial preflight 40,000 and main 2,000,000 development samples; includes d13 runtime-gate preflight 40,000 samples; deterministic rerun after output typo is counted once; no d13 main samples; includes d7 ratio-2:1 XZZX/CSS basis-robustness preflight 40,000 and main 2,000,000 development samples; includes d7 ratio-5:1 XZZX/CSS basis-robustness preflight 40,000 and main 2,000,000 development samples",
   "stochastic_dem_samples_generated": 780000,
   "rare_event_importance_sampling": {
     "status": "positive_development_method_result_limited_to_approximate_dem",
@@ -22984,6 +22984,198 @@
         "decode_seconds": 2.2878021779979463,
         "max_rss_kib": 311608
       }
+    ]
+  },
+  "xzzx_bias_ratio2_preflight": {
+    "status": "xzzx_bias2_preflight_passed",
+    "artifact": "xzzx_bias_ratio2_preflight.json",
+    "projected_main_seconds": 53.4758014997351,
+    "elapsed_seconds": 2.2022312429980957
+  },
+  "xzzx_bias_ratio2": {
+    "status": "development_xzzx_bias2",
+    "artifact": "xzzx_bias_ratio2_results.json",
+    "protocol": "xzzx_bias_ratio2_protocol.md",
+    "shots_per_condition": 500000,
+    "new_source_equivalent_samples": 2000000,
+    "elapsed_seconds": 68.6695843200032,
+    "conditions": [
+      {
+        "code": "css",
+        "basis": "x",
+        "failures": 120,
+        "ler": 0.00024,
+        "wilson_95": [
+          0.00020073290437225348,
+          0.0002869462664702297
+        ]
+      },
+      {
+        "code": "css",
+        "basis": "z",
+        "failures": 281,
+        "ler": 0.000562,
+        "wilson_95": [
+          0.0005000338944340373,
+          0.0006316403286474979
+        ]
+      },
+      {
+        "code": "xzzx",
+        "basis": "x",
+        "failures": 173,
+        "ler": 0.000346,
+        "wilson_95": [
+          0.00029814655225590155,
+          0.0004015309898205554
+        ]
+      },
+      {
+        "code": "xzzx",
+        "basis": "z",
+        "failures": 169,
+        "ler": 0.000338,
+        "wilson_95": [
+          0.0002907441642253087,
+          0.00039293350077688604
+        ]
+      }
+    ],
+    "comparisons": {
+      "equal_weight_separate_basis_mix_xzzx_over_css": {
+        "point": 0.8528678304239402,
+        "conditional_exact_95_ci": [
+          0.7361217615005434,
+          0.9876961554079787
+        ],
+        "conditional_failures": 743,
+        "upper_unbounded": false
+      },
+      "xzzx_x_over_css_x": {
+        "point": 1.4416666666666667,
+        "conditional_exact_95_ci": [
+          1.135615485617706,
+          1.8351761053258517
+        ],
+        "conditional_failures": 293,
+        "upper_unbounded": false
+      },
+      "xzzx_z_over_css_z": {
+        "point": 0.6014234875444839,
+        "conditional_exact_95_ci": [
+          0.49398253370042433,
+          0.7304345175929505
+        ],
+        "conditional_failures": 450,
+        "upper_unbounded": false
+      },
+      "raw_counts": {
+        "css_x": 120,
+        "css_z": 281,
+        "xzzx_x": 173,
+        "xzzx_z": 169
+      }
+    },
+    "limitations": [
+      "d7 only, single 2:1 point and synthetic noise.",
+      "Equal-weight separate memory tasks are not arbitrary-state performance.",
+      "Native gate noise/duration equivalence unverified."
+    ]
+  },
+  "xzzx_bias_ratio5_preflight": {
+    "status": "xzzx_bias5_preflight_passed",
+    "artifact": "xzzx_bias_ratio5_preflight.json",
+    "projected_main_seconds": 53.82414229989081,
+    "elapsed_seconds": 2.26234108999779
+  },
+  "xzzx_bias_ratio5": {
+    "status": "development_xzzx_bias5",
+    "artifact": "xzzx_bias_ratio5_results.json",
+    "protocol": "xzzx_bias_ratio5_protocol.md",
+    "shots_per_condition": 500000,
+    "new_source_equivalent_samples": 2000000,
+    "elapsed_seconds": 66.76289780900333,
+    "conditions": [
+      {
+        "code": "css",
+        "basis": "x",
+        "failures": 27,
+        "ler": 5.4e-05,
+        "wilson_95": [
+          3.711409102767827e-05,
+          7.85679378382096e-05
+        ]
+      },
+      {
+        "code": "css",
+        "basis": "z",
+        "failures": 526,
+        "ler": 0.001052,
+        "wilson_95": [
+          0.0009658969296165788,
+          0.0011457697642635143
+        ]
+      },
+      {
+        "code": "xzzx",
+        "basis": "x",
+        "failures": 158,
+        "ler": 0.000316,
+        "wilson_95": [
+          0.00027042489346373026,
+          0.0003692531095842436
+        ]
+      },
+      {
+        "code": "xzzx",
+        "basis": "z",
+        "failures": 178,
+        "ler": 0.000356,
+        "wilson_95": [
+          0.0003074091267379393,
+          0.00041226826168134535
+        ]
+      }
+    ],
+    "comparisons": {
+      "equal_weight_separate_basis_mix_xzzx_over_css": {
+        "point": 0.6075949367088608,
+        "conditional_exact_95_ci": [
+          0.5289738921091196,
+          0.6970746138224562
+        ],
+        "conditional_failures": 889,
+        "upper_unbounded": false
+      },
+      "xzzx_x_over_css_x": {
+        "point": 5.851851851851852,
+        "conditional_exact_95_ci": [
+          3.873389424005456,
+          9.159029972748446
+        ],
+        "conditional_failures": 185,
+        "upper_unbounded": false
+      },
+      "xzzx_z_over_css_z": {
+        "point": 0.33840304182509506,
+        "conditional_exact_95_ci": [
+          0.2838885600189867,
+          0.4018412735761154
+        ],
+        "conditional_failures": 704,
+        "upper_unbounded": false
+      },
+      "raw_counts": {
+        "css_x": 27,
+        "css_z": 526,
+        "xzzx_x": 158,
+        "xzzx_z": 178
+      }
+    },
+    "limitations": [
+      "d7 only, one 5:1 point.",
+      "Separate memory task rates, not arbitrary-state performance.",
+      "Native gate equivalence remains unverified."
     ]
   }
 }

@@ -348,3 +348,13 @@ The observed equal-weight CSS point LER was 6.7e-5, so a 1e-4 relative target wo
 ## d13 scaling feasibility stop
 
 The corrected 10k/cell preflight passed resource equality and decoder checks but projected 454.7 seconds for the fixed 500k/cell main screen, exceeding the 300-second cap. No performance results are available at d13. The first attempt's output typo is preserved; identical seeds were replayed and unique preflight samples counted once. This marks the runtime boundary for the current four-cell PyMatching screen.
+
+
+## d7 XZZX/CSS bias-strength robustness
+
+At 2:1 X bias, 500k shots/cell gave CSS-X/Z 120/281 failures and XZZX-X/Z 173/169. The equal-weight separate-memory XZZX/CSS ratio was .853 (95% interval .736–.988); XZZX-X/CSS-X=1.44 (1.14–1.84), XZZX-Z/CSS-Z=.601 (.494–.730). At the same d7/p/round design, the 5:1 screen gave .608 (.529–.697), and the 10:1 screen gave .279 (.239–.325). Thus the balanced-task XZZX advantage strengthens with bias in these three finite points, but basis-specific direction remains mixed. These are development simulations under unverified native gate equivalence.
+
+
+## d7 XZZX/CSS robustness at 5:1 bias
+
+At ratio5:1, 500k shots/cell gave CSS-X/Z 27/526 failures and XZZX-X/Z 158/178. The equal-weight separate-memory XZZX/CSS ratio was .608 (95% interval .529–.697); XZZX-X/CSS-X=5.85 (3.87–9.16), XZZX-Z/CSS-Z=.338 (.284–.402). Preflight projected 53.82s and the main took 66.76s. Together with 2:1 (.853) and 10:1 (.279) at d7, the advantage is bias-strength dependent.

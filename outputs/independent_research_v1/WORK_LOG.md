@@ -464,3 +464,20 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Corrected preflight took 16.61s and projected 454.70s for 500k x 4, exceeding the 300s cap. No d13 main samples. Unique preflight samples=40,000.
 - Total unique Q-SHIFT development samples now 62,500,000. No sealed/confirmatory data.
 - Switch to a different family or an explicit speed/rare-event method; do not shrink shots after observing the stop.
+
+
+## d7 XZZX/CSS robustness at 2:1 bias — 2026-11-18
+
+- Preflight projected 53.48s; main 2,000,000 samples completed in 68.67s.
+- CSS-X/Z 120/281 failures; XZZX-X/Z 173/169. Equal-weight RR .853 (95% interval .736–.988); XZZX-X/CSS-X 1.44; XZZX-Z/CSS-Z .601.
+- Across same d7 resources, equal-weight ratios 2:1/.5:1/10:1 = .853/.608/.279: gain grows with bias but is axis-specific.
+- Total unique Q-SHIFT development shots: 66,580,000. No sealed or confirmatory data.
+- Next: stop parameter expansion here unless a concrete workload weighting is specified; review the full evidence set and identify any genuinely open non-code-design question.
+
+
+## d7 XZZX/CSS robustness at 5:1 bias — 2026-11-18
+
+- Preflight projected 53.82s; main 2,000,000 samples completed in 66.76s.
+- CSS-X/Z 27/526; XZZX-X/Z 158/178. Equal-weight RR .608 (95% interval .529–.697); XZZX-X/CSS-X 5.85; XZZX-Z/CSS-Z .338.
+- d7 equal-mix ratios at bias2/5/10 are .853/.608/.279; effect grows with bias, but basis-specific gains differ.
+- Total unique Q-SHIFT development samples now 66,580,000, including ratio2 and ratio5 screens. No confirmatory/sealed data.

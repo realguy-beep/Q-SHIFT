@@ -177,3 +177,9 @@ The d11 balanced aggregate is driven by 3 versus 67 Z-memory failures; both X-me
 
 
 The current four-cell d13 screen is too expensive under the 300-second run cap: preflight projects 454.7s. Do not reduce shot count or split conditions after seeing results to force a d13 claim; a new computational design is required. The d11 result is the highest-distance full factorial checkpoint.
+
+
+At d7 and 2:1 bias, XZZX improves the equal-weight memory-task average only modestly (.853) and does so by reducing Z-memory errors; XZZX-X is 1.44x worse than CSS-X. The 5:1 and 10:1 aggregate gains are larger (.608 and .279). This is a bias-strength interaction, not a universal code winner or an arbitrary-state result.
+
+
+The d7 5:1 condition shows the equal-mix XZZX benefit is not confined to 10:1, but XZZX-X still loses to CSS-X by 5.85x. The aggregate .608 is therefore a basis-mix outcome; use the separate basis rates whenever the workload axis is known.

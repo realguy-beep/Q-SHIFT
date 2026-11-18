@@ -307,3 +307,19 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xz
 ```
 
 The protocol's 300s stop gate failed; do not run the main command without a new predeclared design.
+
+
+### d7 XZZX/CSS robustness at 2:1 bias
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_bias_ratio2.py --preflight
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_bias_ratio2.py
+```
+
+
+### d7 XZZX/CSS robustness at 5:1 bias
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_bias_ratio5.py --preflight
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/xzzx_bias_ratio5.py
+```
