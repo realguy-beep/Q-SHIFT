@@ -170,3 +170,15 @@ MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/ba
 ```
 
 The fixed d9 protocol and ratio interval definition are in `basis_alignment_d9_protocol.md`.
+
+
+### Biased planar MPS code-capacity screen
+
+```sh
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/tensor_mps_biased.py --preflight
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/tensor_mps_biased.py
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/tensor_mps_biased_replication.py --preflight
+MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v1/tensor_mps_biased_replication.py
+```
+
+These are code-capacity experiments only; see their fixed protocols.

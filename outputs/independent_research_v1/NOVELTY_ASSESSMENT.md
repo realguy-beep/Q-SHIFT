@@ -33,3 +33,6 @@ The native-XCX XZZX experiment is not a new code or decoder. It supplies Q-SHIFT
 
 
 The complementary-orientation screen is not a new code family or algorithm. It adds local finite-size evidence that the native XZZX checkerboard's bias orientation changes performance, while showing that one complement does not beat CSS under the tested Z-biased condition.
+
+
+The biased-noise planar MPS comparison applies an established tensor decoder to an established biased code-capacity model; it is not a new algorithm. Its local empirical contribution is the paired chi=16 vs bias-aware MWPM screen with independent seeds. No novelty or circuit-level gain is claimed.

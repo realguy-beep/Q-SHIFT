@@ -262,3 +262,10 @@
 - Conducted one fixed d9/17-round extension for X-biased ratio10, Z-memory task: aligned X-memory vs mismatched Z-memory, 500k shots each. Resource, noiseless determinism, DEM, and scalar/batch checks passed. Main runtime 47.9s.
 - Observed 1 vs 408 failures; ratio .00245 with exact conditional 95% interval [.0000619,.01373]. This is compatible with both large and modest gains and does not establish 10,000-fold reduction or a scaling law. The fixed protocol prohibited extending after outcome inspection.
 - Q-SHIFT samples +1,000,200; no confirmatory/sealed data accessed.
+
+
+## Checkpoint — biased code-capacity MPS and independent replication (2026-11-18)
+
+- Tested established qecsim chi=16 planar MPS under 10:1:1 X-biased code-capacity noise vs its bias-aware MWPM decoder. 5k paired samples at d3/d5; both recovery-valid.
+- Fresh independent-seed repeat under same protocol. MPS direction favored at both distances in both roots; d5 intervals below zero in both, d3 interval crossed zero in replication. d5 MPS latency ~31x MWPM.
+- Positive result is restricted to perfect-syndrome code capacity. No Q-SHIFT circuit shots, no confirmatory data. A spacetime tensor network is required for an information-fair circuit comparison.

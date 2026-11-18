@@ -96,3 +96,8 @@ A d3 Z-memory X-biased test used two synthetic two-qubit hotspot maps (1.5x/.5x,
 ## Distance-9 basis-alignment extension
 
 At d9/17 rounds, X-biased ratio10, p=.003, 500k shots/arm yielded one aligned X-memory failure versus 408 mismatched Z-memory failures. Ratio .00245, conditional exact 95% CI [.0000619,.01373]. The point estimate is lower than d7's .00496, but uncertainty is broad and does not support a 10,000-fold claim or scaling law. No extra shots were appended. Artifact/protocol: `basis_alignment_d9_results.json`, `basis_alignment_d9_protocol.md`.
+
+
+## Biased code-capacity tensor MPS result
+
+With qecsim 1.0b9, `BiasedDepolarizingErrorModel(bias=5, axis='X')` gives a 10:1:1 X:Y:Z ratio. Fixed `PlanarMPSDecoder(chi=16,mode='c')` beat bias-aware `PlanarMWPMDecoder` at d5 on two independent 5k-sample roots: 76 vs 118 failures, then 75 vs 101. At d3 it had 175 vs 191 in the first root (paired CI narrowly below zero) and 182 vs 197 in the second (CI crossed zero). d5 latency was about 31x MWPM. This is code-capacity only. qecsim MPS accepts a perfect planar syndrome; Q-SHIFT requires noisy repeated spacetime detectors and categorical gate faults, so direct application is not information-fair. Keep as a research candidate, but no Q-SHIFT integration or circuit-level claim without a new spacetime tensor algorithm. See `tensor_mps_biased*` artifacts/protocols.

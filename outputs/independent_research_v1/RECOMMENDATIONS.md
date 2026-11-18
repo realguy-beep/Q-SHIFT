@@ -80,3 +80,6 @@ Do not advance a detector-only east/west hotspot selector from the tested model:
 
 
 A d9 basis-alignment extension kept the same matched circuit/resources but observed only one aligned failure in 500k shots. Its ratio interval [.0000619,.01373] cannot certify a 10,000-fold gain or a scaling trend. Treat d3–d9 as finite-size known-profile configuration evidence, not threshold data. Any larger-distance study needs an explicit shot/runtime plan and independent-root replication; do not append shots to this already inspected stream.
+
+
+The fixed chi=16 MPS result is worth keeping as a biased code-capacity direction: d5 improved in both 5k independent roots, while d3 was less certain. Do not integrate it into Q-SHIFT based on this evidence. qecsim's decoder consumes perfect planar syndromes and cannot use Q-SHIFT's repeated spacetime detector record; a circuit-compatible tensor decoder would need an explicit temporal contraction model and an equal-information baseline. Its d5 latency is already about 31x bias-aware MWPM.

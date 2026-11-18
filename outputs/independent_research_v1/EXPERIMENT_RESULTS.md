@@ -271,3 +271,8 @@ The corrected preflight passed with 120 channel-pair locations split 60/60 and e
 ## Distance-9 known-profile basis alignment
 
 The d9 preflight passed and projected under the 300s cap. At d=9, rounds=17, p=.003, X-biased ratio10, 500,000 independent shots per basis produced 1 aligned X-memory failure (LER 2e-6) and 408 mismatched Z-memory failures (LER 8.16e-4). The aligned/mismatched point ratio is .00245; its conditional exact 95% interval is [0.0000619, 0.01373], far too broad to resolve the 10,000-fold target. The d7 point ratio was 5/1009=.00496; the d9 point estimate is lower, but sparse aligned counts do not establish a distance-scaling law. No extra shots were added after seeing the outcome. See `basis_alignment_d9_results.json`; this is development-only finite-size evidence.
+
+
+## Fixed-bond MPS under X-biased code-capacity noise
+
+Using qecsim's `BiasedDepolarizingErrorModel(bias=5, axis='X')` (axis/off-axis probability ratio 10), p=.05, and 5,000 paired errors/distance, chi=16 MPS reduced failures versus bias-aware MWPM from 191 to 175 at d3 (8.4%; paired 95% interval for MPS-minus-MWPM LER [-.00629,-.00011]) and 118 to 76 at d5 (35.6%; interval [-.01177,-.00503]). MPS decode time was about 6x MWPM at d3 and 31x at d5. A fresh-seed replication again favored MPS at both distances: d3 182 vs 197, paired interval [-.00666,+.00066] crossing zero; d5 75 vs 101, interval [-.00843,-.00197]. This supports a directional code-capacity MPS signal, especially at d5, but d3 is uncertain, each root has only 5,000 shots, and this model has perfect syndrome/no repeated measurement faults. No Q-SHIFT circuit shots were generated. See primary and replication artifacts/protocols.

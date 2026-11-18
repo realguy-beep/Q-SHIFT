@@ -155,3 +155,6 @@ The local-vs-pooled spatial heterogeneity stress test is fixed in `spatial_noise
 
 
 A fourth distance point at d9/17 rounds is fixed in `basis_alignment_d9_protocol.md`. It compares X-memory (aligned) and Z-memory (mismatched) for X-biased ratio10 at p=.003, with 500k shots/arm and an exact ratio interval. The aim is finite-size trend and uncertainty characterization, not a threshold fit.
+
+
+The biased code-capacity MPS screen is fixed in `tensor_mps_biased_protocol.md`; a separate fresh-seed replication is in `tensor_mps_biased_replication_protocol.md`. Both use bias-aware qecsim MWPM as the comparator and hold chi=16/mode=c fixed. Neither evaluates Q-SHIFT's repeated-measurement circuit.

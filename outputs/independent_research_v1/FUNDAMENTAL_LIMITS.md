@@ -88,3 +88,8 @@ Under a synthetic stable spatial map that doubles/halves rates relative to the .
 ## Distance-9 basis-alignment uncertainty
 
 At d9, 500k shots gave 1 aligned failure against 408 mismatched failures for one X-biased profile. The point ratio .00245 is consistent with a broad exact ratio interval [.0000619,.01373], which includes improvements much smaller than the aspirational 10,000-fold reduction. This shows how rapidly evidence becomes sample-limited as the aligned LER falls; it neither proves a floor nor establishes exponential distance scaling.
+
+
+## Biased MPS scope boundary
+
+At p=.05 in perfect-syndrome planar code capacity with X:Y:Z=10:1:1, fixed chi=16 planar MPS outperformed bias-aware MWPM in d5 on two 5k-sample roots and directionally in d3 (one of two roots had a paired interval spanning zero). Its d5 decoding latency was about 31x higher. These results establish neither a Q-SHIFT repeated-circuit gain nor a usable lower LER bound; measurement faults, spacetime correlations, and categorical two-qubit gate channels are absent.

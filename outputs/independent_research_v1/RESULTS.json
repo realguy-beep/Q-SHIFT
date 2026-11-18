@@ -19267,5 +19267,493 @@
     "elapsed_seconds": 48.43563403100052,
     "max_rss_kib": 1476184,
     "scope": "fourth finite-distance point for fixed known-profile bias alignment; development only; not threshold or adaptation evidence"
-  }
+  },
+  "tensor_mps_biased_preflight": {
+    "status": "preflight",
+    "qecsim_version": "1.0b9",
+    "p": 0.05,
+    "bias": 5.0,
+    "axis": "X",
+    "axis_to_off_axis_probability_ratio": 10.0,
+    "mps_chi": 16,
+    "mps_mode": "c",
+    "shots_per_distance": 100,
+    "distance_results": [
+      {
+        "distance": 3,
+        "code_shape": [
+          13,
+          1,
+          3
+        ],
+        "error_model": "BiasedDepolarizingErrorModel(bias=5.0, axis=X); p=0.05; X:Y:Z ratio 10:1:1",
+        "shots": 100,
+        "seed": 2026113301,
+        "mps_chi": 16,
+        "mps_mode": "c",
+        "failures": {
+          "mwpm": 7,
+          "mps_chi16": 5
+        },
+        "ler": {
+          "mwpm": 0.07,
+          "mps_chi16": 0.05
+        },
+        "wilson_95": {
+          "mwpm": [
+            0.03431926106727268,
+            0.137495147390735
+          ],
+          "mps_chi16": [
+            0.02154367915436796,
+            0.11175046923191913
+          ]
+        },
+        "invalid_recoveries": {
+          "mwpm": 0,
+          "mps_chi16": 0
+        },
+        "paired_mps_minus_mwpm_ler": -0.02,
+        "paired_normal_95": [
+          -0.047918982980317895,
+          0.007918982980317894
+        ],
+        "mwpm_only_failures": 2,
+        "mps_only_failures": 0,
+        "discordant_shots": 2,
+        "mcnemar_exact_two_sided": 0.5,
+        "decode_seconds": {
+          "mwpm": 0.024273193026601803,
+          "mps_chi16": 0.12057692902817507
+        },
+        "seconds_per_decode": {
+          "mwpm": 0.00024273193026601802,
+          "mps_chi16": 0.0012057692902817507
+        },
+        "max_rss_kib": 115512
+      },
+      {
+        "distance": 5,
+        "code_shape": [
+          41,
+          1,
+          5
+        ],
+        "error_model": "BiasedDepolarizingErrorModel(bias=5.0, axis=X); p=0.05; X:Y:Z ratio 10:1:1",
+        "shots": 100,
+        "seed": 2026113302,
+        "mps_chi": 16,
+        "mps_mode": "c",
+        "failures": {
+          "mwpm": 4,
+          "mps_chi16": 3
+        },
+        "ler": {
+          "mwpm": 0.04,
+          "mps_chi16": 0.03
+        },
+        "wilson_95": {
+          "mwpm": [
+            0.01566330399154762,
+            0.0983707143588792
+          ],
+          "mps_chi16": [
+            0.010254524024038925,
+            0.0845193642905276
+          ]
+        },
+        "invalid_recoveries": {
+          "mwpm": 0,
+          "mps_chi16": 0
+        },
+        "paired_mps_minus_mwpm_ler": -0.01,
+        "paired_normal_95": [
+          -0.029842169515864173,
+          0.009842169515864174
+        ],
+        "mwpm_only_failures": 1,
+        "mps_only_failures": 0,
+        "discordant_shots": 1,
+        "mcnemar_exact_two_sided": 1.0,
+        "decode_seconds": {
+          "mwpm": 0.06141466100962134,
+          "mps_chi16": 1.6736240859972895
+        },
+        "seconds_per_decode": {
+          "mwpm": 0.0006141466100962134,
+          "mps_chi16": 0.016736240859972894
+        },
+        "max_rss_kib": 118624
+      }
+    ],
+    "all_recoveries_valid": true,
+    "both_distance_advancement_gate_passed": false,
+    "elapsed_seconds": 1.9722900050001044,
+    "projected_main_seconds": 98.61450025000522,
+    "stochastic_qshift_circuit_shots": 0,
+    "scope": "perfect-syndrome code-capacity study; no Q-SHIFT repeated-measurement circuit inference"
+  },
+  "tensor_mps_biased": {
+    "status": "biased_code_capacity_mps_development",
+    "qecsim_version": "1.0b9",
+    "p": 0.05,
+    "bias": 5.0,
+    "axis": "X",
+    "axis_to_off_axis_probability_ratio": 10.0,
+    "mps_chi": 16,
+    "mps_mode": "c",
+    "shots_per_distance": 5000,
+    "distance_results": [
+      {
+        "distance": 3,
+        "code_shape": [
+          13,
+          1,
+          3
+        ],
+        "error_model": "BiasedDepolarizingErrorModel(bias=5.0, axis=X); p=0.05; X:Y:Z ratio 10:1:1",
+        "shots": 5000,
+        "seed": 2026113311,
+        "mps_chi": 16,
+        "mps_mode": "c",
+        "failures": {
+          "mwpm": 191,
+          "mps_chi16": 175
+        },
+        "ler": {
+          "mwpm": 0.0382,
+          "mps_chi16": 0.035
+        },
+        "wilson_95": {
+          "mwpm": [
+            0.033231777279803,
+            0.04387727223665177
+          ],
+          "mps_chi16": [
+            0.03025241786606471,
+            0.040461544942838434
+          ]
+        },
+        "invalid_recoveries": {
+          "mwpm": 0,
+          "mps_chi16": 0
+        },
+        "paired_mps_minus_mwpm_ler": -0.0032,
+        "paired_normal_95": [
+          -0.006286335496864186,
+          -0.000113664503135815
+        ],
+        "mwpm_only_failures": 39,
+        "mps_only_failures": 23,
+        "discordant_shots": 62,
+        "mcnemar_exact_two_sided": 0.05589722669971112,
+        "decode_seconds": {
+          "mwpm": 0.8018470498682291,
+          "mps_chi16": 4.984988471962424
+        },
+        "seconds_per_decode": {
+          "mwpm": 0.00016036940997364582,
+          "mps_chi16": 0.0009969976943924848
+        },
+        "max_rss_kib": 114444
+      },
+      {
+        "distance": 5,
+        "code_shape": [
+          41,
+          1,
+          5
+        ],
+        "error_model": "BiasedDepolarizingErrorModel(bias=5.0, axis=X); p=0.05; X:Y:Z ratio 10:1:1",
+        "shots": 5000,
+        "seed": 2026113312,
+        "mps_chi": 16,
+        "mps_mode": "c",
+        "failures": {
+          "mwpm": 118,
+          "mps_chi16": 76
+        },
+        "ler": {
+          "mwpm": 0.0236,
+          "mps_chi16": 0.0152
+        },
+        "wilson_95": {
+          "mwpm": [
+            0.01974389149873783,
+            0.028187574914512604
+          ],
+          "mps_chi16": [
+            0.012161871202107252,
+            0.01898249260382014
+          ]
+        },
+        "invalid_recoveries": {
+          "mwpm": 0,
+          "mps_chi16": 0
+        },
+        "paired_mps_minus_mwpm_ler": -0.0084,
+        "paired_normal_95": [
+          -0.011765152923403526,
+          -0.0050348470765964725
+        ],
+        "mwpm_only_failures": 58,
+        "mps_only_failures": 16,
+        "discordant_shots": 74,
+        "mcnemar_exact_two_sided": 9.674891137601897e-07,
+        "decode_seconds": {
+          "mwpm": 2.2207975489691307,
+          "mps_chi16": 69.26708754206993
+        },
+        "seconds_per_decode": {
+          "mwpm": 0.00044415950979382615,
+          "mps_chi16": 0.013853417508413986
+        },
+        "max_rss_kib": 117200
+      }
+    ],
+    "all_recoveries_valid": true,
+    "both_distance_advancement_gate_passed": true,
+    "elapsed_seconds": 80.61907897599667,
+    "projected_main_seconds": null,
+    "stochastic_qshift_circuit_shots": 0,
+    "scope": "perfect-syndrome code-capacity study; no Q-SHIFT repeated-measurement circuit inference"
+  },
+  "tensor_mps_biased_replication_preflight": {
+    "status": "preflight",
+    "qecsim_version": "1.0b9",
+    "shots_per_distance": 100,
+    "distance_results": [
+      {
+        "distance": 3,
+        "code_shape": [
+          13,
+          1,
+          3
+        ],
+        "error_model": "BiasedDepolarizingErrorModel(bias=5.0, axis=X); p=0.05; X:Y:Z ratio 10:1:1",
+        "shots": 100,
+        "seed": 2026113321,
+        "mps_chi": 16,
+        "mps_mode": "c",
+        "failures": {
+          "mwpm": 4,
+          "mps_chi16": 3
+        },
+        "ler": {
+          "mwpm": 0.04,
+          "mps_chi16": 0.03
+        },
+        "wilson_95": {
+          "mwpm": [
+            0.01566330399154762,
+            0.0983707143588792
+          ],
+          "mps_chi16": [
+            0.010254524024038925,
+            0.0845193642905276
+          ]
+        },
+        "invalid_recoveries": {
+          "mwpm": 0,
+          "mps_chi16": 0
+        },
+        "paired_mps_minus_mwpm_ler": -0.01,
+        "paired_normal_95": [
+          -0.029842169515864173,
+          0.009842169515864174
+        ],
+        "mwpm_only_failures": 1,
+        "mps_only_failures": 0,
+        "discordant_shots": 1,
+        "mcnemar_exact_two_sided": 1.0,
+        "decode_seconds": {
+          "mwpm": 0.031214100992656313,
+          "mps_chi16": 0.1367619660049968
+        },
+        "seconds_per_decode": {
+          "mwpm": 0.00031214100992656314,
+          "mps_chi16": 0.0013676196600499678
+        },
+        "max_rss_kib": 113660
+      },
+      {
+        "distance": 5,
+        "code_shape": [
+          41,
+          1,
+          5
+        ],
+        "error_model": "BiasedDepolarizingErrorModel(bias=5.0, axis=X); p=0.05; X:Y:Z ratio 10:1:1",
+        "shots": 100,
+        "seed": 2026113322,
+        "mps_chi": 16,
+        "mps_mode": "c",
+        "failures": {
+          "mwpm": 4,
+          "mps_chi16": 3
+        },
+        "ler": {
+          "mwpm": 0.04,
+          "mps_chi16": 0.03
+        },
+        "wilson_95": {
+          "mwpm": [
+            0.01566330399154762,
+            0.0983707143588792
+          ],
+          "mps_chi16": [
+            0.010254524024038925,
+            0.0845193642905276
+          ]
+        },
+        "invalid_recoveries": {
+          "mwpm": 0,
+          "mps_chi16": 0
+        },
+        "paired_mps_minus_mwpm_ler": -0.01,
+        "paired_normal_95": [
+          -0.044483167557899425,
+          0.02448316755789942
+        ],
+        "mwpm_only_failures": 2,
+        "mps_only_failures": 1,
+        "discordant_shots": 3,
+        "mcnemar_exact_two_sided": 1.0,
+        "decode_seconds": {
+          "mwpm": 0.04326062100153649,
+          "mps_chi16": 1.2478294630091114
+        },
+        "seconds_per_decode": {
+          "mwpm": 0.00043260621001536495,
+          "mps_chi16": 0.012478294630091114
+        },
+        "max_rss_kib": 116932
+      }
+    ],
+    "all_recoveries_valid": true,
+    "projected_main_seconds": 76.73502039997402,
+    "elapsed_seconds": 1.5347004079994804,
+    "stochastic_qshift_circuit_shots": 0,
+    "scope": "independent seed development replication; perfect-syndrome code-capacity only"
+  },
+  "tensor_mps_biased_replication": {
+    "status": "biased_mps_independent_development_replication",
+    "qecsim_version": "1.0b9",
+    "shots_per_distance": 5000,
+    "distance_results": [
+      {
+        "distance": 3,
+        "code_shape": [
+          13,
+          1,
+          3
+        ],
+        "error_model": "BiasedDepolarizingErrorModel(bias=5.0, axis=X); p=0.05; X:Y:Z ratio 10:1:1",
+        "shots": 5000,
+        "seed": 2026113331,
+        "mps_chi": 16,
+        "mps_mode": "c",
+        "failures": {
+          "mwpm": 197,
+          "mps_chi16": 182
+        },
+        "ler": {
+          "mwpm": 0.0394,
+          "mps_chi16": 0.0364
+        },
+        "wilson_95": {
+          "mwpm": [
+            0.03435168327487957,
+            0.045155523756907054
+          ],
+          "mps_chi16": [
+            0.03155457545035066,
+            0.04195723779310631
+          ]
+        },
+        "invalid_recoveries": {
+          "mwpm": 0,
+          "mps_chi16": 0
+        },
+        "paired_mps_minus_mwpm_ler": -0.003,
+        "paired_normal_95": [
+          -0.006656570611676769,
+          0.0006565706116767687
+        ],
+        "mwpm_only_failures": 51,
+        "mps_only_failures": 36,
+        "discordant_shots": 87,
+        "mcnemar_exact_two_sided": 0.1329018851954619,
+        "decode_seconds": {
+          "mwpm": 0.7417304260852688,
+          "mps_chi16": 4.686409800928232
+        },
+        "seconds_per_decode": {
+          "mwpm": 0.00014834608521705376,
+          "mps_chi16": 0.0009372819601856464
+        },
+        "max_rss_kib": 114752
+      },
+      {
+        "distance": 5,
+        "code_shape": [
+          41,
+          1,
+          5
+        ],
+        "error_model": "BiasedDepolarizingErrorModel(bias=5.0, axis=X); p=0.05; X:Y:Z ratio 10:1:1",
+        "shots": 5000,
+        "seed": 2026113332,
+        "mps_chi": 16,
+        "mps_mode": "c",
+        "failures": {
+          "mwpm": 101,
+          "mps_chi16": 75
+        },
+        "ler": {
+          "mwpm": 0.0202,
+          "mps_chi16": 0.015
+        },
+        "wilson_95": {
+          "mwpm": [
+            0.01665298861444311,
+            0.02448369817203371
+          ],
+          "mps_chi16": [
+            0.011983909566843724,
+            0.01876076131986169
+          ]
+        },
+        "invalid_recoveries": {
+          "mwpm": 0,
+          "mps_chi16": 0
+        },
+        "paired_mps_minus_mwpm_ler": -0.0052,
+        "paired_normal_95": [
+          -0.008430345477349603,
+          -0.0019696545226503973
+        ],
+        "mwpm_only_failures": 47,
+        "mps_only_failures": 21,
+        "discordant_shots": 68,
+        "mcnemar_exact_two_sided": 0.0021862431776861714,
+        "decode_seconds": {
+          "mwpm": 2.234556649971637,
+          "mps_chi16": 69.20294546998775
+        },
+        "seconds_per_decode": {
+          "mwpm": 0.0004469113299943274,
+          "mps_chi16": 0.013840589093997551
+        },
+        "max_rss_kib": 118136
+      }
+    ],
+    "all_recoveries_valid": true,
+    "projected_main_seconds": null,
+    "elapsed_seconds": 80.00228664300084,
+    "stochastic_qshift_circuit_shots": 0,
+    "scope": "independent seed development replication; perfect-syndrome code-capacity only"
+  },
+  "qecsim_code_capacity_shots_generated": 30800,
+  "qecsim_code_capacity_shots_scope": "Includes initial IID MPS screens and biased primary/replication streams plus preflights; separate from Q-SHIFT circuit shot count."
 }

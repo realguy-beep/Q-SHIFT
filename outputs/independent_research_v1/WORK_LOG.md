@@ -338,3 +338,13 @@
 - Hypothesis: extend the fixed known-profile basis-alignment trend to a fourth finite distance (d9, 17 rounds) under X-biased ratio10 noise. No threshold fit or adaptive claim.
 - Preflight passed and projected 268.9s. The 500k/arm development run completed in 47.9s. Aligned X-memory: 1 failure (2e-6); mismatched Z-memory: 408 (8.16e-4); ratio .00245; conditional exact 95% interval [.0000619,.01373].
 - d7 ratio was 5/1009=.00496. d9 point estimate is lower but interval too wide to establish scaling or the aspirational 1e-4 relative ratio. No extra shots after observation. Q-SHIFT samples +1,000,200 including preflight.
+
+
+## Biased code-capacity tensor MPS checkpoint — 2026-11-18
+
+- Parent commit `3180db2`; branch remains isolated.
+- Hypothesis: fixed chi=16 planar MPS may retain its IID code-capacity advantage under X-biased 10:1:1 noise. Compared against qecsim bias-aware MWPM at p=.05, d3/d5, same physical faults and perfect syndrome.
+- Primary 5k-root: MPS/MWPM failures 175/191 at d3 (paired 95% CI [-.00629,-.00011]); 76/118 at d5 ([-.01177,-.00503]). Runtime cost ~6x d3/~31x d5.
+- Fresh-seed replication: 182/197 at d3 (CI [-.00666,+.00066]); 75/101 at d5 ([-.00843,-.00197]). Valid recoveries throughout. Direction consistent; d3 uncertain, d5 positive in both roots.
+- No Q-SHIFT circuit shots. qecsim expects perfect planar syndrome, unlike Q-SHIFT spacetime detectors; no direct integration. Total code-capacity shots for this family include preflights/replication separately, not in Q-SHIFT cumulative count.
+- Next: only pursue a spacetime tensor decoder if a bounded, equal-information contraction can be designed; otherwise continue other candidates.
