@@ -1,0 +1,72 @@
+{
+  "baseline_source": "outputs/independent_research_v1/d9_relative_target_sample_budget.json",
+  "baseline_ler_point": 0.000816,
+  "baseline_ler_exact_95_lower": 0.0007387601341862048,
+  "relative_target": 0.0001,
+  "candidate_ler_target_using_baseline_lower": 7.387601341862048e-08,
+  "budgets": [
+    {
+      "simultaneous_candidate_claims": 1,
+      "candidate_only_95_fwer": {
+        "per_claim_alpha": 0.05,
+        "zero_failures_shots_per_cell": 40550810,
+        "one_failure_shots_per_cell": 64213866
+      },
+      "joint_95_with_half_alpha_reserved_for_baseline": {
+        "per_claim_candidate_alpha": 0.025,
+        "zero_failures_shots_per_cell": 49933384,
+        "one_failure_shots_per_cell": 75418840
+      }
+    },
+    {
+      "simultaneous_candidate_claims": 6,
+      "candidate_only_95_fwer": {
+        "per_claim_alpha": 0.008333333333333333,
+        "zero_failures_shots_per_cell": 64804412,
+        "one_failure_shots_per_cell": 92691979
+      },
+      "joint_95_with_half_alpha_reserved_for_baseline": {
+        "per_claim_candidate_alpha": 0.004166666666666667,
+        "zero_failures_shots_per_cell": 74186986,
+        "one_failure_shots_per_cell": 103371225
+      }
+    },
+    {
+      "simultaneous_candidate_claims": 12,
+      "candidate_only_95_fwer": {
+        "per_claim_alpha": 0.004166666666666667,
+        "zero_failures_shots_per_cell": 74186986,
+        "one_failure_shots_per_cell": 103371225
+      },
+      "joint_95_with_half_alpha_reserved_for_baseline": {
+        "per_claim_candidate_alpha": 0.0020833333333333333,
+        "zero_failures_shots_per_cell": 83569560,
+        "one_failure_shots_per_cell": 113923575
+      }
+    }
+  ],
+  "assumptions": [
+    "IID Bernoulli logical failures within each cell",
+    "zero or one candidate failure; independent claims family-wise controlled by Bonferroni",
+    "candidate-only table conditions on the existing baseline lower endpoint",
+    "joint table reserves half of total alpha for baseline uncertainty; baseline multiplicity beyond the single d9 denominator is not modeled",
+    "excludes multiple seeds, decoder selection, code selection, drift, and correlated shot blocks"
+  ],
+  "stochastic_samples_generated": 0,
+  "software_versions": {
+    "python": "3.12.14"
+  },
+  "run_metadata": {
+    "command": "MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/d9_familywise_target_budget.py",
+    "repository_base_revision": "af2b44a",
+    "software_versions": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0"
+    },
+    "peak_rss_kib": null,
+    "sha256": {
+      "runner": "5bdf8d753098d4090db1ea7a6a2bb10862ea7089d2ab53fcfcb8a9992871aebb"
+    }
+  }
+}

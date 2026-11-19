@@ -235,3 +235,8 @@ A fixed 8-unit tanh MLP hit the 500-iteration L-BFGS-B limit on the first traini
 ### 500k selector training budget under joint noise shift — replicated pass
 
 Fresh 500k/1M nominal fits were tested under measurement p .006 and bias ratio 5, with nominal matcher graphs frozen. The 500k fit reduced macro LER 14.25%/13.19%, retained 98.1%/97.7% of the full-fit gain, and cost 1.34x. All six cells improved; the minimum gains were 4.93%/4.39%. This extends the half-budget evidence to one combined d3 simulator shift only.
+
+
+### 10,000× claim evidence budget update
+
+The d9 single-cell lower-bound calculation extends to multiplicity: six simultaneous cells need 64.8M zero-failure candidate shots/cell under candidate-only 95% FWER, or 74.2M if half of alpha is reserved for baseline uncertainty. One failure raises these to 92.7M/103.4M. This quantifies inferential cost, not a physical floor.

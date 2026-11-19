@@ -342,3 +342,8 @@ A fixed 8-unit tanh MLP prototype did not converge within its 500-iteration L-BF
 ### Half-budget selector robustness under one combined shift
 
 The 500k-shot nominal fit also passed twice under the joint measurement p=.006 / bias-ratio-5 shift, with nominal matcher graphs frozen. Macro reductions were 14.25% and 13.19%; gain retention vs 1M fits was 98.1%/97.7%; cost ~1.34x. This supports the training-volume change under one additional d3 simulator condition, not a broad robustness envelope.
+
+
+### Multi-cell statistical budget for the 10,000× target
+
+At the d9 baseline lower endpoint, candidate LER must be <=7.39e-8. Bonferroni 95% control across six candidate cells needs 64.8M zero-failure shots/cell (74.2M if half alpha is allocated to baseline uncertainty); one allowed failure needs 92.7M/103.4M. The target remains an aspirational statistical objective, not a demonstrated decoder capability or physical bound.

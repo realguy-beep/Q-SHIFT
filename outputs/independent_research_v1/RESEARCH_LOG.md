@@ -587,3 +587,8 @@ One fixed 8-unit tanh MLP reached the 500-iteration L-BFGS-B limit on Z-memory/X
 ### 2026-11-19 — 500k selector training budget passed combined-shift replication
 
 Fresh 500k and 1M nominal fits were tested at measurement p=.006 and physical bias ratio 5 with nominal matcher graphs frozen. Macro 500k reduction was 14.25%/13.19%; corresponding 1M gains 14.52%/13.50%; 500k retained 98.1%/97.7% at 1.336x/1.343x. All cells improved; gates passed twice. Added 18.06M unique samples, cumulative Q-SHIFT development count 338,036,200. No sealed/confirmatory data.
+
+
+### 2026-11-19 — exact multi-cell shot budget for the 10,000× relative target
+
+Extended the existing d9 exact-binomial budget to family-wise control across 1, 6, and 12 candidate claims. Using the conservative d9 baseline endpoint gives candidate target 7.39e-8; for six cells, candidate-side 95% FWER requires 64.8M zero-failure shots/cell or 92.7M with one failure. Reserving half alpha for baseline uncertainty raises these to 74.2M/103.4M. Deterministic calculation only; zero new stochastic samples.
