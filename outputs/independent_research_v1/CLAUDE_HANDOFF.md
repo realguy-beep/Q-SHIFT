@@ -352,3 +352,8 @@ At the d9 baseline lower endpoint, candidate LER must be <=7.39e-8. Bonferroni 9
 ### MPS decoder update
 
 Exact planar MPS at d3 improved LER 5.55% over noise-aware MWPM under p=.05, 10:1 biased IID code-capacity noise, but missed the fixed 10% advancement threshold. Runtime was 37s for 40k decodes. This is a small surrogate result, not Q-SHIFT circuit evidence.
+
+
+### CUSUM false-alarm precision
+
+Same-seed episode-cluster bootstrap confirmed the point counts, but shifted-Z 95% intervals at frozen h=8.595 were 20.2–28.9 and 19.3–28.7 per 100k, crossing the 25 limit in both validation streams. The controller has fast transitions but lacks enough evidence for a bounded shifted-Z rate.

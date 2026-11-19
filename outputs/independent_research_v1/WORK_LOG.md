@@ -801,3 +801,10 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Paired qecsim d3 planar code at p=.05 with 10:1 X- and Z-biased depolarizing code-capacity noise; exact `PlanarMPSDecoder(chi=None, mode='c')` vs noise-aware `PlanarMWPMDecoder`, both given the same model.
 - 20k shots/axis; all recoveries reproduced the syndrome. Macro LER .03920→.037025 (5.55%); axis reductions 5.15%/5.94%; MPS decode 37.04s main. Below fixed >=10% gate; no replication/tuning.
 - qecsim used Python MWPM fallback because `libpypm.so` was unavailable; paired accuracy remains valid, runtime comparison is limited. 40,200 qecsim code-capacity shots; 0 Q-SHIFT circuit samples; cumulative Q-SHIFT count unchanged at 338,036,200. Report: `outputs/independent_research_v2/tensor_mps_biased_report.md`.
+
+
+## Calibrated CUSUM same-seed false-rate precision audit — 2026-11-19
+
+- Replayed the eight prior stable validation streams with original frozen h=8.594556; all false-switch totals matched. Used 20k episode-cluster bootstrap resamples; no unique stochastic samples added.
+- Nominal X/Z and shifted X intervals stayed below the 5/25 point limits. Shifted Z intervals crossed 25 in both validation streams: 20.22–28.89 and 19.33–28.67 per 100k. Therefore point-rate success does not establish a 95%-supported false-alarm ceiling.
+- No threshold retuning or new samples. Q-SHIFT cumulative count remains 338,036,200. Report: `outputs/independent_research_v2/adaptive_histogram_cusum_validation_precision_report.md`.

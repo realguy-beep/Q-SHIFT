@@ -369,3 +369,8 @@ The 500k selector training budget did not show the nominal-only failure feared u
 ## Tensor-network efficacy below fixed gate
 
 Exact d3 planar MPS improved over noise-aware MWPM by 5.55% under p=.05 biased code-capacity noise, but the fixed >=10% practical-effect gate failed. This does not reject MPS for circuit-level or other-distance problems; it gives no Q-SHIFT circuit evidence and was not replicated.
+
+
+### Frozen histogram CUSUM false-alarm confidence
+
+Although h=8.595 had shifted-Z point rates 24.44 and 23.78 per 100k, same-seed episode-cluster 95% intervals were 20.22–28.89 and 19.33–28.67. Both cross the 25 limit. The threshold therefore lacks precise rate-control evidence in the hardest stratum; point-gate success is not a 95% guarantee.

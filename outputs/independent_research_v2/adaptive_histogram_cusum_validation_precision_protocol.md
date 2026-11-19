@@ -1,0 +1,3 @@
+# Same-seed precision audit for the frozen CUSUM threshold
+
+Recreate the eight previously reported 500-episode stable validation streams from their exact seeds and compute false-switch counts per 1,000-shot episode at the original frozen h=8.5945561755. Verify exact count agreement with both saved JSONs. Use 20,000 episode-cluster bootstrap resamples with fixed analysis seed 2026122691 to report percentile 95% intervals for false switches per 100k monitored shots (900 monitored shots/episode). This is a deterministic reanalysis of the same streams: it adds zero unique stochastic samples and cannot change the original point-estimate advancement gates. It evaluates whether the observed point rates provide precise evidence of the stated limits.

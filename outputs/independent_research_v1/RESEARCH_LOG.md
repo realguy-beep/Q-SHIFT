@@ -597,3 +597,8 @@ Extended the existing d9 exact-binomial budget to family-wise control across 1, 
 ### 2026-11-19 — exact planar MPS efficacy under biased code-capacity noise
 
 On d3 qecsim planar code at p=.05, bias10 X/Z, exact MPS macro LER .037025 vs noise-aware MWPM .03920 (5.55% reduction); axis gains 5.15%/5.94%, decode 37s/40k. Fixed 10% gate failed, no replication. 40,200 code-capacity shots, zero Q-SHIFT circuit shots.
+
+
+### 2026-11-19 — cluster-bootstrap precision audit for calibrated CUSUM
+
+Replayed the same eight validation streams at frozen h=8.595; all point counts matched. Cluster-bootstrap 95% intervals crossed the shifted-Z 25/100k limit in both streams: 20.22–28.89 and 19.33–28.67. Thus the point-rate gate passes but 95%-supported shifted-Z control is unresolved. Zero unique samples added.

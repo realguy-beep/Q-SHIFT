@@ -552,3 +552,8 @@ At measurement p=.006 and physical bias ratio 5 with nominal matchers frozen, ne
 ## Exact planar MPS under 10:1 biased code-capacity noise
 
 At d3, exact MPS gave .037025 macro LER vs .03920 for noise-aware MWPM (5.55% reduction); per-axis gains were 5.15% and 5.94%, and total MPS decode time was 37.0s/40k main shots. It missed the >=10% utility gate; no replication. qecsim's MWPM used the Python fallback because `libpypm.so` was unavailable. No Q-SHIFT circuit samples were generated.
+
+
+## CUSUM false-switch precision audit
+
+A same-seed replay verified all eight point counts. Episode-cluster bootstrap 95% intervals stayed within point limits for nominal X/Z and shifted X; shifted Z intervals were 20.22–28.89 and 19.33–28.67/100k at frozen h=8.595, crossing the limit 25 on both streams. This weakens the empirical threshold-control claim; no new samples.

@@ -309,3 +309,8 @@ Do not advance the tested 8-unit MLP: it failed optimizer readiness before valid
 ### MPS decoding
 
 Do not advance the tested exact planar MPS on the present result: its d3 biased code-capacity gain was 5.55%, below the 10% gate. The prior full-circuit tensor feasibility limits remain. More work requires a separately justified circuit-compatible tensor design.
+
+
+### CUSUM confidence qualification
+
+Do not describe the frozen histogram threshold as statistically controlling shifted-Z false alarms below 25/100k: both episode-cluster intervals cross that ceiling. No further threshold adjustment on existing streams.

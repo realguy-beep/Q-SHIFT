@@ -527,3 +527,5 @@ Run the paired initial/replication commands in `outputs/independent_research_v2/
 ### Biased code-capacity MPS screen
 
 See `outputs/independent_research_v2/tensor_mps_biased.py`, protocol, results JSON, and report. This uses qecsim IID code-capacity samples, not Q-SHIFT circuit shots.
+
+For false-switch rate precision, replay the exact stored seeds using `outputs/independent_research_v2/adaptive_histogram_cusum_validation_precision.py`; it verifies saved counts and computes episode-cluster intervals without adding unique samples.

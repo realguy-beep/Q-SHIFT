@@ -160,3 +160,5 @@ The qecsim exact planar MPS improvement over MWPM in a d3 biased code-capacity s
 ### Neural selector result is a feasibility stop
 
 The single 8-unit tanh prototype failed its fixed optimizer iteration budget before validation. There is no neural efficacy or novelty evidence from that run.
+
+A same-seed cluster-bootstrap audit found that both frozen-threshold shifted-Z validation intervals cross the 25/100k false-switch limit. The histogram CUSUM remains an established statistical construction with unresolved calibration guarantees, not a novel online adaptation result.

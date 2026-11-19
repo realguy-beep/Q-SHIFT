@@ -245,3 +245,8 @@ The d9 single-cell lower-bound calculation extends to multiplicity: six simultan
 ### Exact planar MPS under biased code-capacity noise — below utility gate
 
 At d3, p=.05 and 10:1 X/Z-biased IID code-capacity noise, exact MPS reduced equal-weight LER 5.55% vs noise-aware MWPM, with 5.15%/5.94% per-axis gains and 37s decode time for 40k shots. It missed the fixed 10% gate; no replication. This is not circuit-level Q-SHIFT evidence.
+
+
+### Calibrated CUSUM rate precision audit
+
+The frozen h=8.595 point rate passed twice, but episode-cluster 95% intervals for shifted-Z were 20.2–28.9 and 19.3–28.7 false switches/100k, crossing the 25 limit both times. Do not claim 95%-supported false-alarm control for that stratum.

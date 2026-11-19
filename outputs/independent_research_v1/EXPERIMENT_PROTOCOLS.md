@@ -272,3 +272,5 @@ The fixed 500k-vs-1M nominal training fits and joint measurement/bias-shift vali
 ## Exact MPS biased code-capacity screen
 
 The fixed d3 paired design is in `outputs/independent_research_v2/tensor_mps_biased_protocol.md`. It tests exact qecsim planar MPS versus noise-aware planar MWPM at 10:1 X/Z bias and p=.05. This screen is separate from the multi-round Q-SHIFT circuit.
+
+A same-seed episode-cluster bootstrap audit of the frozen histogram CUSUM validation streams is documented in `outputs/independent_research_v2/adaptive_histogram_cusum_validation_precision_protocol.md`; it adds no new stochastic samples and cannot alter the original point gates.
