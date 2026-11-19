@@ -225,3 +225,28 @@ The study was frozen at `d15e5f47e` and run once: 672 pools in 58 min, about 8.6
   1. E1 plus a structural exclusion check (the excluded set must match a burst class), a post-hoc idea, tested on fresh development data;
   2. then a frozen RE2 with a new sealed burst that excludes every BRE support.
 - **Unchanged:** the 95% target remains out of reach.
+
+## Addendum (2026-11-19): BRS structural misfit check completed
+
+The study was frozen at `4967cd7d9` and run once: 512 fresh, fully held-out pools, 6.5 M detector-only shots, in 33 min. The analysis is byte-identical across two runs, the recount matches, and the replay is bit-identical. The full report is `BRS_RESULTS.md`. Verdict: **BRS_NOT_SUPPORTED**, on a single endpoint.
+
+**Before the run:**
+- BRS-0, a design check on BRE's arrays, showed that exact shape matching would flag real bursts.
+- The owner chose the subset rule. It was recorded as a deviation and fixed before BRS-1.
+
+**What the rule did on fresh bursts:**
+- Out-of-family false burst acceptance fell from 16 → 1 (measurement 1.5×), 30 → 0 (2×), 1 → 0 (3×) and 0 → 0 (X-bias).
+- In family it learned 126/128 exactly, with 0 false accepts and outcomes identical to E1's.
+
+**What failed:**
+- In-family false flags, at 2/32 burst pools under p 0.0036 against an allowance of 1.
+- Both came from E1's frozen residual threshold, set at the highest p seen in BRE. The statistic grows with p.
+
+**Standing:**
+- **Achieved (development):** footprint-robust estimation (BRE) and structural rejection of out-of-family misfit (BRS).
+- **Not achieved:** a frozen pipeline passing all endpoints.
+- **Next:**
+  1. make E1's statistic scale-free, or drop it in favour of the cap plus the structural rules (post-hoc idea, untested);
+  2. a short fresh development run;
+  3. then a frozen RE2 with a new sealed burst.
+- **Unchanged:** the 95% target remains out of reach.
