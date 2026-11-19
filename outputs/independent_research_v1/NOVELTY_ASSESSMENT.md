@@ -135,3 +135,8 @@ One alternating gate-rate pattern transferred on a single d3 task. This is a rob
 ### Second temporal pattern remains bounded evidence
 
 The frozen selector passed a second imposed temporal-rate shape, which strengthens robustness evidence but does not make it an online adaptation method or novel decoder.
+
+
+### Temporal task dependence
+
+The blockwise temporal result is task-specific: it held for Z-memory/X-bias but not the complementary X-memory/Z-bias task. Do not imply general temporal robustness or a universal adaptation method.

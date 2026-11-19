@@ -307,3 +307,8 @@ A stationary z-memory/X-biased selector passed on two reversed five-round rate p
 ### Blockwise temporal profile — 2026-11-18
 
 A second five-round temporal shape and reversal passed (12.42%/11.76% gains, ~1.36x cost) on Z-memory/X-bias d3. Alongside the alternating-rate result, this supports two fixed patterns only, not online adaptation. See `../independent_research_v2/fast_flagged_logistic_temporal_block_shift_report.md`.
+
+
+### Temporal cross-task screen failed — 2026-11-19
+
+Blockwise temporal rates gave ~13% gains for Z-memory/X-bias but ~0.7%/3.1% for X-memory/Z-bias; equal-task macro was 7.69%, below gate. No replication. Limit temporal lead to Z-memory/X-bias. See `../independent_research_v2/fast_flagged_logistic_temporal_two_task_report.md`.

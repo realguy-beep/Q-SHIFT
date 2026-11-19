@@ -551,3 +551,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 
 - The frozen selector passed a blockwise [.25,.25,1.75,1.75,1] pattern and reversal on two independent streams: 12.42% and 11.76% macro gains, ~1.36x cost. Along with the alternating map result, this supports two fixed temporal patterns on Z-memory/X-bias d3.
 - Still no online adaptation, arbitrary temporal noise, hardware, or other-task guarantee. Cumulative samples: 280,128,200; no sealed/confirmatory evaluation. See `outputs/independent_research_v2/fast_flagged_logistic_temporal_block_shift_report.md`.
+
+
+## Temporal benefit did not generalize to complementary task — 2026-11-19
+
+- Under the same blockwise temporal gate-rate pattern, Z-memory/X-biased retained ~13% gains but X-memory/Z-biased was near-neutral (~0.7%/3.1%). Four-cell macro gain was 7.69%, below the 10% gate; no replication.
+- Restrict temporal claims to Z-memory/X-bias. Cumulative samples: 282,168,200; no sealed/confirmatory evaluation. See `outputs/independent_research_v2/fast_flagged_logistic_temporal_two_task_report.md`.

@@ -200,3 +200,8 @@ A frozen stationary selector passed two reversed five-round gate-rate profiles a
 ### Blockwise temporal-rate pattern
 
 A second five-round temporal shape, distinct from the alternating pattern, passed on two streams (12.42%/11.76% macro gain, ~1.36x cost) for Z-memory/X-bias d3. Supports these two maps only; no online adaptation or general temporal robustness claim. Report: `../independent_research_v2/fast_flagged_logistic_temporal_block_shift_report.md`.
+
+
+### Temporal task-transfer boundary
+
+A blockwise temporal map passed in Z-memory/X-bias but was near-neutral in X-memory/Z-bias; four-cell macro gain was 7.69%, failing the fixed gate. Keep temporal lead scoped to Z-memory/X-bias. Report: `../independent_research_v2/fast_flagged_logistic_temporal_two_task_report.md`.

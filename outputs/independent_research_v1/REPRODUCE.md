@@ -487,3 +487,8 @@ Run `fast_flagged_logistic_temporal_shift.py` and `fast_flagged_logistic_tempora
 ### Blockwise temporal-rate selector challenge
 
 Run `fast_flagged_logistic_temporal_block_shift.py` and its replication in v2 with the project venv. This uses a separate frozen blockwise factor pattern and reversal; it does not overwrite the alternating-rate result.
+
+
+### Temporal block pattern across two tasks
+
+Run `fast_flagged_logistic_temporal_two_task.py` in v2. It evaluates task-specific frozen selectors on the blockwise rate pair for Z-memory/X-biased and X-memory/Z-biased cases. The aggregate gate failed, so no replication artifact exists.

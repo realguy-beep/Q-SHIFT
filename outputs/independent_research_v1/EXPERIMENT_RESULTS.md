@@ -512,3 +512,8 @@ On two reversed five-round rate maps with mean two-qubit p=.003, the stationary-
 ## Blockwise temporal gate-rate shift
 
 A second temporal shape, [.25,.25,1.75,1.75,1] and its reversal, gave 12.42% and 11.76% macro LER reductions on two streams at ~1.36x cost. Paired macro intervals were [-.001264,-.001080] and [-.001197,-.001015]. This is a second fixed temporal pattern on Z-memory/X-bias d3; see `../independent_research_v2/fast_flagged_logistic_temporal_block_shift_report.md`.
+
+
+## Temporal pattern across complementary tasks failed aggregate gate
+
+A blockwise temporal map produced 13.14%/13.80% gains for Z-memory/X-bias but only 0.71%/3.07% for X-memory/Z-bias. Across four equal-weight cells, macro improvement was 7.69% at 1.396x cost, below the fixed 10% gate. No replication. Temporal benefit is limited to the first task. Details: `../independent_research_v2/fast_flagged_logistic_temporal_two_task_report.md`.

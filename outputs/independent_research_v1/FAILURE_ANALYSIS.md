@@ -331,3 +331,8 @@ The stationary selector transferred to two reversed five-round gate-rate maps on
 ### A second temporal shape replicated the selector gain
 
 The selector also passed a blockwise hot/cool five-round pattern and reversal (11.8%–12.4% gains, ~1.36x cost). This makes the positive temporal evidence less dependent on one sequence shape, but both tests share Z-memory/X-bias d3, fixed mean rate, and oracle-designed stationary average. No claim of online adaptation or arbitrary drift is warranted.
+
+
+### Temporal selector benefit is task-specific
+
+The blockwise temporal gain reproduced for Z-memory/X-bias (~13%) but not for X-memory/Z-bias (~0.7%/3.1%); equal-task macro fell below the 10% gate. The earlier temporal result cannot be generalized across bases/tasks, even using separately trained nominal selectors. No replication followed.

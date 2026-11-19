@@ -269,3 +269,8 @@ A fixed selector transferred to one alternating five-round gate-rate pattern on 
 ### Two tested temporal maps
 
 The selector passed alternating and blockwise five-round rate patterns for Z-memory/X-bias d3. Retain as a simulator lead only; a next step needs a real operating time profile and explicit online-policy objective. Do not generalize to arbitrary temporal drift or other bases.
+
+
+### Temporal task scope
+
+Do not recommend the selector for temporal gate-rate variation across both logical tasks. The same pattern passed for Z-memory/X-bias but missed the aggregate gate when X-memory/Z-bias was included. Any further temporal work should name the task explicitly and have an application-specific task mix.

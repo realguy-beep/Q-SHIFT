@@ -734,3 +734,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Independent replication .009404→.008298 (11.76%), paired delta -.001106 (95% CI [-.001197,-.001015]), cost 1.361x. Both gates passed; profile gains were positive in both maps.
 - This complements, but does not generalize beyond, the earlier alternating temporal pattern. No online adaptation or arbitrary drift claim. Added 2,040,000 unique samples; cumulative total: 280,128,200. No confirmatory/sealed data.
 - Report: `outputs/independent_research_v2/fast_flagged_logistic_temporal_block_shift_report.md`.
+
+
+## Blockwise temporal pattern across complementary tasks — aggregate gate failed — 2026-11-19
+
+- Applied task-specific frozen selectors to Z-memory/X-biased and X-memory/Z-biased d3 under blockwise [.25,.25,1.75,1.75,1] rates and reversal. Four equal-weight cells: macro LER .0094445→.008718 (7.69% reduction), inference 1.396x; strict 10% gate failed, so no replication.
+- Z-memory/X-biased improved 13.14%/13.80%; X-memory/Z-biased only 0.71%/3.07%, one paired interval crossing parity. Temporal benefit is task-dependent.
+- Initial script iterator mismatch stopped before sampling; corrected before successful run, zero samples in failed attempt. Added 2,040,000 unique samples; cumulative total 282,168,200. No confirmatory/sealed data.
+- Report: `outputs/independent_research_v2/fast_flagged_logistic_temporal_two_task_report.md`.
