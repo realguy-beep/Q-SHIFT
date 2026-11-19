@@ -336,3 +336,8 @@ The selector also passed a blockwise hot/cool five-round pattern and reversal (1
 ### Temporal selector benefit is task-specific
 
 The blockwise temporal gain reproduced for Z-memory/X-bias (~13%) but not for X-memory/Z-bias (~0.7%/3.1%); equal-task macro fell below the 10% gate. The earlier temporal result cannot be generalized across bases/tasks, even using separately trained nominal selectors. No replication followed.
+
+
+## Low-shot selector fit gate and runner ordering
+
+For the proposed 100k-shot training prefix, X-memory/X-biased yielded 93 disagreement-flagged rows (73/20 class split), below the predeclared 100-row floor. A script ordering defect allowed the first three conditions into validation before checking that fourth condition; their partial outcomes were discarded. No macro LER, model retention, or advancement claim is available. Treat the candidate as not train-ready under this protocol, and retain 1M shots/condition as the validated reference.

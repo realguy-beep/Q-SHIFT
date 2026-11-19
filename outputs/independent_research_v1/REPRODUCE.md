@@ -492,3 +492,8 @@ Run `fast_flagged_logistic_temporal_block_shift.py` and its replication in v2 wi
 ### Temporal block pattern across two tasks
 
 Run `fast_flagged_logistic_temporal_two_task.py` in v2. It evaluates task-specific frozen selectors on the blockwise rate pair for Z-memory/X-biased and X-memory/Z-biased cases. The aggregate gate failed, so no replication artifact exists.
+
+
+### Training-efficiency stop record
+
+See `outputs/independent_research_v2/fast_flagged_logistic_training_efficiency_report.md` and its protocol. The exact as-run script is preserved with `_as_run.py`; its partial validation output is intentionally excluded.

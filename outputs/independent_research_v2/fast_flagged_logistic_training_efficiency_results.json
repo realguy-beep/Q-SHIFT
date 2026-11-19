@@ -1,0 +1,93 @@
+{
+  "status": "stopped_at_training_efficiency_prevalidation_gate",
+  "hypothesis": "A 100k-shot nested training prefix per d3 condition might retain >=80% of the 1M-shot model absolute macro LER gain.",
+  "scope": "Development-only feasibility screen for six d3 Phase 2B conditions.",
+  "trainability_gate": {
+    "minimum_flagged_rows_in_100k_prefix": 100,
+    "required_target_classes": 2
+  },
+  "nested_100k_prefixes": [
+    {
+      "memory_basis": "z",
+      "regime": "x_biased",
+      "flagged": 274,
+      "class_counts": {
+        "logical0": 186,
+        "logical1": 88
+      }
+    },
+    {
+      "memory_basis": "z",
+      "regime": "balanced",
+      "flagged": 476,
+      "class_counts": {
+        "logical0": 338,
+        "logical1": 138
+      }
+    },
+    {
+      "memory_basis": "z",
+      "regime": "z_biased",
+      "flagged": 108,
+      "class_counts": {
+        "logical0": 84,
+        "logical1": 24
+      }
+    },
+    {
+      "memory_basis": "x",
+      "regime": "x_biased",
+      "flagged": 93,
+      "class_counts": {
+        "logical0": 73,
+        "logical1": 20
+      }
+    },
+    {
+      "memory_basis": "x",
+      "regime": "balanced",
+      "flagged": 379,
+      "class_counts": {
+        "logical0": 246,
+        "logical1": 133
+      }
+    },
+    {
+      "memory_basis": "x",
+      "regime": "z_biased",
+      "flagged": 211,
+      "class_counts": {
+        "logical0": 134,
+        "logical1": 77
+      }
+    }
+  ],
+  "gate_passed": false,
+  "stop_reason": "X-memory/X-biased had 93 flagged rows in its 100k prefix, below the frozen 100-row minimum.",
+  "partial_execution": {
+    "preflight_unique_samples": 30000,
+    "unique_training_samples": 4200000,
+    "unique_validation_samples": 1500000,
+    "total_unique_samples": 5730000,
+    "note": "The runner interleaved training and validation; three conditions entered validation before a later condition failed trainability. Those partial validation outcomes were not saved or used for any macro claim. No further validation was run after detecting the issue."
+  },
+  "ler_results": null,
+  "run_metadata": {
+    "command": "MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_training_efficiency.py",
+    "repository_base_revision": "803b747",
+    "software_versions": {
+      "python": "3.12.14",
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "stim": "1.16.0",
+      "pymatching": "2.4.0"
+    },
+    "peak_rss_kib": null,
+    "peak_rss_note": "not recorded before the trainability stop",
+    "sha256": {
+      "as_run_runner": "949119492cedd9350cff68a97c96a9bf241faf3cc454fcb21caad918559476a8",
+      "protocol": "fca2f2ed05f06772d4587cfdceb11c13dd54a3d4a399cd1067e00d6537c08971"
+    }
+  },
+  "scope_limit": "This does not establish that 100k-shot models fail the accuracy gate; it establishes that one condition fell below the predeclared minimum flagged-row count. The partial validation stream is excluded."
+}

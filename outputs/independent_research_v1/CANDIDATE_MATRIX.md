@@ -205,3 +205,8 @@ A second five-round temporal shape, distinct from the alternating pattern, passe
 ### Temporal task-transfer boundary
 
 A blockwise temporal map passed in Z-memory/X-bias but was near-neutral in X-memory/Z-bias; four-cell macro gain was 7.69%, failing the fixed gate. Keep temporal lead scoped to Z-memory/X-bias. Report: `../independent_research_v2/fast_flagged_logistic_temporal_two_task_report.md`.
+
+
+### Selector training sample efficiency — 100k budget stopped at trainability
+
+A nested 100k-shot-per-condition fit screen found only 93 flagged rows for X-memory/X-biased, below the predeclared minimum of 100. The efficacy gate was not assessed; partial validation output from an interleaved runner is excluded. The validated 1M-shot-per-condition model remains the reference. Do not infer a learning curve. See `../independent_research_v2/fast_flagged_logistic_training_efficiency_report.md`.

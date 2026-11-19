@@ -557,3 +557,8 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 
 - Under the same blockwise temporal gate-rate pattern, Z-memory/X-biased retained ~13% gains but X-memory/Z-biased was near-neutral (~0.7%/3.1%). Four-cell macro gain was 7.69%, below the 10% gate; no replication.
 - Restrict temporal claims to Z-memory/X-bias. Cumulative samples: 282,168,200; no sealed/confirmatory evaluation. See `outputs/independent_research_v2/fast_flagged_logistic_temporal_two_task_report.md`.
+
+
+### 2026-11-19 — 100k selector training-budget screen stopped at readiness gate
+
+Nested 100k prefixes across six d3 cells produced 93–476 flagged rows; X-memory/X-biased had 93, below the frozen minimum of 100. A runner-order bug entered validation in three cells before discovering the failure; partial efficacy data were discarded. New unique samples: 5.73M; cumulative Q-SHIFT development count 287,898,200. No sealed/confirmatory data. See v2 report and JSON.

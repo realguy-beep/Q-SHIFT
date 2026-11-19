@@ -742,3 +742,12 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Z-memory/X-biased improved 13.14%/13.80%; X-memory/Z-biased only 0.71%/3.07%, one paired interval crossing parity. Temporal benefit is task-dependent.
 - Initial script iterator mismatch stopped before sampling; corrected before successful run, zero samples in failed attempt. Added 2,040,000 unique samples; cumulative total 282,168,200. No confirmatory/sealed data.
 - Report: `outputs/independent_research_v2/fast_flagged_logistic_temporal_two_task_report.md`.
+
+
+## Flagged selector 100k training-budget screen — trainability stop — 2026-11-19
+
+- Hypothesis: one-tenth the existing 1M labeled shots per d3 condition may retain most selector utility; frozen floor requires >=100 flagged rows and both logical classes in each prefix.
+- Prefix counts were 274, 476, 108, 93, 379, 211; X-memory/X-biased stopped at 93 (73 logical 0, 20 logical 1). The LER advancement gate was not evaluated.
+- Runner-order defect: validation was entered in the first three cells before the fourth-cell training check failed. Those partial validation outcomes were not saved or used; no aggregate efficacy inference. A first preflight attempt stopped on an unplanned minimum-flag check after 5k samples; corrected replay reused the same seed.
+- Unique samples: 30k preflight + 4.2M nested training + 1.5M partial validation = 5.73M; cumulative Q-SHIFT development samples 287,898,200. No confirmatory/sealed data.
+- Keep 1M shots/condition as validated reference; do not claim a learning curve. Report: `outputs/independent_research_v2/fast_flagged_logistic_training_efficiency_report.md`.

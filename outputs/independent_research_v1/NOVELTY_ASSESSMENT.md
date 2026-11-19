@@ -140,3 +140,6 @@ The frozen selector passed a second imposed temporal-rate shape, which strengthe
 ### Temporal task dependence
 
 The blockwise temporal result is task-specific: it held for Z-memory/X-bias but not the complementary X-memory/Z-bias task. Do not imply general temporal robustness or a universal adaptation method.
+
+
+The 100k-shot training-efficiency screen did not produce efficacy evidence: one of six cells fell below the frozen minimum flagged-row count and partial validation was excluded after a runner-order defect. It does not add a novelty claim or alter the established d3 selector result.

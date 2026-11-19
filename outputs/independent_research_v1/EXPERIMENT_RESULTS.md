@@ -517,3 +517,8 @@ A second temporal shape, [.25,.25,1.75,1.75,1] and its reversal, gave 12.42% and
 ## Temporal pattern across complementary tasks failed aggregate gate
 
 A blockwise temporal map produced 13.14%/13.80% gains for Z-memory/X-bias but only 0.71%/3.07% for X-memory/Z-bias. Across four equal-weight cells, macro improvement was 7.69% at 1.396x cost, below the fixed 10% gate. No replication. Temporal benefit is limited to the first task. Details: `../independent_research_v2/fast_flagged_logistic_temporal_two_task_report.md`.
+
+
+## Flagged-selector training efficiency screen
+
+The nested 100k prefix had 274, 476, 108, 93, 379, and 211 flagged rows across the six d3 conditions. X-memory/X-biased fell below the predeclared 100-row minimum, so aggregate efficacy was not assessed. A runner-order defect opened validation in the first three conditions before the stop; those partial outcomes were excluded and not saved. This result establishes a trainability limitation under the chosen floor, not a failed LER comparison. Unique new samples: 5.73M (30k preflight, 4.2M training, 1.5M partial validation). No confirmatory data.

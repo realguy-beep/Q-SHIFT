@@ -274,3 +274,8 @@ The selector passed alternating and blockwise five-round rate patterns for Z-mem
 ### Temporal task scope
 
 Do not recommend the selector for temporal gate-rate variation across both logical tasks. The same pattern passed for Z-memory/X-bias but missed the aggregate gate when X-memory/Z-bias was included. Any further temporal work should name the task explicitly and have an application-specific task mix.
+
+
+### Training budget for the fast selector
+
+Use 1M training shots per condition as the evidenced setting. A nested 100k budget produced fewer than 100 flagged rows in X-memory/X-biased and stopped at fit readiness. Partial validation from the first three cells was discarded; no accuracy comparison is available. Do not reduce the training budget based on this screen.
