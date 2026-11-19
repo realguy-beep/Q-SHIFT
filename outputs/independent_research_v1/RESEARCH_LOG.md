@@ -562,3 +562,8 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 ### 2026-11-19 — 100k selector training-budget screen stopped at readiness gate
 
 Nested 100k prefixes across six d3 cells produced 93–476 flagged rows; X-memory/X-biased had 93, below the frozen minimum of 100. A runner-order bug entered validation in three cells before discovering the failure; partial efficacy data were discarded. New unique samples: 5.73M; cumulative Q-SHIFT development count 287,898,200. No sealed/confirmatory data. See v2 report and JSON.
+
+
+### 2026-11-19 — fixed 500k selector training budget passed fresh replication
+
+A 500k nested prefix across the six d3 nominal conditions was compared with the 1M fit on shared independent 500k validation streams. Initial: macro LER .0051597→.0043013 (16.64% gain); full 1M fit .0043030; retention 100.2%; 1.369x inference. Fresh replication: .0051410→.0042613 (17.11%); full fit .0042470; retention 98.4%; 1.355x. All paired intervals favored selector; every cell point improved. Added 18.06M unique shots across both streams; cumulative Q-SHIFT development count 305,958,200. No confirmatory/sealed data. See v2 report.

@@ -497,3 +497,8 @@ Run `fast_flagged_logistic_temporal_two_task.py` in v2. It evaluates task-specif
 ### Training-efficiency stop record
 
 See `outputs/independent_research_v2/fast_flagged_logistic_training_efficiency_report.md` and its protocol. The exact as-run script is preserved with `_as_run.py`; its partial validation output is intentionally excluded.
+
+
+### Replicated selector training-budget comparison
+
+Run `outputs/independent_research_v2/fast_flagged_logistic_training_500k.py` and `fast_flagged_logistic_training_500k_replication.py` for the fixed 500k/1M comparison. Protocols, result JSON, and report are adjacent.

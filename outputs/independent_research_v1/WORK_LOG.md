@@ -751,3 +751,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Runner-order defect: validation was entered in the first three cells before the fourth-cell training check failed. Those partial validation outcomes were not saved or used; no aggregate efficacy inference. A first preflight attempt stopped on an unplanned minimum-flag check after 5k samples; corrected replay reused the same seed.
 - Unique samples: 30k preflight + 4.2M nested training + 1.5M partial validation = 5.73M; cumulative Q-SHIFT development samples 287,898,200. No confirmatory/sealed data.
 - Keep 1M shots/condition as validated reference; do not claim a learning curve. Report: `outputs/independent_research_v2/fast_flagged_logistic_training_efficiency_report.md`.
+
+
+## Fast flagged selector — prospective 500k training budget and independent replication — 2026-11-19
+
+- Motivated by the preceding 100k fit-readiness stop (one cell had 93 flags vs minimum 100), froze a single 500k prefix budget; no validation data were reused. Training and validation were independent, and all six training-readiness checks preceded validation.
+- Initial stream: correlated macro .0051597, 500k .0043013 (16.64%), 1M .0043030; 100.2% gain retention, 1.369x cost. Fresh replication: .0051410, 500k .0042613 (17.11%), 1M .0042470; 98.4% retention, 1.355x cost. Both pass fixed gates; all cell paired intervals favored 500k over correlated baseline, minimum point gains 3.85%/4.92%.
+- Supports half the labeled training shots for this d3 simulator setting; does not support 100k, d5, or hardware claims. Added 18,060,000 unique samples; cumulative development count: 305,958,200. No confirmatory/sealed data.
+- Report: `outputs/independent_research_v2/fast_flagged_logistic_training_500k_report.md`.

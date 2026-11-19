@@ -522,3 +522,8 @@ A blockwise temporal map produced 13.14%/13.80% gains for Z-memory/X-bias but on
 ## Flagged-selector training efficiency screen
 
 The nested 100k prefix had 274, 476, 108, 93, 379, and 211 flagged rows across the six d3 conditions. X-memory/X-biased fell below the predeclared 100-row minimum, so aggregate efficacy was not assessed. A runner-order defect opened validation in the first three conditions before the stop; those partial outcomes were excluded and not saved. This result establishes a trainability limitation under the chosen floor, not a failed LER comparison. Unique new samples: 5.73M (30k preflight, 4.2M training, 1.5M partial validation). No confirmatory data.
+
+
+## Selector training-budget replication
+
+The 100k prefix was not train-ready in one cell (93 flags versus the frozen floor of 100), so no efficacy conclusion was made. A new fixed 500k-prefix design passed readiness across all six conditions. On two fresh streams it reduced macro LER 16.64% and 17.11%, retained 100.2% and 98.4% of the corresponding 1M-fit absolute gain, and cost 1.369x and 1.355x the correlated matcher. All six paired intervals favored the 500k model over baseline in each stream; the smallest cell point gains were 3.85% and 4.92%. This supports half the training volume on the tested d3 simulator only.

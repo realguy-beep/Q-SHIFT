@@ -341,3 +341,8 @@ The blockwise temporal gain reproduced for Z-memory/X-bias (~13%) but not for X-
 ## Low-shot selector fit gate and runner ordering
 
 For the proposed 100k-shot training prefix, X-memory/X-biased yielded 93 disagreement-flagged rows (73/20 class split), below the predeclared 100-row floor. A script ordering defect allowed the first three conditions into validation before checking that fourth condition; their partial outcomes were discarded. No macro LER, model retention, or advancement claim is available. Treat the candidate as not train-ready under this protocol, and retain 1M shots/condition as the validated reference.
+
+
+## Selector training sample-size boundary
+
+The nested 100k prefix failed fit readiness in X-memory/X-biased (93 flags, below the 100-row floor); its partial validation was excluded after a runner-order defect. A separately frozen 500k budget then passed twice and retained 98.4–100.2% of the measured 1M-fit macro gain. These results establish a tested boundary at 500k vs a non-ready 100k prefix, not a smooth learning curve or proof that all budgets below 500k fail.

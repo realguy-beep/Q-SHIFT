@@ -279,3 +279,8 @@ Do not recommend the selector for temporal gate-rate variation across both logic
 ### Training budget for the fast selector
 
 Use 1M training shots per condition as the evidenced setting. A nested 100k budget produced fewer than 100 flagged rows in X-memory/X-biased and stopped at fit readiness. Partial validation from the first three cells was discarded; no accuracy comparison is available. Do not reduce the training budget based on this screen.
+
+
+### Selector training budget updated by independent evidence
+
+Use 500k labeled training shots per d3 condition as a supported alternative to 1M: two fresh validation streams passed the fixed utility, harm, retention, and runtime gates. Do not lower to 100k based on the current evidence; that prefix failed the training-readiness minimum in one condition. No d5 training-volume claim.

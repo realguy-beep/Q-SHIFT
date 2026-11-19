@@ -1,0 +1,534 @@
+{
+  "status": "completed",
+  "preflight": [
+    {
+      "basis": "z",
+      "regime": "x_biased",
+      "seed": 2026121901,
+      "flags": 13,
+      "sample_seconds": 0.002074897005513776,
+      "correlated_seconds": 0.0033142849933938123,
+      "ordinary_seconds": 0.0008935410005506128
+    },
+    {
+      "basis": "z",
+      "regime": "balanced",
+      "seed": 2026121902,
+      "flags": 26,
+      "sample_seconds": 0.0008542180003132671,
+      "correlated_seconds": 0.002975034003611654,
+      "ordinary_seconds": 0.0009785410002223216
+    },
+    {
+      "basis": "z",
+      "regime": "z_biased",
+      "seed": 2026121903,
+      "flags": 6,
+      "sample_seconds": 0.0008903369962354191,
+      "correlated_seconds": 0.003174279998347629,
+      "ordinary_seconds": 0.000826928997412324
+    },
+    {
+      "basis": "x",
+      "regime": "x_biased",
+      "seed": 2026121904,
+      "flags": 7,
+      "sample_seconds": 0.0007199259998742491,
+      "correlated_seconds": 0.002605747002235148,
+      "ordinary_seconds": 0.0010452330025145784
+    },
+    {
+      "basis": "x",
+      "regime": "balanced",
+      "seed": 2026121905,
+      "flags": 16,
+      "sample_seconds": 0.0007556470009149052,
+      "correlated_seconds": 0.0038184639997780323,
+      "ordinary_seconds": 0.0012041989975841716
+    },
+    {
+      "basis": "x",
+      "regime": "z_biased",
+      "seed": 2026121906,
+      "flags": 9,
+      "sample_seconds": 0.0007291410001926124,
+      "correlated_seconds": 0.0026305950013920665,
+      "ordinary_seconds": 0.0008885600036592223
+    }
+  ],
+  "training": [
+    {
+      "memory_basis": "z",
+      "regime": "x_biased",
+      "seed": 2026121911,
+      "low_budget_flags": 1335,
+      "low_budget_classes": {
+        "logical0": 902,
+        "logical1": 433
+      },
+      "full_budget_flags": 2618
+    },
+    {
+      "memory_basis": "z",
+      "regime": "balanced",
+      "seed": 2026121912,
+      "low_budget_flags": 2576,
+      "low_budget_classes": {
+        "logical0": 1882,
+        "logical1": 694
+      },
+      "full_budget_flags": 5198
+    },
+    {
+      "memory_basis": "z",
+      "regime": "z_biased",
+      "seed": 2026121913,
+      "low_budget_flags": 500,
+      "low_budget_classes": {
+        "logical0": 383,
+        "logical1": 117
+      },
+      "full_budget_flags": 980
+    },
+    {
+      "memory_basis": "x",
+      "regime": "x_biased",
+      "seed": 2026121914,
+      "low_budget_flags": 425,
+      "low_budget_classes": {
+        "logical0": 314,
+        "logical1": 111
+      },
+      "full_budget_flags": 862
+    },
+    {
+      "memory_basis": "x",
+      "regime": "balanced",
+      "seed": 2026121915,
+      "low_budget_flags": 1941,
+      "low_budget_classes": {
+        "logical0": 1272,
+        "logical1": 669
+      },
+      "full_budget_flags": 3842
+    },
+    {
+      "memory_basis": "x",
+      "regime": "z_biased",
+      "seed": 2026121916,
+      "low_budget_flags": 1017,
+      "low_budget_classes": {
+        "logical0": 635,
+        "logical1": 382
+      },
+      "full_budget_flags": 2006
+    }
+  ],
+  "conditions": [
+    {
+      "memory_basis": "z",
+      "regime": "x_biased",
+      "seed": 2026121921,
+      "shots": 500000,
+      "flags": 1287,
+      "correlated_failures": 3854,
+      "models": {
+        "500k": {
+          "failures": 3400,
+          "ler": 0.0068,
+          "wilson_95": [
+            0.006575967893785193,
+            0.007031610477952266
+          ],
+          "relative_reduction": 0.1177996886351842,
+          "paired": {
+            "delta_selector_minus_correlated": -0.000908,
+            "normal_95_ci": [
+              -0.0010234609778189746,
+              -0.0007925390221810252
+            ],
+            "correlated_only_failures": 661,
+            "selector_only_failures": 207,
+            "mcnemar_exact_two_sided": 5.588153855833225e-56
+          },
+          "fit_seconds": 0.008994625000923406,
+          "classifier_seconds": 0.002162951001082547,
+          "time_ratio": 1.3702816436566683
+        },
+        "1m": {
+          "failures": 3408,
+          "ler": 0.006816,
+          "wilson_95": [
+            0.00659170181609206,
+            0.007047876309793923
+          ],
+          "relative_reduction": 0.11572392319667868,
+          "paired": {
+            "delta_selector_minus_correlated": -0.000892,
+            "normal_95_ci": [
+              -0.0010051769376811864,
+              -0.0007788230623188137
+            ],
+            "correlated_only_failures": 640,
+            "selector_only_failures": 194,
+            "mcnemar_exact_two_sided": 2.37733865607652e-56
+          },
+          "fit_seconds": 0.13070946800144156,
+          "classifier_seconds": 0.0023429479988408275,
+          "time_ratio": 1.370984372144142
+        }
+      },
+      "correlated_ler": 0.007708,
+      "correlated_wilson_95": [
+        0.007469341875718599,
+        0.007954222543947615
+      ]
+    },
+    {
+      "memory_basis": "z",
+      "regime": "balanced",
+      "seed": 2026121922,
+      "shots": 500000,
+      "flags": 2551,
+      "correlated_failures": 3438,
+      "models": {
+        "500k": {
+          "failures": 2235,
+          "ler": 0.00447,
+          "wilson_95": [
+            0.004288865578639416,
+            0.004658748595219188
+          ],
+          "relative_reduction": 0.349912739965096,
+          "paired": {
+            "delta_selector_minus_correlated": -0.002406,
+            "normal_95_ci": [
+              -0.0025828799750237524,
+              -0.002229120024976248
+            ],
+            "correlated_only_failures": 1621,
+            "selector_only_failures": 418,
+            "mcnemar_exact_two_sided": 1.4519601982487518e-166
+          },
+          "fit_seconds": 0.013462260998494457,
+          "classifier_seconds": 0.004535894004220609,
+          "time_ratio": 1.4526923140339354
+        },
+        "1m": {
+          "failures": 2246,
+          "ler": 0.004492,
+          "wilson_95": [
+            0.004310413098408614,
+            0.004681200737404212
+          ],
+          "relative_reduction": 0.3467132053519488,
+          "paired": {
+            "delta_selector_minus_correlated": -0.002384,
+            "normal_95_ci": [
+              -0.002560925693605813,
+              -0.0022070743063941868
+            ],
+            "correlated_only_failures": 1616,
+            "selector_only_failures": 424,
+            "mcnemar_exact_two_sided": 2.955722510342875e-163
+          },
+          "fit_seconds": 0.030433337000431493,
+          "classifier_seconds": 0.0024645320008858107,
+          "time_ratio": 1.4461916964408634
+        }
+      },
+      "correlated_ler": 0.006876,
+      "correlated_wilson_95": [
+        0.00665070685110987,
+        0.007108870352833079
+      ]
+    },
+    {
+      "memory_basis": "z",
+      "regime": "z_biased",
+      "seed": 2026121923,
+      "shots": 500000,
+      "flags": 494,
+      "correlated_failures": 713,
+      "models": {
+        "500k": {
+          "failures": 476,
+          "ler": 0.000952,
+          "wilson_95": [
+            0.0008702664879642604,
+            0.0010414017424875558
+          ],
+          "relative_reduction": 0.3323983169705469,
+          "paired": {
+            "delta_selector_minus_correlated": -0.000474,
+            "normal_95_ci": [
+              -0.0005498977837936263,
+              -0.00039810221620637366
+            ],
+            "correlated_only_failures": 306,
+            "selector_only_failures": 69,
+            "mcnemar_exact_two_sided": 1.000421378464248e-36
+          },
+          "fit_seconds": 0.005448887997772545,
+          "classifier_seconds": 0.0021013309960835613,
+          "time_ratio": 1.336808188488898
+        },
+        "1m": {
+          "failures": 476,
+          "ler": 0.000952,
+          "wilson_95": [
+            0.0008702664879642604,
+            0.0010414017424875558
+          ],
+          "relative_reduction": 0.3323983169705469,
+          "paired": {
+            "delta_selector_minus_correlated": -0.000474,
+            "normal_95_ci": [
+              -0.0005486731758572645,
+              -0.0003993268241427355
+            ],
+            "correlated_only_failures": 300,
+            "selector_only_failures": 63,
+            "mcnemar_exact_two_sided": 4.186667536504899e-38
+          },
+          "fit_seconds": 0.011836249999760184,
+          "classifier_seconds": 0.00218886600487167,
+          "time_ratio": 1.337184575762602
+        }
+      },
+      "correlated_ler": 0.001426,
+      "correlated_wilson_95": [
+        0.0013251652644150052,
+        0.001534495682686844
+      ]
+    },
+    {
+      "memory_basis": "x",
+      "regime": "x_biased",
+      "seed": 2026121924,
+      "shots": 500000,
+      "flags": 433,
+      "correlated_failures": 651,
+      "models": {
+        "500k": {
+          "failures": 529,
+          "ler": 0.001058,
+          "wilson_95": [
+            0.0009716415124457909,
+            0.0011520250892399987
+          ],
+          "relative_reduction": 0.1874039938556068,
+          "paired": {
+            "delta_selector_minus_correlated": -0.000244,
+            "normal_95_ci": [
+              -0.0003072033840286458,
+              -0.0001807966159713542
+            ],
+            "correlated_only_failures": 191,
+            "selector_only_failures": 69,
+            "mcnemar_exact_two_sided": 2.0279010605632014e-14
+          },
+          "fit_seconds": 0.005721692003135104,
+          "classifier_seconds": 0.0022165949994814582,
+          "time_ratio": 1.3446905885228222
+        },
+        "1m": {
+          "failures": 523,
+          "ler": 0.001046,
+          "wilson_95": [
+            0.0009601530770557503,
+            0.0011395137090186463
+          ],
+          "relative_reduction": 0.1966205837173579,
+          "paired": {
+            "delta_selector_minus_correlated": -0.000256,
+            "normal_95_ci": [
+              -0.00031846940418306694,
+              -0.000193530595816933
+            ],
+            "correlated_only_failures": 191,
+            "selector_only_failures": 63,
+            "mcnemar_exact_two_sided": 3.6684475776198124e-16
+          },
+          "fit_seconds": 0.008990444999653846,
+          "classifier_seconds": 0.0026183919981122017,
+          "time_ratio": 1.3463007985466318
+        }
+      },
+      "correlated_ler": 0.001302,
+      "correlated_wilson_95": [
+        0.0012058077403779965,
+        0.0014058551120727895
+      ]
+    },
+    {
+      "memory_basis": "x",
+      "regime": "balanced",
+      "seed": 2026121925,
+      "shots": 500000,
+      "flags": 1987,
+      "correlated_failures": 2792,
+      "models": {
+        "500k": {
+          "failures": 2388,
+          "ler": 0.004776,
+          "wilson_95": [
+            0.004588669806142077,
+            0.004970939665807054
+          ],
+          "relative_reduction": 0.14469914040114618,
+          "paired": {
+            "delta_selector_minus_correlated": -0.000808,
+            "normal_95_ci": [
+              -0.000929813015148791,
+              -0.000686186984851209
+            ],
+            "correlated_only_failures": 685,
+            "selector_only_failures": 281,
+            "mcnemar_exact_two_sided": 1.3750993680834207e-39
+          },
+          "fit_seconds": 0.010370003998104949,
+          "classifier_seconds": 0.00255595899943728,
+          "time_ratio": 1.3694105128666296
+        },
+        "1m": {
+          "failures": 2389,
+          "ler": 0.004778,
+          "wilson_95": [
+            0.004590629983265463,
+            0.004972979457952234
+          ],
+          "relative_reduction": 0.1443409742120344,
+          "paired": {
+            "delta_selector_minus_correlated": -0.000806,
+            "normal_95_ci": [
+              -0.0009287555434608349,
+              -0.000683244456539165
+            ],
+            "correlated_only_failures": 692,
+            "selector_only_failures": 289,
+            "mcnemar_exact_two_sided": 8.798092355474363e-39
+          },
+          "fit_seconds": 0.03962892600247869,
+          "classifier_seconds": 0.0025591459998395294,
+          "time_ratio": 1.3694209945782165
+        }
+      },
+      "correlated_ler": 0.005584,
+      "correlated_wilson_95": [
+        0.00538121694222063,
+        0.005794380114228981
+      ]
+    },
+    {
+      "memory_basis": "x",
+      "regime": "z_biased",
+      "seed": 2026121926,
+      "shots": 500000,
+      "flags": 1026,
+      "correlated_failures": 4031,
+      "models": {
+        "500k": {
+          "failures": 3876,
+          "ler": 0.007752,
+          "wilson_95": [
+            0.007512656117002182,
+            0.007998907626572476
+          ],
+          "relative_reduction": 0.038451997023071116,
+          "paired": {
+            "delta_selector_minus_correlated": -0.00031,
+            "normal_95_ci": [
+              -0.00038529452987761683,
+              -0.00023470547012238317
+            ],
+            "correlated_only_failures": 262,
+            "selector_only_failures": 107,
+            "mcnemar_exact_two_sided": 3.9732144145448858e-16
+          },
+          "fit_seconds": 0.035418121005932335,
+          "classifier_seconds": 0.0020969520046492107,
+          "time_ratio": 1.3388260541990067
+        },
+        "1m": {
+          "failures": 3867,
+          "ler": 0.007734,
+          "wilson_95": [
+            0.007494936413428818,
+            0.00798062760672875
+          ],
+          "relative_reduction": 0.04068469362441074,
+          "paired": {
+            "delta_selector_minus_correlated": -0.000328,
+            "normal_95_ci": [
+              -0.0004033959141114636,
+              -0.00025260408588853643
+            ],
+            "correlated_only_failures": 267,
+            "selector_only_failures": 103,
+            "mcnemar_exact_two_sided": 6.717911434818849e-18
+          },
+          "fit_seconds": 0.01262411199422786,
+          "classifier_seconds": 0.002203070995165035,
+          "time_ratio": 1.3392281403126693
+        }
+      },
+      "correlated_ler": 0.008062,
+      "correlated_wilson_95": [
+        0.007817880041097156,
+        0.00831367893910516
+      ]
+    }
+  ],
+  "macro_ler": {
+    "correlated": 0.005159666666666667,
+    "500k_model": 0.004301333333333333,
+    "1m_model": 0.004303
+  },
+  "relative_reduction": {
+    "500k_model": 0.16635441565992637,
+    "1m_model": 0.1660313973770915
+  },
+  "absolute_gain_retention_500k_vs_1m": 1.0019455252918295,
+  "per_condition_500k_reductions": [
+    0.1177996886351842,
+    0.349912739965096,
+    0.3323983169705469,
+    0.1874039938556068,
+    0.14469914040114618,
+    0.038451997023071116
+  ],
+  "mean_500k_inference_time_ratio": 1.3687848836279934,
+  "advancement_gate_passed": true,
+  "unique_preflight_samples": 30000,
+  "unique_training_samples": 6000000,
+  "validation_samples": 3000000,
+  "projected_sampling_matching_seconds": 9.11387220112374,
+  "fit_seconds": 0.31363812900235644,
+  "elapsed_seconds": 11.279741151003691,
+  "peak_rss_kib": 1179184,
+  "software_versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0"
+  },
+  "scope": "nested 500k vs 1M training prefix, shared independent 500k/condition validation; development only",
+  "run_metadata": {
+    "command": "MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_training_500k.py",
+    "repository_base_revision": "bba3bf1",
+    "software_versions": {
+      "python": "3.12.14",
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "stim": "1.16.0",
+      "pymatching": "2.4.0"
+    },
+    "peak_rss_kib": 1179184,
+    "sha256": {
+      "runner": "02577ef34258f587ea58ad3a125b5ce026c8ca5e7f507173f8d42acd9ba2e9a4",
+      "protocol": "fe8bca736e535b9924adb72a8d0a4bbeca086bc13bf2302964ad3e4771dce049"
+    }
+  }
+}

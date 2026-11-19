@@ -247,3 +247,8 @@ The measurement-only shift protocol is `adaptive_basis_sprt_measurement_shift_pr
 ## Exact physical-pattern lower bound
 
 `graphlike_fault_floor_protocol.md` maps one shortest Stim graphlike logical error back to a mutually exclusive circuit Pauli pattern in two d3 aligned X-memory cells. It requires zero detector parity, logical parity one, unique independent channel locations, and exact channel-probability calculation. It produces no samples and is explicitly not a complete error-floor estimate.
+
+
+## Fast flagged logistic selector training-budget study
+
+A prospective nested 500k-vs-1M training design and its fresh-seed replication are documented in `outputs/independent_research_v2/fast_flagged_logistic_training_500k_protocol.md` and `_replication_protocol.md`. All six readiness checks precede validation; training and validation streams are independent. Gate: >=80% gain retention, >=10% macro reduction, no >5% cell harm, <2x inference time. A prior 100k readiness stop and discarded partial validation are recorded separately.

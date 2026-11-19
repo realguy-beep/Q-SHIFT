@@ -317,3 +317,8 @@ Blockwise temporal rates gave ~13% gains for Z-memory/X-bias but ~0.7%/3.1% for 
 ### Training data requirement for the flagged selector
 
 A 100k-shot prefix per d3 condition did not clear the frozen fit-readiness floor: X-memory/X-biased had 93 flagged rows. No aggregate accuracy comparison is valid because the runner opened validation for three cells before discovering the fourth-cell stop; those partial outcomes were discarded. Keep the one-million-shot-per-condition fit as the validated reference.
+
+
+### Selector training data: 500k per condition is sufficient in d3 development
+
+The earlier 100k nested prefix missed the predeclared readiness floor in X-memory/X-biased (93 flagged rows). A prospective 500k-prefix study passed trainability in all six cells and retained 100.2% of the 1M model's macro gain initially and 98.4% on fresh replication. Both streams passed the >=10% utility / no >5% cell harm / <2x inference gate. This halves the tested labeled training volume for d3 only; do not extrapolate to d5 or smaller budgets.
