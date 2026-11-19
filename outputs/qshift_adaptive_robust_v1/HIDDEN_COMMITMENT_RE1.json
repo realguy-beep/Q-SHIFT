@@ -1,0 +1,49 @@
+{
+  "schema": "qshift-re1-hidden-commitment-v1",
+  "sha256_of_canonical_plaintext": "0387e18b80e442751196651360488ed49925e4a3cc20b6b2a8b12ca2cbebde16",
+  "canonical_form": "json.dumps(plaintext, sort_keys=True, separators=(',', ':'))",
+  "excluded_classes": [
+    213,
+    216,
+    223,
+    790,
+    901
+  ],
+  "excluded_near_supports": {
+    "K": [
+      23,
+      31,
+      34
+    ],
+    "PhaseC_H": [
+      12,
+      34,
+      40
+    ],
+    "M0": [
+      12,
+      34,
+      45
+    ],
+    "M1": [
+      1,
+      23,
+      45
+    ],
+    "CR": [
+      25,
+      27,
+      29
+    ]
+  },
+  "near_rule": "excluded if sharing >= 2 qubits with any listed support",
+  "rehearsal_support_excluded": [
+    1,
+    3,
+    5
+  ],
+  "candidate_pool_size": 1998,
+  "draw": "uniform via secrets.randbelow (OS entropy)",
+  "sealed_location": "outside git, beside the worktrees: qshift_re1_hidden_SEALED.json",
+  "rule": "not read or printed while building RE1; opened only inside the frozen RE1 run (--open-hidden-seal)"
+}
