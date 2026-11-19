@@ -289,3 +289,8 @@ Use 500k labeled training shots per d3 condition as a supported alternative to 1
 ### Sequential adaptation update
 
 Do not deploy the tested Gaussian or histogram-likelihood CUSUMs: both were too prone to false switching. The histogram variant retained 19–28-shot transition detection but exceeded stable false-switch limits by large factors. Periodic 100-shot LDA was quieter in this screen, but still has a nonzero shifted false-switch rate and calibration cost. No logical utility or hardware conclusion follows.
+
+
+### Sequential calibration threshold remains unproven
+
+The frozen h=8.595 met limits on two validation streams, but fresh re-estimation of h missed the shifted-Z false-switch gate. Do not claim a robustly calibrated adaptive controller. Any future hardware-directed work needs a prospective, broader calibration envelope and separate utility/overhead validation.

@@ -1,0 +1,301 @@
+{
+  "status": "completed",
+  "threshold_calibration": {
+    "method": "smallest threshold >=log(200) meeting each stable calibration false-switch limit",
+    "threshold": 8.327298451248659,
+    "baseline_log200": 5.298317366548036,
+    "first_stream_calibrated_threshold": 8.59455617551269,
+    "calibration": [
+      {
+        "regime": "nominal",
+        "profile": "x_biased",
+        "seed": 2026122301,
+        "shots": 500000,
+        "sampling_seconds": 0.21884699299698696
+      },
+      {
+        "regime": "nominal",
+        "profile": "z_biased",
+        "seed": 2026122302,
+        "shots": 500000,
+        "sampling_seconds": 0.15054161599982763
+      },
+      {
+        "regime": "measurement_shift",
+        "profile": "x_biased",
+        "seed": 2026122303,
+        "shots": 500000,
+        "sampling_seconds": 0.14367413400032092
+      },
+      {
+        "regime": "measurement_shift",
+        "profile": "z_biased",
+        "seed": 2026122304,
+        "shots": 500000,
+        "sampling_seconds": 0.14768975399783812
+      }
+    ],
+    "calibration_passed": true
+  },
+  "validation_stable": [
+    {
+      "regime": "nominal",
+      "measurement_p": 0.003,
+      "profile": "x_biased",
+      "seed": 2026122311,
+      "shots": 500000,
+      "sampling_seconds": 0.12421863900090102,
+      "calibrated": {
+        "false_switches": 10,
+        "switches": 24,
+        "initial_errors": 4,
+        "false_switches_per_100k_shots": 2.2222222222222223,
+        "method": "calibrated_histogram",
+        "initialization_errors": 4
+      },
+      "fixed_log200_histogram": {
+        "false_switches": 147,
+        "switches": 293,
+        "initial_errors": 4,
+        "false_switches_per_100k_shots": 32.666666666666664,
+        "method": "fixed_log200_histogram"
+      },
+      "first_stream_calibrated_threshold": {
+        "false_switches": 10,
+        "switches": 24,
+        "initial_errors": 4,
+        "false_switches_per_100k_shots": 2.2222222222222223
+      },
+      "gaussian_false_switches": {
+        "gaussian_heteroscedastic": {
+          "false_switches": 144,
+          "switches": 287
+        },
+        "gaussian_common_variance": {
+          "false_switches": 116,
+          "switches": 235
+        }
+      },
+      "periodic_100_lda_false_switches": 30
+    },
+    {
+      "regime": "nominal",
+      "measurement_p": 0.003,
+      "profile": "z_biased",
+      "seed": 2026122312,
+      "shots": 500000,
+      "sampling_seconds": 0.09415053299744613,
+      "calibrated": {
+        "false_switches": 4,
+        "switches": 10,
+        "initial_errors": 2,
+        "false_switches_per_100k_shots": 0.8888888888888888,
+        "method": "calibrated_histogram",
+        "initialization_errors": 2
+      },
+      "fixed_log200_histogram": {
+        "false_switches": 144,
+        "switches": 282,
+        "initial_errors": 2,
+        "false_switches_per_100k_shots": 32.0,
+        "method": "fixed_log200_histogram"
+      },
+      "first_stream_calibrated_threshold": {
+        "false_switches": 3,
+        "switches": 8,
+        "initial_errors": 2,
+        "false_switches_per_100k_shots": 0.6666666666666666
+      },
+      "gaussian_false_switches": {
+        "gaussian_heteroscedastic": {
+          "false_switches": 171,
+          "switches": 338
+        },
+        "gaussian_common_variance": {
+          "false_switches": 82,
+          "switches": 161
+        }
+      },
+      "periodic_100_lda_false_switches": 24
+    },
+    {
+      "regime": "measurement_shift",
+      "measurement_p": 0.006,
+      "profile": "x_biased",
+      "seed": 2026122315,
+      "shots": 500000,
+      "sampling_seconds": 0.09074805000273045,
+      "calibrated": {
+        "false_switches": 13,
+        "switches": 27,
+        "initial_errors": 1,
+        "false_switches_per_100k_shots": 2.888888888888889,
+        "method": "calibrated_histogram",
+        "initialization_errors": 1
+      },
+      "fixed_log200_histogram": {
+        "false_switches": 202,
+        "switches": 404,
+        "initial_errors": 1,
+        "false_switches_per_100k_shots": 44.888888888888886,
+        "method": "fixed_log200_histogram"
+      },
+      "first_stream_calibrated_threshold": {
+        "false_switches": 9,
+        "switches": 19,
+        "initial_errors": 1,
+        "false_switches_per_100k_shots": 2.0
+      },
+      "gaussian_false_switches": {
+        "gaussian_heteroscedastic": {
+          "false_switches": 135,
+          "switches": 271
+        },
+        "gaussian_common_variance": {
+          "false_switches": 221,
+          "switches": 440
+        }
+      },
+      "periodic_100_lda_false_switches": 26
+    },
+    {
+      "regime": "measurement_shift",
+      "measurement_p": 0.006,
+      "profile": "z_biased",
+      "seed": 2026122316,
+      "shots": 500000,
+      "sampling_seconds": 0.09745356700295815,
+      "calibrated": {
+        "false_switches": 130,
+        "switches": 281,
+        "initial_errors": 28,
+        "false_switches_per_100k_shots": 28.88888888888889,
+        "method": "calibrated_histogram",
+        "initialization_errors": 28
+      },
+      "fixed_log200_histogram": {
+        "false_switches": 826,
+        "switches": 1639,
+        "initial_errors": 28,
+        "false_switches_per_100k_shots": 183.55555555555554,
+        "method": "fixed_log200_histogram"
+      },
+      "first_stream_calibrated_threshold": {
+        "false_switches": 107,
+        "switches": 235,
+        "initial_errors": 28,
+        "false_switches_per_100k_shots": 23.77777777777778
+      },
+      "gaussian_false_switches": {
+        "gaussian_heteroscedastic": {
+          "false_switches": 1190,
+          "switches": 2330
+        },
+        "gaussian_common_variance": {
+          "false_switches": 656,
+          "switches": 1304
+        }
+      },
+      "periodic_100_lda_false_switches": 186
+    }
+  ],
+  "validation_alternating": [
+    {
+      "regime": "nominal",
+      "measurement_p": 0.003,
+      "seeds": [
+        2026122313,
+        2026122314
+      ],
+      "shots": 101000,
+      "calibrated_histogram": {
+        "transition_count": 100,
+        "detected_or_already_correct": 100,
+        "missed_transitions": 0,
+        "already_correct_at_change": 0,
+        "median_delay_shots": 44.0,
+        "p90_delay_shots": 74.0,
+        "switch_events": 106
+      },
+      "fixed_log200_histogram": {
+        "transition_count": 100,
+        "detected_or_already_correct": 100,
+        "missed_transitions": 0,
+        "already_correct_at_change": 1,
+        "median_delay_shots": 23.0,
+        "p90_delay_shots": 44.0,
+        "switch_events": 162
+      },
+      "first_stream_calibrated_threshold": {
+        "transition_count": 100,
+        "detected_or_already_correct": 100,
+        "missed_transitions": 0,
+        "already_correct_at_change": 0,
+        "median_delay_shots": 45.5,
+        "p90_delay_shots": 75.0,
+        "switch_events": 104
+      }
+    },
+    {
+      "regime": "measurement_shift",
+      "measurement_p": 0.006,
+      "seeds": [
+        2026122317,
+        2026122318
+      ],
+      "shots": 101000,
+      "calibrated_histogram": {
+        "transition_count": 100,
+        "detected_or_already_correct": 100,
+        "missed_transitions": 0,
+        "already_correct_at_change": 1,
+        "median_delay_shots": 41.0,
+        "p90_delay_shots": 84.10000000000001,
+        "switch_events": 124
+      },
+      "fixed_log200_histogram": {
+        "transition_count": 100,
+        "detected_or_already_correct": 100,
+        "missed_transitions": 0,
+        "already_correct_at_change": 7,
+        "median_delay_shots": 24.0,
+        "p90_delay_shots": 59.50000000000004,
+        "switch_events": 310
+      },
+      "first_stream_calibrated_threshold": {
+        "transition_count": 100,
+        "detected_or_already_correct": 100,
+        "missed_transitions": 0,
+        "already_correct_at_change": 1,
+        "median_delay_shots": 42.5,
+        "p90_delay_shots": 92.0,
+        "switch_events": 118
+      }
+    }
+  ],
+  "advancement_gate_passed": false,
+  "unique_samples": 4202000,
+  "elapsed_seconds": 12.961913894003374,
+  "peak_rss_kib": 198732,
+  "software_versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.5"
+  },
+  "scope": "fresh recalibration and validation of histogram CUSUM; first-stream frozen threshold also scored; detector-only development study",
+  "run_metadata": {
+    "command": "MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/adaptive_histogram_cusum_calibrated_replication.py",
+    "repository_base_revision": "1c42aee",
+    "software_versions": {
+      "python": "3.12.14",
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "stim": "1.16.0",
+      "pymatching": "2.4.0"
+    },
+    "peak_rss_kib": 198732,
+    "sha256": {
+      "runner": "a75c3bf41936f11e3bcd2f5f2a765d8c89a14fbe00d6be95fb6f416f1362ff19",
+      "protocol": "fda5cbfb549049e15258e52fa41c9c2fe82304ed46dba9559543b768b8eab846"
+    }
+  }
+}

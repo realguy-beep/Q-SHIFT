@@ -766,3 +766,10 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Hypothesis: empirical categorical score likelihoods may reduce Gaussian-CUSUM false switches while retaining fast X↔Z profile detection. Fixed 32 pooled-quantile bins, Jeffreys .5 smoothing, threshold log(200), 100-shot initialization; no logical outcomes online.
 - All alternating transitions were detected; median delay 27.5 shots nominal / 19 shifted. Stable false switches were 33.3 and 41.1 per 100k nominal, 45.6 and 170.0 shifted; fixed limits were 5 and 25. Periodic 100-shot LDA was quieter. Candidate rejected, no tuning/replication.
 - 200k calibration + 80k preflight + 602k main = 882k unique detector score samples; cumulative Q-SHIFT development count 306,840,200. No logical outcome or confirmatory/sealed data. Report: `outputs/independent_research_v2/adaptive_histogram_cusum_report.md`.
+
+
+## Empirical CUSUM boundary calibration — independent procedure replication mixed — 2026-11-19
+
+- The histogram score model remained frozen. A new calibration set chose h=8.5946, then independent validation had false-switch rates 1.11/.89 nominal and 2.22/24.44 shifted per 100k; every transition was detected, median delay 46.5/47 shots. Initial gate passed.
+- Fresh calibration chose h=8.3273. On its fresh validation, rates were 2.22/.89 nominal and 2.89/28.89 shifted; all transitions detected, delay 44/41. Strict shifted-Z limit 25 failed. The first h scored as a secondary frozen comparator passed the fresh stream (2.22/.67 and 2.00/23.78). Do not treat the recalibration procedure as independently replicated.
+- First guard failure replayed same calibration seeds; count samples once. 8.404M unique detector-score samples across both streams; cumulative Q-SHIFT count 319,446,200. No logical outcomes or sealed/confirmatory evidence. Report: `outputs/independent_research_v2/adaptive_histogram_cusum_calibrated_report.md`.

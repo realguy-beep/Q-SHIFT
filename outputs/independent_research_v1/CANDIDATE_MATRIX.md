@@ -220,3 +220,8 @@ A prospective nested 500k fit retained 100.2% of the 1M fit's absolute macro gai
 ### Empirical histogram CUSUM — rejected on false-switch rate
 
 A frozen 32-bin detector-score likelihood detected all alternating-profile transitions in 19–28 shots but produced 33–41 false switches/100k shots nominal and 46–170 under doubled measurement noise. It failed the 5/25 per-100k limits; periodic 100-shot LDA was quieter. Do not advance this CUSUM or tune on its stream.
+
+
+### Empirically calibrated histogram CUSUM — initial pass, procedure replication miss
+
+Initial threshold h=8.595 passed independent stable/alternating gates. Fresh calibration selected h=8.327 and narrowly failed shifted-Z false-switch limit (28.9 vs 25/100k); the original h passed a secondary fresh-stream evaluation. Treat as an unresolved simulator lead, not replicated threshold-calibration robustness.

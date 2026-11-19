@@ -507,3 +507,8 @@ Run `outputs/independent_research_v2/fast_flagged_logistic_training_500k.py` and
 ### Histogram CUSUM false-switch screen
 
 See `outputs/independent_research_v2/adaptive_histogram_cusum.py`, protocol, JSON, and report. The output is a detector-only calibration study; it does not produce QEC logical outcomes.
+
+
+### Empirical histogram CUSUM threshold follow-up
+
+See `outputs/independent_research_v2/adaptive_histogram_cusum_calibrated.py`, its fresh-seed replication runner, protocols, JSON files, and report. The procedure-level replication misses its fixed shifted-Z false-switch limit.

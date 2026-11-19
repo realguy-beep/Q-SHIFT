@@ -572,3 +572,8 @@ A 500k nested prefix across the six d3 nominal conditions was compared with the 
 ### 2026-11-19 — empirical histogram CUSUM rejected on false switches
 
 A 32-bin smoothed likelihood over the frozen detector-only score detected all alternating X/Z profile changes (median delay 27.5 shots nominal, 19 shifted) but exceeded fixed false-switch limits: nominal 33.3/41.1 per 100k and doubled-measurement 45.6/170.0. Periodic 100-shot LDA was quieter. No tuning/replication. Added 882,000 score samples; cumulative Q-SHIFT development count 306,840,200. No confirmatory/sealed evidence.
+
+
+### 2026-11-19 — calibrated histogram CUSUM mixed independent replication
+
+The fixed histogram model with empirical threshold calibration chose h=8.595 initially and passed stable/alternating gates (false switches 1.11/.89 nominal and 2.22/24.44 shifted per 100k; median delays 46.5/47). Fresh calibration chose h=8.327 and missed shifted-Z limit at 28.89/100k, despite 100% transition detection and 44/41 median delays. Original h passed secondary fresh-stream scoring. Procedure-level gate failed; no further tuning. Added 8.404M unique samples; cumulative Q-SHIFT score/circuit samples 319,446,200. No sealed/confirmatory data.

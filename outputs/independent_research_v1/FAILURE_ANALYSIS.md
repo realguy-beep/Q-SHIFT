@@ -351,3 +351,8 @@ The nested 100k prefix failed fit readiness in X-memory/X-biased (93 flags, belo
 ## Nonparametric score likelihood did not control switching
 
 A smoothed 32-bin detector-score likelihood CUSUM failed false-alarm limits despite fast detection. Nominal controls gave 33–41 false switches/100k; measurement-shifted controls gave 46–170/100k. This shows that replacing Gaussian score densities with a finite-sample histogram alone does not resolve the model-mismatch/false-switch issue. Periodic LDA was quieter on the same sequences. Do not tune this threshold or binning post hoc.
+
+
+## CUSUM threshold selection variability
+
+Empirical calibration reduced false alarms and preserved change detection, but fresh recalibration selected h=8.327 versus 8.595 initially and narrowly exceeded the shifted-Z false-switch limit (28.9/100k). The original h passed a secondary fresh-stream check. This mixed result does not establish stable threshold selection or robust error control; no further post-hoc threshold adjustment is justified.

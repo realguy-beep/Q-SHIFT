@@ -327,3 +327,8 @@ The earlier 100k nested prefix missed the predeclared readiness floor in X-memor
 ### Detector-only adaptation: histogram CUSUM did not solve false alarms
 
 Replacing Gaussian score densities with a frozen 32-bin empirical likelihood retained fast switching (all changes detected, median 19–28 shots) but still caused 33–41 nominal and 46–170 shifted false switches per 100k. Periodic 100-shot LDA was quieter. Reject this CUSUM; do not tune on its validation stream.
+
+
+### Calibrated detector-only CUSUM remains unresolved
+
+The initial empirical threshold h=8.595 met false-switch and delay gates; it also met them on a secondary fresh-stream test. But fresh threshold recalibration selected h=8.327 and failed shifted-Z false-switch rate (28.9/100k vs limit 25), so the recalibration procedure did not replicate. Keep this as mixed simulator evidence, not robust adaptation.
