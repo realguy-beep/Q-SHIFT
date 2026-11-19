@@ -284,3 +284,8 @@ Use 1M training shots per condition as the evidenced setting. A nested 100k budg
 ### Selector training budget updated by independent evidence
 
 Use 500k labeled training shots per d3 condition as a supported alternative to 1M: two fresh validation streams passed the fixed utility, harm, retention, and runtime gates. Do not lower to 100k based on the current evidence; that prefix failed the training-readiness minimum in one condition. No d5 training-volume claim.
+
+
+### Sequential adaptation update
+
+Do not deploy the tested Gaussian or histogram-likelihood CUSUMs: both were too prone to false switching. The histogram variant retained 19–28-shot transition detection but exceeded stable false-switch limits by large factors. Periodic 100-shot LDA was quieter in this screen, but still has a nonzero shifted false-switch rate and calibration cost. No logical utility or hardware conclusion follows.

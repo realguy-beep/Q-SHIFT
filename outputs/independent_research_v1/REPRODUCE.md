@@ -502,3 +502,8 @@ See `outputs/independent_research_v2/fast_flagged_logistic_training_efficiency_r
 ### Replicated selector training-budget comparison
 
 Run `outputs/independent_research_v2/fast_flagged_logistic_training_500k.py` and `fast_flagged_logistic_training_500k_replication.py` for the fixed 500k/1M comparison. Protocols, result JSON, and report are adjacent.
+
+
+### Histogram CUSUM false-switch screen
+
+See `outputs/independent_research_v2/adaptive_histogram_cusum.py`, protocol, JSON, and report. The output is a detector-only calibration study; it does not produce QEC logical outcomes.

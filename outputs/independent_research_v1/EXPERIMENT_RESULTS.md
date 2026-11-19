@@ -527,3 +527,8 @@ The nested 100k prefix had 274, 476, 108, 93, 379, and 211 flagged rows across t
 ## Selector training-budget replication
 
 The 100k prefix was not train-ready in one cell (93 flags versus the frozen floor of 100), so no efficacy conclusion was made. A new fixed 500k-prefix design passed readiness across all six conditions. On two fresh streams it reduced macro LER 16.64% and 17.11%, retained 100.2% and 98.4% of the corresponding 1M-fit absolute gain, and cost 1.369x and 1.355x the correlated matcher. All six paired intervals favored the 500k model over baseline in each stream; the smallest cell point gains were 3.85% and 4.92%. This supports half the training volume on the tested d3 simulator only.
+
+
+## Histogram likelihood CUSUM for detector-only adaptation
+
+All alternating profile changes were detected (median 27.5 shots nominal, 19 shifted), but stable false-switch rates were 33.3/41.1 per 100k nominal and 45.6/170.0 shifted, exceeding the fixed 5/25 limits. Periodic 100-shot LDA produced 10.0/2.2 nominal and 4.4/37.8 shifted. No logical outputs were involved. Reject this fixed histogram-CUSUM policy; no tuning or replication.

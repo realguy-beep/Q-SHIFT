@@ -567,3 +567,8 @@ Nested 100k prefixes across six d3 cells produced 93–476 flagged rows; X-memor
 ### 2026-11-19 — fixed 500k selector training budget passed fresh replication
 
 A 500k nested prefix across the six d3 nominal conditions was compared with the 1M fit on shared independent 500k validation streams. Initial: macro LER .0051597→.0043013 (16.64% gain); full 1M fit .0043030; retention 100.2%; 1.369x inference. Fresh replication: .0051410→.0042613 (17.11%); full fit .0042470; retention 98.4%; 1.355x. All paired intervals favored selector; every cell point improved. Added 18.06M unique shots across both streams; cumulative Q-SHIFT development count 305,958,200. No confirmatory/sealed data. See v2 report.
+
+
+### 2026-11-19 — empirical histogram CUSUM rejected on false switches
+
+A 32-bin smoothed likelihood over the frozen detector-only score detected all alternating X/Z profile changes (median delay 27.5 shots nominal, 19 shifted) but exceeded fixed false-switch limits: nominal 33.3/41.1 per 100k and doubled-measurement 45.6/170.0. Periodic 100-shot LDA was quieter. No tuning/replication. Added 882,000 score samples; cumulative Q-SHIFT development count 306,840,200. No confirmatory/sealed evidence.

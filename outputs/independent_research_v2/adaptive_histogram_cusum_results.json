@@ -1,0 +1,421 @@
+{
+  "status": "completed",
+  "histogram_model": {
+    "bins_requested": 32,
+    "effective_bins": 14,
+    "pseudocount": 0.5,
+    "edges": [
+      -3.9645698738914303,
+      -0.9124926969909868,
+      -0.8073522458985243,
+      -0.7022117948060619,
+      -0.45212771155908443,
+      -0.346987260466622,
+      -0.09084171227348432,
+      0.008237273872817844,
+      0.08670326625132645,
+      0.402694804401512,
+      0.4190627662315691,
+      0.7971523349302061,
+      0.8135202967602632,
+      0.8298882585903202,
+      2.8676477585540194
+    ],
+    "profile_bin_probabilities": {
+      "x_biased": [
+        0.03056286059975802,
+        0.05172137950343476,
+        0.019633625646204765,
+        0.0658703890727649,
+        0.0417020808543402,
+        0.056311058225924186,
+        0.01649384543081984,
+        0.5964932454728169,
+        0.01839371244012919,
+        0.01799374043816933,
+        0.026713130080894338,
+        0.016773825832191745,
+        0.016853820232583718,
+        0.024483286169968102
+      ],
+      "z_biased": [
+        0.005624606277560571,
+        0.02028358014938954,
+        0.008954373193876429,
+        0.035722499425040244,
+        0.007494475386722929,
+        0.028273020888537802,
+        0.012504124711270211,
+        0.6173817832751708,
+        0.017393782435229533,
+        0.04958152929294949,
+        0.06290059695821293,
+        0.038902276840621156,
+        0.028992970492065555,
+        0.06599038067335286
+      ]
+    },
+    "training_shots_per_profile": 100000,
+    "training_measurement_p": 0.003
+  },
+  "preflight": [
+    {
+      "stage": "calibration",
+      "profile": "x_biased",
+      "seed": 2026122101,
+      "shots": 100000,
+      "seconds": 0.057804819000011776
+    },
+    {
+      "stage": "calibration",
+      "profile": "z_biased",
+      "seed": 2026122102,
+      "shots": 100000,
+      "seconds": 0.02069644400035031
+    },
+    {
+      "stage": "preflight_stable",
+      "regime": "nominal",
+      "profile": "x_biased",
+      "seed": 2026122111,
+      "shots": 10000,
+      "seconds": 0.001716910999675747,
+      "histogram_false_switches": 3
+    },
+    {
+      "stage": "preflight_stable",
+      "regime": "nominal",
+      "profile": "z_biased",
+      "seed": 2026122112,
+      "shots": 10000,
+      "seconds": 0.0014455580021603964,
+      "histogram_false_switches": 3
+    },
+    {
+      "stage": "preflight_alternating",
+      "regime": "nominal",
+      "seeds": [
+        2026122113,
+        2026122114
+      ],
+      "shots": 20000,
+      "seconds": 0.002844451002602,
+      "histogram_metrics": {
+        "transition_count": 100,
+        "detected_or_already_correct": 59,
+        "missed_transitions": 41,
+        "already_correct_at_change": 40,
+        "median_delay_shots": 0.0,
+        "p90_delay_shots": 31.200000000000017,
+        "switch_events": 31
+      }
+    },
+    {
+      "stage": "preflight_stable",
+      "regime": "measurement_shift",
+      "profile": "x_biased",
+      "seed": 2026122115,
+      "shots": 10000,
+      "seconds": 0.001429098003427498,
+      "histogram_false_switches": 2
+    },
+    {
+      "stage": "preflight_stable",
+      "regime": "measurement_shift",
+      "profile": "z_biased",
+      "seed": 2026122116,
+      "shots": 10000,
+      "seconds": 0.001552104004076682,
+      "histogram_false_switches": 11
+    },
+    {
+      "stage": "preflight_alternating",
+      "regime": "measurement_shift",
+      "seeds": [
+        2026122117,
+        2026122118
+      ],
+      "shots": 20000,
+      "seconds": 0.003869833999488037,
+      "histogram_metrics": {
+        "transition_count": 100,
+        "detected_or_already_correct": 59,
+        "missed_transitions": 41,
+        "already_correct_at_change": 42,
+        "median_delay_shots": 0.0,
+        "p90_delay_shots": 42.400000000000006,
+        "switch_events": 53
+      }
+    }
+  ],
+  "stable": [
+    {
+      "regime": "nominal",
+      "measurement_p": 0.003,
+      "profile": "x_biased",
+      "seed": 2026122131,
+      "shots": 100000,
+      "sampling_seconds": 0.02135833200009074,
+      "episodes": 100,
+      "methods": {
+        "histogram_cusum": {
+          "false_switches": 30,
+          "initial_errors": 0,
+          "switches": 60,
+          "false_switches_per_100k_shots": 33.333333333333336
+        },
+        "gaussian_heteroscedastic_cusum": {
+          "false_switches": 31,
+          "initial_errors": 0,
+          "switches": 61,
+          "false_switches_per_100k_shots": 34.44444444444444
+        },
+        "gaussian_common_variance_cusum": {
+          "false_switches": 24,
+          "initial_errors": 0,
+          "switches": 48,
+          "false_switches_per_100k_shots": 26.666666666666668
+        },
+        "periodic_100_shot_lda": {
+          "false_switches": 9,
+          "initial_errors": 0,
+          "switches": 18,
+          "false_switches_per_100k_shots": 10.0
+        }
+      }
+    },
+    {
+      "regime": "nominal",
+      "measurement_p": 0.003,
+      "profile": "z_biased",
+      "seed": 2026122132,
+      "shots": 100000,
+      "sampling_seconds": 0.02200854100374272,
+      "episodes": 100,
+      "methods": {
+        "histogram_cusum": {
+          "false_switches": 37,
+          "initial_errors": 0,
+          "switches": 71,
+          "false_switches_per_100k_shots": 41.111111111111114
+        },
+        "gaussian_heteroscedastic_cusum": {
+          "false_switches": 37,
+          "initial_errors": 0,
+          "switches": 71,
+          "false_switches_per_100k_shots": 41.111111111111114
+        },
+        "gaussian_common_variance_cusum": {
+          "false_switches": 23,
+          "initial_errors": 0,
+          "switches": 43,
+          "false_switches_per_100k_shots": 25.555555555555557
+        },
+        "periodic_100_shot_lda": {
+          "false_switches": 2,
+          "initial_errors": 0,
+          "switches": 4,
+          "false_switches_per_100k_shots": 2.2222222222222223
+        }
+      }
+    },
+    {
+      "regime": "measurement_shift",
+      "measurement_p": 0.006,
+      "profile": "x_biased",
+      "seed": 2026122135,
+      "shots": 100000,
+      "sampling_seconds": 0.02248732499720063,
+      "episodes": 100,
+      "methods": {
+        "histogram_cusum": {
+          "false_switches": 41,
+          "initial_errors": 0,
+          "switches": 82,
+          "false_switches_per_100k_shots": 45.55555555555556
+        },
+        "gaussian_heteroscedastic_cusum": {
+          "false_switches": 31,
+          "initial_errors": 0,
+          "switches": 62,
+          "false_switches_per_100k_shots": 34.44444444444444
+        },
+        "gaussian_common_variance_cusum": {
+          "false_switches": 43,
+          "initial_errors": 0,
+          "switches": 86,
+          "false_switches_per_100k_shots": 47.77777777777778
+        },
+        "periodic_100_shot_lda": {
+          "false_switches": 4,
+          "initial_errors": 0,
+          "switches": 8,
+          "false_switches_per_100k_shots": 4.444444444444445
+        }
+      }
+    },
+    {
+      "regime": "measurement_shift",
+      "measurement_p": 0.006,
+      "profile": "z_biased",
+      "seed": 2026122136,
+      "shots": 100000,
+      "sampling_seconds": 0.021479282004293054,
+      "episodes": 100,
+      "methods": {
+        "histogram_cusum": {
+          "false_switches": 153,
+          "initial_errors": 6,
+          "switches": 305,
+          "false_switches_per_100k_shots": 170.0
+        },
+        "gaussian_heteroscedastic_cusum": {
+          "false_switches": 263,
+          "initial_errors": 6,
+          "switches": 512,
+          "false_switches_per_100k_shots": 292.22222222222223
+        },
+        "gaussian_common_variance_cusum": {
+          "false_switches": 133,
+          "initial_errors": 6,
+          "switches": 266,
+          "false_switches_per_100k_shots": 147.77777777777777
+        },
+        "periodic_100_shot_lda": {
+          "false_switches": 34,
+          "initial_errors": 6,
+          "switches": 72,
+          "false_switches_per_100k_shots": 37.77777777777778
+        }
+      }
+    }
+  ],
+  "alternating": [
+    {
+      "regime": "nominal",
+      "measurement_p": 0.003,
+      "seeds": [
+        2026122133,
+        2026122134
+      ],
+      "shots": 101000,
+      "sampling_seconds": 0.016616597000393085,
+      "dwell_shots": 1000,
+      "segments": 101,
+      "methods": {
+        "histogram_cusum": {
+          "transition_count": 100,
+          "detected_or_already_correct": 100,
+          "missed_transitions": 0,
+          "already_correct_at_change": 1,
+          "median_delay_shots": 27.5,
+          "p90_delay_shots": 52.20000000000002,
+          "switch_events": 146
+        },
+        "gaussian_heteroscedastic_cusum": {
+          "transition_count": 100,
+          "detected_or_already_correct": 100,
+          "missed_transitions": 0,
+          "already_correct_at_change": 0,
+          "median_delay_shots": 32.5,
+          "p90_delay_shots": 64.10000000000001,
+          "switch_events": 156
+        },
+        "gaussian_common_variance_cusum": {
+          "transition_count": 100,
+          "detected_or_already_correct": 100,
+          "missed_transitions": 0,
+          "already_correct_at_change": 0,
+          "median_delay_shots": 33.5,
+          "p90_delay_shots": 63.20000000000002,
+          "switch_events": 122
+        },
+        "periodic_100_shot_lda": {
+          "transition_count": 100,
+          "detected_or_already_correct": 100,
+          "missed_transitions": 0,
+          "already_correct_at_change": 3,
+          "median_delay_shots": 100.0,
+          "p90_delay_shots": 100.0,
+          "switch_events": 106
+        }
+      }
+    },
+    {
+      "regime": "measurement_shift",
+      "measurement_p": 0.006,
+      "seeds": [
+        2026122137,
+        2026122138
+      ],
+      "shots": 101000,
+      "sampling_seconds": 0.017229532000783365,
+      "dwell_shots": 1000,
+      "segments": 101,
+      "methods": {
+        "histogram_cusum": {
+          "transition_count": 100,
+          "detected_or_already_correct": 100,
+          "missed_transitions": 0,
+          "already_correct_at_change": 8,
+          "median_delay_shots": 19.0,
+          "p90_delay_shots": 53.10000000000001,
+          "switch_events": 316
+        },
+        "gaussian_heteroscedastic_cusum": {
+          "transition_count": 100,
+          "detected_or_already_correct": 100,
+          "missed_transitions": 0,
+          "already_correct_at_change": 14,
+          "median_delay_shots": 25.0,
+          "p90_delay_shots": 67.50000000000004,
+          "switch_events": 342
+        },
+        "gaussian_common_variance_cusum": {
+          "transition_count": 100,
+          "detected_or_already_correct": 100,
+          "missed_transitions": 0,
+          "already_correct_at_change": 9,
+          "median_delay_shots": 24.5,
+          "p90_delay_shots": 64.10000000000001,
+          "switch_events": 288
+        },
+        "periodic_100_shot_lda": {
+          "transition_count": 100,
+          "detected_or_already_correct": 100,
+          "missed_transitions": 0,
+          "already_correct_at_change": 4,
+          "median_delay_shots": 100.0,
+          "p90_delay_shots": 100.0,
+          "switch_events": 132
+        }
+      }
+    }
+  ],
+  "advancement_gate_passed": false,
+  "unique_samples": 882000,
+  "projected_runtime_seconds": 1.3446352818258676,
+  "elapsed_seconds": 0.667791005995241,
+  "peak_rss_kib": 148028,
+  "software_versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.5"
+  },
+  "scope": "detector-only change detection for two Pauli profiles, fixed 1k dwell, nominal and doubled measurement noise",
+  "run_metadata": {
+    "command": "MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/adaptive_histogram_cusum.py",
+    "repository_base_revision": "bccc100",
+    "software_versions": {
+      "python": "3.12.14",
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "stim": "1.16.0",
+      "pymatching": "2.4.0"
+    },
+    "peak_rss_kib": 148028,
+    "sha256": {
+      "runner": "af39ae1bc6d51136fd2d24a6d1590c62d603a7fff0e1139919fd72501600562f",
+      "protocol": "602309a626e9fe4d05274e44bdc97f1ed927540e8d9969959f67aaebc2713414"
+    }
+  }
+}

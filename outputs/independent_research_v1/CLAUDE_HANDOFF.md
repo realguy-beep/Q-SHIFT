@@ -322,3 +322,8 @@ A 100k-shot prefix per d3 condition did not clear the frozen fit-readiness floor
 ### Selector training data: 500k per condition is sufficient in d3 development
 
 The earlier 100k nested prefix missed the predeclared readiness floor in X-memory/X-biased (93 flagged rows). A prospective 500k-prefix study passed trainability in all six cells and retained 100.2% of the 1M model's macro gain initially and 98.4% on fresh replication. Both streams passed the >=10% utility / no >5% cell harm / <2x inference gate. This halves the tested labeled training volume for d3 only; do not extrapolate to d5 or smaller budgets.
+
+
+### Detector-only adaptation: histogram CUSUM did not solve false alarms
+
+Replacing Gaussian score densities with a frozen 32-bin empirical likelihood retained fast switching (all changes detected, median 19–28 shots) but still caused 33–41 nominal and 46–170 shifted false switches per 100k. Periodic 100-shot LDA was quieter. Reject this CUSUM; do not tune on its validation stream.

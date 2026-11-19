@@ -346,3 +346,8 @@ For the proposed 100k-shot training prefix, X-memory/X-biased yielded 93 disagre
 ## Selector training sample-size boundary
 
 The nested 100k prefix failed fit readiness in X-memory/X-biased (93 flags, below the 100-row floor); its partial validation was excluded after a runner-order defect. A separately frozen 500k budget then passed twice and retained 98.4–100.2% of the measured 1M-fit macro gain. These results establish a tested boundary at 500k vs a non-ready 100k prefix, not a smooth learning curve or proof that all budgets below 500k fail.
+
+
+## Nonparametric score likelihood did not control switching
+
+A smoothed 32-bin detector-score likelihood CUSUM failed false-alarm limits despite fast detection. Nominal controls gave 33–41 false switches/100k; measurement-shifted controls gave 46–170/100k. This shows that replacing Gaussian score densities with a finite-sample histogram alone does not resolve the model-mismatch/false-switch issue. Periodic LDA was quieter on the same sequences. Do not tune this threshold or binning post hoc.

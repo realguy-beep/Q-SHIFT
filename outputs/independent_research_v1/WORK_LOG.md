@@ -759,3 +759,10 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Initial stream: correlated macro .0051597, 500k .0043013 (16.64%), 1M .0043030; 100.2% gain retention, 1.369x cost. Fresh replication: .0051410, 500k .0042613 (17.11%), 1M .0042470; 98.4% retention, 1.355x cost. Both pass fixed gates; all cell paired intervals favored 500k over correlated baseline, minimum point gains 3.85%/4.92%.
 - Supports half the labeled training shots for this d3 simulator setting; does not support 100k, d5, or hardware claims. Added 18,060,000 unique samples; cumulative development count: 305,958,200. No confirmatory/sealed data.
 - Report: `outputs/independent_research_v2/fast_flagged_logistic_training_500k_report.md`.
+
+
+## Detector-only empirical histogram CUSUM — false-switch gate failed — 2026-11-19
+
+- Hypothesis: empirical categorical score likelihoods may reduce Gaussian-CUSUM false switches while retaining fast X↔Z profile detection. Fixed 32 pooled-quantile bins, Jeffreys .5 smoothing, threshold log(200), 100-shot initialization; no logical outcomes online.
+- All alternating transitions were detected; median delay 27.5 shots nominal / 19 shifted. Stable false switches were 33.3 and 41.1 per 100k nominal, 45.6 and 170.0 shifted; fixed limits were 5 and 25. Periodic 100-shot LDA was quieter. Candidate rejected, no tuning/replication.
+- 200k calibration + 80k preflight + 602k main = 882k unique detector score samples; cumulative Q-SHIFT development count 306,840,200. No logical outcome or confirmatory/sealed data. Report: `outputs/independent_research_v2/adaptive_histogram_cusum_report.md`.

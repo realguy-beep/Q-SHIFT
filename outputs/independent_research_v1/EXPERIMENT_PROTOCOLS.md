@@ -252,3 +252,8 @@ The measurement-only shift protocol is `adaptive_basis_sprt_measurement_shift_pr
 ## Fast flagged logistic selector training-budget study
 
 A prospective nested 500k-vs-1M training design and its fresh-seed replication are documented in `outputs/independent_research_v2/fast_flagged_logistic_training_500k_protocol.md` and `_replication_protocol.md`. All six readiness checks precede validation; training and validation streams are independent. Gate: >=80% gain retention, >=10% macro reduction, no >5% cell harm, <2x inference time. A prior 100k readiness stop and discarded partial validation are recorded separately.
+
+
+## Empirical histogram CUSUM profile adaptation
+
+The frozen 32-bin detector-score likelihood and independent stable/alternating streams are specified in `outputs/independent_research_v2/adaptive_histogram_cusum_protocol.md`. The fixed advancement limits are <=5 nominal and <=25 shifted false switches per 100k, >=95% transitions detected, and median delay <=100 shots.

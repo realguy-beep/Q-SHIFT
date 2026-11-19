@@ -215,3 +215,8 @@ A nested 100k-shot-per-condition fit screen found only 93 flagged rows for X-mem
 ### 500k-shot selector training budget — replicated gate pass
 
 A prospective nested 500k fit retained 100.2% of the 1M fit's absolute macro gain initially and 98.4% on fresh replication. Macro reductions were 16.64%/17.11%, every cell improved, and total inference cost was 1.37x/1.35x. This supports halving the d3 simulator training budget from 1M to 500k shots/condition. The 100k screen remains below fit-readiness in one cell; no smaller budget or distance transfer is supported. Full report in v2.
+
+
+### Empirical histogram CUSUM — rejected on false-switch rate
+
+A frozen 32-bin detector-score likelihood detected all alternating-profile transitions in 19–28 shots but produced 33–41 false switches/100k shots nominal and 46–170 under doubled measurement noise. It failed the 5/25 per-100k limits; periodic 100-shot LDA was quieter. Do not advance this CUSUM or tune on its stream.
