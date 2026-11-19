@@ -337,3 +337,8 @@ The initial empirical threshold h=8.595 met false-switch and delay gates; it als
 ### Nonlinear extension of the flagged selector
 
 A fixed 8-unit tanh MLP prototype did not converge within its 500-iteration L-BFGS-B budget on the first d3 condition. It stopped before validation. This is an optimizer/readiness failure, not evidence about MLP efficacy. No tuning was performed.
+
+
+### Half-budget selector robustness under one combined shift
+
+The 500k-shot nominal fit also passed twice under the joint measurement p=.006 / bias-ratio-5 shift, with nominal matcher graphs frozen. Macro reductions were 14.25% and 13.19%; gain retention vs 1M fits was 98.1%/97.7%; cost ~1.34x. This supports the training-volume change under one additional d3 simulator condition, not a broad robustness envelope.

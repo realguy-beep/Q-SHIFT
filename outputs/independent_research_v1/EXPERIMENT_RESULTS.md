@@ -542,3 +542,8 @@ Using fixed bins/probabilities, initial stable calibration chose h=8.595; indepe
 ## Small MLP on flagged syndromes
 
 The fixed 8-unit tanh model hit the 500-iteration L-BFGS-B limit on the first condition and stopped before validation. No accuracy evidence against logistic or correlated matching. Added 530k unique samples (30k preflight, 500k first-condition training); no confirmatory data.
+
+
+## Half-budget selector under combined measurement/bias shift
+
+At measurement p=.006 and physical bias ratio 5 with nominal matchers frozen, new 500k nominal fits reduced macro LER 14.25% and 13.19% on two independent streams; fresh 1M fits gave 14.52% and 13.50%. The half-budget models retained 98.1%/97.7% of the 1M absolute gain, with inference cost 1.336x/1.343x. All six cells improved, with minimum point gains 4.93%/4.39%. Fixed gates passed twice. Scope: this d3 combined simulator shift only.

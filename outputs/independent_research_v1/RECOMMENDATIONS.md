@@ -299,3 +299,8 @@ The frozen h=8.595 met limits on two validation streams, but fresh re-estimation
 ### Nonlinear selector prototype
 
 Do not advance the tested 8-unit MLP: it failed optimizer readiness before validation. Keep logistic regression as the evidenced selector. Any future neural candidate needs a separately predeclared optimizer and convergence feasibility gate.
+
+
+### Half-budget selector has bounded combined-shift support
+
+500k training shots/condition are supported for d3 nominal conditions and one replicated combined shift (measurement p=.006, bias ratio 5). Keep the original d5, task-transfer, and noise-shift limits. Do not claim hardware robustness or extrapolate to untested shifts.

@@ -517,3 +517,8 @@ See `outputs/independent_research_v2/adaptive_histogram_cusum_calibrated.py`, it
 ### MLP optimization stop
 
 The fixed prototype runner and protocol are `outputs/independent_research_v2/fast_flagged_mlp.py` and `_protocol.md`; the stop status is in its JSON/report. It terminates before validation on the first-condition optimizer limit.
+
+
+### Half-budget selector under combined shift
+
+Run the paired initial/replication commands in `outputs/independent_research_v2/fast_flagged_logistic_training_500k_combined_shift_report.md`; the adjacent protocols and JSON preserve both streams.

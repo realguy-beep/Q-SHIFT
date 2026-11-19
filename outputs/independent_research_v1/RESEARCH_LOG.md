@@ -582,3 +582,8 @@ The fixed histogram model with empirical threshold calibration chose h=8.595 ini
 ### 2026-11-19 — small tanh selector stopped before validation
 
 One fixed 8-unit tanh MLP reached the 500-iteration L-BFGS-B limit on Z-memory/X-biased training data. Preflight=30k, first-condition training=500k, validation=0. No efficacy claim or optimizer tuning. Added 530k unique samples; cumulative development count 319,976,200. No confirmatory/sealed data.
+
+
+### 2026-11-19 — 500k selector training budget passed combined-shift replication
+
+Fresh 500k and 1M nominal fits were tested at measurement p=.006 and physical bias ratio 5 with nominal matcher graphs frozen. Macro 500k reduction was 14.25%/13.19%; corresponding 1M gains 14.52%/13.50%; 500k retained 98.1%/97.7% at 1.336x/1.343x. All cells improved; gates passed twice. Added 18.06M unique samples, cumulative Q-SHIFT development count 338,036,200. No sealed/confirmatory data.

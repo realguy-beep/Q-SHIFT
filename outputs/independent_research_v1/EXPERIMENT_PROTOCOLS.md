@@ -262,3 +262,8 @@ The frozen 32-bin detector-score likelihood and independent stable/alternating s
 ## Nonlinear flagged-syndrome model screen
 
 One fixed 8-hidden-unit tanh MLP was compared prospectively with logistic regression on shared 500k training and validation streams. Protocol and stop outcome: `outputs/independent_research_v2/fast_flagged_mlp_protocol.md`. The first fit reached its 500-iteration limit; validation was not opened.
+
+
+## Half-budget selector under combined composition shift
+
+The fixed 500k-vs-1M nominal training fits and joint measurement/bias-shift validation, with independent replication, are frozen in `outputs/independent_research_v2/fast_flagged_logistic_training_500k_combined_shift_protocol.md` and `_replication_protocol.md`. Shift data are validation-only; all training gates precede validation.

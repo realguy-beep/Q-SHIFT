@@ -780,3 +780,10 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Tested one fixed 8-unit tanh MLP against the 42-feature logistic selector, with a 500-iteration L-BFGS-B cap and no hyperparameter sweep.
 - All six preflight cells completed. First train fit (Z-memory/X-biased) reached `STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT`; no validation was opened. This is no accuracy result. No iteration increase or retuning.
 - Added 530,000 unique samples (30k preflight + 500k training); cumulative development count 319,976,200. No confirmatory/sealed data. Report: `outputs/independent_research_v2/fast_flagged_mlp_report.md`.
+
+
+## Half-budget logistic selector — combined measurement/bias shift and replication — 2026-11-19
+
+- Challenged the 500k training-budget finding under measurement p=.006 plus physical bias ratio 10→5, with nominal matcher graphs fixed. Fresh 500k and 1M models used shared per-cell training streams; shifted held-out data were independent.
+- Initial macro LER nominal-correlation baseline .0069543; 500k .0059633 (14.25%) and 1M .0059443; gain retention 98.1%, cost 1.336x. Fresh replication .0069120→.0060000 (13.19%); 1M .0059790; retention 97.7%, cost 1.343x. All six cells improved; minimum gains 4.93% and 4.39%; both gates passed.
+- Added 18,060,000 unique circuit samples; cumulative count 338,036,200. This is one combined d3 simulator shift, not hardware or arbitrary noise robustness. Report: `outputs/independent_research_v2/fast_flagged_logistic_training_500k_combined_shift_report.md`.

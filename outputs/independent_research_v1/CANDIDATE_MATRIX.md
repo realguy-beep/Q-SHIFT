@@ -230,3 +230,8 @@ Initial threshold h=8.595 passed independent stable/alternating gates. Fresh cal
 ### Small nonlinear flagged-syndrome selector — stopped before validation
 
 A fixed 8-unit tanh MLP hit the 500-iteration L-BFGS-B limit on the first training condition. No validation or accuracy claim. Do not raise iteration count or tune this same candidate on that stream.
+
+
+### 500k selector training budget under joint noise shift — replicated pass
+
+Fresh 500k/1M nominal fits were tested under measurement p .006 and bias ratio 5, with nominal matcher graphs frozen. The 500k fit reduced macro LER 14.25%/13.19%, retained 98.1%/97.7% of the full-fit gain, and cost 1.34x. All six cells improved; the minimum gains were 4.93%/4.39%. This extends the half-budget evidence to one combined d3 simulator shift only.

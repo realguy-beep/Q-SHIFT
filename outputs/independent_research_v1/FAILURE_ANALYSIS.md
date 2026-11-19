@@ -361,3 +361,6 @@ Empirical calibration reduced false alarms and preserved change detection, but f
 ## Nonlinear selector optimization stop
 
 A one-hidden-layer 8-unit tanh classifier did not converge within 500 L-BFGS-B iterations on Z-memory/X-biased flagged training data. The frozen protocol stopped without validation. This rejects the chosen implementation budget, not all nonlinear decoders; no post-hoc iteration increase was attempted.
+
+
+The 500k selector training budget did not show the nominal-only failure feared under a combined measurement/bias shift: two fresh fits retained 97.7–98.1% of corresponding 1M-model gains. This closes only one specific d3 composition challenge and does not erase the d5, cross-basis, or temporal-task boundaries.
