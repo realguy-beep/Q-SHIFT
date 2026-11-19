@@ -522,3 +522,8 @@ The fixed prototype runner and protocol are `outputs/independent_research_v2/fas
 ### Half-budget selector under combined shift
 
 Run the paired initial/replication commands in `outputs/independent_research_v2/fast_flagged_logistic_training_500k_combined_shift_report.md`; the adjacent protocols and JSON preserve both streams.
+
+
+### Biased code-capacity MPS screen
+
+See `outputs/independent_research_v2/tensor_mps_biased.py`, protocol, results JSON, and report. This uses qecsim IID code-capacity samples, not Q-SHIFT circuit shots.

@@ -794,3 +794,10 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Extended the existing exact d9 budget across 1/6/12 simultaneous candidate claims using Bonferroni and exact binomial upper bounds. Candidate LER target remains 7.3876e-8 from the conservative baseline endpoint.
 - Six-cell candidate-side 95% FWER: 64,804,412 zero-failure shots/cell or 92,691,979 with one failure. If half alpha is reserved for baseline uncertainty: 74,186,986 / 103,371,225. Twelve-claim counts are larger.
 - Statistical evidence budget only, IID/fixed-decoder assumptions, not a physical bound. Generated no stochastic shots. Full table: `outputs/independent_research_v2/d9_familywise_target_budget_report.md`. Cumulative Q-SHIFT sample count unchanged at 338,036,200.
+
+
+## Exact planar MPS — biased code-capacity efficacy screen — below gate — 2026-11-19
+
+- Paired qecsim d3 planar code at p=.05 with 10:1 X- and Z-biased depolarizing code-capacity noise; exact `PlanarMPSDecoder(chi=None, mode='c')` vs noise-aware `PlanarMWPMDecoder`, both given the same model.
+- 20k shots/axis; all recoveries reproduced the syndrome. Macro LER .03920→.037025 (5.55%); axis reductions 5.15%/5.94%; MPS decode 37.04s main. Below fixed >=10% gate; no replication/tuning.
+- qecsim used Python MWPM fallback because `libpypm.so` was unavailable; paired accuracy remains valid, runtime comparison is limited. 40,200 qecsim code-capacity shots; 0 Q-SHIFT circuit samples; cumulative Q-SHIFT count unchanged at 338,036,200. Report: `outputs/independent_research_v2/tensor_mps_biased_report.md`.

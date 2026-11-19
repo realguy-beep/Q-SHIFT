@@ -592,3 +592,8 @@ Fresh 500k and 1M nominal fits were tested at measurement p=.006 and physical bi
 ### 2026-11-19 — exact multi-cell shot budget for the 10,000× relative target
 
 Extended the existing d9 exact-binomial budget to family-wise control across 1, 6, and 12 candidate claims. Using the conservative d9 baseline endpoint gives candidate target 7.39e-8; for six cells, candidate-side 95% FWER requires 64.8M zero-failure shots/cell or 92.7M with one failure. Reserving half alpha for baseline uncertainty raises these to 74.2M/103.4M. Deterministic calculation only; zero new stochastic samples.
+
+
+### 2026-11-19 — exact planar MPS efficacy under biased code-capacity noise
+
+On d3 qecsim planar code at p=.05, bias10 X/Z, exact MPS macro LER .037025 vs noise-aware MWPM .03920 (5.55% reduction); axis gains 5.15%/5.94%, decode 37s/40k. Fixed 10% gate failed, no replication. 40,200 code-capacity shots, zero Q-SHIFT circuit shots.

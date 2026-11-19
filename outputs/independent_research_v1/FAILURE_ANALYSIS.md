@@ -364,3 +364,8 @@ A one-hidden-layer 8-unit tanh classifier did not converge within 500 L-BFGS-B i
 
 
 The 500k selector training budget did not show the nominal-only failure feared under a combined measurement/bias shift: two fresh fits retained 97.7–98.1% of corresponding 1M-model gains. This closes only one specific d3 composition challenge and does not erase the d5, cross-basis, or temporal-task boundaries.
+
+
+## Tensor-network efficacy below fixed gate
+
+Exact d3 planar MPS improved over noise-aware MWPM by 5.55% under p=.05 biased code-capacity noise, but the fixed >=10% practical-effect gate failed. This does not reject MPS for circuit-level or other-distance problems; it gives no Q-SHIFT circuit evidence and was not replicated.

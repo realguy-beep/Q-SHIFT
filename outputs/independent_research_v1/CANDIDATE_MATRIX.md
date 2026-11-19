@@ -240,3 +240,8 @@ Fresh 500k/1M nominal fits were tested under measurement p .006 and bias ratio 5
 ### 10,000× claim evidence budget update
 
 The d9 single-cell lower-bound calculation extends to multiplicity: six simultaneous cells need 64.8M zero-failure candidate shots/cell under candidate-only 95% FWER, or 74.2M if half of alpha is reserved for baseline uncertainty. One failure raises these to 92.7M/103.4M. This quantifies inferential cost, not a physical floor.
+
+
+### Exact planar MPS under biased code-capacity noise — below utility gate
+
+At d3, p=.05 and 10:1 X/Z-biased IID code-capacity noise, exact MPS reduced equal-weight LER 5.55% vs noise-aware MWPM, with 5.15%/5.94% per-axis gains and 37s decode time for 40k shots. It missed the fixed 10% gate; no replication. This is not circuit-level Q-SHIFT evidence.

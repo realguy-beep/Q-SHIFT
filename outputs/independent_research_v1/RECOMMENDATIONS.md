@@ -304,3 +304,8 @@ Do not advance the tested 8-unit MLP: it failed optimizer readiness before valid
 ### Half-budget selector has bounded combined-shift support
 
 500k training shots/condition are supported for d3 nominal conditions and one replicated combined shift (measurement p=.006, bias ratio 5). Keep the original d5, task-transfer, and noise-shift limits. Do not claim hardware robustness or extrapolate to untested shifts.
+
+
+### MPS decoding
+
+Do not advance the tested exact planar MPS on the present result: its d3 biased code-capacity gain was 5.55%, below the 10% gate. The prior full-circuit tensor feasibility limits remain. More work requires a separately justified circuit-compatible tensor design.

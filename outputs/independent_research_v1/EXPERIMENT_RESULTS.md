@@ -547,3 +547,8 @@ The fixed 8-unit tanh model hit the 500-iteration L-BFGS-B limit on the first co
 ## Half-budget selector under combined measurement/bias shift
 
 At measurement p=.006 and physical bias ratio 5 with nominal matchers frozen, new 500k nominal fits reduced macro LER 14.25% and 13.19% on two independent streams; fresh 1M fits gave 14.52% and 13.50%. The half-budget models retained 98.1%/97.7% of the 1M absolute gain, with inference cost 1.336x/1.343x. All six cells improved, with minimum point gains 4.93%/4.39%. Fixed gates passed twice. Scope: this d3 combined simulator shift only.
+
+
+## Exact planar MPS under 10:1 biased code-capacity noise
+
+At d3, exact MPS gave .037025 macro LER vs .03920 for noise-aware MWPM (5.55% reduction); per-axis gains were 5.15% and 5.94%, and total MPS decode time was 37.0s/40k main shots. It missed the >=10% utility gate; no replication. qecsim's MWPM used the Python fallback because `libpypm.so` was unavailable. No Q-SHIFT circuit samples were generated.

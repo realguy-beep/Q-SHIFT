@@ -347,3 +347,8 @@ The 500k-shot nominal fit also passed twice under the joint measurement p=.006 /
 ### Multi-cell statistical budget for the 10,000× target
 
 At the d9 baseline lower endpoint, candidate LER must be <=7.39e-8. Bonferroni 95% control across six candidate cells needs 64.8M zero-failure shots/cell (74.2M if half alpha is allocated to baseline uncertainty); one allowed failure needs 92.7M/103.4M. The target remains an aspirational statistical objective, not a demonstrated decoder capability or physical bound.
+
+
+### MPS decoder update
+
+Exact planar MPS at d3 improved LER 5.55% over noise-aware MWPM under p=.05, 10:1 biased IID code-capacity noise, but missed the fixed 10% advancement threshold. Runtime was 37s for 40k decodes. This is a small surrogate result, not Q-SHIFT circuit evidence.
