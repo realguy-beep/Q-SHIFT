@@ -184,3 +184,21 @@ Both studies were frozen at `fe035cde7` and run once.
 - **Achieved:** the "exactly known base model" caveat is removed on development data, for scalar p error and Z-bias.
 - **Unchanged:** the 95% broad target remains implausible.
 - **Next:** a frozen evaluation of the robust pipeline on fresh seeds, plus a wider model family (X-bias, separate measurement p).
+
+## Addendum (2026-11-19): RE1 frozen evaluation completed
+
+The evaluation was frozen at `fe4471fff` and run once: 78/78 jobs in 3.1 h. The analysis is byte-identical across two runs, and the recount and the root-0 re-decode match. The full report is `RE1_RESULTS.md`. Verdict: **NOT_CONFIRMED**.
+
+- **R1–R5 (known burst K): all PASS.** On fresh seeds, at mismatch values never used in development (±13% p, Z-bias 4 and 8, combined), the pipeline decodes at oracle level. It beats the strongest deployable matcher by 59–88%.
+- **R6 (sealed hidden burst, Z-bias 4): FAIL_DIRECTION.**
+  - All 12 roots were flagged as misspecified: B2 objective 175–227, threshold 118.4.
+  - So no burst was learned, and the nominal fallback cannot learn under Z-bias.
+  - LER was 35× the oracle's.
+- **Diagnosed cause:** the flag and the (p, b) fit were calibrated only on pools with burst K. An unfamiliar burst's detector footprint inflates the objective and biases b̂ (2.8 against a true 4), and a flag switches learning off entirely.
+- **X1 (descriptive):** flagged 6/6 as intended. But switching learning off cost 4× against the oracle there, where the nominal learner would have found K.
+
+**Standing:**
+- **Supported (frozen):** mismatch-robust decoding for the known burst.
+- **Not supported:** the same for an unseen burst.
+- **Next:** a burst-robust estimator and flag on development data, then a new frozen run with a new sealed burst. H2 is spent.
+- **Unchanged:** the 95% target remains out of reach.
