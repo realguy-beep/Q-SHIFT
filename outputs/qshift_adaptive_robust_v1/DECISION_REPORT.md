@@ -202,3 +202,26 @@ The evaluation was frozen at `fe4471fff` and run once: 78/78 jobs in 3.1 h. The 
 - **Not supported:** the same for an unseen burst.
 - **Next:** a burst-robust estimator and flag on development data, then a new frozen run with a new sealed burst. H2 is spent.
 - **Unchanged:** the 95% target remains out of reach.
+
+## Addendum (2026-11-19): BRE burst-robust estimation completed
+
+The study was frozen at `d15e5f47e` and run once: 672 pools in 58 min, about 8.6 M detector-only shots. The analysis is byte-identical across two runs, the recount matches, and the replay is bit-identical. The full report is `BRE_RESULTS.md`. Verdict: **BRE_PARTIAL**.
+
+- **BRE-0 census (deterministic):**
+  - The earlier development bursts flipped only 10–20 detectors.
+  - A 30-detector burst exceeds B2's flag threshold even with no sampling noise, and biases b̂. This explains RE1's R6 failure.
+- **Frozen B2 on held-out bursts:**
+  - It learns every burst of up to 20 detectors, 60% of 25-detector bursts, and **0%** of 30-detector bursts.
+  - It learned 77/120 held-out in-family pools.
+- **E1 (one-sided adaptive exclusion):**
+  - It learned **240/240** in-family burst pools, with 0 false flags and 0 false accepts.
+  - It fails only out of family: under measurement-heavy noise, 3/24 held-out burst-free pools went unflagged and accepted a false burst.
+- **E2 and E3 (nominal-learner fallback on a flag):** unsafe. The nominal learner accepted a false burst in 96/96 out-of-family burst-free pools.
+
+**Standing:**
+- **Achieved (development):** noise-model estimation and burst learning no longer depend on burst footprint.
+- **Not achieved:** a complete pipeline whose flag also catches measurement-heavy misfit.
+- **Next:**
+  1. E1 plus a structural exclusion check (the excluded set must match a burst class), a post-hoc idea, tested on fresh development data;
+  2. then a frozen RE2 with a new sealed burst that excludes every BRE support.
+- **Unchanged:** the 95% target remains out of reach.
