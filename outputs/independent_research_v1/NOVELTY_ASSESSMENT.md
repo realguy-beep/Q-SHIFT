@@ -143,3 +143,20 @@ The blockwise temporal result is task-specific: it held for Z-memory/X-bias but 
 
 
 The 100k-shot training-efficiency screen did not produce efficacy evidence: one of six cells fell below the frozen minimum flagged-row count and partial validation was excluded after a runner-order defect. It does not add a novelty claim or alter the established d3 selector result.
+
+
+### Half-budget training result is empirical efficiency, not algorithmic novelty
+
+The fixed 500k-shot training budget retained the 1M model's d3 selector gains on nominal and one replicated combined shift. This is a reproducible sample-efficiency result for an established supervised selector, not a new decoder architecture or generalization theorem. The 100k prefix was not fit-ready in one condition.
+
+### Nonparametric sequential likelihood remains conventional and unvalidated
+
+A histogram score likelihood with empirical CUSUM boundaries is a standard statistical construction. Its recalibration procedure missed one shifted false-alarm gate on fresh data, so it supports neither a new change-detection method nor robust online adaptation.
+
+### MPS efficacy is a known-family benchmark
+
+The qecsim exact planar MPS improvement over MWPM in a d3 biased code-capacity surrogate is an application benchmark for established degeneracy-aware maximum-likelihood decoding. It missed the frozen practical-effect gate and does not establish a circuit-level Q-SHIFT contribution.
+
+### Neural selector result is a feasibility stop
+
+The single 8-unit tanh prototype failed its fixed optimizer iteration budget before validation. There is no neural efficacy or novelty evidence from that run.
