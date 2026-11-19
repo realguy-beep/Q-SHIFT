@@ -374,3 +374,8 @@ Exact d3 planar MPS improved over noise-aware MWPM by 5.55% under p=.05 biased c
 ### Frozen histogram CUSUM false-alarm confidence
 
 Although h=8.595 had shifted-Z point rates 24.44 and 23.78 per 100k, same-seed episode-cluster 95% intervals were 20.22–28.89 and 19.33–28.67. Both cross the 25 limit. The threshold therefore lacks precise rate-control evidence in the hardest stratum; point-gate success is not a 95% guarantee.
+
+
+### Larger shifted-Z stream rejects histogram-CUSUM rate control
+
+A fresh 5,000-episode stream at the unchanged threshold yielded 25.36 false switches/100k with a 95% whole-episode bootstrap interval [23.96, 26.80]. The point estimate exceeded the 25 limit, as did the interval's upper endpoint. This result rejects the present threshold for the tested shifted-Z simulator condition. It does not establish a hardware rate, but does show that the earlier 500-episode point passes were inadequate. Do not tune this threshold using these validation outcomes; a future candidate needs a distinct mechanism and prospective calibration/validation separation.

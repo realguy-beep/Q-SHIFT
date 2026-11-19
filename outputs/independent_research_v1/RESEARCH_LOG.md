@@ -602,3 +602,8 @@ On d3 qecsim planar code at p=.05, bias10 X/Z, exact MPS macro LER .037025 vs no
 ### 2026-11-19 — cluster-bootstrap precision audit for calibrated CUSUM
 
 Replayed the same eight validation streams at frozen h=8.595; all point counts matched. Cluster-bootstrap 95% intervals crossed the shifted-Z 25/100k limit in both streams: 20.22–28.89 and 19.33–28.67. Thus the point-rate gate passes but 95%-supported shifted-Z control is unresolved. Zero unique samples added.
+
+
+### 2026-11-19 — larger frozen-threshold shifted-Z CUSUM validation failed
+
+A fresh 5,000-episode shifted-Z stream at measurement p=.006 gave 1,141 false switches / 4.5M monitored shots = 25.36/100k, with a whole-episode bootstrap interval [23.96, 26.80]. The point rate exceeded 25 and the upper 95% endpoint did not clear the limit. The unchanged histogram-CUSUM boundary is not supported as controlling false alarms under this tested shift; no retuning or further same-method sampling. Added 5M detector-only scores, zero Q-SHIFT logical samples.

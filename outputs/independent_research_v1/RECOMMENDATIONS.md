@@ -314,3 +314,8 @@ Do not advance the tested exact planar MPS on the present result: its d3 biased 
 ### CUSUM confidence qualification
 
 Do not describe the frozen histogram threshold as statistically controlling shifted-Z false alarms below 25/100k: both episode-cluster intervals cross that ceiling. No further threshold adjustment on existing streams.
+
+
+### Larger shifted-Z validation rejects frozen-threshold control
+
+A fresh 5,000-episode development stream at unchanged h=8.5946 produced 25.36 false switches/100k (cluster-bootstrap 95% interval 23.96–26.80), failing both the point limit and upper-bound criterion. Do not advance or claim false-alarm control for this threshold under the tested measurement shift. Treat this histogram-CUSUM controller as rejected for the present operating envelope; any future adaptive method needs a separately motivated mechanism and prospective design, not another adjustment of this threshold on the same evidence.

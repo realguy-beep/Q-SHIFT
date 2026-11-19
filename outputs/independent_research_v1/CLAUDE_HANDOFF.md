@@ -357,3 +357,8 @@ Exact planar MPS at d3 improved LER 5.55% over noise-aware MWPM under p=.05, 10:
 ### CUSUM false-alarm precision
 
 Same-seed episode-cluster bootstrap confirmed the point counts, but shifted-Z 95% intervals at frozen h=8.595 were 20.2–28.9 and 19.3–28.7 per 100k, crossing the 25 limit in both validation streams. The controller has fast transitions but lacks enough evidence for a bounded shifted-Z rate.
+
+
+### Larger CUSUM validation rejects the frozen boundary
+
+A fresh 5,000-episode shifted-Z stream at unchanged h=8.5946 produced 25.36 false switches/100k; its episode-cluster 95% interval was 23.96–26.80. The point rate exceeded the limit, so do not integrate or claim false-alarm control for this controller under the tested shift. Do not tune on this validation stream. A materially new adaptive mechanism needs prospective calibration and an independent, adequately powered validation. Report, protocol, and exact runner are in `../independent_research_v2/adaptive_histogram_cusum_large_validation_{report,protocol}.md` and `.py`.

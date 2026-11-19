@@ -557,3 +557,12 @@ At d3, exact MPS gave .037025 macro LER vs .03920 for noise-aware MWPM (5.55% re
 ## CUSUM false-switch precision audit
 
 A same-seed replay verified all eight point counts. Episode-cluster bootstrap 95% intervals stayed within point limits for nominal X/Z and shifted X; shifted Z intervals were 20.22–28.89 and 19.33–28.67/100k at frozen h=8.595, crossing the limit 25 on both streams. This weakens the empirical threshold-control claim; no new samples.
+
+
+### Larger fresh shifted-Z validation of frozen h
+
+**Question:** Does the original frozen histogram-CUSUM threshold h=8.5945561755 keep shifted-Z stable false switches below 25 per 100,000 monitored shots with episode-cluster precision?
+
+**Protocol:** Kept histogram edges, learned likelihoods, initialization, event logic, and threshold fixed. Generated 5,000 fresh 1,000-shot episodes at measurement p=.006 (seed 2026111901), monitoring 900 shots per episode. Computed a 20,000-replicate whole-episode percentile bootstrap (analysis seed 2026111902). No logical outcomes were sampled. See `../independent_research_v2/adaptive_histogram_cusum_large_validation_protocol.md`.
+
+**Result:** 1,141 false switches / 4.5M monitored shots = 25.36/100k; cluster-bootstrap 95% interval 23.96–26.80. The predeclared upper-endpoint gate (<=25) failed, and the point estimate itself exceeded the limit. This larger independent stream rejects the frozen threshold's false-alarm-control claim for the tested shifted-Z condition. It gives no evidence about logical utility or hardware behavior. No tuning or follow-up sampling was performed. Full result and reproduction details: `../independent_research_v2/adaptive_histogram_cusum_large_validation_report.md` and JSON.

@@ -808,3 +808,10 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Replayed the eight prior stable validation streams with original frozen h=8.594556; all false-switch totals matched. Used 20k episode-cluster bootstrap resamples; no unique stochastic samples added.
 - Nominal X/Z and shifted X intervals stayed below the 5/25 point limits. Shifted Z intervals crossed 25 in both validation streams: 20.22–28.89 and 19.33–28.67 per 100k. Therefore point-rate success does not establish a 95%-supported false-alarm ceiling.
 - No threshold retuning or new samples. Q-SHIFT cumulative count remains 338,036,200. Report: `outputs/independent_research_v2/adaptive_histogram_cusum_validation_precision_report.md`.
+
+
+## Frozen histogram CUSUM — larger fresh shifted-Z validation failed — 2026-11-19
+
+- Used unchanged h=8.5945561755, histogram model, and event logic; generated 5,000 fresh Z-biased episodes at measurement p=.006 (seed 2026111901), 1,000 shots/episode.
+- Observed 1,141 false switches over 4.5M monitored shots = 25.36/100k; the 20,000-replicate whole-episode bootstrap 95% interval was 23.96–26.80. Both point limit and upper-endpoint gate failed.
+- Stopped without tuning or more sampling. This rejects false-alarm control for this threshold under the tested shift; no logical utility or hardware inference. Added 5,000,000 detector-score samples; cumulative Q-SHIFT circuit-development count remains 338,036,200. No sealed/confirmatory data. See `outputs/independent_research_v2/adaptive_histogram_cusum_large_validation_{protocol,report}.md` and `_results.json`.
