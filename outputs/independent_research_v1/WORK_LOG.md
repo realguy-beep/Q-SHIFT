@@ -815,3 +815,10 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Used unchanged h=8.5945561755, histogram model, and event logic; generated 5,000 fresh Z-biased episodes at measurement p=.006 (seed 2026111901), 1,000 shots/episode.
 - Observed 1,141 false switches over 4.5M monitored shots = 25.36/100k; the 20,000-replicate whole-episode bootstrap 95% interval was 23.96–26.80. Both point limit and upper-endpoint gate failed.
 - Stopped without tuning or more sampling. This rejects false-alarm control for this threshold under the tested shift; no logical utility or hardware inference. Added 5,000,000 detector-score samples; cumulative Q-SHIFT circuit-development count remains 338,036,200. No sealed/confirmatory data. See `outputs/independent_research_v2/adaptive_histogram_cusum_large_validation_{protocol,report}.md` and `_results.json`.
+
+
+## Categorical Bethe prototype — tree-versus-loop exactness diagnostic — 2026-11-19
+
+- Exhaustively compared the fixed prototype with exact categorical posteriors on one three-location tree and the existing one-/two-qubit loopy toys.
+- Tree posterior maximum absolute error was 2.22e-16; all runs converged in one iteration and MAP risk matched at .26. One-qubit loopy risk remained .057354 versus exact .002646 with two of four MAP decisions wrong. Two-qubit loopy MAP decisions matched, but maximum posterior error was .26000.
+- This supports topology/Bethe approximation as the likely source of the severe one-qubit error; it does not prove general correctness. Current prototype remains stopped before circuit evaluation pending loop correction or exact-region redesign and cyclic toy gates. Zero stochastic or Q-SHIFT circuit samples. Report: `outputs/independent_research_v2/categorical_bp_tree_diagnostic_report.md`.

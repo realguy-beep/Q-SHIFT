@@ -15,6 +15,8 @@
 
 Do not advance the current categorical Bethe prototype, claim the correlation pilot proves broad superiority, describe a finite d=3/5/7 screening as a threshold, or claim that Stage S data were locally verified. Confirmatory testing requires separate authorization and a newly frozen protocol.
 
+The tree diagnostic narrows the categorical Bethe failure to loopy approximation as the likely cause, but the current method remains stopped: it is badly wrong on one loopy toy and materially miscalibrated on another despite convergence. A future candidate must use explicit loop correction or bounded exact regions and clear exact cyclic fixtures before any circuit-level work.
+
 ## Remaining unknowns
 
 - Whether a structured native-categorical factor graph can scale beyond tiny exactly enumerable circuits with calibrated posterior error.

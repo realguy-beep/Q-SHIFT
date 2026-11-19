@@ -42,7 +42,7 @@ An importance-sampling prototype is a parallel measurement-method candidate, not
 - At d=3, fresh 2:1 and 5:1 bias screens showed alignment ratios of 0.65–0.74 at 2:1 and 0.24–0.33 at 5:1. This helps bound the known-profile setting, but no exact decision threshold was fit.
 - `outputs/headroom_feasibility/` already screens specialized decoder headroom at d=3/5/7 and reaches a no-go under its stated gate. A generic repeat of that grid is not a priority.
 
-The matrix is therefore a landscape of distinct approaches, not a claim that every row is an untested Q-SHIFT candidate. The next genuinely open implementation gap is structured native-categorical inference, but the first loopy Bethe prototype failed a small exact fixture and needs algorithm redesign before any circuit evaluation.
+The matrix is therefore a landscape of distinct approaches, not a claim that every row is an untested Q-SHIFT candidate. A nontrivial tree control now confirms exact posterior recovery on an acyclic fixture; the one-qubit loopy failure remains severe and a converged two-qubit fixture has large posterior calibration error. The open implementation gap remains structured native-categorical inference with loop correction or bounded exact regions; do not evaluate the current loopy Bethe prototype on circuits.
 
 
 Spatial robustness update: the exact local-map graph and pooled graph were nearly tied on the fixed 1.5x/.5x two-zone d3 stress test; macro gain .93%, below the declared 10% gate. Do not advance a selector for this profile.

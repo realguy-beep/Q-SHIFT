@@ -1,0 +1,151 @@
+{
+  "status": "completed_deterministic_exactness_diagnostic",
+  "fixtures": [
+    {
+      "name": "nontrivial_tree",
+      "factor_graph_topology": "path C\u2014detector\u2014A\u2014logical\u2014B",
+      "configuration_count": 8,
+      "syndrome_count": 2,
+      "exact_map_risk": 0.26,
+      "bethe_map_risk": 0.26,
+      "map_decision_disagreements": 0,
+      "max_absolute_conditional_posterior_error": 2.220446049250313e-16,
+      "all_bp_runs_converged": true,
+      "syndromes": [
+        {
+          "syndrome": 0,
+          "exact_probability_logical_one": 0.22727272727272727,
+          "bethe_probability_logical_one": 0.22727272727272727,
+          "absolute_probability_error": 0.0,
+          "exact_map": 0,
+          "bethe_map": 0,
+          "iterations": 1,
+          "converged": true
+        },
+        {
+          "syndrome": 1,
+          "exact_probability_logical_one": 0.6764705882352942,
+          "bethe_probability_logical_one": 0.6764705882352939,
+          "absolute_probability_error": 2.220446049250313e-16,
+          "exact_map": 1,
+          "bethe_map": 1,
+          "iterations": 1,
+          "converged": true
+        }
+      ]
+    },
+    {
+      "name": "one_qubit_repetition",
+      "factor_graph_topology": "loopy",
+      "configuration_count": 64,
+      "syndrome_count": 4,
+      "exact_map_risk": 0.0026459999999999956,
+      "bethe_map_risk": 0.057353999999999995,
+      "map_decision_disagreements": 2,
+      "max_absolute_conditional_posterior_error": 0.5659392426256445,
+      "all_bp_runs_converged": true,
+      "syndromes": [
+        {
+          "syndrome": 0,
+          "exact_probability_logical_one": 2.958255724772654e-05,
+          "bethe_probability_logical_one": 0.0276368926826809,
+          "absolute_probability_error": 0.027607310125433174,
+          "exact_map": 0,
+          "bethe_map": 0,
+          "iterations": 1,
+          "converged": true
+        },
+        {
+          "syndrome": 2,
+          "exact_probability_logical_one": 0.9700000000000001,
+          "bethe_probability_logical_one": 0.4040607573743568,
+          "absolute_probability_error": 0.5659392426256433,
+          "exact_map": 1,
+          "bethe_map": 0,
+          "iterations": 1,
+          "converged": true
+        },
+        {
+          "syndrome": 3,
+          "exact_probability_logical_one": 0.9700000000000001,
+          "bethe_probability_logical_one": 0.9992079544339728,
+          "absolute_probability_error": 0.029207954433972727,
+          "exact_map": 1,
+          "bethe_map": 1,
+          "iterations": 1,
+          "converged": true
+        },
+        {
+          "syndrome": 1,
+          "exact_probability_logical_one": 0.9700000000000001,
+          "bethe_probability_logical_one": 0.40406075737435554,
+          "absolute_probability_error": 0.5659392426256445,
+          "exact_map": 1,
+          "bethe_map": 0,
+          "iterations": 1,
+          "converged": true
+        }
+      ]
+    },
+    {
+      "name": "two_qubit_repetition",
+      "factor_graph_topology": "loopy",
+      "configuration_count": 256,
+      "syndrome_count": 4,
+      "exact_map_risk": 0.06000000000000002,
+      "bethe_map_risk": 0.06,
+      "map_decision_disagreements": 0,
+      "max_absolute_conditional_posterior_error": 0.2600003114149136,
+      "all_bp_runs_converged": true,
+      "syndromes": [
+        {
+          "syndrome": 0,
+          "exact_probability_logical_one": 0.0021665864227250853,
+          "bethe_probability_logical_one": 0.03406768261510041,
+          "absolute_probability_error": 0.03190109619237533,
+          "exact_map": 0,
+          "bethe_map": 0,
+          "iterations": 1,
+          "converged": true
+        },
+        {
+          "syndrome": 2,
+          "exact_probability_logical_one": 0.5000000000000001,
+          "bethe_probability_logical_one": 0.4057969886177847,
+          "absolute_probability_error": 0.09420301138221543,
+          "exact_map": 0,
+          "bethe_map": 0,
+          "iterations": 1,
+          "converged": true
+        },
+        {
+          "syndrome": 3,
+          "exact_probability_logical_one": 0.9680851063829786,
+          "bethe_probability_logical_one": 0.9707091755766761,
+          "absolute_probability_error": 0.002624069193697509,
+          "exact_map": 1,
+          "bethe_map": 1,
+          "iterations": 1,
+          "converged": true
+        },
+        {
+          "syndrome": 1,
+          "exact_probability_logical_one": 0.49999999999999983,
+          "bethe_probability_logical_one": 0.23999968858508625,
+          "absolute_probability_error": 0.2600003114149136,
+          "exact_map": 0,
+          "bethe_map": 0,
+          "iterations": 1,
+          "converged": true
+        }
+      ]
+    }
+  ],
+  "unique_stochastic_samples": 0,
+  "unique_qshift_circuit_samples": 0,
+  "software_versions": {
+    "python": "3.12.14"
+  },
+  "script_sha256": "cfcfe1daea21c3221609ee4462e40d0af13a0f4ccd92d69d1b7eae7f1183647a",
+  "scope": "exact toy enumeration for algorithm diagnosis; no circuit efficacy claim"
+}

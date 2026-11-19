@@ -531,3 +531,5 @@ See `outputs/independent_research_v2/tensor_mps_biased.py`, protocol, results JS
 For false-switch rate precision, replay the exact stored seeds using `outputs/independent_research_v2/adaptive_histogram_cusum_validation_precision.py`; it verifies saved counts and computes episode-cluster intervals without adding unique samples.
 
 The larger fresh frozen-threshold shifted-Z validation is reproduced with `./.venv/bin/python outputs/independent_research_v2/adaptive_histogram_cusum_large_validation.py`. Its preregistered seed, 5,000 episodes, threshold, and cluster-bootstrap procedure are in the adjacent protocol; this adds detector scores only, not logical-circuit samples.
+
+The categorical Bethe tree/loop exactness diagnostic is reproduced with `MPLCONFIGDIR=/tmp/qshift-mpl ./.venv/bin/python outputs/independent_research_v2/categorical_bp_tree_diagnostic.py`. It exhaustively compares deterministic toy posteriors and adds no samples.

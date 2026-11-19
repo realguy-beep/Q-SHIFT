@@ -607,3 +607,8 @@ Replayed the same eight validation streams at frozen h=8.595; all point counts m
 ### 2026-11-19 — larger frozen-threshold shifted-Z CUSUM validation failed
 
 A fresh 5,000-episode shifted-Z stream at measurement p=.006 gave 1,141 false switches / 4.5M monitored shots = 25.36/100k, with a whole-episode bootstrap interval [23.96, 26.80]. The point rate exceeded 25 and the upper 95% endpoint did not clear the limit. The unchanged histogram-CUSUM boundary is not supported as controlling false alarms under this tested shift; no retuning or further same-method sampling. Added 5M detector-only scores, zero Q-SHIFT logical samples.
+
+
+### 2026-11-19 — categorical Bethe tree/loop exactness diagnostic
+
+A nontrivial tree factor graph matched exhaustive conditional posterior to 2.22e-16, while the existing one-qubit loopy toy had .057354 Bethe MAP risk vs .002646 exact and two of four decisions disagreed. The two-qubit loopy fixture retained MAP decisions but had .26000 max conditional-posterior error. Convergence did not imply calibration; tree agreement supports the code path on that topology, and loop approximation remains the likely failure source. Zero new samples.
