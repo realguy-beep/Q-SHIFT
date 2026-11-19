@@ -302,3 +302,8 @@ At measurement p=.0015 the frozen selector gained 18.89%/18.00% macro LER on two
 ### Temporal gate-rate selector challenge — 2026-11-18
 
 A stationary z-memory/X-biased selector passed on two reversed five-round rate patterns (12.47%/11.68% macro gain, ~1.36x cost). Scope is one temporal simulator pattern, not online adaptation or arbitrary drift. See `../independent_research_v2/fast_flagged_logistic_temporal_shift_report.md`.
+
+
+### Blockwise temporal profile — 2026-11-18
+
+A second five-round temporal shape and reversal passed (12.42%/11.76% gains, ~1.36x cost) on Z-memory/X-bias d3. Alongside the alternating-rate result, this supports two fixed patterns only, not online adaptation. See `../independent_research_v2/fast_flagged_logistic_temporal_block_shift_report.md`.

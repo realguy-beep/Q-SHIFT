@@ -482,3 +482,8 @@ Run `fast_flagged_logistic_measurement_half_shift.py` and its replication counte
 ### Temporal gate-rate selector challenge
 
 Run `fast_flagged_logistic_temporal_shift.py` and `fast_flagged_logistic_temporal_shift_replication.py` from the v2 directory. They use the existing alternating-rate circuit builder and frozen stationary coefficients. Report limits scope to one Z-memory/X-bias temporal pattern.
+
+
+### Blockwise temporal-rate selector challenge
+
+Run `fast_flagged_logistic_temporal_block_shift.py` and its replication in v2 with the project venv. This uses a separate frozen blockwise factor pattern and reversal; it does not overwrite the alternating-rate result.

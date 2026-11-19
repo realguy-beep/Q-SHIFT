@@ -264,3 +264,8 @@ Both tested stationary measurement-rate shifts (half and double) passed. Keep th
 ### Temporal-rate evidence
 
 A fixed selector transferred to one alternating five-round gate-rate pattern on Z-memory/X-bias. Preserve it as a narrow development lead only; do not claim online rate estimation or arbitrary drift robustness. A broader temporal study needs a concrete measured pattern and must retain the other task limits.
+
+
+### Two tested temporal maps
+
+The selector passed alternating and blockwise five-round rate patterns for Z-memory/X-bias d3. Retain as a simulator lead only; a next step needs a real operating time profile and explicit online-policy objective. Do not generalize to arbitrary temporal drift or other bases.

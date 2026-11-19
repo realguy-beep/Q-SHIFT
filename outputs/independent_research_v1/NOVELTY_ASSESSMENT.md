@@ -130,3 +130,8 @@ The frozen selector passed half- and double-measurement-rate shifts at d3, stren
 ### Temporal shift adds bounded robustness evidence
 
 One alternating gate-rate pattern transferred on a single d3 task. This is a robustness finding for an existing selector family, not an online adaptation algorithm or novelty claim.
+
+
+### Second temporal pattern remains bounded evidence
+
+The frozen selector passed a second imposed temporal-rate shape, which strengthens robustness evidence but does not make it an online adaptation method or novel decoder.

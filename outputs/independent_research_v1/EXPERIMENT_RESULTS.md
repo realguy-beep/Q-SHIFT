@@ -507,3 +507,8 @@ With measurement p reduced from .003 to .0015 and the selector/graphs frozen, tw
 ## Frozen selector under temporal gate-rate variation
 
 On two reversed five-round rate maps with mean two-qubit p=.003, the stationary-trained z-memory/X-biased selector reduced macro LER 12.47% and 11.68% at 1.364x/1.361x inference cost. Paired macro intervals were [-.001077,-.000911] and [-.001018,-.000852]. Both fixed gates passed. This covers one temporal profile pair only and does not test online adaptation; see `../independent_research_v2/fast_flagged_logistic_temporal_shift_report.md`.
+
+
+## Blockwise temporal gate-rate shift
+
+A second temporal shape, [.25,.25,1.75,1.75,1] and its reversal, gave 12.42% and 11.76% macro LER reductions on two streams at ~1.36x cost. Paired macro intervals were [-.001264,-.001080] and [-.001197,-.001015]. This is a second fixed temporal pattern on Z-memory/X-bias d3; see `../independent_research_v2/fast_flagged_logistic_temporal_block_shift_report.md`.

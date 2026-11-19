@@ -545,3 +545,9 @@ The 5:1 d7 screen supports some robustness below 10:1, with equal-mix XZZX/CSS=.
 
 - The stationary-trained selector transferred to two reversed five-round gate-rate profiles with mean p=.003 on Z-memory/X-bias d3: 12.47% then 11.68% macro reductions, ~1.36x inference, paired intervals favorable. No temporal retraining; exact-map matcher only diagnostic.
 - This is one imposed temporal pattern, not online adaptation or arbitrary drift. Cross-basis/d5 remain negative and doubled stationary gate noise borderline. Cumulative development samples 278,088,200; no sealed/confirmatory data. See `outputs/independent_research_v2/fast_flagged_logistic_temporal_shift_report.md`.
+
+
+## Second temporal gate-rate shape also passed — 2026-11-18
+
+- The frozen selector passed a blockwise [.25,.25,1.75,1.75,1] pattern and reversal on two independent streams: 12.42% and 11.76% macro gains, ~1.36x cost. Along with the alternating map result, this supports two fixed temporal patterns on Z-memory/X-bias d3.
+- Still no online adaptation, arbitrary temporal noise, hardware, or other-task guarantee. Cumulative samples: 280,128,200; no sealed/confirmatory evaluation. See `outputs/independent_research_v2/fast_flagged_logistic_temporal_block_shift_report.md`.

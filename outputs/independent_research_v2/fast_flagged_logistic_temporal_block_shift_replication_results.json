@@ -1,0 +1,184 @@
+{
+  "status": "fast_flagged_logistic_temporal_block_shift_replication",
+  "nominal_gate_p": 0.003,
+  "temporal_mean_gate_p": 0.003,
+  "measurement_p": 0.003,
+  "bias_ratio": 10.0,
+  "conditions": [
+    {
+      "profile": "block_a",
+      "seed": 2026121501,
+      "shots": 500000,
+      "round_factors": [
+        0.25,
+        0.25,
+        1.75,
+        1.75,
+        1.0
+      ],
+      "flagged": 1651,
+      "failures": {
+        "nominal_correlated": 4843,
+        "frozen_selector": 4303,
+        "actual_map_diagnostic": 4747
+      },
+      "ler": {
+        "nominal_correlated": 0.009686,
+        "frozen_selector": 0.008606,
+        "actual_map_diagnostic": 0.009494
+      },
+      "wilson_95": {
+        "nominal_correlated": [
+          0.009418271959922894,
+          0.009961262066354643
+        ],
+        "frozen_selector": [
+          0.00835372079135918,
+          0.008865829829892964
+        ]
+      },
+      "paired": {
+        "delta_selector_minus_nominal_correlated": -0.00108,
+        "normal_95_ci": [
+          -0.0012085484751311762,
+          -0.0009514515248688239
+        ],
+        "nominal_only_failures": 808,
+        "selector_only_failures": 268,
+        "mcnemar_exact_two_sided": 2.0767226863498891e-63
+      },
+      "time_ratio": 1.3612694496812345
+    },
+    {
+      "profile": "block_b",
+      "seed": 2026121502,
+      "shots": 500000,
+      "round_factors": [
+        1.0,
+        1.75,
+        1.75,
+        0.25,
+        0.25
+      ],
+      "flagged": 1701,
+      "failures": {
+        "nominal_correlated": 4561,
+        "frozen_selector": 3995,
+        "actual_map_diagnostic": 4447
+      },
+      "ler": {
+        "nominal_correlated": 0.009122,
+        "frozen_selector": 0.00799,
+        "actual_map_diagnostic": 0.008894
+      },
+      "wilson_95": {
+        "nominal_correlated": [
+          0.008862222561644206,
+          0.009389320130897848
+        ],
+        "frozen_selector": [
+          0.007746980824071178,
+          0.00824057926246278
+        ]
+      },
+      "paired": {
+        "delta_selector_minus_nominal_correlated": -0.001132,
+        "normal_95_ci": [
+          -0.0012603057413867608,
+          -0.0010036942586132392
+        ],
+        "nominal_only_failures": 819,
+        "selector_only_failures": 253,
+        "mcnemar_exact_two_sided": 4.1126018689063786e-70
+      },
+      "time_ratio": 1.3611209249469773
+    }
+  ],
+  "preflight": [
+    {
+      "profile": "block_a",
+      "seed": 2026121491,
+      "shots": 10000,
+      "metadata": {
+        "factors": [
+          0.25,
+          0.25,
+          1.75,
+          1.75,
+          1.0
+        ],
+        "rounds": 5,
+        "pair_sites": 120,
+        "factor_mean": 1.0,
+        "mean_pair_rate": 0.003000000000000001
+      },
+      "flags": 41,
+      "sample_seconds": 0.0017658830038271844,
+      "nominal_correlated_seconds": 0.005386286000430118,
+      "nominal_ordinary_seconds": 0.001720908003335353,
+      "actual_diagnostic_seconds": 0.005701333000615705,
+      "classifier_seconds": 0.00020576300448738039,
+      "projected_seconds": 0.739008650634787
+    },
+    {
+      "profile": "block_b",
+      "seed": 2026121492,
+      "shots": 10000,
+      "metadata": {
+        "factors": [
+          1.0,
+          1.75,
+          1.75,
+          0.25,
+          0.25
+        ],
+        "rounds": 5,
+        "pair_sites": 120,
+        "factor_mean": 1.0,
+        "mean_pair_rate": 0.0030000000000000005
+      },
+      "flags": 40,
+      "sample_seconds": 0.00447891100338893,
+      "nominal_correlated_seconds": 0.00809723700513132,
+      "nominal_ordinary_seconds": 0.0017136960013885982,
+      "actual_diagnostic_seconds": 0.0056099450011970475,
+      "classifier_seconds": 9.761799447005615e-05,
+      "projected_seconds": 0.9998703502787976
+    }
+  ],
+  "macro_ler": {
+    "nominal_correlated": 0.009404,
+    "frozen_selector": 0.008298,
+    "actual_profile_matcher_diagnostic": 0.009194
+  },
+  "macro_relative_reduction": 0.11760952786048484,
+  "per_profile_relative_reductions": [
+    0.11150113565971498,
+    0.12409559307169471
+  ],
+  "mean_time_ratio": 1.361195187314106,
+  "advancement_gate_passed": true,
+  "preflight_samples": 20000,
+  "main_samples": 1000000,
+  "projected_seconds": 1.7388790009135846,
+  "elapsed_seconds": 1.951347488000465,
+  "scope": "frozen stationary selector on blockwise temporal gate-rate pair; Z-memory/X-bias d3 only",
+  "run_metadata": {
+    "command": "MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_logistic_temporal_block_shift_replication.py",
+    "repository_base_revision": "6fe5201",
+    "software_versions": {
+      "python": "3.12",
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "stim": "1.16.0",
+      "pymatching": "2.4.0"
+    },
+    "peak_rss_kib": null,
+    "peak_rss_note": "not captured by the run",
+    "sha256": {
+      "runner": "7663a8cde160abc34f35d435be2f92256f23dccec2acdf97b8192d0582476abc",
+      "protocol": "70f0a5d79e3c19cd9178b5ea594f986fa2bf59083a5eb1eb6ce2222c8d622a7e",
+      "temporal_builder": "7b5b7adbf19abbfaf2121dae4231bc64b4fb24fcce290b45774cc3a7bcf58088"
+    }
+  }
+}

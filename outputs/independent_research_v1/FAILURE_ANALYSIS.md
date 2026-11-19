@@ -326,3 +326,8 @@ Halving measurement p to .0015 gave 18%–19% gains twice, complementing the ~13
 ### One temporal-rate pattern is a positive but narrow result
 
 The stationary selector transferred to two reversed five-round gate-rate maps on Z-memory/X-bias d3 (11.7%–12.5% gain, ~1.36x cost). This reduces concern for that imposed temporal pattern, but it is not online calibration, arbitrary drift robustness, or evidence for other memory/profile tasks. Keep the separate gate-p=.006 borderline result and cross-basis/d5 failures visible.
+
+
+### A second temporal shape replicated the selector gain
+
+The selector also passed a blockwise hot/cool five-round pattern and reversal (11.8%–12.4% gains, ~1.36x cost). This makes the positive temporal evidence less dependent on one sequence shape, but both tests share Z-memory/X-bias d3, fixed mean rate, and oracle-designed stationary average. No claim of online adaptation or arbitrary drift is warranted.

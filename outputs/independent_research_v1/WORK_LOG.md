@@ -726,3 +726,11 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - Fresh replication .008003→.007068 (11.68%), paired delta -.000935 (95% CI [-.001018,-.000852]), 1.361x cost; gains 11.78%/11.58%. Both fixed gates passed.
 - This supports one temporal pattern for Z-memory/X-bias d3 only, not online adaptation. Cross-basis/d5 remain negative; doubled gate-rate stress borderline. Added 2,040,000 unique samples; cumulative Q-SHIFT development total: 278,088,200. No confirmatory/sealed data.
 - Report: `outputs/independent_research_v2/fast_flagged_logistic_temporal_shift_report.md`.
+
+
+## Frozen selector under blockwise temporal gate rates — replication — 2026-11-18
+
+- Tested new rate pattern [.25,.25,1.75,1.75,1] and its reversal, mean one, with stationary selector/nominal graph frozen; Z-memory/X-bias d3 only. First stream macro LER .009438→.008266 (12.42%), paired delta -.001172 (95% CI [-.001264,-.001080]), cost 1.360x.
+- Independent replication .009404→.008298 (11.76%), paired delta -.001106 (95% CI [-.001197,-.001015]), cost 1.361x. Both gates passed; profile gains were positive in both maps.
+- This complements, but does not generalize beyond, the earlier alternating temporal pattern. No online adaptation or arbitrary drift claim. Added 2,040,000 unique samples; cumulative total: 280,128,200. No confirmatory/sealed data.
+- Report: `outputs/independent_research_v2/fast_flagged_logistic_temporal_block_shift_report.md`.

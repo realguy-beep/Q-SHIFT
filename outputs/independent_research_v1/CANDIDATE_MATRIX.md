@@ -195,3 +195,8 @@ The ratio-10 frozen selector passed both measurement p=.0015 and .006 on two str
 ### Alternating temporal gate-rate screen
 
 A frozen stationary selector passed two reversed five-round gate-rate profiles at mean p=.003 on Z-memory/X-bias d3, with 12.47%/11.68% macro reductions at ~1.36x cost. This is a single task/pattern result, not online adaptation. Report: `../independent_research_v2/fast_flagged_logistic_temporal_shift_report.md`.
+
+
+### Blockwise temporal-rate pattern
+
+A second five-round temporal shape, distinct from the alternating pattern, passed on two streams (12.42%/11.76% macro gain, ~1.36x cost) for Z-memory/X-bias d3. Supports these two maps only; no online adaptation or general temporal robustness claim. Report: `../independent_research_v2/fast_flagged_logistic_temporal_block_shift_report.md`.
