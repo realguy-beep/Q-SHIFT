@@ -1,0 +1,42 @@
+{
+  "status": "stopped_on_optimizer_iteration_limit",
+  "hypothesis": "A compact nonlinear selector may improve the flagged-syndrome decision boundary over logistic regression.",
+  "scope": "Nominal d3 Phase 2B, first training condition only; no validation opened.",
+  "architecture": {
+    "hidden_units": 8,
+    "activation": "tanh",
+    "objective": "summed binary cross entropy + 0.5 L2 on weight matrices",
+    "optimizer": "SciPy L-BFGS-B",
+    "max_iterations": 500,
+    "initialization": "fixed seeded Gaussian Xavier-style"
+  },
+  "execution": {
+    "preflight_samples": 30000,
+    "unique_training_samples": 500000,
+    "validation_samples": 0,
+    "unique_samples": 530000,
+    "condition_reached": "z-memory / x-biased",
+    "optimizer_status": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "validation_opened": false
+  },
+  "advancement_gate_passed": false,
+  "ler_results": null,
+  "interpretation": "The fixed prototype did not converge within its predeclared iteration budget on the first condition. No accuracy claim is available; the run does not show whether a converged MLP would improve on logistic. No iteration-budget increase or retuning was performed.",
+  "run_metadata": {
+    "command": "MPLCONFIGDIR=/tmp/qshift-mpl .venv/bin/python outputs/independent_research_v2/fast_flagged_mlp.py",
+    "repository_base_revision": "0cb6797",
+    "software_versions": {
+      "python": "3.12.14",
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "stim": "1.16.0",
+      "pymatching": "2.4.0"
+    },
+    "peak_rss_kib": null,
+    "peak_rss_note": "not captured before optimizer stop",
+    "sha256": {
+      "runner": "96e1d02de983f57fd8cdc19e678b9395efcd5c14f09e6127f1f3f1fa515011f3",
+      "protocol": "cf9a1e2ebb2dde35f2f4a18066efdab4c4b54d64cae854ffee02f623ec682cf7"
+    }
+  }
+}

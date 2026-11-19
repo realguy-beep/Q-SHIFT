@@ -356,3 +356,8 @@ A smoothed 32-bin detector-score likelihood CUSUM failed false-alarm limits desp
 ## CUSUM threshold selection variability
 
 Empirical calibration reduced false alarms and preserved change detection, but fresh recalibration selected h=8.327 versus 8.595 initially and narrowly exceeded the shifted-Z false-switch limit (28.9/100k). The original h passed a secondary fresh-stream check. This mixed result does not establish stable threshold selection or robust error control; no further post-hoc threshold adjustment is justified.
+
+
+## Nonlinear selector optimization stop
+
+A one-hidden-layer 8-unit tanh classifier did not converge within 500 L-BFGS-B iterations on Z-memory/X-biased flagged training data. The frozen protocol stopped without validation. This rejects the chosen implementation budget, not all nonlinear decoders; no post-hoc iteration increase was attempted.

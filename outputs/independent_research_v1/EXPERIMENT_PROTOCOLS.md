@@ -257,3 +257,8 @@ A prospective nested 500k-vs-1M training design and its fresh-seed replication a
 ## Empirical histogram CUSUM profile adaptation
 
 The frozen 32-bin detector-score likelihood and independent stable/alternating streams are specified in `outputs/independent_research_v2/adaptive_histogram_cusum_protocol.md`. The fixed advancement limits are <=5 nominal and <=25 shifted false switches per 100k, >=95% transitions detected, and median delay <=100 shots.
+
+
+## Nonlinear flagged-syndrome model screen
+
+One fixed 8-hidden-unit tanh MLP was compared prospectively with logistic regression on shared 500k training and validation streams. Protocol and stop outcome: `outputs/independent_research_v2/fast_flagged_mlp_protocol.md`. The first fit reached its 500-iteration limit; validation was not opened.

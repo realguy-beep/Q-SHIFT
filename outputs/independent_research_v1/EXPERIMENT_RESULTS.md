@@ -537,3 +537,8 @@ All alternating profile changes were detected (median 27.5 shots nominal, 19 shi
 ## Calibrated histogram CUSUM threshold follow-up
 
 Using fixed bins/probabilities, initial stable calibration chose h=8.595; independent validation rates were 1.11/.89 nominal and 2.22/24.44 shifted false switches per 100k, with 46.5/47-shot median transition delays. Fresh recalibration chose h=8.327; validation rates were 2.22/.89 and 2.89/28.89, so shifted Z missed the strict 25 limit. The original h scored on that stream had 2.22/.67 and 2.00/23.78 rates and 45.5/42.5 delays. Preserve the distinction: frozen h passed two validation streams, recalibration procedure failed its independent gate.
+
+
+## Small MLP on flagged syndromes
+
+The fixed 8-unit tanh model hit the 500-iteration L-BFGS-B limit on the first condition and stopped before validation. No accuracy evidence against logistic or correlated matching. Added 530k unique samples (30k preflight, 500k first-condition training); no confirmatory data.

@@ -577,3 +577,8 @@ A 32-bin smoothed likelihood over the frozen detector-only score detected all al
 ### 2026-11-19 — calibrated histogram CUSUM mixed independent replication
 
 The fixed histogram model with empirical threshold calibration chose h=8.595 initially and passed stable/alternating gates (false switches 1.11/.89 nominal and 2.22/24.44 shifted per 100k; median delays 46.5/47). Fresh calibration chose h=8.327 and missed shifted-Z limit at 28.89/100k, despite 100% transition detection and 44/41 median delays. Original h passed secondary fresh-stream scoring. Procedure-level gate failed; no further tuning. Added 8.404M unique samples; cumulative Q-SHIFT score/circuit samples 319,446,200. No sealed/confirmatory data.
+
+
+### 2026-11-19 — small tanh selector stopped before validation
+
+One fixed 8-unit tanh MLP reached the 500-iteration L-BFGS-B limit on Z-memory/X-biased training data. Preflight=30k, first-condition training=500k, validation=0. No efficacy claim or optimizer tuning. Added 530k unique samples; cumulative development count 319,976,200. No confirmatory/sealed data.

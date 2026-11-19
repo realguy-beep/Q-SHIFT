@@ -512,3 +512,8 @@ See `outputs/independent_research_v2/adaptive_histogram_cusum.py`, protocol, JSO
 ### Empirical histogram CUSUM threshold follow-up
 
 See `outputs/independent_research_v2/adaptive_histogram_cusum_calibrated.py`, its fresh-seed replication runner, protocols, JSON files, and report. The procedure-level replication misses its fixed shifted-Z false-switch limit.
+
+
+### MLP optimization stop
+
+The fixed prototype runner and protocol are `outputs/independent_research_v2/fast_flagged_mlp.py` and `_protocol.md`; the stop status is in its JSON/report. It terminates before validation on the first-condition optimizer limit.

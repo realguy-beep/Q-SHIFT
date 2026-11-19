@@ -773,3 +773,10 @@ The decoder-disagreement groups are small, particularly the 30–49-shot fix/bre
 - The histogram score model remained frozen. A new calibration set chose h=8.5946, then independent validation had false-switch rates 1.11/.89 nominal and 2.22/24.44 shifted per 100k; every transition was detected, median delay 46.5/47 shots. Initial gate passed.
 - Fresh calibration chose h=8.3273. On its fresh validation, rates were 2.22/.89 nominal and 2.89/28.89 shifted; all transitions detected, delay 44/41. Strict shifted-Z limit 25 failed. The first h scored as a secondary frozen comparator passed the fresh stream (2.22/.67 and 2.00/23.78). Do not treat the recalibration procedure as independently replicated.
 - First guard failure replayed same calibration seeds; count samples once. 8.404M unique detector-score samples across both streams; cumulative Q-SHIFT count 319,446,200. No logical outcomes or sealed/confirmatory evidence. Report: `outputs/independent_research_v2/adaptive_histogram_cusum_calibrated_report.md`.
+
+
+## Nonlinear flagged-syndrome prototype — optimizer readiness stop — 2026-11-19
+
+- Tested one fixed 8-unit tanh MLP against the 42-feature logistic selector, with a 500-iteration L-BFGS-B cap and no hyperparameter sweep.
+- All six preflight cells completed. First train fit (Z-memory/X-biased) reached `STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT`; no validation was opened. This is no accuracy result. No iteration increase or retuning.
+- Added 530,000 unique samples (30k preflight + 500k training); cumulative development count 319,976,200. No confirmatory/sealed data. Report: `outputs/independent_research_v2/fast_flagged_mlp_report.md`.

@@ -294,3 +294,8 @@ Do not deploy the tested Gaussian or histogram-likelihood CUSUMs: both were too 
 ### Sequential calibration threshold remains unproven
 
 The frozen h=8.595 met limits on two validation streams, but fresh re-estimation of h missed the shifted-Z false-switch gate. Do not claim a robustly calibrated adaptive controller. Any future hardware-directed work needs a prospective, broader calibration envelope and separate utility/overhead validation.
+
+
+### Nonlinear selector prototype
+
+Do not advance the tested 8-unit MLP: it failed optimizer readiness before validation. Keep logistic regression as the evidenced selector. Any future neural candidate needs a separately predeclared optimizer and convergence feasibility gate.

@@ -225,3 +225,8 @@ A frozen 32-bin detector-score likelihood detected all alternating-profile trans
 ### Empirically calibrated histogram CUSUM — initial pass, procedure replication miss
 
 Initial threshold h=8.595 passed independent stable/alternating gates. Fresh calibration selected h=8.327 and narrowly failed shifted-Z false-switch limit (28.9 vs 25/100k); the original h passed a secondary fresh-stream evaluation. Treat as an unresolved simulator lead, not replicated threshold-calibration robustness.
+
+
+### Small nonlinear flagged-syndrome selector — stopped before validation
+
+A fixed 8-unit tanh MLP hit the 500-iteration L-BFGS-B limit on the first training condition. No validation or accuracy claim. Do not raise iteration count or tune this same candidate on that stream.

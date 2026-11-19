@@ -332,3 +332,8 @@ Replacing Gaussian score densities with a frozen 32-bin empirical likelihood ret
 ### Calibrated detector-only CUSUM remains unresolved
 
 The initial empirical threshold h=8.595 met false-switch and delay gates; it also met them on a secondary fresh-stream test. But fresh threshold recalibration selected h=8.327 and failed shifted-Z false-switch rate (28.9/100k vs limit 25), so the recalibration procedure did not replicate. Keep this as mixed simulator evidence, not robust adaptation.
+
+
+### Nonlinear extension of the flagged selector
+
+A fixed 8-unit tanh MLP prototype did not converge within its 500-iteration L-BFGS-B budget on the first d3 condition. It stopped before validation. This is an optimizer/readiness failure, not evidence about MLP efficacy. No tuning was performed.
