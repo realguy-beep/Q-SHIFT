@@ -1,7 +1,20 @@
 # Q-SHIFT research status
 
-**Last reviewed:** 2026-11-18
+**Last reviewed:** 2026-11-20
 **Project status:** simulation-based research prototype; no demonstrated adaptive or neural-decoder advantage over strong fixed PyMatching; no quantum-hardware integration. Correlated-noise-aware decoders (exact DEM decoding at d=3, hypergraph BP+OSD at d=5) show a pre-registered development-evidence advantage over the strongest static matcher for synthetic weight-3 burst families (at d=5, robust across two families and p = 0.002–0.004, confirmed with burst support learned from calibration data for a known and a sealed hidden burst, and 94.0% below in a burst-dominated low-p regime, short of the 95% target); none beats it at d=7 (see below).
+
+## Adaptive and broadly robust program (2026-11-18 to 2026-11-20)
+
+The full ledger is `outputs/qshift_adaptive_robust_v1/STATUS.md`. Everything is simulation-only at d=5 with synthetic weight-3 X-bursts, and development evidence except RE1.
+
+- **Mismatch repair works, and RE1 confirmed it.** Re-basing the learner on a detector-estimated (p, Z-bias) model fixes the model-mismatch failure. In the frozen RE1 evaluation, R1–R5 were 59–88% below the strongest deployable matcher and matched the oracle.
+- **RE1 is NOT_CONFIRMED overall.** Its sealed hidden burst (R6) was never learned, because the estimator flagged every root.
+- **The estimator was rebuilt over three studies:**
+  - BRE: PARTIAL;
+  - BRS: NOT_SUPPORTED;
+  - BRT: SUPPORTED. The threshold-free estimator E1T learned 126/128 bursts of 5–30 detectors with no in-family false bursts. It has not yet been tested on a sealed burst; that is RE2, not run.
+- **AD1 is NOT_SUPPORTED.** A causal rolling-window adaptive decoder stayed within 6% of the oracle under every drift tested and never learned a wrong burst. But it gained nothing over a single early estimate under mild background drift. It did help when a burst appeared and then disappeared (117 vs 156 errors), but that was not a pre-registered tracking endpoint.
+- **The 95% target is still not reached.**
 
 ## Correlated-noise decoder line V1.1–d=5 low-p regime (2026-11-15 to 2026-11-18)
 
