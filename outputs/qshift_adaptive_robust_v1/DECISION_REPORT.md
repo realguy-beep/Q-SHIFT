@@ -318,3 +318,21 @@ The study was frozen at `67ed86c6a` and run once, with RE2's own seal opened ins
   - a later study could pre-register a cheaper fallback or more roots.
   - These results are not re-scored.
 - **Unchanged:** H3, H4 and H2 stay sealed, and the 95% target remains out of reach.
+
+## Addendum (2026-11-20): AD2 adaptive decoding when the burst itself changes completed
+
+The study was frozen at `ccdfbc618` and run once from a detached checkout: 30 episodes (5 schedules × 6), every job returncode 0, in 4.3 h at fallback level 1 (AD_W3 dropped by the preflight's own rule). No seal was read. The analysis is byte-identical across two runs. The recount's re-analysis is identical, and episode 0 of every schedule replays identically (records and decoded error bits). The full report is `AD2_RESULTS.md`. Verdict: **AD2_STRONG** (every endpoint passes; E2 in 4 of 4 changing schedules).
+
+**Errors, blocks 6–29, 144,000 shots per arm (AD / PERIODIC / ONCE / ORACLE):**
+- S1 (A → B): 354 / 543 / 1,021 / 157; median latency 4 blocks.
+- S2 (A on and off every 6 blocks): 2,048 / 3,515 / 3,478 / 187; median latency 3.5.
+- S3 (A → C with p 0.0025 → 0.0035): 323 / 403 / 591 / 188; median latency 5.5.
+- S4 (B → C → D): 258 / 332 / 430 / 116; median latency 4.
+- C0 (static): 270 / 272 / 273 / 273.
+
+**Standing:**
+- **Achieved (development):** when the burst support changes, continuous adaptation beats both a single estimate and scheduled re-estimation, and matches the oracle once settled (settled errors 125 vs 126, 158 vs 153, 62 vs 62). No settled window accepted a wrong burst, and the static stream was not harmed. This answers the question AD1 left open.
+- **Not achieved:** near-oracle performance through transitions. AD's excess over the oracle sits in the blocks just after a change, and a burst that toggles every 6 blocks (S2) leaves AD at 11× the oracle's errors.
+- **Lesson (post hoc, untested):** the next adaptive gain is faster reaction without false flags. The 3-block window was dropped from AD2 by the preflight, so AD2 says nothing about it. AD2 is not re-scored.
+- **Unchanged:** the claim boundary (d=5, public weight-3 bursts, piecewise-constant noise, simulation only), the seals, and the 95% target.
+
