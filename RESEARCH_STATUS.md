@@ -5,14 +5,15 @@
 
 ## Adaptive and broadly robust program (2026-11-18 to 2026-11-20)
 
-The full ledger is `outputs/qshift_adaptive_robust_v1/STATUS.md`. Everything is simulation-only at d=5 with synthetic weight-3 X-bursts, and development evidence except RE1.
+The full ledger is `outputs/qshift_adaptive_robust_v1/STATUS.md`. Everything is simulation-only at d=5 with synthetic weight-3 X-bursts, and development evidence except RE1 and RE2.
 
 - **Mismatch repair works, and RE1 confirmed it.** Re-basing the learner on a detector-estimated (p, Z-bias) model fixes the model-mismatch failure. In the frozen RE1 evaluation, R1–R5 were 59–88% below the strongest deployable matcher and matched the oracle.
 - **RE1 is NOT_CONFIRMED overall.** Its sealed hidden burst (R6) was never learned, because the estimator flagged every root.
 - **The estimator was rebuilt over three studies:**
   - BRE: PARTIAL;
   - BRS: NOT_SUPPORTED;
-  - BRT: SUPPORTED. The threshold-free estimator E1T learned 126/128 bursts of 5–30 detectors with no in-family false bursts. It has not yet been tested on a sealed burst; that is RE2, not run.
+  - BRT: SUPPORTED. The threshold-free estimator E1T learned 126/128 bursts of 5–30 detectors with no in-family false bursts. It was then tested on sealed bursts in RE2.
+- **RE2 is NOT_CONFIRMED** (frozen, two new sealed bursts; RE1's seal not read). E1T learned the sealed ≥ 25-detector burst H3 in 24/24 roots, including under R6's base model, and matched the oracle. RE1's estimator flagged 10 of those 24. The pre-registered verdict failed on G5 (sealed burst H4): 1 of 12 roots was flagged and decoded nominally, and its 12 excess errors exceeded the 10-error NI floor. The hidden-burst results are conditional on independence from RE1's H2, which is untested.
 - **AD1 is NOT_SUPPORTED.** A causal rolling-window adaptive decoder stayed within 6% of the oracle under every drift tested and never learned a wrong burst. But it gained nothing over a single early estimate under mild background drift. It did help when a burst appeared and then disappeared (117 vs 156 errors), but that was not a pre-registered tracking endpoint.
 - **The 95% target is still not reached.**
 

@@ -294,3 +294,27 @@ The study was frozen at `3a2d0209a` and run once: 30 episodes (5 schedules × 6)
   - the adaptive value lies in the changing burst support, not the background rate;
   - a follow-up should test larger or structural drift, such as bursts that switch or move, rather than redefining these endpoints.
 - **Unchanged:** RE2 with a new sealed burst remains the frozen-evaluation step, and the 95% target remains out of reach.
+
+## Addendum (2026-11-20): RE2 frozen evaluation with two new sealed bursts completed
+
+The study was frozen at `67ed86c6a` and run once, with RE2's own seal opened inside the jobs only: 66 roots, 891,000 calibration and 792,000 evaluation shots, in 93 min. The analysis is byte-identical across two runs. The recount's re-analysis is identical, and root 0 of every condition re-decodes identically. The full report is `RE2_RESULTS.md`. Verdict: **NOT_CONFIRMED** (G1–G4 PASS; G5 FAIL_DIRECTION).
+
+**Why:** in G5 (sealed burst H4), one of 12 roots was flagged by E1T (both S1 and S2) and decoded nominally.
+- That root alone made 12 more nonzero-q errors than the oracle, more than the 10-error NI floor. The NI estimate was 1.25e-4 against a 1.04e-4 margin.
+- The other 11 G5 roots learned H4 exactly and matched the oracle (18 vs 18).
+- Whether the flag was a false alarm cannot be read from the records: the frozen scrub masks class correctness on flagged roots.
+
+**Passed:**
+- **Sealed large-footprint burst H3:** learned exactly in 24/24 roots in G3 (R6's base model) and G4, with no flags. L2L_E equalled the oracle (14 vs 14; 100 vs 100). R against S\* was 0.91 and 0.76.
+- **RE1's B2 estimator on the same roots:** flagged 6/12 (G3) and 4/12 (G4). G3 errors were 292 against E1T's 14.
+- **K (G1, G2):** within 1 error of the oracle.
+- **SUP and q=0 safety:** passed in all five gated conditions.
+
+**Standing:**
+- **Achieved (frozen, sealed):** E1T repairs RE1's R6 failure mode for a never-seen ≥ 25-detector burst. This is conditional on H3's independence from RE1's H2: 94% under the draw distribution, untested until "Open the RE1 seal".
+- **Not achieved:** the full pre-registered claim. The flag → nominal fallback is safe at q = 0, but a single flag costs more than the NI floor at these LERs and root counts.
+- **Lesson (post hoc, untested):**
+  - the fallback's cost, not the learning rate (59/60 gated roots), now limits the pipeline;
+  - a later study could pre-register a cheaper fallback or more roots.
+  - These results are not re-scored.
+- **Unchanged:** H3, H4 and H2 stay sealed, and the 95% target remains out of reach.
