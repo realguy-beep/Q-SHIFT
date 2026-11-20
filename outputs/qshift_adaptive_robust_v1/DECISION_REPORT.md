@@ -250,3 +250,23 @@ The study was frozen at `4967cd7d9` and run once: 512 fresh, fully held-out pool
   2. a short fresh development run;
   3. then a frozen RE2 with a new sealed burst.
 - **Unchanged:** the 95% target remains out of reach.
+
+## Addendum (2026-11-20): BRT threshold-free E1 flag completed
+
+The study was frozen at `de41bf056` and run once: 512 fresh, fully held-out pools, 6.5 M detector-only shots, in 37 min. The analysis is byte-identical across two runs, the recount matches, and the replay is bit-identical. The full report is `BRT_RESULTS.md`. Verdict: **BRT_SUPPORTED**. Every pre-declared endpoint passed.
+
+**What E1T is:** E1's one-sided fit, flagged only by the exclusion cap and the subset-rule shape and consistency checks. It has no residual statistic and no tuned parameter.
+
+**In family** (p 0.0020–0.0040, Z-bias 3–12, all outside earlier ranges):
+- 126/128 learned exactly, with 0 false accepts.
+- 30-detector bursts were learned 31/32; B2 learned 1/32.
+- E1's statistic drifted past its threshold again at p 0.0040. E1 and E1S lost 4–5 bursts there; E1T lost 1.
+
+**Out of family:** false bursts went from 29 → 0 (measurement 2× at high gate p), 13 → 0 (2.5×), 0 → 0 (X-bias 4) and 13 → 1 (1.5×), comparing E1 with E1T.
+
+**Caveat:** the in-family flag margin sits exactly at the 1/32 allowance. A single stray detector over the cutoff breaks the shape match.
+
+**Standing:**
+- **Achieved (development, held out):** a footprint- and p-robust estimator that rejects misfit without false bursts. The estimation failure behind RE1's R6 is repaired on development data.
+- **Next:** RE2, a frozen decoding evaluation of E1T → learn → BP+OSD, with a new sealed hidden burst. Its exclusion rule must address the depleted pool of large-footprint classes: at most 5 eligible 30-detector classes remain.
+- **Unchanged:** the 95% target remains out of reach (R ≈ 59–88%).
