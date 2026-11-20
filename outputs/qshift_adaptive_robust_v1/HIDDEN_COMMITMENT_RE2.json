@@ -1,0 +1,50 @@
+{
+  "bursts": {
+    "H3": "footprint >= 25 detectors",
+    "H4": "footprint <= 20 detectors"
+  },
+  "canonical_form": "json.dumps(plaintext, sort_keys=True, separators=(',', ':'))",
+  "draw": "one class per stratum, uniform via secrets.randbelow (OS entropy); support = class representative",
+  "pool": {
+    "draw_pool_sizes": {
+      "H3": 34,
+      "H4": 146
+    },
+    "eligible_classes": 182,
+    "exclusions": "RE1 candidate pool; every BRE/BRS/BRT burst class and K; any support sharing >= 2 qubits with one of them; one representative support per class; rehearsal classes removed",
+    "h2": "not read; RE1's seal stays closed (owner decision 2026-11-20)",
+    "pool_canonical_form": "json of {stratum: [[class_index, representative_support], ...]}, sorted keys, compact separators",
+    "pool_sha256": "a4c5f513630d1d8aa7f7d26723692e209e83421596b9940fc73309d6b157fc6e",
+    "rehearsal_bursts": {
+      "H3": [
+        7,
+        12,
+        25
+      ],
+      "H4": [
+        1,
+        5,
+        7
+      ]
+    },
+    "strata": {
+      "H3": [
+        25,
+        10000
+      ],
+      "H4": [
+        0,
+        20
+      ]
+    },
+    "stratum_sizes_before_rehearsal_removal": {
+      "H3": 35,
+      "H4": 147
+    }
+  },
+  "re1_seal": "not read (owner decision 2026-11-20)",
+  "rule": "not read or printed while building RE2; opened only inside the frozen RE2 run (--open-hidden-seal)",
+  "schema": "qshift-re2-hidden-commitment-v1",
+  "sealed_location": "outside git, beside the worktrees: qshift_re2_hidden_SEALED.json",
+  "sha256_of_canonical_plaintext": "85b556c1486ec9d59028445880236482d86e43de6fe1a49002f77084d716490c"
+}
