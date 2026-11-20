@@ -270,3 +270,27 @@ The study was frozen at `de41bf056` and run once: 512 fresh, fully held-out pool
 - **Achieved (development, held out):** a footprint- and p-robust estimator that rejects misfit without false bursts. The estimation failure behind RE1's R6 is repaired on development data.
 - **Next:** RE2, a frozen decoding evaluation of E1T → learn → BP+OSD, with a new sealed hidden burst. Its exclusion rule must address the depleted pool of large-footprint classes: at most 5 eligible 30-detector classes remain.
 - **Unchanged:** the 95% target remains out of reach (R ≈ 59–88%).
+
+## Addendum (2026-11-20): AD1 adaptive decoding under drifting noise completed
+
+The study was frozen at `3a2d0209a` and run once: 30 episodes (5 schedules × 6), 2.34 M sampler shots, in 75 min. The analysis is byte-identical across two runs, the recount matches, and episode 0 of every schedule replays bit-identically. The full report is `AD1_RESULTS.md`. Verdict: **AD1_NOT_SUPPORTED**.
+
+**Why:** all three tracking endpoints (D1 p ramp, D2 Z-bias ramp, D4 p step) failed their second clause, that AD must beat ONCE, the frozen block-6 estimate.
+- AD was within 1–6% of ORACLE everywhere, well inside the 25% allowance.
+- ONCE was just as close.
+- Under these drifts, re-estimating the background bought nothing measurable.
+
+**Passed:**
+- **No harm (C0):** 77 vs 74 errors.
+- **Burst onset and offset (D3):** median latency 5 and 2.5 blocks, with 0 mis-learned windows.
+- **Settled-window flags:** at most 1 per episode.
+
+**Where adaptation paid:** D3, where a burst appears and then disappears. AD made 117 errors against ONCE's 156, with the CI of AD − ONCE wholly below 0. This was not a tracking endpoint, so it does not change the verdict.
+
+**Standing:**
+- **Achieved (development):** a causal rolling-window adaptive decoder. It never harmed a static stream and never learned a wrong burst. It acquired and released a transient burst within one window, and stayed near the oracle under every drift tested.
+- **Not shown:** a benefit from continuous background re-estimation. The drifts tested (±20% in p, Z-bias 1 → 8) were too mild to hurt a single early estimate.
+- **Lesson for the next design (post hoc, untested):**
+  - the adaptive value lies in the changing burst support, not the background rate;
+  - a follow-up should test larger or structural drift, such as bursts that switch or move, rather than redefining these endpoints.
+- **Unchanged:** RE2 with a new sealed burst remains the frozen-evaluation step, and the 95% target remains out of reach.
