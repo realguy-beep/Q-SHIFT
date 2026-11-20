@@ -1,0 +1,45 @@
+{
+  "budget_s": 28800,
+  "contention": 1.25,
+  "fallback": "drop AD_W3; then 5 episodes per schedule",
+  "fallback_level": 1,
+  "fits_budget": true,
+  "job_timeout_s": 9000,
+  "levels": [
+    {
+      "fits": false,
+      "jobs": 30,
+      "level": 0,
+      "projected_s_with_contention": 29270,
+      "waves": 4,
+      "worst_episode_s": 5854
+    },
+    {
+      "fits": true,
+      "jobs": 30,
+      "level": 1,
+      "projected_s_with_contention": 23360,
+      "waves": 4,
+      "worst_episode_s": 4672
+    },
+    {
+      "fits": true,
+      "jobs": 25,
+      "level": 2,
+      "projected_s_with_contention": 23360,
+      "waves": 4,
+      "worst_episode_s": 4672
+    }
+  ],
+  "per_episode_s": {
+    "C0": {
+      "with_w3": 5854,
+      "without_w3": 4672
+    },
+    "S1": {
+      "with_w3": 5224,
+      "without_w3": 4560
+    }
+  },
+  "workers": 8
+}
