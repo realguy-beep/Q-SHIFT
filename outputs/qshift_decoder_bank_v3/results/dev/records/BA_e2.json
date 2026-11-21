@@ -1,0 +1,2925 @@
+{
+  "archive": "archives/BA_e2.npz",
+  "archive_sha256": "33cb7e393bcb321d0d1d5ae4da2f56d86cf520bfab9bcd0b3f80ed5eb229ea0c",
+  "arms": [
+    "W0",
+    "DB2",
+    "DB2_PLAN",
+    "BANK",
+    "AD3",
+    "STATIC",
+    "ORACLE",
+    "A_nominal"
+  ],
+  "blocks": [
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": false,
+      "block": 6,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 14,
+        "A_nominal": 39,
+        "BANK": 14,
+        "DB2": 14,
+        "DB2_PLAN": 14,
+        "ORACLE": 0,
+        "STATIC": 14,
+        "W0": 14
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.0071339744781915,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030029110415466308,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.0071339744781915,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030029110415466308,
+        "seg0": 0,
+        "seg_len": 6,
+        "source": "window",
+        "true_class": null
+      },
+      "g_prev": 127.16542661193716,
+      "gfit": {
+        "A": 531.922,
+        "B": 851.041,
+        "C": 858.762,
+        "D": 1091.666,
+        "OFF": 139.539
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030029110415466308, 1.0071339744781915, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:B",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 0,
+      "source": {
+        "AD3": "window",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "B",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.033333,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.033333
+        },
+        "occ": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "OFF": 0
+        },
+        "outs": {}
+      }
+    },
+    {
+      "L": 1,
+      "acceptable": {
+        "AD3": false,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": true
+      },
+      "alarm": true,
+      "block": 7,
+      "burst_action": {
+        "AD3": false,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 7,
+        "A_nominal": 33,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "ORACLE": 0,
+        "STATIC": 8,
+        "W0": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030485194251341336,
+        "true_class": 67
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030485194251341336,
+        "seg0": 6,
+        "seg_len": 1,
+        "source": "ad_fallback",
+        "true_class": 67
+      },
+      "g_prev": 210.53048190752043,
+      "gfit": {
+        "A": 263.884,
+        "B": 124.834,
+        "C": 234.531,
+        "D": 327.869,
+        "OFF": 242.646
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030485194251341336, 1.000016526740338, null]",
+        "BANK": "bank:B",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:B",
+        "ORACLE": "bank:B",
+        "STATIC": "bank:A",
+        "W0": "bank:B"
+      },
+      "plausible": [
+        "B"
+      ],
+      "seg0": 6,
+      "source": {
+        "AD3": "ad_fallback",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "B",
+      "tracker": {
+        "cur": "B",
+        "h": {
+          "A": 0.033333,
+          "B": 0.033333,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.064516
+        },
+        "occ": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "OFF": 1
+        },
+        "outs": {
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 2,
+      "acceptable": {
+        "AD3": false,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": true
+      },
+      "alarm": false,
+      "block": 8,
+      "burst_action": {
+        "AD3": false,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 12,
+        "A_nominal": 28,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "ORACLE": 0,
+        "STATIC": 12,
+        "W0": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.003060120449294612,
+        "true_class": 67
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.003060120449294612,
+        "seg0": 6,
+        "seg_len": 2,
+        "source": "ad_fallback",
+        "true_class": 67
+      },
+      "g_prev": 118.81048195685815,
+      "gfit": {
+        "A": 441.068,
+        "B": 160.407,
+        "C": 406.671,
+        "D": 612.952,
+        "OFF": 370.726
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.003060120449294612, 1.000016526740338, null]",
+        "BANK": "bank:B",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:B",
+        "ORACLE": "bank:B",
+        "STATIC": "bank:A",
+        "W0": "bank:B"
+      },
+      "plausible": [
+        "B"
+      ],
+      "seg0": 6,
+      "source": {
+        "AD3": "ad_fallback",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "B",
+      "tracker": {
+        "cur": "B",
+        "h": {
+          "A": 0.033333,
+          "B": 0.032258,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.064516
+        },
+        "occ": {
+          "A": 0,
+          "B": 1,
+          "C": 0,
+          "D": 0,
+          "OFF": 1
+        },
+        "outs": {
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 3,
+      "acceptable": {
+        "AD3": false,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": true
+      },
+      "alarm": false,
+      "block": 9,
+      "burst_action": {
+        "AD3": false,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 9,
+        "A_nominal": 37,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "ORACLE": 0,
+        "STATIC": 9,
+        "W0": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.00308539192745276,
+        "true_class": 67
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.00308539192745276,
+        "seg0": 6,
+        "seg_len": 3,
+        "source": "ad_fallback",
+        "true_class": 67
+      },
+      "g_prev": 102.80876217908514,
+      "gfit": {
+        "A": 620.253,
+        "B": 172.243,
+        "C": 581.399,
+        "D": 898.527,
+        "OFF": 497.455
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.00308539192745276, 1.000016526740338, null]",
+        "BANK": "bank:B",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:B",
+        "ORACLE": "bank:B",
+        "STATIC": "bank:A",
+        "W0": "bank:B"
+      },
+      "plausible": [
+        "B"
+      ],
+      "seg0": 6,
+      "source": {
+        "AD3": "ad_fallback",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "B",
+      "tracker": {
+        "cur": "B",
+        "h": {
+          "A": 0.033333,
+          "B": 0.03125,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.064516
+        },
+        "occ": {
+          "A": 0,
+          "B": 2,
+          "C": 0,
+          "D": 0,
+          "OFF": 1
+        },
+        "outs": {
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 4,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": true
+      },
+      "alarm": false,
+      "block": 10,
+      "burst_action": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 1,
+        "A_nominal": 39,
+        "BANK": 1,
+        "DB2": 1,
+        "DB2_PLAN": 1,
+        "ORACLE": 1,
+        "STATIC": 12,
+        "W0": 1
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 5,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030830639461172215,
+        "true_class": 67
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 5,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030830639461172215,
+        "seg0": 6,
+        "seg_len": 4,
+        "source": "ad_fallback",
+        "true_class": 67
+      },
+      "g_prev": 146.9195770973568,
+      "gfit": {
+        "A": 819.5,
+        "B": 169.314,
+        "C": 750.176,
+        "D": 1224.804,
+        "OFF": 667.21
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030830639461172215, 1.000016526740338, [14, 18, 31]]",
+        "BANK": "bank:B",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:B",
+        "ORACLE": "bank:B",
+        "STATIC": "bank:A",
+        "W0": "bank:B"
+      },
+      "plausible": [
+        "B"
+      ],
+      "seg0": 6,
+      "source": {
+        "AD3": "ad_fallback",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "B",
+      "tracker": {
+        "cur": "B",
+        "h": {
+          "A": 0.033333,
+          "B": 0.030303,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.064516
+        },
+        "occ": {
+          "A": 0,
+          "B": 3,
+          "C": 0,
+          "D": 0,
+          "OFF": 1
+        },
+        "outs": {
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 5,
+      "acceptable": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": false,
+      "block": 11,
+      "burst_action": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 1,
+        "A_nominal": 1,
+        "BANK": 1,
+        "DB2": 1,
+        "DB2_PLAN": 1,
+        "ORACLE": 1,
+        "STATIC": 1,
+        "W0": 1
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 15,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030175801397297995,
+        "true_class": 67
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 15,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030175801397297995,
+        "seg0": 6,
+        "seg_len": 5,
+        "source": "ad_fallback",
+        "true_class": 67
+      },
+      "g_prev": 124.49778542834895,
+      "gfit": {
+        "A": 1045.336,
+        "B": 175.722,
+        "C": 933.983,
+        "D": 1544.086,
+        "OFF": 813.847
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030175801397297995, 1.000016526740338, [14, 18, 31]]",
+        "BANK": "bank:B",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:B",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:B"
+      },
+      "plausible": [
+        "B"
+      ],
+      "seg0": 6,
+      "source": {
+        "AD3": "ad_fallback",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "B",
+        "h": {
+          "A": 0.033333,
+          "B": 0.029412,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.064516
+        },
+        "occ": {
+          "A": 0,
+          "B": 4,
+          "C": 0,
+          "D": 0,
+          "OFF": 1
+        },
+        "outs": {
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 1,
+      "acceptable": {
+        "AD3": true,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": true,
+      "block": 12,
+      "burst_action": {
+        "AD3": false,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 1,
+        "A_nominal": 2,
+        "BANK": 2,
+        "DB2": 2,
+        "DB2_PLAN": 2,
+        "ORACLE": 1,
+        "STATIC": 2,
+        "W0": 2
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 15,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": false,
+        "p_hat": 0.0030292188764059007,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.0071339744781915,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030029110415466308,
+        "recall_g": 100.16096284543141,
+        "seg0": 11,
+        "seg_len": 1,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 203.9025892421888,
+      "gfit": {
+        "A": 187.77,
+        "B": 234.665,
+        "C": 222.428,
+        "D": 247.999,
+        "OFF": 114.109
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030029110415466308, 1.0071339744781915, null]",
+        "BANK": "bank:A",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "OFF",
+        "A"
+      ],
+      "seg0": 11,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "B",
+        "h": {
+          "A": 0.033333,
+          "B": 0.028571,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.064516
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 1
+        },
+        "outs": {
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 2,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": false,
+      "block": 13,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 2,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 1,
+        "ORACLE": 0,
+        "STATIC": 1,
+        "W0": 1
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 9,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": false,
+        "p_hat": 0.0030348993175346047,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.0071339744781915,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030029110415466308,
+        "recall_g": 103.49821655804408,
+        "seg0": 11,
+        "seg_len": 2,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 111.35928509287656,
+      "gfit": {
+        "A": 269.057,
+        "B": 409.034,
+        "C": 356.436,
+        "D": 401.061,
+        "OFF": 121.394
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030029110415466308, 1.0071339744781915, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 11,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.064516
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 1
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 3,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": false,
+      "block": 14,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 2,
+        "A_nominal": 2,
+        "BANK": 2,
+        "DB2": 2,
+        "DB2_PLAN": 3,
+        "ORACLE": 2,
+        "STATIC": 3,
+        "W0": 3
+      },
+      "estimate": {
+        "S1": false,
+        "S2": true,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 2,
+        "flagged": true,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.00307930091294376,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.0071339744781915,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030029110415466308,
+        "recall_g": 110.92028471862295,
+        "seg0": 11,
+        "seg_len": 3,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 140.87684501128226,
+      "gfit": {
+        "A": 338.739,
+        "B": 505.412,
+        "C": 503.546,
+        "D": 573.742,
+        "OFF": 156.678
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030029110415466308, 1.0071339744781915, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 11,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.0625
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 2
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 1,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": true,
+      "block": 15,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 1,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 1,
+        "ORACLE": 0,
+        "STATIC": 1,
+        "W0": 1
+      },
+      "estimate": {
+        "S1": false,
+        "S2": true,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 2,
+        "flagged": true,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.003051632481673142,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.0071339744781915,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030029110415466308,
+        "recall_g": 129.80418638133108,
+        "seg0": 14,
+        "seg_len": 1,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 171.10787990822786,
+      "gfit": {
+        "A": 235.32,
+        "B": 249.74,
+        "C": 263.201,
+        "D": 331.418,
+        "OFF": 158.017
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030029110415466308, 1.0071339744781915, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 14,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.060606
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 3
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 2,
+      "acceptable": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "alarm": false,
+      "block": 16,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 55,
+        "A_nominal": 57,
+        "BANK": 55,
+        "DB2": 55,
+        "DB2_PLAN": 0,
+        "ORACLE": 0,
+        "STATIC": 0,
+        "W0": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030420828632371955,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.0071339744781915,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030029110415466308,
+        "recall_g": 106.40130542877671,
+        "seg0": 14,
+        "seg_len": 2,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 118.42366490692774,
+      "gfit": {
+        "A": 269.095,
+        "B": 352.394,
+        "C": 365.829,
+        "D": 447.878,
+        "OFF": 151.644
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030029110415466308, 1.0071339744781915, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:A",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 14,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "A",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.058824
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 4
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 1,
+      "acceptable": {
+        "AD3": false,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "alarm": true,
+      "block": 17,
+      "burst_action": {
+        "AD3": false,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 40,
+        "A_nominal": 41,
+        "BANK": 3,
+        "DB2": 3,
+        "DB2_PLAN": 3,
+        "ORACLE": 3,
+        "STATIC": 3,
+        "W0": 3
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030439112379318546,
+        "true_class": 747
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030439112379318546,
+        "seg0": 16,
+        "seg_len": 1,
+        "source": "ad_fallback",
+        "true_class": 747
+      },
+      "g_prev": 206.16144944181355,
+      "gfit": {
+        "A": 148.799,
+        "B": 343.414,
+        "C": 300.88,
+        "D": 205.487,
+        "OFF": 248.781
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030439112379318546, 1.000016526740338, null]",
+        "BANK": "bank:A",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:A",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "A"
+      ],
+      "seg0": 16,
+      "source": {
+        "AD3": "ad_fallback",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "A",
+      "tracker": {
+        "cur": "A",
+        "h": {
+          "A": 0.033333,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.085714
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 5
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B",
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "L": 2,
+      "acceptable": {
+        "AD3": false,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "alarm": false,
+      "block": 18,
+      "burst_action": {
+        "AD3": false,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 45,
+        "A_nominal": 44,
+        "BANK": 3,
+        "DB2": 3,
+        "DB2_PLAN": 3,
+        "ORACLE": 3,
+        "STATIC": 3,
+        "W0": 3
+      },
+      "estimate": {
+        "S1": false,
+        "S2": true,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 2,
+        "flagged": true,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030407605237889757,
+        "true_class": 747
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": true,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 2,
+        "flagged": true,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030407605237889757,
+        "seg0": 16,
+        "seg_len": 2,
+        "source": "ad_fallback",
+        "true_class": 747
+      },
+      "g_prev": 137.08855420591377,
+      "gfit": {
+        "A": 157.503,
+        "B": 577.381,
+        "C": 450.033,
+        "D": 289.795,
+        "OFF": 328.217
+      },
+      "keys": {
+        "AD3": "nominal",
+        "BANK": "bank:A",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:A",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "A"
+      ],
+      "seg0": 16,
+      "source": {
+        "AD3": "ad_fallback",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "A",
+      "tracker": {
+        "cur": "A",
+        "h": {
+          "A": 0.032258,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.085714
+        },
+        "occ": {
+          "A": 1,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 5
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B",
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "L": 1,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "alarm": true,
+      "block": 19,
+      "burst_action": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 1,
+        "A_nominal": 45,
+        "BANK": 1,
+        "DB2": 1,
+        "DB2_PLAN": 1,
+        "ORACLE": 1,
+        "STATIC": 1,
+        "W0": 1
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 747,
+        "excluded": 3,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.003064637542029639,
+        "true_class": 747
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 747,
+        "excluded": 3,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.003064637542029639,
+        "seg0": 18,
+        "seg_len": 1,
+        "source": "ad_fallback",
+        "true_class": 747
+      },
+      "g_prev": 168.1223266818609,
+      "gfit": {
+        "A": 159.582,
+        "B": 348.7,
+        "C": 307.492,
+        "D": 241.919,
+        "OFF": 261.407
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.003064637542029639, 1.000016526740338, [20, 29, 38]]",
+        "BANK": "bank:A",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:A",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "A"
+      ],
+      "seg0": 18,
+      "source": {
+        "AD3": "ad_fallback",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "A",
+      "tracker": {
+        "cur": "A",
+        "h": {
+          "A": 0.03125,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.085714
+        },
+        "occ": {
+          "A": 2,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 5
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B",
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "L": 2,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "alarm": false,
+      "block": 20,
+      "burst_action": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 4,
+        "A_nominal": 44,
+        "BANK": 4,
+        "DB2": 4,
+        "DB2_PLAN": 4,
+        "ORACLE": 4,
+        "STATIC": 4,
+        "W0": 4
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 747,
+        "excluded": 7,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030439709049542123,
+        "true_class": 747
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 747,
+        "excluded": 7,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030439709049542123,
+        "seg0": 18,
+        "seg_len": 2,
+        "source": "ad_fallback",
+        "true_class": 747
+      },
+      "g_prev": 136.54221435774087,
+      "gfit": {
+        "A": 159.988,
+        "B": 531.315,
+        "C": 468.857,
+        "D": 330.732,
+        "OFF": 347.782
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030439709049542123, 1.000016526740338, [20, 29, 38]]",
+        "BANK": "bank:A",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:A",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "A"
+      ],
+      "seg0": 18,
+      "source": {
+        "AD3": "ad_fallback",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "A",
+      "tracker": {
+        "cur": "A",
+        "h": {
+          "A": 0.030303,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.085714
+        },
+        "occ": {
+          "A": 3,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 5
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B",
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "L": 3,
+      "acceptable": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": false,
+      "block": 21,
+      "burst_action": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 0,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "ORACLE": 0,
+        "STATIC": 0,
+        "W0": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 747,
+        "excluded": 9,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030371681902385504,
+        "true_class": 747
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 747,
+        "excluded": 9,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030371681902385504,
+        "seg0": 18,
+        "seg_len": 3,
+        "source": "ad_fallback",
+        "true_class": 747
+      },
+      "g_prev": 131.67815907083212,
+      "gfit": {
+        "A": 147.298,
+        "B": 619.739,
+        "C": 607.061,
+        "D": 408.31,
+        "OFF": 384.026
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030371681902385504, 1.000016526740338, [20, 29, 38]]",
+        "BANK": "bank:A",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "A"
+      ],
+      "seg0": 18,
+      "source": {
+        "AD3": "ad_fallback",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "A",
+        "h": {
+          "A": 0.029412,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.085714
+        },
+        "occ": {
+          "A": 4,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 5
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B",
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "L": 1,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": true,
+      "block": 22,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 1,
+        "A_nominal": 3,
+        "BANK": 1,
+        "DB2": 2,
+        "DB2_PLAN": 2,
+        "ORACLE": 1,
+        "STATIC": 2,
+        "W0": 2
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 747,
+        "excluded": 8,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": false,
+        "p_hat": 0.0030362786243530423,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.0071339744781915,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030029110415466308,
+        "recall_g": 140.5720631670714,
+        "seg0": 21,
+        "seg_len": 1,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 181.53602070364894,
+      "gfit": {
+        "A": 210.243,
+        "B": 238.296,
+        "C": 318.225,
+        "D": 330.678,
+        "OFF": 131.044
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030029110415466308, 1.0071339744781915, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 21,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.057143,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.085714
+        },
+        "occ": {
+          "A": 5,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 5
+        },
+        "outs": {
+          "A": [
+            "OFF"
+          ],
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B",
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "L": 2,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": false,
+      "block": 23,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 1,
+        "A_nominal": 1,
+        "BANK": 1,
+        "DB2": 2,
+        "DB2_PLAN": 2,
+        "ORACLE": 1,
+        "STATIC": 2,
+        "W0": 2
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 747,
+        "excluded": 6,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": false,
+        "p_hat": 0.0030275687019789992,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.0071339744781915,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030029110415466308,
+        "recall_g": 141.9098082796363,
+        "seg0": 21,
+        "seg_len": 2,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 115.6941833690506,
+      "gfit": {
+        "A": 276.448,
+        "B": 383.57,
+        "C": 472.864,
+        "D": 534.358,
+        "OFF": 145.001
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030029110415466308, 1.0071339744781915, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 21,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.057143,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.083333
+        },
+        "occ": {
+          "A": 5,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 6
+        },
+        "outs": {
+          "A": [
+            "OFF"
+          ],
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B",
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "L": 3,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": false,
+      "block": 24,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 1,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "ORACLE": 0,
+        "STATIC": 0,
+        "W0": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 747,
+        "excluded": 4,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": false,
+        "p_hat": 0.00304105856178196,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.0071339744781915,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030029110415466308,
+        "recall_g": 128.4864327186823,
+        "seg0": 21,
+        "seg_len": 3,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 136.69752652183632,
+      "gfit": {
+        "A": 320.343,
+        "B": 510.382,
+        "C": 575.559,
+        "D": 655.312,
+        "OFF": 135.959
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030029110415466308, 1.0071339744781915, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 21,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.057143,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.081081
+        },
+        "occ": {
+          "A": 5,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 7
+        },
+        "outs": {
+          "A": [
+            "OFF"
+          ],
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B",
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "L": 4,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": false,
+      "block": 25,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 0,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "ORACLE": 0,
+        "STATIC": 0,
+        "W0": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030286705027447566,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.0071339744781915,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030029110415466308,
+        "recall_g": 134.24460196806194,
+        "seg0": 21,
+        "seg_len": 4,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 104.13045826982693,
+      "gfit": {
+        "A": 418.32,
+        "B": 631.877,
+        "C": 712.551,
+        "D": 883.01,
+        "OFF": 159.666
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030029110415466308, 1.0071339744781915, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 21,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.057143,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.078947
+        },
+        "occ": {
+          "A": 5,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 8
+        },
+        "outs": {
+          "A": [
+            "OFF"
+          ],
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B",
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "L": 5,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": false,
+      "block": 26,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 1,
+        "A_nominal": 1,
+        "BANK": 1,
+        "DB2": 1,
+        "DB2_PLAN": 1,
+        "ORACLE": 1,
+        "STATIC": 1,
+        "W0": 1
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.015738125262264,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.003005178500470344,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.0071339744781915,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030029110415466308,
+        "recall_g": 143.8426260986132,
+        "seg0": 21,
+        "seg_len": 5,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 131.84816733669788,
+      "gfit": {
+        "A": 524.568,
+        "B": 771.028,
+        "C": 878.84,
+        "D": 1082.679,
+        "OFF": 183.109
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030029110415466308, 1.0071339744781915, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 21,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.057143,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.076923
+        },
+        "occ": {
+          "A": 5,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 9
+        },
+        "outs": {
+          "A": [
+            "OFF"
+          ],
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B",
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": false,
+      "block": 27,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 1,
+        "A_nominal": 3,
+        "BANK": 1,
+        "DB2": 2,
+        "DB2_PLAN": 2,
+        "ORACLE": 1,
+        "STATIC": 2,
+        "W0": 2
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.0456946192598964,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.002974999050367213,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.0456946192598964,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.002974999050367213,
+        "seg0": 21,
+        "seg_len": 6,
+        "source": "window",
+        "true_class": null
+      },
+      "g_prev": 143.0030165698954,
+      "gfit": {
+        "A": 567.449,
+        "B": 922.189,
+        "C": 1031.622,
+        "D": 1253.116,
+        "OFF": 178.622
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.002974999050367213, 1.0456946192598964, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 21,
+      "source": {
+        "AD3": "window",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.057143,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.075
+        },
+        "occ": {
+          "A": 5,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 10
+        },
+        "outs": {
+          "A": [
+            "OFF"
+          ],
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B",
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": false,
+      "block": 28,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 0,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "ORACLE": 0,
+        "STATIC": 0,
+        "W0": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.0296599336752217,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0029768815207385562,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.0296599336752217,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0029768815207385562,
+        "seg0": 21,
+        "seg_len": 7,
+        "source": "window",
+        "true_class": null
+      },
+      "g_prev": 138.25759756407058,
+      "gfit": {
+        "A": 548.022,
+        "B": 909.907,
+        "C": 948.032,
+        "D": 1209.075,
+        "OFF": 186.546
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0029768815207385562, 1.0296599336752217, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 21,
+      "source": {
+        "AD3": "window",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.057143,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.073171
+        },
+        "occ": {
+          "A": 5,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 11
+        },
+        "outs": {
+          "A": [
+            "OFF"
+          ],
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B",
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false
+      },
+      "alarm": false,
+      "block": 29,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true
+      },
+      "errors": {
+        "AD3": 2,
+        "A_nominal": 1,
+        "BANK": 2,
+        "DB2": 2,
+        "DB2_PLAN": 2,
+        "ORACLE": 2,
+        "STATIC": 2,
+        "W0": 2
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.0169243665519059,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0029855764811295682,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.0169243665519059,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0029855764811295682,
+        "seg0": 21,
+        "seg_len": 8,
+        "source": "window",
+        "true_class": null
+      },
+      "g_prev": 122.81025969999916,
+      "gfit": {
+        "A": 565.47,
+        "B": 865.705,
+        "C": 899.062,
+        "D": 1171.598,
+        "OFF": 148.396
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0029855764811295682, 1.0169243665519059, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A"
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 21,
+      "source": {
+        "AD3": "window",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "W0": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.057143,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.071429
+        },
+        "occ": {
+          "A": 5,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 12
+        },
+        "outs": {
+          "A": [
+            "OFF"
+          ],
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B",
+            "A"
+          ]
+        }
+      }
+    }
+  ],
+  "changes_detected": [
+    6,
+    11,
+    14,
+    16,
+    18,
+    21
+  ],
+  "episode": 2,
+  "eval_per_block": 1000,
+  "g": {
+    "1": 125.56198066910571,
+    "10": 124.49778542834895,
+    "11": 203.9025892421888,
+    "12": 111.35928509287656,
+    "13": 140.87684501128226,
+    "14": 171.10787990822786,
+    "15": 118.42366490692774,
+    "16": 206.16144944181355,
+    "17": 137.08855420591377,
+    "18": 168.1223266818609,
+    "19": 136.54221435774087,
+    "2": 104.6259103185833,
+    "20": 131.67815907083212,
+    "21": 181.53602070364894,
+    "22": 115.6941833690506,
+    "23": 136.69752652183632,
+    "24": 104.13045826982693,
+    "25": 131.84816733669788,
+    "26": 143.0030165698954,
+    "27": 138.25759756407058,
+    "28": 122.81025969999916,
+    "3": 114.78660290251173,
+    "4": 124.35873190556015,
+    "5": 127.16542661193716,
+    "6": 210.53048190752043,
+    "7": 118.81048195685815,
+    "8": 102.80876217908514,
+    "9": 146.9195770973568
+  },
+  "mode": "dev",
+  "params": {
+    "dwell": [
+      5,
+      5,
+      5
+    ],
+    "on1": 6
+  },
+  "schedule": "BA",
+  "seconds": 2368.8,
+  "seeds": {
+    "b00:det": 2090535162,
+    "b00:lab": 360697165,
+    "b01:det": 1802445841,
+    "b01:lab": 1951365918,
+    "b02:det": 537249428,
+    "b02:lab": 1101068812,
+    "b03:det": 1128134520,
+    "b03:lab": 167741326,
+    "b04:det": 576364582,
+    "b04:lab": 1321230237,
+    "b05:det": 228527687,
+    "b05:lab": 1929705550,
+    "b06:det": 812917609,
+    "b06:eval": 1942403037,
+    "b06:lab": 1649935434,
+    "b07:det": 1603759728,
+    "b07:eval": 84290138,
+    "b07:lab": 1046346761,
+    "b08:det": 1336940002,
+    "b08:eval": 96738252,
+    "b08:lab": 639212481,
+    "b09:det": 1820429193,
+    "b09:eval": 146108879,
+    "b09:lab": 459717561,
+    "b10:det": 1669746874,
+    "b10:eval": 1815472711,
+    "b10:lab": 2087491135,
+    "b11:det": 705041555,
+    "b11:eval": 260236779,
+    "b11:lab": 1074848822,
+    "b12:det": 299081479,
+    "b12:eval": 212803046,
+    "b12:lab": 1375821104,
+    "b13:det": 79518791,
+    "b13:eval": 67629515,
+    "b13:lab": 993075389,
+    "b14:det": 233974071,
+    "b14:eval": 472876191,
+    "b14:lab": 146838599,
+    "b15:det": 464187511,
+    "b15:eval": 896486055,
+    "b15:lab": 1286283717,
+    "b16:det": 282720151,
+    "b16:eval": 1305785240,
+    "b16:lab": 210763359,
+    "b17:det": 1649616790,
+    "b17:eval": 551575220,
+    "b17:lab": 88116288,
+    "b18:det": 1205622426,
+    "b18:eval": 1358171963,
+    "b18:lab": 358627589,
+    "b19:det": 1301798637,
+    "b19:eval": 910399951,
+    "b19:lab": 39101422,
+    "b20:det": 1364360912,
+    "b20:eval": 1311607403,
+    "b20:lab": 157250548,
+    "b21:det": 1345738957,
+    "b21:eval": 966520547,
+    "b21:lab": 808193454,
+    "b22:det": 792004031,
+    "b22:eval": 330456932,
+    "b22:lab": 526590819,
+    "b23:det": 1767770728,
+    "b23:eval": 626773777,
+    "b23:lab": 221581052,
+    "b24:det": 1775215003,
+    "b24:eval": 295659131,
+    "b24:lab": 259514779,
+    "b25:det": 592599806,
+    "b25:eval": 1278001040,
+    "b25:lab": 1843230331,
+    "b26:det": 157375677,
+    "b26:eval": 749167213,
+    "b26:lab": 467209364,
+    "b27:det": 1135953617,
+    "b27:eval": 1692740322,
+    "b27:lab": 532268643,
+    "b28:det": 166027710,
+    "b28:eval": 1067158716,
+    "b28:lab": 1172956547,
+    "b29:det": 930344970,
+    "b29:eval": 1861595447,
+    "b29:lab": 103418652
+  },
+  "states": [
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF"
+  ],
+  "static_key": "A",
+  "timing": {
+    "control_s": 419.0,
+    "decode_s": 1949.2
+  },
+  "true_changes": [
+    6,
+    11,
+    16,
+    21
+  ]
+}
