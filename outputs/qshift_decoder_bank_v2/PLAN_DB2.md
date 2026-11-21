@@ -2,6 +2,51 @@
 
 **Status:** plan only. Nothing has been built or sampled for DB2. Building and running it need the owner's approval of this plan. **Nothing here is confirmatory.** No seal is read, and AD2/AD3/DB1 evidence is read-only.
 
+## Amendment A1 (2026-11-21, after approval, before any DB2 sample)
+
+**This supersedes the method, arms and predicted values below where they differ.** The original text is kept unchanged under it.
+
+**What was wrong.** The design table below left out DB1's hysteresis κ = 0.0005, both in BANK and in the approved DB2 rule. `design_feasibility.py` now models it. With κ included, the approved rule is expected to **fail F4 and F5**:
+- **RB:** it holds key A between returns of B, costing 48.8 errors per episode against BANK's 14.4.
+- **Burst-free N:** in OFF it never leaves key A. Leaving needs h < 1.3%, which is never reached in 30 blocks.
+
+The BANK column was also wrong without κ: the corrected values are RB 14.4 (not 34.4) and RX 116.0 (not 126.0).
+
+**The amended DB2 rule (arm `DB2`):**
+1. **κ = 0** (no hysteresis). With a hazard term, the risks change smoothly, so the hysteresis has nothing left to damp.
+2. **The next-state risk is "hybrid":** the worst case over d ≠ s until a change out of s has been seen in the episode. After that it is the learned mixture, weighted by 0.25 + the observed s → d changes.
+3. **Occupancy is counted from the first decision (block 6)**, as the code can observe it. A change is counted when, after an AD3 alarm, the new segment's plausible set first becomes a singleton different from the last identified state.
+
+**Arms:**
+- **`DB2_PLAN`:** the approved rule (worst case always, κ = 0.0005) is **kept as a scored arm**, so its expected failure is measured, not hidden.
+- **`DB2_MIX`:** dropped, since the hybrid contains the mixture.
+
+**Not a reduction to DB1 any more:** with κ = 0, DB2 at h = 0 is not DB1. The test checks the reduction for the gate function at h = 0 with DB1's κ.
+
+**Amended predictions** (training table, `python design_feasibility.py`; errors per 24,000 rows / switches):
+
+| Panel | STATIC | BANK | DB2_PLAN | **DB2** |
+|---|---|---|---|---|
+| C0 | 28.8 | 28.8 | 28.8 | 28.8 / 0 |
+| N (OFF) | 28.8 | 4.8 | 28.8 | 12.8 / 1 |
+| N (C) | 62.4 | 24.0 | 33.6 | 24.0 / 0 |
+| R | 28.8 | 111.2 | 28.8 | **28.8 / 0** |
+| R_long | 28.8 | 59.0 | 28.8 | 28.8 / 0 |
+| RB | 112.0 | 14.4 | 48.8 | 24.6 / 1 |
+| RX | 70.4 | 116.0 | 38.8 | **38.8 / 2** |
+| S1 | 184.8 | 42.0 | 42.0 | 42.0 / 1 |
+| S4 | 90.4 | 28.4 | 35.6 | 35.6 / 2 |
+
+**The criteria F1–F6 are unchanged** and apply to `DB2`. The predicted margins are:
+- F1: −0.0034
+- F2: 0.0000
+- F3: −0.0013
+- F4: +0.0004 on RB and +0.0003 on S4 against BANK; ≤ −0.0023 against STATIC
+- F5: about +0.0001 pooled, at most 1 switch
+- F6: 0
+
+**Disclosure:** this is a second design iteration, again chosen on the idealised training-table model over my own panel schedules. No DB2 or DB1-validation data informed it.
+
 ## Why
 
 DB1 (`outputs/qshift_decoder_bank_v1/DEV_RESULTS.md`) beat AD3 on R, S1 and S4, but the static key A beat it on R (129 vs 565 errors).
