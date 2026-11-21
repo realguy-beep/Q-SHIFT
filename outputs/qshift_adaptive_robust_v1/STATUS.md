@@ -28,7 +28,8 @@ Every row was pre-registered, frozen and run once, with byte-identical analyses 
 | **BRT** | **Threshold-free flag E1T** | `de41bf056` → `551143886` | **BRT_SUPPORTED** (126/128 learned, 0 false accepts in family) | `BRT_RESULTS.md` |
 | **AD1** | **Rolling-window adaptive decoding under drift** | `3a2d0209a` → `e6310724d` | **AD1_NOT_SUPPORTED** (tracking: no gain over ONCE) | `AD1_RESULTS.md` |
 | **RE2** | **Frozen evaluation of E1T with two new sealed bursts (H3, H4)** | `67ed86c6a` → `f2028a88c` | **NOT_CONFIRMED** (G1–G4 pass; G5 fails NI on one flagged root) | `RE2_RESULTS.md` |
-| **AD2** | **Adaptive decoding when the burst itself changes** | `ccdfbc618` → this commit | **AD2_STRONG** (every endpoint passes; E2 in 4/4) | `AD2_RESULTS.md` |
+| **AD2** | **Adaptive decoding when the burst itself changes** | `ccdfbc618` → `ff6c1d64b` | **AD2_STRONG** (every endpoint passes; E2 in 4/4) | `AD2_RESULTS.md` |
+| **AD3** | **Faster reaction to a change (change detection + recall)** | `b06349e38` → this commit | **AD3_SUPPORTED** (F1–F4 pass; F5 latency ≤ 2 only on S2, as predicted) | `AD3_RESULTS.md` |
 
 ## What is established (development unless stated)
 
@@ -37,6 +38,7 @@ Every row was pre-registered, frozen and run once, with byte-identical analyses 
 - **Sealed burst (frozen, RE2):** E1T → learn → BP+OSD learned a sealed, never-seen ≥ 25-detector burst (H3) in 24/24 roots, under R6's base model and at p 0.00335, matching the oracle. RE1's estimator flagged 10/24 of those roots. This is conditional on H3's independence from RE1's H2, which is untested.
 - **Adaptive loop:** the causal rolling-window decoder never harmed a static stream and never learned a wrong burst. It acquired a transient burst within one window (median 5 blocks), released it in a median of 2.5, and stayed within 6% of the oracle under every drift tested (AD1).
 - **Adaptation to a changing burst (AD2):** when the burst switched, appeared or moved, AD re-learned it in a median of 3.5–5.5 blocks, beat both ONCE (E1) and PERIODIC (E2) in all four changing schedules, and matched the oracle in settled blocks (125 vs 126, 158 vs 153, 62 vs 62 errors). It never accepted a wrong burst and did no harm on a static stream. Its remaining excess is in the blocks just after a change; a burst that toggles every 6 blocks (S2) leaves AD at 11× the oracle's errors.
+- **Faster re-adaptation to a returning state (AD3):** detecting the change (two-sample test on detector rates) and recalling a model learned earlier in the episode cut S2 errors by 23% against AD (1,751 vs 2,279; 51% below the standard decoder) and halved the median latency (4 → 2 blocks). Never-seen bursts are not learned faster: E1T is unreliable on 1–3 blocks (Phase 1 screen), so AD3 equals AD there.
 
 ## What is not established
 
@@ -49,7 +51,7 @@ Every row was pre-registered, frozen and run once, with byte-identical analyses 
 
 1. **Seals:** "Open the RE2 seal" (publish H3/H4) and/or "Open the RE1 seal". The second also runs `re2_contamination.py`, which tests H3/H4's independence from H2. The RE1 record-hygiene note in `RE2_PROTOCOL.md` is still open.
 2. **Fallback study (development):** whether a cheaper flag fallback than the nominal model (for example S\*), or more roots, removes the single-flag NI sensitivity RE2 exposed. RE2 is not re-scored.
-3. **After AD2 (optional, development):** faster reaction to a change without false flags (AD2's gap is in transition blocks; the 3-block window was dropped by the preflight and is untested). AD2 is not re-scored.
+3. **After AD3 (optional, development):** a cheaper flag fallback in settled stretches (last accepted or recalled model instead of nominal). AD3's fresh C0 sample showed one episode where two false flags cost 96 errors, so AD's static no-harm result is flag-sensitive. A short-window estimator reliable on 2–3 blocks would be needed to learn never-seen bursts faster. AD2 and AD3 are not re-scored.
 
 ## Sealed material (stays closed)
 

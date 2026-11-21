@@ -336,3 +336,18 @@ The study was frozen at `ccdfbc618` and run once from a detached checkout: 30 ep
 - **Lesson (post hoc, untested):** the next adaptive gain is faster reaction without false flags. The 3-block window was dropped from AD2 by the preflight, so AD2 says nothing about it. AD2 is not re-scored.
 - **Unchanged:** the claim boundary (d=5, public weight-3 bursts, piecewise-constant noise, simulation only), the seals, and the 95% target.
 
+## Addendum (2026-11-21): AD3 faster reaction to a change completed
+
+The study was frozen at `b06349e38` and run once from a detached checkout: 30 episodes (5 schedules × 6), every job returncode 0, in 3.8 h. No seal was read. The analysis is byte-identical across two runs. The recount's re-analysis is identical, and episode 0 of every schedule replays identically. The full report is `AD3_RESULTS.md`. Verdict: **AD3_SUPPORTED** (F1–F4 pass; F5 passes on S2 only, as `AD3_PROTOCOL.md` predicted once the Phase 1 screen set M = 6).
+
+**Errors, blocks 6–29, 144,000 shots per arm (AD3 / AD / ORACLE / A_nominal):**
+- S2 (A on and off every 6 blocks): **1,751 / 2,279** / 178 / 3,575; median latency **2** against AD's 4.
+- S1, S3, S4 (never-seen bursts): AD3 equal to AD (397, 312, 234).
+- C0 (static): 346 / 346 / 253 / 6,928.
+
+**Standing:**
+- **Achieved (development):** change detection on the change block for every change of bursts B, C and D, and for about two-thirds of burst A's on/off changes. Recall of a returning state re-adapts in 1–2 blocks. No mis-learned settled window, and no loss against AD anywhere.
+- **Not achieved:** faster learning of a never-seen burst. E1T is unreliable on 1–3 blocks (screen: 1–60% learned, 36–69% flagged).
+- **Finding about AD (not an AD3 endpoint):** in C0 episode 4, E1T flagged two settled windows that had the right class, and nominal decoding cost 96 errors. On this fresh sample AD would fail AD2's E5 rule (346 > 278). AD2's verdict stands, as a single pre-registered run, but its static no-harm result is flag-sensitive, as RE2's G5 was.
+- **Lesson (post hoc, untested):** on a flag in a settled stretch, keep the last accepted or recalled model rather than the nominal one.
+- **Unchanged:** the claim boundary, the seals and the 95% target.

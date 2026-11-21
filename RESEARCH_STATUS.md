@@ -5,7 +5,7 @@
 
 ## Adaptive and broadly robust program (2026-11-18 to 2026-11-20)
 
-The full ledger is `outputs/qshift_adaptive_robust_v1/STATUS.md`. Everything is simulation-only at d=5 with synthetic weight-3 X-bursts, and development evidence except RE1 and RE2 (AD2 is development).
+The full ledger is `outputs/qshift_adaptive_robust_v1/STATUS.md`. Everything is simulation-only at d=5 with synthetic weight-3 X-bursts, and development evidence except RE1 and RE2 (AD2 and AD3 are development).
 
 - **Mismatch repair works, and RE1 confirmed it.** Re-basing the learner on a detector-estimated (p, Z-bias) model fixes the model-mismatch failure. In the frozen RE1 evaluation, R1–R5 were 59–88% below the strongest deployable matcher and matched the oracle.
 - **RE1 is NOT_CONFIRMED overall.** Its sealed hidden burst (R6) was never learned, because the estimator flagged every root.
@@ -16,6 +16,7 @@ The full ledger is `outputs/qshift_adaptive_robust_v1/STATUS.md`. Everything is 
 - **RE2 is NOT_CONFIRMED** (frozen, two new sealed bursts; RE1's seal not read). E1T learned the sealed ≥ 25-detector burst H3 in 24/24 roots, including under R6's base model, and matched the oracle. RE1's estimator flagged 10 of those 24. The pre-registered verdict failed on G5 (sealed burst H4): 1 of 12 roots was flagged and decoded nominally, and its 12 excess errors exceeded the 10-error NI floor. The hidden-burst results are conditional on independence from RE1's H2, which is untested.
 - **AD1 is NOT_SUPPORTED.** A causal rolling-window adaptive decoder stayed within 6% of the oracle under every drift tested and never learned a wrong burst. But it gained nothing over a single early estimate under mild background drift. It did help when a burst appeared and then disappeared (117 vs 156 errors), but that was not a pre-registered tracking endpoint.
 - **AD2 is AD2_STRONG** (development, pre-registered, public bursts, no seal read). When the burst itself switches, appears or moves, the adaptive decoder re-learned it in a median of 3.5–5.5 blocks, made 40–65% fewer errors than a single estimate and 20–42% fewer than re-estimating every 6 blocks, and matched the oracle once settled. Its remaining gap is in the blocks just after a change; a burst toggling every 6 blocks leaves it at 11× the oracle's errors.
+- **AD3 is AD3_SUPPORTED** (development, pre-registered; no seal read). Adding change detection and recall of earlier-learned models cut errors by 23% against AD2's method where a known burst state returns (S2: 1,751 vs 2,279, 51% below the standard decoder) and halved the median re-learning time (4 → 2 blocks). Never-seen bursts are not learned faster, because the estimator is unreliable on short windows. A fresh static sample also showed AD's no-harm result is sensitive to rare false flags (one episode cost 96 errors).
 - **The 95% target is still not reached.**
 
 ## Correlated-noise decoder line V1.1–d=5 low-p regime (2026-11-15 to 2026-11-18)
