@@ -75,3 +75,35 @@ Bounds are episode-bootstrap, 20,000 replicates, one-sided 97.5%, as differences
 
 - `results/ad3/ANALYSIS.json`, `TIMELINE.json`, `RECOUNT.json`, `RUN_STATUS.json`
 - `results/ad3/records/*.json` (30 episode records). The decoded-bit archives are not committed; their SHA-256 hashes are in the records.
+
+## Erratum (2026-11-21, after publication)
+
+Found by the independent review on `codex/qshift-response-gap-research-v1` (`cdaf6a618`, `RESPONSE_GAP_ROOT_CAUSE.md`) and re-verified here against `results/ad3/records/` and the local decoded-bit archives. **No endpoint, bound or verdict changes.** The text above is kept as published; these corrections supersede it where they differ.
+
+1. **S2 change detection was overstated.**
+   - **Published:** 15 of 24 changes detected on the change block, 18 of 24 within 2 blocks, 2 never detected.
+   - **Correct:** **14 of 24** on the change block, **17 of 24** by the next block, and **7 of 24 not detected within their own segment.**
+   - **Cause:** `ad3.py`'s descriptive `detection_delays` takes the first alarm at or after a change, even when that alarm belongs to the next change; the delays of 6 and 12 were such alarms. The 15 was also a miscount of the 14 zeros. Detection delays fed no endpoint.
+
+   | S2 change | Same block | Next block | Not detected in segment | AD errors | AD3 errors | Oracle errors |
+   |---|---|---|---|---|---|---|
+   | 6, first ON | 2 | 1 | 3 | 1,195 | 1,195 | 66 |
+   | 12, first OFF | 4 | 0 | 2 | 34 | 32 | 27 |
+   | 18, recurrent ON | 5 | 1 | 0 | 1,023 | 500 | 69 |
+   | 24, second OFF | 3 | 1 | 2 | 27 | 24 | 16 |
+   | Total | 14 | 3 | 7 | 2,279 | 1,751 | 178 |
+
+   Errors are summed from each change block to the next change (block 24 to the end).
+
+2. **Where the S2 gain came from.** 523 of the 528 errors AD3 saved were in the recurrent-ON segment (blocks 18–23), and 0 in the first ON segment. That is consistent with the mechanism above: AD3 gains only when a state learned earlier in the episode returns. The first appearance of a burst is re-learned no faster than by AD.
+
+3. **"Identical to AD" on S1, S3 and S4, confirmed at the bit level.**
+   - AD3 selected a model key different from AD's on 4 (S1), 6 (S3) and 1 (S4) scored blocks; equal error counts alone would not show equal predictions.
+   - The archived decoded error bits are identical to AD's on every one of those blocks, so AD3 and AD made the same predictions throughout S1, S3 and S4.
+   - The sentence "so AD3 used AD's estimate" is imprecise: on those blocks AD3 recalled a different key that decoded identically.
+
+4. **Freeze portability (`AD3_FREEZE.json`).**
+   - **The issue:** the frozen SHA-256 of `ad3.py` (`98f5a62b…`) was computed over a working copy with CRLF line endings. A build-time edit script re-wrote the file on Windows with CRLF, while `.gitattributes` stores Python files with LF. The committed blob has SHA-256 `febfd055…`. Re-encoding its 480 LF line endings as CRLF reproduces the frozen hash exactly.
+   - **Consequence:** the AD3 run itself was checked against the exact bytes it executed. But a fresh LF checkout fails `studykit.check_freeze` for `ad3.py`, so replicating the run from a clean clone needs that one file converted to CRLF first.
+   - **Scope:** the other 77 AD3 entries and all 65 AD2 entries match the committed blobs. The frozen JSON is left unchanged as historical evidence.
+   - **Future freezes** should hash LF-normalised bytes, or be checked against `git show HEAD:<path>` before commit.

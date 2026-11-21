@@ -351,3 +351,10 @@ The study was frozen at `b06349e38` and run once from a detached checkout: 30 ep
 - **Finding about AD (not an AD3 endpoint):** in C0 episode 4, E1T flagged two settled windows that had the right class, and nominal decoding cost 96 errors. On this fresh sample AD would fail AD2's E5 rule (346 > 278). AD2's verdict stands, as a single pre-registered run, but its static no-harm result is flag-sensitive, as RE2's G5 was.
 - **Lesson (post hoc, untested):** on a flag in a settled stretch, keep the last accepted or recalled model rather than the nominal one.
 - **Unchanged:** the claim boundary, the seals and the 95% target.
+
+### Erratum to the AD3 addendum (2026-11-21)
+
+The independent review on `codex/qshift-response-gap-research-v1` (`cdaf6a618`) found two errors in AD3's descriptive reporting, and both were re-verified against the committed records. The details are in `AD3_RESULTS.md`, "Erratum". No endpoint or verdict changes.
+- **S2 detection:** 14/24 changes were detected on the change block, 17/24 by the next block, and 7/24 not within their segment. The addendum's "about two-thirds of burst A's on/off changes" should read 14 of 24 (58%) on the change block.
+- **Where the S2 gain came from:** 523 of the 528 saved errors came from the recurrent ON (the first ON saved none).
+- **`AD3_FREEZE.json` portability:** the `ad3.py` entry hashes a CRLF working copy, while the committed LF blob differs. A clean LF checkout fails that one check, though the run used the exact frozen bytes. The other 77 entries, and all 65 of AD2's, match the committed blobs.
