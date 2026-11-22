@@ -1,0 +1,2203 @@
+{
+  "criteria": {
+    "ADVANCE": true,
+    "G1_no_harm_vs_W0_every_panel_le_+2": true,
+    "G2_every_panel_le_STATIC_+12": true,
+    "G3_U_minus_AD3_le_+24": true,
+    "G4_each_le_-12_and_pooled_le_-24": true,
+    "G5_null_le_1_switch": true,
+    "G6_AA_minus_BANK_le_-24_all_episodes": true,
+    "values": {
+      "G1_W0F_minus_W0": {
+        "AA": 0.25,
+        "AB": 0.0,
+        "BA": 0.0,
+        "BB": 0.0,
+        "N_C": 0.0,
+        "N_OFF": 0.0,
+        "S1": 0.0,
+        "S4": 0.0,
+        "U": 0.0
+      },
+      "G2_W0F_minus_STATIC": {
+        "AA": 0.0,
+        "AB": -33.5,
+        "BA": -37.5,
+        "BB": -71.0,
+        "N_C": -89.5,
+        "N_OFF": -10.0,
+        "S1": -130.5,
+        "S4": -67.5,
+        "U": -99.66666666666669
+      },
+      "G3_U_W0F_minus_AD3": 0.0,
+      "G4_W0F_minus_STATIC": {
+        "AB": -33.5,
+        "BA": -37.5,
+        "BB": -71.0,
+        "N_C": -89.5,
+        "S1": -130.5,
+        "S4": -67.5
+      },
+      "G4_pooled": -71.58333333333333,
+      "G5_null_switches": {
+        "N_C": [
+          0,
+          0
+        ],
+        "N_OFF": [
+          1,
+          1
+        ]
+      },
+      "G6_AA_W0F_minus_BANK": -129.5,
+      "G6_AA_episodes_W0F_le_BANK": 4
+    }
+  },
+  "run_status": {
+    "finished": "2026-11-22T08:14:22Z",
+    "head": "6beda2511de1f8da11a12ef32287d918b0eab507",
+    "n_jobs": 21,
+    "started": "2026-11-22T05:59:42Z",
+    "wall_seconds": 8080.0
+  },
+  "schedules": {
+    "AA": {
+      "BANK_minus_STATIC": {
+        "episodes_le_0": 0,
+        "errors_per_episode": [
+          125,
+          220,
+          85,
+          88
+        ],
+        "ler": 0.005395833333333333,
+        "mean": 129.5
+      },
+      "W0F_minus_AD3": {
+        "episodes_le_0": 4,
+        "errors_per_episode": [
+          -312,
+          -324,
+          -258,
+          -302
+        ],
+        "ler": -0.012458333333333333,
+        "mean": -299.0
+      },
+      "W0F_minus_BANK": {
+        "episodes_le_0": 4,
+        "errors_per_episode": [
+          -125,
+          -220,
+          -85,
+          -88
+        ],
+        "ler": -0.005395833333333333,
+        "mean": -129.5
+      },
+      "W0F_minus_DB2": {
+        "episodes_le_0": 3,
+        "errors_per_episode": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "ler": 1.0416666666666666e-05,
+        "mean": 0.25
+      },
+      "W0F_minus_DB2_PLAN": {
+        "episodes_le_0": 3,
+        "errors_per_episode": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "ler": 1.0416666666666666e-05,
+        "mean": 0.25
+      },
+      "W0F_minus_STATIC": {
+        "episodes_le_0": 4,
+        "errors_per_episode": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_W0": {
+        "episodes_le_0": 3,
+        "errors_per_episode": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "ler": 1.0416666666666666e-05,
+        "mean": 0.25
+      },
+      "W0_minus_STATIC": {
+        "episodes_le_0": 4,
+        "errors_per_episode": [
+          0,
+          0,
+          0,
+          -1
+        ],
+        "ler": -1.0416666666666666e-05,
+        "mean": -0.25
+      },
+      "changes_detected": [
+        [
+          8,
+          12,
+          17,
+          22
+        ],
+        [
+          7,
+          21
+        ],
+        [
+          7,
+          12,
+          16,
+          21
+        ],
+        [
+          6,
+          11,
+          16,
+          24,
+          25,
+          26
+        ]
+      ],
+      "empty_P_blocks": 7,
+      "episodes": 4,
+      "errors": {
+        "AD3": 1322,
+        "A_nominal": 1921,
+        "BANK": 644,
+        "DB2": 125,
+        "DB2_PLAN": 125,
+        "ORACLE": 93,
+        "STATIC": 126,
+        "W0": 125,
+        "W0F": 126
+      },
+      "errors_per_episode": {
+        "AD3": [
+          343,
+          358,
+          282,
+          339
+        ],
+        "A_nominal": [
+          482,
+          473,
+          504,
+          462
+        ],
+        "BANK": [
+          156,
+          254,
+          109,
+          125
+        ],
+        "DB2": [
+          31,
+          34,
+          24,
+          36
+        ],
+        "DB2_PLAN": [
+          31,
+          34,
+          24,
+          36
+        ],
+        "ORACLE": [
+          22,
+          27,
+          20,
+          24
+        ],
+        "STATIC": [
+          31,
+          34,
+          24,
+          37
+        ],
+        "W0": [
+          31,
+          34,
+          24,
+          36
+        ],
+        "W0F": [
+          31,
+          34,
+          24,
+          37
+        ]
+      },
+      "key_switches_per_episode": {
+        "AD3": [
+          15,
+          18,
+          16,
+          16
+        ],
+        "BANK": [
+          4,
+          7,
+          4,
+          5
+        ],
+        "DB2": [
+          0,
+          4,
+          0,
+          2
+        ],
+        "DB2_PLAN": [
+          0,
+          4,
+          0,
+          2
+        ],
+        "W0": [
+          0,
+          4,
+          0,
+          2
+        ],
+        "W0F": [
+          0,
+          4,
+          0,
+          0
+        ]
+      },
+      "ler": {
+        "AD3": 0.013770833333333333,
+        "A_nominal": 0.020010416666666666,
+        "BANK": 0.0067083333333333335,
+        "DB2": 0.0013020833333333333,
+        "DB2_PLAN": 0.0013020833333333333,
+        "ORACLE": 0.00096875,
+        "STATIC": 0.0013125,
+        "W0": 0.0013020833333333333,
+        "W0F": 0.0013125
+      },
+      "params": [
+        {
+          "dwell": [
+            5,
+            5,
+            5
+          ],
+          "on1": 7
+        },
+        {
+          "dwell": [
+            5,
+            5,
+            4
+          ],
+          "on1": 6
+        },
+        {
+          "dwell": [
+            5,
+            4,
+            5
+          ],
+          "on1": 7
+        },
+        {
+          "dwell": [
+            5,
+            5,
+            4
+          ],
+          "on1": 6
+        }
+      ],
+      "sources": {
+        "BANK": {
+          "bank": 89,
+          "hold": 3,
+          "learn": 4
+        },
+        "DB2": {
+          "bank": 89,
+          "hold": 3,
+          "learn": 4
+        },
+        "DB2_PLAN": {
+          "bank": 89,
+          "hold": 3,
+          "learn": 4
+        },
+        "W0": {
+          "bank": 89,
+          "hold": 3,
+          "learn": 4
+        },
+        "W0F": {
+          "bank": 89,
+          "learn": 3,
+          "static_fallback": 4
+        }
+      },
+      "true_changes": [
+        [
+          7,
+          12,
+          17,
+          22
+        ],
+        [
+          6,
+          11,
+          16,
+          20
+        ],
+        [
+          7,
+          12,
+          16,
+          21
+        ],
+        [
+          6,
+          11,
+          16,
+          20
+        ]
+      ]
+    },
+    "AB": {
+      "BANK_minus_STATIC": {
+        "episodes_le_0": 1,
+        "errors_per_episode": [
+          17,
+          -4
+        ],
+        "ler": 0.0002708333333333333,
+        "mean": 6.5
+      },
+      "W0F_minus_AD3": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -200,
+          -165
+        ],
+        "ler": -0.007604166666666667,
+        "mean": -182.5
+      },
+      "W0F_minus_BANK": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -38,
+          -42
+        ],
+        "ler": -0.0016666666666666668,
+        "mean": -40.0
+      },
+      "W0F_minus_DB2": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_DB2_PLAN": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -21,
+          -46
+        ],
+        "ler": -0.0013958333333333333,
+        "mean": -33.5
+      },
+      "W0F_minus_W0": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -21,
+          -46
+        ],
+        "ler": -0.0013958333333333333,
+        "mean": -33.5
+      },
+      "changes_detected": [
+        [
+          7,
+          12,
+          17,
+          21
+        ],
+        [
+          6,
+          11,
+          16,
+          21
+        ]
+      ],
+      "empty_P_blocks": 0,
+      "episodes": 2,
+      "errors": {
+        "AD3": 435,
+        "A_nominal": 836,
+        "BANK": 150,
+        "DB2": 70,
+        "DB2_PLAN": 70,
+        "ORACLE": 39,
+        "STATIC": 137,
+        "W0": 70,
+        "W0F": 70
+      },
+      "errors_per_episode": {
+        "AD3": [
+          233,
+          202
+        ],
+        "A_nominal": [
+          406,
+          430
+        ],
+        "BANK": [
+          71,
+          79
+        ],
+        "DB2": [
+          33,
+          37
+        ],
+        "DB2_PLAN": [
+          33,
+          37
+        ],
+        "ORACLE": [
+          20,
+          19
+        ],
+        "STATIC": [
+          54,
+          83
+        ],
+        "W0": [
+          33,
+          37
+        ],
+        "W0F": [
+          33,
+          37
+        ]
+      },
+      "key_switches_per_episode": {
+        "AD3": [
+          15,
+          15
+        ],
+        "BANK": [
+          5,
+          5
+        ],
+        "DB2": [
+          2,
+          2
+        ],
+        "DB2_PLAN": [
+          2,
+          2
+        ],
+        "W0": [
+          2,
+          2
+        ],
+        "W0F": [
+          2,
+          2
+        ]
+      },
+      "ler": {
+        "AD3": 0.0090625,
+        "A_nominal": 0.017416666666666667,
+        "BANK": 0.003125,
+        "DB2": 0.0014583333333333334,
+        "DB2_PLAN": 0.0014583333333333334,
+        "ORACLE": 0.0008125,
+        "STATIC": 0.0028541666666666667,
+        "W0": 0.0014583333333333334,
+        "W0F": 0.0014583333333333334
+      },
+      "params": [
+        {
+          "dwell": [
+            5,
+            5,
+            4
+          ],
+          "on1": 7
+        },
+        {
+          "dwell": [
+            5,
+            5,
+            5
+          ],
+          "on1": 6
+        }
+      ],
+      "sources": {
+        "BANK": {
+          "bank": 48
+        },
+        "DB2": {
+          "bank": 48
+        },
+        "DB2_PLAN": {
+          "bank": 48
+        },
+        "W0": {
+          "bank": 48
+        },
+        "W0F": {
+          "bank": 48
+        }
+      },
+      "true_changes": [
+        [
+          7,
+          12,
+          17,
+          21
+        ],
+        [
+          6,
+          11,
+          16,
+          21
+        ]
+      ]
+    },
+    "BA": {
+      "BANK_minus_STATIC": {
+        "episodes_le_0": 1,
+        "errors_per_episode": [
+          9,
+          -16
+        ],
+        "ler": -0.00014583333333333335,
+        "mean": -3.5
+      },
+      "W0F_minus_AD3": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -160,
+          -209
+        ],
+        "ler": -0.0076875,
+        "mean": -184.5
+      },
+      "W0F_minus_BANK": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -41,
+          -27
+        ],
+        "ler": -0.0014166666666666668,
+        "mean": -34.0
+      },
+      "W0F_minus_DB2": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -46,
+          -28
+        ],
+        "ler": -0.0015416666666666667,
+        "mean": -37.0
+      },
+      "W0F_minus_DB2_PLAN": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -32,
+          -43
+        ],
+        "ler": -0.0015625,
+        "mean": -37.5
+      },
+      "W0F_minus_W0": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -32,
+          -43
+        ],
+        "ler": -0.0015625,
+        "mean": -37.5
+      },
+      "changes_detected": [
+        [
+          6,
+          10,
+          15,
+          20
+        ],
+        [
+          6,
+          11,
+          16,
+          20
+        ]
+      ],
+      "empty_P_blocks": 1,
+      "episodes": 2,
+      "errors": {
+        "AD3": 457,
+        "A_nominal": 772,
+        "BANK": 156,
+        "DB2": 162,
+        "DB2_PLAN": 88,
+        "ORACLE": 61,
+        "STATIC": 163,
+        "W0": 88,
+        "W0F": 88
+      },
+      "errors_per_episode": {
+        "AD3": [
+          210,
+          247
+        ],
+        "A_nominal": [
+          402,
+          370
+        ],
+        "BANK": [
+          91,
+          65
+        ],
+        "DB2": [
+          96,
+          66
+        ],
+        "DB2_PLAN": [
+          50,
+          38
+        ],
+        "ORACLE": [
+          35,
+          26
+        ],
+        "STATIC": [
+          82,
+          81
+        ],
+        "W0": [
+          50,
+          38
+        ],
+        "W0F": [
+          50,
+          38
+        ]
+      },
+      "key_switches_per_episode": {
+        "AD3": [
+          15,
+          13
+        ],
+        "BANK": [
+          5,
+          5
+        ],
+        "DB2": [
+          4,
+          4
+        ],
+        "DB2_PLAN": [
+          4,
+          2
+        ],
+        "W0": [
+          4,
+          2
+        ],
+        "W0F": [
+          2,
+          2
+        ]
+      },
+      "ler": {
+        "AD3": 0.009520833333333333,
+        "A_nominal": 0.016083333333333335,
+        "BANK": 0.00325,
+        "DB2": 0.003375,
+        "DB2_PLAN": 0.0018333333333333333,
+        "ORACLE": 0.0012708333333333332,
+        "STATIC": 0.003395833333333333,
+        "W0": 0.0018333333333333333,
+        "W0F": 0.0018333333333333333
+      },
+      "params": [
+        {
+          "dwell": [
+            4,
+            5,
+            5
+          ],
+          "on1": 6
+        },
+        {
+          "dwell": [
+            5,
+            5,
+            4
+          ],
+          "on1": 6
+        }
+      ],
+      "sources": {
+        "BANK": {
+          "bank": 47,
+          "learn": 1
+        },
+        "DB2": {
+          "bank": 47,
+          "learn": 1
+        },
+        "DB2_PLAN": {
+          "bank": 47,
+          "learn": 1
+        },
+        "W0": {
+          "bank": 47,
+          "learn": 1
+        },
+        "W0F": {
+          "bank": 47,
+          "static_fallback": 1
+        }
+      },
+      "true_changes": [
+        [
+          6,
+          10,
+          15,
+          20
+        ],
+        [
+          6,
+          11,
+          16,
+          20
+        ]
+      ]
+    },
+    "BB": {
+      "BANK_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -67,
+          -87
+        ],
+        "ler": -0.0032083333333333334,
+        "mean": -77.0
+      },
+      "W0F_minus_AD3": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -49,
+          -49
+        ],
+        "ler": -0.0020416666666666665,
+        "mean": -49.0
+      },
+      "W0F_minus_BANK": {
+        "episodes_le_0": 0,
+        "errors_per_episode": [
+          5,
+          7
+        ],
+        "ler": 0.00025,
+        "mean": 6.0
+      },
+      "W0F_minus_DB2": {
+        "episodes_le_0": 0,
+        "errors_per_episode": [
+          9,
+          14
+        ],
+        "ler": 0.00047916666666666664,
+        "mean": 11.5
+      },
+      "W0F_minus_DB2_PLAN": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -62,
+          -80
+        ],
+        "ler": -0.002958333333333333,
+        "mean": -71.0
+      },
+      "W0F_minus_W0": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -62,
+          -80
+        ],
+        "ler": -0.002958333333333333,
+        "mean": -71.0
+      },
+      "changes_detected": [
+        [
+          7,
+          11,
+          15,
+          19
+        ],
+        [
+          6,
+          11,
+          16,
+          21
+        ]
+      ],
+      "empty_P_blocks": 0,
+      "episodes": 2,
+      "errors": {
+        "AD3": 183,
+        "A_nominal": 642,
+        "BANK": 73,
+        "DB2": 62,
+        "DB2_PLAN": 85,
+        "ORACLE": 36,
+        "STATIC": 227,
+        "W0": 85,
+        "W0F": 85
+      },
+      "errors_per_episode": {
+        "AD3": [
+          86,
+          97
+        ],
+        "A_nominal": [
+          272,
+          370
+        ],
+        "BANK": [
+          32,
+          41
+        ],
+        "DB2": [
+          28,
+          34
+        ],
+        "DB2_PLAN": [
+          37,
+          48
+        ],
+        "ORACLE": [
+          16,
+          20
+        ],
+        "STATIC": [
+          99,
+          128
+        ],
+        "W0": [
+          37,
+          48
+        ],
+        "W0F": [
+          37,
+          48
+        ]
+      },
+      "key_switches_per_episode": {
+        "AD3": [
+          14,
+          14
+        ],
+        "BANK": [
+          6,
+          6
+        ],
+        "DB2": [
+          5,
+          5
+        ],
+        "DB2_PLAN": [
+          4,
+          4
+        ],
+        "W0": [
+          4,
+          4
+        ],
+        "W0F": [
+          4,
+          4
+        ]
+      },
+      "ler": {
+        "AD3": 0.0038125,
+        "A_nominal": 0.013375,
+        "BANK": 0.0015208333333333332,
+        "DB2": 0.0012916666666666667,
+        "DB2_PLAN": 0.0017708333333333332,
+        "ORACLE": 0.00075,
+        "STATIC": 0.004729166666666666,
+        "W0": 0.0017708333333333332,
+        "W0F": 0.0017708333333333332
+      },
+      "params": [
+        {
+          "dwell": [
+            4,
+            4,
+            4
+          ],
+          "on1": 7
+        },
+        {
+          "dwell": [
+            5,
+            5,
+            5
+          ],
+          "on1": 6
+        }
+      ],
+      "sources": {
+        "BANK": {
+          "bank": 48
+        },
+        "DB2": {
+          "bank": 48
+        },
+        "DB2_PLAN": {
+          "bank": 48
+        },
+        "W0": {
+          "bank": 48
+        },
+        "W0F": {
+          "bank": 48
+        }
+      },
+      "true_changes": [
+        [
+          7,
+          11,
+          15,
+          19
+        ],
+        [
+          6,
+          11,
+          16,
+          21
+        ]
+      ]
+    },
+    "N_C": {
+      "BANK_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -92,
+          -87
+        ],
+        "ler": -0.0037291666666666667,
+        "mean": -89.5
+      },
+      "W0F_minus_AD3": {
+        "episodes_le_0": 1,
+        "errors_per_episode": [
+          1,
+          0
+        ],
+        "ler": 2.0833333333333333e-05,
+        "mean": 0.5
+      },
+      "W0F_minus_BANK": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_DB2": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_DB2_PLAN": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -23,
+          -21
+        ],
+        "ler": -0.0009166666666666666,
+        "mean": -22.0
+      },
+      "W0F_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -92,
+          -87
+        ],
+        "ler": -0.0037291666666666667,
+        "mean": -89.5
+      },
+      "W0F_minus_W0": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -92,
+          -87
+        ],
+        "ler": -0.0037291666666666667,
+        "mean": -89.5
+      },
+      "changes_detected": [
+        [],
+        [
+          11
+        ]
+      ],
+      "empty_P_blocks": 0,
+      "episodes": 2,
+      "errors": {
+        "AD3": 44,
+        "A_nominal": 203,
+        "BANK": 45,
+        "DB2": 45,
+        "DB2_PLAN": 89,
+        "ORACLE": 45,
+        "STATIC": 224,
+        "W0": 45,
+        "W0F": 45
+      },
+      "errors_per_episode": {
+        "AD3": [
+          26,
+          18
+        ],
+        "A_nominal": [
+          104,
+          99
+        ],
+        "BANK": [
+          27,
+          18
+        ],
+        "DB2": [
+          27,
+          18
+        ],
+        "DB2_PLAN": [
+          50,
+          39
+        ],
+        "ORACLE": [
+          27,
+          18
+        ],
+        "STATIC": [
+          119,
+          105
+        ],
+        "W0": [
+          27,
+          18
+        ],
+        "W0F": [
+          27,
+          18
+        ]
+      },
+      "key_switches_per_episode": {
+        "AD3": [
+          23,
+          20
+        ],
+        "BANK": [
+          0,
+          0
+        ],
+        "DB2": [
+          0,
+          0
+        ],
+        "DB2_PLAN": [
+          1,
+          1
+        ],
+        "W0": [
+          0,
+          0
+        ],
+        "W0F": [
+          0,
+          0
+        ]
+      },
+      "ler": {
+        "AD3": 0.0009166666666666666,
+        "A_nominal": 0.004229166666666667,
+        "BANK": 0.0009375,
+        "DB2": 0.0009375,
+        "DB2_PLAN": 0.0018541666666666667,
+        "ORACLE": 0.0009375,
+        "STATIC": 0.004666666666666667,
+        "W0": 0.0009375,
+        "W0F": 0.0009375
+      },
+      "params": [
+        {},
+        {}
+      ],
+      "sources": {
+        "BANK": {
+          "bank": 48
+        },
+        "DB2": {
+          "bank": 48
+        },
+        "DB2_PLAN": {
+          "bank": 48
+        },
+        "W0": {
+          "bank": 48
+        },
+        "W0F": {
+          "bank": 48
+        }
+      },
+      "true_changes": [
+        [],
+        []
+      ]
+    },
+    "N_OFF": {
+      "BANK_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -14,
+          -15
+        ],
+        "ler": -0.0006041666666666667,
+        "mean": -14.5
+      },
+      "W0F_minus_AD3": {
+        "episodes_le_0": 0,
+        "errors_per_episode": [
+          5,
+          4
+        ],
+        "ler": 0.0001875,
+        "mean": 4.5
+      },
+      "W0F_minus_BANK": {
+        "episodes_le_0": 0,
+        "errors_per_episode": [
+          5,
+          4
+        ],
+        "ler": 0.0001875,
+        "mean": 4.5
+      },
+      "W0F_minus_DB2": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_DB2_PLAN": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -9,
+          -11
+        ],
+        "ler": -0.0004166666666666667,
+        "mean": -10.0
+      },
+      "W0F_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -9,
+          -11
+        ],
+        "ler": -0.0004166666666666667,
+        "mean": -10.0
+      },
+      "W0F_minus_W0": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -9,
+          -11
+        ],
+        "ler": -0.0004166666666666667,
+        "mean": -10.0
+      },
+      "changes_detected": [
+        [],
+        []
+      ],
+      "empty_P_blocks": 0,
+      "episodes": 2,
+      "errors": {
+        "AD3": 34,
+        "A_nominal": 68,
+        "BANK": 34,
+        "DB2": 43,
+        "DB2_PLAN": 63,
+        "ORACLE": 34,
+        "STATIC": 63,
+        "W0": 43,
+        "W0F": 43
+      },
+      "errors_per_episode": {
+        "AD3": [
+          18,
+          16
+        ],
+        "A_nominal": [
+          33,
+          35
+        ],
+        "BANK": [
+          18,
+          16
+        ],
+        "DB2": [
+          23,
+          20
+        ],
+        "DB2_PLAN": [
+          32,
+          31
+        ],
+        "ORACLE": [
+          18,
+          16
+        ],
+        "STATIC": [
+          32,
+          31
+        ],
+        "W0": [
+          23,
+          20
+        ],
+        "W0F": [
+          23,
+          20
+        ]
+      },
+      "key_switches_per_episode": {
+        "AD3": [
+          23,
+          23
+        ],
+        "BANK": [
+          0,
+          0
+        ],
+        "DB2": [
+          1,
+          1
+        ],
+        "DB2_PLAN": [
+          0,
+          0
+        ],
+        "W0": [
+          1,
+          1
+        ],
+        "W0F": [
+          1,
+          1
+        ]
+      },
+      "ler": {
+        "AD3": 0.0007083333333333334,
+        "A_nominal": 0.0014166666666666668,
+        "BANK": 0.0007083333333333334,
+        "DB2": 0.0008958333333333333,
+        "DB2_PLAN": 0.0013125,
+        "ORACLE": 0.0007083333333333334,
+        "STATIC": 0.0013125,
+        "W0": 0.0008958333333333333,
+        "W0F": 0.0008958333333333333
+      },
+      "params": [
+        {},
+        {}
+      ],
+      "sources": {
+        "BANK": {
+          "bank": 48
+        },
+        "DB2": {
+          "bank": 48
+        },
+        "DB2_PLAN": {
+          "bank": 48
+        },
+        "W0": {
+          "bank": 48
+        },
+        "W0F": {
+          "bank": 48
+        }
+      },
+      "true_changes": [
+        [],
+        []
+      ]
+    },
+    "S1": {
+      "BANK_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -127,
+          -134
+        ],
+        "ler": -0.0054375,
+        "mean": -130.5
+      },
+      "W0F_minus_AD3": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -100,
+          -37
+        ],
+        "ler": -0.0028541666666666667,
+        "mean": -68.5
+      },
+      "W0F_minus_BANK": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_DB2": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_DB2_PLAN": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -127,
+          -134
+        ],
+        "ler": -0.0054375,
+        "mean": -130.5
+      },
+      "W0F_minus_W0": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -127,
+          -134
+        ],
+        "ler": -0.0054375,
+        "mean": -130.5
+      },
+      "changes_detected": [
+        [
+          15
+        ],
+        [
+          15,
+          20,
+          25
+        ]
+      ],
+      "empty_P_blocks": 0,
+      "episodes": 2,
+      "errors": {
+        "AD3": 206,
+        "A_nominal": 1914,
+        "BANK": 69,
+        "DB2": 69,
+        "DB2_PLAN": 69,
+        "ORACLE": 55,
+        "STATIC": 330,
+        "W0": 69,
+        "W0F": 69
+      },
+      "errors_per_episode": {
+        "AD3": [
+          133,
+          73
+        ],
+        "A_nominal": [
+          914,
+          1000
+        ],
+        "BANK": [
+          33,
+          36
+        ],
+        "DB2": [
+          33,
+          36
+        ],
+        "DB2_PLAN": [
+          33,
+          36
+        ],
+        "ORACLE": [
+          26,
+          29
+        ],
+        "STATIC": [
+          160,
+          170
+        ],
+        "W0": [
+          33,
+          36
+        ],
+        "W0F": [
+          33,
+          36
+        ]
+      },
+      "key_switches_per_episode": {
+        "AD3": [
+          20,
+          22
+        ],
+        "BANK": [
+          1,
+          1
+        ],
+        "DB2": [
+          1,
+          1
+        ],
+        "DB2_PLAN": [
+          1,
+          1
+        ],
+        "W0": [
+          1,
+          1
+        ],
+        "W0F": [
+          1,
+          1
+        ]
+      },
+      "ler": {
+        "AD3": 0.004291666666666667,
+        "A_nominal": 0.039875,
+        "BANK": 0.0014375,
+        "DB2": 0.0014375,
+        "DB2_PLAN": 0.0014375,
+        "ORACLE": 0.0011458333333333333,
+        "STATIC": 0.006875,
+        "W0": 0.0014375,
+        "W0F": 0.0014375
+      },
+      "params": [
+        {},
+        {}
+      ],
+      "sources": {
+        "BANK": {
+          "bank": 48
+        },
+        "DB2": {
+          "bank": 48
+        },
+        "DB2_PLAN": {
+          "bank": 48
+        },
+        "W0": {
+          "bank": 48
+        },
+        "W0F": {
+          "bank": 48
+        }
+      },
+      "true_changes": [
+        [
+          15
+        ],
+        [
+          15
+        ]
+      ]
+    },
+    "S4": {
+      "BANK_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -68,
+          -84
+        ],
+        "ler": -0.0031666666666666666,
+        "mean": -76.0
+      },
+      "W0F_minus_AD3": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -8,
+          -7
+        ],
+        "ler": -0.0003125,
+        "mean": -7.5
+      },
+      "W0F_minus_BANK": {
+        "episodes_le_0": 0,
+        "errors_per_episode": [
+          10,
+          7
+        ],
+        "ler": 0.0003541666666666667,
+        "mean": 8.5
+      },
+      "W0F_minus_DB2": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_DB2_PLAN": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -58,
+          -77
+        ],
+        "ler": -0.0028125,
+        "mean": -67.5
+      },
+      "W0F_minus_W0": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0_minus_STATIC": {
+        "episodes_le_0": 2,
+        "errors_per_episode": [
+          -58,
+          -77
+        ],
+        "ler": -0.0028125,
+        "mean": -67.5
+      },
+      "changes_detected": [
+        [
+          10,
+          20
+        ],
+        [
+          10,
+          20
+        ]
+      ],
+      "empty_P_blocks": 3,
+      "episodes": 2,
+      "errors": {
+        "AD3": 70,
+        "A_nominal": 438,
+        "BANK": 38,
+        "DB2": 55,
+        "DB2_PLAN": 55,
+        "ORACLE": 31,
+        "STATIC": 190,
+        "W0": 55,
+        "W0F": 55
+      },
+      "errors_per_episode": {
+        "AD3": [
+          39,
+          31
+        ],
+        "A_nominal": [
+          193,
+          245
+        ],
+        "BANK": [
+          21,
+          17
+        ],
+        "DB2": [
+          31,
+          24
+        ],
+        "DB2_PLAN": [
+          31,
+          24
+        ],
+        "ORACLE": [
+          17,
+          14
+        ],
+        "STATIC": [
+          89,
+          101
+        ],
+        "W0": [
+          31,
+          24
+        ],
+        "W0F": [
+          31,
+          24
+        ]
+      },
+      "key_switches_per_episode": {
+        "AD3": [
+          18,
+          22
+        ],
+        "BANK": [
+          2,
+          5
+        ],
+        "DB2": [
+          2,
+          5
+        ],
+        "DB2_PLAN": [
+          2,
+          5
+        ],
+        "W0": [
+          2,
+          5
+        ],
+        "W0F": [
+          2,
+          5
+        ]
+      },
+      "ler": {
+        "AD3": 0.0014583333333333334,
+        "A_nominal": 0.009125,
+        "BANK": 0.0007916666666666666,
+        "DB2": 0.0011458333333333333,
+        "DB2_PLAN": 0.0011458333333333333,
+        "ORACLE": 0.0006458333333333333,
+        "STATIC": 0.003958333333333334,
+        "W0": 0.0011458333333333333,
+        "W0F": 0.0011458333333333333
+      },
+      "params": [
+        {},
+        {}
+      ],
+      "sources": {
+        "BANK": {
+          "bank": 45,
+          "hold": 1,
+          "learn": 2
+        },
+        "DB2": {
+          "bank": 45,
+          "hold": 1,
+          "learn": 2
+        },
+        "DB2_PLAN": {
+          "bank": 45,
+          "hold": 1,
+          "learn": 2
+        },
+        "W0": {
+          "bank": 45,
+          "hold": 1,
+          "learn": 2
+        },
+        "W0F": {
+          "bank": 45,
+          "learn": 2,
+          "static_fallback": 1
+        }
+      },
+      "true_changes": [
+        [
+          10,
+          20
+        ],
+        [
+          10,
+          20
+        ]
+      ]
+    },
+    "U": {
+      "BANK_minus_STATIC": {
+        "episodes_le_0": 3,
+        "errors_per_episode": [
+          -93,
+          -110,
+          -96
+        ],
+        "ler": -0.004152777777777778,
+        "mean": -99.66666666666667
+      },
+      "W0F_minus_AD3": {
+        "episodes_le_0": 3,
+        "errors_per_episode": [
+          0,
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_BANK": {
+        "episodes_le_0": 3,
+        "errors_per_episode": [
+          0,
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_DB2": {
+        "episodes_le_0": 3,
+        "errors_per_episode": [
+          0,
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_DB2_PLAN": {
+        "episodes_le_0": 3,
+        "errors_per_episode": [
+          0,
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0F_minus_STATIC": {
+        "episodes_le_0": 3,
+        "errors_per_episode": [
+          -93,
+          -110,
+          -96
+        ],
+        "ler": -0.004152777777777778,
+        "mean": -99.66666666666667
+      },
+      "W0F_minus_W0": {
+        "episodes_le_0": 3,
+        "errors_per_episode": [
+          0,
+          0,
+          0
+        ],
+        "ler": 0.0,
+        "mean": 0.0
+      },
+      "W0_minus_STATIC": {
+        "episodes_le_0": 3,
+        "errors_per_episode": [
+          -93,
+          -110,
+          -96
+        ],
+        "ler": -0.004152777777777778,
+        "mean": -99.66666666666667
+      },
+      "changes_detected": [
+        [
+          12
+        ],
+        [
+          10,
+          23
+        ],
+        [
+          12
+        ]
+      ],
+      "empty_P_blocks": 52,
+      "episodes": 3,
+      "errors": {
+        "AD3": 122,
+        "A_nominal": 958,
+        "BANK": 122,
+        "DB2": 122,
+        "DB2_PLAN": 122,
+        "ORACLE": 73,
+        "STATIC": 421,
+        "W0": 122,
+        "W0F": 122
+      },
+      "errors_per_episode": {
+        "AD3": [
+          43,
+          31,
+          48
+        ],
+        "A_nominal": [
+          364,
+          241,
+          353
+        ],
+        "BANK": [
+          43,
+          31,
+          48
+        ],
+        "DB2": [
+          43,
+          31,
+          48
+        ],
+        "DB2_PLAN": [
+          43,
+          31,
+          48
+        ],
+        "ORACLE": [
+          31,
+          16,
+          26
+        ],
+        "STATIC": [
+          136,
+          141,
+          144
+        ],
+        "W0": [
+          43,
+          31,
+          48
+        ],
+        "W0F": [
+          43,
+          31,
+          48
+        ]
+      },
+      "key_switches_per_episode": {
+        "AD3": [
+          23,
+          22,
+          23
+        ],
+        "BANK": [
+          17,
+          18,
+          17
+        ],
+        "DB2": [
+          17,
+          18,
+          17
+        ],
+        "DB2_PLAN": [
+          17,
+          18,
+          17
+        ],
+        "W0": [
+          17,
+          18,
+          17
+        ],
+        "W0F": [
+          17,
+          18,
+          17
+        ]
+      },
+      "ler": {
+        "AD3": 0.0016944444444444444,
+        "A_nominal": 0.013305555555555555,
+        "BANK": 0.0016944444444444444,
+        "DB2": 0.0016944444444444444,
+        "DB2_PLAN": 0.0016944444444444444,
+        "ORACLE": 0.0010138888888888888,
+        "STATIC": 0.005847222222222222,
+        "W0": 0.0016944444444444444,
+        "W0F": 0.0016944444444444444
+      },
+      "params": [
+        {
+          "onset": 12
+        },
+        {
+          "onset": 10
+        },
+        {
+          "onset": 12
+        }
+      ],
+      "sources": {
+        "BANK": {
+          "bank": 20,
+          "learn": 52
+        },
+        "DB2": {
+          "bank": 20,
+          "learn": 52
+        },
+        "DB2_PLAN": {
+          "bank": 20,
+          "learn": 52
+        },
+        "W0": {
+          "bank": 20,
+          "learn": 52
+        },
+        "W0F": {
+          "bank": 20,
+          "learn": 52
+        }
+      },
+      "true_changes": [
+        [
+          12
+        ],
+        [
+          10
+        ],
+        [
+          12
+        ]
+      ]
+    }
+  },
+  "schema": "qshift-decoder-bank-db4-analysis-v1",
+  "trigger_rate": {
+    "blocks": 504,
+    "triggers": 6
+  },
+  "triggers": [
+    {
+      "W0F_key": "bank:A",
+      "W0_key": "bank:A",
+      "block": 14,
+      "class_index": null,
+      "episode": "AA_e1",
+      "errors": {
+        "ORACLE": 0,
+        "STATIC": 0,
+        "W0": 0,
+        "W0F": 0
+      },
+      "flagged": true,
+      "state": "OFF"
+    },
+    {
+      "W0F_key": "bank:A",
+      "W0_key": "bank:A",
+      "block": 18,
+      "class_index": null,
+      "episode": "AA_e1",
+      "errors": {
+        "ORACLE": 1,
+        "STATIC": 1,
+        "W0": 1,
+        "W0F": 1
+      },
+      "flagged": true,
+      "state": "A"
+    },
+    {
+      "W0F_key": "bank:A",
+      "W0_key": "bank:A",
+      "block": 24,
+      "class_index": null,
+      "episode": "AA_e3",
+      "errors": {
+        "ORACLE": 0,
+        "STATIC": 0,
+        "W0": 0,
+        "W0F": 0
+      },
+      "flagged": true,
+      "state": "OFF"
+    },
+    {
+      "W0F_key": "bank:A",
+      "W0_key": "[\"est\", 0.0030469412746378078, 1.000016526740338, null]",
+      "block": 25,
+      "class_index": null,
+      "episode": "AA_e3",
+      "errors": {
+        "ORACLE": 1,
+        "STATIC": 2,
+        "W0": 1,
+        "W0F": 2
+      },
+      "flagged": false,
+      "state": "OFF"
+    },
+    {
+      "W0F_key": "bank:A",
+      "W0_key": "[\"est\", 0.0030249598618069255, 1.000016526740338, null]",
+      "block": 27,
+      "class_index": null,
+      "episode": "BA_e0",
+      "errors": {
+        "ORACLE": 2,
+        "STATIC": 2,
+        "W0": 2,
+        "W0F": 2
+      },
+      "flagged": false,
+      "state": "OFF"
+    },
+    {
+      "W0F_key": "bank:A",
+      "W0_key": "bank:A",
+      "block": 23,
+      "class_index": null,
+      "episode": "S4_e1",
+      "errors": {
+        "ORACLE": 0,
+        "STATIC": 2,
+        "W0": 2,
+        "W0F": 2
+      },
+      "flagged": true,
+      "state": "D"
+    }
+  ]
+}
