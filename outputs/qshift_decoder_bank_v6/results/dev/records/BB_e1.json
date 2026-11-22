@@ -1,0 +1,3729 @@
+{
+  "archive": "archives/BB_e1.npz",
+  "archive_sha256": "316a468a0cca5e2a2641fab88467e4be2e72476d2fc3a83da4f92d2b22ba1420",
+  "arms": [
+    "W0F",
+    "W0",
+    "DB2",
+    "DB2_PLAN",
+    "BANK",
+    "AD3",
+    "STATIC",
+    "ORACLE",
+    "A_nominal",
+    "LA_W0F",
+    "LA_BANK",
+    "LA_DB2",
+    "LA_STATIC",
+    "LA2_W0F"
+  ],
+  "blocks": [
+    {
+      "L": 5,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": true,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": true,
+      "block": 6,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 1,
+        "A_nominal": 1,
+        "BANK": 1,
+        "DB2": 1,
+        "DB2_PLAN": 1,
+        "LA2_W0F": 1,
+        "LA_BANK": 1,
+        "LA_DB2": 1,
+        "LA_STATIC": 1,
+        "LA_W0F": 1,
+        "ORACLE": 1,
+        "STATIC": 1,
+        "W0": 1,
+        "W0F": 1
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.016351674081589,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.003031661776178593,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.016351674081589,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.003031661776178593,
+        "seg0": 1,
+        "seg_len": 5,
+        "source": "ad_fallback",
+        "true_class": null
+      },
+      "g_prev": 115.54412250845598,
+      "gfit": {
+        "A": 463.269,
+        "B": 577.289,
+        "C": 583.461,
+        "D": 872.075,
+        "OFF": 127.599
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.003031661776178593, 1.016351674081589, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:A",
+        "LA_BANK": "bank:OFF",
+        "LA_DB2": "bank:A",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "A"
+        ],
+        "alarm": false,
+        "g": 126.58937903450635
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 1,
+      "source": {
+        "AD3": "ad_fallback",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.033333,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.033333
+        },
+        "occ": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "OFF": 0
+        },
+        "outs": {}
+      }
+    },
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": false,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 7,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 8,
+        "A_nominal": 32,
+        "BANK": 8,
+        "DB2": 8,
+        "DB2_PLAN": 8,
+        "LA2_W0F": 8,
+        "LA_BANK": 8,
+        "LA_DB2": 8,
+        "LA_STATIC": 8,
+        "LA_W0F": 8,
+        "ORACLE": 0,
+        "STATIC": 8,
+        "W0": 8,
+        "W0F": 8
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030290774422833417,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030290774422833417,
+        "seg0": 1,
+        "seg_len": 6,
+        "source": "window",
+        "true_class": null
+      },
+      "g_prev": 126.58937903450635,
+      "gfit": {
+        "A": 526.067,
+        "B": 665.107,
+        "C": 677.396,
+        "D": 1045.44,
+        "OFF": 135.778
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030290774422833417, 1.000016526740338, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:A",
+        "LA_BANK": "bank:OFF",
+        "LA_DB2": "bank:A",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:B",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "B"
+        ],
+        "alarm": false,
+        "g": 158.13853571450375
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 1,
+      "source": {
+        "AD3": "window",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "B",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.033333,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.032258
+        },
+        "occ": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "OFF": 1
+        },
+        "outs": {}
+      }
+    },
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": false,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 8,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 11,
+        "A_nominal": 35,
+        "BANK": 11,
+        "DB2": 11,
+        "DB2_PLAN": 11,
+        "LA2_W0F": 11,
+        "LA_BANK": 11,
+        "LA_DB2": 11,
+        "LA_STATIC": 11,
+        "LA_W0F": 11,
+        "ORACLE": 0,
+        "STATIC": 11,
+        "W0": 11,
+        "W0F": 11
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.003028789240452688,
+        "true_class": 67
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.003028789240452688,
+        "seg0": 1,
+        "seg_len": 7,
+        "source": "window",
+        "true_class": 67
+      },
+      "g_prev": 158.13853571450375,
+      "gfit": {
+        "A": 569.043,
+        "B": 568.628,
+        "C": 652.732,
+        "D": 1085.655,
+        "OFF": 153.753
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.003028789240452688, 1.000016526740338, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:A",
+        "LA_BANK": "bank:OFF",
+        "LA_DB2": "bank:A",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:B",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "B"
+        ],
+        "alarm": false,
+        "g": 113.58528733839057
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 1,
+      "source": {
+        "AD3": "window",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "B",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.033333,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.03125
+        },
+        "occ": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "OFF": 2
+        },
+        "outs": {}
+      }
+    },
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 9,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 9,
+        "A_nominal": 31,
+        "BANK": 9,
+        "DB2": 10,
+        "DB2_PLAN": 10,
+        "LA2_W0F": 1,
+        "LA_BANK": 9,
+        "LA_DB2": 10,
+        "LA_STATIC": 10,
+        "LA_W0F": 10,
+        "ORACLE": 1,
+        "STATIC": 10,
+        "W0": 10,
+        "W0F": 10
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030431389973154263,
+        "true_class": 67
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030431389973154263,
+        "seg0": 1,
+        "seg_len": 8,
+        "source": "window",
+        "true_class": 67
+      },
+      "g_prev": 113.58528733839057,
+      "gfit": {
+        "A": 624.414,
+        "B": 457.065,
+        "C": 695.352,
+        "D": 1176.019,
+        "OFF": 208.703
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030431389973154263, 1.000016526740338, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:B",
+        "LA_BANK": "bank:OFF",
+        "LA_DB2": "bank:A",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:B",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "B"
+        ],
+        "alarm": false,
+        "g": 152.92965686587513
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 1,
+      "source": {
+        "AD3": "window",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "lookahead",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "B",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.033333,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.030303
+        },
+        "occ": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "OFF": 3
+        },
+        "outs": {}
+      }
+    },
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 10,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 4,
+        "A_nominal": 22,
+        "BANK": 4,
+        "DB2": 4,
+        "DB2_PLAN": 4,
+        "LA2_W0F": 0,
+        "LA_BANK": 4,
+        "LA_DB2": 4,
+        "LA_STATIC": 4,
+        "LA_W0F": 4,
+        "ORACLE": 0,
+        "STATIC": 4,
+        "W0": 4,
+        "W0F": 4
+      },
+      "estimate": {
+        "S1": false,
+        "S2": true,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 4,
+        "flagged": true,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030351286058999654,
+        "true_class": 67
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": true,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 4,
+        "flagged": true,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030351286058999654,
+        "seg0": 1,
+        "seg_len": 9,
+        "source": "window",
+        "true_class": 67
+      },
+      "g_prev": 152.92965686587513,
+      "gfit": {
+        "A": 736.338,
+        "B": 333.024,
+        "C": 766.303,
+        "D": 1324.855,
+        "OFF": 313.949
+      },
+      "keys": {
+        "AD3": "nominal",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:B",
+        "LA_BANK": "bank:OFF",
+        "LA_DB2": "bank:A",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:B",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "B"
+        ],
+        "alarm": false,
+        "g": 147.79701652065614
+      },
+      "plausible": [],
+      "seg0": 1,
+      "source": {
+        "AD3": "window",
+        "BANK": "hold",
+        "DB2": "hold",
+        "DB2_PLAN": "hold",
+        "LA2_W0F": "lookahead",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "hold",
+        "W0F": "static_fallback"
+      },
+      "state": "B",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.033333,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.029412
+        },
+        "occ": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "OFF": 4
+        },
+        "outs": {}
+      }
+    },
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": false,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 11,
+      "burst_action": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 3,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "LA2_W0F": 0,
+        "LA_BANK": 0,
+        "LA_DB2": 0,
+        "LA_STATIC": 0,
+        "LA_W0F": 0,
+        "ORACLE": 0,
+        "STATIC": 0,
+        "W0": 0,
+        "W0F": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 9,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.003061922570758103,
+        "true_class": 67
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 9,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.003061922570758103,
+        "seg0": 1,
+        "seg_len": 10,
+        "source": "window",
+        "true_class": 67
+      },
+      "g_prev": 147.79701652065614,
+      "gfit": {
+        "A": 827.867,
+        "B": 237.825,
+        "C": 800.665,
+        "D": 1375.751,
+        "OFF": 486.893
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.003061922570758103, 1.000016526740338, [14, 18, 31]]",
+        "BANK": "[\"est\", 0.003061922570758103, 1.000016526740338, [14, 18, 31]]",
+        "DB2": "[\"est\", 0.003061922570758103, 1.000016526740338, [14, 18, 31]]",
+        "DB2_PLAN": "[\"est\", 0.003061922570758103, 1.000016526740338, [14, 18, 31]]",
+        "LA2_W0F": "[\"est\", 0.003061922570758103, 1.000016526740338, [14, 18, 31]]",
+        "LA_BANK": "[\"est\", 0.003061922570758103, 1.000016526740338, [14, 18, 31]]",
+        "LA_DB2": "[\"est\", 0.003061922570758103, 1.000016526740338, [14, 18, 31]]",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "[\"est\", 0.003061922570758103, 1.000016526740338, [14, 18, 31]]",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "[\"est\", 0.003061922570758103, 1.000016526740338, [14, 18, 31]]",
+        "W0F": "[\"est\", 0.003061922570758103, 1.000016526740338, [14, 18, 31]]"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "A",
+          "B"
+        ],
+        "alarm": false,
+        "g": 121.27136490947703
+      },
+      "plausible": [],
+      "seg0": 1,
+      "source": {
+        "AD3": "window",
+        "BANK": "learn",
+        "DB2": "learn",
+        "DB2_PLAN": "learn",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "learn",
+        "W0F": "learn"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.033333,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.029412
+        },
+        "occ": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "OFF": 4
+        },
+        "outs": {}
+      }
+    },
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": false,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 12,
+      "burst_action": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 4,
+        "A_nominal": 2,
+        "BANK": 4,
+        "DB2": 4,
+        "DB2_PLAN": 4,
+        "LA2_W0F": 4,
+        "LA_BANK": 4,
+        "LA_DB2": 4,
+        "LA_STATIC": 5,
+        "LA_W0F": 4,
+        "ORACLE": 4,
+        "STATIC": 5,
+        "W0": 4,
+        "W0F": 4
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 8,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": false,
+        "p_hat": 0.0030692302421065345,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 8,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": false,
+        "p_hat": 0.0030692302421065345,
+        "seg0": 1,
+        "seg_len": 11,
+        "source": "window",
+        "true_class": null
+      },
+      "g_prev": 121.27136490947703,
+      "gfit": {
+        "A": 853.913,
+        "B": 256.848,
+        "C": 820.784,
+        "D": 1423.671,
+        "OFF": 526.792
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030692302421065345, 1.000016526740338, [14, 18, 31]]",
+        "BANK": "[\"est\", 0.0030692302421065345, 1.000016526740338, [14, 18, 31]]",
+        "DB2": "[\"est\", 0.0030692302421065345, 1.000016526740338, [14, 18, 31]]",
+        "DB2_PLAN": "[\"est\", 0.0030692302421065345, 1.000016526740338, [14, 18, 31]]",
+        "LA2_W0F": "[\"est\", 0.0030692302421065345, 1.000016526740338, [14, 18, 31]]",
+        "LA_BANK": "[\"est\", 0.0030692302421065345, 1.000016526740338, [14, 18, 31]]",
+        "LA_DB2": "[\"est\", 0.0030692302421065345, 1.000016526740338, [14, 18, 31]]",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "[\"est\", 0.0030692302421065345, 1.000016526740338, [14, 18, 31]]",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "[\"est\", 0.0030692302421065345, 1.000016526740338, [14, 18, 31]]",
+        "W0F": "[\"est\", 0.0030692302421065345, 1.000016526740338, [14, 18, 31]]"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "A",
+          "B",
+          "C"
+        ],
+        "alarm": false,
+        "g": 155.81184617084625
+      },
+      "plausible": [],
+      "seg0": 1,
+      "source": {
+        "AD3": "window",
+        "BANK": "learn",
+        "DB2": "learn",
+        "DB2_PLAN": "learn",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "learn",
+        "W0F": "learn"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.033333,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.029412
+        },
+        "occ": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "OFF": 4
+        },
+        "outs": {}
+      }
+    },
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": false,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 13,
+      "burst_action": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 2,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "LA2_W0F": 0,
+        "LA_BANK": 0,
+        "LA_DB2": 0,
+        "LA_STATIC": 1,
+        "LA_W0F": 0,
+        "ORACLE": 0,
+        "STATIC": 1,
+        "W0": 0,
+        "W0F": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 8,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": false,
+        "p_hat": 0.0030868832581004086,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 8,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": false,
+        "p_hat": 0.0030868832581004086,
+        "seg0": 1,
+        "seg_len": 12,
+        "source": "window",
+        "true_class": null
+      },
+      "g_prev": 155.81184617084625,
+      "gfit": {
+        "A": 829.092,
+        "B": 228.763,
+        "C": 764.88,
+        "D": 1368.016,
+        "OFF": 473.512
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]",
+        "BANK": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]",
+        "DB2": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]",
+        "DB2_PLAN": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]",
+        "LA2_W0F": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]",
+        "LA_BANK": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]",
+        "LA_DB2": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]",
+        "W0F": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "A"
+        ],
+        "alarm": true,
+        "g": 167.62361621970467
+      },
+      "plausible": [],
+      "seg0": 1,
+      "source": {
+        "AD3": "window",
+        "BANK": "learn",
+        "DB2": "learn",
+        "DB2_PLAN": "learn",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "learn",
+        "W0F": "learn"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.033333,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.029412
+        },
+        "occ": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "OFF": 4
+        },
+        "outs": {}
+      }
+    },
+    {
+      "L": 1,
+      "acceptable": {
+        "AD3": true,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": true,
+      "block": 14,
+      "burst_action": {
+        "AD3": false,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": false,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 0,
+        "BANK": 1,
+        "DB2": 1,
+        "DB2_PLAN": 1,
+        "LA2_W0F": 0,
+        "LA_BANK": 1,
+        "LA_DB2": 1,
+        "LA_STATIC": 1,
+        "LA_W0F": 1,
+        "ORACLE": 0,
+        "STATIC": 1,
+        "W0": 1,
+        "W0F": 1
+      },
+      "estimate": {
+        "S1": false,
+        "S2": true,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 4,
+        "flagged": true,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030830639461172215,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030431389973154263,
+        "recall_g": 124.36495545442199,
+        "seg0": 13,
+        "seg_len": 1,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 167.62361621970467,
+      "gfit": {
+        "A": 163.083,
+        "B": 243.804,
+        "C": 218.606,
+        "D": 245.467,
+        "OFF": 110.153
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030431389973154263, 1.000016526740338, null]",
+        "BANK": "bank:A",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:OFF",
+        "LA_BANK": "bank:A",
+        "LA_DB2": "bank:A",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF"
+        ],
+        "alarm": false,
+        "g": 129.83854731309285
+      },
+      "plausible": [
+        "OFF",
+        "A"
+      ],
+      "seg0": 13,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "lookahead",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.033333,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.029412
+        },
+        "occ": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "OFF": 4
+        },
+        "outs": {}
+      }
+    },
+    {
+      "L": 2,
+      "acceptable": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 15,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 10,
+        "A_nominal": 29,
+        "BANK": 10,
+        "DB2": 10,
+        "DB2_PLAN": 10,
+        "LA2_W0F": 2,
+        "LA_BANK": 2,
+        "LA_DB2": 2,
+        "LA_STATIC": 2,
+        "LA_W0F": 2,
+        "ORACLE": 2,
+        "STATIC": 10,
+        "W0": 10,
+        "W0F": 10
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030872606179714007,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030431389973154263,
+        "recall_g": 139.62987147925946,
+        "seg0": 13,
+        "seg_len": 2,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 129.83854731309285,
+      "gfit": {
+        "A": 270.646,
+        "B": 347.671,
+        "C": 345.9,
+        "D": 438.615,
+        "OFF": 128.549
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030431389973154263, 1.000016526740338, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:B",
+        "LA_BANK": "bank:B",
+        "LA_DB2": "bank:B",
+        "LA_STATIC": "bank:B",
+        "LA_W0F": "bank:B",
+        "ORACLE": "bank:B",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "B"
+        ],
+        "alarm": true,
+        "g": 226.61841964529913
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 13,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "lookahead",
+        "LA_BANK": "lookahead",
+        "LA_DB2": "lookahead",
+        "LA_STATIC": "lookahead",
+        "LA_W0F": "lookahead",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "B",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.033333,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.029412
+        },
+        "occ": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "OFF": 4
+        },
+        "outs": {}
+      }
+    },
+    {
+      "L": 1,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": false,
+        "LA_W0F": true,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": true,
+        "W0F": true
+      },
+      "alarm": true,
+      "block": 16,
+      "burst_action": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 1,
+        "A_nominal": 38,
+        "BANK": 1,
+        "DB2": 1,
+        "DB2_PLAN": 1,
+        "LA2_W0F": 1,
+        "LA_BANK": 1,
+        "LA_DB2": 1,
+        "LA_STATIC": 13,
+        "LA_W0F": 1,
+        "ORACLE": 1,
+        "STATIC": 13,
+        "W0": 1,
+        "W0F": 1
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030972922126227855,
+        "true_class": 67
+      },
+      "estimate_ad3": {
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030868832581004086,
+        "recall_g": 136.05850527243683,
+        "seg0": 15,
+        "seg_len": 1,
+        "source": "recall",
+        "true_class": 67
+      },
+      "g_prev": 226.61841964529913,
+      "gfit": {
+        "A": 355.678,
+        "B": 146.107,
+        "C": 307.915,
+        "D": 471.53,
+        "OFF": 276.036
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]",
+        "BANK": "bank:B",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:B",
+        "LA2_W0F": "bank:B",
+        "LA_BANK": "bank:B",
+        "LA_DB2": "bank:B",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:B",
+        "ORACLE": "bank:B",
+        "STATIC": "bank:A",
+        "W0": "bank:B",
+        "W0F": "bank:B"
+      },
+      "lookahead": {
+        "P1": [
+          "B"
+        ],
+        "alarm": false,
+        "g": 145.06775072026528
+      },
+      "plausible": [
+        "B"
+      ],
+      "seg0": 15,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "lookahead",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "B",
+      "tracker": {
+        "cur": "B",
+        "h": {
+          "A": 0.033333,
+          "B": 0.033333,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.057143
+        },
+        "occ": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "OFF": 5
+        },
+        "outs": {
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 2,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": false,
+        "LA_W0F": true,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": true,
+        "W0F": true
+      },
+      "alarm": false,
+      "block": 17,
+      "burst_action": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 33,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "LA2_W0F": 0,
+        "LA_BANK": 0,
+        "LA_DB2": 0,
+        "LA_STATIC": 8,
+        "LA_W0F": 0,
+        "ORACLE": 0,
+        "STATIC": 8,
+        "W0": 0,
+        "W0F": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030716824102957354,
+        "true_class": 67
+      },
+      "estimate_ad3": {
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030868832581004086,
+        "recall_g": 108.64999268785994,
+        "seg0": 15,
+        "seg_len": 2,
+        "source": "recall",
+        "true_class": 67
+      },
+      "g_prev": 145.06775072026528,
+      "gfit": {
+        "A": 427.769,
+        "B": 133.193,
+        "C": 391.228,
+        "D": 618.503,
+        "OFF": 342.364
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]",
+        "BANK": "bank:B",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:B",
+        "LA2_W0F": "bank:B",
+        "LA_BANK": "bank:B",
+        "LA_DB2": "bank:B",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:B",
+        "ORACLE": "bank:B",
+        "STATIC": "bank:A",
+        "W0": "bank:B",
+        "W0F": "bank:B"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "B"
+        ],
+        "alarm": false,
+        "g": 102.87493536178641
+      },
+      "plausible": [
+        "B"
+      ],
+      "seg0": 15,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "B",
+      "tracker": {
+        "cur": "B",
+        "h": {
+          "A": 0.033333,
+          "B": 0.032258,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.057143
+        },
+        "occ": {
+          "A": 0,
+          "B": 1,
+          "C": 0,
+          "D": 0,
+          "OFF": 5
+        },
+        "outs": {
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 3,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": false,
+        "LA_W0F": true,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": true,
+        "W0F": true
+      },
+      "alarm": false,
+      "block": 18,
+      "burst_action": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 2,
+        "A_nominal": 26,
+        "BANK": 2,
+        "DB2": 2,
+        "DB2_PLAN": 2,
+        "LA2_W0F": 2,
+        "LA_BANK": 2,
+        "LA_DB2": 2,
+        "LA_STATIC": 7,
+        "LA_W0F": 2,
+        "ORACLE": 2,
+        "STATIC": 7,
+        "W0": 2,
+        "W0F": 2
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 3,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030615112186610175,
+        "true_class": 67
+      },
+      "estimate_ad3": {
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030868832581004086,
+        "recall_g": 109.13540117869513,
+        "seg0": 15,
+        "seg_len": 3,
+        "source": "recall",
+        "true_class": 67
+      },
+      "g_prev": 102.87493536178641,
+      "gfit": {
+        "A": 556.341,
+        "B": 138.393,
+        "C": 496.715,
+        "D": 822.237,
+        "OFF": 414.787
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]",
+        "BANK": "bank:B",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:B",
+        "LA2_W0F": "bank:B",
+        "LA_BANK": "bank:B",
+        "LA_DB2": "bank:B",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:B",
+        "ORACLE": "bank:B",
+        "STATIC": "bank:A",
+        "W0": "bank:B",
+        "W0F": "bank:B"
+      },
+      "lookahead": {
+        "P1": [
+          "B"
+        ],
+        "alarm": false,
+        "g": 126.00211717366557
+      },
+      "plausible": [
+        "B"
+      ],
+      "seg0": 15,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "lookahead",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "B",
+      "tracker": {
+        "cur": "B",
+        "h": {
+          "A": 0.033333,
+          "B": 0.03125,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.057143
+        },
+        "occ": {
+          "A": 0,
+          "B": 2,
+          "C": 0,
+          "D": 0,
+          "OFF": 5
+        },
+        "outs": {
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 4,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": false,
+        "LA_W0F": true,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": true,
+        "W0F": true
+      },
+      "alarm": false,
+      "block": 19,
+      "burst_action": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": true,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 24,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "LA2_W0F": 0,
+        "LA_BANK": 0,
+        "LA_DB2": 0,
+        "LA_STATIC": 5,
+        "LA_W0F": 0,
+        "ORACLE": 0,
+        "STATIC": 5,
+        "W0": 0,
+        "W0F": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 10,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030451980558359906,
+        "true_class": 67
+      },
+      "estimate_ad3": {
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030868832581004086,
+        "recall_g": 118.95915953977294,
+        "seg0": 15,
+        "seg_len": 4,
+        "source": "recall",
+        "true_class": 67
+      },
+      "g_prev": 126.00211717366557,
+      "gfit": {
+        "A": 795.09,
+        "B": 163.465,
+        "C": 630.962,
+        "D": 1157.867,
+        "OFF": 591.716
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]",
+        "BANK": "bank:B",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:B",
+        "LA2_W0F": "bank:B",
+        "LA_BANK": "bank:B",
+        "LA_DB2": "bank:B",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:B",
+        "ORACLE": "bank:B",
+        "STATIC": "bank:A",
+        "W0": "bank:B",
+        "W0F": "bank:B"
+      },
+      "lookahead": {
+        "P1": [
+          "B"
+        ],
+        "alarm": false,
+        "g": 111.56920283402587
+      },
+      "plausible": [
+        "B"
+      ],
+      "seg0": 15,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "lookahead",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "B",
+      "tracker": {
+        "cur": "B",
+        "h": {
+          "A": 0.033333,
+          "B": 0.030303,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.057143
+        },
+        "occ": {
+          "A": 0,
+          "B": 3,
+          "C": 0,
+          "D": 0,
+          "OFF": 5
+        },
+        "outs": {
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 5,
+      "acceptable": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": false,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 20,
+      "burst_action": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 1,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "LA2_W0F": 0,
+        "LA_BANK": 0,
+        "LA_DB2": 0,
+        "LA_STATIC": 0,
+        "LA_W0F": 0,
+        "ORACLE": 0,
+        "STATIC": 0,
+        "W0": 0,
+        "W0F": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 14,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030407096157428026,
+        "true_class": 67
+      },
+      "estimate_ad3": {
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": true,
+        "p_hat": 0.0030868832581004086,
+        "recall_g": 119.26533368408661,
+        "seg0": 15,
+        "seg_len": 5,
+        "source": "recall",
+        "true_class": 67
+      },
+      "g_prev": 111.56920283402587,
+      "gfit": {
+        "A": 997.133,
+        "B": 168.862,
+        "C": 775.398,
+        "D": 1439.251,
+        "OFF": 717.85
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030868832581004086, 1.000016526740338, [14, 18, 31]]",
+        "BANK": "bank:B",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:B",
+        "LA2_W0F": "bank:B",
+        "LA_BANK": "bank:B",
+        "LA_DB2": "bank:B",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:B",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:B",
+        "W0F": "bank:B"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "A"
+        ],
+        "alarm": true,
+        "g": 192.1641585988258
+      },
+      "plausible": [
+        "B"
+      ],
+      "seg0": 15,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "B",
+        "h": {
+          "A": 0.033333,
+          "B": 0.029412,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.057143
+        },
+        "occ": {
+          "A": 0,
+          "B": 4,
+          "C": 0,
+          "D": 0,
+          "OFF": 5
+        },
+        "outs": {
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 1,
+      "acceptable": {
+        "AD3": true,
+        "BANK": false,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": false,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": true,
+      "block": 21,
+      "burst_action": {
+        "AD3": false,
+        "BANK": true,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": true,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 1,
+        "A_nominal": 1,
+        "BANK": 1,
+        "DB2": 1,
+        "DB2_PLAN": 1,
+        "LA2_W0F": 1,
+        "LA_BANK": 1,
+        "LA_DB2": 1,
+        "LA_STATIC": 1,
+        "LA_W0F": 1,
+        "ORACLE": 1,
+        "STATIC": 1,
+        "W0": 1,
+        "W0F": 1
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 16,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": false,
+        "p_hat": 0.003040397542839574,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030431389973154263,
+        "recall_g": 130.66063310018194,
+        "seg0": 20,
+        "seg_len": 1,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 192.1641585988258,
+      "gfit": {
+        "A": 185.573,
+        "B": 236.749,
+        "C": 232.924,
+        "D": 262.834,
+        "OFF": 137.042
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030431389973154263, 1.000016526740338, null]",
+        "BANK": "bank:A",
+        "DB2": "bank:A",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:A",
+        "LA_BANK": "bank:A",
+        "LA_DB2": "bank:A",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "A",
+          "C"
+        ],
+        "alarm": false,
+        "g": 106.62497509245036
+      },
+      "plausible": [
+        "OFF",
+        "A"
+      ],
+      "seg0": 20,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "B",
+        "h": {
+          "A": 0.033333,
+          "B": 0.028571,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.057143
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 5
+        },
+        "outs": {
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 2,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": true,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 22,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 2,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "LA2_W0F": 0,
+        "LA_BANK": 0,
+        "LA_DB2": 0,
+        "LA_STATIC": 0,
+        "LA_W0F": 0,
+        "ORACLE": 0,
+        "STATIC": 0,
+        "W0": 0,
+        "W0F": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": 67,
+        "excluded": 6,
+        "flagged": false,
+        "flip": 0,
+        "learned_correct": false,
+        "p_hat": 0.0031007589633806803,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030431389973154263,
+        "recall_g": 117.17257604952147,
+        "seg0": 20,
+        "seg_len": 2,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 106.62497509245036,
+      "gfit": {
+        "A": 243.196,
+        "B": 342.353,
+        "C": 308.517,
+        "D": 380.89,
+        "OFF": 136.545
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030431389973154263, 1.000016526740338, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:A",
+        "LA_BANK": "bank:OFF",
+        "LA_DB2": "bank:B",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "A",
+          "B"
+        ],
+        "alarm": false,
+        "g": 114.6518289362453
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 20,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.057143
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 5
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 3,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": true,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 23,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 1,
+        "A_nominal": 1,
+        "BANK": 1,
+        "DB2": 1,
+        "DB2_PLAN": 2,
+        "LA2_W0F": 2,
+        "LA_BANK": 1,
+        "LA_DB2": 1,
+        "LA_STATIC": 2,
+        "LA_W0F": 2,
+        "ORACLE": 1,
+        "STATIC": 2,
+        "W0": 2,
+        "W0F": 2
+      },
+      "estimate": {
+        "S1": false,
+        "S2": true,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 3,
+        "flagged": true,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.003105541911995602,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030431389973154263,
+        "recall_g": 111.02978157438383,
+        "seg0": 20,
+        "seg_len": 3,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 114.6518289362453,
+      "gfit": {
+        "A": 312.472,
+        "B": 429.971,
+        "C": 407.181,
+        "D": 528.838,
+        "OFF": 151.121
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030431389973154263, 1.000016526740338, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:A",
+        "LA_BANK": "bank:OFF",
+        "LA_DB2": "bank:B",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "A"
+        ],
+        "alarm": false,
+        "g": 104.5870617725111
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 20,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.055556
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 6
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 4,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": true,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 24,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 0,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "LA2_W0F": 0,
+        "LA_BANK": 0,
+        "LA_DB2": 0,
+        "LA_STATIC": 0,
+        "LA_W0F": 0,
+        "ORACLE": 0,
+        "STATIC": 0,
+        "W0": 0,
+        "W0F": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0031229607843056145,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030431389973154263,
+        "recall_g": 114.58502219338436,
+        "seg0": 20,
+        "seg_len": 4,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 104.5870617725111,
+      "gfit": {
+        "A": 405.611,
+        "B": 534.872,
+        "C": 549.059,
+        "D": 653.853,
+        "OFF": 187.82
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030431389973154263, 1.000016526740338, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:A",
+        "LA_BANK": "bank:OFF",
+        "LA_DB2": "bank:B",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "A",
+          "C"
+        ],
+        "alarm": false,
+        "g": 86.79948348490154
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 20,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.054054
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 7
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 5,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": true,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 25,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 1,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "LA2_W0F": 0,
+        "LA_BANK": 0,
+        "LA_DB2": 0,
+        "LA_STATIC": 0,
+        "LA_W0F": 0,
+        "ORACLE": 0,
+        "STATIC": 0,
+        "W0": 0,
+        "W0F": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.003083161731780221,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030431389973154263,
+        "recall_g": 122.19670286698636,
+        "seg0": 20,
+        "seg_len": 5,
+        "source": "recall",
+        "true_class": null
+      },
+      "g_prev": 86.79948348490154,
+      "gfit": {
+        "A": 467.727,
+        "B": 651.227,
+        "C": 657.164,
+        "D": 797.768,
+        "OFF": 192.828
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030431389973154263, 1.000016526740338, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:A",
+        "LA_BANK": "bank:OFF",
+        "LA_DB2": "bank:B",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "A"
+        ],
+        "alarm": false,
+        "g": 123.53325097500806
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 20,
+      "source": {
+        "AD3": "recall",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.052632
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 8
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": true,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 26,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 0,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 1,
+        "LA2_W0F": 1,
+        "LA_BANK": 0,
+        "LA_DB2": 0,
+        "LA_STATIC": 1,
+        "LA_W0F": 1,
+        "ORACLE": 0,
+        "STATIC": 1,
+        "W0": 1,
+        "W0F": 1
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030561316434597322,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030561316434597322,
+        "seg0": 20,
+        "seg_len": 6,
+        "source": "window",
+        "true_class": null
+      },
+      "g_prev": 123.53325097500806,
+      "gfit": {
+        "A": 517.71,
+        "B": 749.562,
+        "C": 743.703,
+        "D": 935.283,
+        "OFF": 194.482
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030561316434597322, 1.000016526740338, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:A",
+        "LA_BANK": "bank:OFF",
+        "LA_DB2": "bank:B",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "A"
+        ],
+        "alarm": false,
+        "g": 125.72938133402965
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 20,
+      "source": {
+        "AD3": "window",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.051282
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 9
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": true,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 27,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 1,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 1,
+        "LA2_W0F": 1,
+        "LA_BANK": 0,
+        "LA_DB2": 0,
+        "LA_STATIC": 1,
+        "LA_W0F": 1,
+        "ORACLE": 0,
+        "STATIC": 1,
+        "W0": 1,
+        "W0F": 1
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030667428788098854,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030667428788098854,
+        "seg0": 20,
+        "seg_len": 7,
+        "source": "window",
+        "true_class": null
+      },
+      "g_prev": 125.72938133402965,
+      "gfit": {
+        "A": 505.587,
+        "B": 750.563,
+        "C": 780.476,
+        "D": 917.346,
+        "OFF": 194.053
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030667428788098854, 1.000016526740338, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:A",
+        "LA_BANK": "bank:OFF",
+        "LA_DB2": "bank:B",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "A"
+        ],
+        "alarm": false,
+        "g": 117.97430478838999
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 20,
+      "source": {
+        "AD3": "window",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.05
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 10
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": true,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 28,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 0,
+        "A_nominal": 0,
+        "BANK": 0,
+        "DB2": 0,
+        "DB2_PLAN": 0,
+        "LA2_W0F": 0,
+        "LA_BANK": 0,
+        "LA_DB2": 0,
+        "LA_STATIC": 0,
+        "LA_W0F": 0,
+        "ORACLE": 0,
+        "STATIC": 0,
+        "W0": 0,
+        "W0F": 0
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030487725693701057,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030487725693701057,
+        "seg0": 20,
+        "seg_len": 8,
+        "source": "window",
+        "true_class": null
+      },
+      "g_prev": 117.97430478838999,
+      "gfit": {
+        "A": 501.274,
+        "B": 747.017,
+        "C": 798.474,
+        "D": 943.336,
+        "OFF": 169.154
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030487725693701057, 1.000016526740338, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:A",
+        "LA_BANK": "bank:OFF",
+        "LA_DB2": "bank:B",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "A"
+        ],
+        "alarm": false,
+        "g": 116.99967112450622
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 20,
+      "source": {
+        "AD3": "window",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.04878
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 11
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "L": 6,
+      "acceptable": {
+        "AD3": true,
+        "BANK": true,
+        "DB2": false,
+        "DB2_PLAN": false,
+        "LA2_W0F": false,
+        "LA_BANK": true,
+        "LA_DB2": false,
+        "LA_STATIC": false,
+        "LA_W0F": false,
+        "ORACLE": true,
+        "STATIC": false,
+        "W0": false,
+        "W0F": false
+      },
+      "alarm": false,
+      "block": 29,
+      "burst_action": {
+        "AD3": false,
+        "BANK": false,
+        "DB2": true,
+        "DB2_PLAN": true,
+        "LA2_W0F": true,
+        "LA_BANK": false,
+        "LA_DB2": true,
+        "LA_STATIC": true,
+        "LA_W0F": true,
+        "ORACLE": false,
+        "STATIC": true,
+        "W0": true,
+        "W0F": true
+      },
+      "errors": {
+        "AD3": 1,
+        "A_nominal": 1,
+        "BANK": 1,
+        "DB2": 1,
+        "DB2_PLAN": 1,
+        "LA2_W0F": 1,
+        "LA_BANK": 1,
+        "LA_DB2": 1,
+        "LA_STATIC": 1,
+        "LA_W0F": 1,
+        "ORACLE": 1,
+        "STATIC": 1,
+        "W0": 1,
+        "W0F": 1
+      },
+      "estimate": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030365815902152304,
+        "true_class": null
+      },
+      "estimate_ad3": {
+        "S1": false,
+        "S2": false,
+        "b_hat": 1.000016526740338,
+        "class_index": null,
+        "excluded": 0,
+        "flagged": false,
+        "flip": null,
+        "learned_correct": false,
+        "p_hat": 0.0030365815902152304,
+        "seg0": 20,
+        "seg_len": 9,
+        "source": "window",
+        "true_class": null
+      },
+      "g_prev": 116.99967112450622,
+      "gfit": {
+        "A": 467.909,
+        "B": 801.712,
+        "C": 867.309,
+        "D": 938.182,
+        "OFF": 155.303
+      },
+      "keys": {
+        "AD3": "[\"est\", 0.0030365815902152304, 1.000016526740338, null]",
+        "BANK": "bank:OFF",
+        "DB2": "bank:B",
+        "DB2_PLAN": "bank:A",
+        "LA2_W0F": "bank:A",
+        "LA_BANK": "bank:OFF",
+        "LA_DB2": "bank:B",
+        "LA_STATIC": "bank:A",
+        "LA_W0F": "bank:A",
+        "ORACLE": "bank:OFF",
+        "STATIC": "bank:A",
+        "W0": "bank:A",
+        "W0F": "bank:A"
+      },
+      "lookahead": {
+        "P1": [
+          "OFF",
+          "A"
+        ],
+        "alarm": false,
+        "g": 112.49307556542033
+      },
+      "plausible": [
+        "OFF"
+      ],
+      "seg0": 20,
+      "source": {
+        "AD3": "window",
+        "BANK": "bank",
+        "DB2": "bank",
+        "DB2_PLAN": "bank",
+        "LA2_W0F": "base",
+        "LA_BANK": "base",
+        "LA_DB2": "base",
+        "LA_STATIC": "base",
+        "LA_W0F": "base",
+        "W0": "bank",
+        "W0F": "bank"
+      },
+      "state": "OFF",
+      "tracker": {
+        "cur": "OFF",
+        "h": {
+          "A": 0.033333,
+          "B": 0.057143,
+          "C": 0.033333,
+          "D": 0.033333,
+          "OFF": 0.047619
+        },
+        "occ": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0,
+          "OFF": 12
+        },
+        "outs": {
+          "B": [
+            "OFF"
+          ],
+          "OFF": [
+            "B"
+          ]
+        }
+      }
+    }
+  ],
+  "changes_detected": [
+    1,
+    13,
+    15,
+    20
+  ],
+  "episode": 1,
+  "eval_per_block": 1000,
+  "g": {
+    "1": 169.78324175748662,
+    "10": 147.79701652065614,
+    "11": 121.27136490947703,
+    "12": 155.81184617084625,
+    "13": 167.62361621970467,
+    "14": 129.83854731309285,
+    "15": 226.61841964529913,
+    "16": 145.06775072026528,
+    "17": 102.87493536178641,
+    "18": 126.00211717366557,
+    "19": 111.56920283402587,
+    "2": 141.58305820825308,
+    "20": 192.1641585988258,
+    "21": 106.62497509245036,
+    "22": 114.6518289362453,
+    "23": 104.5870617725111,
+    "24": 86.79948348490154,
+    "25": 123.53325097500806,
+    "26": 125.72938133402965,
+    "27": 117.97430478838999,
+    "28": 116.99967112450622,
+    "3": 147.1632721381934,
+    "4": 151.00202777167817,
+    "5": 115.54412250845598,
+    "6": 126.58937903450635,
+    "7": 158.13853571450375,
+    "8": 113.58528733839057,
+    "9": 152.92965686587513
+  },
+  "mode": "dev",
+  "params": {
+    "dwell": [
+      4,
+      4,
+      5
+    ],
+    "on1": 7
+  },
+  "schedule": "BB",
+  "seconds": 1667.2,
+  "seeds": {
+    "b00:det": 572494329,
+    "b00:lab": 964761523,
+    "b01:det": 431412067,
+    "b01:lab": 450092174,
+    "b02:det": 900564480,
+    "b02:lab": 1804683614,
+    "b03:det": 1076625909,
+    "b03:lab": 1829457469,
+    "b04:det": 1833596024,
+    "b04:lab": 825087416,
+    "b05:det": 1394806282,
+    "b05:lab": 1151330789,
+    "b06:det": 1769082170,
+    "b06:eval": 482477889,
+    "b06:lab": 2059236867,
+    "b07:det": 1443478487,
+    "b07:eval": 1667114829,
+    "b07:lab": 1780144810,
+    "b08:det": 734123749,
+    "b08:eval": 572919569,
+    "b08:lab": 660984903,
+    "b09:det": 509817634,
+    "b09:eval": 332254035,
+    "b09:lab": 1937274338,
+    "b10:det": 301134297,
+    "b10:eval": 410447275,
+    "b10:lab": 1360296038,
+    "b11:det": 94221696,
+    "b11:eval": 1026621000,
+    "b11:lab": 973858517,
+    "b12:det": 2127506754,
+    "b12:eval": 1102764507,
+    "b12:lab": 1648623404,
+    "b13:det": 249316395,
+    "b13:eval": 1385423220,
+    "b13:lab": 1984264606,
+    "b14:det": 1031497649,
+    "b14:eval": 1660864289,
+    "b14:lab": 615753323,
+    "b15:det": 930543298,
+    "b15:eval": 573880960,
+    "b15:lab": 208353402,
+    "b16:det": 170841963,
+    "b16:eval": 1820899556,
+    "b16:lab": 405714675,
+    "b17:det": 124885615,
+    "b17:eval": 582058693,
+    "b17:lab": 604003419,
+    "b18:det": 218558063,
+    "b18:eval": 1214967323,
+    "b18:lab": 1885511246,
+    "b19:det": 1195056980,
+    "b19:eval": 759247475,
+    "b19:lab": 804943459,
+    "b20:det": 327567641,
+    "b20:eval": 1807418260,
+    "b20:lab": 7772942,
+    "b21:det": 7826983,
+    "b21:eval": 762663466,
+    "b21:lab": 1028540815,
+    "b22:det": 1316237264,
+    "b22:eval": 714503133,
+    "b22:lab": 1036229786,
+    "b23:det": 1449461910,
+    "b23:eval": 893956923,
+    "b23:lab": 268750612,
+    "b24:det": 1701550173,
+    "b24:eval": 2128889281,
+    "b24:lab": 1062171797,
+    "b25:det": 194183661,
+    "b25:eval": 108894028,
+    "b25:lab": 1280698692,
+    "b26:det": 621940344,
+    "b26:eval": 366075517,
+    "b26:lab": 1254175537,
+    "b27:det": 652532300,
+    "b27:eval": 450041999,
+    "b27:lab": 1907874925,
+    "b28:det": 1844964695,
+    "b28:eval": 406810846,
+    "b28:lab": 1597784527,
+    "b29:det": 168733659,
+    "b29:eval": 810617789,
+    "b29:lab": 194667945
+  },
+  "states": [
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "B",
+    "B",
+    "B",
+    "B",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF",
+    "OFF"
+  ],
+  "static_key": "A",
+  "timing": {
+    "control_s": 94.3,
+    "decode_s": 1572.5
+  },
+  "true_changes": [
+    7,
+    11,
+    15,
+    20
+  ]
+}
