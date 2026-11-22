@@ -312,7 +312,8 @@ def freeze_files():
     ls = subprocess.run(["git", "ls-files"] + [f"outputs/qshift_decoder_bank_v{i}" for i in range(1, 7)],
                         cwd=SK.REPO, capture_output=True, text=True, check=True).stdout.split()
     fs = {f for f in ls if f.endswith(".py")} | set(fid["traced_inputs"])
-    fs = {f for f in fs if "/work/" not in f}
+    fs = {f for f in fs if "/work/" not in f and "__pycache__" not in f and not f.endswith(".pyc")}
+    fs |= {f"outputs/qshift_adaptive_robust_v1/{n}_BURSTS.json" for n in ("BRE", "BRS", "BRT")}   # config-named assets
     fs |= {f"outputs/qshift_decoder_bank_v6/{n}" for n in ("DB6_SEEDS.json", "PROPOSAL_DB6.md", "FIDELITY.json")}
     bad = [f for f in fs if any(m in Path(f).name for m in SEAL_MARKERS)]
     if bad:
