@@ -37,3 +37,9 @@ Attempt 2 re-runs all 64 episodes from the same DB8 seeds. Only attempt 2's reco
 - **Cause:** the repository rule `* text=auto` checks `.jsonl` out with CRLF on Windows, and the freeze hashes `.jsonl` bytes without normalising line endings. This checkout and Linux checkouts are LF and pass.
 - **Fix:** a v9-scoped `.gitattributes` pins `*.jsonl` to LF. The freeze moves to `DB8_FREEZE_A2b.json`.
 - **Status:** no run used `DB8_FREEZE_A2.json`. It is kept unchanged and hashed into the new freeze.
+
+`DB8_FREEZE_A2b.json` (freeze commit 7680b3e5d) then failed the same check on `.gitattributes` itself, which has no suffix and also fell under `text=auto`.
+
+- **Fix:** `.gitattributes` now pins itself to LF. Every frozen file was then checked: each is either normalised by the hash rule or pinned to LF.
+- **New freeze:** `DB8_FREEZE_A2c.json`.
+- **Status:** no run used `DB8_FREEZE_A2b.json`. It is kept and hashed into the new freeze.

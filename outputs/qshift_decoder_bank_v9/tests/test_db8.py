@@ -195,9 +195,9 @@ class RunGuardTests(unittest.TestCase):
                 self.assertTrue((run / rel).is_file())
 
     def test_attempt2_paths(self):
-        self.assertEqual(R.FREEZE.name, "DB8_FREEZE_A2b.json")
+        self.assertEqual(R.FREEZE.name, "DB8_FREEZE_A2c.json")
         self.assertEqual(R.RUN_DIR.name, "dev_a2")
-        self.assertTrue(R.FREEZE_REL.endswith("/DB8_FREEZE_A2b.json"))
+        self.assertTrue(R.FREEZE_REL.endswith("/DB8_FREEZE_A2c.json"))
 
     def test_wiring(self):
         body = inspect.getsource(R.cmd_run)
