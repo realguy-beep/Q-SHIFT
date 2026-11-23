@@ -4,6 +4,11 @@
 
 lambda(X, s) = 2 n sum_d KL(r_X,d || template_s,d) at n = 2,000 detector rows, against DB1's bank templates.
 Excluded labels: the bank (W01, W05, W09, W14), E (W06), W13, X13.
+
+Amendment A3 (AMENDMENT_A3.md), fixed before any U_FAR data existed: the far state must also have buildable
+decoders (re1.decoders) and must not be the base label of the out-of-catalog state. Under the original rule X03 was
+chosen; its correlated-matching decoder cannot be built, which stopped DB8 attempt 2. SELECTION.json keeps the
+original table; SELECTION_A3.json holds this one.
 """
 from __future__ import annotations
 
@@ -64,6 +69,15 @@ def in_catalog(sup, classes):
         return False
 
 
+def builds(sup):
+    import re1
+    try:
+        re1.decoders(D.C.spec(gate_p=D.C.P0, measurement_p=D.C.P0), tuple(sup))
+        return True
+    except ValueError:
+        return False
+
+
 def public():
     out = {}
     for f in ("BRS_BURSTS.json", "BRT_BURSTS.json", "BRE_BURSTS.json"):
@@ -78,7 +92,6 @@ def select():
     E = tuple(C.support("E"))
     lamE = nearest(E, tpl)[1]
     cand = {lab: nearest(sup, tpl) for lab, sup in sorted(pub.items()) if lab not in EXCLUDED}
-    far = min((lab for lab, (b, _) in cand.items() if b != "A"), key=lambda lab: (abs(cand[lab][1] - lamE), lab))
     near = min(cand, key=lambda lab: (cand[lab][1], lab))
     qs = sorted({q for sup in pub.values() for q in sup})
     out_sup, out_lab = None, None
@@ -96,8 +109,19 @@ def select():
                 break
         if out_sup:
             break
+    out_base = out_lab.split("+")[0]
+    far_order = sorted((lab for lab, (b, _) in cand.items() if b != "A"), key=lambda lab: (abs(cand[lab][1] - lamE), lab))
+    skipped = []
+    for far in far_order:
+        if far == out_base:
+            skipped.append({"label": far, "reason": "base of the out-of-catalog state"})
+        elif not builds(pub[far]):
+            skipped.append({"label": far, "reason": "decoders do not build"})
+        else:
+            break
     return {"E": {"label": "W06", "support": list(E), "nearest": list(nearest(E, tpl)), "in_catalog": in_catalog(E, classes)},
-            "UF": {"label": far, "support": list(pub[far]), "nearest": list(cand[far]), "in_catalog": in_catalog(pub[far], classes)},
+            "UF": {"label": far, "support": list(pub[far]), "nearest": list(cand[far]), "in_catalog": in_catalog(pub[far], classes),
+                   "skipped_A3": skipped},
             "UO": {"label": out_lab, "support": list(out_sup), "nearest": list(nearest(out_sup, tpl)),
                    "in_catalog": in_catalog(out_sup, classes)},
             "UN": {"label": near, "support": list(pub[near]), "nearest": list(cand[near]),
@@ -109,7 +133,7 @@ if __name__ == "__main__":
     print(json.dumps(res, indent=1))
     if "--write" in sys.argv:
         import studykit as SK
-        SK.write_once_json(ROOT / "SELECTION.json", {"schema": "qshift-decoder-bank-db8-selection-v1", "n_rows": N,
+        SK.write_once_json(ROOT / "SELECTION_A3.json", {"schema": "qshift-decoder-bank-db8-selection-a3-v1", "n_rows": N,
                                                      "excluded": sorted(EXCLUDED), "out_range": list(OUT_RANGE),
                                                      "states": res})
     sys.exit(0)

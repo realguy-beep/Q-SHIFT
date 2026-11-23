@@ -2,7 +2,7 @@
 unknown-state panels (PROTOCOL_DB8.md). Development only.
 
   python db8_run.py fidelity                          # DB6 dev BB_e0, U_e0 re-run: every DB6 field and DB6-arm bit equal
-  python db8_run.py freeze                            # DB8_FREEZE_A2c.json (attempt 2; see RUN_ATTEMPT1.md) (portable; runtime identity; selection table)
+  python db8_run.py freeze                            # DB8_FREEZE_A3.json (attempt 3; see RUN_ATTEMPT2.md, see RUN_ATTEMPT1.md) (portable; runtime identity; selection table)
   python db8_run.py run --expected-head <sha> [--workers 8]   # the single DB8 attempt (separate approval)
 
 The per-block loop is DB6's episode_job plus the DB8 overlay lines only (tested). Run protections are v8 runkit's.
@@ -28,9 +28,9 @@ import db8_core as L8  # noqa: E402
 import runkit as RK  # noqa: E402
 
 WORK = C.ROOT / "work"
-FREEZE = C.ROOT / "DB8_FREEZE_A2c.json"
-FREEZE_REL = "outputs/qshift_decoder_bank_v9/DB8_FREEZE_A2c.json"
-RUN_DIR = WORK / "dev_a2"          # attempt 1 (work/dev) stopped before any record; see RUN_ATTEMPT1.md
+FREEZE = C.ROOT / "DB8_FREEZE_A3.json"
+FREEZE_REL = "outputs/qshift_decoder_bank_v9/DB8_FREEZE_A3.json"
+RUN_DIR = WORK / "dev_a3"          # attempts 1-2 (work/dev, work/dev_a2) stopped; see RUN_ATTEMPT1.md, RUN_ATTEMPT2.md
 RESULTS_REL = "outputs/qshift_decoder_bank_v9/results"
 FID_EPISODES = (("BB", 0), ("U", 0))
 FID_REQUIRE = {("BB", 0): "LA_R2"}          # must exercise the primary rule
@@ -321,6 +321,9 @@ def freeze_files():
     fs |= {f"outputs/qshift_adaptive_robust_v1/{n}_BURSTS.json" for n in ("BRE", "BRS", "BRT")}
     fs |= {f"outputs/qshift_decoder_bank_v9/{n}" for n in ("DB8_SEEDS.json", "PROTOCOL_DB8.md", "FIDELITY.json",
                                                          "SELECTION.json", "DB8_FREEZE.json", "DB8_FREEZE_A2.json", "DB8_FREEZE_A2b.json",
+                                                         "DB8_FREEZE_A2c.json", "SELECTION_A3.json", "AMENDMENT_A3.md",
+                                                         "RUN_ATTEMPT2.md", "RUN_ATTEMPT2/journal.jsonl",
+                                                         "RUN_ATTEMPT2/RUN_STATUS.json", "RUN_ATTEMPT2/OUTPUTS.json",
                                                          ".gitattributes", "RUN_ATTEMPT1.md",
                                                          "RUN_ATTEMPT1/journal.jsonl",
                                                          "RUN_ATTEMPT1/RUN_STATUS.json",
@@ -362,8 +365,9 @@ def cmd_freeze():
            "binding": "the run requires HEAD = the commit adding this file, whose parent is code_head and which "
                       "changes only this file (runkit.check_revision), plus the exact runtime above",
            "unknown_states": {k: list(v) for k, v in C.NEW_UNKNOWN.items()},
-           "decision": dec, "episodes": C.EPISODES, "attempt": 2, "supersedes": ["DB8_FREEZE.json", "DB8_FREEZE_A2.json", "DB8_FREEZE_A2b.json"],
-           "study_samples_before_freeze": "attempt 1 (work/dev) wrote 7 episode archives before it stopped (no records); they are preserved unopened and unanalysed, listed in RUN_ATTEMPT1/PARTIALS.json, and attempt 2 re-runs every episode from the same seeds into work/dev_a2"}
+           "decision": dec, "episodes": C.EPISODES, "attempt": 3, "amendment": "AMENDMENT_A3.md",
+           "supersedes": ["DB8_FREEZE.json", "DB8_FREEZE_A2.json", "DB8_FREEZE_A2b.json", "DB8_FREEZE_A2c.json"],
+           "study_samples_before_freeze": "attempt 1 (work/dev) wrote 7 episode archives and no records; attempt 2 (work/dev_a2) wrote 28 records and archives (non-null in-bank panels and U_E only; no U_FAR output). All are preserved unopened and unanalysed, byte hashes in RUN_ATTEMPT1/PARTIALS.json and RUN_ATTEMPT2/OUTPUTS.json. Attempt 3 re-runs all 64 episodes from the same seeds into work/dev_a3; only attempt 3 is analysed"}
     SK.write_once_json(FREEZE, doc)
     print(len(hashes), "files frozen")
 

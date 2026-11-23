@@ -39,11 +39,14 @@ class ConfigTests(unittest.TestCase):
     def test_selection_reproduces(self):
         import select_unknowns as S
         sel = S.select()
-        saved = json.loads((PKG / "SELECTION.json").read_text(encoding="utf-8"))["states"]
+        saved = json.loads((PKG / "SELECTION_A3.json").read_text(encoding="utf-8"))["states"]
         self.assertEqual(json.loads(json.dumps(sel)), saved)
         for k in ("UF", "UO", "UN"):
             self.assertEqual(tuple(sel[k]["support"]), C.NEW_UNKNOWN[k])
-        self.assertEqual((sel["UF"]["label"], sel["UO"]["label"], sel["UN"]["label"]), ("X03", "V01+q3", "X09"))
+        self.assertEqual((sel["UF"]["label"], sel["UO"]["label"], sel["UN"]["label"]), ("V06", "V01+q3", "X09"))
+        self.assertEqual([x["label"] for x in sel["UF"]["skipped_A3"]], ["X03", "V01"])
+        orig = json.loads((PKG / "SELECTION.json").read_text(encoding="utf-8"))["states"]
+        self.assertEqual(orig["UF"]["label"], "X03")              # the original table is kept unchanged
         self.assertFalse(sel["UO"]["in_catalog"])
         self.assertTrue(all(sel[k]["in_catalog"] for k in ("E", "UF", "UN")))
 
@@ -63,6 +66,13 @@ class ExtensionTests(unittest.TestCase):
         self.assertEqual(K.B.truth(classes, C.support("E")), C._truth0(classes, C.support("E")))
         with self.assertRaises(KeyError):
             K.B.truth(classes, (1, 3, 12, 40))                 # any other out-of-catalog support still raises
+
+    def test_decoders_build_for_every_state(self):
+        """Regression for attempt 2: every state any arm can decode with (incl. ORACLE) must build decoders."""
+        import re1
+        p0 = C.spec(gate_p=C.P0, measurement_p=C.P0)
+        for s in C.STATES + ("E",) + tuple(C.NEW_UNKNOWN):
+            re1.decoders(p0, C.support(s))
 
     def test_models_build_for_new_supports(self):
         from outputs.qshift_correlated_decoder_v1_4 import model_v14 as m
@@ -195,9 +205,9 @@ class RunGuardTests(unittest.TestCase):
                 self.assertTrue((run / rel).is_file())
 
     def test_attempt2_paths(self):
-        self.assertEqual(R.FREEZE.name, "DB8_FREEZE_A2c.json")
-        self.assertEqual(R.RUN_DIR.name, "dev_a2")
-        self.assertTrue(R.FREEZE_REL.endswith("/DB8_FREEZE_A2c.json"))
+        self.assertEqual(R.FREEZE.name, "DB8_FREEZE_A3.json")
+        self.assertEqual(R.RUN_DIR.name, "dev_a3")
+        self.assertTrue(R.FREEZE_REL.endswith("/DB8_FREEZE_A3.json"))
 
     def test_wiring(self):
         body = inspect.getsource(R.cmd_run)

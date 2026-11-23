@@ -2,7 +2,7 @@
 
 Everything is DB6's (db6_config: bank, generators, LA overlay, decoders), read-only, plus:
   - LA_R1 / LA_R2 / LA_R2_170 rule arms, the CB current-block bank baseline and FIX_<state> fixed-key arms;
-  - three new out-of-bank states (UF = X03, UO = V01 + qubit 3, UN = X09) chosen analytically (select_unknowns.py);
+  - three new out-of-bank states (UF = V06 under amendment A3 [was X03], UO = V01 + qubit 3, UN = X09) chosen analytically (select_unknowns.py);
   - two diagnostics-only extensions installed at import, so the new states can be sampled and scored:
       * support(name) also knows UF, UO, UN (db_config's support is wrapped; bank and E unchanged);
       * the class-truth lookup returns (None, None) for a support outside the learner catalog (UO). Truth feeds
@@ -36,8 +36,8 @@ LA_ARMS, LA2_ARMS = C6.LA_ARMS, C6.LA2_ARMS
 PARTS, NULL_SCHED = C6.PARTS, C6.NULL_SCHED
 
 # ---- unknown states (PROTOCOL_DB8.md section 3; reproduced by select_unknowns.py, tested)
-NEW_UNKNOWN = {"UF": (3, 25, 34), "UO": (1, 3, 12, 38), "UN": (7, 14, 42)}
-UNKNOWN_LABELS = {"E": "W06", "UF": "X03", "UO": "V01+q3", "UN": "X09"}
+NEW_UNKNOWN = {"UF": (1, 42, 47), "UO": (1, 3, 12, 38), "UN": (7, 14, 42)}
+UNKNOWN_LABELS = {"E": "W06", "UF": "V06", "UO": "V01+q3", "UN": "X09"}
 U_PANELS = {"U_E": "E", "U_FAR": "UF", "U_OUT": "UO", "U_NEAR": "UN"}
 
 _support0 = DC.support
