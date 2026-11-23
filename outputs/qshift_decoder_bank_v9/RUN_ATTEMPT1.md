@@ -29,3 +29,11 @@ No record file exists. None of the decoding code, the decision rules, the seeds 
 - `db8_analyze.py` now reads `work/dev_a2`.
 
 Attempt 2 re-runs all 64 episodes from the same DB8 seeds. Only attempt 2's records and archives are analysed.
+
+## Freeze addendum: `DB8_FREEZE_A2.json` superseded before use
+
+`DB8_FREEZE_A2.json` (freeze commit 6931cb43d) failed the fresh-checkout check on Windows, on one file only: `RUN_ATTEMPT1/journal.jsonl`.
+
+- **Cause:** the repository rule `* text=auto` checks `.jsonl` out with CRLF on Windows, and the freeze hashes `.jsonl` bytes without normalising line endings. This checkout and Linux checkouts are LF and pass.
+- **Fix:** a v9-scoped `.gitattributes` pins `*.jsonl` to LF. The freeze moves to `DB8_FREEZE_A2b.json`.
+- **Status:** no run used `DB8_FREEZE_A2.json`. It is kept unchanged and hashed into the new freeze.
