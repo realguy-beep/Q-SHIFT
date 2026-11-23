@@ -44,6 +44,11 @@ class JobTests(unittest.TestCase):
         self.assertIn("return R6.episode_job(args)", inspect.getsource(R.job))
         self.assertIs(R6._setup, R._setup)
 
+    def test_fidelity_la_rule(self):
+        self.assertEqual(R.FID_REQUIRE_LA, (("BB", 0),))
+        self.assertTrue(set(R.FID_REQUIRE_LA) <= set(R.FID_EPISODES))
+        self.assertIn("(s, e) not in FID_REQUIRE_LA", inspect.getsource(R.cmd_fidelity))
+
     def test_db6_code_unchanged_since_db6_freeze(self):
         fz = json.loads((C.DB6 / "DB6_FREEZE.json").read_text(encoding="utf-8"))["files"]
         for rel in ("outputs/qshift_decoder_bank_v6/db6_run.py", "outputs/qshift_decoder_bank_v6/db6_core.py",

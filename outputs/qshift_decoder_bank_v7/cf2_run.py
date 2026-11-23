@@ -25,6 +25,7 @@ import studykit as SK  # noqa: E402
 WORK = C.ROOT / "work"
 FREEZE = C.ROOT / "CF2_FREEZE.json"
 FID_EPISODES = (("BB", 0), ("U", 0))    # the largest DB6 LA gain, and the out-of-bank panel where LA2 harmed
+FID_REQUIRE_LA = (("BB", 0),)           # must exercise the overlay; U_e0 had 0 LA uses in DB6 (attempt 1 wrongly required it)
 INFRA = R6.INFRA                         # (OSError, MemoryError, EOFError, ConnectionError, MPTimeout)
 _norm_sha, _blob, TEXT, SEAL_MARKERS = R6._norm_sha, R6._blob, R6.TEXT, R6.SEAL_MARKERS
 NOT_COMPARED = ("timing", "seconds", "archive_sha256")   # wall-clock fields; npz bytes carry zip timestamps
@@ -71,7 +72,7 @@ def cmd_fidelity():
         d = {f: mine[f] == ref[f] for f in sorted(set(ref) | set(mine)) if f not in NOT_COMPARED}
         d["bits"] = set(z0.files) == set(z1.files) and all(np.array_equal(z0[k], z1[k]) for k in z0.files)
         d["la_uses"] = sum(b["source"]["LA_W0F"] == "lookahead" for b in mine["blocks"])
-        d["pass"] = all(v for k, v in d.items() if k != "la_uses") and d["la_uses"] > 0
+        d["pass"] = all(v for k, v in d.items() if k != "la_uses") and (d["la_uses"] > 0 or (s, e) not in FID_REQUIRE_LA)
         res["episodes"][f"DB6 dev {s}_e{e}"] = {k: (bool(v) if k != "la_uses" else v) for k, v in d.items()}
     res["compared"] = "every record field except " + ", ".join(NOT_COMPARED) + "; every archive array bit for bit"
     res["traced_inputs"] = sorted(inputs)
@@ -89,7 +90,8 @@ def freeze_files():
     fs = {f for f in ls if f.endswith(".py")} | set(fid["traced_inputs"])
     fs = {f for f in fs if "/work/" not in f and "__pycache__" not in f and not f.endswith(".pyc")}
     fs |= {f"outputs/qshift_adaptive_robust_v1/{n}_BURSTS.json" for n in ("BRE", "BRS", "BRT")}   # config-named assets
-    fs |= {f"outputs/qshift_decoder_bank_v7/{n}" for n in ("CF2_SEEDS.json", "PLAN_CF2.md", "FIDELITY.json")}
+    fs |= {f"outputs/qshift_decoder_bank_v7/{n}" for n in ("CF2_SEEDS.json", "PLAN_CF2.md", "FIDELITY.json",
+                                                           "FIDELITY_ATTEMPT1.json")}
     bad = [f for f in fs if any(m in Path(f).name for m in SEAL_MARKERS)]
     if bad:
         raise SystemExit(f"sealed-looking inputs: {bad}")
