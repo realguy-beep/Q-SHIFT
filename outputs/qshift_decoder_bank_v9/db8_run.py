@@ -2,7 +2,7 @@
 unknown-state panels (PROTOCOL_DB8.md). Development only.
 
   python db8_run.py fidelity                          # DB6 dev BB_e0, U_e0 re-run: every DB6 field and DB6-arm bit equal
-  python db8_run.py freeze                            # DB8_FREEZE.json (portable; runtime identity; selection table)
+  python db8_run.py freeze                            # DB8_FREEZE_A2.json (attempt 2; DB8_FREEZE.json is attempt 1) (portable; runtime identity; selection table)
   python db8_run.py run --expected-head <sha> [--workers 8]   # the single DB8 attempt (separate approval)
 
 The per-block loop is DB6's episode_job plus the DB8 overlay lines only (tested). Run protections are v8 runkit's.
@@ -28,8 +28,9 @@ import db8_core as L8  # noqa: E402
 import runkit as RK  # noqa: E402
 
 WORK = C.ROOT / "work"
-FREEZE = C.ROOT / "DB8_FREEZE.json"
-FREEZE_REL = "outputs/qshift_decoder_bank_v9/DB8_FREEZE.json"
+FREEZE = C.ROOT / "DB8_FREEZE_A2.json"
+FREEZE_REL = "outputs/qshift_decoder_bank_v9/DB8_FREEZE_A2.json"
+RUN_DIR = WORK / "dev_a2"          # attempt 1 (work/dev) stopped before any record; see RUN_ATTEMPT1.md
 RESULTS_REL = "outputs/qshift_decoder_bank_v9/results"
 FID_EPISODES = (("BB", 0), ("U", 0))
 FID_REQUIRE = {("BB", 0): "LA_R2"}          # must exercise the primary rule
@@ -319,7 +320,10 @@ def freeze_files():
     fs = {f for f in fs if "/work/" not in f and "__pycache__" not in f and not f.endswith(".pyc")}
     fs |= {f"outputs/qshift_adaptive_robust_v1/{n}_BURSTS.json" for n in ("BRE", "BRS", "BRT")}
     fs |= {f"outputs/qshift_decoder_bank_v9/{n}" for n in ("DB8_SEEDS.json", "PROTOCOL_DB8.md", "FIDELITY.json",
-                                                         "SELECTION.json")}
+                                                         "SELECTION.json", "DB8_FREEZE.json", "RUN_ATTEMPT1.md",
+                                                         "RUN_ATTEMPT1/journal.jsonl",
+                                                         "RUN_ATTEMPT1/RUN_STATUS.json",
+                                                         "RUN_ATTEMPT1/PARTIALS.json")}
     bad = [f for f in fs if any(m in Path(f).name for m in SEAL_MARKERS)]
     if bad:
         raise SystemExit(f"sealed-looking inputs: {bad}")
@@ -357,7 +361,8 @@ def cmd_freeze():
            "binding": "the run requires HEAD = the commit adding this file, whose parent is code_head and which "
                       "changes only this file (runkit.check_revision), plus the exact runtime above",
            "unknown_states": {k: list(v) for k, v in C.NEW_UNKNOWN.items()},
-           "decision": dec, "episodes": C.EPISODES, "study_samples_before_freeze": 0}
+           "decision": dec, "episodes": C.EPISODES, "attempt": 2, "supersedes": "DB8_FREEZE.json",
+           "study_samples_before_freeze": "attempt 1 (work/dev) wrote 7 episode archives before it stopped (no records); they are preserved unopened and unanalysed, listed in RUN_ATTEMPT1/PARTIALS.json, and attempt 2 re-runs every episode from the same seeds into work/dev_a2"}
     SK.write_once_json(FREEZE, doc)
     print(len(hashes), "files frozen")
 
@@ -367,9 +372,15 @@ def _outputs(name):
     return (f"archives/{name}.npz", f"records/{name}.json")
 
 
+def _prepare_run(run):
+    """Create the parent folder of every output path (attempt 1 stopped because records/ was missing)."""
+    for rel in _outputs("x"):
+        (Path(run) / rel).parent.mkdir(parents=True, exist_ok=True)
+
+
 def cmd_run(expected_head, workers):
     if not FREEZE.exists():
-        raise SystemExit("no DB8_FREEZE.json")
+        raise SystemExit(f"no {FREEZE.name}")
     fz = json.loads(FREEZE.read_text(encoding="utf-8"))
     RK.check_revision(expected_head, FREEZE_REL, fz["code_head"], _git, (RESULTS_REL,))
     bad = RK.check_runtime(fz["runtime"])
@@ -380,8 +391,9 @@ def cmd_run(expected_head, workers):
         raise SystemExit(f"frozen files changed: {bad}")
     if not json.loads((C.ROOT / "FIDELITY.json").read_text(encoding="utf-8"))["all_pass"]:
         raise SystemExit("fidelity did not pass")
-    run = WORK / "dev"
+    run = RUN_DIR
     RK.Reservation(run, {"head": expected_head, "workers": workers})
+    _prepare_run(run)
     jobs = [(f"{s}_e{e}", ("db8", s, e, str(run))) for s in C.SCHEDULES for e in range(C.EPISODES[s])]
     jobs.sort(key=lambda j: j[1][1] in C.NULL_SCHED)
     RK.run_jobs(jobs, episode_job, run, _outputs, workers=workers, timeout=20_000)

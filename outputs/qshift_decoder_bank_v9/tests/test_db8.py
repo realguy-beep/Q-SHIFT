@@ -184,12 +184,28 @@ class AnalysisTests(unittest.TestCase):
 
 
 class RunGuardTests(unittest.TestCase):
+    def test_prepare_run_creates_every_output_parent(self):
+        """Regression for attempt 1: a job must find records/ and archives/ in a fresh run folder."""
+        with tempfile.TemporaryDirectory() as d:
+            run = Path(d) / "fresh"
+            R.RK.Reservation(run, {"head": "test", "workers": 1})
+            R._prepare_run(run)
+            for rel in R._outputs("AA_e0"):
+                (run / rel).write_bytes(b"x")
+                self.assertTrue((run / rel).is_file())
+
+    def test_attempt2_paths(self):
+        self.assertEqual(R.FREEZE.name, "DB8_FREEZE_A2.json")
+        self.assertEqual(R.RUN_DIR.name, "dev_a2")
+        self.assertTrue(R.FREEZE_REL.endswith("/DB8_FREEZE_A2.json"))
+
     def test_wiring(self):
         body = inspect.getsource(R.cmd_run)
         for need in ("RK.check_revision(expected_head, FREEZE_REL, fz[\"code_head\"], _git, (RESULTS_REL,))",
                      "RK.check_runtime(fz[\"runtime\"])", "check_freeze(fz)", "all_pass", "RK.Reservation(run",
-                     "RK.run_jobs(jobs, episode_job, run, _outputs"):
+                     "RK.run_jobs(jobs, episode_job, run, _outputs", "run = RUN_DIR", "_prepare_run(run)"):
             self.assertIn(need, body)
+        self.assertLess(body.index("_prepare_run(run)"), body.index("RK.run_jobs("))
         self.assertNotIn("except", body)
         self.assertIn("ldpc", R.RK.RUNTIME_PACKAGES)
 

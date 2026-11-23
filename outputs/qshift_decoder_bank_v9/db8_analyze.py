@@ -1,6 +1,6 @@
 """DB8-dev analysis (PROTOCOL_DB8.md sections 4-5): advance criteria A1-A4 and reported values.
 
-  python db8_analyze.py <out_dir>       # reads work/dev; writes ANALYSIS.json (run twice -> identical bytes)
+  python db8_analyze.py <out_dir>       # reads work/dev_a2 (attempt 2); writes ANALYSIS.json (run twice -> identical bytes)
 
 Loading is v8 runkit.load_strict: exact episode set, record/archive/seed identity, 1,000 evaluation rows per block,
 per-episode job status, archive key set, width, zero padding and counts. Descriptive contrasts carry no p value.
@@ -128,7 +128,7 @@ def analyze(run):
 
 def main(out_dir):
     import studykit as SK
-    res = analyze(C.ROOT / "work" / "dev")
+    res = analyze(C.ROOT / "work" / "dev_a2")
     o = Path(out_dir)
     o.mkdir(parents=True, exist_ok=False)
     SK.write_once_json(o / "ANALYSIS.json", res)
