@@ -1,6 +1,6 @@
 # ROB1 protocol: does IDENT1's local-pair result survive weak bursts, wider noise and rare counts?
 
-**Status: draft 2 for the owner's approval. Nothing is built or computed.** Analytic only: no sampler is compiled. "build ROB1" and "run ROB1" are separate approvals.
+**Status: draft 2, build approved by the owner and built (`BUILD_NOTES.md`). Not run.** Analytic only: no sampler is compiled. "build ROB1" and "run ROB1" are separate approvals.
 
 Draft 2 replaces draft 1 (commit aacb27a1e) after a review by its own author, Claude. **That review is not independent**; Codex was unavailable. The noise grids, targets and 90/50 cut-offs are unchanged. Section 11 lists the changes.
 
@@ -28,7 +28,7 @@ Families F0 and F1 as in IDENT1, unchanged (m = 120 and 2,138 features). F2 is n
 
 ## 4. Noise model and grids
 
-**Model.** IDENT1 used Stim's `approximate_disjoint_errors`, which treats the exclusive outcomes of `PAULI_CHANNEL_1/2` as independent (`CORRECTION_1.md`). Every such channel in this circuit has equal probabilities, so ROB1 replaces each with `DEPOLARIZE1/2` of the same total probability and requires Stim's strict mode. A channel with unequal probabilities stops the run. Moments are then exact for the circuit.
+**Model.** IDENT1 used Stim's `approximate_disjoint_errors`, which treats the exclusive outcomes of `PAULI_CHANNEL_2` as independent (`CORRECTION_1.md`; corrected during the build, draft 2 said `PAULI_CHANNEL_1/2`). Every such channel in this circuit has equal probabilities, so ROB1 replaces each with `DEPOLARIZE1/2` of the same total probability and requires Stim's strict mode. A channel with unequal probabilities stops the run. Moments are then exact for the circuit.
 
 **Main grid.**
 
