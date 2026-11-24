@@ -187,6 +187,14 @@ class AnalysisTests(unittest.TestCase):
         p["A1"]["pass"] = False
         self.assertIsNone(A.decide(p, s, {"CB": 9, "LA_R2": 5})["arm_for_CF3_plan"])
 
+    def test_seeds_for_matches_the_job(self):
+        """Post-run regression: the job records eval seeds only for scored blocks."""
+        seeds = json.loads((PKG / "DB8_SEEDS.json").read_text(encoding="utf-8"))["seeds"]
+        keys = set(A.seeds_for(seeds)("AA", 0))
+        self.assertEqual({k for k in keys if k.endswith(":eval")}, {f"b{t:02d}:eval" for t in C.SCORED})
+        self.assertEqual(len(keys), 2 * C.BLOCKS + len(C.SCORED))
+        self.assertIn('seeds_used[f"b{t:02d}:eval"]', inspect.getsource(R.episode_job))
+
     def test_loader_and_descriptive(self):
         src = inspect.getsource(A.analyze)
         self.assertIn("RK.load_strict(", src)

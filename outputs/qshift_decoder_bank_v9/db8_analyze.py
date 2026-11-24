@@ -28,7 +28,9 @@ def sign_test_p(d):
 
 def seeds_for(seeds):
     def f(s, e):
-        return {f"b{t:02d}:{p}": int(seeds[C.block_key(s, e, t, p)]) for t in range(C.BLOCKS) for p in C.PARTS}
+        # post-run fix (ANALYSIS_FIX.md): evaluation rows are drawn only in scored blocks
+        return {f"b{t:02d}:{p}": int(seeds[C.block_key(s, e, t, p)]) for t in range(C.BLOCKS) for p in C.PARTS
+                if p != "eval" or t in C.SCORED}
     return f
 
 
