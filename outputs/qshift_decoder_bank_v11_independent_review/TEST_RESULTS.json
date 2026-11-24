@@ -1,0 +1,58 @@
+{
+  "audited_commit": "5052efacfef4e39bfd2c16ec8317a7ed90dbf4ac",
+  "checks": [
+    {
+      "command": "py -3.12 -B outputs/qshift_decoder_bank_v11/tests/test_seven.py -v Seven",
+      "passed": 7,
+      "failed": 0,
+      "seconds": 3.072
+    },
+    {
+      "command": "py -3.12 -B outputs/qshift_decoder_bank_v11/tests/test_v11.py -v StartTests FailureTests RecoveryTests AdmissionLifecycleTests PolicyTests StrictTests SourceTests",
+      "passed": 37,
+      "failed": 0,
+      "seconds": 98.004
+    },
+    {
+      "command": "py -3.12 -B outputs/qshift_decoder_bank_v11_independent_review/ADVERSARIAL_REPRODUCTIONS.py",
+      "passed": 16,
+      "failed": 0,
+      "seconds": 14.758,
+      "expected_safe_behaviors": 10,
+      "unsafe_behaviors_reproduced": 6
+    },
+    {
+      "command": "py -3.12 -B outputs/qshift_decoder_bank_v11_independent_review/ADVERSARIAL_REPRODUCTIONS.py --integration",
+      "passed": 3,
+      "failed": 0,
+      "seconds": 68.058,
+      "synthetic_episodes": 64,
+      "scope": "Independent wrapper around shipped integration methods. Separate disposable Git repo with synthetic reserved-seed metadata."
+    }
+  ],
+  "distinct_tests_passed": 63,
+  "distinct_tests_failed": 0,
+  "shipped_v11_integration_tests_not_run": 8,
+  "unverified": [
+    "Full shipped IntegrationTests with original historical collision-screen inputs",
+    "Host power-loss durability",
+    "Every default-pool spawn bootstrap timing",
+    "Any real sampler, decoder workload or independent prediction replay"
+  ],
+  "setup_history": [
+    "New sparse worktree displayed unscoped historical filenames due to status on an empty index. No restricted file contents were opened. Initialized the new index and scoped subsequent operations.",
+    "Three setup-only module resolution failures, in order: mm_contract, model_v14 package, bposd package. Resolved with narrow sparse source additions before tests.",
+    "Both earlier equivalent scoped integration (67.528 seconds) and initial independent run before estimator probe (15/15 in 14.905 seconds) passed. Standalone estimator probe passed in 0.063 seconds. Not double counted."
+  ],
+  "confirmed_gaps": [
+    "Recovery-held supervisor lock admits synthetic delayed worker",
+    "PermissionError appears as live supervisor",
+    "Success marker may omit mandatory intent",
+    "Preflight and pool callbacks not bound in launch",
+    "External import origins ignored",
+    "Estimator values outside actual fit bounds admitted"
+  ],
+  "stim_sampler_calls": 0,
+  "stim_shots": 0,
+  "sealed_contents_accessed": false
+}

@@ -1,0 +1,15 @@
+# Minimum evidence for independent verification
+
+## Claim-specific evidence
+
+A. **Contradiction rejection.** Keep the existing exact episode/root, ordered blocks, typed estimates, selected keys, sources, error bits, commit hashes and journal. Enforce actual estimator parameter bounds, valid numbers, valid fit mask and residual-set relationships and one-way event order.
+
+B. **Decision replay.** Retain a content hash and row identity for each input partition, exact source windows/timing and the ordered 120 detector marginals per block. These support independent reconstruction of g, fit, gf1 and AD3 matching, including candidate ordering, ties and no-match decisions, using the same frozen library state. Also retain actual fit mask, stability, and residual-excluded detector IDs, ordered parity-subset definitions and integer odd counts, and each allowed labeled-calibration flip score with row count and tie rule. Pin the exact training references, calibration provenance, solver behavior and precision. A hash or summary cannot prove it was correctly extracted from unsaved observations.
+
+C. **Material efficacy and causal claims.** Keep packed detector-only and permitted labeled-calibration rows in separate role-labelled archives, or explicitly restrict claims to replay conditional on summaries. For independent prediction and paired scoring replay retain packed evaluation detectors, observable labels kept separate and inaccessible to policy/decoders, common row ordering/identifiers, and per-arm predictions or independently recoverable error bits. Have an independent scorer reconstruct paired errors. AD3 best-match inputs are required when AD3 is material to a claim. Preserve access boundaries for any separately authorized independent stream.
+
+## Resource arithmetic
+
+For 64 episodes × 30 blocks × 120 detectors, ordered uint16 marginals cost **460,800 bytes (0.44 MiB)**. For each block, 2,000 detector-only and 250 labeled-calibration rows at 15 detector bytes per row plus 32 bytes for the packed 250 labels cost **64,861,440 bytes (61.86 MiB)** total. At 64 × 24 scored blocks and 1,000 evaluation rows, adding detector/label replay inputs costs **23,232,000 bytes (22.16 MiB)**. Combined raw packed input budget is **84.01 MiB**, before predictions, metadata, checksums, staging copies and archive overhead. Size formulas scale with actual row counts and detector width. Use episode-local chunks and allow space for staging and retained failures. These figures assume bit packing without compression.
+
+Marginal/bit-packing and hashing each require one pass per retained input partition. For an illustrative 50 MiB/s storage floor, writing and rereading 84.01 MiB accounts for about 3.4 seconds of sequential transfer alone. That excludes fsync latency, compression, optimizer iterations, decoder construction and prediction replay. No timing of real workloads was measured. Independent replay cost is dominated by re-fitting and decoding and needs a separately bounded measurement before a resource freeze.

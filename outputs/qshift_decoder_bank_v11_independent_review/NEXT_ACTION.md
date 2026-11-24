@@ -1,0 +1,3 @@
+# Next action
+
+Hold real sampling. First close the recovery fence and successful-terminal admission gaps. Then use one sampler-disabled integration exercise to verify the fixed launcher, actual imported sources, backend preflight, causal input roles, immutable sampler-call ledger and preserved evidence. Resolve protocol-specific metadata and resource requirements in the new study freeze. The existing regression passes support bounded synthetic development. They do not authorize new development sampling, confirmation or any sealed evaluation. Keep DB8 VOID under Section 8, its retained descriptive numerical NO ADVANCE, and CF2 NOT CONFIRMED.

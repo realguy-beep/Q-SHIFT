@@ -1,0 +1,15 @@
+id,priority,disposition,evidence,action
+V10-1,P2,CLOSED,test_v10_1_empty_commit,Keep commit hash verification
+V10-2,P2,CLOSED,test_v10_2_recovered_cannot_start,Keep terminal refusal
+V10-3,P2,CLOSED,test_v10_3_start_race,Keep non-mutating loser behavior for one reservation
+V10-4,P2,CLOSED_FOR_CASES,test_v10_4_contradictions,See NEW-4 and NEW-5 for remaining policy limits
+V10-5,P2,CLOSED,test_v10_5_failed_journal_rehashed,Keep rehashed-negative checks
+V10-6,P2,CLOSED,test_v10_6_duplicate_zip,Keep strict archive keys
+V10-7,P2,CLOSED,test_v10_7_seed_aliases,Bind complete approved screening list in future study
+NEW-1,P0,REPRODUCED,lifecycle11.py:95-134;240-244;282-326;491-515,Separate owner identity from recovery and I/O failure
+NEW-2,P0,REPRODUCED,lifecycle11.py:254-279;448-458;547-555,Validate full lifecycle before publishing terminal success
+NEW-3,P1,REPRODUCED_AND_STATIC,study11.py:62-150; lifecycle11.py:312-320,Pin canonical callbacks and verify process imports before draws
+NEW-4,P1,REPRODUCED_AND_STATIC,policy.py:59-76;104-130,Reject out-of-fitter-domain and structural contradictions
+NEW-5,P1,STATIC,policy.py:96-183; v9 db8_run.py:121-186,Preserve replayable decisions and scoring inputs
+NEW-6,P1,STATIC,lifecycle11.py:120-134;401-488,Release partial lock acquisitions and enforce a whole-run deadline
+NEW-7,P2,DOCUMENTED,lifecycle11.py:69-74;470-515,Preserve torn records and diagnose manually under local FS assumptions
