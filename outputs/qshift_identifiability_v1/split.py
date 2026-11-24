@@ -118,6 +118,33 @@ def report(cls, maps):
             "rule_ok": sizes[0] <= MAX_GROUP * len(cls)}
 
 
+def class_maps():
+    """Amendment A1: the grid maps that send every signature class onto exactly one class."""
+    cls, _ = classes(4)
+    where = {sup: s for s, v in cls.items() for sup in v}
+    return [f for f in symmetries()
+            if all(len({where.get(tuple(sorted(f[q] for q in sup))) for sup in v}) == 1 for v in cls.values())]
+
+
+_SPLIT = None
+
+
+def split():
+    """{signature: DESIGN | HELD | SEEN} over weight 1-4 classes (amendment A1)."""
+    global _SPLIT
+    if _SPLIT is None:
+        cls, _ = classes(4)
+        maps = class_maps()
+        if not report(cls, maps)["rule_ok"]:
+            raise SystemExit("split rule: a group exceeds the limit")
+        pub, _SPLIT = set(public().values()), {}
+        for g in groups(cls, maps):
+            seen = any(x in pub for s in g for x in cls[s])
+            for s in g:
+                _SPLIT[s] = "SEEN" if seen else half(cls, g)
+    return _SPLIT
+
+
 if __name__ == "__main__":
     maps = symmetries()
     single = single_signatures()
